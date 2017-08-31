@@ -3,7 +3,7 @@ TPP = BPG (Branded package with no container)
 TPUU = BPSF (Branded product with strengths and form)
 TP = brand
 MPP = UPG (Unbranded package with no container)
-MPUU = UBDSF (Unbranded product with strengths and form)
+MPUU = UPDSF (Unbranded product with strengths and form)
 MP = UPD (Unbranded product with no strengths or form)
 
 ---

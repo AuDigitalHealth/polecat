@@ -45,7 +45,7 @@ const relationshipTypeFor = (sourceType, targetType) => {
     // TPUU -> MPUU
     // Branded product with strengths and form ->
     //   Unbranded product with strengths and form
-    case 'BPSF-UBDSF':
+    case 'BPSF-UPDSF':
       return 'is-a'
     // TPP -> MPP
     // Branded package with no container -> Unbranded package with no container
@@ -54,12 +54,12 @@ const relationshipTypeFor = (sourceType, targetType) => {
     // MPP -> MPUU
     // Unbranded package with no container ->
     //   Unbranded product with strengths and form
-    case 'UPG-UBDSF':
-      return 'has-ubdsf'
+    case 'UPG-UPDSF':
+      return 'has-updsf'
     // MPUU -> MP
     // Unbranded product with strengths and form ->
     //   Unbranded product with no strengths or form
-    case 'UBDSF-UBD':
+    case 'UPDSF-UBD':
       return 'is-a'
     default:
       return 'unknown'
@@ -70,21 +70,32 @@ const resourceRequirementsFor = sourceType =>
   ({
     // CTPP requires retrieval of TPUU to get MPUU and MP.
     BPGC: {
-      UBDSF: 'BPSF',
+      UPDSF: 'BPSF',
       UPD: 'BPSF',
     },
     // TPP requires retrieval of TPUU to get MPUU and MP.
     BPG: {
-      UBDSF: 'BPSF',
+      UPDSF: 'BPSF',
       UPD: 'BPSF',
     },
-    TPUU: {},
-    MPP: {
-      UPD: 'UBDSF',
+    BPSF: {},
+    UPG: {
+      UPD: 'UPDSF',
     },
-    MPUU: {},
-    MP: {},
+    UPDSF: {},
+    UPD: {},
   }[sourceType])
+
+export const amtConceptTypeFor = fhirType =>
+  ({
+    BPGC: 'CTPP',
+    BPG: 'TPP',
+    BPSF: 'TPUU',
+    brand: 'TP',
+    UPG: 'MPP',
+    UPDSF: 'MPUU',
+    UPD: 'MP',
+  }[fhirType])
 
 export const getResource = parsed => {
   const code = getSctCode(parsed)

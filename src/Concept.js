@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import './Concept.css'
 
-class FocusedConcept extends Component {
+class Concept extends Component {
   render() {
     const { sctid, display, type, top, left, width, height } = this.props
     return (
       <div
-        className='concept concept-focused'
+        className='concept'
         style={{
           position: 'absolute',
           top: top + 'px',
@@ -20,7 +21,9 @@ class FocusedConcept extends Component {
           {display}
         </div>
         <div className='sctid'>
-          {sctid}
+          <Link to={`/Medication/${sctid}`}>
+            {sctid}
+          </Link>
         </div>
         <div className={`type type-${type}`.toLowerCase()}>
           {type}
@@ -30,4 +33,4 @@ class FocusedConcept extends Component {
   }
 }
 
-export default FocusedConcept
+export default Concept

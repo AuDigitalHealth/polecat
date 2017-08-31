@@ -6,3 +6,45 @@
   box-shadow: 5px 5px 50px 1px #ccc;
   font-size: 12px;
 }
+
+.concept-focused {
+  border-width: 2px;
+}
+
+.concept .type {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  background-color: #aaa;
+  border-radius: 6px;
+  padding: 4px 6px;
+  color: white;
+}
+
+.concept .type-ctpp {
+  background-color: #bd3613;
+}
+
+.concept .type-tpp {
+  background-color: #a57706;
+}
+
+.concept .type-tpuu {
+  background-color: #c61c6f;
+}
+
+.concept .type-tp {
+  background-color: #595ab7;
+}
+
+.concept .type-mpp {
+  background-color: #2176c7;
+}
+
+.concept .type-mpuu {
+  background-color: #259286;
+}
+
+.concept .type-mp {
+  background-color: #738a05;
+}

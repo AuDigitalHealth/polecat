@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import * as d3 from 'd3'
-import map from 'lodash.map'
 import cloneDeep from 'lodash.clonedeep'
 
+import Concept from './Concept.js'
 import FocusedConcept from './FocusedConcept.js'
+import { amtConceptTypeFor } from './fhir/medication.js'
 
 import './AmtProductModel.css'
 
@@ -32,7 +33,7 @@ class AmtProductModel extends Component {
     this.state = {}
   }
 
-  startSimulation(props) {
+  updateSimulation(props) {
     const {
       nodes,
       links,
@@ -41,42 +42,24 @@ class AmtProductModel extends Component {
       attraction,
       collideRadius,
       linkDistance,
-      startX,
-      startY,
     } = props
-    console.log({
-      nodes,
-      links,
-      width,
-      height,
-      attraction,
-      collideRadius,
-      linkDistance,
-      startX,
-      startY,
-    })
-    const forceLink = d3
-      .forceLink()
+    const amtProductModel = this
+    amtProductModel.simulation = (amtProductModel.simulation ||
+      d3.forceSimulation())
+      .nodes(nodes)
+    amtProductModel.forceLink = (amtProductModel.forceLink || d3.forceLink())
       .id(d => d.code)
       .distance(linkDistance)
       .links(cloneDeep(links))
-    const amtProductModel = this
-    const initialNodes = map(nodes, node => ({
-      ...node,
-      x: startX,
-      y: startY,
-    }))
-    d3
-      .forceSimulation()
-      .nodes(initialNodes)
-      .force('link', forceLink)
+    amtProductModel.simulation = amtProductModel.simulation
+      .force('link', amtProductModel.forceLink)
       .force('charge', d3.forceManyBody().strength(attraction))
       .force('collide', d3.forceCollide(collideRadius))
       .force('center', d3.forceCenter(width / 2, height / 2))
       .on('tick', function() {
         amtProductModel.setState(() => ({
           nodes: this.nodes(),
-          links: forceLink.links(),
+          links: amtProductModel.forceLink.links(),
         }))
       })
   }
@@ -85,7 +68,7 @@ class AmtProductModel extends Component {
     console.log('AmtProductModel componentDidMount', this.props)
     const { nodes, links } = this.props
     if (nodes && links) {
-      this.startSimulation(this.props)
+      this.updateSimulation(this.props)
     }
   }
 
@@ -93,23 +76,36 @@ class AmtProductModel extends Component {
     console.log('AmtProductModel componentWillReceiveProps', { nextProps })
     const { nodes, links } = nextProps
     if (nodes && links) {
-      this.startSimulation(nextProps)
+      this.updateSimulation(nextProps)
     }
   }
 
   render() {
     const { nodes, links } = this.state
     const concepts = nodes
-      ? nodes.map((node, i) =>
-        <FocusedConcept
-          key={i}
-          sctid={node.code}
-          display={node.display}
-          top={node.y}
-          left={node.x}
-          width={150}
-          height={100}
-        />
+      ? nodes.map(
+        (node, i) =>
+          node.focused
+            ? <FocusedConcept
+              key={i}
+              sctid={node.code}
+              display={node.display}
+              type={amtConceptTypeFor(node.type)}
+              top={node.y}
+              left={node.x}
+              width={150}
+              height={100}
+            />
+            : <Concept
+              key={i}
+              sctid={node.code}
+              display={node.display}
+              type={amtConceptTypeFor(node.type)}
+              top={node.y}
+              left={node.x}
+              width={150}
+              height={100}
+            />
       )
       : []
     const relationships = links
