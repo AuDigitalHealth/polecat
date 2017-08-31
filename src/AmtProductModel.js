@@ -43,25 +43,32 @@ class AmtProductModel extends Component {
       collideRadius,
       linkDistance,
     } = props
-    const amtProductModel = this
-    amtProductModel.simulation = (amtProductModel.simulation ||
-      d3.forceSimulation())
-      .nodes(nodes)
-    amtProductModel.forceLink = (amtProductModel.forceLink || d3.forceLink())
+    const model = this
+    model.simulation = (model.simulation || d3.forceSimulation()).nodes(nodes)
+    model.forceLink = (model.forceLink || d3.forceLink())
       .id(d => d.code)
       .distance(linkDistance)
       .links(cloneDeep(links))
-    amtProductModel.simulation = amtProductModel.simulation
-      .force('link', amtProductModel.forceLink)
-      .force('charge', d3.forceManyBody().strength(attraction))
-      .force('collide', d3.forceCollide(collideRadius))
-      .force('center', d3.forceCenter(width / 2, height / 2))
+    model.forceManyBody = (model.forceManyBody || d3.forceManyBody())
+      .strength(attraction)
+    model.forceCollide = (model.forceCollide || d3.forceCollide())
+      .radius(collideRadius)
+    model.forceCenter = (model.forceCenter || d3.forceCenter())
+      .x(width / 2)
+      .y(height / 2)
+    model.simulation = model.simulation
+      .force('link', model.forceLink)
+      .force('charge', model.forceManyBody)
+      .force('collide', model.forceCollide)
+      .force('center', model.forceCenter)
       .on('tick', function() {
-        amtProductModel.setState(() => ({
-          nodes: this.nodes(),
-          links: amtProductModel.forceLink.links(),
+        model.setState(() => ({
+          nodes: model.simulation.nodes(),
+          links: model.forceLink.links(),
         }))
       })
+      .alpha(1.5)
+      .restart()
   }
 
   componentDidMount() {
@@ -112,8 +119,8 @@ class AmtProductModel extends Component {
       ? links.map((link, i) =>
         <line
           key={i}
-          x1={link.source.x + 50}
-          x2={link.target.x + 50}
+          x1={link.source.x + 75}
+          x2={link.target.x + 75}
           y1={link.source.y + 50}
           y2={link.target.y + 50}
         />
