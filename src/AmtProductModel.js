@@ -98,7 +98,6 @@ class AmtProductModel extends Component {
   }
 
   render() {
-    const { width, height } = this.props
     const { nodes, links } = this.state
     const concepts = nodes
       ? nodes.map((node, i) =>
@@ -125,8 +124,8 @@ class AmtProductModel extends Component {
       )
       : []
     return (
-      <div className='product-model' style={{ width, height }}>
-        <svg width={width} height={height}>
+      <div className='product-model'>
+        <svg height='100%' width='100%' preserveAspectRatio='none'>
           {relationships}
         </svg>
         {concepts}
