@@ -1,0 +1,4 @@
+localhost:3100
+cache
+proxy / medserve.online:80
+cors

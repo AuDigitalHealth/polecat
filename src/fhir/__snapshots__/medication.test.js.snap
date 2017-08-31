@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getRelatedResources should return correct result for CTPP 21062011000036103 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "code": "2941011000036107",
+      "display": "Nexium Hp7",
+      "type": "brand",
+    },
+    Object {
+      "code": "14207011000036103",
+      "display": "Nexium Hp7 (14 x Nexium tablets, 28 x Amoxil capsules, 14 x Klacid tablets), 1 pack",
+      "type": "BPG",
+    },
+    Object {
+      "code": "28214011000036106",
+      "display": "esomeprazole 20 mg enteric tablet [14] (&) amoxicillin 500 mg capsule [28] (&) clarithromycin 500 mg tablet [14], 1 pack",
+      "type": "UPG",
+    },
+    Object {
+      "code": "46431011000036106",
+      "display": "clarithromycin 500 mg tablet, 14",
+      "type": "UPG",
+    },
+    Object {
+      "code": "700031841000036104",
+      "display": "amoxicillin 500 mg capsule, 28",
+      "type": "UPG",
+    },
+    Object {
+      "code": "700031831000036109",
+      "display": "esomeprazole 20 mg enteric tablet, 14",
+      "type": "UPG",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "destination": "2941011000036107",
+      "source": "21062011000036103",
+      "type": "has-brand",
+    },
+    Object {
+      "destination": "14207011000036103",
+      "source": "21062011000036103",
+      "type": "is-a",
+    },
+    Object {
+      "destination": "28214011000036106",
+      "source": "14207011000036103",
+      "type": "is-a",
+    },
+    Object {
+      "destination": "46431011000036106",
+      "source": "28214011000036106",
+      "type": "unknown",
+    },
+    Object {
+      "destination": "700031841000036104",
+      "source": "28214011000036106",
+      "type": "unknown",
+    },
+    Object {
+      "destination": "700031831000036109",
+      "source": "28214011000036106",
+      "type": "unknown",
+    },
+  ],
+  "resourcesStillNeeded": Array [
+    "BPSF",
+  ],
+}
+`;
+
+exports[`getRelatedResources should return correct result for CTPP 61428011000036109 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "code": "53282011000036108",
+      "display": "Paracetamol (Herron)",
+      "type": "brand",
+    },
+    Object {
+      "code": "57353011000036105",
+      "display": "Paracetamol (Herron) 500 mg uncoated tablet, 500",
+      "type": "BPG",
+    },
+    Object {
+      "code": "63954011000036107",
+      "display": "paracetamol 500 mg tablet, 500",
+      "type": "UPG",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "destination": "53282011000036108",
+      "source": "61428011000036109",
+      "type": "has-brand",
+    },
+    Object {
+      "destination": "57353011000036105",
+      "source": "61428011000036109",
+      "type": "is-a",
+    },
+    Object {
+      "destination": "63954011000036107",
+      "source": "57353011000036105",
+      "type": "is-a",
+    },
+  ],
+  "resourcesStillNeeded": Array [
+    "BPSF",
+  ],
+}
+`;
+
+exports[`getResource should return correct result for CTPP 21062011000036103 1`] = `
+Object {
+  "code": "21062011000036103",
+  "display": "Nexium Hp7 (14 x Nexium tablets, 28 x Amoxil capsules, 14 x Klacid tablets), 1 pack, composite pack",
+  "type": "BPGC",
+}
+`;
+
+exports[`getResource should return correct result for CTPP 61428011000036109 1`] = `
+Object {
+  "code": "61428011000036109",
+  "display": "Paracetamol (Herron) 500 mg uncoated tablet, 500, bottle",
+  "type": "BPGC",
+}
+`;

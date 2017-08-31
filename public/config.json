@@ -1,0 +1,3 @@
+{
+  "fhirServer": "http://localhost:3100/fhir"
+}

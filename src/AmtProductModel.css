@@ -1,0 +1,9 @@
+.product-model {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+line {
+  stroke: black;
+}

@@ -1,0 +1,8 @@
+.concept {
+  border: 1px solid black;
+  padding: 8px;
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: 5px 5px 50px 1px #ccc;
+  font-size: 12px;
+}
