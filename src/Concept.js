@@ -21,9 +21,11 @@ class Concept extends Component {
           {display}
         </div>
         <div className='sctid'>
-          <Link to={`/Medication/${sctid}`}>
-            {sctid}
-          </Link>
+          {type !== 'TP'
+            ? <Link to={`/Medication/${sctid}`}>
+              {sctid}
+            </Link>
+            : sctid}
         </div>
         <div className={`type type-${type}`.toLowerCase()}>
           {type}

@@ -72,25 +72,11 @@ class RemoteFhirMedication extends Component {
   }
 
   componentWillMount() {
-    console.log('RemoteFhirMedication componentWillMount', {
-      'this.props': this.props,
-    })
     this.updateResource(this.props)
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('RemoteFhirMedication componentWillReceiveProps', {
-      'this.props': this.props,
-      nextProps,
-    })
     this.updateResource(nextProps)
-  }
-
-  componentDidUpdate(nextProps, nextState) {
-    console.log('RemoteFhirMedication componentDidUpdate', {
-      nextProps,
-      nextState,
-    })
   }
 
   render() {

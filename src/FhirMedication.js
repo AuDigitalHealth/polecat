@@ -42,27 +42,13 @@ class FhirMedication extends Component {
   }
 
   componentWillMount() {
-    console.log('FhirMedication componentWillMount', this.props)
     this.parseResources(this.props)
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('FhirMedication componentWillReceiveProps', {
-      'this.props': this.props,
-      nextProps,
-    })
     if (!isEqual(this.props.resource, nextProps.resource)) {
       this.parseResources(nextProps)
     }
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    console.log('FhirMedication componentDidUpdate', {
-      prevProps,
-      prevState,
-      'this.props': this.props,
-      'this.state': this.state,
-    })
   }
 
   render() {

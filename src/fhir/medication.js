@@ -121,13 +121,6 @@ export const getRelatedResources = (
   requiredResourceTypes,
   initialRelatedResources = { concepts: [], relationships: [] }
 ) => {
-  console.log('getRelatedResources', {
-    parsed,
-    sourceConcept,
-    sourceType,
-    requiredResourceTypes,
-    initialRelatedResources,
-  })
   // Call the generator function and merge together the results into a single
   // object with all concepts and all relationships.
   const result = [
@@ -151,7 +144,6 @@ export const getRelatedResources = (
 }
 
 function * generateRelatedResources(node, sourceConcept, sourceType) {
-  console.log('generateRelatedResources', { node, sourceConcept, sourceType })
   // Handle root of Medication resource being passed in.
   if (node.resourceType === 'Medication' && node.extension) {
     yield * generateRelatedResources(node.extension, sourceConcept, sourceType)
@@ -183,7 +175,6 @@ function * generateRelatedResources(node, sourceConcept, sourceType) {
 }
 
 const getParentMedication = (node, sourceConcept, sourceType) => {
-  console.log('getParentMedication', { node, sourceConcept, sourceType })
   try {
     // Get the extension which provides the parent code itself.
     const parentMedication = node.find(extensionFilterFor('parentMedication'))
@@ -217,7 +208,6 @@ const getParentMedication = (node, sourceConcept, sourceType) => {
 }
 
 const getBrand = (node, sourceConcept, sourceType) => {
-  console.log('getBrand', { node, sourceConcept, sourceType })
   try {
     // Get the extension which provides the brand information.
     const brand = node.find(extensionFilterFor('brand'))
