@@ -5,6 +5,7 @@
   height: 100%;
   width: 100%;
   overflow: hidden;
+  background-color: #d3dfeb;
 }
 
 .product-model svg {
@@ -12,5 +13,5 @@
 }
 
 .product-model line {
-  stroke: black;
+  stroke: #666;
 }

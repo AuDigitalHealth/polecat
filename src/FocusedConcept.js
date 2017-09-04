@@ -16,15 +16,17 @@ class FocusedConcept extends Component {
           height: height + 'px',
         }}
       >
-        <div className='display'>
-          {display}
-        </div>
         <div className='sctid'>
           {sctid}
         </div>
-        <div className={`type type-${type}`.toLowerCase()}>
-          {type}
+        <div className='display'>
+          {display}
         </div>
+        {type
+          ? <div className={`type type-${type}`.toLowerCase()}>
+            {type}
+          </div>
+          : null}
       </div>
     )
   }

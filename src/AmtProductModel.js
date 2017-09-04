@@ -27,7 +27,7 @@ class AmtProductModel extends Component {
     width: 1000,
     height: 1000,
     attraction: -1000,
-    collideRadius: 100,
+    collideRadius: 110,
     linkDistance: 200,
     alpha: 1.5,
   }
@@ -53,7 +53,8 @@ class AmtProductModel extends Component {
     centerY
   ) {
     const model = this
-    model.simulation = (model.simulation || d3.forceSimulation()).nodes(nodes)
+    model.simulation = (model.simulation || d3.forceSimulation())
+      .nodes(cloneDeep(nodes))
     model.forceLink = (model.forceLink || d3.forceLink())
       .id(d => d.code)
       .distance(linkDistance)
@@ -76,7 +77,7 @@ class AmtProductModel extends Component {
           links: model.forceLink.links(),
         }))
       })
-      .alpha(1.5)
+      .alpha(alpha)
       .restart()
   }
 
@@ -142,7 +143,7 @@ class AmtProductModel extends Component {
     return true
   }
 
-  componentWillUpdate(nextProps, nextState) {
+  componentWillReceiveProps(nextProps) {
     const {
       nodes,
       links,
@@ -151,12 +152,32 @@ class AmtProductModel extends Component {
       linkDistance,
       alpha,
     } = nextProps
+    const { centerX, centerY } = this.state
+    if (!isEqual(this.props.nodes, nextProps.nodes)) {
+      this.updateSimulation(
+        nodes,
+        links,
+        attraction,
+        collideRadius,
+        linkDistance,
+        alpha,
+        centerX,
+        centerY
+      )
+    }
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    const {
+      nodes,
+      links,
+      attraction,
+      collideRadius,
+      linkDistance,
+      alpha,
+    } = this.props
     const { centerX, centerY } = nextState
-    if (
-      !isEqual(this.props, nextProps) ||
-      this.state.centerX !== centerX ||
-      this.state.centerY !== centerY
-    ) {
+    if (this.state.centerX !== centerX || this.state.centerY !== centerY) {
       this.updateSimulation(
         nodes,
         links,

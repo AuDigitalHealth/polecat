@@ -17,9 +17,6 @@ class Concept extends Component {
           height: height + 'px',
         }}
       >
-        <div className='display'>
-          {display}
-        </div>
         <div className='sctid'>
           {type !== 'TP'
             ? <Link to={`/Medication/${sctid}`}>
@@ -27,9 +24,14 @@ class Concept extends Component {
             </Link>
             : sctid}
         </div>
-        <div className={`type type-${type}`.toLowerCase()}>
-          {type}
+        <div className='display'>
+          {display}
         </div>
+        {type
+          ? <div className={`type type-${type}`.toLowerCase()}>
+            {type}
+          </div>
+          : null}
       </div>
     )
   }

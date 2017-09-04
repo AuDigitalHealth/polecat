@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getRelatedResources should return correct result for CTPP 21062011000036103 1`] = `
+exports[`getRelatedConcepts should return correct result for CTPP 21062011000036103 1`] = `
 Object {
   "concepts": Array [
     Object {
@@ -33,46 +33,97 @@ Object {
       "display": "esomeprazole 20 mg enteric tablet, 14",
       "type": "UPG",
     },
+    Object {
+      "code": "7489011000036101",
+      "display": "Klacid 500 mg film-coated tablet",
+    },
+    Object {
+      "code": "6140011000036103",
+      "display": "Amoxil 500 mg hard capsule",
+    },
+    Object {
+      "code": "7488011000036109",
+      "display": "Nexium 20 mg enteric tablet",
+    },
+    Object {
+      "code": "44134011000036100",
+      "display": "Klacid 500 mg film-coated tablet, 14, blister pack",
+    },
+    Object {
+      "code": "700027211000036107",
+      "display": "Amoxil 500 mg hard capsule, 28, blister pack",
+    },
+    Object {
+      "code": "700027201000036105",
+      "display": "Nexium 20 mg enteric tablet, 14, blister pack",
+    },
   ],
   "relationships": Array [
     Object {
-      "destination": "2941011000036107",
       "source": "21062011000036103",
+      "target": "2941011000036107",
       "type": "has-brand",
     },
     Object {
-      "destination": "14207011000036103",
       "source": "21062011000036103",
+      "target": "14207011000036103",
       "type": "is-a",
     },
     Object {
-      "destination": "28214011000036106",
       "source": "14207011000036103",
+      "target": "28214011000036106",
       "type": "is-a",
     },
     Object {
-      "destination": "46431011000036106",
       "source": "28214011000036106",
+      "target": "46431011000036106",
       "type": "unknown",
     },
     Object {
-      "destination": "700031841000036104",
       "source": "28214011000036106",
+      "target": "700031841000036104",
       "type": "unknown",
     },
     Object {
-      "destination": "700031831000036109",
       "source": "28214011000036106",
+      "target": "700031831000036109",
       "type": "unknown",
     },
-  ],
-  "resourcesStillNeeded": Array [
-    "BPSF",
+    Object {
+      "source": "21062011000036103",
+      "target": "7489011000036101",
+      "type": "contains",
+    },
+    Object {
+      "source": "21062011000036103",
+      "target": "6140011000036103",
+      "type": "contains",
+    },
+    Object {
+      "source": "21062011000036103",
+      "target": "7488011000036109",
+      "type": "contains",
+    },
+    Object {
+      "source": "21062011000036103",
+      "target": "44134011000036100",
+      "type": "contains",
+    },
+    Object {
+      "source": "21062011000036103",
+      "target": "700027211000036107",
+      "type": "contains",
+    },
+    Object {
+      "source": "21062011000036103",
+      "target": "700027201000036105",
+      "type": "contains",
+    },
   ],
 }
 `;
 
-exports[`getRelatedResources should return correct result for CTPP 61428011000036109 1`] = `
+exports[`getRelatedConcepts should return correct result for CTPP 61428011000036109 1`] = `
 Object {
   "concepts": Array [
     Object {
@@ -90,31 +141,37 @@ Object {
       "display": "paracetamol 500 mg tablet, 500",
       "type": "UPG",
     },
+    Object {
+      "code": "54282011000036105",
+      "display": "Paracetamol (Herron) 500 mg uncoated tablet",
+    },
   ],
   "relationships": Array [
     Object {
-      "destination": "53282011000036108",
       "source": "61428011000036109",
+      "target": "53282011000036108",
       "type": "has-brand",
     },
     Object {
-      "destination": "57353011000036105",
       "source": "61428011000036109",
+      "target": "57353011000036105",
       "type": "is-a",
     },
     Object {
-      "destination": "63954011000036107",
       "source": "57353011000036105",
+      "target": "63954011000036107",
       "type": "is-a",
     },
-  ],
-  "resourcesStillNeeded": Array [
-    "BPSF",
+    Object {
+      "source": "61428011000036109",
+      "target": "54282011000036105",
+      "type": "contains",
+    },
   ],
 }
 `;
 
-exports[`getResource should return correct result for CTPP 21062011000036103 1`] = `
+exports[`getSubjectConcept should return correct result for CTPP 21062011000036103 1`] = `
 Object {
   "code": "21062011000036103",
   "display": "Nexium Hp7 (14 x Nexium tablets, 28 x Amoxil capsules, 14 x Klacid tablets), 1 pack, composite pack",
@@ -122,7 +179,7 @@ Object {
 }
 `;
 
-exports[`getResource should return correct result for CTPP 61428011000036109 1`] = `
+exports[`getSubjectConcept should return correct result for CTPP 61428011000036109 1`] = `
 Object {
   "code": "61428011000036109",
   "display": "Paracetamol (Herron) 500 mg uncoated tablet, 500, bottle",

@@ -16,18 +16,20 @@ class RemoteFhirMedication extends Component {
 
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = { relatedResources: {} }
+    this.handleRequireRelatedResources = this.handleRequireRelatedResources.bind(
+      this
+    )
   }
 
-  updateResource(props) {
-    return this.getResource(props)
+  updateResource(fhirServer, path, query) {
+    return this.getSubjectConcept(fhirServer, path, query)
       .then(resource => this.setState({ resource }))
       .catch(error => this.handleError(error))
   }
 
-  async getResource(props) {
+  async getSubjectConcept(fhirServer, path, query) {
     try {
-      const { fhirServer, path, query } = props
       const response = await http.get(fhirServer + path + query, {
         headers: { Accept: 'application/fhir+json, application/json' },
       })
@@ -58,6 +60,21 @@ class RemoteFhirMedication extends Component {
     }
   }
 
+  handleRequireRelatedResources(ids) {
+    const { fhirServer } = this.props
+    for (const id of ids) {
+      if (typeof this.state.relatedResources[id] !== 'object') {
+        this.getSubjectConcept(
+          fhirServer,
+          `/Medication/${id}`,
+          ''
+        ).then(resource => {
+          this.setState(() => ({ relatedResources: { [id]: resource } }))
+        })
+      }
+    }
+  }
+
   handleError(error) {
     if (this.props.onError) {
       this.props.onError(error)
@@ -72,21 +89,25 @@ class RemoteFhirMedication extends Component {
   }
 
   componentWillMount() {
-    this.updateResource(this.props)
+    const { fhirServer, path, query } = this.props
+    this.updateResource(fhirServer, path, query)
   }
 
   componentWillReceiveProps(nextProps) {
-    this.updateResource(nextProps)
+    const { fhirServer, path, query } = nextProps
+    this.updateResource(fhirServer, path, query)
   }
 
   render() {
-    const { resource } = this.state
+    const { resource, relatedResources } = this.state
 
     return (
       <div className='remote-fhir-medication'>
         <FhirMedication
           resource={resource}
+          relatedResources={relatedResources}
           onLoad={this.handleLoad}
+          onRequireRelatedResources={this.handleRequireRelatedResources}
           onError={this.handleError}
         />
       </div>

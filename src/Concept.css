@@ -1,5 +1,5 @@
 .concept {
-  border: 1px solid black;
+  border: 1px solid #666;
   padding: 8px;
   border-radius: 6px;
   background-color: white;
@@ -19,6 +19,10 @@
   border-radius: 6px;
   padding: 4px 6px;
   color: white;
+}
+
+.concept .sctid {
+  margin-bottom: 3px;
 }
 
 .concept .type-ctpp {

@@ -12,6 +12,7 @@
     "lodash.map": "^4.6.0",
     "lodash.pick": "^4.4.0",
     "lodash.throttle": "^4.1.1",
+    "lodash.values": "^4.3.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-faux-dom": "^4.0.3",
