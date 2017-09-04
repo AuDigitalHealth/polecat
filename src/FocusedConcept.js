@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import './Concept.css'
+import './css/Concept.css'
 
 class FocusedConcept extends Component {
   render() {

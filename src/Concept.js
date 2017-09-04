@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import './Concept.css'
+import './css/Concept.css'
 
 class Concept extends Component {
   render() {

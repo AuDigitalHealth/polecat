@@ -35,7 +35,7 @@ class FhirMedication extends Component {
   ) {
     if (resource) {
       // Get concepts from the main resource.
-      const conceptsFromFocused = this.getConceptsForResource(resource)
+      const conceptsFromFocused = this.getConceptsForResource(resource, true)
       // Get concepts from each related resource, combine with the concepts from
       // the main resource and merge together.
       const allConceptsUnmerged = values(relatedResources).reduce(
@@ -61,9 +61,9 @@ class FhirMedication extends Component {
   }
 
   // Get an array of concepts for the supplied resource, unmerged.
-  getConceptsForResource(resource) {
+  getConceptsForResource(resource, setFocused = false) {
     const focused = getSubjectConcept(resource)
-    focused.focused = true
+    if (setFocused) focused.focused = true
     const result = getRelatedConcepts(resource, focused.code, focused.type)
     result.concepts.push(focused)
     return result
@@ -92,16 +92,18 @@ class FhirMedication extends Component {
   componentWillReceiveProps(nextProps) {
     const { resource, relatedResources } = nextProps
     const { concepts, relationships, additionalResourcesRequested } = this.state
+    const prevConcepts =
+      isEqual(this.props.resource, resource) && concepts && relationships
+        ? {
+          concepts: concepts.concat([]),
+          relationships: relationships.concat([]),
+        }
+        : emptyConcepts()
     if (!isEqual(this.props, nextProps)) {
       this.parseResources(
         resource,
         relatedResources,
-        concepts && relationships
-          ? {
-            concepts: concepts.concat([]),
-            relationships: relationships.concat([]),
-          }
-          : emptyConcepts(),
+        prevConcepts,
         additionalResourcesRequested
       )
     }

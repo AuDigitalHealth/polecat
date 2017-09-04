@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import http from 'axios'
 
 import FhirMedication from './FhirMedication.js'
+import Loading from './Loading.js'
 import Error from './Error.js'
 import { sniffFormat } from './fhir/restApi'
 import { opOutcomeFromJsonResponse } from './fhir/core.js'
@@ -23,14 +24,15 @@ class RemoteFhirMedication extends Component {
   }
 
   updateResource(fhirServer, path, query) {
+    this.setState(() => ({ status: 'loading' }))
     return this.getSubjectConcept(fhirServer, path, query)
-      .then(resource => this.setState({ resource }))
+      .then(resource => this.setState({ resource, status: 'loaded' }))
       .catch(error => this.handleError(error))
   }
 
   async getSubjectConcept(fhirServer, path, query) {
     try {
-      const response = await http.get(fhirServer + path + query, {
+      const response = await http.get(fhirServer + path + (query || ''), {
         headers: { Accept: 'application/fhir+json, application/json' },
       })
       sniffFormat(response.headers['content-type'])
@@ -66,8 +68,7 @@ class RemoteFhirMedication extends Component {
       if (typeof this.state.relatedResources[id] !== 'object') {
         this.getSubjectConcept(
           fhirServer,
-          `/Medication/${id}`,
-          ''
+          `/Medication/${id}`
         ).then(resource => {
           this.setState(() => ({ relatedResources: { [id]: resource } }))
         })
@@ -99,10 +100,11 @@ class RemoteFhirMedication extends Component {
   }
 
   render() {
-    const { resource, relatedResources } = this.state
+    const { resource, relatedResources, status } = this.state
 
     return (
       <div className='remote-fhir-medication'>
+        <Loading loading={status === 'loading'} />
         <FhirMedication
           resource={resource}
           relatedResources={relatedResources}

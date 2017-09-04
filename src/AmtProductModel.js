@@ -3,13 +3,12 @@ import PropTypes from 'prop-types'
 import * as d3 from 'd3'
 import cloneDeep from 'lodash.clonedeep'
 import isEqual from 'lodash.isequal'
-import throttle from 'lodash.throttle'
 
 import Concept from './Concept.js'
 import FocusedConcept from './FocusedConcept.js'
 import { amtConceptTypeFor } from './fhir/medication.js'
 
-import './AmtProductModel.css'
+import './css/AmtProductModel.css'
 
 class AmtProductModel extends Component {
   static propTypes = {
@@ -22,6 +21,8 @@ class AmtProductModel extends Component {
     attraction: PropTypes.number,
     collideRadius: PropTypes.number,
     linkDistance: PropTypes.number,
+    alpha: PropTypes.number,
+    alphaDecay: PropTypes.number,
   }
   static defaultProps = {
     width: 1000,
@@ -30,16 +31,16 @@ class AmtProductModel extends Component {
     collideRadius: 110,
     linkDistance: 200,
     alpha: 1.5,
+    alphaDecay: 0.1,
   }
 
   constructor(props) {
     super(props)
-    this.state = {
-      centerX: props.width / 2,
-      centerY: props.height / 2,
-    }
+    this.state = {}
     this.handleMouseUp = this.handleMouseUp.bind(this)
     this.handleMouseMove = this.handleMouseMove.bind(this)
+    this.handleWheel = this.handleWheel.bind(this)
+    this.handleDoubleClick = this.handleDoubleClick.bind(this)
   }
 
   updateSimulation(
@@ -49,6 +50,7 @@ class AmtProductModel extends Component {
     collideRadius,
     linkDistance,
     alpha,
+    alphaDecay,
     centerX,
     centerY
   ) {
@@ -64,8 +66,8 @@ class AmtProductModel extends Component {
     model.forceCollide = (model.forceCollide || d3.forceCollide())
       .radius(collideRadius)
     model.forceCenter = (model.forceCenter || d3.forceCenter())
-      .x(centerX)
-      .y(centerY)
+      .x(centerX || this.props.width / 2)
+      .y(centerY || this.props.height / 2)
     model.simulation = model.simulation
       .force('link', model.forceLink)
       .force('charge', model.forceManyBody)
@@ -78,7 +80,38 @@ class AmtProductModel extends Component {
         }))
       })
       .alpha(alpha)
+      .alphaDecay(alphaDecay)
       .restart()
+  }
+
+  moveSimulationCenter(deltaX, deltaY, newX, newY) {
+    const model = this
+    const forceCenter = model.simulation.force('center')
+    const nodes = model.simulation.nodes().map(node => ({
+      ...node,
+      x: node.x + deltaX,
+      y: node.y + deltaY,
+    }))
+    const {
+      links,
+      attraction,
+      collideRadius,
+      linkDistance,
+      alphaDecay,
+    } = this.props
+    const centerX = deltaX !== null ? forceCenter.x() + deltaX : newX
+    const centerY = deltaY !== null ? forceCenter.y() + deltaY : newY
+    this.updateSimulation(
+      nodes,
+      links,
+      attraction,
+      collideRadius,
+      linkDistance,
+      0,
+      alphaDecay,
+      centerX,
+      centerY
+    )
   }
 
   handleMouseUp(event) {
@@ -92,17 +125,14 @@ class AmtProductModel extends Component {
 
   handleMouseMove(event) {
     if (event.buttons === 1) {
-      const { lastDragX, lastDragY, centerX, centerY } = this.state
+      const { lastDragX, lastDragY } = this.state
       const clientX = event.clientX
       const clientY = event.clientY
       if (lastDragX && lastDragY) {
-        const deltaX = clientX - lastDragX
-        const deltaY = clientY - lastDragY
+        this.moveSimulationCenter(clientX - lastDragX, clientY - lastDragY)
         this.setState(() => ({
           lastDragX: clientX,
           lastDragY: clientY,
-          centerX: centerX + deltaX,
-          centerY: centerY + deltaY,
         }))
       } else {
         this.setState(() => ({
@@ -113,6 +143,19 @@ class AmtProductModel extends Component {
     }
   }
 
+  handleWheel(event) {
+    this.moveSimulationCenter(event.deltaX * -1, event.deltaY * -1)
+  }
+
+  handleDoubleClick(event) {
+    this.moveSimulationCenter(
+      null,
+      null,
+      this.props.width / 2,
+      this.props.height / 2
+    )
+  }
+
   componentDidMount() {
     const {
       nodes,
@@ -121,8 +164,8 @@ class AmtProductModel extends Component {
       collideRadius,
       linkDistance,
       alpha,
+      alphaDecay,
     } = this.props
-    const { centerX, centerY } = this.state
     if (nodes && links) {
       this.updateSimulation(
         nodes,
@@ -131,8 +174,7 @@ class AmtProductModel extends Component {
         collideRadius,
         linkDistance,
         alpha,
-        centerX,
-        centerY
+        alphaDecay
       )
     }
   }
@@ -151,8 +193,8 @@ class AmtProductModel extends Component {
       collideRadius,
       linkDistance,
       alpha,
+      alphaDecay,
     } = nextProps
-    const { centerX, centerY } = this.state
     if (!isEqual(this.props.nodes, nextProps.nodes)) {
       this.updateSimulation(
         nodes,
@@ -161,32 +203,7 @@ class AmtProductModel extends Component {
         collideRadius,
         linkDistance,
         alpha,
-        centerX,
-        centerY
-      )
-    }
-  }
-
-  componentWillUpdate(nextProps, nextState) {
-    const {
-      nodes,
-      links,
-      attraction,
-      collideRadius,
-      linkDistance,
-      alpha,
-    } = this.props
-    const { centerX, centerY } = nextState
-    if (this.state.centerX !== centerX || this.state.centerY !== centerY) {
-      this.updateSimulation(
-        nodes,
-        links,
-        attraction,
-        collideRadius,
-        linkDistance,
-        alpha,
-        centerX,
-        centerY
+        alphaDecay
       )
     }
   }
@@ -230,15 +247,15 @@ class AmtProductModel extends Component {
         />
       )
       : []
-    const handleMouseUp = throttle(this.handleMouseUp, 350)
     return (
-      <div className='product-model'>
+      <div className='product-model' onWheel={this.handleWheel}>
         <svg
           height='100%'
           width='100%'
           preserveAspectRatio='none'
           onMouseMove={this.handleMouseMove}
-          onMouseUp={handleMouseUp}
+          onMouseUp={this.handleMouseUp}
+          onDoubleClick={this.handleDoubleClick}
         >
           {relationships}
         </svg>
