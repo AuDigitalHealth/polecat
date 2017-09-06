@@ -97,6 +97,7 @@ class RemoteFhirMedication extends Component {
   componentWillReceiveProps(nextProps) {
     const { fhirServer, path, query } = nextProps
     this.updateResource(fhirServer, path, query)
+    this.setState(() => ({ relatedResources: {} }))
   }
 
   render() {

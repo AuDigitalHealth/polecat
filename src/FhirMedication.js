@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import isEqual from 'lodash.isequal'
 import values from 'lodash.values'
+import cloneDeep from 'lodash.clonedeep'
 
 import AmtProductModel from './AmtProductModel.js'
 import {
@@ -47,7 +48,7 @@ class FhirMedication extends Component {
       // set of concepts.
       const allConcepts = allConceptsUnmerged.reduce(
         mergeConcepts,
-        prevConcepts
+        cloneDeep(prevConcepts)
       )
       // Request additional resources of particular types found within the
       // original resource. Only do this once, don't recurse into related
@@ -92,13 +93,13 @@ class FhirMedication extends Component {
   componentWillReceiveProps(nextProps) {
     const { resource, relatedResources } = nextProps
     const { concepts, relationships, additionalResourcesRequested } = this.state
-    const prevConcepts =
-      isEqual(this.props.resource, resource) && concepts && relationships
-        ? {
-          concepts: concepts.concat([]),
-          relationships: relationships.concat([]),
-        }
-        : emptyConcepts()
+    let prevConcepts = emptyConcepts()
+    if (isEqual(this.props.resource, resource) && concepts && relationships) {
+      prevConcepts = {
+        concepts: concepts.concat([]),
+        relationships: relationships.concat([]),
+      }
+    }
     if (!isEqual(this.props, nextProps)) {
       this.parseResources(
         resource,

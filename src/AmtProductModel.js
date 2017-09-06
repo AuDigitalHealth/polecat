@@ -43,7 +43,7 @@ class AmtProductModel extends Component {
     this.handleDoubleClick = this.handleDoubleClick.bind(this)
   }
 
-  updateSimulation(
+  startOrUpdateSimulation(
     nodes,
     links,
     attraction,
@@ -101,13 +101,13 @@ class AmtProductModel extends Component {
     } = this.props
     const centerX = deltaX !== null ? forceCenter.x() + deltaX : newX
     const centerY = deltaY !== null ? forceCenter.y() + deltaY : newY
-    this.updateSimulation(
+    this.startOrUpdateSimulation(
       nodes,
       links,
       attraction,
       collideRadius,
       linkDistance,
-      0,
+      model.simulation.alpha(),
       alphaDecay,
       centerX,
       centerY
@@ -145,6 +145,7 @@ class AmtProductModel extends Component {
 
   handleWheel(event) {
     this.moveSimulationCenter(event.deltaX * -1, event.deltaY * -1)
+    event.preventDefault()
   }
 
   handleDoubleClick(event) {
@@ -167,7 +168,7 @@ class AmtProductModel extends Component {
       alphaDecay,
     } = this.props
     if (nodes && links) {
-      this.updateSimulation(
+      this.startOrUpdateSimulation(
         nodes,
         links,
         attraction,
@@ -196,7 +197,7 @@ class AmtProductModel extends Component {
       alphaDecay,
     } = nextProps
     if (!isEqual(this.props.nodes, nextProps.nodes)) {
-      this.updateSimulation(
+      this.startOrUpdateSimulation(
         nodes,
         links,
         attraction,

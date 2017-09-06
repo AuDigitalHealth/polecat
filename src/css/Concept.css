@@ -3,7 +3,7 @@
   padding: 8px;
   border-radius: 6px;
   background-color: white;
-  box-shadow: 5px 5px 50px 1px #ccc;
+  box-shadow: 5px 5px 50px 1px rgba(0, 0, 0, 0.1);
   font-size: 12px;
 }
 

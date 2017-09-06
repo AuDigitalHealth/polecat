@@ -335,4 +335,6 @@ const conceptHasCode = (concept, code) => concept.code === code
 const relationshipHasSourceTarget = (relationship, source, target) =>
   relationship.source === source && relationship.target === target
 
-export const emptyConcepts = () => ({ concepts: [], relationships: [] })
+export const emptyConcepts = () => {
+  return { concepts: [], relationships: [] }
+}
