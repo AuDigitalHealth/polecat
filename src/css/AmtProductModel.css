@@ -12,6 +12,6 @@
   cursor: pointer;
 }
 
-.product-model line {
+.product-model .relationship {
   stroke: #666;
 }

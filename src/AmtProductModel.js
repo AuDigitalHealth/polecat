@@ -238,15 +238,14 @@ class AmtProductModel extends Component {
       )
       : []
     const relationships = links
-      ? links.map((link, i) =>
-        <line
-          key={i}
-          x1={link.source.x + 75}
-          x2={link.target.x + 75}
-          y1={link.source.y + 50}
-          y2={link.target.y + 50}
-        />
-      )
+      ? links.map((link, i) => {
+        const x1 = link.source.x + 75
+        const x2 = link.target.x + 75
+        const y1 = link.source.y + 50
+        const y2 = link.target.y + 50
+        const commands = `M ${x1} ${y1} L${x2} ${y2}`
+        return <path className='relationship' key={i} d={commands} />
+      })
       : []
     return (
       <div className='product-model' onWheel={this.handleWheel}>
