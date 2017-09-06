@@ -70,7 +70,9 @@ class RemoteFhirMedication extends Component {
           fhirServer,
           `/Medication/${id}`
         ).then(resource => {
-          this.setState(() => ({ relatedResources: { [id]: resource } }))
+          this.setState(() => ({
+            relatedResources: { ...this.state.relatedResources, [id]: resource },
+          }))
         })
       }
     }

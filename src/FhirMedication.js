@@ -92,20 +92,27 @@ class FhirMedication extends Component {
 
   componentWillReceiveProps(nextProps) {
     const { resource, relatedResources } = nextProps
-    const { concepts, relationships, additionalResourcesRequested } = this.state
-    let prevConcepts = emptyConcepts()
-    if (isEqual(this.props.resource, resource) && concepts && relationships) {
-      prevConcepts = {
-        concepts: concepts.concat([]),
-        relationships: relationships.concat([]),
-      }
-    }
-    if (!isEqual(this.props, nextProps)) {
+    const { concepts, relationships } = this.state
+    // If the primary resource has changed, start with a empty set of concepts
+    // and relationships, and reset the flag for requesting additional
+    // resources.
+    if (!isEqual(this.props.resource, resource)) {
+      this.parseResources(resource, relatedResources, emptyConcepts(), false)
+      // If only related resources are changing, preserve the set of concepts and
+      // relationships. Additional resources will not be requested.
+    } else if (
+      !isEqual(this.props.relatedResources, relatedResources) &&
+      concepts &&
+      relationships
+    ) {
       this.parseResources(
         resource,
         relatedResources,
-        prevConcepts,
-        additionalResourcesRequested
+        {
+          concepts: concepts.concat([]),
+          relationships: relationships.concat([]),
+        },
+        this.state.additionalResourcesRequested
       )
     }
   }
