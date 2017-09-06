@@ -1,5 +1,5 @@
 localhost:3100
 cache
-header / Cache-Control "max-age=600"
+header / Cache-Control "max-age=31540000"
 proxy / medserve.online:80
 cors

@@ -114,6 +114,40 @@ class AmtProductModel extends Component {
     )
   }
 
+  curveForLink(link) {
+    const conceptWidth = 150
+    const conceptHeight = 100
+    const curviness = 150
+    const x1 = link.source.x + conceptWidth / 2
+    const x2 = link.target.x + conceptWidth / 2
+    const y1 = link.source.y + conceptHeight / 2
+    const y2 = link.target.y + conceptHeight / 2
+    const adj = x2 - x1
+    const opp = y2 - y1
+    const adjU = adj < 0 ? -adj : adj
+    const oppU = opp < 0 ? -opp : opp
+    const angle = Math.atan(oppU / adjU)
+    const ang1 = angle + 15 * (Math.PI / 180)
+    const ang2 = angle + 15 * (Math.PI / 180)
+    const cp1x =
+      adj > 0
+        ? x1 + Math.cos(ang1) * curviness
+        : x1 - Math.cos(ang1) * curviness
+    const cp1y =
+      opp > 0
+        ? y1 + Math.sin(ang1) * curviness
+        : y1 - Math.sin(ang1) * curviness
+    const cp2x =
+      adj > 0
+        ? x2 - Math.cos(ang2) * curviness
+        : x2 + Math.cos(ang2) * curviness
+    const cp2y =
+      opp > 0
+        ? y2 - Math.sin(ang2) * curviness
+        : y2 + Math.sin(ang2) * curviness
+    return `M ${x1} ${y1} C ${cp1x} ${cp1y} ${cp2x} ${cp2y} ${x2} ${y2}`
+  }
+
   handleMouseUp(event) {
     if (event.buttons === 0) {
       const { lastDragX, lastDragY } = this.state
@@ -239,12 +273,13 @@ class AmtProductModel extends Component {
       : []
     const relationships = links
       ? links.map((link, i) => {
-        const x1 = link.source.x + 75
-        const x2 = link.target.x + 75
-        const y1 = link.source.y + 50
-        const y2 = link.target.y + 50
-        const commands = `M ${x1} ${y1} L${x2} ${y2}`
-        return <path className='relationship' key={i} d={commands} />
+        return (
+          <path
+            className='relationship'
+            key={i}
+            d={this.curveForLink(link)}
+          />
+        )
       })
       : []
     return (
