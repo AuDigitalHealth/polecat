@@ -1,0 +1,226 @@
+{
+  "resourceType": "Medication",
+  "id": "933216161000036101",
+  "meta": {
+    "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial</p></div>"
+  },
+  "extension": [
+    {
+      "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+      "extension": [
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+          "valueReference": {
+            "reference": "Medication/933205801000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial"
+          }
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+          "valueCoding": {
+            "system": "http://hl7.org/fhir/medication_type",
+            "code": "BPG",
+            "display": "Branded package with no container"
+          }
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+          "extension": [
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+              "valueReference": {
+                "reference": "Medication/933205811000036100",
+                "display": "polyvalent Australian snake antivenom injection, 1 vial"
+              }
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/medication_type",
+                "code": "UPG",
+                "display": "Unbranded package with no container"
+              }
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "extension": [
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "valueReference": {
+                    "reference": "Medication/75498011000036101",
+                    "display": "death adder antivenom 6000 units injection, 1 vial"
+                  }
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "UPG",
+                    "display": "Unbranded package with no container"
+                  }
+                }
+              ]
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "extension": [
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "valueReference": {
+                    "reference": "Medication/75497011000036102",
+                    "display": "tiger snake antivenom 3000 units injection, 1 vial"
+                  }
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "UPG",
+                    "display": "Unbranded package with no container"
+                  }
+                }
+              ]
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "extension": [
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "valueReference": {
+                    "reference": "Medication/75500011000036108",
+                    "display": "taipan snake antivenom 12 000 units injection, 1 vial"
+                  }
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "UPG",
+                    "display": "Unbranded package with no container"
+                  }
+                }
+              ]
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "extension": [
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "valueReference": {
+                    "reference": "Medication/75496011000036100",
+                    "display": "king brown snake antivenom 18 000 units injection, 1 vial"
+                  }
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "UPG",
+                    "display": "Unbranded package with no container"
+                  }
+                }
+              ]
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "extension": [
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "valueReference": {
+                    "reference": "Medication/75499011000036109",
+                    "display": "brown snake antivenom 1000 units injection, 1 vial"
+                  }
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "UPG",
+                    "display": "Unbranded package with no container"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+      "valueCoding": {
+        "system": "http://hl7.org/fhir/medication_type",
+        "code": "BPGC",
+        "display": "Branded package with container"
+      }
+    },
+    {
+      "url": "http://medserve.online/fhir/StructureDefinition/brand",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "22131000168107",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+      "extension": [
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+          "valueUri": "http://snomed.info/sct"
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+          "valueString": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170430"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "933216161000036101",
+        "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial"
+      },
+      {
+        "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+        "code": "74899"
+      }
+    ]
+  },
+  "status": "active",
+  "isBrand": true,
+  "package": {
+    "container": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "307011000036101",
+          "display": "vial"
+        }
+      ]
+    },
+    "content": [
+      {
+        "itemReference": {
+          "reference": "Medication/933196831000036102",
+          "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial"
+        },
+        "amount": {
+          "value": 1,
+          "unit": "vial",
+          "system": "http://snomed.info/sct",
+          "code": "74011000036100"
+        }
+      }
+    ]
+  }
+}

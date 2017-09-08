@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import RemoteFhirMedication from './RemoteFhirMedication.js'
+import Search from './Search.js'
 
 class App extends Component {
   static propTypes = {
@@ -29,18 +30,20 @@ class App extends Component {
               <Route
                 path='/:path'
                 render={({ location }) =>
-                  <RemoteFhirMedication
-                    path={location.pathname}
-                    query={location.search}
-                    {...config}
-                  />}
+                  <div className='medication-result'>
+                    <Search fhirServer={config.fhirServer} />
+                    <RemoteFhirMedication
+                      path={location.pathname}
+                      query={location.search}
+                      {...config}
+                    />
+                  </div>}
               />
               <Route
                 render={() =>
-                  <p>
-                    Please provide a path to a valid FHIR resource within the
-                    URL.
-                  </p>}
+                  <div className='no-result'>
+                    <Search />
+                  </div>}
               />
             </Switch>
           </Router>

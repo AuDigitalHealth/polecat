@@ -6,6 +6,7 @@
   width: 100%;
   overflow: hidden;
   background-color: #d3dfeb;
+  z-index: -1;
 }
 
 .product-model svg {
