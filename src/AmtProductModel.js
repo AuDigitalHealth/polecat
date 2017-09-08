@@ -118,6 +118,10 @@ class AmtProductModel extends Component {
     const conceptWidth = 150
     const conceptHeight = 100
     const curviness = 150
+    const maxCurveAngle = 30
+    const rightAngle = Math.PI / 2
+    const eighth = Math.PI / 4
+    const radiansInDegree = Math.PI / 180
     const x1 = link.source.x + conceptWidth / 2
     const x2 = link.target.x + conceptWidth / 2
     const y1 = link.source.y + conceptHeight / 2
@@ -127,24 +131,29 @@ class AmtProductModel extends Component {
     const adjU = adj < 0 ? -adj : adj
     const oppU = opp < 0 ? -opp : opp
     const angle = Math.atan(oppU / adjU)
-    const ang1 = angle + 15 * (Math.PI / 180)
-    const ang2 = angle + 15 * (Math.PI / 180)
+    const maxCurveRadians = maxCurveAngle * radiansInDegree
+    const shareOfRightAngle = angle / rightAngle
+    const curveAngleIncrement =
+      angle > eighth
+        ? maxCurveRadians * (1 - shareOfRightAngle)
+        : maxCurveRadians * shareOfRightAngle
+    const curveAngle = angle + curveAngleIncrement
     const cp1x =
       adj > 0
-        ? x1 + Math.cos(ang1) * curviness
-        : x1 - Math.cos(ang1) * curviness
+        ? x1 + Math.cos(curveAngle) * curviness
+        : x1 - Math.cos(curveAngle) * curviness
     const cp1y =
       opp > 0
-        ? y1 + Math.sin(ang1) * curviness
-        : y1 - Math.sin(ang1) * curviness
+        ? y1 + Math.sin(curveAngle) * curviness
+        : y1 - Math.sin(curveAngle) * curviness
     const cp2x =
       adj > 0
-        ? x2 - Math.cos(ang2) * curviness
-        : x2 + Math.cos(ang2) * curviness
+        ? x2 - Math.cos(curveAngle) * curviness
+        : x2 + Math.cos(curveAngle) * curviness
     const cp2y =
       opp > 0
-        ? y2 - Math.sin(ang2) * curviness
-        : y2 + Math.sin(ang2) * curviness
+        ? y2 - Math.sin(curveAngle) * curviness
+        : y2 + Math.sin(curveAngle) * curviness
     return `M ${x1} ${y1} C ${cp1x} ${cp1y} ${cp2x} ${cp2y} ${x2} ${y2}`
   }
 
