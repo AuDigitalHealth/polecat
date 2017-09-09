@@ -5,7 +5,8 @@ import {
 } from './medication.js'
 
 export const translateToAmt = concepts => {
-  return resolveTP(concepts)
+  const tpsResolved = resolveTP(concepts)
+  return resolveTPUU(tpsResolved)
 }
 
 const resolveTP = concepts => {
@@ -38,6 +39,42 @@ const resolveTP = concepts => {
       }
       newRelationships = newRelationships.filter(
         r => !relationshipMatchesIds(r, ctpp, tp)
+      )
+    }
+  })
+  return { ...concepts, relationships: newRelationships }
+}
+
+const resolveTPUU = concepts => {
+  let newRelationships = concepts.relationships
+  const ctppTpuus = concepts.relationships.filter(r =>
+    relationshipMatchesTypes(r, 'CTPP', 'TPUU', concepts.concepts)
+  )
+  ctppTpuus.forEach(ctppTpuu => {
+    const ctpp = ctppTpuu.source
+    const ctppTpp = concepts.relationships.find(r =>
+      relationshipMatchesIdAndType(r, ctpp, 'TPP', concepts.concepts)
+    )
+    if (ctppTpp) {
+      const tpp = ctppTpp.target
+      const tpuu = ctppTpuu.target
+      const tppTpuu = concepts.relationships.find(r =>
+        relationshipMatchesIds(r, tpp, tpuu)
+      )
+      if (!tppTpuu) {
+        newRelationships = newRelationships.concat([
+          {
+            source: tpp,
+            target: tpuu,
+            type: relationshipTypeFor(
+              fhirMedicationTypeFor('TPP'),
+              fhirMedicationTypeFor('TPUU')
+            ),
+          },
+        ])
+      }
+      newRelationships = newRelationships.filter(
+        r => !relationshipMatchesIds(r, ctpp, tpuu)
       )
     }
   })
