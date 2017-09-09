@@ -7,6 +7,7 @@ import isEqual from 'lodash.isequal'
 import Concept from './Concept.js'
 import FocusedConcept from './FocusedConcept.js'
 import { amtConceptTypeFor } from './fhir/medication.js'
+import { translateToAmt } from './fhir/translations.js'
 
 import './css/AmtProductModel.css'
 
@@ -101,11 +102,15 @@ class AmtProductModel extends Component {
       linkDistance,
       alphaDecay,
     } = this.props
+    const { relationships: translatedLinks } = translateToAmt({
+      concepts: nodes,
+      relationships: links,
+    })
     const centerX = deltaX !== null ? forceCenter.x() + deltaX : newX
     const centerY = deltaY !== null ? forceCenter.y() + deltaY : newY
     this.startOrUpdateSimulation(
       nodes,
-      links,
+      translatedLinks,
       attraction,
       collideRadius,
       linkDistance,
@@ -211,9 +216,13 @@ class AmtProductModel extends Component {
       alphaDecay,
     } = this.props
     if (nodes && links) {
+      const { relationships: translatedLinks } = translateToAmt({
+        concepts: nodes,
+        relationships: links,
+      })
       this.startOrUpdateSimulation(
         nodes,
-        links,
+        translatedLinks,
         attraction,
         collideRadius,
         linkDistance,
@@ -231,8 +240,6 @@ class AmtProductModel extends Component {
 
   componentWillReceiveProps(nextProps) {
     const {
-      nodes,
-      links,
       attraction,
       collideRadius,
       linkDistance,
@@ -240,6 +247,10 @@ class AmtProductModel extends Component {
       alphaDecay,
       viewport: { width, height },
     } = nextProps
+    const { concepts: nodes, relationships: links } = translateToAmt({
+      concepts: nextProps.nodes,
+      relationships: nextProps.links,
+    })
     if (!isEqual(this.props.nodes, nextProps.nodes)) {
       this.startOrUpdateSimulation(
         nodes,

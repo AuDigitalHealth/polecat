@@ -1,3 +1,5 @@
+import invert from 'lodash.invert'
+
 // Get `{ code, display, type }` for the subject concept of a Medication
 // resource.
 export const getSubjectConcept = parsed => {
@@ -225,7 +227,7 @@ const extensionFilterFor = key =>
   }[key])
 
 // Relationship types for different combinations of concept types.
-const relationshipTypeFor = (sourceType, targetType) => {
+export const relationshipTypeFor = (sourceType, targetType) => {
   switch (`${sourceType}-${targetType}`) {
     // CTPP -> TPP
     // Branded package with container -> Branded package with no container
@@ -287,17 +289,23 @@ export const resourceRequirementsFor = sourceType =>
     UPD: [],
   }[sourceType])
 
+const fhirToAmtTypes = {
+  BPGC: 'CTPP',
+  BPG: 'TPP',
+  BPSF: 'TPUU',
+  brand: 'TP',
+  UPG: 'MPP',
+  UPDSF: 'MPUU',
+  UPD: 'MP',
+}
+
+const amtToFhirTypes = invert(fhirToAmtTypes)
+
 // Mapping from FHIR Medication type to AMT concept type.
-export const amtConceptTypeFor = fhirType =>
-  ({
-    BPGC: 'CTPP',
-    BPG: 'TPP',
-    BPSF: 'TPUU',
-    brand: 'TP',
-    UPG: 'MPP',
-    UPDSF: 'MPUU',
-    UPD: 'MP',
-  }[fhirType])
+export const amtConceptTypeFor = fhirType => fhirToAmtTypes[fhirType]
+
+// Mapping from AMT concept type to FHIR Medication type.
+export const fhirMedicationTypeFor = amtType => amtToFhirTypes[amtType]
 
 // Conversion from `Medication/[code]` to code.
 const referenceToCode = reference => reference.split('/').slice(-1)[0]
