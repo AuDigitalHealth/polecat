@@ -76,6 +76,7 @@ class AmtProductModel extends Component {
       .force('charge', model.forceManyBody)
       .force('collide', model.forceCollide)
       .force('center', model.forceCenter)
+      .force('gravity', gravity(model.simulation.nodes()))
       .on('tick', function() {
         model.setState(() => ({
           nodes: model.simulation.nodes(),
@@ -324,6 +325,22 @@ class AmtProductModel extends Component {
       </div>
     )
   }
+}
+
+function gravity() {
+  let nodes
+  const force = alpha => {
+    nodes.forEach(node => {
+      if (node.type === 'UPD') node.vy -= 30 * alpha
+      if (node.type === 'BPSF' || node.type === 'UPDSF') node.vy -= 15 * alpha
+      if (node.type === 'BPG' || node.type === 'UPG') node.vy += 15 * alpha
+      if (node.type === 'BPGC') node.vy += 30 * alpha
+    })
+  }
+
+  force.initialize = _ => (nodes = _)
+
+  return force
 }
 
 export default AmtProductModel
