@@ -13,6 +13,7 @@ class RemoteFhirMedication extends Component {
     path: PropTypes.string.isRequired,
     query: PropTypes.string.isRequired,
     fhirServer: PropTypes.string.isRequired,
+    viewport: PropTypes.object.isRequired,
   }
 
   constructor(props) {
@@ -103,6 +104,7 @@ class RemoteFhirMedication extends Component {
   }
 
   render() {
+    const { viewport } = this.props
     const { resource, relatedResources, status } = this.state
 
     return (
@@ -111,6 +113,7 @@ class RemoteFhirMedication extends Component {
         <FhirMedication
           resource={resource}
           relatedResources={relatedResources}
+          viewport={viewport}
           onLoad={this.handleLoad}
           onRequireRelatedResources={this.handleRequireRelatedResources}
           onError={this.handleError}

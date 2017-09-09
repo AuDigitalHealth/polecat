@@ -20,8 +20,9 @@ class Search extends Component {
   constructor(props) {
     super(props)
     this.state = { results: null }
-    this.handleQueryUpdate = throttle(
-      this.handleQueryUpdate.bind(this),
+    this.handleQueryUpdate = this.handleQueryUpdate.bind(this)
+    this.throttledQueryUpdate = throttle(
+      this.throttledQueryUpdate.bind(this),
       this.props.minRequestFrequency
     )
     this.handleSelectResult = this.handleSelectResult.bind(this)
@@ -47,19 +48,19 @@ class Search extends Component {
   }
 
   handleQueryUpdate(query) {
-    const { fhirServer } = this.props
     if (query) {
-      this.setState(
-        () => this.setState({ query }),
-        () =>
-          this.getSearchResults(fhirServer, query)
-            .then(resource => this.parseSearchResults(resource))
-            .then(results => this.setState(() => ({ results })))
-            .catch(error => console.error(error))
-      )
+      this.setState(() => ({ query }), () => this.throttledQueryUpdate(query))
     } else {
       this.setState({ results: null })
     }
+  }
+
+  throttledQueryUpdate(query) {
+    const { fhirServer } = this.props
+    this.getSearchResults(fhirServer, query)
+      .then(resource => this.parseSearchResults(resource))
+      .then(results => this.setState(() => ({ results })))
+      .catch(error => console.error(error))
   }
 
   handleSelectResult() {
@@ -77,7 +78,6 @@ class Search extends Component {
 
   render() {
     const { query, results } = this.state
-    console.log('Search render', { query, results })
     return (
       <div className='search'>
         <TextField

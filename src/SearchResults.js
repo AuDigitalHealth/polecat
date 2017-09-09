@@ -50,7 +50,6 @@ class SearchResults extends Component {
 
   render() {
     const { query, results } = this.props
-    console.log('SearchResults render', { query, results })
     return (
       <div className='search-results'>
         {results && results.length === 0

@@ -29,7 +29,7 @@ class TextField extends Component {
     )
   }
 
-  componentDidReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
     this.setState(() => ({ value: nextProps.value }))
   }
 
@@ -43,7 +43,6 @@ class TextField extends Component {
       value: value || '',
       onChange: this.handleChange,
     }
-    console.log('TextField render', { props })
     return (
       <div className='text-field'>
         <input {...props} />

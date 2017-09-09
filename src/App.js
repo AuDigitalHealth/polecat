@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import throttle from 'lodash.throttle'
 
 import RemoteFhirMedication from './RemoteFhirMedication.js'
 import Search from './Search.js'
@@ -16,12 +17,25 @@ class App extends Component {
 
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      viewport: { width: window.innerWidth, height: window.innerHeight },
+    }
+    this.handleWindowResize = throttle(this.handleWindowResize.bind(this), 350)
+  }
+
+  handleWindowResize() {
+    this.setState(() => ({
+      viewport: { width: window.innerWidth, height: window.innerHeight },
+    }))
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.handleWindowResize)
   }
 
   render() {
     const { config } = this.props
-
+    const { viewport } = this.state
     return (
       <div className='app'>
         <main>
@@ -35,6 +49,7 @@ class App extends Component {
                     <RemoteFhirMedication
                       path={location.pathname}
                       query={location.search}
+                      viewport={viewport}
                       {...config}
                     />
                   </div>}
@@ -42,7 +57,7 @@ class App extends Component {
               <Route
                 render={() =>
                   <div className='no-result'>
-                    <Search />
+                    <Search fhirServer={config.fhirServer} />
                   </div>}
               />
             </Switch>

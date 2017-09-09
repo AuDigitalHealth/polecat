@@ -17,6 +17,7 @@ class FhirMedication extends Component {
   static propTypes = {
     resource: PropTypes.object,
     relatedResources: PropTypes.object,
+    viewport: PropTypes.object.isRequired,
     onRequireRelatedResources: PropTypes.func,
   }
   static defaultProps = {
@@ -118,8 +119,15 @@ class FhirMedication extends Component {
   }
 
   render() {
+    const { viewport } = this.props
     const { concepts, relationships } = this.state
-    return <AmtProductModel nodes={concepts} links={relationships} />
+    return (
+      <AmtProductModel
+        nodes={concepts}
+        links={relationships}
+        viewport={viewport}
+      />
+    )
   }
 }
 

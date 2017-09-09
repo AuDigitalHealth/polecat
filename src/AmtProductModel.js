@@ -23,10 +23,12 @@ class AmtProductModel extends Component {
     linkDistance: PropTypes.number,
     alpha: PropTypes.number,
     alphaDecay: PropTypes.number,
+    viewport: PropTypes.shape({
+      width: PropTypes.number,
+      height: PropTypes.number,
+    }).isRequired,
   }
   static defaultProps = {
-    width: 1000,
-    height: 1000,
     attraction: -1000,
     collideRadius: 110,
     linkDistance: 200,
@@ -66,8 +68,8 @@ class AmtProductModel extends Component {
     model.forceCollide = (model.forceCollide || d3.forceCollide())
       .radius(collideRadius)
     model.forceCenter = (model.forceCenter || d3.forceCenter())
-      .x(centerX || this.props.width / 2)
-      .y(centerY || this.props.height / 2)
+      .x(centerX || this.props.viewport.width / 2)
+      .y(centerY || this.props.viewport.height / 2)
     model.simulation = model.simulation
       .force('link', model.forceLink)
       .force('charge', model.forceManyBody)
@@ -115,17 +117,15 @@ class AmtProductModel extends Component {
   }
 
   curveForLink(link) {
-    const conceptWidth = 150
-    const conceptHeight = 100
     const curviness = 150
     const maxCurveAngle = 30
     const rightAngle = Math.PI / 2
     const eighth = Math.PI / 4
     const radiansInDegree = Math.PI / 180
-    const x1 = link.source.x + conceptWidth / 2
-    const x2 = link.target.x + conceptWidth / 2
-    const y1 = link.source.y + conceptHeight / 2
-    const y2 = link.target.y + conceptHeight / 2
+    const x1 = link.source.x
+    const x2 = link.target.x
+    const y1 = link.source.y
+    const y2 = link.target.y
     const adj = x2 - x1
     const opp = y2 - y1
     const adjU = adj < 0 ? -adj : adj
@@ -195,8 +195,8 @@ class AmtProductModel extends Component {
     this.moveSimulationCenter(
       null,
       null,
-      this.props.width / 2,
-      this.props.height / 2
+      this.props.viewport.width / 2,
+      this.props.viewport.height / 2
     )
   }
 
@@ -238,6 +238,7 @@ class AmtProductModel extends Component {
       linkDistance,
       alpha,
       alphaDecay,
+      viewport: { width, height },
     } = nextProps
     if (!isEqual(this.props.nodes, nextProps.nodes)) {
       this.startOrUpdateSimulation(
@@ -250,9 +251,14 @@ class AmtProductModel extends Component {
         alphaDecay
       )
     }
+    if (!isEqual(this.props.viewport, nextProps.viewport)) {
+      this.moveSimulationCenter(null, null, width / 2, height / 2)
+    }
   }
 
   render() {
+    const conceptWidth = 150
+    const conceptHeight = 100
     const { nodes, links } = this.state
     const concepts = nodes
       ? nodes.map(
@@ -263,8 +269,8 @@ class AmtProductModel extends Component {
               sctid={node.code}
               display={node.display}
               type={amtConceptTypeFor(node.type)}
-              top={node.y}
-              left={node.x}
+              top={node.y - conceptHeight / 2}
+              left={node.x - conceptWidth / 2}
               width={150}
               height={100}
             />
@@ -273,8 +279,8 @@ class AmtProductModel extends Component {
               sctid={node.code}
               display={node.display}
               type={amtConceptTypeFor(node.type)}
-              top={node.y}
-              left={node.x}
+              top={node.y - conceptHeight / 2}
+              left={node.x - conceptWidth / 2}
               width={150}
               height={100}
             />
