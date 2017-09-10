@@ -35,6 +35,8 @@ class AmtProductModel extends Component {
     linkDistance: 200,
     alpha: 1.5,
     alphaDecay: 0.1,
+    conceptWidth: 166,
+    conceptHeight: 116,
   }
 
   constructor(props) {
@@ -76,7 +78,6 @@ class AmtProductModel extends Component {
       .force('charge', model.forceManyBody)
       .force('collide', model.forceCollide)
       .force('center', model.forceCenter)
-      .force('gravity', gravity(model.simulation.nodes()))
       .on('tick', function() {
         model.setState(() => ({
           nodes: model.simulation.nodes(),
@@ -122,7 +123,8 @@ class AmtProductModel extends Component {
     )
   }
 
-  curveForLink(link) {
+  curveForLink(link, i) {
+    const { conceptWidth, conceptHeight } = this.props
     const curviness = 150
     const maxCurveAngle = 30
     const rightAngle = Math.PI / 2
@@ -137,6 +139,18 @@ class AmtProductModel extends Component {
     const adjU = adj < 0 ? -adj : adj
     const oppU = opp < 0 ? -opp : opp
     const angle = Math.atan(oppU / adjU)
+    const horizDistCenter = conceptWidth / 2
+    const vertDistCenter = conceptHeight / 2
+    const deltaX =
+      angle < eighth
+        ? horizDistCenter
+        : Math.tan(rightAngle - angle) * vertDistCenter
+    const deltaY =
+      angle < eighth ? Math.tan(angle) * vertDistCenter : vertDistCenter
+    const startX = adj > 0 ? x1 + deltaX : x1 - deltaX
+    const startY = opp > 0 ? y1 + deltaY : y1 - deltaY
+    const endX = adj > 0 ? x2 - deltaX : x2 + deltaX
+    const endY = opp > 0 ? y2 - deltaY : y2 + deltaY
     const maxCurveRadians = maxCurveAngle * radiansInDegree
     const shareOfRightAngle = angle / rightAngle
     const curveAngleIncrement =
@@ -160,7 +174,13 @@ class AmtProductModel extends Component {
       opp > 0
         ? y2 - Math.sin(curveAngle) * curviness
         : y2 + Math.sin(curveAngle) * curviness
-    return `M ${x1} ${y1} C ${cp1x} ${cp1y} ${cp2x} ${cp2y} ${x2} ${y2}`
+    const curve = `M ${startX} ${startY} C ${cp1x} ${cp1y} ${cp2x} ${cp2y} ${endX} ${endY}`
+    return (
+      <g>
+        <path className='relationship' key={i} d={curve} />
+        <circle r='5' cx={endX} cy={endY} fill='black' />
+      </g>
+    )
   }
 
   handleMouseUp(event) {
@@ -269,8 +289,7 @@ class AmtProductModel extends Component {
   }
 
   render() {
-    const conceptWidth = 150
-    const conceptHeight = 100
+    const { conceptWidth, conceptHeight } = this.props
     const { nodes, links } = this.state
     const concepts = nodes
       ? nodes.map(
@@ -283,8 +302,8 @@ class AmtProductModel extends Component {
               type={amtConceptTypeFor(node.type)}
               top={node.y - conceptHeight / 2}
               left={node.x - conceptWidth / 2}
-              width={150}
-              height={100}
+              width={conceptWidth}
+              height={conceptHeight}
             />
             : <Concept
               key={i}
@@ -293,21 +312,13 @@ class AmtProductModel extends Component {
               type={amtConceptTypeFor(node.type)}
               top={node.y - conceptHeight / 2}
               left={node.x - conceptWidth / 2}
-              width={150}
-              height={100}
+              width={conceptWidth}
+              height={conceptHeight}
             />
       )
       : []
     const relationships = links
-      ? links.map((link, i) => {
-        return (
-          <path
-            className='relationship'
-            key={i}
-            d={this.curveForLink(link)}
-          />
-        )
-      })
+      ? links.map((link, i) => this.curveForLink(link, i))
       : []
     return (
       <div className='product-model' onWheel={this.handleWheel}>
@@ -325,22 +336,6 @@ class AmtProductModel extends Component {
       </div>
     )
   }
-}
-
-function gravity() {
-  let nodes
-  const force = alpha => {
-    nodes.forEach(node => {
-      if (node.type === 'UPD') node.vy -= 30 * alpha
-      if (node.type === 'BPSF' || node.type === 'UPDSF') node.vy -= 15 * alpha
-      if (node.type === 'BPG' || node.type === 'UPG') node.vy += 15 * alpha
-      if (node.type === 'BPGC') node.vy += 30 * alpha
-    })
-  }
-
-  force.initialize = _ => (nodes = _)
-
-  return force
 }
 
 export default AmtProductModel
