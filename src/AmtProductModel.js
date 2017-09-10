@@ -125,7 +125,7 @@ class AmtProductModel extends Component {
 
   curveForLink(link, i) {
     const { conceptWidth, conceptHeight } = this.props
-    const curviness = 150
+    const curviness = 0.5
     const maxCurveAngle = 30
     const rightAngle = Math.PI / 2
     const eighth = Math.PI / 4
@@ -151,6 +151,11 @@ class AmtProductModel extends Component {
     const startY = opp > 0 ? y1 + deltaY : y1 - deltaY
     const endX = adj > 0 ? x2 - deltaX : x2 + deltaX
     const endY = opp > 0 ? y2 - deltaY : y2 + deltaY
+    const linkAdjU = Math.abs(endX - startX)
+    const linkOppU = Math.abs(endY - startY)
+    const linkAngle = Math.atan(linkOppU / linkAdjU)
+    const linkLength = linkOppU / Math.sin(linkAngle)
+    const cpLength = linkLength * curviness
     const maxCurveRadians = maxCurveAngle * radiansInDegree
     const shareOfRightAngle = angle / rightAngle
     const curveAngleIncrement =
@@ -160,20 +165,20 @@ class AmtProductModel extends Component {
     const curveAngle = angle + curveAngleIncrement
     const cp1x =
       adj > 0
-        ? x1 + Math.cos(curveAngle) * curviness
-        : x1 - Math.cos(curveAngle) * curviness
+        ? startX + Math.cos(curveAngle) * cpLength
+        : startX - Math.cos(curveAngle) * cpLength
     const cp1y =
       opp > 0
-        ? y1 + Math.sin(curveAngle) * curviness
-        : y1 - Math.sin(curveAngle) * curviness
+        ? startY + Math.sin(curveAngle) * cpLength
+        : startY - Math.sin(curveAngle) * cpLength
     const cp2x =
       adj > 0
-        ? x2 - Math.cos(curveAngle) * curviness
-        : x2 + Math.cos(curveAngle) * curviness
+        ? endX - Math.cos(curveAngle) * cpLength
+        : endX + Math.cos(curveAngle) * cpLength
     const cp2y =
       opp > 0
-        ? y2 - Math.sin(curveAngle) * curviness
-        : y2 + Math.sin(curveAngle) * curviness
+        ? endY - Math.sin(curveAngle) * cpLength
+        : endY + Math.sin(curveAngle) * cpLength
     const curve = `M ${startX} ${startY} C ${cp1x} ${cp1y} ${cp2x} ${cp2y} ${endX} ${endY}`
     return (
       <g>
