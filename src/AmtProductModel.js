@@ -24,6 +24,10 @@ class AmtProductModel extends Component {
     linkDistance: PropTypes.number,
     alpha: PropTypes.number,
     alphaDecay: PropTypes.number,
+    conceptWidth: PropTypes.number,
+    conceptHeight: PropTypes.number,
+    linkCurviness: PropTypes.number,
+    maxCurveAngle: PropTypes.number,
     viewport: PropTypes.shape({
       width: PropTypes.number,
       height: PropTypes.number,
@@ -37,6 +41,8 @@ class AmtProductModel extends Component {
     alphaDecay: 0.1,
     conceptWidth: 166,
     conceptHeight: 116,
+    linkCurviness: 0.5,
+    maxCurveAngle: 30,
   }
 
   constructor(props) {
@@ -294,7 +300,12 @@ class AmtProductModel extends Component {
   }
 
   render() {
-    const { conceptWidth, conceptHeight } = this.props
+    const {
+      conceptWidth,
+      conceptHeight,
+      linkCurviness,
+      maxCurveAngle,
+    } = this.props
     const { nodes, links } = this.state
     const concepts = nodes
       ? nodes.map(
@@ -323,7 +334,14 @@ class AmtProductModel extends Component {
       )
       : []
     const relationships = links
-      ? links.map((link, i) => this.curveForLink(link, i))
+      ? links.map((link, i) =>
+        this.curveForLink(link, i, {
+          conceptWidth,
+          conceptHeight,
+          linkCurviness,
+          maxCurveAngle,
+        })
+      )
       : []
     return (
       <div className='product-model' onWheel={this.handleWheel}>

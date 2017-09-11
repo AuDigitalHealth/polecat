@@ -1,8 +1,6 @@
 {
   "parser": "babel-eslint",
-  "plugins": [
-    "jest"
-  ],
+  "plugins": ["jest"],
   "env": {
     "browser": true,
     "node": true,
@@ -19,7 +17,7 @@
     "ecmascript": 6,
     "jsx": true
   },
-  "extends": [ "standard", "standard-react" ],
+  "extends": ["standard", "standard-react"],
   "rules": {
     "react/jsx-indent": 0,
     "react/prop-types": 0,
@@ -34,6 +32,7 @@
     "array-bracket-spacing": ["error", "always", { "singleValue": false }],
     "jest/no-disabled-tests": "error",
     "jest/no-focused-tests": "error",
-    "jest/valid-expect": "error"
+    "jest/valid-expect": "error",
+    "one-var": 0
   }
 }
