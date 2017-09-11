@@ -129,71 +129,6 @@ class AmtProductModel extends Component {
     )
   }
 
-  curveForLink(link, i) {
-    const { conceptWidth, conceptHeight } = this.props
-    const curviness = 0.5
-    const maxCurveAngle = 30
-    const rightAngle = Math.PI / 2
-    const eighth = Math.PI / 4
-    const radiansInDegree = Math.PI / 180
-    const x1 = link.source.x
-    const x2 = link.target.x
-    const y1 = link.source.y
-    const y2 = link.target.y
-    const adj = x2 - x1
-    const opp = y2 - y1
-    const adjU = adj < 0 ? -adj : adj
-    const oppU = opp < 0 ? -opp : opp
-    const angle = Math.atan(oppU / adjU)
-    const horizDistCenter = conceptWidth / 2
-    const vertDistCenter = conceptHeight / 2
-    const deltaX =
-      angle < eighth
-        ? horizDistCenter
-        : Math.tan(rightAngle - angle) * vertDistCenter
-    const deltaY =
-      angle < eighth ? Math.tan(angle) * vertDistCenter : vertDistCenter
-    const startX = adj > 0 ? x1 + deltaX : x1 - deltaX
-    const startY = opp > 0 ? y1 + deltaY : y1 - deltaY
-    const endX = adj > 0 ? x2 - deltaX : x2 + deltaX
-    const endY = opp > 0 ? y2 - deltaY : y2 + deltaY
-    const linkAdjU = Math.abs(endX - startX)
-    const linkOppU = Math.abs(endY - startY)
-    const linkAngle = Math.atan(linkOppU / linkAdjU)
-    const linkLength = linkOppU / Math.sin(linkAngle)
-    const cpLength = linkLength * curviness
-    const maxCurveRadians = maxCurveAngle * radiansInDegree
-    const shareOfRightAngle = angle / rightAngle
-    const curveAngleIncrement =
-      angle > eighth
-        ? maxCurveRadians * (1 - shareOfRightAngle)
-        : maxCurveRadians * shareOfRightAngle
-    const curveAngle = angle + curveAngleIncrement
-    const cp1x =
-      adj > 0
-        ? startX + Math.cos(curveAngle) * cpLength
-        : startX - Math.cos(curveAngle) * cpLength
-    const cp1y =
-      opp > 0
-        ? startY + Math.sin(curveAngle) * cpLength
-        : startY - Math.sin(curveAngle) * cpLength
-    const cp2x =
-      adj > 0
-        ? endX - Math.cos(curveAngle) * cpLength
-        : endX + Math.cos(curveAngle) * cpLength
-    const cp2y =
-      opp > 0
-        ? endY - Math.sin(curveAngle) * cpLength
-        : endY + Math.sin(curveAngle) * cpLength
-    const curve = `M ${startX} ${startY} C ${cp1x} ${cp1y} ${cp2x} ${cp2y} ${endX} ${endY}`
-    return (
-      <g>
-        <path className='relationship' key={i} d={curve} />
-        <circle r='5' cx={endX} cy={endY} fill='black' />
-      </g>
-    )
-  }
-
   handleMouseUp(event) {
     if (event.buttons === 0) {
       const { lastDragX, lastDragY } = this.state
@@ -300,14 +235,29 @@ class AmtProductModel extends Component {
   }
 
   render() {
-    const {
-      conceptWidth,
-      conceptHeight,
-      linkCurviness,
-      maxCurveAngle,
-    } = this.props
-    const { nodes, links } = this.state
-    const concepts = nodes
+    const concepts = this.renderConcepts()
+    const relationships = this.renderRelationships()
+    return (
+      <div className='product-model' onWheel={this.handleWheel}>
+        <svg
+          height='100%'
+          width='100%'
+          preserveAspectRatio='none'
+          onMouseMove={this.handleMouseMove}
+          onMouseUp={this.handleMouseUp}
+          onDoubleClick={this.handleDoubleClick}
+        >
+          {relationships}
+        </svg>
+        {concepts}
+      </div>
+    )
+  }
+
+  renderConcepts() {
+    const { conceptWidth, conceptHeight } = this.props,
+      { nodes } = this.state
+    return nodes
       ? nodes.map(
         (node, i) =>
           node.focused
@@ -333,7 +283,17 @@ class AmtProductModel extends Component {
             />
       )
       : []
-    const relationships = links
+  }
+
+  renderRelationships() {
+    const {
+        conceptWidth,
+        conceptHeight,
+        linkCurviness,
+        maxCurveAngle,
+      } = this.props,
+      { links } = this.state
+    return links
       ? links.map((link, i) =>
         this.curveForLink(link, i, {
           conceptWidth,
@@ -343,21 +303,6 @@ class AmtProductModel extends Component {
         })
       )
       : []
-    return (
-      <div className='product-model' onWheel={this.handleWheel}>
-        <svg
-          height='100%'
-          width='100%'
-          preserveAspectRatio='none'
-          onMouseMove={this.handleMouseMove}
-          onMouseUp={this.handleMouseUp}
-          onDoubleClick={this.handleDoubleClick}
-        >
-          {relationships}
-        </svg>
-        {concepts}
-      </div>
-    )
   }
 }
 
