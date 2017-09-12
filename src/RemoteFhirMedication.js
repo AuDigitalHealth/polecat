@@ -22,16 +22,17 @@ class RemoteFhirMedication extends Component {
     this.handleRequireRelatedResources = this.handleRequireRelatedResources.bind(
       this
     )
+    this.handleRequireChildBundle = this.handleRequireChildBundle.bind(this)
   }
 
   updateResource(fhirServer, path, query) {
     this.setState(() => ({ status: 'loading' }))
-    return this.getSubjectConcept(fhirServer, path, query)
+    return this.getFhirResource(fhirServer, path, query)
       .then(resource => this.setState({ resource, status: 'loaded' }))
       .catch(error => this.handleError(error))
   }
 
-  async getSubjectConcept(fhirServer, path, query) {
+  async getFhirResource(fhirServer, path, query) {
     try {
       const response = await http.get(fhirServer + path + (query || ''), {
         headers: { Accept: 'application/fhir+json, application/json' },
@@ -67,16 +68,22 @@ class RemoteFhirMedication extends Component {
     const { fhirServer } = this.props
     for (const id of ids) {
       if (typeof this.state.relatedResources[id] !== 'object') {
-        this.getSubjectConcept(
-          fhirServer,
-          `/Medication/${id}`
-        ).then(resource => {
+        this.getFhirResource(fhirServer, `/Medication/${id}`).then(resource => {
           this.setState(() => ({
             relatedResources: { ...this.state.relatedResources, [id]: resource },
           }))
         })
       }
     }
+  }
+
+  handleRequireChildBundle(parentId) {
+    const { fhirServer } = this.props
+    this.getFhirResource(
+      fhirServer,
+      '/Medication',
+      `?parent=Medication/${parentId}`
+    ).then(resource => this.setState(() => ({ childBundle: resource })))
   }
 
   handleError(error) {
@@ -100,12 +107,12 @@ class RemoteFhirMedication extends Component {
   componentWillReceiveProps(nextProps) {
     const { fhirServer, path, query } = nextProps
     this.updateResource(fhirServer, path, query)
-    this.setState(() => ({ relatedResources: {} }))
+    this.setState(() => ({ relatedResources: {}, childBundle: null }))
   }
 
   render() {
     const { viewport } = this.props
-    const { resource, relatedResources, status } = this.state
+    const { resource, relatedResources, childBundle, status } = this.state
 
     return (
       <div className='remote-fhir-medication'>
@@ -113,9 +120,11 @@ class RemoteFhirMedication extends Component {
         <FhirMedication
           resource={resource}
           relatedResources={relatedResources}
+          childBundle={childBundle}
           viewport={viewport}
           onLoad={this.handleLoad}
           onRequireRelatedResources={this.handleRequireRelatedResources}
+          onRequireChildBundle={this.handleRequireChildBundle}
           onError={this.handleError}
         />
       </div>

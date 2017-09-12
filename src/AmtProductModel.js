@@ -80,6 +80,10 @@ class AmtProductModel extends Component {
       oldNodes = oldNodes.map(node => omit(node, 'focused', 'fx', 'fy'))
       // Merge new nodes with old nodes.
       newNodes = [ oldNodes, nodes ].reduce(mergeConcepts, [])
+      // Remove any nodes that are not present in the new set of nodes.
+      newNodes = newNodes.filter(node =>
+        nodes.map(n => n.code).includes(node.code)
+      )
       // Remove any nodes that are no longer the subject of a link.
       newNodes = newNodes.filter(node =>
         links
