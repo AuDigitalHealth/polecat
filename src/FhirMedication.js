@@ -8,7 +8,7 @@ import AmtProductModel from './AmtProductModel.js'
 import {
   getSubjectConcept,
   getRelatedConcepts,
-  mergeConcepts,
+  mergeConceptsAndRelationships,
   emptyConcepts,
   resourceRequirementsFor,
 } from './fhir/medication.js'
@@ -48,7 +48,7 @@ class FhirMedication extends Component {
       // Merge all concepts harvested from this set of props with the previous
       // set of concepts.
       const allConcepts = allConceptsUnmerged.reduce(
-        mergeConcepts,
+        mergeConceptsAndRelationships,
         cloneDeep(prevConcepts)
       )
       // Request additional resources of particular types found within the

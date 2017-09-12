@@ -3,11 +3,13 @@ import PropTypes from 'prop-types'
 import * as d3 from 'd3'
 import cloneDeep from 'lodash.clonedeep'
 import isEqual from 'lodash.isequal'
+import omit from 'lodash.omit'
 
 import Concept from './Concept.js'
 import FocusedConcept from './FocusedConcept.js'
-import { amtConceptTypeFor } from './fhir/medication.js'
+import { amtConceptTypeFor, mergeConcepts } from './fhir/medication.js'
 import { translateToAmt } from './fhir/translations.js'
+import { curveForLink } from './graph/links.js'
 
 import './css/AmtProductModel.css'
 
@@ -52,6 +54,8 @@ class AmtProductModel extends Component {
     this.handleMouseMove = this.handleMouseMove.bind(this)
     this.handleWheel = this.handleWheel.bind(this)
     this.handleDoubleClick = this.handleDoubleClick.bind(this)
+    this.renderConcepts = this.renderConcepts.bind(this)
+    this.renderRelationships = this.renderRelationships.bind(this)
   }
 
   startOrUpdateSimulation(
@@ -66,8 +70,33 @@ class AmtProductModel extends Component {
     centerY
   ) {
     const model = this
+    let newNodes = null
+    const { viewport } = this.props
+    // If the simulation is already running, merge new nodes in instead of
+    // replacing them.
+    if (model.simulation) {
+      let oldNodes = model.simulation.nodes()
+      // Remove focus and fixing from any existing nodes.
+      oldNodes = oldNodes.map(node => omit(node, 'focused', 'fx', 'fy'))
+      // Merge new nodes with old nodes.
+      newNodes = [ oldNodes, nodes ].reduce(mergeConcepts, [])
+      // Remove any nodes that are no longer the subject of a link.
+      newNodes = newNodes.filter(node =>
+        links
+          .reduce((acc, link) => acc.concat([ link.source, link.target ]), [])
+          .includes(node.code)
+      )
+      // Fix the position of the focused node.
+      newNodes = newNodes.map(node => {
+        if (node.focused) {
+          node.fx = node.x = centerX || viewport.width / 2
+          node.fy = node.y = centerY || viewport.height / 2
+        }
+        return node
+      })
+    } else newNodes = nodes
     model.simulation = (model.simulation || d3.forceSimulation())
-      .nodes(cloneDeep(nodes))
+      .nodes(newNodes)
     model.forceLink = (model.forceLink || d3.forceLink())
       .id(d => d.code)
       .distance(linkDistance)
@@ -77,8 +106,8 @@ class AmtProductModel extends Component {
     model.forceCollide = (model.forceCollide || d3.forceCollide())
       .radius(collideRadius)
     model.forceCenter = (model.forceCenter || d3.forceCenter())
-      .x(centerX || this.props.viewport.width / 2)
-      .y(centerY || this.props.viewport.height / 2)
+      .x(centerX || viewport.width / 2)
+      .y(centerY || viewport.height / 2)
     model.simulation = model.simulation
       .force('link', model.forceLink)
       .force('charge', model.forceManyBody)
@@ -102,6 +131,8 @@ class AmtProductModel extends Component {
       ...node,
       x: node.x + deltaX,
       y: node.y + deltaY,
+      fx: node.fx ? node.fx + deltaX : null,
+      fy: node.fy ? node.fy + deltaY : null,
     }))
     const {
       links,
@@ -295,7 +326,7 @@ class AmtProductModel extends Component {
       { links } = this.state
     return links
       ? links.map((link, i) =>
-        this.curveForLink(link, i, {
+        curveForLink(link, i, {
           conceptWidth,
           conceptHeight,
           linkCurviness,

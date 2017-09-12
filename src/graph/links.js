@@ -13,8 +13,8 @@ export const curveForLink = (link, i, options) => {
   )
   const curve = `M ${startX} ${startY} C ${cp1x} ${cp1y} ${cp2x} ${cp2y} ${endX} ${endY}`
   return (
-    <g>
-      <path className='relationship' key={i} d={curve} />
+    <g key={i}>
+      <path className='relationship' d={curve} />
       <circle r='5' cx={endX} cy={endY} fill='black' />
     </g>
   )

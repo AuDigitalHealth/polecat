@@ -18,7 +18,7 @@ export const getRelatedConcepts = (parsed, sourceConcept, sourceType) => {
   const result = [
     ...getExtensionConcepts(parsed, sourceConcept, sourceType),
     ...getPackageConcepts(parsed, sourceConcept, sourceType),
-  ].reduce(mergeConcepts, emptyConcepts())
+  ].reduce(mergeConceptsAndRelationships, emptyConcepts())
   return result
 }
 
@@ -314,26 +314,35 @@ const referenceToCode = reference => reference.split('/').slice(-1)[0]
 // of concept objects, minding uniqueness of concepts and relationships. If a
 // concept or relationship is already existing, the values of its keys are
 // assigned over the existing object.
-export const mergeConcepts = (merged, object) => {
+export const mergeConceptsAndRelationships = (merged, object) => {
+  mergeConcepts(merged.concepts, object.concepts)
+  mergeRelationships(merged.relationships, object.relationships)
+  return merged
+}
+
+export const mergeConcepts = (merged, concepts) => {
   let found
-  for (const concept of object.concepts) {
-    found = merged.concepts.findIndex(c => conceptHasCode(c, concept.code))
+  for (const concept of concepts) {
+    found = merged.findIndex(c => conceptHasCode(c, concept.code))
     if (found !== -1) {
-      merged.concepts[found] = { ...merged.concepts[found], ...concept }
-    } else merged.concepts.push(concept)
+      merged[found] = { ...merged[found], ...concept }
+    } else merged.push(concept)
   }
-  for (const relationship of object.relationships) {
-    found = merged.relationships.findIndex(r =>
+  return merged
+}
+
+const mergeRelationships = (merged, relationships) => {
+  for (const relationship of relationships) {
+    const found = merged.findIndex(r =>
       relationshipHasSourceTarget(r, relationship.source, relationship.target)
     )
     if (found !== -1) {
-      merged.relationships[found] = {
-        ...merged.relationships[found],
+      merged[found] = {
+        ...merged[found],
         ...relationship,
       }
-    } else merged.relationships.push(relationship)
+    } else merged.push(relationship)
   }
-  return merged
 }
 
 // A concept's uniqueness is defined by its code.
