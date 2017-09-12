@@ -48,11 +48,13 @@ class Search extends Component {
   }
 
   handleQueryUpdate(query) {
-    if (query) {
-      this.setState(() => ({ query }), () => this.throttledQueryUpdate(query))
-    } else {
-      this.setState({ results: null })
-    }
+    this.setState(
+      () => ({ query }),
+      () => {
+        if (query) this.throttledQueryUpdate(query)
+      }
+    )
+    if (!query) this.setState({ results: null })
   }
 
   throttledQueryUpdate(query) {
