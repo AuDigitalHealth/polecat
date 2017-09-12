@@ -20,7 +20,7 @@ class App extends Component {
     this.state = {
       viewport: { width: window.innerWidth, height: window.innerHeight },
     }
-    this.handleWindowResize = throttle(this.handleWindowResize.bind(this), 350)
+    this.handleWindowResize = throttle(this.handleWindowResize.bind(this), 50)
   }
 
   handleWindowResize() {
