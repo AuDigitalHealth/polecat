@@ -1,8 +1,11 @@
 import React from 'react'
 
 const rightAngle = Math.PI / 2
-const eighth = Math.PI / 4
-const radiansInDegree = Math.PI / 180
+const southEast = Math.PI / 4
+const southWest = 3 * Math.PI / 4
+const northWest = 5 * Math.PI / 4
+const northEast = 7 * Math.PI / 4
+const fortyFiveDegrees = southEast
 
 export const curveForLink = (link, i, options) => {
   const linkEndings = calculateLinkEndings(link, options)
@@ -34,11 +37,11 @@ const calculateLinkEndings = (link, options) => {
     horizDistCenter = conceptWidth / 2,
     vertDistCenter = conceptHeight / 2
   const deltaX =
-    angle < eighth
+    angle < fortyFiveDegrees
       ? horizDistCenter
       : Math.tan(rightAngle - angle) * vertDistCenter
   const deltaY =
-    angle < eighth ? Math.tan(angle) * vertDistCenter : vertDistCenter
+    angle < fortyFiveDegrees ? Math.tan(angle) * vertDistCenter : vertDistCenter
   return {
     startX: adj > 0 ? x1 + deltaX : x1 - deltaX,
     startY: opp > 0 ? y1 + deltaY : y1 - deltaY,
@@ -48,38 +51,43 @@ const calculateLinkEndings = (link, options) => {
 }
 
 const calculateControlPoints = (linkEndings, options) => {
-  const { linkCurviness, maxCurveAngle } = options,
+  const { linkCurviness } = options,
     { startX, startY, endX, endY } = linkEndings,
     adj = endX - startX,
     opp = endY - startY,
-    adjU = Math.abs(adj),
-    oppU = Math.abs(opp),
-    angle = Math.atan(oppU / adjU),
-    linkLength = oppU / Math.sin(angle),
-    cpLength = linkLength * linkCurviness,
-    maxCurveRadians = maxCurveAngle * radiansInDegree,
-    shareOfRightAngle = angle / rightAngle,
-    curveAngleIncrement =
-      angle > eighth
-        ? maxCurveRadians * (1 - shareOfRightAngle)
-        : maxCurveRadians * shareOfRightAngle,
-    curveAngle = angle + curveAngleIncrement
-  return {
-    cp1x:
-      adj > 0
-        ? startX + Math.cos(curveAngle) * cpLength
-        : startX - Math.cos(curveAngle) * cpLength,
-    cp1y:
-      opp > 0
-        ? startY + Math.sin(curveAngle) * cpLength
-        : startY - Math.sin(curveAngle) * cpLength,
-    cp2x:
-      adj > 0
-        ? endX - Math.cos(curveAngle) * cpLength
-        : endX + Math.cos(curveAngle) * cpLength,
-    cp2y:
-      opp > 0
-        ? endY - Math.sin(curveAngle) * cpLength
-        : endY + Math.sin(curveAngle) * cpLength,
+    bearing =
+      opp > 0 ? Math.atan2(opp, adj) : Math.atan2(opp, adj) + 2 * Math.PI,
+    angle = Math.atan(Math.abs(opp) / Math.abs(adj)),
+    linkLength = Math.abs(opp) / Math.sin(angle),
+    cpLength = linkLength * linkCurviness
+  switch (true) {
+    case bearing >= northEast || bearing < southEast:
+      return {
+        cp1x: startX + cpLength,
+        cp1y: startY,
+        cp2x: endX - cpLength,
+        cp2y: endY,
+      }
+    case bearing >= southEast && bearing < southWest:
+      return {
+        cp1x: startX,
+        cp1y: startY + cpLength,
+        cp2x: endX,
+        cp2y: endY - cpLength,
+      }
+    case bearing >= southWest && bearing < northWest:
+      return {
+        cp1x: startX - cpLength,
+        cp1y: startY,
+        cp2x: endX + cpLength,
+        cp2y: endY,
+      }
+    case bearing >= northWest && bearing < northEast:
+      return {
+        cp1x: startX,
+        cp1y: startY - cpLength,
+        cp2x: endX,
+        cp2y: endY + cpLength,
+      }
   }
 }
