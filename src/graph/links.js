@@ -1,18 +1,15 @@
 import React from 'react'
 
-const rightAngle = Math.PI / 2
-const southEast = Math.PI / 4
-const southWest = 3 * Math.PI / 4
-const northWest = 5 * Math.PI / 4
-const northEast = 7 * Math.PI / 4
-const fortyFiveDegrees = southEast
-
 export const curveForLink = (link, i, options) => {
-  const linkEndings = calculateLinkEndings(link, options)
+  const optionsWithBearings = {
+    ...options,
+    ...calculateBearings(link, options.conceptWidth, options.conceptHeight),
+  }
+  const linkEndings = calculateLinkEndings(link, optionsWithBearings)
   const { startX, startY, endX, endY } = linkEndings
   const { cp1x, cp1y, cp2x, cp2y } = calculateControlPoints(
     linkEndings,
-    options
+    optionsWithBearings
   )
   const curve = `M ${startX} ${startY} C ${cp1x} ${cp1y} ${cp2x} ${cp2y} ${endX} ${endY}`
   return (
@@ -23,40 +20,102 @@ export const curveForLink = (link, i, options) => {
   )
 }
 
-const calculateLinkEndings = (link, options) => {
-  const { conceptWidth, conceptHeight } = options,
+const calculateBearings = (link, conceptWidth, conceptHeight) => {
+  const conceptAngle = Math.atan(conceptHeight / conceptWidth),
     x1 = link.source.x,
     x2 = link.target.x,
     y1 = link.source.y,
     y2 = link.target.y,
     adj = x2 - x1,
     opp = y2 - y1,
-    adjU = Math.abs(adj),
-    oppU = Math.abs(opp),
-    angle = Math.atan(oppU / adjU),
+    bearing =
+      opp > 0 ? Math.atan2(opp, adj) : Math.atan2(opp, adj) + 2 * Math.PI
+  return {
+    conceptAngle,
+    southEast: conceptAngle,
+    southWest: Math.PI - conceptAngle,
+    northWest: Math.PI + conceptAngle,
+    northEast: 2 * Math.PI - conceptAngle,
+    bearing,
+  }
+}
+
+const calculateLinkEndings = (link, options) => {
+  const {
+      southEast,
+      southWest,
+      northWest,
+      northEast,
+      conceptWidth,
+      conceptHeight,
+      conceptAngle,
+      bearing,
+    } = options,
+    x1 = link.source.x,
+    x2 = link.target.x,
+    y1 = link.source.y,
+    y2 = link.target.y,
     horizDistCenter = conceptWidth / 2,
     vertDistCenter = conceptHeight / 2
-  const deltaX =
-    angle < fortyFiveDegrees
-      ? horizDistCenter
-      : Math.tan(rightAngle - angle) * vertDistCenter
-  const deltaY =
-    angle < fortyFiveDegrees ? Math.tan(angle) * vertDistCenter : vertDistCenter
-  return {
-    startX: adj > 0 ? x1 + deltaX : x1 - deltaX,
-    startY: opp > 0 ? y1 + deltaY : y1 - deltaY,
-    endX: adj > 0 ? x2 - deltaX : x2 + deltaX,
-    endY: opp > 0 ? y2 - deltaY : y2 + deltaY,
+  let angle
+  switch (true) {
+    case bearing >= northEast || bearing < southEast:
+      angle = bearing < conceptAngle ? bearing : bearing - 2 * Math.PI
+      return {
+        startX: x1 + horizDistCenter,
+        startY: y1 + horizDistCenter * Math.tan(angle),
+        endX: x2 - horizDistCenter,
+        endY: y2 - horizDistCenter * Math.tan(angle),
+        bearing,
+        angle,
+      }
+    case bearing >= southEast && bearing < southWest:
+      angle = bearing - Math.PI / 2
+      return {
+        startX: x1 - vertDistCenter * Math.tan(angle),
+        startY: y1 + vertDistCenter,
+        endX: x2 + vertDistCenter * Math.tan(angle),
+        endY: y2 - vertDistCenter,
+        bearing,
+        angle,
+      }
+    case bearing >= southWest && bearing < northWest:
+      angle = bearing - Math.PI
+      return {
+        startX: x1 - horizDistCenter,
+        startY: y1 - horizDistCenter * Math.tan(angle),
+        endX: x2 + horizDistCenter,
+        endY: y2 + horizDistCenter * Math.tan(angle),
+        bearing,
+        angle,
+      }
+    case bearing >= northWest && bearing < northEast:
+      angle = bearing - 3 * Math.PI / 2
+      return {
+        startX: x1 + vertDistCenter * Math.tan(angle),
+        startY: y1 - vertDistCenter,
+        endX: x2 - vertDistCenter * Math.tan(angle),
+        endY: y2 + vertDistCenter,
+        bearing,
+        angle,
+      }
+    default:
+      throw new Error(`Unexpected bearing: ${bearing}`)
   }
 }
 
 const calculateControlPoints = (linkEndings, options) => {
-  const { linkCurviness } = options,
+  const {
+      southEast,
+      southWest,
+      northWest,
+      northEast,
+      bearing,
+      linkCurviness,
+    } = options,
     { startX, startY, endX, endY } = linkEndings,
     adj = endX - startX,
     opp = endY - startY,
-    bearing =
-      opp > 0 ? Math.atan2(opp, adj) : Math.atan2(opp, adj) + 2 * Math.PI,
     angle = Math.atan(Math.abs(opp) / Math.abs(adj)),
     linkLength = Math.abs(opp) / Math.sin(angle),
     cpLength = linkLength * linkCurviness
@@ -89,5 +148,7 @@ const calculateControlPoints = (linkEndings, options) => {
         cp2x: endX,
         cp2y: endY + cpLength,
       }
+    default:
+      throw new Error(`Unexpected bearing: ${bearing}`)
   }
 }

@@ -44,7 +44,6 @@ class AmtProductModel extends Component {
     conceptWidth: 166,
     conceptHeight: 116,
     linkCurviness: 0.5,
-    maxCurveAngle: 30,
   }
 
   constructor(props) {
@@ -321,12 +320,7 @@ class AmtProductModel extends Component {
   }
 
   renderRelationships() {
-    const {
-        conceptWidth,
-        conceptHeight,
-        linkCurviness,
-        maxCurveAngle,
-      } = this.props,
+    const { conceptWidth, conceptHeight, linkCurviness } = this.props,
       { links } = this.state
     return links
       ? links.map((link, i) =>
@@ -334,7 +328,6 @@ class AmtProductModel extends Component {
           conceptWidth,
           conceptHeight,
           linkCurviness,
-          maxCurveAngle,
         })
       )
       : []
