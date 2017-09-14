@@ -43,7 +43,7 @@ class AmtProductModel extends Component {
     alphaDecay: 0.1,
     conceptWidth: 166,
     conceptHeight: 116,
-    linkCurviness: 0.5,
+    linkCurviness: 0.4,
   }
 
   constructor(props) {
