@@ -30,6 +30,8 @@ class AmtProductModel extends Component {
     conceptHeight: PropTypes.number,
     linkCurviness: PropTypes.number,
     arrowSize: PropTypes.number,
+    collideRadiusThreshold: PropTypes.number,
+    collideRadiusRatio: PropTypes.number,
     viewport: PropTypes.shape({
       width: PropTypes.number,
       height: PropTypes.number,
@@ -38,13 +40,15 @@ class AmtProductModel extends Component {
   static defaultProps = {
     attraction: -1000,
     collideRadius: 110,
-    linkDistance: 250,
+    linkDistance: 220,
     alpha: 1.5,
     alphaDecay: 0.1,
     conceptWidth: 166,
     conceptHeight: 116,
-    linkCurviness: 0.6,
+    linkCurviness: 0.4,
     arrowSize: 10,
+    collideRadiusThreshold: 10,
+    collideRadiusRatio: 1.5,
   }
 
   constructor(props) {
@@ -66,6 +70,8 @@ class AmtProductModel extends Component {
     linkDistance,
     alpha,
     alphaDecay,
+    collideRadiusThreshold,
+    collideRadiusRatio,
     centerX,
     centerY
   ) {
@@ -108,7 +114,12 @@ class AmtProductModel extends Component {
     model.forceManyBody = (model.forceManyBody || d3.forceManyBody())
       .strength(attraction)
     model.forceCollide = (model.forceCollide || d3.forceCollide())
-      .radius(collideRadius)
+      .radius(
+        newNodes.length > collideRadiusThreshold
+          ? collideRadius +
+            collideRadiusRatio * (newNodes.length - collideRadiusThreshold)
+          : collideRadius
+      )
     model.forceCenter = (model.forceCenter || d3.forceCenter())
       .x(centerX || viewport.width / 2)
       .y(centerY || viewport.height / 2)
@@ -144,6 +155,8 @@ class AmtProductModel extends Component {
       collideRadius,
       linkDistance,
       alphaDecay,
+      collideRadiusThreshold,
+      collideRadiusRatio,
     } = this.props
     const { relationships: translatedLinks } = translateToAmt({
       concepts: nodes,
@@ -159,6 +172,8 @@ class AmtProductModel extends Component {
       linkDistance,
       model.simulation.alpha(),
       alphaDecay,
+      collideRadiusThreshold,
+      collideRadiusRatio,
       centerX,
       centerY
     )
@@ -216,6 +231,8 @@ class AmtProductModel extends Component {
       linkDistance,
       alpha,
       alphaDecay,
+      collideRadiusThreshold,
+      collideRadiusRatio,
     } = this.props
     if (nodes && links) {
       const { relationships: translatedLinks } = translateToAmt({
@@ -229,7 +246,9 @@ class AmtProductModel extends Component {
         collideRadius,
         linkDistance,
         alpha,
-        alphaDecay
+        alphaDecay,
+        collideRadiusThreshold,
+        collideRadiusRatio
       )
     }
   }
@@ -247,6 +266,8 @@ class AmtProductModel extends Component {
       linkDistance,
       alpha,
       alphaDecay,
+      collideRadiusThreshold,
+      collideRadiusRatio,
       viewport: { width, height },
     } = nextProps
     const { concepts: nodes, relationships: links } = translateToAmt({
@@ -261,7 +282,9 @@ class AmtProductModel extends Component {
         collideRadius,
         linkDistance,
         alpha,
-        alphaDecay
+        alphaDecay,
+        collideRadiusThreshold,
+        collideRadiusRatio
       )
     }
     if (!isEqual(this.props.viewport, nextProps.viewport)) {
