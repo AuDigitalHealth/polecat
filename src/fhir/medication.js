@@ -229,6 +229,10 @@ const extensionFilterFor = key =>
 // Relationship types for different combinations of concept types.
 export const relationshipTypeFor = (sourceType, targetType) => {
   switch (`${sourceType}-${targetType}`) {
+    // CTPP -> CTPP
+    // Branded package with container -> Branded package with container
+    case 'BPGC-BPGC':
+      return 'has-component'
     // CTPP -> TPP
     // Branded package with container -> Branded package with no container
     case 'BPGC-BPG':
@@ -259,6 +263,11 @@ export const relationshipTypeFor = (sourceType, targetType) => {
     // Branded package with no container -> Unbranded package with no container
     case 'BPG-UPG':
       return 'is-a'
+    // MPP -> MPP
+    // Unbranded package with no container ->
+    //   Unbranded product with no container
+    case 'UPG-UPG':
+      return 'has-component'
     // MPP -> MPUU
     // Unbranded package with no container ->
     //   Unbranded product with strengths and form
@@ -268,6 +277,11 @@ export const relationshipTypeFor = (sourceType, targetType) => {
     // Unbranded product with strengths and form ->
     //   Unbranded product with no strengths or form
     case 'UPDSF-UPD':
+      return 'is-a'
+    // MP -> MP
+    // Unbranded product with strengths and form ->
+    //   Unbranded product with strengths and form
+    case 'UPD-UPD':
       return 'is-a'
     default:
       return 'unknown'

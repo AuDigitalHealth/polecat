@@ -113,12 +113,13 @@ const calculateControlPoints = options => {
       startY,
       endX,
       endY,
+      arrowSize,
     } = options,
     adj = endX - startX,
     opp = endY - startY,
     angle = Math.atan(Math.abs(opp) / Math.abs(adj)),
     linkLength = Math.abs(opp) / Math.sin(angle),
-    cpLength = linkLength * linkCurviness
+    cpLength = arrowSize + linkLength * linkCurviness
   switch (true) {
     case bearing >= northEast || bearing < southEast:
       return {
@@ -164,11 +165,14 @@ const calculateArrowPoints = options => {
       northWest,
       northEast,
       bearing,
-      arrowSize,
       endX,
       endY,
       linkType,
     } = options,
+    arrowSize =
+      options.linkType === 'has-component'
+        ? options.arrowSize * 0.7
+        : options.arrowSize,
     halfArrowSize = arrowSize / 2
   const points = []
   switch (true) {
@@ -176,6 +180,9 @@ const calculateArrowPoints = options => {
       points.push([ endX - arrowSize, endY + halfArrowSize ])
       points.push([ endX, endY ])
       points.push([ endX - arrowSize, endY - halfArrowSize ])
+      if (linkType === 'has-component') {
+        points.push([ endX - 2 * Math.sqrt(3) / 2 * arrowSize, endY ])
+      }
       if (linkType === 'is-a') {
         points.push([ endX - arrowSize, endY + halfArrowSize ])
       }
@@ -184,6 +191,9 @@ const calculateArrowPoints = options => {
       points.push([ endX - halfArrowSize, endY - Math.sqrt(3) / 2 * arrowSize ])
       points.push([ endX, endY ])
       points.push([ endX + halfArrowSize, endY - Math.sqrt(3) / 2 * arrowSize ])
+      if (linkType === 'has-component') {
+        points.push([ endX, endY - 2 * Math.sqrt(3) / 2 * arrowSize ])
+      }
       if (linkType === 'is-a') {
         points.push([ endX - halfArrowSize, endY - Math.sqrt(3) / 2 * arrowSize ])
       }
@@ -192,6 +202,9 @@ const calculateArrowPoints = options => {
       points.push([ endX + arrowSize, endY + halfArrowSize ])
       points.push([ endX, endY ])
       points.push([ endX + arrowSize, endY - halfArrowSize ])
+      if (linkType === 'has-component') {
+        points.push([ endX + 2 * Math.sqrt(3) / 2 * arrowSize, endY ])
+      }
       if (linkType === 'is-a') {
         points.push([ endX + arrowSize, endY + halfArrowSize ])
       }
@@ -200,6 +213,9 @@ const calculateArrowPoints = options => {
       points.push([ endX - halfArrowSize, endY + Math.sqrt(3) / 2 * arrowSize ])
       points.push([ endX, endY ])
       points.push([ endX + halfArrowSize, endY + Math.sqrt(3) / 2 * arrowSize ])
+      if (linkType === 'has-component') {
+        points.push([ endX, endY + 2 * Math.sqrt(3) / 2 * arrowSize ])
+      }
       if (linkType === 'is-a') {
         points.push([ endX - halfArrowSize, endY + Math.sqrt(3) / 2 * arrowSize ])
       }

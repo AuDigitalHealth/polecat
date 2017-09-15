@@ -14,7 +14,7 @@
 }
 
 .product-model .relationship .link {
-  stroke: #666;
+  stroke: black;
   fill: transparent;
 }
 
@@ -25,4 +25,8 @@
 
 .product-model .relationship-is-a .arrow {
   fill: white;
+}
+
+.product-model .relationship-has-component .arrow {
+  fill: black;
 }

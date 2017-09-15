@@ -38,7 +38,7 @@ class AmtProductModel extends Component {
   static defaultProps = {
     attraction: -1000,
     collideRadius: 110,
-    linkDistance: 200,
+    linkDistance: 250,
     alpha: 1.5,
     alphaDecay: 0.1,
     conceptWidth: 166,
