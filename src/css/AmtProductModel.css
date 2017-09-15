@@ -19,6 +19,10 @@
 }
 
 .product-model .relationship .arrow {
-  fill: white;
   stroke: black;
+  fill: transparent;
+}
+
+.product-model .relationship-is-a .arrow {
+  fill: white;
 }
