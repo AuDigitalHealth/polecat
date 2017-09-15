@@ -29,7 +29,7 @@ class AmtProductModel extends Component {
     conceptWidth: PropTypes.number,
     conceptHeight: PropTypes.number,
     linkCurviness: PropTypes.number,
-    maxCurveAngle: PropTypes.number,
+    arrowSize: PropTypes.number,
     viewport: PropTypes.shape({
       width: PropTypes.number,
       height: PropTypes.number,
@@ -43,7 +43,8 @@ class AmtProductModel extends Component {
     alphaDecay: 0.1,
     conceptWidth: 166,
     conceptHeight: 116,
-    linkCurviness: 0.4,
+    linkCurviness: 0.5,
+    arrowSize: 10,
   }
 
   constructor(props) {
@@ -320,7 +321,12 @@ class AmtProductModel extends Component {
   }
 
   renderRelationships() {
-    const { conceptWidth, conceptHeight, linkCurviness } = this.props,
+    const {
+        conceptWidth,
+        conceptHeight,
+        linkCurviness,
+        arrowSize,
+      } = this.props,
       { links } = this.state
     return links
       ? links.map((link, i) =>
@@ -328,6 +334,7 @@ class AmtProductModel extends Component {
           conceptWidth,
           conceptHeight,
           linkCurviness,
+          arrowSize,
         })
       )
       : []
