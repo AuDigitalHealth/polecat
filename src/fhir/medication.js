@@ -69,7 +69,7 @@ function * getPackageConcepts(node, sourceConcept, sourceType) {
             {
               source: sourceConcept,
               target: code,
-              type: 'contains',
+              type: 'is-component-of',
             },
           ],
         }
