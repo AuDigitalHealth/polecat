@@ -232,7 +232,7 @@ export const relationshipTypeFor = (sourceType, targetType) => {
     // CTPP -> CTPP
     // Branded package with container -> Branded package with container
     case 'BPGC-BPGC':
-      return 'has-component'
+      return 'is-component-of'
     // CTPP -> TPP
     // Branded package with container -> Branded package with no container
     case 'BPGC-BPG':
@@ -267,7 +267,7 @@ export const relationshipTypeFor = (sourceType, targetType) => {
     // Unbranded package with no container ->
     //   Unbranded product with no container
     case 'UPG-UPG':
-      return 'has-component'
+      return 'is-component-of'
     // MPP -> MPUU
     // Unbranded package with no container ->
     //   Unbranded product with strengths and form
