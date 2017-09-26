@@ -6,6 +6,8 @@ import throttle from 'lodash.throttle'
 import RemoteFhirMedication from './RemoteFhirMedication.js'
 import Search from './Search.js'
 
+import './css/App.css'
+
 class App extends Component {
   static propTypes = {
     config: PropTypes.object,
@@ -43,7 +45,7 @@ class App extends Component {
             <Switch>
               <Route
                 path='/:path'
-                render={({ location }) =>
+                render={({ location }) => (
                   <div className='medication-result'>
                     <Search fhirServer={config.fhirServer} />
                     <RemoteFhirMedication
@@ -52,13 +54,15 @@ class App extends Component {
                       viewport={viewport}
                       {...config}
                     />
-                  </div>}
+                  </div>
+                )}
               />
               <Route
-                render={() =>
+                render={() => (
                   <div className='no-result'>
                     <Search fhirServer={config.fhirServer} />
-                  </div>}
+                  </div>
+                )}
               />
             </Switch>
           </Router>
