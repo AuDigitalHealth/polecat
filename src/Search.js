@@ -7,6 +7,7 @@ import TextField from './TextField.js'
 import SearchResults from './SearchResults.js'
 import { sniffFormat } from './fhir/restApi'
 import { getSubjectConcept, amtConceptTypeFor } from './fhir/medication.js'
+import { pathForQuery } from './fhir/search.js'
 
 class Search extends Component {
   static propTypes = {
@@ -29,7 +30,7 @@ class Search extends Component {
   }
 
   async getSearchResults(fhirServer, query) {
-    const response = await http.get(fhirServer + this.pathForQuery(query), {
+    const response = await http.get(fhirServer + pathForQuery(query), {
       headers: { Accept: 'application/fhir+json, application/json' },
     })
     sniffFormat(response.headers['content-type'])
@@ -41,10 +42,6 @@ class Search extends Component {
     return resource.entry
       .map(e => getSubjectConcept(e.resource))
       .map(result => ({ ...result, type: amtConceptTypeFor(result.type) }))
-  }
-
-  pathForQuery(query) {
-    return `/Medication/?_text=${query}&_summary=true&_count=20`
   }
 
   handleQueryUpdate(query) {

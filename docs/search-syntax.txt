@@ -1,0 +1,69 @@
+---
+
+type:[type]
+
+Where type is:
+- ctpp
+- tpp
+- tpuu
+- mpp
+- mpuu
+- mp
+- brand
+- substance
+
+Search param: medicationResourceType
+
+---
+
+id:[id]
+
+---
+
+pbs:[pbs code]
+
+Search param: subsidy-code
+
+---
+
+artgid:[tga code]
+
+Search param: code
+
+---
+
+brand:[brand sctid]
+brand-text:[brand text]
+
+Search param: brand | brand:text
+
+---
+
+container:[container sctid]
+container-text:[container text]
+
+Search param: container | container:text
+
+---
+
+form:[form sctid]
+form-text:[form text]
+not-form:[form sctid]
+
+Search param: form | form:text | form:not
+
+---
+
+substance:[substance sctid]
+substance-text:[substance text]
+
+Search param: substance | substance:text
+
+---
+
+parent:[parent sctids, comma delimited]
+parent-text[parent text]
+
+Search param: parent | parent:text
+
+---
