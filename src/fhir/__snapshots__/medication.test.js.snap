@@ -77,47 +77,47 @@ Object {
     Object {
       "source": "28214011000036106",
       "target": "46431011000036106",
-      "type": "unknown",
+      "type": "is-component-of",
     },
     Object {
       "source": "28214011000036106",
       "target": "700031841000036104",
-      "type": "unknown",
+      "type": "is-component-of",
     },
     Object {
       "source": "28214011000036106",
       "target": "700031831000036109",
-      "type": "unknown",
+      "type": "is-component-of",
     },
     Object {
       "source": "21062011000036103",
       "target": "7489011000036101",
-      "type": "contains",
+      "type": "is-component-of",
     },
     Object {
       "source": "21062011000036103",
       "target": "6140011000036103",
-      "type": "contains",
+      "type": "is-component-of",
     },
     Object {
       "source": "21062011000036103",
       "target": "7488011000036109",
-      "type": "contains",
+      "type": "is-component-of",
     },
     Object {
       "source": "21062011000036103",
       "target": "44134011000036100",
-      "type": "contains",
+      "type": "is-component-of",
     },
     Object {
       "source": "21062011000036103",
       "target": "700027211000036107",
-      "type": "contains",
+      "type": "is-component-of",
     },
     Object {
       "source": "21062011000036103",
       "target": "700027201000036105",
-      "type": "contains",
+      "type": "is-component-of",
     },
   ],
 }
@@ -165,7 +165,7 @@ Object {
     Object {
       "source": "61428011000036109",
       "target": "54282011000036105",
-      "type": "contains",
+      "type": "is-component-of",
     },
   ],
 }

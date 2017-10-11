@@ -9,6 +9,8 @@ import { sniffFormat } from './fhir/restApi'
 import { getSubjectConcept, amtConceptTypeFor } from './fhir/medication.js'
 import { pathForQuery } from './fhir/search.js'
 
+import './css/Search.css'
+
 class Search extends Component {
   static propTypes = {
     fhirServer: PropTypes.string.isRequired,

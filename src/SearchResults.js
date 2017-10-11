@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
+import './css/SearchResults.css'
+
 class SearchResults extends Component {
   static propTypes = {
     query: PropTypes.string,
@@ -31,7 +33,7 @@ class SearchResults extends Component {
 
   renderResults(results) {
     if (!results) return
-    return results.map((result, i) =>
+    return results.map((result, i) => (
       <li key={i} className='search-result'>
         <span className={`type type-${result.type}`.toLowerCase()}>
           {result.type}
@@ -45,22 +47,18 @@ class SearchResults extends Component {
           </Link>
         </span>
       </li>
-    )
+    ))
   }
 
   render() {
     const { query, results } = this.props
     return (
       <div className='search-results'>
-        {results && results.length === 0
-          ? <div className='no-results'>
-              No results matching "{query}".
-          </div>
-          : results
-            ? <ol>
-              {this.renderResults(results)}
-            </ol>
-            : null}
+        {results && results.length === 0 ? (
+          <div className='no-results'>No results matching "{query}".</div>
+        ) : results ? (
+          <ol>{this.renderResults(results)}</ol>
+        ) : null}
       </div>
     )
   }

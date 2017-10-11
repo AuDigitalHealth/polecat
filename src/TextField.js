@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import './css/TextField.css'
-
 class TextField extends Component {
   static propTypes = {
     value: PropTypes.string,

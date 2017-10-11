@@ -4,12 +4,26 @@ import invert from 'lodash.invert'
 // resource.
 export const getSubjectConcept = parsed => {
   const code = getSctCode(parsed)
-  const resourceType = parsed.extension.find(
-    extensionFilterFor('medicationResourceType')
-  )
-  validateMedicationResourceType(resourceType)
-  const type = resourceType.valueCoding.code
+  const type = getSubjectConceptType(parsed)
   return { type, ...code }
+}
+
+// Get the type of subject concept, which will either be:
+// - In the `medicationResourceType` extension, in the case of a Medication
+//   resource, OR;
+// - `substance`, in the case of a Substance resource.
+const getSubjectConceptType = parsed => {
+  if (parsed.resourceType === 'Medication') {
+    const resourceType = parsed.extension.find(
+      extensionFilterFor('medicationResourceType')
+    )
+    validateMedicationResourceType(resourceType)
+    return resourceType.valueCoding.code
+  } else if (parsed.resourceType === 'Substance') {
+    return 'substance'
+  } else {
+    throw new Error('Unknown resource type encountered.')
+  }
 }
 
 export const getRelatedConcepts = (parsed, sourceConcept, sourceType) => {
@@ -311,6 +325,7 @@ const fhirToAmtTypes = {
   UPG: 'MPP',
   UPDSF: 'MPUU',
   UPD: 'MP',
+  substance: 'substance',
 }
 
 const amtToFhirTypes = invert(fhirToAmtTypes)
