@@ -6,21 +6,25 @@
   },
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>esomeprazole 20 mg enteric tablet [14] (&amp;) amoxicillin 500 mg capsule [28] (&amp;) clarithromycin 500 mg tablet [14], 1 pack</p></div>"
+    "div":
+      "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>esomeprazole 20 mg enteric tablet [14] (&amp;) amoxicillin 500 mg capsule [28] (&amp;) clarithromycin 500 mg tablet [14], 1 pack</p></div>"
   },
   "extension": [
     {
-      "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+      "url":
+        "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
       "extension": [
         {
-          "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/parentMedication",
           "valueReference": {
             "reference": "Medication/46431011000036106",
             "display": "clarithromycin 500 mg tablet, 14"
           }
         },
         {
-          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
           "valueCoding": {
             "system": "http://hl7.org/fhir/medication_type",
             "code": "UPG",
@@ -30,17 +34,20 @@
       ]
     },
     {
-      "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+      "url":
+        "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
       "extension": [
         {
-          "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/parentMedication",
           "valueReference": {
             "reference": "Medication/700031841000036104",
             "display": "amoxicillin 500 mg capsule, 28"
           }
         },
         {
-          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
           "valueCoding": {
             "system": "http://hl7.org/fhir/medication_type",
             "code": "UPG",
@@ -50,17 +57,20 @@
       ]
     },
     {
-      "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+      "url":
+        "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
       "extension": [
         {
-          "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/parentMedication",
           "valueReference": {
             "reference": "Medication/700031831000036109",
             "display": "esomeprazole 20 mg enteric tablet, 14"
           }
         },
         {
-          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
           "valueCoding": {
             "system": "http://hl7.org/fhir/medication_type",
             "code": "UPG",
@@ -70,7 +80,8 @@
       ]
     },
     {
-      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+      "url":
+        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
       "valueCoding": {
         "system": "http://hl7.org/fhir/medication_type",
         "code": "UPG",
@@ -81,12 +92,15 @@
       "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
       "extension": [
         {
-          "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
           "valueUri": "http://snomed.info/sct"
         },
         {
-          "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
-          "valueString": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170430"
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+          "valueString":
+            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170831"
         }
       ]
     }
@@ -96,7 +110,8 @@
       {
         "system": "http://snomed.info/sct",
         "code": "28214011000036106",
-        "display": "esomeprazole 20 mg enteric tablet [14] (&) amoxicillin 500 mg capsule [28] (&) clarithromycin 500 mg tablet [14], 1 pack"
+        "display":
+          "esomeprazole 20 mg enteric tablet [14] (&) amoxicillin 500 mg capsule [28] (&) clarithromycin 500 mg tablet [14], 1 pack"
       }
     ]
   },
@@ -106,30 +121,40 @@
     "content": [
       {
         "itemReference": {
-          "reference": "Medication/23551011000036108",
-          "display": "amoxicillin 500 mg capsule"
-        },
-        "amount": {
-          "value": 28,
-          "unit": "capsule",
-          "system": "http://snomed.info/sct",
-          "code": "67011000036100"
-        }
-      },
-      {
-        "itemReference": {
-          "reference": "Medication/23527011000036104",
-          "display": "clarithromycin 500 mg tablet"
-        },
-        "amount": {
-          "value": 14,
-          "unit": "tablet",
-          "system": "http://snomed.info/sct",
-          "code": "63011000036109"
-        }
-      },
-      {
-        "itemReference": {
+          "extension": [
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "extension": [
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "valueReference": {
+                    "reference": "Medication/21697011000036107",
+                    "display": "esomeprazole"
+                  }
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "UPD",
+                    "display": "Unbranded product with no strengths or form"
+                  }
+                }
+              ]
+            },
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/medication_type",
+                "code": "UPDSF",
+                "display": "Unbranded product with strengths and form"
+              }
+            }
+          ],
           "reference": "Medication/23526011000036102",
           "display": "esomeprazole 20 mg enteric tablet"
         },
@@ -142,15 +167,109 @@
       },
       {
         "itemReference": {
-          "reference": "Medication/46431011000036106",
-          "display": "clarithromycin 500 mg tablet, 14"
+          "extension": [
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "extension": [
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "valueReference": {
+                    "reference": "Medication/21836011000036107",
+                    "display": "clarithromycin"
+                  }
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "UPD",
+                    "display": "Unbranded product with no strengths or form"
+                  }
+                }
+              ]
+            },
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/medication_type",
+                "code": "UPDSF",
+                "display": "Unbranded product with strengths and form"
+              }
+            }
+          ],
+          "reference": "Medication/23527011000036104",
+          "display": "clarithromycin 500 mg tablet"
         },
         "amount": {
-          "value": 1
+          "value": 14,
+          "unit": "tablet",
+          "system": "http://snomed.info/sct",
+          "code": "63011000036109"
         }
       },
       {
         "itemReference": {
+          "extension": [
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "extension": [
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "valueReference": {
+                    "reference": "Medication/21415011000036100",
+                    "display": "amoxicillin"
+                  }
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "UPD",
+                    "display": "Unbranded product with no strengths or form"
+                  }
+                }
+              ]
+            },
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/medication_type",
+                "code": "UPDSF",
+                "display": "Unbranded product with strengths and form"
+              }
+            }
+          ],
+          "reference": "Medication/23551011000036108",
+          "display": "amoxicillin 500 mg capsule"
+        },
+        "amount": {
+          "value": 28,
+          "unit": "capsule",
+          "system": "http://snomed.info/sct",
+          "code": "67011000036100"
+        }
+      },
+      {
+        "itemReference": {
+          "extension": [
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/medication_type",
+                "code": "UPG",
+                "display": "Unbranded package with no container"
+              }
+            }
+          ],
           "reference": "Medication/700031841000036104",
           "display": "amoxicillin 500 mg capsule, 28"
         },
@@ -160,6 +279,37 @@
       },
       {
         "itemReference": {
+          "extension": [
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/medication_type",
+                "code": "UPG",
+                "display": "Unbranded package with no container"
+              }
+            }
+          ],
+          "reference": "Medication/46431011000036106",
+          "display": "clarithromycin 500 mg tablet, 14"
+        },
+        "amount": {
+          "value": 1
+        }
+      },
+      {
+        "itemReference": {
+          "extension": [
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/medication_type",
+                "code": "UPG",
+                "display": "Unbranded package with no container"
+              }
+            }
+          ],
           "reference": "Medication/700031831000036109",
           "display": "esomeprazole 20 mg enteric tablet, 14"
         },
