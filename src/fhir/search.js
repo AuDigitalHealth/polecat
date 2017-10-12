@@ -11,6 +11,9 @@ const availableMedParams = [
   'not-form',
   'parent',
   'parent-text',
+  'ingredient',
+  'ingredient-not',
+  'ingredient-text',
 ]
 
 const availableSubstanceParams = [ 'substance', 'substance-text' ]
@@ -89,6 +92,12 @@ const getMedicationParamFor = (param, value) => {
         .join(',')}`
     case 'parent-text':
       return `parent:text=${value}`
+    case 'ingredient':
+      return `ingredient=Substance/${value}`
+    case 'ingredient-not':
+      return `ingredient:not=Substance/${value}`
+    case 'ingredient-text':
+      return `ingredient:text=${value}`
     case 'text':
       return `_text=${value}`
     default:
