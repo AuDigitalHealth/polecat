@@ -50,13 +50,13 @@ class App extends Component {
                 path='/:path'
                 render={({ location }) => (
                   <div className='medication-result'>
-                    <Search fhirServer={config.fhirServer} />
                     <RemoteFhirMedication
                       path={location.pathname}
                       query={location.search}
                       viewport={viewport}
                       {...config}
                     />
+                    <Search fhirServer={config.fhirServer} />
                   </div>
                 )}
               />
