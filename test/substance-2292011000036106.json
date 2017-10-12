@@ -1,0 +1,17 @@
+{
+  "resourceType": "Substance",
+  "id": "2292011000036106",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>loratadine</p></div>"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "2292011000036106",
+        "display": "loratadine"
+      }
+    ]
+  }
+}

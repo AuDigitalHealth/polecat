@@ -10,6 +10,15 @@ describe('getSubjectConcept', () => {
       expect(result).toMatchSnapshot()
     })
   }
+  for (const sctid of ['2292011000036106']) {
+    it(`should return correct result for substance ${sctid}`, () => {
+      const resource = JSON.parse(
+        fs.readFileSync(`test/substance-${sctid}.json`)
+      )
+      const result = getSubjectConcept(resource)
+      expect(result).toMatchSnapshot()
+    })
+  }
 })
 
 describe('getRelatedConcepts', () => {

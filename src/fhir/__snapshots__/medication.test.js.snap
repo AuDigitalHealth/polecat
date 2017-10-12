@@ -186,3 +186,11 @@ Object {
   "type": "BPGC",
 }
 `;
+
+exports[`getSubjectConcept should return correct result for substance 2292011000036106 1`] = `
+Object {
+  "code": "2292011000036106",
+  "display": "loratadine",
+  "type": "substance",
+}
+`;
