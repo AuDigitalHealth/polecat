@@ -11,14 +11,14 @@ import { opOutcomeFromJsonResponse } from './fhir/core.js'
 class RemoteFhirMedication extends Component {
   static propTypes = {
     path: PropTypes.string.isRequired,
-    query: PropTypes.string.isRequired,
+    query: PropTypes.string,
     fhirServer: PropTypes.string.isRequired,
     viewport: PropTypes.object.isRequired,
   }
 
   constructor(props) {
     super(props)
-    this.state = { relatedResources: {} }
+    this.state = { loading: false, relatedResources: {} }
     this.handleRequireRelatedResources = this.handleRequireRelatedResources.bind(
       this
     )

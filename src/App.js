@@ -39,7 +39,10 @@ class App extends Component {
     const { config } = this.props
     const { viewport } = this.state
     return (
-      <div className='app'>
+      <div
+        className='app'
+        style={{ width: viewport.width, height: viewport.height }}
+      >
         <main>
           <Router>
             <Switch>

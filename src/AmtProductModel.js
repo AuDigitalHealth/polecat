@@ -105,21 +105,22 @@ class AmtProductModel extends Component {
         return node
       })
     } else newNodes = nodes
-    model.simulation = (model.simulation || d3.forceSimulation())
-      .nodes(newNodes)
+    model.simulation = (model.simulation || d3.forceSimulation()).nodes(
+      newNodes
+    )
     model.forceLink = (model.forceLink || d3.forceLink())
       .id(d => d.code)
       .distance(linkDistance)
       .links(cloneDeep(links))
-    model.forceManyBody = (model.forceManyBody || d3.forceManyBody())
-      .strength(attraction)
-    model.forceCollide = (model.forceCollide || d3.forceCollide())
-      .radius(
-        newNodes.length > collideRadiusThreshold
-          ? collideRadius +
-            collideRadiusRatio * (newNodes.length - collideRadiusThreshold)
-          : collideRadius
-      )
+    model.forceManyBody = (model.forceManyBody || d3.forceManyBody()).strength(
+      attraction
+    )
+    model.forceCollide = (model.forceCollide || d3.forceCollide()).radius(
+      newNodes.length > collideRadiusThreshold
+        ? collideRadius +
+          collideRadiusRatio * (newNodes.length - collideRadiusThreshold)
+        : collideRadius
+    )
     model.forceCenter = (model.forceCenter || d3.forceCenter())
       .x(centerX || viewport.width / 2)
       .y(centerY || viewport.height / 2)
@@ -137,6 +138,10 @@ class AmtProductModel extends Component {
       .alpha(alpha)
       .alphaDecay(alphaDecay)
       .restart()
+  }
+
+  stopSimulation() {
+    if (this.simulation) this.simulation.stop()
   }
 
   moveSimulationCenter(deltaX, deltaY, newX, newY) {
@@ -253,6 +258,10 @@ class AmtProductModel extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.stopSimulation()
+  }
+
   shouldComponentUpdate(nextProps, nextState) {
     const { nodes, links } = nextProps
     if (!(nodes && links)) return false
@@ -270,6 +279,7 @@ class AmtProductModel extends Component {
       collideRadiusRatio,
       viewport: { width, height },
     } = nextProps
+    if (!(nextProps.nodes && nextProps.links)) return
     const { concepts: nodes, relationships: links } = translateToAmt({
       concepts: nextProps.nodes,
       relationships: nextProps.links,
@@ -293,21 +303,28 @@ class AmtProductModel extends Component {
   }
 
   render() {
+    const { viewport } = this.props
     const concepts = this.renderConcepts()
     const relationships = this.renderRelationships()
     return (
-      <div className='product-model' onWheel={this.handleWheel}>
-        <svg
-          height='100%'
-          width='100%'
-          preserveAspectRatio='none'
-          onMouseMove={this.handleMouseMove}
-          onMouseUp={this.handleMouseUp}
-          onDoubleClick={this.handleDoubleClick}
-        >
-          {relationships}
-        </svg>
-        {concepts}
+      <div
+        className='product-model'
+        style={{ width: viewport.width, height: viewport.height }}
+        onWheel={this.handleWheel}
+      >
+        <div className='product-model-inner'>
+          <svg
+            height={viewport.height}
+            width={viewport.width}
+            preserveAspectRatio='none'
+            onMouseMove={this.handleMouseMove}
+            onMouseUp={this.handleMouseUp}
+            onDoubleClick={this.handleDoubleClick}
+          >
+            {relationships}
+          </svg>
+          {concepts}
+        </div>
       </div>
     )
   }
@@ -318,8 +335,8 @@ class AmtProductModel extends Component {
     return nodes
       ? nodes.map(
         (node, i) =>
-          node.focused
-            ? <FocusedConcept
+          node.focused ? (
+            <FocusedConcept
               key={i}
               sctid={node.code}
               display={node.display}
@@ -329,7 +346,8 @@ class AmtProductModel extends Component {
               width={conceptWidth}
               height={conceptHeight}
             />
-            : <Concept
+          ) : (
+            <Concept
               key={i}
               sctid={node.code}
               display={node.display}
@@ -339,6 +357,7 @@ class AmtProductModel extends Component {
               width={conceptWidth}
               height={conceptHeight}
             />
+          )
       )
       : []
   }
