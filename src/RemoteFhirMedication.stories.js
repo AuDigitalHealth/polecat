@@ -54,7 +54,7 @@ storiesOf('RemoteFhirMedication', module)
   ))
   .add('loratadine (substance)', () => (
     <RemoteFhirMedication
-      path='Substance/2292011000036106'
+      path='/Substance/2292011000036106'
       fhirServer={config.fhirServer}
       viewport={{ width, height }}
     />

@@ -315,6 +315,7 @@ export const resourceRequirementsFor = sourceType =>
     UPG: ['UPDSF'],
     UPDSF: [],
     UPD: [],
+    substance: [],
   }[sourceType])
 
 const fhirToAmtTypes = {

@@ -91,7 +91,10 @@ class FhirMedication extends Component {
   getConceptsForResource(resource, setFocused = false) {
     const focused = getSubjectConcept(resource)
     if (setFocused) focused.focused = true
-    const result = getRelatedConcepts(resource, focused.code, focused.type)
+    const result =
+      focused.type === 'substance'
+        ? emptyConcepts()
+        : getRelatedConcepts(resource, focused.code, focused.type)
     result.concepts.push(focused)
     return result
   }
