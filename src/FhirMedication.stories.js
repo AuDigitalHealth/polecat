@@ -13,17 +13,14 @@ const height = 800
 
 storiesOf('FhirMedication', module)
   .addDecorator(StoryRouter())
-  .add(
-    'Augmentin Duo Forte 875/125 film-coated tablet, 10, blister pack (CTPP)',
-    () => (
-      <FhirMedication
-        resource={ctpp1}
-        relatedResources={{ '6052011000036107': tpuu1 }}
-        viewport={{ width, height }}
-      />
-    )
-  )
-  .add('amoxicillin + clavulanic acid (MP)', () => (
+  .add('With related resources', () => (
+    <FhirMedication
+      resource={ctpp1}
+      relatedResources={{ '6052011000036107': tpuu1 }}
+      viewport={{ width, height }}
+    />
+  ))
+  .add('With child concepts', () => (
     <FhirMedication
       resource={mp1}
       childBundle={childBundle1}

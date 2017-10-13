@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import spinner from './img/spinner.gif'
-import './css/Loading.css'
 
 class Loading extends Component {
   static propTypes = {

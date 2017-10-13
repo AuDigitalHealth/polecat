@@ -8,6 +8,8 @@ import Error from './Error.js'
 import { sniffFormat } from './fhir/restApi'
 import { opOutcomeFromJsonResponse } from './fhir/core.js'
 
+import './css/RemoteFhirMedication.css'
+
 class RemoteFhirMedication extends Component {
   static propTypes = {
     path: PropTypes.string.isRequired,
