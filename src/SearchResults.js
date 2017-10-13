@@ -19,6 +19,7 @@ class SearchResults extends Component {
           'MPP',
           'MPUU',
           'MP',
+          'substance',
         ]),
       })
     ),
