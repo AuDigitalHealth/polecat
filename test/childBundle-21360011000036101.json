@@ -1,0 +1,1761 @@
+{
+  "resourceType": "Bundle",
+  "id": "a9ff5cea-be12-4eb9-aed6-3ef598ed6e54",
+  "meta": {
+    "lastUpdated": "2017-10-13T06:33:02.129+00:00"
+  },
+  "type": "searchset",
+  "total": 79,
+  "link": [
+    {
+      "relation": "self",
+      "url":
+        "http://localhost/fhir/Medication?parent=Medication%2F21360011000036101"
+    },
+    {
+      "relation": "next",
+      "url":
+        "http://localhost/fhir?_getpages=906dbcac-c52c-46a8-b60e-1dc07a4dbce8&_getpagesoffset=10&_count=10&_bundletype=searchset"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "http://localhost/fhir/Medication/975591000168101",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "975591000168101",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>amoxicillin 1 g + clavulanic acid 200 mg injection, 1.2 g vial</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/21360011000036101",
+                  "display": "amoxicillin + clavulanic acid"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPD",
+                  "display": "Unbranded product with no strengths or form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21415011000036100",
+                      "display": "amoxicillin"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "UPDSF",
+              "display": "Unbranded product with strengths and form"
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170831"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "975591000168101",
+              "display":
+                "amoxicillin 1 g + clavulanic acid 200 mg injection, 1.2 g vial"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": false,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "129011000036109",
+              "display": "injection"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/1962011000036108",
+              "display": "clavulanic acid"
+            },
+            "amount": {
+              "numerator": {
+                "value": 200,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/1799011000036105",
+              "display": "amoxicillin"
+            },
+            "amount": {
+              "numerator": {
+                "value": 1000,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://localhost/fhir/Medication/975601000168108",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "975601000168108",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Amoxiclav 1000/200 (Juno) powder for injection, 1.2 g vial</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/975591000168101",
+                  "display":
+                    "amoxicillin 1 g + clavulanic acid 200 mg injection, 1.2 g vial"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPDSF",
+                  "display": "Unbranded product with strengths and form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21360011000036101",
+                      "display": "amoxicillin + clavulanic acid"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/21415011000036100",
+                          "display": "amoxicillin"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPD",
+                          "display":
+                            "Unbranded product with no strengths or form"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPSF",
+              "display": "Branded product with strengths and form"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "975581000168104",
+                  "display": "Amoxiclav 1000/200 (Juno)"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170831"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "975601000168108",
+              "display":
+                "Amoxiclav 1000/200 (Juno) powder for injection, 1.2 g vial"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "208011000036106",
+              "display": "powder for injection"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/1962011000036108",
+              "display": "clavulanic acid"
+            },
+            "amount": {
+              "numerator": {
+                "value": 200,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/1799011000036105",
+              "display": "amoxicillin"
+            },
+            "amount": {
+              "numerator": {
+                "value": 1000,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://localhost/fhir/Medication/23463011000036105",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "23463011000036105",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>amoxicillin 400 mg/5 mL + clavulanic acid 57 mg/5 mL powder for oral liquid</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/21360011000036101",
+                  "display": "amoxicillin + clavulanic acid"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPD",
+                  "display": "Unbranded product with no strengths or form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21415011000036100",
+                      "display": "amoxicillin"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "UPDSF",
+              "display": "Unbranded product with strengths and form"
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170831"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "23463011000036105",
+              "display":
+                "amoxicillin 400 mg/5 mL + clavulanic acid 57 mg/5 mL powder for oral liquid"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": false,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "224011000036105",
+              "display": "powder for oral liquid"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/1962011000036108",
+              "display": "clavulanic acid"
+            },
+            "amount": {
+              "numerator": {
+                "value": 11400,
+                "unit": "microgram",
+                "system": "http://snomed.info/sct",
+                "code": "90011000036103"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "mL",
+                "system": "http://snomed.info/sct",
+                "code": "30011000036107"
+              }
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/1799011000036105",
+              "display": "amoxicillin"
+            },
+            "amount": {
+              "numerator": {
+                "value": 80,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "mL",
+                "system": "http://snomed.info/sct",
+                "code": "30011000036107"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://localhost/fhir/Medication/691061000168106",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "691061000168106",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Amoxycillin and Clavulanic Acid 400/57 (Apo) powder for oral liquid, 5 mL</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/23463011000036105",
+                  "display":
+                    "amoxicillin 400 mg/5 mL + clavulanic acid 57 mg/5 mL powder for oral liquid"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPDSF",
+                  "display": "Unbranded product with strengths and form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21360011000036101",
+                      "display": "amoxicillin + clavulanic acid"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/21415011000036100",
+                          "display": "amoxicillin"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPD",
+                          "display":
+                            "Unbranded product with no strengths or form"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPSF",
+              "display": "Branded product with strengths and form"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "691051000168109",
+                  "display": "Amoxycillin and Clavulanic Acid 400/57 (Apo)"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170831"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "691061000168106",
+              "display":
+                "Amoxycillin and Clavulanic Acid 400/57 (Apo) powder for oral liquid, 5 mL"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "224011000036105",
+              "display": "powder for oral liquid"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/1799011000036105",
+              "display": "amoxicillin"
+            },
+            "amount": {
+              "numerator": {
+                "value": 80,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "mL",
+                "system": "http://snomed.info/sct",
+                "code": "30011000036107"
+              }
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/1962011000036108",
+              "display": "clavulanic acid"
+            },
+            "amount": {
+              "numerator": {
+                "value": 11400,
+                "unit": "microgram",
+                "system": "http://snomed.info/sct",
+                "code": "90011000036103"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "mL",
+                "system": "http://snomed.info/sct",
+                "code": "30011000036107"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://localhost/fhir/Medication/23461011000036109",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "23461011000036109",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>amoxicillin 875 mg + clavulanic acid 125 mg tablet</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/21360011000036101",
+                  "display": "amoxicillin + clavulanic acid"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPD",
+                  "display": "Unbranded product with no strengths or form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21415011000036100",
+                      "display": "amoxicillin"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "UPDSF",
+              "display": "Unbranded product with strengths and form"
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170831"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "23461011000036109",
+              "display": "amoxicillin 875 mg + clavulanic acid 125 mg tablet"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": false,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "154011000036109",
+              "display": "tablet"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/1962011000036108",
+              "display": "clavulanic acid"
+            },
+            "amount": {
+              "numerator": {
+                "value": 125,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/1799011000036105",
+              "display": "amoxicillin"
+            },
+            "amount": {
+              "numerator": {
+                "value": 875,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://localhost/fhir/Medication/990671000168101",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "990671000168101",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Amoxy/Clav 875/125 (Apo) film-coated tablet</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/23461011000036109",
+                  "display":
+                    "amoxicillin 875 mg + clavulanic acid 125 mg tablet"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPDSF",
+                  "display": "Unbranded product with strengths and form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21360011000036101",
+                      "display": "amoxicillin + clavulanic acid"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/21415011000036100",
+                          "display": "amoxicillin"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPD",
+                          "display":
+                            "Unbranded product with no strengths or form"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPSF",
+              "display": "Branded product with strengths and form"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "990661000168107",
+                  "display": "Amoxy/Clav 875/125 (Apo)"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170831"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "990671000168101",
+              "display": "Amoxy/Clav 875/125 (Apo) film-coated tablet"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "267011000036109",
+              "display": "film-coated tablet"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/1962011000036108",
+              "display": "clavulanic acid"
+            },
+            "amount": {
+              "numerator": {
+                "value": 125,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/1799011000036105",
+              "display": "amoxicillin"
+            },
+            "amount": {
+              "numerator": {
+                "value": 875,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://localhost/fhir/Medication/23462011000036103",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "23462011000036103",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>amoxicillin 500 mg + clavulanic acid 125 mg tablet</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/21360011000036101",
+                  "display": "amoxicillin + clavulanic acid"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPD",
+                  "display": "Unbranded product with no strengths or form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21415011000036100",
+                      "display": "amoxicillin"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "UPDSF",
+              "display": "Unbranded product with strengths and form"
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170831"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "23462011000036103",
+              "display": "amoxicillin 500 mg + clavulanic acid 125 mg tablet"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": false,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "154011000036109",
+              "display": "tablet"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/1799011000036105",
+              "display": "amoxicillin"
+            },
+            "amount": {
+              "numerator": {
+                "value": 500,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/1962011000036108",
+              "display": "clavulanic acid"
+            },
+            "amount": {
+              "numerator": {
+                "value": 125,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://localhost/fhir/Medication/6742011000036108",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "6742011000036108",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Augmentin Duo 500/125 film-coated tablet</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/23462011000036103",
+                  "display":
+                    "amoxicillin 500 mg + clavulanic acid 125 mg tablet"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPDSF",
+                  "display": "Unbranded product with strengths and form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21360011000036101",
+                      "display": "amoxicillin + clavulanic acid"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/21415011000036100",
+                          "display": "amoxicillin"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPD",
+                          "display":
+                            "Unbranded product with no strengths or form"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPSF",
+              "display": "Branded product with strengths and form"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "37691000168101",
+                  "display": "Augmentin Duo 500/125"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170831"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "6742011000036108",
+              "display": "Augmentin Duo 500/125 film-coated tablet"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "267011000036109",
+              "display": "film-coated tablet"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/1962011000036108",
+              "display": "clavulanic acid"
+            },
+            "amount": {
+              "numerator": {
+                "value": 125,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/1799011000036105",
+              "display": "amoxicillin"
+            },
+            "amount": {
+              "numerator": {
+                "value": 500,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://localhost/fhir/Medication/904361000168107",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "904361000168107",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Amoxyclav 875/125 (MLabs) film-coated tablet</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/23461011000036109",
+                  "display":
+                    "amoxicillin 875 mg + clavulanic acid 125 mg tablet"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPDSF",
+                  "display": "Unbranded product with strengths and form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21360011000036101",
+                      "display": "amoxicillin + clavulanic acid"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/21415011000036100",
+                          "display": "amoxicillin"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPD",
+                          "display":
+                            "Unbranded product with no strengths or form"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPSF",
+              "display": "Branded product with strengths and form"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "904351000168105",
+                  "display": "Amoxyclav 875/125 (MLabs)"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170831"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "904361000168107",
+              "display": "Amoxyclav 875/125 (MLabs) film-coated tablet"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "267011000036109",
+              "display": "film-coated tablet"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/1962011000036108",
+              "display": "clavulanic acid"
+            },
+            "amount": {
+              "numerator": {
+                "value": 125,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/1799011000036105",
+              "display": "amoxicillin"
+            },
+            "amount": {
+              "numerator": {
+                "value": 875,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://localhost/fhir/Medication/920210011000036104",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "920210011000036104",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Amoxycillin/Clavulanic Acid 500/125 (Generic Health) film-coated tablet</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/23462011000036103",
+                  "display":
+                    "amoxicillin 500 mg + clavulanic acid 125 mg tablet"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPDSF",
+                  "display": "Unbranded product with strengths and form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21360011000036101",
+                      "display": "amoxicillin + clavulanic acid"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/21415011000036100",
+                          "display": "amoxicillin"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPD",
+                          "display":
+                            "Unbranded product with no strengths or form"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPSF",
+              "display": "Branded product with strengths and form"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "40721000168108",
+                  "display":
+                    "Amoxycillin/Clavulanic Acid 500/125 (Generic Health)"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170831"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "920210011000036104",
+              "display":
+                "Amoxycillin/Clavulanic Acid 500/125 (Generic Health) film-coated tablet"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "267011000036109",
+              "display": "film-coated tablet"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/1799011000036105",
+              "display": "amoxicillin"
+            },
+            "amount": {
+              "numerator": {
+                "value": 500,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/1962011000036108",
+              "display": "clavulanic acid"
+            },
+            "amount": {
+              "numerator": {
+                "value": 125,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

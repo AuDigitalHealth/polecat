@@ -18,7 +18,7 @@ class FhirMedication extends Component {
   static propTypes = {
     resource: PropTypes.object,
     relatedResources: PropTypes.object,
-    childResources: PropTypes.object,
+    childBundle: PropTypes.object,
     viewport: PropTypes.object.isRequired,
     onRequireRelatedResources: PropTypes.func,
     onRequireChildBundle: PropTypes.func,
