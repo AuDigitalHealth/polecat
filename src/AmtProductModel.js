@@ -42,7 +42,7 @@ class AmtProductModel extends Component {
     collideRadius: 110,
     linkDistance: 220,
     alpha: 1.5,
-    alphaDecay: 0.5,
+    alphaDecay: 0.1,
     conceptWidth: 166,
     conceptHeight: 116,
     linkCurviness: 0.4,
@@ -280,7 +280,6 @@ class AmtProductModel extends Component {
       viewport: { width, height },
     } = nextProps
     if (!(nextProps.nodes && nextProps.links)) return
-    console.log(JSON.stringify(this.props))
     const { concepts: nodes, relationships: links } = translateToAmt({
       concepts: nextProps.nodes,
       relationships: nextProps.links,

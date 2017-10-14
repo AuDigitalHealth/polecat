@@ -1,6 +1,5 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import StoryRouter from 'storybook-router'
 
 import FhirMedication from './FhirMedication.js'
 import ctpp1 from '../test/ctpp-19481011000036105.json'
@@ -12,7 +11,6 @@ const width = 800
 const height = 800
 
 storiesOf('FhirMedication', module)
-  .addDecorator(StoryRouter())
   .add('With related resources', () => (
     <FhirMedication
       resource={ctpp1}

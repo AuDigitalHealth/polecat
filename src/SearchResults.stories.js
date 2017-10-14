@@ -1,6 +1,5 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import StoryRouter from 'storybook-router'
 
 import SearchResults from './SearchResults.js'
 
@@ -51,6 +50,6 @@ const results1 = [
   },
 ]
 
-storiesOf('SearchResults', module)
-  .addDecorator(StoryRouter())
-  .add('With full range of types', () => <SearchResults results={results1} />)
+storiesOf('SearchResults', module).add('With full range of types', () => (
+  <SearchResults results={results1} />
+))

@@ -1,6 +1,5 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import StoryRouter from 'storybook-router'
 
 import Concept from './Concept.js'
 
@@ -10,7 +9,6 @@ const top = 20
 const left = 20
 
 storiesOf('Concept', module)
-  .addDecorator(StoryRouter())
   .add('CTPP', () => (
     <Concept
       sctid='933216161000036101'

@@ -1,6 +1,5 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import StoryRouter from 'storybook-router'
 
 import RemoteFhirMedication from './RemoteFhirMedication.js'
 import config from '../public/config.json'
@@ -9,7 +8,6 @@ const width = 800
 const height = 800
 
 storiesOf('RemoteFhirMedication', module)
-  .addDecorator(StoryRouter())
   .add('Lorapaed 1 mg/mL oral liquid solution, 150 mL, bottle (CTPP)', () => (
     <RemoteFhirMedication
       path='/Medication/60009011000036108'
