@@ -1,0 +1,97 @@
+{
+  "nodes": [
+    {
+      "type": "brand",
+      "code": "812781000168101",
+      "display": "Nuromol"
+    },
+    {
+      "type": "BPG",
+      "code": "813181000168109",
+      "display": "Nuromol film-coated tablet, 16"
+    },
+    {
+      "type": "UPG",
+      "code": "813171000168106",
+      "display": "paracetamol 500 mg + ibuprofen 200 mg tablet, 16"
+    },
+    {
+      "code": "812801000168102",
+      "display": "Nuromol film-coated tablet",
+      "type": "BPSF"
+    },
+    {
+      "type": "BPGC",
+      "code": "813191000168107",
+      "display": "Nuromol film-coated tablet, 16, blister pack",
+      "focused": true
+    },
+    {
+      "type": "UPDSF",
+      "code": "812791000168103",
+      "display": "paracetamol 500 mg + ibuprofen 200 mg tablet"
+    },
+    {
+      "type": "UPD",
+      "code": "177241000036105",
+      "display": "paracetamol + ibuprofen"
+    },
+    {
+      "type": "UPD",
+      "code": "21885011000036105",
+      "display": "ibuprofen"
+    },
+    {
+      "type": "UPD",
+      "code": "21433011000036107",
+      "display": "paracetamol"
+    }
+  ],
+  "links": [
+    {
+      "source": "813191000168107",
+      "target": "812781000168101",
+      "type": "has-brand"
+    },
+    {
+      "source": "813191000168107",
+      "target": "813181000168109",
+      "type": "is-a"
+    },
+    {
+      "source": "813181000168109",
+      "target": "813171000168106",
+      "type": "is-a"
+    },
+    {
+      "source": "813191000168107",
+      "target": "812801000168102",
+      "type": "is-component-of"
+    },
+    {
+      "source": "812801000168102",
+      "target": "812781000168101",
+      "type": "has-brand"
+    },
+    {
+      "source": "812801000168102",
+      "target": "812791000168103",
+      "type": "is-a"
+    },
+    {
+      "source": "812791000168103",
+      "target": "177241000036105",
+      "type": "is-a"
+    },
+    {
+      "source": "177241000036105",
+      "target": "21885011000036105",
+      "type": "is-a"
+    },
+    {
+      "source": "177241000036105",
+      "target": "21433011000036107",
+      "type": "is-a"
+    }
+  ]
+}
