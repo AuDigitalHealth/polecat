@@ -40,6 +40,12 @@
   dependencies:
     "@storybook/addons" "^3.2.12"
 
+"@storybook/addon-options@^3.2.12":
+  version "3.2.12"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-options/-/addon-options-3.2.12.tgz#1f3023bd3f676279466cf5816da2c920c08dc119"
+  dependencies:
+    "@storybook/addons" "^3.2.12"
+
 "@storybook/addons@^3.2.12":
   version "3.2.12"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.2.12.tgz#61adccaa8c0016f1439dc8934d8d61042b35e741"
