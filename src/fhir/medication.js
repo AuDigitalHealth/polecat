@@ -1,180 +1,161 @@
 import invert from 'lodash.invert'
 
-// Get `{ code, display, type }` for the subject concept of a Medication
-// resource.
-export const getSubjectConcept = parsed => {
-  const code = getSctCode(parsed)
-  const type = getSubjectConceptType(parsed)
-  return { type, ...code }
+// Get `{ coding, type }` for the subject concept of a Medication resource.
+export const getSubjectConcept = resource => {
+  if (!resource.code) throw new Error('No code element found.')
+  if (!resource.code.coding) throw new Error('No code.coding element found.')
+  const coding = resource.code.coding
+  const type = getSubjectConceptType(resource)
+  return { type, coding }
 }
 
 // Get the type of subject concept, which will either be:
 // - In the `medicationResourceType` extension, in the case of a Medication
 //   resource, OR;
 // - `substance`, in the case of a Substance resource.
-const getSubjectConceptType = parsed => {
-  if (parsed.resourceType === 'Medication') {
-    const resourceType = parsed.extension.find(
+const getSubjectConceptType = resource => {
+  if (resource.resourceType === 'Medication') {
+    const resourceType = resource.extension.find(
       extensionFilterFor('medicationResourceType')
     )
     validateMedicationResourceType(resourceType)
     return resourceType.valueCoding.code
-  } else if (parsed.resourceType === 'Substance') {
+  } else if (resource.resourceType === 'Substance') {
     return 'substance'
   } else {
     throw new Error('Unknown resource type encountered.')
   }
 }
 
-export const getRelatedConcepts = (parsed, sourceConcept, sourceType) => {
+export const getRelatedConcepts = (resource, source) => {
   // Call the generator function and merge together the results into a single
   // object with all concepts and all relationships.
   const result = [
-    ...getExtensionConcepts(parsed, sourceConcept, sourceType),
-    ...getPackageConcepts(parsed, sourceConcept, sourceType),
+    ...getExtensionConcepts(resource.extension, source),
+    ...getPackageConcepts(resource.package, source),
   ].reduce(mergeConceptsAndRelationships, emptyConcepts())
   return result
 }
 
-function * getExtensionConcepts(node, sourceConcept, sourceType) {
-  // Handle root of Medication resource being passed in.
-  if (node.resourceType === 'Medication' && node.extension) {
-    yield * getExtensionConcepts(node.extension, sourceConcept, sourceType)
-  } else {
-    // Get parent medication.
-    const parentMedication = getParentMedication(
-      node,
-      sourceConcept,
-      sourceType
+function * getExtensionConcepts(extension, source) {
+  if (!extension) return emptyConcepts()
+  // Get parent medication.
+  const parent = getParentMedication(extension, source)
+  let target
+  // Grab the parent medication, if there is one at this level.
+  if (parent) {
+    yield parent
+    target = parent.concepts[0]
+  }
+  // Get brand.
+  yield getBrand(extension, source)
+  // Recurse into each "parents" array to extract the data from each level
+  // of the hierarchy.
+  for (const parents of extension.filter(
+    extensionFilterFor('parentMedicationResources')
+  )) {
+    yield * getExtensionConcepts(parents.extension, target || source)
+  }
+}
+
+function * getPackageConcepts(medPackage, source) {
+  if (!medPackage) return emptyConcepts()
+  for (const content of medPackage.content) {
+    validatePackageContent(content)
+    const coding = [
+      {
+        system: snomedUri,
+        code: referenceToCode(content.itemReference.reference),
+        display: content.itemReference.display,
+      },
+    ]
+    // Get the type of the primary package concept by finding the
+    // `medicationResourceType` within the extension.
+    const resourceType = validateMedicationResourceType(
+      content.itemReference.extension.find(
+        extensionFilterFor('medicationResourceType')
+      )
     )
-    yield parentMedication
-    const parentConcept = parentMedication.concepts[0]
-    const newSourceConcept = parentConcept ? parentConcept.code : sourceConcept
-    const newSourceType = parentConcept ? parentConcept.type : sourceType
-    // Get brand.
-    yield getBrand(node, sourceConcept, sourceType)
+    const type = resourceType.valueCoding.code
+    const target = { coding, type }
+    // Return the new concept, along with a relationship between the source
+    // concept and the new concept.
+    yield {
+      concepts: [target],
+      relationships: [
+        {
+          source: codingToSnomedCode(source.coding),
+          target: codingToSnomedCode(target.coding),
+          type: relationshipTypeFor(source.type, target.type),
+        },
+      ],
+    }
     // Recurse into each "parents" array to extract the data from each level
     // of the hierarchy.
-    for (const parents of node.filter(
+    for (const parents of content.itemReference.extension.filter(
       extensionFilterFor('parentMedicationResources')
     )) {
-      yield * getExtensionConcepts(
-        parents.extension,
-        newSourceConcept,
-        newSourceType
-      )
+      // The target concept becomes the new source.
+      yield * getExtensionConcepts(parents.extension, target)
     }
   }
-}
-
-function * getPackageConcepts(node, sourceConcept, sourceType) {
-  // Handle root of Medication resource being passed in.
-  if (node.resourceType === 'Medication' && node.package) {
-    yield * getPackageConcepts(node.package, sourceConcept, sourceType)
-  } else {
-    try {
-      for (const c of node.content) {
-        const content = validatePackageContent(c)
-        const code = referenceToCode(content.itemReference.reference)
-        const display = content.itemReference.display
-        yield {
-          concepts: [{ code, display }],
-          relationships: [
-            {
-              source: sourceConcept,
-              target: code,
-              type: 'is-component-of',
-            },
-          ],
-        }
-      }
-    } catch (error) {
-      return emptyConcepts()
-    }
-  }
-}
-
-// Get code and display for the SNOMED code within the `code` element.
-const getSctCode = node => {
-  if (!node.code) throw new Error('Missing code element.')
-  validateCoding(node.code.coding)
-  const coding = node.code.coding.find(c => c.system === snomedUri)
-  return { code: coding.code, display: coding.display }
 }
 
 // Get the code and type of a parent medication, and work out its relationship
 // to a given source code.
-const getParentMedication = (node, sourceConcept, sourceType) => {
+const getParentMedication = (extension, source) => {
   try {
     // Get the extension which provides the parent code itself.
-    const parentMedication = node.find(extensionFilterFor('parentMedication'))
-    validateParentMedication(parentMedication)
+    const parentMedication = validateParentMedication(
+      extension.find(extensionFilterFor('parentMedication'))
+    )
     // Get the extension which describes the resource type of the parent code.
-    const resourceType = node.find(extensionFilterFor('medicationResourceType'))
-    validateMedicationResourceType(resourceType)
-    const reference = parentMedication.valueReference.reference
-    // Convert the reference (Medication/[code]) to a code.
-    const code = referenceToCode(reference)
-    const display = parentMedication.valueReference.display
+    const resourceType = validateMedicationResourceType(
+      extension.find(extensionFilterFor('medicationResourceType'))
+    )
+    const coding = valueReferenceToSnomedCoding(parentMedication.valueReference)
     const type = resourceType.valueCoding.code
     // Yield a structure with an array of concepts, and an array of
     // relationships. This will be merged with data found elsewhere in the
     // resource, and in other resources, later on.
     return {
-      concepts: [{ type, code, display }],
+      concepts: [{ coding, type }],
       relationships: [
         {
-          source: sourceConcept,
-          target: code,
-          type: relationshipTypeFor(sourceType, type),
+          source: codingToSnomedCode(source.coding),
+          target: codingToSnomedCode(coding),
+          type: relationshipTypeFor(source.type, type),
         },
       ],
     }
   } catch (error) {
-    // If `parentMedication` or `resourceType` are missing or malformed, don't
-    // add anything to the result.
-    return emptyConcepts()
+    return null
   }
 }
 
 // Get brand information from within the extension.
-const getBrand = (node, sourceConcept, sourceType) => {
+const getBrand = (extension, source) => {
   try {
     // Get the extension which provides the brand information.
-    const brand = node.find(extensionFilterFor('brand'))
-    validateBrand(brand)
-    const coding = brand.valueCodeableConcept.coding.find(
-      c => c.system === snomedUri
-    )
-    validateCoding(brand.valueCodeableConcept.coding)
-    const code = coding.code
-    const display = coding.display
+    const brand = validateBrand(extension.find(extensionFilterFor('brand')))
+    const coding = brand.valueCodeableConcept.coding
     return {
-      concepts: [{ type: 'brand', code, display }],
+      concepts: [{ coding, type: 'brand' }],
       relationships: [
         {
-          source: sourceConcept,
-          target: code,
-          type: relationshipTypeFor(sourceType, 'brand'),
+          source: codingToSnomedCode(source.coding),
+          target: codingToSnomedCode(coding),
+          type: relationshipTypeFor(source.type, 'brand'),
         },
       ],
     }
   } catch (error) {
-    return { concepts: [], relationships: [] }
+    return emptyConcepts()
   }
 }
 
 const validateParentMedication = parentMedication => {
-  if (!parentMedication) throw new Error('Missing parentMedication value.')
-  if (!parentMedication.valueReference) {
-    throw new Error('Missing parentMedication.valueReference.')
-  }
-  if (!parentMedication.valueReference.reference) {
-    throw new Error('Missing parentMedication.valueReference.reference')
-  }
-  if (!parentMedication.valueReference.display) {
-    throw new Error('Missing parentMedication.valueReference.display')
-  }
+  if (!parentMedication) throw new Error('Missing parentMedication.')
   return parentMedication
 }
 
@@ -199,15 +180,6 @@ const validateBrand = brand => {
   return brand
 }
 
-const validateCoding = coding => {
-  if (!coding) throw new Error('Missing coding.')
-  for (const c of coding.filter(c => c.system === snomedUri)) {
-    if (!c.code) throw new Error('Missing coding.code value.')
-    if (!c.display) throw new Error('Missing coding.display value.')
-  }
-  return coding
-}
-
 const validatePackageContent = content => {
   if (!content) throw new Error('Missing package content.')
   if (!content.itemReference) throw new Error('Missing content.itemReference.')
@@ -217,27 +189,35 @@ const validatePackageContent = content => {
   if (!content.itemReference.display) {
     throw new Error('Missing content.itemReference.display.')
   }
+  if (!content.itemReference.extension) {
+    throw new Error('Missing content.itemReference.extension.')
+  }
   return content
 }
 
 const snomedUri = 'http://snomed.info/sct'
+
+const urlForExtension = name =>
+  ({
+    medicationResourceType:
+      'http://medserve.online/fhir/StructureDefinition/medicationResourceType',
+    parentMedication:
+      'http://medserve.online/fhir/StructureDefinition/parentMedication',
+    parentMedicationResources:
+      'http://medserve.online/fhir/StructureDefinition/parentMedicationResources',
+    brand: 'http://medserve.online/fhir/StructureDefinition/brand',
+  }[name])
 
 // Filter functions for finding different types of information within the
 // extension.
 const extensionFilterFor = key =>
   ({
     medicationResourceType: ext =>
-      ext.url ===
-      'http://medserve.online/fhir/StructureDefinition/medicationResourceType',
-    parentMedication: ext =>
-      ext.url ===
-      'http://medserve.online/fhir/StructureDefinition/parentMedication',
+      ext.url === urlForExtension('medicationResourceType'),
+    parentMedication: ext => ext.url === urlForExtension('parentMedication'),
     parentMedicationResources: ext =>
-      ext.url ===
-        'http://medserve.online/fhir/StructureDefinition/parentMedicationResources' &&
-      ext.extension,
-    brand: ext =>
-      ext.url === 'http://medserve.online/fhir/StructureDefinition/brand',
+      ext.url === urlForExtension('parentMedicationResources') && ext.extension,
+    brand: ext => ext.url === urlForExtension('brand'),
   }[key])
 
 // Relationship types for different combinations of concept types.
@@ -338,12 +318,62 @@ export const amtConceptTypeFor = fhirType => fhirToAmtTypes[fhirType]
 export const fhirMedicationTypeFor = amtType => amtToFhirTypes[amtType]
 
 // Conversion from `Medication/[code]` to code.
-const referenceToCode = reference => reference.split('/').slice(-1)[0]
+const referenceToCode = reference => {
+  if (!reference) {
+    throw new Error('Missing reference.')
+  }
+  return reference.split('/').slice(-1)[0]
+}
+
+// Extracts a SNOMED code from a `coding` element, e.g.:
+// [
+//   {
+//     "system": "http://snomed.info/sct",
+//     "code": "813191000168107",
+//     "display": "Nuromol film-coated tablet, 16, blister pack"
+//   },
+//   {
+//     "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+//     "code": "225322"
+//   }
+// ]
+// Returns: 813191000168107
+export const codingToSnomedCode = coding =>
+  coding.find(c => c.system === snomedUri).code
+
+// Extracts a SNOMED display from a `coding` element.
+export const codingToSnomedDisplay = coding =>
+  coding.find(c => c.system === snomedUri).display
+
+// Takes a `valueReference` element and returns a `coding` element, containing a
+// single SNOMED 'code', e.g.
+// {
+//   "reference": "Medication/813181000168109",
+//   "display": "Nuromol film-coated tablet, 16"
+// }
+// Returns:
+// [
+//   {
+//     "system": "http://snomed.info/sct",
+//     "code": "813181000168109",
+//     "display": "Nuromol film-coated tablet, 16"
+//   },
+// ]
+const valueReferenceToSnomedCoding = valueReference => {
+  if (!valueReference) throw new Error('Missing valueReference.')
+  return [
+    {
+      system: snomedUri,
+      code: referenceToCode(valueReference.reference),
+      display: valueReference.display,
+    },
+  ]
+}
 
 // Merges a concept object `{ concepts: [], relationships: [] }` into an array
 // of concept objects, minding uniqueness of concepts and relationships. If a
-// concept or relationship is already existing, the values of its keys are
-// assigned over the existing object.
+// concept or relationship is already existing, its data is merged in an
+// additive fashion.
 export const mergeConceptsAndRelationships = (merged, object) => {
   mergeConcepts(merged.concepts, object.concepts)
   mergeRelationships(merged.relationships, object.relationships)
@@ -353,7 +383,7 @@ export const mergeConceptsAndRelationships = (merged, object) => {
 export const mergeConcepts = (merged, concepts) => {
   let found
   for (const concept of concepts) {
-    found = merged.findIndex(c => conceptHasCode(c, concept.code))
+    found = merged.findIndex(c => conceptsHaveSameCoding(c, concept))
     if (found !== -1) {
       merged[found] = { ...merged[found], ...concept }
     } else merged.push(concept)
@@ -375,8 +405,20 @@ const mergeRelationships = (merged, relationships) => {
   }
 }
 
-// A concept's uniqueness is defined by its code.
-const conceptHasCode = (concept, code) => concept.code === code
+// Concepts A and B are deemed to have the same coding if all of the codes in
+// concept A are present in concept B, matched using `system` and `code`.
+const conceptsHaveSameCoding = (conceptA, conceptB) => {
+  for (const code of conceptA.coding) {
+    if (
+      !conceptB.coding.find(
+        c => c.system === code.system && c.code === code.code
+      )
+    ) {
+      return false
+    }
+  }
+  return true
+}
 
 // A relationship's uniqueness is defined by its source and target codes.
 const relationshipHasSourceTarget = (relationship, source, target) =>

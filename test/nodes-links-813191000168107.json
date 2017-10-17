@@ -1,77 +1,122 @@
 {
   "nodes": [
     {
-      "type": "brand",
-      "code": "812781000168101",
-      "display": "Nuromol"
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "812781000168101",
+          "display": "Nuromol"
+        }
+      ],
+      "type": "brand"
     },
     {
-      "type": "BPG",
-      "code": "813181000168109",
-      "display": "Nuromol film-coated tablet, 16"
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "812821000168106",
+          "display": "Nuromol film-coated tablet, 2"
+        }
+      ],
+      "type": "BPG"
     },
     {
-      "type": "UPG",
-      "code": "813171000168106",
-      "display": "paracetamol 500 mg + ibuprofen 200 mg tablet, 16"
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "812811000168104",
+          "display": "paracetamol 500 mg + ibuprofen 200 mg tablet, 2"
+        }
+      ],
+      "type": "UPG"
     },
     {
-      "code": "812801000168102",
-      "display": "Nuromol film-coated tablet",
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "812801000168102",
+          "display": "Nuromol film-coated tablet"
+        }
+      ],
       "type": "BPSF"
     },
     {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "812791000168103",
+          "display": "paracetamol 500 mg + ibuprofen 200 mg tablet"
+        }
+      ],
+      "type": "UPDSF"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "177241000036105",
+          "display": "paracetamol + ibuprofen"
+        }
+      ],
+      "type": "UPD"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "21885011000036105",
+          "display": "ibuprofen"
+        }
+      ],
+      "type": "UPD"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "21433011000036107",
+          "display": "paracetamol"
+        }
+      ],
+      "type": "UPD"
+    },
+    {
       "type": "BPGC",
-      "code": "813191000168107",
-      "display": "Nuromol film-coated tablet, 16, blister pack",
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "812831000168109",
+          "display": "Nuromol film-coated tablet, 2, blister pack"
+        },
+        {
+          "system":
+            "https://www.tga.gov.au/australian-register-therapeutic-goods",
+          "code": "225322"
+        }
+      ],
       "focused": true
-    },
-    {
-      "type": "UPDSF",
-      "code": "812791000168103",
-      "display": "paracetamol 500 mg + ibuprofen 200 mg tablet"
-    },
-    {
-      "type": "UPD",
-      "code": "177241000036105",
-      "display": "paracetamol + ibuprofen"
-    },
-    {
-      "type": "UPD",
-      "code": "21885011000036105",
-      "display": "ibuprofen"
-    },
-    {
-      "type": "UPD",
-      "code": "21433011000036107",
-      "display": "paracetamol"
     }
   ],
   "links": [
     {
-      "source": "813191000168107",
+      "source": "812831000168109",
       "target": "812781000168101",
       "type": "has-brand"
     },
     {
-      "source": "813191000168107",
-      "target": "813181000168109",
+      "source": "812831000168109",
+      "target": "812821000168106",
       "type": "is-a"
     },
     {
-      "source": "813181000168109",
-      "target": "813171000168106",
+      "source": "812821000168106",
+      "target": "812811000168104",
       "type": "is-a"
     },
     {
-      "source": "813191000168107",
+      "source": "812831000168109",
       "target": "812801000168102",
-      "type": "is-component-of"
-    },
-    {
-      "source": "812801000168102",
-      "target": "812781000168101",
-      "type": "has-brand"
+      "type": "unknown"
     },
     {
       "source": "812801000168102",
@@ -92,6 +137,11 @@
       "source": "177241000036105",
       "target": "21433011000036107",
       "type": "is-a"
+    },
+    {
+      "source": "812801000168102",
+      "target": "812781000168101",
+      "type": "has-brand"
     }
   ]
 }

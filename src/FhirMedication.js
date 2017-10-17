@@ -12,6 +12,7 @@ import {
   emptyConcepts,
   resourceRequirementsFor,
   relationshipTypeFor,
+  codingToSnomedCode,
 } from './fhir/medication.js'
 
 class FhirMedication extends Component {
@@ -58,8 +59,8 @@ class FhirMedication extends Component {
             const child = getSubjectConcept(e.resource)
             acc.concepts.push(child)
             acc.relationships.push({
-              source: child.code,
-              target: focused.code,
+              source: codingToSnomedCode(child.coding),
+              target: codingToSnomedCode(focused.coding),
               type: relationshipTypeFor(child.type, focused.type),
             })
             return acc
@@ -94,7 +95,7 @@ class FhirMedication extends Component {
     const result =
       focused.type === 'substance'
         ? emptyConcepts()
-        : getRelatedConcepts(resource, focused.code, focused.type)
+        : getRelatedConcepts(resource, focused)
     result.concepts.push(focused)
     return result
   }
@@ -108,7 +109,7 @@ class FhirMedication extends Component {
       const requirements = resourceRequirementsFor(type)
       const ids = concepts
         .filter(c => requirements.includes(c.type) || !c.type)
-        .map(c => c.code)
+        .map(c => codingToSnomedCode(c.coding))
       onRequireRelatedResources(ids)
       this.setState(() => ({ additionalResourcesRequested: true }))
     }
@@ -117,7 +118,7 @@ class FhirMedication extends Component {
   requireChildConcepts(resource) {
     const { onRequireChildBundle } = this.props
     if (onRequireChildBundle) {
-      const code = getSubjectConcept(resource).code
+      const code = codingToSnomedCode(getSubjectConcept(resource).coding)
       onRequireChildBundle(code)
       this.setState(() => ({ childConceptsRequested: true }))
     }

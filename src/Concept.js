@@ -2,12 +2,19 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
+import { codingToSnomedCode, codingToSnomedDisplay } from './fhir/medication.js'
+
 import './css/Concept.css'
 
 class Concept extends Component {
   static propTypes = {
-    sctid: PropTypes.string,
-    display: PropTypes.string,
+    coding: PropTypes.arrayOf(
+      PropTypes.shape({
+        system: PropTypes.string,
+        code: PropTypes.string,
+        display: PropTypes.string,
+      })
+    ).isRequired,
     type: PropTypes.oneOf([
       'CTPP',
       'TPP',
@@ -17,7 +24,7 @@ class Concept extends Component {
       'MPUU',
       'MP',
       'substance',
-    ]),
+    ]).isRequired,
     top: PropTypes.number,
     left: PropTypes.number,
     width: PropTypes.number,
@@ -31,7 +38,9 @@ class Concept extends Component {
   }
 
   render() {
-    const { sctid, display, type, top, left, width, height } = this.props
+    const { coding, type, top, left, width, height } = this.props
+    const sctid = codingToSnomedCode(coding)
+    const display = codingToSnomedDisplay(coding)
     return (
       <div
         className='concept'

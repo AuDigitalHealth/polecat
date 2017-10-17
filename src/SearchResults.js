@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
+import { codingToSnomedCode, codingToSnomedDisplay } from './fhir/medication.js'
+
 import './css/SearchResults.css'
 
 class SearchResults extends Component {
@@ -9,7 +11,13 @@ class SearchResults extends Component {
     query: PropTypes.string,
     results: PropTypes.arrayOf(
       PropTypes.shape({
-        code: PropTypes.string,
+        coding: PropTypes.arrayOf(
+          PropTypes.shape({
+            system: PropTypes.string,
+            code: PropTypes.string,
+            display: PropTypes.string,
+          })
+        ),
         display: PropTypes.string,
         type: PropTypes.oneOf([
           'CTPP',
@@ -39,16 +47,21 @@ class SearchResults extends Component {
         <span className={`type type-${result.type}`.toLowerCase()}>
           {result.type}
         </span>
-        <span className='display'>
-          <Link
-            to={`/Medication/${result.code}`}
-            onClick={() => this.handleSelectResult(result)}
-          >
-            {result.display}
-          </Link>
-        </span>
+        <span className='display'>{this.renderLinkToResult(result)}</span>
       </li>
     ))
+  }
+
+  renderLinkToResult(result) {
+    const to =
+      result.type === 'substance'
+        ? `/Substance/${codingToSnomedCode(result.coding)}`
+        : `/Medication/${codingToSnomedCode(result.coding)}`
+    return (
+      <Link to={to} onClick={() => this.handleSelectResult(result)}>
+        {codingToSnomedDisplay(result.coding)}
+      </Link>
+    )
   }
 
   render() {

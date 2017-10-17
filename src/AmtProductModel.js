@@ -7,7 +7,11 @@ import omit from 'lodash.omit'
 
 import Concept from './Concept.js'
 import FocusedConcept from './FocusedConcept.js'
-import { amtConceptTypeFor, mergeConcepts } from './fhir/medication.js'
+import {
+  amtConceptTypeFor,
+  mergeConcepts,
+  codingToSnomedCode,
+} from './fhir/medication.js'
 import { translateToAmt } from './fhir/translations.js'
 import { curveForLink } from './graph/links.js'
 
@@ -16,7 +20,16 @@ import './css/AmtProductModel.css'
 class AmtProductModel extends Component {
   static propTypes = {
     nodes: PropTypes.arrayOf(
-      PropTypes.shape({ code: PropTypes.string, display: PropTypes.string })
+      PropTypes.shape({
+        coding: PropTypes.arrayOf(
+          PropTypes.shape({
+            system: PropTypes.string,
+            code: PropTypes.string,
+            display: PropTypes.string,
+          })
+        ),
+        display: PropTypes.string,
+      })
     ),
     links: PropTypes.arrayOf(
       PropTypes.shape({ source: PropTypes.string, target: PropTypes.string })
@@ -88,13 +101,18 @@ class AmtProductModel extends Component {
       newNodes = [ oldNodes, nodes ].reduce(mergeConcepts, [])
       // Remove any nodes that are not present in the new set of nodes.
       newNodes = newNodes.filter(node =>
-        nodes.map(n => n.code).includes(node.code)
+        nodes
+          .map(n => codingToSnomedCode(n.coding))
+          .includes(codingToSnomedCode(node.coding))
       )
-      // Remove any nodes that are no longer the subject of a link.
-      newNodes = newNodes.filter(node =>
-        links
-          .reduce((acc, link) => acc.concat([ link.source, link.target ]), [])
-          .includes(node.code)
+      // Remove any nodes that are no longer the subject of a link (except the
+      // focused node).
+      newNodes = newNodes.filter(
+        node =>
+          node.focused ||
+          links
+            .reduce((acc, link) => acc.concat([ link.source, link.target ]), [])
+            .includes(codingToSnomedCode(node.coding))
       )
       // Fix the position of the focused node.
       newNodes = newNodes.map(node => {
@@ -109,7 +127,7 @@ class AmtProductModel extends Component {
       newNodes
     )
     model.forceLink = (model.forceLink || d3.forceLink())
-      .id(d => d.code)
+      .id(d => codingToSnomedCode(d.coding))
       .distance(linkDistance)
       .links(cloneDeep(links))
     model.forceManyBody = (model.forceManyBody || d3.forceManyBody()).strength(
@@ -336,8 +354,7 @@ class AmtProductModel extends Component {
           node.focused ? (
             <FocusedConcept
               key={i}
-              sctid={node.code}
-              display={node.display}
+              coding={node.coding}
               type={amtConceptTypeFor(node.type)}
               top={node.y - conceptHeight / 2}
               left={node.x - conceptWidth / 2}
@@ -347,8 +364,7 @@ class AmtProductModel extends Component {
           ) : (
             <Concept
               key={i}
-              sctid={node.code}
-              display={node.display}
+              coding={node.coding}
               type={amtConceptTypeFor(node.type)}
               top={node.y - conceptHeight / 2}
               left={node.x - conceptWidth / 2}

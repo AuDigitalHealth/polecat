@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import { codingToSnomedCode, codingToSnomedDisplay } from './fhir/medication.js'
+
 import Concept from './Concept.js'
 
 import './css/Concept.css'
@@ -9,7 +11,9 @@ class FocusedConcept extends Component {
   static defaultProps = Concept.defaultProps
 
   render() {
-    const { sctid, display, type, top, left, width, height } = this.props
+    const { coding, type, top, left, width, height } = this.props
+    const sctid = codingToSnomedCode(coding)
+    const display = codingToSnomedDisplay(coding)
     return (
       <div
         className='concept concept-focused'
