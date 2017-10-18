@@ -282,17 +282,14 @@ export const relationshipTypeFor = (sourceType, targetType) => {
   }
 }
 
-// Settings that control the set of resources requested for each given concept
-// type.
+// Settings that control the set of additional resources requested for each
+// given concept type.
 export const resourceRequirementsFor = sourceType =>
   ({
-    // CTPP requires retrieval of TPUU to get MPUU and MP.
-    BPGC: ['BPSF'],
-    // TPP requires retrieval of TPUU to get MPUU and MP.
-    BPG: ['BPSF'],
+    BPGC: [],
+    BPG: [],
     BPSF: [],
-    // MPP requires retrieval of MPUU to get MP.
-    UPG: ['UPDSF'],
+    UPG: [],
     UPDSF: [],
     UPD: [],
     substance: [],
