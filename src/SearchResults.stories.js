@@ -17,8 +17,6 @@ const results1 = [
         code: '74899',
       },
     ],
-    display:
-      'Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial',
     type: 'CTPP',
   },
   {
@@ -30,8 +28,6 @@ const results1 = [
           'Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial',
       },
     ],
-    display:
-      'Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial',
     type: 'TPP',
   },
   {
@@ -43,8 +39,6 @@ const results1 = [
           'Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial',
       },
     ],
-    display:
-      'Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial',
     type: 'TPUU',
   },
   {
@@ -56,8 +50,6 @@ const results1 = [
           'Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)',
       },
     ],
-    display:
-      'Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)',
     type: 'TP',
   },
   {
@@ -68,7 +60,6 @@ const results1 = [
         display: 'death adder antivenom 6000 units injection, 1 vial',
       },
     ],
-    display: 'death adder antivenom 6000 units injection, 1 vial',
     type: 'MPP',
   },
   {
@@ -79,7 +70,6 @@ const results1 = [
         display: 'king brown snake antivenom 18 000 units injection, vial',
       },
     ],
-    display: 'king brown snake antivenom 18 000 units injection, vial',
     type: 'MPUU',
   },
   {
@@ -90,7 +80,6 @@ const results1 = [
         display: 'taipan snake antivenom',
       },
     ],
-    display: 'taipan snake antivenom',
     type: 'MP',
   },
   {
@@ -101,7 +90,6 @@ const results1 = [
         display: 'sumatriptan',
       },
     ],
-    display: 'sumatriptan',
     type: 'substance',
   },
 ]

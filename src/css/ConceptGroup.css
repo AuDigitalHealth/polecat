@@ -1,0 +1,46 @@
+.concept-group {
+  position: relative;
+}
+
+.concept-group .concept {
+  position: absolute;
+}
+
+.concept-stacked-1 {
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+  box-shadow: none;
+}
+
+.concept-stacked-2,
+.concept-stacked-3 {
+  width: 100%;
+  height: 100%;
+}
+
+.concept-stacked-2 {
+  top: 15px;
+  left: 15px;
+  z-index: 2;
+  box-shadow: none;
+}
+
+.concept-stacked-3 {
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+}
+
+.concept-group-total {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 13px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #d11c24;
+  color: #fff;
+  border-radius: 50px;
+  z-index: 4;
+  padding: 6px;
+}
