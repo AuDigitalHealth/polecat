@@ -82,11 +82,6 @@ Object {
   "relationships": Array [
     Object {
       "source": "60009011000036108",
-      "target": "53259011000036106",
-      "type": "has-brand",
-    },
-    Object {
-      "source": "60009011000036108",
       "target": "55971011000036104",
       "type": "is-a",
     },
@@ -96,19 +91,24 @@ Object {
       "type": "is-a",
     },
     Object {
-      "source": "60009011000036108",
-      "target": "53743011000036103",
-      "type": "unknown",
-    },
-    Object {
-      "source": "53743011000036103",
-      "target": "62022011000036104",
-      "type": "is-a",
-    },
-    Object {
       "source": "62022011000036104",
       "target": "21701011000036106",
       "type": "is-a",
+    },
+    Object {
+      "source": "55971011000036104",
+      "target": "53259011000036106",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "55971011000036104",
+      "target": "53743011000036103",
+      "type": "has-bpsf",
+    },
+    Object {
+      "source": "63589011000036105",
+      "target": "62022011000036104",
+      "type": "has-updsf",
     },
   ],
 }

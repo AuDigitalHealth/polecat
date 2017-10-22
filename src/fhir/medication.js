@@ -272,6 +272,11 @@ export const relationshipTypeFor = (sourceType, targetType) => {
     //   Unbranded product with no strengths or form
     case 'UPDSF-UPD':
       return 'is-a'
+    // MPUU -> MPUU
+    // Unbranded product with strengths and form ->
+    //   Unbranded product with strengths and form
+    case 'UPDSF-UPDSF':
+      return 'is-a'
     // MP -> MP
     // Unbranded product with strengths and form ->
     //   Unbranded product with strengths and form
