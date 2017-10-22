@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`translateToAmt should translate the raw graph as expected 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53259011000036106",
+          "display": "Lorapaed",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "55971011000036104",
+          "display": "Lorapaed 1 mg/mL oral liquid solution, 150 mL",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "63589011000036105",
+          "display": "loratadine 1 mg/mL oral liquid, 150 mL",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53743011000036103",
+          "display": "Lorapaed 1 mg/mL oral liquid solution",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "62022011000036104",
+          "display": "loratadine 1 mg/mL oral liquid",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21701011000036106",
+          "display": "loratadine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "60009011000036108",
+          "display": "Lorapaed 1 mg/mL oral liquid solution, 150 mL, bottle",
+          "system": "http://snomed.info/sct",
+        },
+        Object {
+          "code": "123270",
+          "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+        },
+      ],
+      "focused": true,
+      "type": "BPGC",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "60009011000036108",
+      "target": "53259011000036106",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "60009011000036108",
+      "target": "55971011000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "55971011000036104",
+      "target": "63589011000036105",
+      "type": "is-a",
+    },
+    Object {
+      "source": "60009011000036108",
+      "target": "53743011000036103",
+      "type": "unknown",
+    },
+    Object {
+      "source": "53743011000036103",
+      "target": "62022011000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "62022011000036104",
+      "target": "21701011000036106",
+      "type": "is-a",
+    },
+  ],
+}
+`;

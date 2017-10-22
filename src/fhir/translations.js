@@ -2,14 +2,20 @@ import {
   amtConceptTypeFor,
   fhirMedicationTypeFor,
   relationshipTypeFor,
+  codingToSnomedCode,
 } from './medication.js'
 
+// Cleans up relationships in service of presenting a legible graph that
+// resembles the AMT product model.
 export const translateToAmt = concepts => {
   const tpsResolved = resolveTp(concepts)
   const tpuusResolved = resolveTpuu(tpsResolved)
   return resolveMpuu(tpuusResolved)
+  // return concepts
 }
 
+// Removes any relationships between CTPPs and TPs, relocating them to be
+// between the TPP and the TP instead.
 const resolveTp = concepts => {
   let newRelationships = concepts.relationships
   const ctppTps = concepts.relationships.filter(r =>
@@ -46,6 +52,8 @@ const resolveTp = concepts => {
   return { ...concepts, relationships: newRelationships }
 }
 
+// Removes any relationships between CTPPs and TPUUs, relocating them to be
+// between the TPP and the TPUU instead.
 const resolveTpuu = concepts => {
   let newRelationships = concepts.relationships
   const ctppTpuus = concepts.relationships.filter(r =>
@@ -82,6 +90,8 @@ const resolveTpuu = concepts => {
   return { ...concepts, relationships: newRelationships }
 }
 
+// Filters out the TPUU-MPUU relationship, where there is already a relationship
+// between the TPP and MPP represented on the graph.
 const resolveMpuu = concepts => {
   let newRelationships = concepts.relationships
   const tppTpuus = concepts.relationships.filter(r =>
@@ -129,9 +139,13 @@ const relationshipMatchesTypes = (
   matchTarget,
   concepts
 ) => {
-  const source = concepts.find(c => c.code === relationship.source)
+  const source = concepts.find(
+    c => codingToSnomedCode(c.coding) === relationship.source
+  )
   if (!source) return false
-  const target = concepts.find(c => c.code === relationship.target)
+  const target = concepts.find(
+    c => codingToSnomedCode(c.coding) === relationship.target
+  )
   if (!target) return false
   return (
     amtConceptTypeFor(source.type) === matchSource &&
@@ -145,7 +159,9 @@ const relationshipMatchesIdAndType = (
   matchTarget,
   concepts
 ) => {
-  const target = concepts.find(c => c.code === relationship.target)
+  const target = concepts.find(
+    c => codingToSnomedCode(c.coding) === relationship.target
+  )
   if (!target) return false
   return (
     relationship.source === matchSource &&

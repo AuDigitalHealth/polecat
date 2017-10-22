@@ -1,0 +1,112 @@
+{
+  "concepts": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "53259011000036106",
+          "display": "Lorapaed"
+        }
+      ],
+      "type": "brand"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "55971011000036104",
+          "display": "Lorapaed 1 mg/mL oral liquid solution, 150 mL"
+        }
+      ],
+      "type": "BPG"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "63589011000036105",
+          "display": "loratadine 1 mg/mL oral liquid, 150 mL"
+        }
+      ],
+      "type": "UPG"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "53743011000036103",
+          "display": "Lorapaed 1 mg/mL oral liquid solution"
+        }
+      ],
+      "type": "BPSF"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "62022011000036104",
+          "display": "loratadine 1 mg/mL oral liquid"
+        }
+      ],
+      "type": "UPDSF"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "21701011000036106",
+          "display": "loratadine"
+        }
+      ],
+      "type": "UPD"
+    },
+    {
+      "type": "BPGC",
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "60009011000036108",
+          "display": "Lorapaed 1 mg/mL oral liquid solution, 150 mL, bottle"
+        },
+        {
+          "system":
+            "https://www.tga.gov.au/australian-register-therapeutic-goods",
+          "code": "123270"
+        }
+      ],
+      "focused": true
+    }
+  ],
+  "relationships": [
+    {
+      "source": "60009011000036108",
+      "target": "53259011000036106",
+      "type": "has-brand"
+    },
+    {
+      "source": "60009011000036108",
+      "target": "55971011000036104",
+      "type": "is-a"
+    },
+    {
+      "source": "55971011000036104",
+      "target": "63589011000036105",
+      "type": "is-a"
+    },
+    {
+      "source": "60009011000036108",
+      "target": "53743011000036103",
+      "type": "unknown"
+    },
+    {
+      "source": "53743011000036103",
+      "target": "62022011000036104",
+      "type": "is-a"
+    },
+    {
+      "source": "62022011000036104",
+      "target": "21701011000036106",
+      "type": "is-a"
+    }
+  ]
+}
