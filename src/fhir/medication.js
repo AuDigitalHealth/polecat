@@ -195,7 +195,8 @@ const validatePackageContent = content => {
   return content
 }
 
-const snomedUri = 'http://snomed.info/sct'
+export const snomedUri = 'http://snomed.info/sct'
+export const groupUri = 'group'
 
 const urlForExtension = name =>
   ({
@@ -340,12 +341,22 @@ const referenceToCode = reference => {
 //   }
 // ]
 // Returns: 813191000168107
-export const codingToSnomedCode = coding =>
-  coding.find(c => c.system === snomedUri).code
+export const codingToSnomedCode = coding => {
+  const found = coding.find(c => c.system === snomedUri)
+  return found ? found.code : null
+}
 
 // Extracts a SNOMED display from a `coding` element.
-export const codingToSnomedDisplay = coding =>
-  coding.find(c => c.system === snomedUri).display
+export const codingToSnomedDisplay = coding => {
+  const found = coding.find(c => c.system === snomedUri)
+  return found ? found.display : null
+}
+
+// Extracts a group code from a `coding` element.
+export const codingToGroupCode = coding => {
+  const found = coding.find(c => c.system === groupUri)
+  return found ? found.code : null
+}
 
 // Takes a `valueReference` element and returns a `coding` element, containing a
 // single SNOMED 'code', e.g.

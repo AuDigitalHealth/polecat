@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 import Concept from './Concept.js'
-import { codingToSnomedCode, codingToSnomedDisplay } from './fhir/medication.js'
+import Icon from './Icon.js'
 
 import './css/ConceptGroup.css'
 
@@ -12,7 +12,7 @@ class ConceptGroup extends Component {
     concepts: PropTypes.arrayOf(
       PropTypes.shape({
         coding: Concept.propTypes.coding,
-        type: Concept.propTypes.coding,
+        type: Concept.propTypes.type,
       })
     ),
     // Total number of concepts that is available to view if the full result set
@@ -20,8 +20,6 @@ class ConceptGroup extends Component {
     total: PropTypes.number,
     top: PropTypes.number,
     left: PropTypes.number,
-    width: PropTypes.number,
-    height: PropTypes.number,
   }
   static defaultProps = {
     top: 0,
@@ -31,55 +29,27 @@ class ConceptGroup extends Component {
   }
 
   render() {
-    const { concepts, total, top, left, width, height } = this.props
+    const { concepts, total, top, left } = this.props
     const concept = concepts[0]
-    const sctid = codingToSnomedCode(concept.coding)
-    const display = codingToSnomedDisplay(concept.coding)
     const type = concept.type
     return (
       <div
         className='concept-group'
         style={{
-          position: 'absolute',
           top: top + 'px',
           left: left + 'px',
-          width: width + 30 + 'px',
-          height: height + 20 + 'px',
         }}
       >
-        <div
-          className='concept concept-stacked-1'
-          style={{
-            width: width + 'px',
-            height: height + 'px',
-          }}
-        >
-          <div className='sctid'>
-            {type !== 'TP' ? (
-              <Link to={`/Medication/${sctid}`}>{sctid}</Link>
-            ) : (
-              sctid
-            )}
-          </div>
-          <div className='display'>{display}</div>
+        <div className='concept concept-stacked-1'>
           {type ? (
             <div className={`type type-${type}`.toLowerCase()}>{type}</div>
           ) : null}
+          <Link to='/'>
+            <Icon type='list' hoverType='listActive' width={20} />
+          </Link>
         </div>
-        <div
-          className='concept concept-stacked-2'
-          style={{
-            width: width + 'px',
-            height: height + 'px',
-          }}
-        />
-        <div
-          className='concept concept-stacked-3'
-          style={{
-            width: width + 'px',
-            height: height + 'px',
-          }}
-        />
+        <div className='concept concept-stacked-2' />
+        <div className='concept concept-stacked-3' />
         <div className='concept-group-total'>{total}</div>
       </div>
     )

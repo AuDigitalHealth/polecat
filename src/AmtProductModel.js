@@ -7,10 +7,12 @@ import omit from 'lodash.omit'
 
 import Concept from './Concept.js'
 import FocusedConcept from './FocusedConcept.js'
+import ConceptGroup from './ConceptGroup.js'
 import {
   amtConceptTypeFor,
   mergeConcepts,
   codingToSnomedCode,
+  codingToGroupCode,
 } from './fhir/medication.js'
 import { translateToAmt } from './fhir/translations.js'
 import { curveForLink } from './graph/links.js'
@@ -28,7 +30,7 @@ class AmtProductModel extends Component {
             display: PropTypes.string,
           })
         ),
-        display: PropTypes.string,
+        type: PropTypes.string.isRequired,
       })
     ),
     links: PropTypes.arrayOf(
@@ -102,8 +104,8 @@ class AmtProductModel extends Component {
       // Remove any nodes that are not present in the new set of nodes.
       newNodes = newNodes.filter(node =>
         nodes
-          .map(n => codingToSnomedCode(n.coding))
-          .includes(codingToSnomedCode(node.coding))
+          .map(n => AmtProductModel.idForNode(n))
+          .includes(AmtProductModel.idForNode(node))
       )
       // Remove any nodes that are no longer the subject of a link (except the
       // focused node).
@@ -112,7 +114,7 @@ class AmtProductModel extends Component {
           node.focused ||
           links
             .reduce((acc, link) => acc.concat([ link.source, link.target ]), [])
-            .includes(codingToSnomedCode(node.coding))
+            .includes(AmtProductModel.idForNode(node))
       )
       // Fix the position of the focused node.
       newNodes = newNodes.map(node => {
@@ -127,7 +129,7 @@ class AmtProductModel extends Component {
       newNodes
     )
     model.forceLink = (model.forceLink || d3.forceLink())
-      .id(d => codingToSnomedCode(d.coding))
+      .id(d => AmtProductModel.idForNode(d))
       .distance(linkDistance)
       .links(cloneDeep(links))
     model.forceManyBody = (model.forceManyBody || d3.forceManyBody()).strength(
@@ -349,9 +351,24 @@ class AmtProductModel extends Component {
     const { conceptWidth, conceptHeight } = this.props,
       { nodes } = this.state
     return nodes
-      ? nodes.map(
-        (node, i) =>
-          node.focused ? (
+      ? nodes.map((node, i) => {
+        if (node.type === 'group') {
+          return (
+            <ConceptGroup
+              key={i}
+              concepts={node.concepts.map(c => ({
+                ...c,
+                type: amtConceptTypeFor(c.type),
+              }))}
+              total={node.total}
+              top={node.y - conceptHeight / 2}
+              left={node.x - conceptWidth / 2}
+              width={conceptWidth}
+              height={conceptHeight}
+            />
+          )
+        } else if (node.focused) {
+          return (
             <FocusedConcept
               key={i}
               coding={node.coding}
@@ -361,7 +378,9 @@ class AmtProductModel extends Component {
               width={conceptWidth}
               height={conceptHeight}
             />
-          ) : (
+          )
+        } else {
+          return (
             <Concept
               key={i}
               coding={node.coding}
@@ -372,7 +391,8 @@ class AmtProductModel extends Component {
               height={conceptHeight}
             />
           )
-      )
+        }
+      })
       : []
   }
 
@@ -394,6 +414,12 @@ class AmtProductModel extends Component {
         })
       )
       : []
+  }
+
+  static idForNode(node) {
+    return node.type === 'group'
+      ? `group-${codingToGroupCode(node.coding)}`
+      : codingToSnomedCode(node.coding)
   }
 }
 

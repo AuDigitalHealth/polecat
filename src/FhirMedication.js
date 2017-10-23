@@ -13,19 +13,23 @@ import {
   resourceRequirementsFor,
   relationshipTypeFor,
   codingToSnomedCode,
+  groupUri,
 } from './fhir/medication.js'
+import { sha256 } from './util.js'
 
 class FhirMedication extends Component {
   static propTypes = {
     resource: PropTypes.object,
     relatedResources: PropTypes.object,
     childBundle: PropTypes.object,
+    groupingThreshold: PropTypes.number,
     viewport: PropTypes.object.isRequired,
     onRequireRelatedResources: PropTypes.func,
     onRequireChildBundle: PropTypes.func,
   }
   static defaultProps = {
     relatedResources: {},
+    groupingThreshold: 3,
   }
 
   constructor(props) {
@@ -33,7 +37,7 @@ class FhirMedication extends Component {
     this.state = { additionalResourcesRequested: false }
   }
 
-  parseResources(
+  async parseResources(
     resource,
     relatedResources,
     childBundle,
@@ -53,19 +57,7 @@ class FhirMedication extends Component {
         []
       )
       // Get child concepts.
-      const childConcepts =
-        childBundle && childBundle.total > 0
-          ? childBundle.entry.reduce((acc, e) => {
-            const child = getSubjectConcept(e.resource)
-            acc.concepts.push(child)
-            acc.relationships.push({
-              source: codingToSnomedCode(child.coding),
-              target: codingToSnomedCode(focused.coding),
-              type: relationshipTypeFor(child.type, focused.type),
-            })
-            return acc
-          }, emptyConcepts())
-          : emptyConcepts()
+      const childConcepts = await this.getChildConcepts(focused, childBundle)
       // Merge all concepts harvested from this set of props with the previous
       // set of concepts.
       const allConcepts = [
@@ -98,6 +90,51 @@ class FhirMedication extends Component {
         : getRelatedConcepts(resource, focused)
     result.concepts.push(focused)
     return result
+  }
+
+  // Get child concepts from the supplied child bundle, relating them to the
+  // focused concept.
+  async getChildConcepts(focused, childBundle) {
+    const { groupingThreshold } = this.props
+    if (!childBundle || childBundle.total === 0) return emptyConcepts()
+    if (childBundle.total <= groupingThreshold) {
+      return childBundle.entry.reduce((acc, e) => {
+        const child = getSubjectConcept(e.resource)
+        acc.concepts.push(child)
+        acc.relationships.push({
+          source: codingToSnomedCode(child.coding),
+          target: codingToSnomedCode(focused.coding),
+          type: relationshipTypeFor(child.type, focused.type),
+        })
+        return acc
+      }, emptyConcepts())
+    } else {
+      const concepts = childBundle.entry
+        .slice(0, groupingThreshold)
+        .map(e => getSubjectConcept(e.resource))
+      // The group's code is a hash of the concept data within the group.
+      const groupCode = await sha256(JSON.stringify(concepts))
+      return {
+        concepts: [
+          {
+            coding: [{ system: groupUri, code: groupCode }],
+            type: 'group',
+            total: childBundle.total,
+            concepts,
+          },
+        ],
+        relationships: [
+          {
+            // A `group-` prefix is added to the group code within the
+            // relationships so that it can be discerned when drawing curves and
+            // arrows.
+            source: `group-${groupCode}`,
+            target: codingToSnomedCode(focused.coding),
+            type: 'is-a',
+          },
+        ],
+      }
+    }
   }
 
   // Notify upstream components that we require additional resources to be

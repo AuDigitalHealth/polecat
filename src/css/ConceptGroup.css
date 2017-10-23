@@ -1,9 +1,23 @@
 .concept-group {
-  position: relative;
+  position: absolute;
+  width: 113px;
 }
 
 .concept-group .concept {
   position: absolute;
+  width: 90px;
+  height: 37px;
+}
+
+.concept-group .concept .type {
+  position: relative;
+  right: inherit;
+  margin-right: 3px;
+  display: inline-block;
+}
+
+.concept-group .concept .icon {
+  display: inline;
 }
 
 .concept-stacked-1 {
@@ -37,10 +51,13 @@
   font-size: 13px;
   position: absolute;
   top: 0;
-  right: 0;
+  left: 100px;
   background-color: #d11c24;
   color: #fff;
   border-radius: 50px;
   z-index: 4;
   padding: 6px;
+  min-width: 12px;
+  text-align: center;
+  transform: translate(-50%, 0);
 }
