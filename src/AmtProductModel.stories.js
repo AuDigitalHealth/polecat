@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import AmtProductModel from './AmtProductModel.js'
-import nodesLinks1 from '../test/nodes-links-813191000168107.json'
+import nodesLinks1 from '../test/nodesLinks-813191000168107.json'
 
 const { nodes: nodes1, links: links1 } = nodesLinks1
 const width = 800
