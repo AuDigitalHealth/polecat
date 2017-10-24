@@ -5,6 +5,7 @@ import cloneDeep from 'lodash.clonedeep'
 import isEqual from 'lodash.isequal'
 import omit from 'lodash.omit'
 import pick from 'lodash.pick'
+import debounce from 'lodash.debounce'
 
 import Concept from './Concept.js'
 import FocusedConcept from './FocusedConcept.js'
@@ -85,6 +86,11 @@ class AmtProductModel extends Component {
     this.handleDoubleClick = this.handleDoubleClick.bind(this)
     this.renderConcepts = this.renderConcepts.bind(this)
     this.renderRelationships = this.renderRelationships.bind(this)
+    this.resetSimulationAlphaDebounced = debounce(
+      this.resetSimulationAlpha,
+      350,
+      { leading: true, trailing: false }
+    )
   }
 
   startOrUpdateSimulation(nodes, links, options) {
@@ -93,7 +99,6 @@ class AmtProductModel extends Component {
     const {
       attraction,
       linkDistance,
-      alpha,
       alphaDecay,
       centerX,
       centerY,
@@ -104,6 +109,9 @@ class AmtProductModel extends Component {
     if (model.simulation) {
       newNodes = this.updateSimulation(nodes, links, options)
     } else newNodes = nodes
+    // Leave alpha unchanged if the simulation is already running - there is a
+    // `resetSimulationAlpha` function for explicit resets.
+    const alpha = model.simulation ? model.simulation.alpha() : options.alpha
     model.simulation = (model.simulation || d3.forceSimulation()).nodes(
       newNodes
     )
@@ -199,6 +207,11 @@ class AmtProductModel extends Component {
       centerX,
       centerY,
     })
+    if (options.skipDebounce) {
+      this.resetSimulationAlpha(options.alpha)
+    } else {
+      this.resetSimulationAlphaDebounced(options.alpha)
+    }
   }
 
   calculateCollideRadius(nodes, node, options) {
@@ -224,6 +237,10 @@ class AmtProductModel extends Component {
       : conceptRadius * collideRadiusRatio
   }
 
+  resetSimulationAlpha(alpha) {
+    this.simulation.alpha(alpha).restart()
+  }
+
   handleMouseUp(event) {
     if (event.buttons === 0) {
       const { lastDragX, lastDragY } = this.state
@@ -234,7 +251,6 @@ class AmtProductModel extends Component {
   }
 
   handleMouseMove(event) {
-    const model = this
     if (event.buttons === 1) {
       const { lastDragX, lastDragY } = this.state
       const clientX = event.clientX
@@ -245,8 +261,7 @@ class AmtProductModel extends Component {
           clientY - lastDragY,
           null,
           null,
-          // Do not do any re-jiggling on mouse drag.
-          { ...this.props, alpha: model.simulation.alpha() }
+          this.props
         )
         this.setState(() => ({
           lastDragX: clientX,
@@ -262,14 +277,12 @@ class AmtProductModel extends Component {
   }
 
   handleWheel(event) {
-    const model = this
     this.moveSimulationCenter(
       event.deltaX * -1,
       event.deltaY * -1,
       null,
       null,
-      // Do not do any re-jiggling on mouse wheel.
-      { ...this.props, alpha: model.simulation.alpha() }
+      this.props
     )
     event.preventDefault()
   }
@@ -280,8 +293,8 @@ class AmtProductModel extends Component {
       null,
       this.props.viewport.width / 2,
       this.props.viewport.height / 2,
-      // Re-jiggle graph on double-click.
-      this.props
+      // Reset the simulation immediately, without debouncing.
+      { ...this.props, skipDebounce: true }
     )
   }
 
@@ -307,7 +320,6 @@ class AmtProductModel extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const model = this
     if (!(nextProps.nodes && nextProps.links)) return
     const simulationProps = [
       'nodes',
@@ -336,14 +348,11 @@ class AmtProductModel extends Component {
         relationships: nextProps.links,
       })
       this.startOrUpdateSimulation(nodes, links, nextProps)
+      this.resetSimulationAlpha(nextProps.alpha)
     }
     if (!isEqual(this.props.viewport, nextProps.viewport)) {
       const { viewport: { width, height } } = nextProps
-      // Do not re-jiggle on viewport change.
-      this.moveSimulationCenter(null, null, width / 2, height / 2, {
-        ...nextProps,
-        alpha: model.simulation.alpha(),
-      })
+      this.moveSimulationCenter(null, null, width / 2, height / 2, nextProps)
     }
   }
 
