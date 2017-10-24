@@ -1,5 +1,9 @@
 import React from 'react'
 
+import { codingToGroupCode } from '../fhir/medication.js'
+
+// Returns a SVG representation of a curved arrow with an arrow head based upon
+// the type of relationship.
 export const curveForLink = (link, i, options) => {
   let mergedOptions = calculateBearings(link, options)
   mergedOptions = calculateLinkEndings(link, mergedOptions)
@@ -28,9 +32,18 @@ export const curveForLink = (link, i, options) => {
   )
 }
 
+// Calculates the bearing between the two concepts, and the diagonals of each
+// concept based on their sizes. The diagonals are used to determine which side
+// of the concept to put the link ending on.
 const calculateBearings = (link, options) => {
-  const { conceptWidth, conceptHeight } = options,
+  const {
+      conceptWidth,
+      conceptHeight,
+      conceptGroupWidth,
+      conceptGroupHeight,
+    } = options,
     conceptAngle = Math.atan(conceptHeight / conceptWidth),
+    conceptGroupAngle = Math.atan(conceptGroupHeight / conceptGroupWidth),
     { source: { x: x1, y: y1 }, target: { x: x2, y: y2 } } = link,
     adj = x2 - x1,
     opp = y2 - y1,
@@ -39,14 +52,20 @@ const calculateBearings = (link, options) => {
   return {
     ...options,
     conceptAngle,
+    conceptGroupAngle,
     southEast: conceptAngle,
     southWest: Math.PI - conceptAngle,
     northWest: Math.PI + conceptAngle,
     northEast: 2 * Math.PI - conceptAngle,
+    groupSouthEast: conceptGroupAngle,
+    groupSouthWest: Math.PI - conceptGroupAngle,
+    groupNorthWest: Math.PI + conceptGroupAngle,
+    groupNorthEast: 2 * Math.PI - conceptGroupAngle,
     bearing,
   }
 }
 
+// Calculates the co-ordinates of the start and end points of the link.
 const calculateLinkEndings = (link, options) => {
   const {
       southEast,
@@ -55,55 +74,71 @@ const calculateLinkEndings = (link, options) => {
       northEast,
       conceptWidth,
       conceptHeight,
+      conceptGroupWidth,
+      conceptGroupHeight,
       conceptAngle,
       bearing,
     } = options,
     { source: { x: x1, y: y1 }, target: { x: x2, y: y2 } } = link,
-    horizDistCenter = conceptWidth / 2,
-    vertDistCenter = conceptHeight / 2
+    sourceIsGroup = !!codingToGroupCode(link.source.coding),
+    targetIsGroup = !!codingToGroupCode(link.target.coding),
+    sourceHorizDistCenter = sourceIsGroup
+      ? conceptGroupWidth / 2
+      : conceptWidth / 2,
+    targetHorizDistCenter = targetIsGroup
+      ? conceptGroupWidth / 2
+      : conceptWidth / 2,
+    sourceVertDistCenter = sourceIsGroup
+      ? conceptGroupHeight / 2
+      : conceptHeight / 2,
+    targetVertDistCenter = targetIsGroup
+      ? conceptGroupHeight / 2
+      : conceptHeight / 2
   let angle
   switch (true) {
     case bearing >= northEast || bearing < southEast:
       angle = bearing < conceptAngle ? bearing : bearing - 2 * Math.PI
       return {
         ...options,
-        startX: x1 + horizDistCenter,
-        startY: y1 + horizDistCenter * Math.tan(angle),
-        endX: x2 - horizDistCenter,
-        endY: y2 - horizDistCenter * Math.tan(angle),
+        startX: x1 + sourceHorizDistCenter,
+        startY: y1 + sourceHorizDistCenter * Math.tan(angle),
+        endX: x2 - targetHorizDistCenter,
+        endY: y2 - targetHorizDistCenter * Math.tan(angle),
       }
     case bearing >= southEast && bearing < southWest:
       angle = bearing - Math.PI / 2
       return {
         ...options,
-        startX: x1 - vertDistCenter * Math.tan(angle),
-        startY: y1 + vertDistCenter,
-        endX: x2 + vertDistCenter * Math.tan(angle),
-        endY: y2 - vertDistCenter,
+        startX: x1 - sourceVertDistCenter * Math.tan(angle),
+        startY: y1 + sourceVertDistCenter,
+        endX: x2 + targetVertDistCenter * Math.tan(angle),
+        endY: y2 - targetVertDistCenter,
       }
     case bearing >= southWest && bearing < northWest:
       angle = bearing - Math.PI
       return {
         ...options,
-        startX: x1 - horizDistCenter,
-        startY: y1 - horizDistCenter * Math.tan(angle),
-        endX: x2 + horizDistCenter,
-        endY: y2 + horizDistCenter * Math.tan(angle),
+        startX: x1 - sourceHorizDistCenter,
+        startY: y1 - sourceHorizDistCenter * Math.tan(angle),
+        endX: x2 + targetHorizDistCenter,
+        endY: y2 + targetHorizDistCenter * Math.tan(angle),
       }
     case bearing >= northWest && bearing < northEast:
       angle = bearing - 3 * Math.PI / 2
       return {
         ...options,
-        startX: x1 + vertDistCenter * Math.tan(angle),
-        startY: y1 - vertDistCenter,
-        endX: x2 - vertDistCenter * Math.tan(angle),
-        endY: y2 + vertDistCenter,
+        startX: x1 + sourceVertDistCenter * Math.tan(angle),
+        startY: y1 - sourceVertDistCenter,
+        endX: x2 - targetVertDistCenter * Math.tan(angle),
+        endY: y2 + targetVertDistCenter,
       }
     default:
       throw new Error(`Unexpected bearing: ${bearing}`)
   }
 }
 
+// Calculates the control points for the Bézier curve, based on the curviness
+// and the distance between the concepts.
 const calculateControlPoints = options => {
   const {
       southEast,
@@ -161,7 +196,7 @@ const calculateControlPoints = options => {
   }
 }
 
-// This method renders inheritance and association type relationships.
+// This function renders inheritance and association type relationships.
 // Inheritance is shown as a filled triangle, while association is an open arrow
 // head.
 const calculateArrowPoints = options => {
@@ -217,7 +252,7 @@ const calculateArrowPoints = options => {
   return { ...options, arrowPoints: points }
 }
 
-// This method renders aggregation relationships. It is reversed, i.e. the
+// This function renders aggregation relationships. It is reversed, i.e. the
 // aggregation symbol is displayed at the start of the link, on the source side.
 const calculateAggregationPoints = options => {
   const {

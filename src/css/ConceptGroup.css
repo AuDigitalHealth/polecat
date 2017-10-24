@@ -1,6 +1,7 @@
 .concept-group {
   position: absolute;
-  width: 113px;
+  width: 100px;
+  height: 57px;
 }
 
 .concept-group .concept {
@@ -21,8 +22,8 @@
 }
 
 .concept-stacked-1 {
-  top: 10px;
-  left: 10px;
+  top: 0;
+  left: 0;
   z-index: 3;
   box-shadow: none;
 }
@@ -34,15 +35,15 @@
 }
 
 .concept-stacked-2 {
-  top: 15px;
-  left: 15px;
+  top: 5px;
+  left: 5px;
   z-index: 2;
   box-shadow: none;
 }
 
 .concept-stacked-3 {
-  top: 20px;
-  left: 20px;
+  top: 10px;
+  left: 10px;
   z-index: 1;
 }
 
@@ -50,8 +51,8 @@
   font-family: 'Helvetica Neue', sans-serif;
   font-size: 13px;
   position: absolute;
-  top: 0;
-  left: 100px;
+  top: -10px;
+  left: 90px;
   background-color: #d11c24;
   color: #fff;
   border-radius: 50px;

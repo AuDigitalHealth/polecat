@@ -43,6 +43,8 @@ class AmtProductModel extends Component {
     alphaDecay: PropTypes.number,
     conceptWidth: PropTypes.number,
     conceptHeight: PropTypes.number,
+    conceptGroupWidth: PropTypes.number,
+    conceptGroupHeight: PropTypes.number,
     linkCurviness: PropTypes.number,
     arrowSize: PropTypes.number,
     collideRadiusThreshold: PropTypes.number,
@@ -60,6 +62,8 @@ class AmtProductModel extends Component {
     alphaDecay: 0.1,
     conceptWidth: 166,
     conceptHeight: 116,
+    conceptGroupWidth: 100,
+    conceptGroupHeight: 47,
     linkCurviness: 0.4,
     arrowSize: 10,
     collideRadiusThreshold: 10,
@@ -348,7 +352,12 @@ class AmtProductModel extends Component {
   }
 
   renderConcepts() {
-    const { conceptWidth, conceptHeight } = this.props,
+    const {
+        conceptWidth,
+        conceptHeight,
+        conceptGroupWidth,
+        conceptGroupHeight,
+      } = this.props,
       { nodes } = this.state
     return nodes
       ? nodes.map((node, i) => {
@@ -361,8 +370,8 @@ class AmtProductModel extends Component {
                 type: amtConceptTypeFor(c.type),
               }))}
               total={node.total}
-              top={node.y - conceptHeight / 2}
-              left={node.x - conceptWidth / 2}
+              top={node.y - conceptGroupHeight / 2}
+              left={node.x - conceptGroupWidth / 2}
               width={conceptWidth}
               height={conceptHeight}
             />
@@ -400,6 +409,8 @@ class AmtProductModel extends Component {
     const {
         conceptWidth,
         conceptHeight,
+        conceptGroupWidth,
+        conceptGroupHeight,
         linkCurviness,
         arrowSize,
       } = this.props,
@@ -409,6 +420,8 @@ class AmtProductModel extends Component {
         curveForLink(link, i, {
           conceptWidth,
           conceptHeight,
+          conceptGroupWidth,
+          conceptGroupHeight,
           linkCurviness,
           arrowSize,
         })
