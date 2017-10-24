@@ -4,6 +4,7 @@ import * as d3 from 'd3'
 import cloneDeep from 'lodash.clonedeep'
 import isEqual from 'lodash.isequal'
 import omit from 'lodash.omit'
+import pick from 'lodash.pick'
 
 import Concept from './Concept.js'
 import FocusedConcept from './FocusedConcept.js'
@@ -101,7 +102,7 @@ class AmtProductModel extends Component {
     // If the simulation is already running, merge new nodes in instead of
     // replacing them.
     if (model.simulation) {
-      newNodes = this.startSimulation(nodes, links, options)
+      newNodes = this.updateSimulation(nodes, links, options)
     } else newNodes = nodes
     model.simulation = (model.simulation || d3.forceSimulation()).nodes(
       newNodes
@@ -135,12 +136,14 @@ class AmtProductModel extends Component {
       .restart()
   }
 
-  startSimulation(nodes, links, options) {
+  updateSimulation(nodes, links, options) {
     const model = this
     const { centerX, centerY, viewport } = options
     let oldNodes = model.simulation.nodes()
     // Remove focus and fixing from any existing nodes.
     oldNodes = oldNodes.map(node => omit(node, 'focused', 'fx', 'fy'))
+    // Remove any positioning information from the incoming nodes.
+    nodes = nodes.map(node => omit(node, 'x', 'y', 'vx', 'vy'))
     // Merge new nodes with old nodes.
     let newNodes = [ oldNodes, nodes ].reduce(mergeConcepts, [])
     // Remove any nodes that are not present in the new set of nodes.
@@ -158,7 +161,8 @@ class AmtProductModel extends Component {
           .reduce((acc, link) => acc.concat([ link.source, link.target ]), [])
           .includes(AmtProductModel.idForNode(node))
     )
-    // Fix the position of the focused node, if there are more than two nodes.
+    // Fix the position of the focused node, but only if there are more than two
+    // nodes.
     return newNodes.length > 2
       ? newNodes.map(node => {
         if (node.focused) {
@@ -192,7 +196,6 @@ class AmtProductModel extends Component {
     const centerY = deltaY !== null ? forceCenter.y() + deltaY : newY
     this.startOrUpdateSimulation(nodes, translatedLinks, {
       ...options,
-      alpha: model.simulation.alpha(),
       centerX,
       centerY,
     })
@@ -231,6 +234,7 @@ class AmtProductModel extends Component {
   }
 
   handleMouseMove(event) {
+    const model = this
     if (event.buttons === 1) {
       const { lastDragX, lastDragY } = this.state
       const clientX = event.clientX
@@ -241,7 +245,8 @@ class AmtProductModel extends Component {
           clientY - lastDragY,
           null,
           null,
-          this.props
+          // Do not do any re-jiggling on mouse drag.
+          { ...this.props, alpha: model.simulation.alpha() }
         )
         this.setState(() => ({
           lastDragX: clientX,
@@ -257,12 +262,14 @@ class AmtProductModel extends Component {
   }
 
   handleWheel(event) {
+    const model = this
     this.moveSimulationCenter(
       event.deltaX * -1,
       event.deltaY * -1,
       null,
       null,
-      this.props
+      // Do not do any re-jiggling on mouse wheel.
+      { ...this.props, alpha: model.simulation.alpha() }
     )
     event.preventDefault()
   }
@@ -273,6 +280,7 @@ class AmtProductModel extends Component {
       null,
       this.props.viewport.width / 2,
       this.props.viewport.height / 2,
+      // Re-jiggle graph on double-click.
       this.props
     )
   }
@@ -299,15 +307,43 @@ class AmtProductModel extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    const model = this
     if (!(nextProps.nodes && nextProps.links)) return
-    const { concepts: nodes, relationships: links } = translateToAmt({
-      concepts: nextProps.nodes,
-      relationships: nextProps.links,
-    })
-    this.startOrUpdateSimulation(nodes, links, nextProps)
+    const simulationProps = [
+      'nodes',
+      'links',
+      'attraction',
+      'linkDistance',
+      'alpha',
+      'alphaDecay',
+      'conceptWidth',
+      'conceptHeight',
+      'conceptGroupWidth',
+      'conceptGroupHeight',
+      'collideRadiusRatio',
+      'collideRadiusThreshold',
+      'collideRadiusMultiplier',
+    ]
+    // Only update simulation if simulation-related props are changed.
+    if (
+      !isEqual(
+        pick(this.props, simulationProps),
+        pick(nextProps, simulationProps)
+      )
+    ) {
+      const { concepts: nodes, relationships: links } = translateToAmt({
+        concepts: nextProps.nodes,
+        relationships: nextProps.links,
+      })
+      this.startOrUpdateSimulation(nodes, links, nextProps)
+    }
     if (!isEqual(this.props.viewport, nextProps.viewport)) {
       const { viewport: { width, height } } = nextProps
-      this.moveSimulationCenter(null, null, width / 2, height / 2, nextProps)
+      // Do not re-jiggle on viewport change.
+      this.moveSimulationCenter(null, null, width / 2, height / 2, {
+        ...nextProps,
+        alpha: model.simulation.alpha(),
+      })
     }
   }
 
