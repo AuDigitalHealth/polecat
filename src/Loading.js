@@ -21,6 +21,8 @@ class Loading extends Component {
   }
 
   setLoadingAfterDelay() {
+    // Unset any pending timeout.
+    this.unsetLoading()
     let func = function() {
       this.setState({ loading: true })
     }
@@ -32,7 +34,7 @@ class Loading extends Component {
   unsetLoading() {
     const { timeoutId } = this.state
     if (timeoutId) clearTimeout(timeoutId)
-    this.setState(() => ({ loading: false }))
+    this.setState(() => ({ loading: false, timeoutId: null }))
   }
 
   componentWillMount() {
