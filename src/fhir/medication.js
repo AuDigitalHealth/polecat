@@ -301,6 +301,32 @@ export const resourceRequirementsFor = sourceType =>
     substance: [],
   }[sourceType])
 
+// Settings that control the set of child resource types requested for each
+// given concept type.
+export const childRequirementsFor = sourceType =>
+  ({
+    BPGC: [],
+    BPG: ['BPGC'],
+    BPSF: [],
+    UPG: [ 'BPG', 'BPGC' ],
+    UPDSF: ['BPSF'],
+    UPD: [ 'UPDSF', 'BPSF' ],
+    substance: [],
+  }[sourceType])
+
+// Settings that control the set of package resource types requested for each
+// given concept type.
+export const packageRequirementsFor = sourceType =>
+  ({
+    BPGC: ['BPGC'],
+    BPG: [],
+    BPSF: ['BPG'],
+    UPG: ['UPG'],
+    UPDSF: ['UPG'],
+    UPD: [],
+    substance: [],
+  }[sourceType])
+
 const fhirToAmtTypes = {
   BPGC: 'CTPP',
   BPG: 'TPP',

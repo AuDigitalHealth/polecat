@@ -79,13 +79,21 @@ class RemoteFhirMedication extends Component {
     }
   }
 
-  handleRequireChildBundle(parentId) {
+  // Requests the descendants of a specified concept type, scoped down to a
+  // particular resource type, e.g. all descendant UPDSFs (MPUUs) of a specified
+  // UPD (MP).
+  // Updates an object in state, with resources keyed by resource type.
+  handleRequireChildBundle(parentId, resourceType) {
     const { fhirServer } = this.props
     this.getFhirResource(
       fhirServer,
       '/Medication',
-      `?parent=Medication/${parentId}`
-    ).then(resource => this.setState(() => ({ childBundle: resource })))
+      `?parent=Medication/${parentId}&medication-resource-type=${resourceType}`
+    ).then(resource =>
+      this.setState(prevState => ({
+        childBundles: { ...prevState.childBundles, [resourceType]: resource },
+      }))
+    )
   }
 
   handleError(error) {
@@ -109,12 +117,12 @@ class RemoteFhirMedication extends Component {
   componentWillReceiveProps(nextProps) {
     const { fhirServer, path, query } = nextProps
     this.updateResource(fhirServer, path, query)
-    this.setState(() => ({ relatedResources: {}, childBundle: null }))
+    this.setState(() => ({ relatedResources: {}, childBundles: {} }))
   }
 
   render() {
     const { viewport } = this.props
-    const { resource, relatedResources, childBundle, status } = this.state
+    const { resource, relatedResources, childBundles, status } = this.state
 
     return (
       <div className='remote-fhir-medication'>
@@ -122,7 +130,7 @@ class RemoteFhirMedication extends Component {
         <FhirMedication
           resource={resource}
           relatedResources={relatedResources}
-          childBundle={childBundle}
+          childBundles={childBundles}
           viewport={viewport}
           onLoad={this.handleLoad}
           onRequireRelatedResources={this.handleRequireRelatedResources}

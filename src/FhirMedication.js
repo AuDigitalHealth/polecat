@@ -11,6 +11,7 @@ import {
   mergeConceptsAndRelationships,
   emptyConcepts,
   resourceRequirementsFor,
+  childRequirementsFor,
   relationshipTypeFor,
   codingToSnomedCode,
   groupUri,
@@ -21,7 +22,7 @@ class FhirMedication extends Component {
   static propTypes = {
     resource: PropTypes.object,
     relatedResources: PropTypes.object,
-    childBundle: PropTypes.object,
+    childBundles: PropTypes.object,
     groupingThreshold: PropTypes.number,
     viewport: PropTypes.object.isRequired,
     onRequireRelatedResources: PropTypes.func,
@@ -34,13 +35,17 @@ class FhirMedication extends Component {
 
   constructor(props) {
     super(props)
-    this.state = { additionalResourcesRequested: false }
+    this.state = {
+      relatedResources: {},
+      childBundles: {},
+      additionalResourcesRequested: false,
+    }
   }
 
   async parseResources(
     resource,
     relatedResources,
-    childBundle,
+    childBundles,
     prevConcepts,
     additionalResourcesRequested,
     childConceptsRequested
@@ -56,14 +61,20 @@ class FhirMedication extends Component {
           merged.concat(this.getConceptsForResource(relatedResource)),
         []
       )
-      // Get child concepts.
-      const childConcepts = await this.getChildConcepts(focused, childBundle)
+      // Get child concepts from all child bundles.
+      const childConcepts = await Promise.all(
+        values(childBundles).reduce(
+          (merged, childBundle) =>
+            merged.concat(this.getChildConcepts(focused, childBundle)),
+          []
+        )
+      )
       // Merge all concepts harvested from this set of props with the previous
       // set of concepts.
       const allConcepts = [
         conceptsFromFocused,
         ...relatedConcepts,
-        childConcepts,
+        ...childConcepts,
       ].reduce(mergeConceptsAndRelationships, cloneDeep(prevConcepts))
       // Request additional resources of particular types found within the
       // original resource. Only do this once, don't recurse into related
@@ -155,18 +166,21 @@ class FhirMedication extends Component {
   requireChildConcepts(resource) {
     const { onRequireChildBundle } = this.props
     if (onRequireChildBundle) {
-      const code = codingToSnomedCode(getSubjectConcept(resource).coding)
-      onRequireChildBundle(code)
+      const concept = getSubjectConcept(resource)
+      const code = codingToSnomedCode(concept.coding)
+      childRequirementsFor(concept.type).forEach(resourceType =>
+        onRequireChildBundle(code, resourceType)
+      )
       this.setState(() => ({ childConceptsRequested: true }))
     }
   }
 
   componentWillMount() {
-    const { resource, relatedResources, childBundle } = this.props
+    const { resource, relatedResources, childBundles } = this.props
     this.parseResources(
       resource,
       relatedResources,
-      childBundle,
+      childBundles,
       emptyConcepts(),
       false,
       false
@@ -174,7 +188,7 @@ class FhirMedication extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { resource, relatedResources, childBundle } = nextProps
+    const { resource, relatedResources, childBundles } = nextProps
     const { concepts, relationships } = this.state
     // If the primary resource has changed, start with a empty set of concepts
     // and relationships, and reset the flag for requesting additional
@@ -183,7 +197,7 @@ class FhirMedication extends Component {
       this.parseResources(
         resource,
         relatedResources,
-        childBundle,
+        childBundles,
         emptyConcepts(),
         false,
         false
@@ -192,7 +206,7 @@ class FhirMedication extends Component {
       // relationships. Additional resources will not be requested.
     } else if (
       (!isEqual(this.props.relatedResources, relatedResources) ||
-        !isEqual(this.props.childBundle, childBundle)) &&
+        !isEqual(this.props.childBundles, childBundles)) &&
       concepts &&
       relationships
     ) {
@@ -203,7 +217,7 @@ class FhirMedication extends Component {
       this.parseResources(
         resource,
         relatedResources,
-        childBundle,
+        childBundles,
         {
           concepts: concepts.concat([]),
           relationships: relationships.concat([]),
