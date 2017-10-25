@@ -1,3 +1,7 @@
 .app {
   background-color: #d3dfeb;
 }
+
+.search {
+  z-index: 95;
+}
