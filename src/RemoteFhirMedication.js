@@ -25,6 +25,7 @@ class RemoteFhirMedication extends Component {
       this
     )
     this.handleRequireChildBundle = this.handleRequireChildBundle.bind(this)
+    this.handleRequirePackageBundle = this.handleRequirePackageBundle.bind(this)
   }
 
   updateResource(fhirServer, path, query) {
@@ -96,6 +97,26 @@ class RemoteFhirMedication extends Component {
     )
   }
 
+  // Requests the packages that contain a specified concept type, scoped down to a
+  // particular resource type, e.g. all BPG (TPP) packages for a specified
+  // BPSF (TPUU).
+  // Updates an object in state, with resources keyed by resource type.
+  handleRequirePackageBundle(parentId, resourceType) {
+    const { fhirServer } = this.props
+    this.getFhirResource(
+      fhirServer,
+      '/Medication',
+      `?package-item=Medication/${parentId}&medication-resource-type=${resourceType}`
+    ).then(resource =>
+      this.setState(prevState => ({
+        packageBundles: {
+          ...prevState.packageBundles,
+          [resourceType]: resource,
+        },
+      }))
+    )
+  }
+
   handleError(error) {
     if (this.props.onError) {
       this.props.onError(error)
@@ -117,12 +138,24 @@ class RemoteFhirMedication extends Component {
   componentWillReceiveProps(nextProps) {
     const { fhirServer, path, query } = nextProps
     this.updateResource(fhirServer, path, query)
-    this.setState(() => ({ relatedResources: {}, childBundles: {} }))
+    // Make sure related resources and bundles don't hang around when changing
+    // the subject resource.
+    this.setState(() => ({
+      relatedResources: {},
+      childBundles: {},
+      packageBundles: {},
+    }))
   }
 
   render() {
     const { viewport } = this.props
-    const { resource, relatedResources, childBundles, status } = this.state
+    const {
+      resource,
+      relatedResources,
+      childBundles,
+      packageBundles,
+      status,
+    } = this.state
 
     return (
       <div className='remote-fhir-medication'>
@@ -131,10 +164,12 @@ class RemoteFhirMedication extends Component {
           resource={resource}
           relatedResources={relatedResources}
           childBundles={childBundles}
+          packageBundles={packageBundles}
           viewport={viewport}
           onLoad={this.handleLoad}
           onRequireRelatedResources={this.handleRequireRelatedResources}
           onRequireChildBundle={this.handleRequireChildBundle}
+          onRequirePackageBundle={this.handleRequirePackageBundle}
           onError={this.handleError}
         />
       </div>

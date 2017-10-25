@@ -12,44 +12,51 @@ import {
   emptyConcepts,
   resourceRequirementsFor,
   childRequirementsFor,
-  relationshipTypeFor,
+  packageRequirementsFor,
   codingToSnomedCode,
-  groupUri,
 } from './fhir/medication.js'
-import { sha256 } from './util.js'
+import { getBundleConcepts } from './fhir/bundle.js'
 
 class FhirMedication extends Component {
   static propTypes = {
     resource: PropTypes.object,
     relatedResources: PropTypes.object,
     childBundles: PropTypes.object,
+    packageBundles: PropTypes.object,
     groupingThreshold: PropTypes.number,
     viewport: PropTypes.object.isRequired,
     onRequireRelatedResources: PropTypes.func,
     onRequireChildBundle: PropTypes.func,
+    onRequirePackageBundle: PropTypes.func,
   }
   static defaultProps = {
     relatedResources: {},
+    childBundles: {},
+    packageBundles: {},
     groupingThreshold: 3,
   }
 
   constructor(props) {
     super(props)
     this.state = {
-      relatedResources: {},
-      childBundles: {},
       additionalResourcesRequested: false,
     }
   }
 
-  async parseResources(
-    resource,
-    relatedResources,
-    childBundles,
-    prevConcepts,
-    additionalResourcesRequested,
-    childConceptsRequested
-  ) {
+  // Parse resources and bundles from props and put the extracted concepts into
+  // `allConcepts` in state.
+  async parseResources(options = {}) {
+    const {
+      resource = this.props.resource,
+      relatedResources = this.props.relatedResources,
+      childBundles = this.props.childBundles,
+      packageBundles = this.props.packageBundles,
+      groupingThreshold = this.props.groupingThreshold,
+      prevConcepts = emptyConcepts(),
+      additionalResourcesRequested = false,
+      childConceptsRequested = false,
+      packageConceptsRequested = false,
+    } = options
     if (resource) {
       const focused = getSubjectConcept(resource)
       // Get concepts from the main resource.
@@ -65,7 +72,25 @@ class FhirMedication extends Component {
       const childConcepts = await Promise.all(
         values(childBundles).reduce(
           (merged, childBundle) =>
-            merged.concat(this.getChildConcepts(focused, childBundle)),
+            merged.concat(
+              getBundleConcepts(focused, childBundle, {
+                groupingThreshold,
+                groupRelationshipType: 'is-a',
+              })
+            ),
+          []
+        )
+      )
+      // Get package concepts from all package bundles.
+      const packageConcepts = await Promise.all(
+        values(packageBundles).reduce(
+          (merged, packageBundle) =>
+            merged.concat(
+              getBundleConcepts(focused, packageBundle, {
+                groupingThreshold,
+                groupRelationshipType: 'is-component-of',
+              })
+            ),
           []
         )
       )
@@ -75,6 +100,7 @@ class FhirMedication extends Component {
         conceptsFromFocused,
         ...relatedConcepts,
         ...childConcepts,
+        ...packageConcepts,
       ].reduce(mergeConceptsAndRelationships, cloneDeep(prevConcepts))
       // Request additional resources of particular types found within the
       // original resource. Only do this once, don't recurse into related
@@ -85,6 +111,10 @@ class FhirMedication extends Component {
       // Request bundle of child concepts for the subject resource.
       if (!childConceptsRequested) {
         this.requireChildConcepts(resource)
+      }
+      // Request bundle of package concepts for the subject resource.
+      if (!packageConceptsRequested) {
+        this.requirePackageConcepts(resource)
       }
       // Update state with merged concepts and relationships values.
       this.setState(() => allConcepts)
@@ -101,51 +131,6 @@ class FhirMedication extends Component {
         : getRelatedConcepts(resource, focused)
     result.concepts.push(focused)
     return result
-  }
-
-  // Get child concepts from the supplied child bundle, relating them to the
-  // focused concept.
-  async getChildConcepts(focused, childBundle) {
-    const { groupingThreshold } = this.props
-    if (!childBundle || childBundle.total === 0) return emptyConcepts()
-    if (childBundle.total <= groupingThreshold) {
-      return childBundle.entry.reduce((acc, e) => {
-        const child = getSubjectConcept(e.resource)
-        acc.concepts.push(child)
-        acc.relationships.push({
-          source: codingToSnomedCode(child.coding),
-          target: codingToSnomedCode(focused.coding),
-          type: relationshipTypeFor(child.type, focused.type),
-        })
-        return acc
-      }, emptyConcepts())
-    } else {
-      const concepts = childBundle.entry
-        .slice(0, groupingThreshold)
-        .map(e => getSubjectConcept(e.resource))
-      // The group's code is a hash of the concept data within the group.
-      const groupCode = await sha256(JSON.stringify(concepts))
-      return {
-        concepts: [
-          {
-            coding: [{ system: groupUri, code: groupCode }],
-            type: 'group',
-            total: childBundle.total,
-            concepts,
-          },
-        ],
-        relationships: [
-          {
-            // A `group-` prefix is added to the group code within the
-            // relationships so that it can be discerned when drawing curves and
-            // arrows.
-            source: `group-${groupCode}`,
-            target: codingToSnomedCode(focused.coding),
-            type: 'is-a',
-          },
-        ],
-      }
-    }
   }
 
   // Notify upstream components that we require additional resources to be
@@ -175,56 +160,72 @@ class FhirMedication extends Component {
     }
   }
 
+  requirePackageConcepts(resource) {
+    const { onRequirePackageBundle } = this.props
+    if (onRequirePackageBundle) {
+      const concept = getSubjectConcept(resource)
+      const code = codingToSnomedCode(concept.coding)
+      packageRequirementsFor(concept.type).forEach(resourceType =>
+        onRequirePackageBundle(code, resourceType)
+      )
+      this.setState(() => ({ packageConceptsRequested: true }))
+    }
+  }
+
   componentWillMount() {
-    const { resource, relatedResources, childBundles } = this.props
-    this.parseResources(
-      resource,
-      relatedResources,
-      childBundles,
-      emptyConcepts(),
-      false,
-      false
-    )
+    this.parseResources()
   }
 
   componentWillReceiveProps(nextProps) {
-    const { resource, relatedResources, childBundles } = nextProps
+    const {
+      resource,
+      relatedResources,
+      childBundles,
+      packageBundles,
+      groupingThreshold,
+    } = nextProps
     const { concepts, relationships } = this.state
     // If the primary resource has changed, start with a empty set of concepts
     // and relationships, and reset the flag for requesting additional
     // resources.
     if (!isEqual(this.props.resource, resource)) {
-      this.parseResources(
+      this.parseResources({
         resource,
         relatedResources,
         childBundles,
-        emptyConcepts(),
-        false,
-        false
-      )
-      // If only related resources are changing, preserve the set of concepts and
-      // relationships. Additional resources will not be requested.
+        packageBundles,
+        groupingThreshold,
+      })
+      // If only related resources are changing, preserve the set of concepts
+      // and relationships. Additional resources will not be requested.
     } else if (
       (!isEqual(this.props.relatedResources, relatedResources) ||
-        !isEqual(this.props.childBundles, childBundles)) &&
+        !isEqual(this.props.childBundles, childBundles) ||
+        !isEqual(this.props.packageBundles, packageBundles)) &&
       concepts &&
       relationships
     ) {
       const {
         additionalResourcesRequested,
         childConceptsRequested,
+        packageConceptsRequested,
       } = this.state
-      this.parseResources(
+      this.parseResources({
         resource,
         relatedResources,
         childBundles,
-        {
+        packageBundles,
+        groupingThreshold,
+        // Ensure that a copy of the concepts and relationships are taken before
+        // passing them in.
+        prevConcepts: {
           concepts: concepts.concat([]),
           relationships: relationships.concat([]),
         },
         additionalResourcesRequested,
-        childConceptsRequested
-      )
+        childConceptsRequested,
+        packageConceptsRequested,
+      })
     }
   }
 

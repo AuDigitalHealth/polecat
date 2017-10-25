@@ -308,9 +308,9 @@ export const childRequirementsFor = sourceType =>
     BPGC: [],
     BPG: ['BPGC'],
     BPSF: [],
-    UPG: [ 'BPG', 'BPGC' ],
-    UPDSF: ['BPSF'],
-    UPD: [ 'UPDSF', 'BPSF' ],
+    UPG: [ 'UPG', 'BPG' ],
+    UPDSF: [ 'UPDSF', 'BPSF' ],
+    UPD: [ 'UPD', 'UPDSF' ],
     substance: [],
   }[sourceType])
 
