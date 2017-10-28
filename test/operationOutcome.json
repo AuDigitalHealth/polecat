@@ -1,0 +1,11 @@
+{
+  "resourceType": "OperationOutcome",
+  "issue": [
+    {
+      "severity": "error",
+      "code": "processing",
+      "diagnostics":
+        "Invalid request: The FHIR endpoint on this server does not know how to handle GET operation[Medication] with parameters [[_text, is-brafnd]]"
+    }
+  ]
+}

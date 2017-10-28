@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import http from 'axios'
+import isEqual from 'lodash.isequal'
 
 import FhirMedication from './FhirMedication.js'
-import Loading from './Loading.js'
-import Error from './Error.js'
 import { sniffFormat } from './fhir/restApi'
 import { opOutcomeFromJsonResponse } from './fhir/core.js'
-
-import './css/RemoteFhirMedication.css'
 
 class RemoteFhirMedication extends Component {
   static propTypes = {
@@ -16,6 +13,8 @@ class RemoteFhirMedication extends Component {
     query: PropTypes.string,
     fhirServer: PropTypes.string.isRequired,
     viewport: PropTypes.object.isRequired,
+    onLoadingChange: PropTypes.func,
+    onError: PropTypes.func,
   }
 
   constructor(props) {
@@ -26,44 +25,49 @@ class RemoteFhirMedication extends Component {
     )
     this.handleRequireChildBundle = this.handleRequireChildBundle.bind(this)
     this.handleRequirePackageBundle = this.handleRequirePackageBundle.bind(this)
+    this.setLoadingStatus = this.setLoadingStatus.bind(this)
   }
 
   updateResource(fhirServer, path, query) {
-    this.setState(() => ({ status: 'loading' }))
+    this.setLoadingStatus(true)
     return this.getFhirResource(fhirServer, path, query)
-      .then(resource => this.setState({ resource, status: 'loaded' }))
+      .then(resource => this.setState({ resource }))
+      .then(() => this.setLoadingStatus(false))
       .catch(error => this.handleError(error))
   }
 
   async getFhirResource(fhirServer, path, query) {
+    let response
     try {
-      const response = await http.get(fhirServer + path + (query || ''), {
+      response = await http.get(fhirServer + path + (query || ''), {
         headers: { Accept: 'application/fhir+json, application/json' },
       })
-      sniffFormat(response.headers['content-type'])
-      return response.data
     } catch (error) {
       if (error.response) this.handleUnsuccessfulResponse(error.response)
       else throw error
     }
+    sniffFormat(response.headers['content-type'])
+    return response.data
+  }
+
+  setLoadingStatus(loading) {
+    if (this.props.onLoadingChange) {
+      this.props.onLoadingChange(loading)
+    }
   }
 
   handleUnsuccessfulResponse(response) {
-    sniffFormat(response.headers['content-type'])
-    const opOutcome = opOutcomeFromJsonResponse(response)
-    if (opOutcome) throw opOutcome
+    try {
+      sniffFormat(response.headers['content-type'])
+      const opOutcome = opOutcomeFromJsonResponse(response.data)
+      if (opOutcome) throw opOutcome
+    } catch (error) {}
     if (response.status === 404) {
       throw new Error(
         `The resource you requested was not found: "${this.props.path}"`
       )
     } else {
       throw new Error(response.statusText || response.status)
-    }
-  }
-
-  handleLoad(metadata) {
-    if (this.props.onLoad) {
-      this.props.onLoad(metadata)
     }
   }
 
@@ -120,13 +124,6 @@ class RemoteFhirMedication extends Component {
   handleError(error) {
     if (this.props.onError) {
       this.props.onError(error)
-    } else {
-      this.setState(
-        () => ({ error, status: 'error' }),
-        () => {
-          throw error
-        }
-      )
     }
   }
 
@@ -136,8 +133,10 @@ class RemoteFhirMedication extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { fhirServer, path, query } = nextProps
-    this.updateResource(fhirServer, path, query)
+    if (!isEqual(this.props, nextProps)) {
+      const { fhirServer, path, query } = nextProps
+      this.updateResource(fhirServer, path, query)
+    }
     // Make sure related resources and bundles don't hang around when changing
     // the subject resource.
     this.setState(() => ({
@@ -154,19 +153,16 @@ class RemoteFhirMedication extends Component {
       relatedResources,
       childBundles,
       packageBundles,
-      status,
     } = this.state
 
     return (
       <div className='remote-fhir-medication'>
-        <Loading loading={status === 'loading'} />
         <FhirMedication
           resource={resource}
           relatedResources={relatedResources}
           childBundles={childBundles}
           packageBundles={packageBundles}
           viewport={viewport}
-          onLoad={this.handleLoad}
           onRequireRelatedResources={this.handleRequireRelatedResources}
           onRequireChildBundle={this.handleRequireChildBundle}
           onRequirePackageBundle={this.handleRequirePackageBundle}

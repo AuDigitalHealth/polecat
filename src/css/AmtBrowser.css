@@ -1,0 +1,18 @@
+.amt-browser {
+  background-color: #d3dfeb;
+}
+
+.amt-browser .search {
+  z-index: 95;
+}
+
+.amt-browser .errors {
+  text-align: center;
+}
+
+.amt-browser .loading img {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 99;
+}

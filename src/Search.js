@@ -5,6 +5,7 @@ import throttle from 'lodash.throttle'
 
 import TextField from './TextField.js'
 import SearchResults from './SearchResults.js'
+import { opOutcomeFromJsonResponse } from './fhir/core.js'
 import { sniffFormat } from './fhir/restApi'
 import { getSubjectConcept, amtConceptTypeFor } from './fhir/medication.js'
 import { pathForQuery } from './fhir/search.js'
@@ -15,6 +16,8 @@ class Search extends Component {
   static propTypes = {
     fhirServer: PropTypes.string.isRequired,
     minRequestFrequency: PropTypes.number,
+    onLoadingChange: PropTypes.func,
+    onError: PropTypes.func,
   }
   static defaultProps = {
     minRequestFrequency: 350,
@@ -29,14 +32,31 @@ class Search extends Component {
       this.props.minRequestFrequency
     )
     this.handleSelectResult = this.handleSelectResult.bind(this)
+    this.setLoadingStatus = this.setLoadingStatus.bind(this)
+    this.handleError = this.handleError.bind(this)
   }
 
   async getSearchResults(fhirServer, query) {
-    const response = await http.get(fhirServer + pathForQuery(query), {
-      headers: { Accept: 'application/fhir+json, application/json' },
-    })
+    let response
+    try {
+      response = await http.get(fhirServer + pathForQuery(query), {
+        headers: { Accept: 'application/fhir+json, application/json' },
+      })
+    } catch (error) {
+      if (error.response) this.handleUnsuccessfulResponse(error.response)
+      else throw error
+    }
     sniffFormat(response.headers['content-type'])
     return response.data
+  }
+
+  handleUnsuccessfulResponse(response) {
+    try {
+      sniffFormat(response.headers['content-type'])
+      const opOutcome = opOutcomeFromJsonResponse(response)
+      if (opOutcome) throw opOutcome
+    } catch (error) {}
+    throw new Error(response.statusText || response.status)
   }
 
   async parseSearchResults(resource) {
@@ -44,6 +64,12 @@ class Search extends Component {
     return resource.entry
       .map(e => getSubjectConcept(e.resource))
       .map(result => ({ ...result, type: amtConceptTypeFor(result.type) }))
+  }
+
+  setLoadingStatus(loading) {
+    if (this.props.onLoadingChange) {
+      this.props.onLoadingChange(loading)
+    }
   }
 
   handleQueryUpdate(query) {
@@ -58,14 +84,22 @@ class Search extends Component {
 
   throttledQueryUpdate(query) {
     const { fhirServer } = this.props
+    this.setLoadingStatus(true)
     this.getSearchResults(fhirServer, query)
       .then(resource => this.parseSearchResults(resource))
       .then(results => this.setState(() => ({ results })))
-      .catch(error => console.error(error))
+      .then(() => this.setLoadingStatus(false))
+      .catch(error => this.handleError(error))
   }
 
   handleSelectResult() {
     this.setState(() => ({ query: '' }), () => this.handleQueryUpdate(null))
+  }
+
+  handleError(error) {
+    if (this.props.onError) {
+      this.props.onError(error)
+    }
   }
 
   componentDidReceiveProps(nextProps) {
@@ -73,7 +107,7 @@ class Search extends Component {
     if (query) {
       this.getSearchResults(fhirServer, query)
         .then(results => this.setState(() => ({ results })))
-        .catch(error => console.error(error))
+        .catch(error => this.handleError(error))
     }
   }
 

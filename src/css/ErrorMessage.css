@@ -1,0 +1,17 @@
+.error {
+  font-family: 'Helvetica Neue', sans-serif;
+  position: relative;
+  background-color: #dfd1ab;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 4px 7px 7px;
+  border: 1px solid #a57706;
+  border-radius: 6px;
+  font-size: 13px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.error p {
+  margin: 3px 0 0 0;
+}
