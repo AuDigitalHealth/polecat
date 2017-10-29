@@ -18,6 +18,9 @@ const availableMedParams = [
 
 const availableSubstanceParams = [ 'substance', 'substance-text' ]
 
+// Translates a tagged search string into a valid GET URL (path only) which will
+// execute a search on the FHIR server. Returns false if there is no searchable
+// information in the query, e.g. `brand:`.
 export const pathForQuery = query => {
   const medParams = extractSearchParams(query, availableMedParams)
   const queryText = extractQueryText(query)
@@ -38,10 +41,13 @@ export const pathForQuery = query => {
       .join('&')
     return `/Substance?${getParams}&_summary=true&_count=20`
   } else {
-    throw new Error('No valid search params found.')
+    return false
   }
 }
 
+// Extract all tagged search parameters from the string (subject to the supplied
+// `params` whitelist), and return them as an a array of `[ param, value ]`
+// tuples.
 const extractSearchParams = (query, params) =>
   params.reduce((result, param) => {
     const pattern = RegExp(`(?:^|\\s)${param}:(?:"([^"]+)"|([^"\\s]+))`, 'g')
@@ -60,9 +66,11 @@ const extractSearchParams = (query, params) =>
     return result
   }, [])
 
+// Remove any tagged parameters, leaving only the text query component.
 const extractQueryText = query =>
   query.replace(/[A-Za-z\\-]+:(?:"([^"]*)"|([^"\s]*))/g, '').trim()
 
+// Return the GET parameter for a specified Medication search tag and value.
 const getMedicationParamFor = (param, value) => {
   switch (param) {
     case 'id':
@@ -105,6 +113,7 @@ const getMedicationParamFor = (param, value) => {
   }
 }
 
+// Return the GET parameter for a specified Substance search tag and value.
 const getSubstanceParamFor = (param, value) => {
   switch (param) {
     case 'substance':

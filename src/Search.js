@@ -39,7 +39,9 @@ class Search extends Component {
   async getSearchResults(fhirServer, query) {
     let response
     try {
-      response = await http.get(fhirServer + pathForQuery(query), {
+      const path = pathForQuery(query)
+      if (!path) return null
+      response = await http.get(fhirServer + path, {
         headers: { Accept: 'application/fhir+json, application/json' },
       })
     } catch (error) {
@@ -60,7 +62,7 @@ class Search extends Component {
   }
 
   async parseSearchResults(resource) {
-    if (resource.total === 0) return []
+    if (!resource || resource.total === 0) return []
     return resource.entry
       .map(e => getSubjectConcept(e.resource))
       .map(result => ({ ...result, type: amtConceptTypeFor(result.type) }))
