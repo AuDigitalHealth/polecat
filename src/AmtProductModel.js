@@ -358,8 +358,14 @@ class AmtProductModel extends Component {
 
   render() {
     const { viewport } = this.props
-    const concepts = this.renderConcepts()
-    const relationships = this.renderRelationships()
+    let concepts, relationships
+    try {
+      concepts = this.renderConcepts()
+      relationships = this.renderRelationships()
+    } catch (error) {
+      this.stopSimulation()
+      throw error
+    }
     return (
       <div
         className='product-model'

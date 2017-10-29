@@ -72,11 +72,16 @@ const calculateLinkEndings = (link, options) => {
       southWest,
       northWest,
       northEast,
+      groupSouthEast,
+      groupSouthWest,
+      groupNorthWest,
+      groupNorthEast,
       conceptWidth,
       conceptHeight,
       conceptGroupWidth,
       conceptGroupHeight,
       conceptAngle,
+      conceptGroupAngle,
       bearing,
     } = options,
     { source: { x: x1, y: y1 }, target: { x: x2, y: y2 } } = link,
@@ -93,58 +98,120 @@ const calculateLinkEndings = (link, options) => {
       : conceptHeight / 2,
     targetVertDistCenter = targetIsGroup
       ? conceptGroupHeight / 2
-      : conceptHeight / 2
+      : conceptHeight / 2,
+    sourceAngle = sourceIsGroup ? conceptGroupAngle : conceptAngle,
+    targetAngle = targetIsGroup ? conceptGroupAngle : conceptAngle,
+    sourceSouthEast = sourceIsGroup ? groupSouthEast : southEast,
+    sourceSouthWest = sourceIsGroup ? groupSouthWest : southWest,
+    sourceNorthWest = sourceIsGroup ? groupNorthWest : northWest,
+    sourceNorthEast = sourceIsGroup ? groupNorthEast : northEast,
+    targetSouthEast = targetIsGroup ? groupSouthEast : southEast,
+    targetSouthWest = targetIsGroup ? groupSouthWest : southWest,
+    targetNorthWest = targetIsGroup ? groupNorthWest : northWest,
+    targetNorthEast = targetIsGroup ? groupNorthEast : northEast
+  let newOptions = {
+    ...options,
+    sourceSouthEast,
+    sourceSouthWest,
+    sourceNorthWest,
+    sourceNorthEast,
+    targetSouthEast,
+    targetSouthWest,
+    targetNorthWest,
+    targetNorthEast,
+  }
   let angle
+  // Calculate startings.
   switch (true) {
-    case bearing >= northEast || bearing < southEast:
-      angle = bearing < conceptAngle ? bearing : bearing - 2 * Math.PI
-      return {
-        ...options,
+    case bearing >= sourceNorthEast || bearing < sourceSouthEast:
+      angle = conceptAngle =>
+        bearing < conceptAngle ? bearing : bearing - 2 * Math.PI
+      newOptions = {
+        ...newOptions,
         startX: x1 + sourceHorizDistCenter,
-        startY: y1 + sourceHorizDistCenter * Math.tan(angle),
-        endX: x2 - targetHorizDistCenter,
-        endY: y2 - targetHorizDistCenter * Math.tan(angle),
+        startY: y1 + sourceHorizDistCenter * Math.tan(angle(sourceAngle)),
       }
-    case bearing >= southEast && bearing < southWest:
+      break
+    case bearing >= sourceSouthEast && bearing < sourceSouthWest:
       angle = bearing - Math.PI / 2
-      return {
-        ...options,
+      newOptions = {
+        ...newOptions,
         startX: x1 - sourceVertDistCenter * Math.tan(angle),
         startY: y1 + sourceVertDistCenter,
-        endX: x2 + targetVertDistCenter * Math.tan(angle),
-        endY: y2 - targetVertDistCenter,
       }
-    case bearing >= southWest && bearing < northWest:
+      break
+    case bearing >= sourceSouthWest && bearing < sourceNorthWest:
       angle = bearing - Math.PI
-      return {
-        ...options,
+      newOptions = {
+        ...newOptions,
         startX: x1 - sourceHorizDistCenter,
         startY: y1 - sourceHorizDistCenter * Math.tan(angle),
-        endX: x2 + targetHorizDistCenter,
-        endY: y2 + targetHorizDistCenter * Math.tan(angle),
       }
-    case bearing >= northWest && bearing < northEast:
+      break
+    case bearing >= sourceNorthWest && bearing < sourceNorthEast:
       angle = bearing - 3 * Math.PI / 2
-      return {
-        ...options,
+      newOptions = {
+        ...newOptions,
         startX: x1 + sourceVertDistCenter * Math.tan(angle),
         startY: y1 - sourceVertDistCenter,
-        endX: x2 - targetVertDistCenter * Math.tan(angle),
-        endY: y2 + targetVertDistCenter,
       }
+      break
     default:
       throw new Error(`Unexpected bearing: ${bearing}`)
   }
+  // Calculate endings.
+  switch (true) {
+    case bearing >= targetNorthEast || bearing < targetSouthEast:
+      angle = conceptAngle =>
+        bearing < conceptAngle ? bearing : bearing - 2 * Math.PI
+      newOptions = {
+        ...newOptions,
+        endX: x2 - targetHorizDistCenter,
+        endY: y2 - targetHorizDistCenter * Math.tan(angle(targetAngle)),
+      }
+      break
+    case bearing >= targetSouthEast && bearing < targetSouthWest:
+      angle = bearing - Math.PI / 2
+      newOptions = {
+        ...newOptions,
+        endX: x2 + targetVertDistCenter * Math.tan(angle),
+        endY: y2 - targetVertDistCenter,
+      }
+      break
+    case bearing >= targetSouthWest && bearing < targetNorthWest:
+      angle = bearing - Math.PI
+      newOptions = {
+        ...newOptions,
+        endX: x2 + targetHorizDistCenter,
+        endY: y2 + targetHorizDistCenter * Math.tan(angle),
+      }
+      break
+    case bearing >= targetNorthWest && bearing < targetNorthEast:
+      angle = bearing - 3 * Math.PI / 2
+      newOptions = {
+        ...newOptions,
+        endX: x2 - targetVertDistCenter * Math.tan(angle),
+        endY: y2 + targetVertDistCenter,
+      }
+      break
+    default:
+      throw new Error(`Unexpected bearing: ${bearing}`)
+  }
+  return newOptions
 }
 
 // Calculates the control points for the Bézier curve, based on the curviness
 // and the distance between the concepts.
 const calculateControlPoints = options => {
   const {
-      southEast,
-      southWest,
-      northWest,
-      northEast,
+      sourceSouthEast,
+      sourceSouthWest,
+      sourceNorthWest,
+      sourceNorthEast,
+      targetSouthEast,
+      targetSouthWest,
+      targetNorthWest,
+      targetNorthEast,
       bearing,
       linkCurviness,
       startX,
@@ -158,42 +225,74 @@ const calculateControlPoints = options => {
     angle = Math.atan(Math.abs(opp) / Math.abs(adj)),
     linkLength = Math.abs(opp) / Math.sin(angle),
     cpLength = arrowSize + linkLength * linkCurviness
+  let newOptions = { ...options }
+  // Calculate starting control points.
   switch (true) {
-    case bearing >= northEast || bearing < southEast:
-      return {
-        ...options,
+    case bearing >= sourceNorthEast || bearing < sourceSouthEast:
+      newOptions = {
+        ...newOptions,
         cp1x: startX + cpLength,
         cp1y: startY,
-        cp2x: endX - cpLength,
-        cp2y: endY,
       }
-    case bearing >= southEast && bearing < southWest:
-      return {
-        ...options,
+      break
+    case bearing >= sourceSouthEast && bearing < sourceSouthWest:
+      newOptions = {
+        ...newOptions,
         cp1x: startX,
         cp1y: startY + cpLength,
-        cp2x: endX,
-        cp2y: endY - cpLength,
       }
-    case bearing >= southWest && bearing < northWest:
-      return {
-        ...options,
+      break
+    case bearing >= sourceSouthWest && bearing < sourceNorthWest:
+      newOptions = {
+        ...newOptions,
         cp1x: startX - cpLength,
         cp1y: startY,
-        cp2x: endX + cpLength,
-        cp2y: endY,
       }
-    case bearing >= northWest && bearing < northEast:
-      return {
-        ...options,
+      break
+    case bearing >= sourceNorthWest && bearing < sourceNorthEast:
+      newOptions = {
+        ...newOptions,
         cp1x: startX,
         cp1y: startY - cpLength,
-        cp2x: endX,
-        cp2y: endY + cpLength,
       }
+      break
     default:
       throw new Error(`Unexpected bearing: ${bearing}`)
   }
+  // Calculate ending control points.
+  switch (true) {
+    case bearing >= targetNorthEast || bearing < targetSouthEast:
+      newOptions = {
+        ...newOptions,
+        cp2x: endX - cpLength,
+        cp2y: endY,
+      }
+      break
+    case bearing >= targetSouthEast && bearing < targetSouthWest:
+      newOptions = {
+        ...newOptions,
+        cp2x: endX,
+        cp2y: endY - cpLength,
+      }
+      break
+    case bearing >= targetSouthWest && bearing < targetNorthWest:
+      newOptions = {
+        ...newOptions,
+        cp2x: endX + cpLength,
+        cp2y: endY,
+      }
+      break
+    case bearing >= targetNorthWest && bearing < targetNorthEast:
+      newOptions = {
+        ...newOptions,
+        cp2x: endX,
+        cp2y: endY + cpLength,
+      }
+      break
+    default:
+      throw new Error(`Unexpected bearing: ${bearing}`)
+  }
+  return newOptions
 }
 
 // This function renders inheritance and association type relationships.
@@ -201,10 +300,10 @@ const calculateControlPoints = options => {
 // head.
 const calculateArrowPoints = options => {
   const {
-      southEast,
-      southWest,
-      northWest,
-      northEast,
+      targetSouthEast: southEast,
+      targetSouthWest: southWest,
+      targetNorthWest: northWest,
+      targetNorthEast: northEast,
       bearing,
       endX,
       endY,
@@ -256,10 +355,10 @@ const calculateArrowPoints = options => {
 // aggregation symbol is displayed at the start of the link, on the source side.
 const calculateAggregationPoints = options => {
   const {
-      southEast,
-      southWest,
-      northWest,
-      northEast,
+      sourceSouthEast: southEast,
+      sourceSouthWest: southWest,
+      sourceNorthWest: northWest,
+      sourceNorthEast: northEast,
       bearing,
       startX,
       startY,

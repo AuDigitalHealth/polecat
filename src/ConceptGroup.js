@@ -24,8 +24,8 @@ class ConceptGroup extends Component {
   static defaultProps = {
     top: 0,
     left: 0,
-    width: 150,
-    height: 75,
+    width: 100,
+    height: 47,
   }
 
   render() {
