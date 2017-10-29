@@ -14,6 +14,11 @@
   border-width: 2px;
 }
 
+.concept .display {
+  max-height: 58px;
+  overflow: hidden;
+}
+
 .concept .type {
   position: absolute;
   bottom: 6px;
