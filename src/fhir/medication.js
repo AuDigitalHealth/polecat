@@ -196,6 +196,8 @@ const validatePackageContent = content => {
 }
 
 export const snomedUri = 'http://snomed.info/sct'
+export const artgUri =
+  'https://www.tga.gov.au/australian-register-therapeutic-goods'
 export const groupUri = 'group'
 
 const urlForExtension = name =>
@@ -208,6 +210,9 @@ const urlForExtension = name =>
       'http://medserve.online/fhir/StructureDefinition/parentMedicationResources',
     brand: 'http://medserve.online/fhir/StructureDefinition/brand',
   }[name])
+
+export const urlForArtgId = id =>
+  `http://search.tga.gov.au/s/search.html?collection=tga-artg&profile=record&meta_i=${id}`
 
 // Filter functions for finding different types of information within the
 // extension.
@@ -376,6 +381,12 @@ export const codingToSnomedCode = coding => {
 export const codingToSnomedDisplay = coding => {
   const found = coding.find(c => c.system === snomedUri)
   return found ? found.display : null
+}
+
+// Extracts an ARTG ID from a `coding` element.
+export const codingToArtgId = coding => {
+  const found = coding.find(c => c.system === artgUri)
+  return found ? found.code : null
 }
 
 // Extracts a group code from a `coding` element.

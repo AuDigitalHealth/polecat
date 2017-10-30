@@ -8,7 +8,6 @@ import pick from 'lodash.pick'
 import debounce from 'lodash.debounce'
 
 import Concept from './Concept.js'
-import FocusedConcept from './FocusedConcept.js'
 import ConceptGroup from './ConceptGroup.js'
 import {
   amtConceptTypeFor,
@@ -414,24 +413,13 @@ class AmtProductModel extends Component {
               height={conceptHeight}
             />
           )
-        } else if (node.focused) {
-          return (
-            <FocusedConcept
-              key={i}
-              coding={node.coding}
-              type={amtConceptTypeFor(node.type)}
-              top={node.y - conceptHeight / 2}
-              left={node.x - conceptWidth / 2}
-              width={conceptWidth}
-              height={conceptHeight}
-            />
-          )
         } else {
           return (
             <Concept
               key={i}
               coding={node.coding}
               type={amtConceptTypeFor(node.type)}
+              focused={node.focused}
               top={node.y - conceptHeight / 2}
               left={node.x - conceptWidth / 2}
               width={conceptWidth}

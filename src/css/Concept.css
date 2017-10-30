@@ -8,6 +8,7 @@
   font-size: 12px;
   box-sizing: border-box;
   overflow: hidden;
+  user-select: none;
 }
 
 .concept-focused {
@@ -31,6 +32,10 @@
 
 .concept .sctid {
   margin-bottom: 3px;
+}
+
+.concept .artgid {
+  margin-top: 3px;
 }
 
 .concept .type-ctpp {

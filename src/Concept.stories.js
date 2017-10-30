@@ -9,6 +9,29 @@ const top = 20
 const left = 20
 
 storiesOf('Concept', module)
+  .add('Focused', () => (
+    <Concept
+      coding={[
+        {
+          system: 'http://snomed.info/sct',
+          code: '933216161000036101',
+          display:
+            'Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial',
+        },
+        {
+          system:
+            'https://www.tga.gov.au/australian-register-therapeutic-goods',
+          code: '74899',
+        },
+      ]}
+      type='CTPP'
+      focused
+      width={width}
+      height={height}
+      top={top}
+      left={left}
+    />
+  ))
   .add('CTPP', () => (
     <Concept
       coding={[
@@ -140,6 +163,27 @@ storiesOf('Concept', module)
         },
       ]}
       type='substance'
+      width={width}
+      height={height}
+      top={top}
+      left={left}
+    />
+  ))
+  .add('With ARTG ID', () => (
+    <Concept
+      coding={[
+        {
+          system: 'http://snomed.info/sct',
+          code: '95431000036109',
+          display: 'Xifaxan 550 mg film-coated tablet, 56, blister pack',
+        },
+        {
+          system:
+            'https://www.tga.gov.au/australian-register-therapeutic-goods',
+          code: '183411',
+        },
+      ]}
+      type='CTPP'
       width={width}
       height={height}
       top={top}

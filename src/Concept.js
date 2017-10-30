@@ -2,7 +2,12 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-import { codingToSnomedCode, codingToSnomedDisplay } from './fhir/medication.js'
+import {
+  codingToSnomedCode,
+  codingToSnomedDisplay,
+  codingToArtgId,
+  urlForArtgId,
+} from './fhir/medication.js'
 
 import './css/Concept.css'
 
@@ -25,12 +30,14 @@ class Concept extends Component {
       'MP',
       'substance',
     ]).isRequired,
+    focused: PropTypes.bool,
     top: PropTypes.number,
     left: PropTypes.number,
     width: PropTypes.number,
     height: PropTypes.number,
   }
   static defaultProps = {
+    focused: false,
     top: 0,
     left: 0,
     width: 150,
@@ -38,12 +45,13 @@ class Concept extends Component {
   }
 
   render() {
-    const { coding, type, top, left, width, height } = this.props
+    const { coding, type, focused, top, left, width, height } = this.props
     const sctid = codingToSnomedCode(coding)
     const display = codingToSnomedDisplay(coding)
+    const artgId = codingToArtgId(coding)
     return (
       <div
-        className='concept'
+        className={focused ? 'concept concept-focused' : 'concept'}
         style={{
           position: 'absolute',
           top: top + 'px',
@@ -60,6 +68,18 @@ class Concept extends Component {
           )}
         </div>
         <div className='display'>{display}</div>
+        {artgId ? (
+          <div className='artgid'>
+            ARTG ID{' '}
+            <a
+              href={urlForArtgId(artgId)}
+              title={`ARTG ID ${artgId} on the TGA website`}
+              target='_blank'
+            >
+              {artgId}
+            </a>
+          </div>
+        ) : null}
         {type ? (
           <div className={`type type-${type}`.toLowerCase()}>{type}</div>
         ) : null}
