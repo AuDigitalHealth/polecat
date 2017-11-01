@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
+import CopyToClipboard from './CopyToClipboard.js'
 import {
   codingToSnomedCode,
   codingToSnomedDisplay,
@@ -61,13 +62,20 @@ class Concept extends Component {
         }}
       >
         <div className='sctid'>
-          {type !== 'TP' ? (
+          {type !== 'TP' && !focused ? (
             <Link to={`/Medication/${sctid}`}>{sctid}</Link>
           ) : (
             sctid
           )}
+          <CopyToClipboard copyText={sctid} title='Copy SCTID to clipboard' />
         </div>
-        <div className='display'>{display}</div>
+        <div className='display'>
+          {display}
+          <CopyToClipboard
+            copyText={display}
+            title='Copy preferred term to clipboard'
+          />
+        </div>
         {artgId ? (
           <div className='artgid'>
             ARTG ID{' '}

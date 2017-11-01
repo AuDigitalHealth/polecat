@@ -16,6 +16,7 @@
 }
 
 .concept .display {
+  min-height: 16px;
   max-height: 58px;
   overflow: hidden;
 }
@@ -36,6 +37,29 @@
 
 .concept .artgid {
   margin-top: 3px;
+}
+
+.concept .sctid,
+.concept .display {
+  position: relative;
+}
+
+.concept .copy-to-clipboard {
+  display: none;
+  margin-top: -20px;
+  margin-left: 3px;
+  position: relative;
+  top: 4px;
+  cursor: pointer;
+}
+
+.concept .sctid:hover .copy-to-clipboard,
+.concept .display:hover .copy-to-clipboard {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
 }
 
 .concept .type-ctpp {
