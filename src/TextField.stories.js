@@ -7,3 +7,6 @@ storiesOf('TextField', module)
   .add('With value', () => <TextField value='Some value' />)
   .add('With no value', () => <TextField />)
   .add('With placeholder', () => <TextField placeholder='Type here' />)
+  .add('With focus on mount', () => (
+    <TextField value='Some value' focusUponMount />
+  ))

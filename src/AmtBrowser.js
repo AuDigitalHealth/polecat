@@ -77,6 +77,7 @@ class AmtBrowser extends Component {
           fhirServer={config.fhirServer}
           onLoadingChange={this.handleLoadingChange}
           onError={this.handleError}
+          focusUponMount
         />
         <Loading loading={loading} />
         {error ? (

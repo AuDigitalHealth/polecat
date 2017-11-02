@@ -18,6 +18,7 @@ class Search extends Component {
     minRequestFrequency: PropTypes.number,
     onLoadingChange: PropTypes.func,
     onError: PropTypes.func,
+    focusUponMount: PropTypes.bool,
   }
   static defaultProps = {
     minRequestFrequency: 350,
@@ -25,7 +26,7 @@ class Search extends Component {
 
   constructor(props) {
     super(props)
-    this.state = { results: null }
+    this.state = { results: null, advanced: false }
     this.handleQueryUpdate = this.handleQueryUpdate.bind(this)
     this.throttledQueryUpdate = throttle(
       this.throttledQueryUpdate.bind(this),
@@ -33,6 +34,7 @@ class Search extends Component {
     )
     this.handleSelectResult = this.handleSelectResult.bind(this)
     this.setLoadingStatus = this.setLoadingStatus.bind(this)
+    this.handleToggleAdvanced = this.handleToggleAdvanced.bind(this)
     this.handleError = this.handleError.bind(this)
   }
 
@@ -98,6 +100,10 @@ class Search extends Component {
     this.setState(() => ({ query: '' }), () => this.handleQueryUpdate(null))
   }
 
+  handleToggleAdvanced() {
+    this.setState(() => ({ advanced: !this.state.advanced }))
+  }
+
   handleError(error) {
     if (this.props.onError) {
       this.props.onError(error)
@@ -114,7 +120,8 @@ class Search extends Component {
   }
 
   render() {
-    const { query, results } = this.state
+    const { focusUponMount } = this.props
+    const { query, results, advanced } = this.state
     return (
       <div className='search'>
         <TextField
@@ -122,12 +129,19 @@ class Search extends Component {
           placeholder='Search'
           className='search-input'
           onChange={this.handleQueryUpdate}
+          focusUponMount={focusUponMount}
         />
         <SearchResults
           query={query}
           results={results}
           onSelectResult={this.handleSelectResult}
         />
+        <div
+          className='search-toggle-advanced'
+          onClick={this.handleToggleAdvanced}
+        >
+          {advanced ? '\u25B3' : '\u25BD'}
+        </div>
       </div>
     )
   }

@@ -7,6 +7,7 @@ class TextField extends Component {
     placeholder: PropTypes.string,
     className: PropTypes.string,
     onChange: PropTypes.func,
+    focusUponMount: PropTypes.bool,
   }
 
   constructor(props) {
@@ -27,6 +28,11 @@ class TextField extends Component {
     )
   }
 
+  componentDidMount() {
+    console.log('componentDidMount', this.props, this.textInput)
+    if (this.props.focusUponMount) this.textInput.focus()
+  }
+
   componentWillReceiveProps(nextProps) {
     this.setState(() => ({ value: nextProps.value }))
   }
@@ -40,6 +46,7 @@ class TextField extends Component {
       placeholder,
       value: value || '',
       onChange: this.handleChange,
+      ref: el => (this.textInput = el),
     }
     return (
       <div className='text-field'>

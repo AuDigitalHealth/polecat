@@ -9,3 +9,6 @@ storiesOf('Search', module)
   .add('With minimum request frequency of 2 seconds', () => (
     <Search fhirServer={config.fhirServer} minRequestFrequency={2000} />
   ))
+  .add('With focus on mount', () => (
+    <Search fhirServer={config.fhirServer} focusUponMount />
+  ))

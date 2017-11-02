@@ -13,3 +13,12 @@
   font-size: 14px;
   width: 250px;
 }
+
+.search-toggle-advanced {
+  font-size: 15px;
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  cursor: pointer;
+  user-select: none;
+}
