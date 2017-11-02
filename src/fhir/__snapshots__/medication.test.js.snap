@@ -1,5 +1,344 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`getRelatedConcepts should return correct result for CTPP 21062011000036103 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "2941011000036107",
+          "display": "Nexium Hp7",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "14207011000036103",
+          "display": "Nexium Hp7 (14 x Nexium tablets, 28 x Amoxil capsules, 14 x Klacid tablets), 1 pack",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "28214011000036106",
+          "display": "esomeprazole 20 mg enteric tablet [14] (&) amoxicillin 500 mg capsule [28] (&) clarithromycin 500 mg tablet [14], 1 pack",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "46431011000036106",
+          "display": "clarithromycin 500 mg tablet, 14",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "700031841000036104",
+          "display": "amoxicillin 500 mg capsule, 28",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "700031831000036109",
+          "display": "esomeprazole 20 mg enteric tablet, 14",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "6140011000036103",
+          "display": "Amoxil 500 mg hard capsule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23551011000036108",
+          "display": "amoxicillin 500 mg capsule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21415011000036100",
+          "display": "amoxicillin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "7488011000036109",
+          "display": "Nexium 20 mg enteric tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23526011000036102",
+          "display": "esomeprazole 20 mg enteric tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21697011000036107",
+          "display": "esomeprazole",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "7489011000036101",
+          "display": "Klacid 500 mg film-coated tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23527011000036104",
+          "display": "clarithromycin 500 mg tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21836011000036107",
+          "display": "clarithromycin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "700027211000036107",
+          "display": "Amoxil 500 mg hard capsule, 28, blister pack",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPGC",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "191000168108",
+          "display": "Amoxil 500 mg hard capsule, 28",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "44134011000036100",
+          "display": "Klacid 500 mg film-coated tablet, 14, blister pack",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPGC",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "41610011000036105",
+          "display": "Klacid 500 mg film-coated tablet, 14",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "700027201000036105",
+          "display": "Nexium 20 mg enteric tablet, 14, blister pack",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPGC",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "181000168105",
+          "display": "Nexium 20 mg enteric tablet, 14",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPG",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "21062011000036103",
+      "target": "2941011000036107",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "21062011000036103",
+      "target": "14207011000036103",
+      "type": "is-a",
+    },
+    Object {
+      "source": "14207011000036103",
+      "target": "28214011000036106",
+      "type": "is-a",
+    },
+    Object {
+      "source": "28214011000036106",
+      "target": "46431011000036106",
+      "type": "is-component-of",
+    },
+    Object {
+      "source": "28214011000036106",
+      "target": "700031841000036104",
+      "type": "is-component-of",
+    },
+    Object {
+      "source": "28214011000036106",
+      "target": "700031831000036109",
+      "type": "is-component-of",
+    },
+    Object {
+      "source": "21062011000036103",
+      "target": "6140011000036103",
+      "type": "unknown",
+    },
+    Object {
+      "source": "6140011000036103",
+      "target": "23551011000036108",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23551011000036108",
+      "target": "21415011000036100",
+      "type": "is-a",
+    },
+    Object {
+      "source": "21062011000036103",
+      "target": "7488011000036109",
+      "type": "unknown",
+    },
+    Object {
+      "source": "7488011000036109",
+      "target": "23526011000036102",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23526011000036102",
+      "target": "21697011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "21062011000036103",
+      "target": "7489011000036101",
+      "type": "unknown",
+    },
+    Object {
+      "source": "7489011000036101",
+      "target": "23527011000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23527011000036104",
+      "target": "21836011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "21062011000036103",
+      "target": "700027211000036107",
+      "type": "is-component-of",
+    },
+    Object {
+      "source": "700027211000036107",
+      "target": "191000168108",
+      "type": "is-a",
+    },
+    Object {
+      "source": "191000168108",
+      "target": "700031841000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "21062011000036103",
+      "target": "44134011000036100",
+      "type": "is-component-of",
+    },
+    Object {
+      "source": "44134011000036100",
+      "target": "41610011000036105",
+      "type": "is-a",
+    },
+    Object {
+      "source": "41610011000036105",
+      "target": "46431011000036106",
+      "type": "is-a",
+    },
+    Object {
+      "source": "21062011000036103",
+      "target": "700027201000036105",
+      "type": "is-component-of",
+    },
+    Object {
+      "source": "700027201000036105",
+      "target": "181000168105",
+      "type": "is-a",
+    },
+    Object {
+      "source": "181000168105",
+      "target": "700031831000036109",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
 exports[`getRelatedConcepts should return correct result for CTPP 61428011000036109 1`] = `
 Object {
   "concepts": Array [

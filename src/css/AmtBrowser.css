@@ -1,5 +1,6 @@
 .amt-browser {
   background-color: #d3dfeb;
+  position: relative;
 }
 
 .amt-browser .search {

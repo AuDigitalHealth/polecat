@@ -12,7 +12,6 @@ class RemoteFhirMedication extends Component {
     path: PropTypes.string.isRequired,
     query: PropTypes.string,
     fhirServer: PropTypes.string.isRequired,
-    viewport: PropTypes.object.isRequired,
     onLoadingChange: PropTypes.func,
     onError: PropTypes.func,
   }
@@ -101,8 +100,8 @@ class RemoteFhirMedication extends Component {
     )
   }
 
-  // Requests the packages that contain a specified concept type, scoped down to a
-  // particular resource type, e.g. all BPG (TPP) packages for a specified
+  // Requests the packages that contain a specified concept type, scoped down to
+  // a particular resource type, e.g. all BPG (TPP) packages for a specified
   // BPSF (TPUU).
   // Updates an object in state, with resources keyed by resource type.
   handleRequirePackageBundle(parentId, resourceType) {
@@ -147,7 +146,6 @@ class RemoteFhirMedication extends Component {
   }
 
   render() {
-    const { viewport } = this.props
     const {
       resource,
       relatedResources,
@@ -155,20 +153,21 @@ class RemoteFhirMedication extends Component {
       packageBundles,
     } = this.state
 
+    // This component expects a single child element, which it will pass down to
+    // FhirMedication as a child.
     return (
-      <div className='remote-fhir-medication'>
-        <FhirMedication
-          resource={resource}
-          relatedResources={relatedResources}
-          childBundles={childBundles}
-          packageBundles={packageBundles}
-          viewport={viewport}
-          onRequireRelatedResources={this.handleRequireRelatedResources}
-          onRequireChildBundle={this.handleRequireChildBundle}
-          onRequirePackageBundle={this.handleRequirePackageBundle}
-          onError={this.handleError}
-        />
-      </div>
+      <FhirMedication
+        resource={resource}
+        relatedResources={relatedResources}
+        childBundles={childBundles}
+        packageBundles={packageBundles}
+        onRequireRelatedResources={this.handleRequireRelatedResources}
+        onRequireChildBundle={this.handleRequireChildBundle}
+        onRequirePackageBundle={this.handleRequirePackageBundle}
+        onError={this.handleError}
+      >
+        {this.props.children}
+      </FhirMedication>
     )
   }
 }

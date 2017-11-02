@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import RemoteFhirMedication from './RemoteFhirMedication.js'
+import AmtProductModel from './AmtProductModel.js'
 import Search from './Search.js'
 import Loading from './Loading.js'
 import ErrorMessage from './ErrorMessage.js'
@@ -10,7 +11,10 @@ import './css/AmtBrowser.css'
 
 class AmtBrowser extends Component {
   static propTypes = {
-    location: PropTypes.object,
+    location: PropTypes.shape({
+      pathname: PropTypes.string,
+      search: PropTypes.string,
+    }),
     viewport: PropTypes.object.isRequired,
     config: PropTypes.object,
   }
@@ -71,7 +75,9 @@ class AmtBrowser extends Component {
             onLoadingChange={this.handleLoadingChange}
             onError={this.handleError}
             {...config}
-          />
+          >
+            <AmtProductModel viewport={viewport} />
+          </RemoteFhirMedication>
         ) : null}
         <Search
           fhirServer={config.fhirServer}

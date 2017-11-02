@@ -4,7 +4,6 @@ import isEqual from 'lodash.isequal'
 import values from 'lodash.values'
 import cloneDeep from 'lodash.clonedeep'
 
-import AmtProductModel from './AmtProductModel.js'
 import {
   getSubjectConcept,
   getRelatedConcepts,
@@ -24,7 +23,6 @@ class FhirMedication extends Component {
     childBundles: PropTypes.object,
     packageBundles: PropTypes.object,
     groupingThreshold: PropTypes.number,
-    viewport: PropTypes.object.isRequired,
     onRequireRelatedResources: PropTypes.func,
     onRequireChildBundle: PropTypes.func,
     onRequirePackageBundle: PropTypes.func,
@@ -230,15 +228,13 @@ class FhirMedication extends Component {
   }
 
   render() {
-    const { viewport } = this.props
     const { concepts, relationships } = this.state
-    return (
-      <AmtProductModel
-        nodes={concepts}
-        links={relationships}
-        viewport={viewport}
-      />
-    )
+    // This component expects a single child element, which it will add the
+    // concepts and relationships props to before rendering.
+    return React.cloneElement(this.props.children, {
+      nodes: concepts,
+      links: relationships,
+    })
   }
 }
 

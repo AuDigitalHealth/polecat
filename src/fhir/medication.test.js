@@ -21,9 +21,8 @@ describe('getSubjectConcept', () => {
   }
 })
 
-describe.only('getRelatedConcepts', () => {
-  // for (const sctid of [ '61428011000036109', '21062011000036103' ]) {
-  for (const sctid of ['61428011000036109']) {
+describe('getRelatedConcepts', () => {
+  for (const sctid of [ '61428011000036109', '21062011000036103' ]) {
     it(`should return correct result for CTPP ${sctid}`, () => {
       const resource = JSON.parse(fs.readFileSync(`test/ctpp-${sctid}.json`))
       const result = getRelatedConcepts(resource, {
