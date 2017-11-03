@@ -2,29 +2,27 @@
   "resourceType": "Medication",
   "id": "61428011000036109",
   "meta": {
-    "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+    "profile": [
+      "http://medserve.online/fhir/Profile/ExtendedMedication"
+    ]
   },
   "text": {
     "status": "generated",
-    "div":
-      "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Paracetamol (Herron) 500 mg uncoated tablet, 500, bottle</p></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Paracetamol (Herron) 500 mg uncoated tablet, 500, bottle</p></div>"
   },
   "extension": [
     {
-      "url":
-        "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+      "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
       "extension": [
         {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/parentMedication",
+          "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
           "valueReference": {
             "reference": "Medication/57353011000036105",
             "display": "Paracetamol (Herron) 500 mg uncoated tablet, 500"
           }
         },
         {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
           "valueCoding": {
             "system": "http://hl7.org/fhir/medication_type",
             "code": "BPG",
@@ -32,20 +30,17 @@
           }
         },
         {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+          "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
           "extension": [
             {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/parentMedication",
+              "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
               "valueReference": {
                 "reference": "Medication/63954011000036107",
                 "display": "paracetamol 500 mg tablet, 500"
               }
             },
             {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
                 "code": "UPG",
@@ -57,8 +52,7 @@
       ]
     },
     {
-      "url":
-        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
       "valueCoding": {
         "system": "http://hl7.org/fhir/medication_type",
         "code": "BPGC",
@@ -81,15 +75,12 @@
       "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
       "extension": [
         {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+          "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
           "valueUri": "http://snomed.info/sct"
         },
         {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
-          "valueString":
-            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170831"
+          "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+          "valueString": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930"
         }
       ]
     }
@@ -102,8 +93,7 @@
         "display": "Paracetamol (Herron) 500 mg uncoated tablet, 500, bottle"
       },
       {
-        "system":
-          "https://www.tga.gov.au/australian-register-therapeutic-goods",
+        "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
         "code": "82690"
       }
     ]
@@ -125,20 +115,17 @@
         "itemReference": {
           "extension": [
             {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
               "extension": [
                 {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
                   "valueReference": {
                     "reference": "Medication/23628011000036109",
                     "display": "paracetamol 500 mg tablet"
                   }
                 },
                 {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                   "valueCoding": {
                     "system": "http://hl7.org/fhir/medication_type",
                     "code": "UPDSF",
@@ -146,20 +133,17 @@
                   }
                 },
                 {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
                   "extension": [
                     {
-                      "url":
-                        "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                      "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
                       "valueReference": {
                         "reference": "Medication/21433011000036107",
                         "display": "paracetamol"
                       }
                     },
                     {
-                      "url":
-                        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                       "valueCoding": {
                         "system": "http://hl7.org/fhir/medication_type",
                         "code": "UPD",
@@ -171,8 +155,7 @@
               ]
             },
             {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
                 "code": "BPSF",

@@ -2,29 +2,27 @@
   "resourceType": "Medication",
   "id": "21360011000036101",
   "meta": {
-    "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+    "profile": [
+      "http://medserve.online/fhir/Profile/ExtendedMedication"
+    ]
   },
   "text": {
     "status": "generated",
-    "div":
-      "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>amoxicillin + clavulanic acid</p></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>amoxicillin + clavulanic acid</p></div>"
   },
   "extension": [
     {
-      "url":
-        "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+      "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
       "extension": [
         {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/parentMedication",
+          "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
           "valueReference": {
             "reference": "Medication/21415011000036100",
             "display": "amoxicillin"
           }
         },
         {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
           "valueCoding": {
             "system": "http://hl7.org/fhir/medication_type",
             "code": "UPD",
@@ -34,8 +32,7 @@
       ]
     },
     {
-      "url":
-        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
       "valueCoding": {
         "system": "http://hl7.org/fhir/medication_type",
         "code": "UPD",
@@ -46,15 +43,12 @@
       "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
       "extension": [
         {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+          "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
           "valueUri": "http://snomed.info/sct"
         },
         {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
-          "valueString":
-            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170831"
+          "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+          "valueString": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930"
         }
       ]
     }
@@ -73,14 +67,14 @@
   "ingredient": [
     {
       "itemReference": {
-        "reference": "Substance/1962011000036108",
-        "display": "clavulanic acid"
+        "reference": "Substance/1799011000036105",
+        "display": "amoxicillin"
       }
     },
     {
       "itemReference": {
-        "reference": "Substance/1799011000036105",
-        "display": "amoxicillin"
+        "reference": "Substance/1962011000036108",
+        "display": "clavulanic acid"
       }
     }
   ]

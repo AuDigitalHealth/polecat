@@ -2,29 +2,27 @@
   "resourceType": "Medication",
   "id": "28214011000036106",
   "meta": {
-    "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+    "profile": [
+      "http://medserve.online/fhir/Profile/ExtendedMedication"
+    ]
   },
   "text": {
     "status": "generated",
-    "div":
-      "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>esomeprazole 20 mg enteric tablet [14] (&amp;) amoxicillin 500 mg capsule [28] (&amp;) clarithromycin 500 mg tablet [14], 1 pack</p></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>esomeprazole 20 mg enteric tablet [14] (&amp;) amoxicillin 500 mg capsule [28] (&amp;) clarithromycin 500 mg tablet [14], 1 pack</p></div>"
   },
   "extension": [
     {
-      "url":
-        "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+      "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
       "extension": [
         {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/parentMedication",
+          "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
           "valueReference": {
             "reference": "Medication/46431011000036106",
             "display": "clarithromycin 500 mg tablet, 14"
           }
         },
         {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
           "valueCoding": {
             "system": "http://hl7.org/fhir/medication_type",
             "code": "UPG",
@@ -34,20 +32,17 @@
       ]
     },
     {
-      "url":
-        "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+      "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
       "extension": [
         {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/parentMedication",
+          "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
           "valueReference": {
             "reference": "Medication/700031841000036104",
             "display": "amoxicillin 500 mg capsule, 28"
           }
         },
         {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
           "valueCoding": {
             "system": "http://hl7.org/fhir/medication_type",
             "code": "UPG",
@@ -57,20 +52,17 @@
       ]
     },
     {
-      "url":
-        "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+      "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
       "extension": [
         {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/parentMedication",
+          "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
           "valueReference": {
             "reference": "Medication/700031831000036109",
             "display": "esomeprazole 20 mg enteric tablet, 14"
           }
         },
         {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
           "valueCoding": {
             "system": "http://hl7.org/fhir/medication_type",
             "code": "UPG",
@@ -80,8 +72,7 @@
       ]
     },
     {
-      "url":
-        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
       "valueCoding": {
         "system": "http://hl7.org/fhir/medication_type",
         "code": "UPG",
@@ -92,15 +83,12 @@
       "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
       "extension": [
         {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+          "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
           "valueUri": "http://snomed.info/sct"
         },
         {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
-          "valueString":
-            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170831"
+          "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+          "valueString": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930"
         }
       ]
     }
@@ -110,8 +98,7 @@
       {
         "system": "http://snomed.info/sct",
         "code": "28214011000036106",
-        "display":
-          "esomeprazole 20 mg enteric tablet [14] (&) amoxicillin 500 mg capsule [28] (&) clarithromycin 500 mg tablet [14], 1 pack"
+        "display": "esomeprazole 20 mg enteric tablet [14] (&) amoxicillin 500 mg capsule [28] (&) clarithromycin 500 mg tablet [14], 1 pack"
       }
     ]
   },
@@ -123,20 +110,17 @@
         "itemReference": {
           "extension": [
             {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
               "extension": [
                 {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
                   "valueReference": {
                     "reference": "Medication/21697011000036107",
                     "display": "esomeprazole"
                   }
                 },
                 {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                   "valueCoding": {
                     "system": "http://hl7.org/fhir/medication_type",
                     "code": "UPD",
@@ -146,8 +130,7 @@
               ]
             },
             {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
                 "code": "UPDSF",
@@ -169,20 +152,17 @@
         "itemReference": {
           "extension": [
             {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
               "extension": [
                 {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
                   "valueReference": {
                     "reference": "Medication/21836011000036107",
                     "display": "clarithromycin"
                   }
                 },
                 {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                   "valueCoding": {
                     "system": "http://hl7.org/fhir/medication_type",
                     "code": "UPD",
@@ -192,8 +172,7 @@
               ]
             },
             {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
                 "code": "UPDSF",
@@ -215,20 +194,17 @@
         "itemReference": {
           "extension": [
             {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
               "extension": [
                 {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
                   "valueReference": {
                     "reference": "Medication/21415011000036100",
                     "display": "amoxicillin"
                   }
                 },
                 {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                   "valueCoding": {
                     "system": "http://hl7.org/fhir/medication_type",
                     "code": "UPD",
@@ -238,8 +214,7 @@
               ]
             },
             {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
                 "code": "UPDSF",
@@ -261,8 +236,7 @@
         "itemReference": {
           "extension": [
             {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
                 "code": "UPG",
@@ -281,8 +255,7 @@
         "itemReference": {
           "extension": [
             {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
                 "code": "UPG",
@@ -301,8 +274,7 @@
         "itemReference": {
           "extension": [
             {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
                 "code": "UPG",
