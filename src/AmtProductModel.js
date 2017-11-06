@@ -15,7 +15,7 @@ import {
   codingToSnomedCode,
   codingToGroupCode,
 } from './fhir/medication.js'
-import { translateToAmt } from './fhir/translations.js'
+import { translateToAmt } from './graph/translations.js'
 import { curveForLink } from './graph/links.js'
 
 import './css/AmtProductModel.css'
