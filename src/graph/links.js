@@ -48,7 +48,11 @@ const calculateBearings = (link, options) => {
     adj = x2 - x1,
     opp = y2 - y1,
     bearing =
-      opp > 0 ? Math.atan2(opp, adj) : Math.atan2(opp, adj) + 2 * Math.PI
+      opp > 0
+        ? Math.atan2(opp, adj)
+        : opp === 0
+          ? adj < 0 ? Math.PI : 0
+          : Math.atan2(opp, adj) + 2 * Math.PI
   return {
     ...options,
     conceptAngle,
@@ -223,7 +227,7 @@ const calculateControlPoints = options => {
     adj = endX - startX,
     opp = endY - startY,
     angle = Math.atan(Math.abs(opp) / Math.abs(adj)),
-    linkLength = Math.abs(opp) / Math.sin(angle),
+    linkLength = angle === 0 ? Math.abs(adj) : Math.abs(opp) / Math.sin(angle),
     cpLength = arrowSize + linkLength * linkCurviness
   let newOptions = { ...options }
   // Calculate starting control points.
