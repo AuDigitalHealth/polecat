@@ -1,5 +1,119 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`getRelatedConcepts should return correct result for CTPP 19481011000036105 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "49111000168106",
+          "display": "Augmentin Duo Forte 875/125",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "12758011000036106",
+          "display": "Augmentin Duo Forte 875/125 film-coated tablet, 10",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "28152011000036108",
+          "display": "amoxicillin 875 mg + clavulanic acid 125 mg tablet, 10",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "6052011000036107",
+          "display": "Augmentin Duo Forte 875/125 film-coated tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23461011000036109",
+          "display": "amoxicillin 875 mg + clavulanic acid 125 mg tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21360011000036101",
+          "display": "amoxicillin + clavulanic acid",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21415011000036100",
+          "display": "amoxicillin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "19481011000036105",
+      "target": "49111000168106",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "19481011000036105",
+      "target": "12758011000036106",
+      "type": "is-a",
+    },
+    Object {
+      "source": "12758011000036106",
+      "target": "28152011000036108",
+      "type": "is-a",
+    },
+    Object {
+      "source": "19481011000036105",
+      "target": "6052011000036107",
+      "type": "unknown",
+    },
+    Object {
+      "source": "6052011000036107",
+      "target": "23461011000036109",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23461011000036109",
+      "target": "21360011000036101",
+      "type": "is-a",
+    },
+    Object {
+      "source": "21360011000036101",
+      "target": "21415011000036100",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
 exports[`getRelatedConcepts should return correct result for CTPP 21062011000036103 1`] = `
 Object {
   "concepts": Array [
@@ -96,36 +210,6 @@ Object {
     Object {
       "coding": Array [
         Object {
-          "code": "7488011000036109",
-          "display": "Nexium 20 mg enteric tablet",
-          "system": "http://snomed.info/sct",
-        },
-      ],
-      "type": "BPSF",
-    },
-    Object {
-      "coding": Array [
-        Object {
-          "code": "23526011000036102",
-          "display": "esomeprazole 20 mg enteric tablet",
-          "system": "http://snomed.info/sct",
-        },
-      ],
-      "type": "UPDSF",
-    },
-    Object {
-      "coding": Array [
-        Object {
-          "code": "21697011000036107",
-          "display": "esomeprazole",
-          "system": "http://snomed.info/sct",
-        },
-      ],
-      "type": "UPD",
-    },
-    Object {
-      "coding": Array [
-        Object {
           "code": "7489011000036101",
           "display": "Klacid 500 mg film-coated tablet",
           "system": "http://snomed.info/sct",
@@ -148,6 +232,36 @@ Object {
         Object {
           "code": "21836011000036107",
           "display": "clarithromycin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "7488011000036109",
+          "display": "Nexium 20 mg enteric tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23526011000036102",
+          "display": "esomeprazole 20 mg enteric tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21697011000036107",
+          "display": "esomeprazole",
           "system": "http://snomed.info/sct",
         },
       ],
@@ -262,21 +376,6 @@ Object {
     },
     Object {
       "source": "21062011000036103",
-      "target": "7488011000036109",
-      "type": "unknown",
-    },
-    Object {
-      "source": "7488011000036109",
-      "target": "23526011000036102",
-      "type": "is-a",
-    },
-    Object {
-      "source": "23526011000036102",
-      "target": "21697011000036107",
-      "type": "is-a",
-    },
-    Object {
-      "source": "21062011000036103",
       "target": "7489011000036101",
       "type": "unknown",
     },
@@ -288,6 +387,21 @@ Object {
     Object {
       "source": "23527011000036104",
       "target": "21836011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "21062011000036103",
+      "target": "7488011000036109",
+      "type": "unknown",
+    },
+    Object {
+      "source": "7488011000036109",
+      "target": "23526011000036102",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23526011000036102",
+      "target": "21697011000036107",
       "type": "is-a",
     },
     Object {
@@ -438,6 +552,1195 @@ Object {
 }
 `;
 
+exports[`getRelatedConcepts should return correct result for CTPP 933216161000036101 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "22131000168107",
+          "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "933205801000036102",
+          "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "933205811000036100",
+          "display": "polyvalent Australian snake antivenom injection, 1 vial",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "75498011000036101",
+          "display": "death adder antivenom 6000 units injection, 1 vial",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "75497011000036102",
+          "display": "tiger snake antivenom 3000 units injection, 1 vial",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "75500011000036108",
+          "display": "taipan snake antivenom 12 000 units injection, 1 vial",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "75496011000036100",
+          "display": "king brown snake antivenom 18 000 units injection, 1 vial",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "75499011000036109",
+          "display": "brown snake antivenom 1000 units injection, 1 vial",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "933196831000036102",
+          "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "933196841000036107",
+          "display": "polyvalent Australian snake antivenom injection, vial",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "75098011000036109",
+          "display": "death adder antivenom 6000 units injection, vial",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "74985011000036100",
+          "display": "death adder antivenom",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "75100011000036101",
+          "display": "taipan snake antivenom 12 000 units injection, vial",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "74983011000036101",
+          "display": "taipan snake antivenom",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "75097011000036108",
+          "display": "tiger snake antivenom 3000 units injection, vial",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "74990011000036105",
+          "display": "tiger snake antivenom",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "75096011000036105",
+          "display": "king brown snake antivenom 18 000 units injection, vial",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "74950011000036100",
+          "display": "king brown snake antivenom",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "74951011000036107",
+          "display": "polyvalent Australian snake antivenom",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "74978011000036101",
+          "display": "brown snake antivenom",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "75099011000036101",
+          "display": "brown snake antivenom 1000 units injection, vial",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "933216161000036101",
+      "target": "22131000168107",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "933216161000036101",
+      "target": "933205801000036102",
+      "type": "is-a",
+    },
+    Object {
+      "source": "933205801000036102",
+      "target": "933205811000036100",
+      "type": "is-a",
+    },
+    Object {
+      "source": "933205811000036100",
+      "target": "75498011000036101",
+      "type": "is-component-of",
+    },
+    Object {
+      "source": "933205811000036100",
+      "target": "75497011000036102",
+      "type": "is-component-of",
+    },
+    Object {
+      "source": "933205811000036100",
+      "target": "75500011000036108",
+      "type": "is-component-of",
+    },
+    Object {
+      "source": "933205811000036100",
+      "target": "75496011000036100",
+      "type": "is-component-of",
+    },
+    Object {
+      "source": "933205811000036100",
+      "target": "75499011000036109",
+      "type": "is-component-of",
+    },
+    Object {
+      "source": "933216161000036101",
+      "target": "933196831000036102",
+      "type": "unknown",
+    },
+    Object {
+      "source": "933196831000036102",
+      "target": "933196841000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "933196841000036107",
+      "target": "75098011000036109",
+      "type": "is-a",
+    },
+    Object {
+      "source": "75098011000036109",
+      "target": "74985011000036100",
+      "type": "is-a",
+    },
+    Object {
+      "source": "933196841000036107",
+      "target": "75100011000036101",
+      "type": "is-a",
+    },
+    Object {
+      "source": "75100011000036101",
+      "target": "74983011000036101",
+      "type": "is-a",
+    },
+    Object {
+      "source": "933196841000036107",
+      "target": "75097011000036108",
+      "type": "is-a",
+    },
+    Object {
+      "source": "75097011000036108",
+      "target": "74990011000036105",
+      "type": "is-a",
+    },
+    Object {
+      "source": "933196841000036107",
+      "target": "75096011000036105",
+      "type": "is-a",
+    },
+    Object {
+      "source": "75096011000036105",
+      "target": "74950011000036100",
+      "type": "is-a",
+    },
+    Object {
+      "source": "933196841000036107",
+      "target": "74951011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "74951011000036107",
+      "target": "74978011000036101",
+      "type": "is-a",
+    },
+    Object {
+      "source": "933196841000036107",
+      "target": "75099011000036101",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
+exports[`getRelatedConcepts should return correct result for MP 21360011000036101 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21415011000036100",
+          "display": "amoxicillin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "21360011000036101",
+      "target": "21415011000036100",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
+exports[`getRelatedConcepts should return correct result for MP 21836011000036107 1`] = `
+Object {
+  "concepts": Array [],
+  "relationships": Array [],
+}
+`;
+
+exports[`getRelatedConcepts should return correct result for MPP 28214011000036106 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "46431011000036106",
+          "display": "clarithromycin 500 mg tablet, 14",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "700031841000036104",
+          "display": "amoxicillin 500 mg capsule, 28",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "700031831000036109",
+          "display": "esomeprazole 20 mg enteric tablet, 14",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23526011000036102",
+          "display": "esomeprazole 20 mg enteric tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21697011000036107",
+          "display": "esomeprazole",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23527011000036104",
+          "display": "clarithromycin 500 mg tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21836011000036107",
+          "display": "clarithromycin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23551011000036108",
+          "display": "amoxicillin 500 mg capsule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21415011000036100",
+          "display": "amoxicillin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "28214011000036106",
+      "target": "46431011000036106",
+      "type": "is-component-of",
+    },
+    Object {
+      "source": "28214011000036106",
+      "target": "700031841000036104",
+      "type": "is-component-of",
+    },
+    Object {
+      "source": "28214011000036106",
+      "target": "700031831000036109",
+      "type": "is-component-of",
+    },
+    Object {
+      "source": "28214011000036106",
+      "target": "23526011000036102",
+      "type": "has-updsf",
+    },
+    Object {
+      "source": "23526011000036102",
+      "target": "21697011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "28214011000036106",
+      "target": "23527011000036104",
+      "type": "has-updsf",
+    },
+    Object {
+      "source": "23527011000036104",
+      "target": "21836011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "28214011000036106",
+      "target": "23551011000036108",
+      "type": "has-updsf",
+    },
+    Object {
+      "source": "23551011000036108",
+      "target": "21415011000036100",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
+exports[`getRelatedConcepts should return correct result for MPP 46431011000036106 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23527011000036104",
+          "display": "clarithromycin 500 mg tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21836011000036107",
+          "display": "clarithromycin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "46431011000036106",
+      "target": "23527011000036104",
+      "type": "has-updsf",
+    },
+    Object {
+      "source": "23527011000036104",
+      "target": "21836011000036107",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
+exports[`getRelatedConcepts should return correct result for MPP 63954011000036107 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23628011000036109",
+          "display": "paracetamol 500 mg tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21433011000036107",
+          "display": "paracetamol",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "63954011000036107",
+      "target": "23628011000036109",
+      "type": "has-updsf",
+    },
+    Object {
+      "source": "23628011000036109",
+      "target": "21433011000036107",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
+exports[`getRelatedConcepts should return correct result for MPP 700031831000036109 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23526011000036102",
+          "display": "esomeprazole 20 mg enteric tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21697011000036107",
+          "display": "esomeprazole",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "700031831000036109",
+      "target": "23526011000036102",
+      "type": "has-updsf",
+    },
+    Object {
+      "source": "23526011000036102",
+      "target": "21697011000036107",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
+exports[`getRelatedConcepts should return correct result for MPP 700031841000036104 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23551011000036108",
+          "display": "amoxicillin 500 mg capsule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21415011000036100",
+          "display": "amoxicillin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "700031841000036104",
+      "target": "23551011000036108",
+      "type": "has-updsf",
+    },
+    Object {
+      "source": "23551011000036108",
+      "target": "21415011000036100",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
+exports[`getRelatedConcepts should return correct result for MPUU 23628011000036109 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21433011000036107",
+          "display": "paracetamol",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "23628011000036109",
+      "target": "21433011000036107",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
+exports[`getRelatedConcepts should return correct result for TPP 14207011000036103 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "2941011000036107",
+          "display": "Nexium Hp7",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "28214011000036106",
+          "display": "esomeprazole 20 mg enteric tablet [14] (&) amoxicillin 500 mg capsule [28] (&) clarithromycin 500 mg tablet [14], 1 pack",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "46431011000036106",
+          "display": "clarithromycin 500 mg tablet, 14",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "700031841000036104",
+          "display": "amoxicillin 500 mg capsule, 28",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "700031831000036109",
+          "display": "esomeprazole 20 mg enteric tablet, 14",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "7489011000036101",
+          "display": "Klacid 500 mg film-coated tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23527011000036104",
+          "display": "clarithromycin 500 mg tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21836011000036107",
+          "display": "clarithromycin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "7488011000036109",
+          "display": "Nexium 20 mg enteric tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23526011000036102",
+          "display": "esomeprazole 20 mg enteric tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21697011000036107",
+          "display": "esomeprazole",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "6140011000036103",
+          "display": "Amoxil 500 mg hard capsule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23551011000036108",
+          "display": "amoxicillin 500 mg capsule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21415011000036100",
+          "display": "amoxicillin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "191000168108",
+          "display": "Amoxil 500 mg hard capsule, 28",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "41610011000036105",
+          "display": "Klacid 500 mg film-coated tablet, 14",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "181000168105",
+          "display": "Nexium 20 mg enteric tablet, 14",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPG",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "14207011000036103",
+      "target": "2941011000036107",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "14207011000036103",
+      "target": "28214011000036106",
+      "type": "is-a",
+    },
+    Object {
+      "source": "28214011000036106",
+      "target": "46431011000036106",
+      "type": "is-component-of",
+    },
+    Object {
+      "source": "28214011000036106",
+      "target": "700031841000036104",
+      "type": "is-component-of",
+    },
+    Object {
+      "source": "28214011000036106",
+      "target": "700031831000036109",
+      "type": "is-component-of",
+    },
+    Object {
+      "source": "14207011000036103",
+      "target": "7489011000036101",
+      "type": "has-bpsf",
+    },
+    Object {
+      "source": "7489011000036101",
+      "target": "23527011000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23527011000036104",
+      "target": "21836011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "14207011000036103",
+      "target": "7488011000036109",
+      "type": "has-bpsf",
+    },
+    Object {
+      "source": "7488011000036109",
+      "target": "23526011000036102",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23526011000036102",
+      "target": "21697011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "14207011000036103",
+      "target": "6140011000036103",
+      "type": "has-bpsf",
+    },
+    Object {
+      "source": "6140011000036103",
+      "target": "23551011000036108",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23551011000036108",
+      "target": "21415011000036100",
+      "type": "is-a",
+    },
+    Object {
+      "source": "14207011000036103",
+      "target": "191000168108",
+      "type": "unknown",
+    },
+    Object {
+      "source": "191000168108",
+      "target": "700031841000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "14207011000036103",
+      "target": "41610011000036105",
+      "type": "unknown",
+    },
+    Object {
+      "source": "41610011000036105",
+      "target": "46431011000036106",
+      "type": "is-a",
+    },
+    Object {
+      "source": "14207011000036103",
+      "target": "181000168105",
+      "type": "unknown",
+    },
+    Object {
+      "source": "181000168105",
+      "target": "700031831000036109",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
+exports[`getRelatedConcepts should return correct result for TPP 57353011000036105 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53282011000036108",
+          "display": "Paracetamol (Herron)",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "63954011000036107",
+          "display": "paracetamol 500 mg tablet, 500",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "54282011000036105",
+          "display": "Paracetamol (Herron) 500 mg uncoated tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23628011000036109",
+          "display": "paracetamol 500 mg tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21433011000036107",
+          "display": "paracetamol",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "57353011000036105",
+      "target": "53282011000036108",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "57353011000036105",
+      "target": "63954011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "57353011000036105",
+      "target": "54282011000036105",
+      "type": "has-bpsf",
+    },
+    Object {
+      "source": "54282011000036105",
+      "target": "23628011000036109",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23628011000036109",
+      "target": "21433011000036107",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
+exports[`getRelatedConcepts should return correct result for TPUU 6052011000036107 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "49111000168106",
+          "display": "Augmentin Duo Forte 875/125",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23461011000036109",
+          "display": "amoxicillin 875 mg + clavulanic acid 125 mg tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21360011000036101",
+          "display": "amoxicillin + clavulanic acid",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21415011000036100",
+          "display": "amoxicillin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "6052011000036107",
+      "target": "49111000168106",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "6052011000036107",
+      "target": "23461011000036109",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23461011000036109",
+      "target": "21360011000036101",
+      "type": "is-a",
+    },
+    Object {
+      "source": "21360011000036101",
+      "target": "21415011000036100",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
+exports[`getRelatedConcepts should return correct result for TPUU 7489011000036101 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "3147011000036106",
+          "display": "Klacid",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23527011000036104",
+          "display": "clarithromycin 500 mg tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21836011000036107",
+          "display": "clarithromycin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "7489011000036101",
+      "target": "3147011000036106",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "7489011000036101",
+      "target": "23527011000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23527011000036104",
+      "target": "21836011000036107",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
+exports[`getRelatedConcepts should return correct result for substance 2292011000036106 1`] = `
+Object {
+  "concepts": Array [],
+  "relationships": Array [],
+}
+`;
+
+exports[`getSubjectConcept should return correct result for CTPP 19481011000036105 1`] = `
+Object {
+  "coding": Array [
+    Object {
+      "code": "19481011000036105",
+      "display": "Augmentin Duo Forte 875/125 film-coated tablet, 10, blister pack",
+      "system": "http://snomed.info/sct",
+    },
+    Object {
+      "code": "54900",
+      "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+    },
+  ],
+  "type": "BPGC",
+}
+`;
+
 exports[`getSubjectConcept should return correct result for CTPP 21062011000036103 1`] = `
 Object {
   "coding": Array [
@@ -472,6 +1775,179 @@ Object {
 }
 `;
 
+exports[`getSubjectConcept should return correct result for CTPP 933216161000036101 1`] = `
+Object {
+  "coding": Array [
+    Object {
+      "code": "933216161000036101",
+      "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+      "system": "http://snomed.info/sct",
+    },
+    Object {
+      "code": "74899",
+      "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+    },
+  ],
+  "type": "BPGC",
+}
+`;
+
+exports[`getSubjectConcept should return correct result for MP 21360011000036101 1`] = `
+Object {
+  "coding": Array [
+    Object {
+      "code": "21360011000036101",
+      "display": "amoxicillin + clavulanic acid",
+      "system": "http://snomed.info/sct",
+    },
+  ],
+  "type": "UPD",
+}
+`;
+
+exports[`getSubjectConcept should return correct result for MP 21836011000036107 1`] = `
+Object {
+  "coding": Array [
+    Object {
+      "code": "21836011000036107",
+      "display": "clarithromycin",
+      "system": "http://snomed.info/sct",
+    },
+  ],
+  "type": "UPD",
+}
+`;
+
+exports[`getSubjectConcept should return correct result for MPP 28214011000036106 1`] = `
+Object {
+  "coding": Array [
+    Object {
+      "code": "28214011000036106",
+      "display": "esomeprazole 20 mg enteric tablet [14] (&) amoxicillin 500 mg capsule [28] (&) clarithromycin 500 mg tablet [14], 1 pack",
+      "system": "http://snomed.info/sct",
+    },
+  ],
+  "type": "UPG",
+}
+`;
+
+exports[`getSubjectConcept should return correct result for MPP 46431011000036106 1`] = `
+Object {
+  "coding": Array [
+    Object {
+      "code": "46431011000036106",
+      "display": "clarithromycin 500 mg tablet, 14",
+      "system": "http://snomed.info/sct",
+    },
+  ],
+  "type": "UPG",
+}
+`;
+
+exports[`getSubjectConcept should return correct result for MPP 63954011000036107 1`] = `
+Object {
+  "coding": Array [
+    Object {
+      "code": "63954011000036107",
+      "display": "paracetamol 500 mg tablet, 500",
+      "system": "http://snomed.info/sct",
+    },
+  ],
+  "type": "UPG",
+}
+`;
+
+exports[`getSubjectConcept should return correct result for MPP 700031831000036109 1`] = `
+Object {
+  "coding": Array [
+    Object {
+      "code": "700031831000036109",
+      "display": "esomeprazole 20 mg enteric tablet, 14",
+      "system": "http://snomed.info/sct",
+    },
+  ],
+  "type": "UPG",
+}
+`;
+
+exports[`getSubjectConcept should return correct result for MPP 700031841000036104 1`] = `
+Object {
+  "coding": Array [
+    Object {
+      "code": "700031841000036104",
+      "display": "amoxicillin 500 mg capsule, 28",
+      "system": "http://snomed.info/sct",
+    },
+  ],
+  "type": "UPG",
+}
+`;
+
+exports[`getSubjectConcept should return correct result for MPUU 23628011000036109 1`] = `
+Object {
+  "coding": Array [
+    Object {
+      "code": "23628011000036109",
+      "display": "paracetamol 500 mg tablet",
+      "system": "http://snomed.info/sct",
+    },
+  ],
+  "type": "UPDSF",
+}
+`;
+
+exports[`getSubjectConcept should return correct result for TPP 14207011000036103 1`] = `
+Object {
+  "coding": Array [
+    Object {
+      "code": "14207011000036103",
+      "display": "Nexium Hp7 (14 x Nexium tablets, 28 x Amoxil capsules, 14 x Klacid tablets), 1 pack",
+      "system": "http://snomed.info/sct",
+    },
+  ],
+  "type": "BPG",
+}
+`;
+
+exports[`getSubjectConcept should return correct result for TPP 57353011000036105 1`] = `
+Object {
+  "coding": Array [
+    Object {
+      "code": "57353011000036105",
+      "display": "Paracetamol (Herron) 500 mg uncoated tablet, 500",
+      "system": "http://snomed.info/sct",
+    },
+  ],
+  "type": "BPG",
+}
+`;
+
+exports[`getSubjectConcept should return correct result for TPUU 6052011000036107 1`] = `
+Object {
+  "coding": Array [
+    Object {
+      "code": "6052011000036107",
+      "display": "Augmentin Duo Forte 875/125 film-coated tablet",
+      "system": "http://snomed.info/sct",
+    },
+  ],
+  "type": "BPSF",
+}
+`;
+
+exports[`getSubjectConcept should return correct result for TPUU 7489011000036101 1`] = `
+Object {
+  "coding": Array [
+    Object {
+      "code": "7489011000036101",
+      "display": "Klacid 500 mg film-coated tablet",
+      "system": "http://snomed.info/sct",
+    },
+  ],
+  "type": "BPSF",
+}
+`;
+
 exports[`getSubjectConcept should return correct result for substance 2292011000036106 1`] = `
 Object {
   "coding": Array [
@@ -482,5 +1958,115 @@ Object {
     },
   ],
   "type": "substance",
+}
+`;
+
+exports[`mergeConceptsAndRelationships should merge correctly 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "34839011000036106",
+          "display": "pethidine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "34848011000036104",
+          "display": "pethidine hydrochloride 100 mg/2 mL injection, ampoule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "focused": true,
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "33964011000036109",
+          "display": "Pethidine Hydrochloride (DBL) 100 mg/2 mL injection solution, 2 mL ampoule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "921063011000036106",
+          "display": "Pethidine Hydrochloride (AstraZeneca) 100 mg/2 mL injection solution, 2 mL ampoule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "35098011000036100",
+          "display": "pethidine hydrochloride 100 mg/2 mL injection, 50 x 2 mL ampoules",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "922650011000036103",
+          "display": "pethidine hydrochloride 100 mg/2 mL injection, 10 x 2 mL ampoules",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "35097011000036101",
+          "display": "pethidine hydrochloride 100 mg/2 mL injection, 5 x 2 mL ampoules",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "34848011000036104",
+      "target": "34839011000036106",
+      "type": "is-a",
+    },
+    Object {
+      "source": "33964011000036109",
+      "target": "34848011000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "921063011000036106",
+      "target": "34848011000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "35098011000036100",
+      "target": "34848011000036104",
+      "type": "has-updsf",
+    },
+    Object {
+      "source": "922650011000036103",
+      "target": "34848011000036104",
+      "type": "has-updsf",
+    },
+    Object {
+      "source": "35097011000036101",
+      "target": "34848011000036104",
+      "type": "has-updsf",
+    },
+  ],
 }
 `;

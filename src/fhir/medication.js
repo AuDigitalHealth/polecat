@@ -391,6 +391,7 @@ export const codingToArtgId = coding => {
 
 // Extracts a group code from a `coding` element.
 export const codingToGroupCode = coding => {
+  console.log(JSON.stringify(coding))
   const found = coding.find(c => c.system === groupUri)
   return found ? found.code : null
 }
