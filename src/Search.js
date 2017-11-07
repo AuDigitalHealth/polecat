@@ -136,12 +136,12 @@ class Search extends Component {
           results={results}
           onSelectResult={this.handleSelectResult}
         />
-        <div
+        {/* <div
           className='search-toggle-advanced'
           onClick={this.handleToggleAdvanced}
         >
           {advanced ? '\u25B3' : '\u25BD'}
-        </div>
+        </div> */}
       </div>
     )
   }
