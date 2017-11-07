@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`opOutcomeFromJsonResponse should return a correct OpOutcomeError 1`] = `[Error: Invalid request: The FHIR endpoint on this server does not know how to handle GET operation[Medication] with parameters [[_text, is-brafnd]]]`;

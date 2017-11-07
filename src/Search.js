@@ -121,7 +121,7 @@ class Search extends Component {
 
   render() {
     const { focusUponMount } = this.props
-    const { query, results, advanced } = this.state
+    const { query, results } = this.state
     return (
       <div className='search'>
         <TextField
