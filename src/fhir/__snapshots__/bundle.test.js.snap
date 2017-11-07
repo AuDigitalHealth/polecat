@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getBundleConcepts should return correct concepts 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "somesha",
+          "system": "group",
+        },
+      ],
+      "concepts": Array [
+        Object {
+          "coding": Array [
+            Object {
+              "code": "975591000168101",
+              "display": "amoxicillin 1 g + clavulanic acid 200 mg injection, 1.2 g vial",
+              "system": "http://snomed.info/sct",
+            },
+          ],
+          "type": "UPDSF",
+        },
+        Object {
+          "coding": Array [
+            Object {
+              "code": "975601000168108",
+              "display": "Amoxiclav 1000/200 (Juno) powder for injection, 1.2 g vial",
+              "system": "http://snomed.info/sct",
+            },
+          ],
+          "type": "BPSF",
+        },
+        Object {
+          "coding": Array [
+            Object {
+              "code": "23463011000036105",
+              "display": "amoxicillin 400 mg/5 mL + clavulanic acid 57 mg/5 mL powder for oral liquid",
+              "system": "http://snomed.info/sct",
+            },
+          ],
+          "type": "UPDSF",
+        },
+      ],
+      "total": 79,
+      "type": "group",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "group-somesha",
+      "target": "21360011000036101",
+      "type": "is-a",
+    },
+  ],
+}
+`;
