@@ -27,6 +27,11 @@ export const curveForLink = (link, i, options) => {
   return (
     <g key={i} className={`relationship relationship-${link.type}`}>
       <path className='link' d={linkPath} />
+      <circle cx={cp1x} cy={cp1y} r={2} fill='red' />
+      <path d={`M ${startX} ${startY} L ${cp1x} ${cp1y}`} stroke='red' />
+      <circle cx={cp2x} cy={cp2y} r={2} fill='blue' />
+      <path d={`M ${endX} ${endY} L ${cp2x} ${cp2y}`} stroke='blue' />
+      <path d={`M ${startX} ${startY} L ${endX} ${endY}`} stroke='purple' />
       {arrow}
     </g>
   )
