@@ -1,0 +1,9 @@
+image: node:latest
+pipelines:
+  default:
+    - step:
+        caches:
+          - node
+        script:
+          - yarn
+          - yarn test-ci
