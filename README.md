@@ -22,7 +22,7 @@ an instance of [Medserve](http://medserve.online).
   icon adjacent.
 - Where child concepts or related packages are shown in large numbers, these
   are grouped with a link to the full listing. (NOTE: The full listing has not
-  been implemented yet, see the [Backlog](https://trello.com/b/HZNaPWwi))
+  been implemented yet)
 - The AMT Product Model view can be panned around by clicking and dragging,
   using scroll wheels or a trackpad. The view can be re-centred by
   double-clicking.
