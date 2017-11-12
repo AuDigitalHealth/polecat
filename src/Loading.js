@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import spinner from './img/spinner.gif'
+import spinner from './img/spinner.svg'
 
 class Loading extends Component {
   static propTypes = {
@@ -58,7 +58,9 @@ class Loading extends Component {
     const { loading } = this.state
     return (
       <div className='loading'>
-        {loading ? <img src={spinner} alt='Loading' /> : null}
+        {loading ? (
+          <img src={spinner} width='20' height='20' alt='Loading' />
+        ) : null}
       </div>
     )
   }
