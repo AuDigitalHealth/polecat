@@ -4,7 +4,8 @@ import http from 'axios'
 import throttle from 'lodash.throttle'
 
 import TextField from './TextField.js'
-import SearchResults from './SearchResults.js'
+import QuickSearchResults from './QuickSearchResults.js'
+import Expand from './Expand.js'
 import { opOutcomeFromJsonResponse } from './fhir/core.js'
 import { sniffFormat } from './fhir/restApi'
 import { getSubjectConcept, amtConceptTypeFor } from './fhir/medication.js'
@@ -120,6 +121,11 @@ class Search extends Component {
   }
 
   render() {
+    const { advanced } = this.state
+    return advanced ? this.renderBasicSearch() : this.renderAdvancedSearch()
+  }
+
+  renderBasicSearch() {
     const { focusUponMount } = this.props
     const { query, results } = this.state
     return (
@@ -131,17 +137,43 @@ class Search extends Component {
           onChange={this.handleQueryUpdate}
           focusUponMount={focusUponMount}
         />
-        <SearchResults
+        <QuickSearchResults
           query={query}
           results={results}
           onSelectResult={this.handleSelectResult}
         />
-        {/* <div
+        <Expand
+          active={false}
           className='search-toggle-advanced'
-          onClick={this.handleToggleAdvanced}
-        >
-          {advanced ? '\u25B3' : '\u25BD'}
-        </div> */}
+          onToggle={this.handleToggleAdvanced}
+        />
+      </div>
+    )
+  }
+
+  renderAdvancedSearch() {
+    const { focusUponMount } = this.props
+    const { query, results } = this.state
+    return (
+      <div className='search'>
+        <TextField
+          value={query}
+          placeholder='Search'
+          className='search-input'
+          onChange={this.handleQueryUpdate}
+          focusUponMount={focusUponMount}
+        />
+        <SearchForm query={query} onSubmit={this.handleQueryUpdate} />
+        <FullSearchResults
+          query={query}
+          results={results}
+          onSelectResult={this.handleSelectResult}
+        />
+        <Expand
+          active
+          className='search-toggle-advanced'
+          onToggle={this.handleToggleAdvanced}
+        />
       </div>
     )
   }

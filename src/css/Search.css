@@ -15,10 +15,7 @@
 }
 
 .search-toggle-advanced {
-  font-size: 15px;
   position: absolute;
-  top: 6px;
+  top: 3px;
   right: 8px;
-  cursor: pointer;
-  user-select: none;
 }

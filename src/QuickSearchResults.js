@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 
 import { codingToSnomedCode, codingToSnomedDisplay } from './fhir/medication.js'
 
-import './css/SearchResults.css'
+import './css/QuickSearchResults.css'
 
-class SearchResults extends Component {
+class QuickSearchResults extends Component {
   static propTypes = {
     query: PropTypes.string,
     results: PropTypes.arrayOf(
@@ -78,4 +78,4 @@ class SearchResults extends Component {
   }
 }
 
-export default SearchResults
+export default QuickSearchResults

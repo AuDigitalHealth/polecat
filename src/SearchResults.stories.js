@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import SearchResults from './SearchResults.js'
+import QuickSearchResults from './QuickSearchResults.js'
 
 const results1 = [
   {
@@ -94,6 +94,6 @@ const results1 = [
   },
 ]
 
-storiesOf('SearchResults', module).add('With full range of types', () => (
-  <SearchResults results={results1} />
+storiesOf('QuickSearchResults', module).add('With full range of types', () => (
+  <QuickSearchResults results={results1} />
 ))

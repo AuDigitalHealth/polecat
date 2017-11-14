@@ -1,0 +1,11 @@
+.expand {
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.5s;
+  transform-origin: 50% 55%;
+}
+
+.expand.active {
+  transform: rotate(180deg);
+}
