@@ -9,30 +9,18 @@ export const curveForLink = (link, i, options) => {
   mergedOptions = calculateLinkEndings(link, mergedOptions)
   mergedOptions = calculateControlPoints(mergedOptions)
   const { startX, startY, endX, endY, cp1x, cp1y, cp2x, cp2y } = mergedOptions
-  const linkPath = `M ${startX} ${startY} C ${cp1x} ${cp1y} ${cp2x} ${cp2y} ${endX} ${endY}`
-  let arrow = null
-  if (link.type !== 'unknown') {
-    const { arrowPoints } =
-      link.type === 'is-component-of'
-        ? calculateAggregationPoints(mergedOptions)
-        : calculateArrowPoints({
-          ...mergedOptions,
-          linkType: link.type,
-        })
-    const arrowPath =
-      `M ${arrowPoints[0][0]} ${arrowPoints[0][1]} ` +
-      arrowPoints.reduce((a, p) => a + `L ${p[0]} ${p[1]} `, '').trim()
-    arrow = <path className='arrow' d={arrowPath} />
-  }
+  const linkPath = `M ${startX},${startY} C ${cp1x},${cp1y} ${cp2x},${cp2y} ${endX},${endY}`
+  const arrowType =
+    link.type === 'is-component-of'
+      ? 'aggregation'
+      : link.type === 'is-a' ? 'inheritance' : 'association'
   return (
     <g key={i} className={`relationship relationship-${link.type}`}>
-      <path className='link' d={linkPath} />
-      <circle cx={cp1x} cy={cp1y} r={2} fill='red' />
-      <path d={`M ${startX} ${startY} L ${cp1x} ${cp1y}`} stroke='red' />
-      <circle cx={cp2x} cy={cp2y} r={2} fill='blue' />
-      <path d={`M ${endX} ${endY} L ${cp2x} ${cp2y}`} stroke='blue' />
-      <path d={`M ${startX} ${startY} L ${endX} ${endY}`} stroke='purple' />
-      {arrow}
+      <path
+        className='link'
+        d={linkPath}
+        markerEnd={`url(#arrow-${arrowType})`}
+      />
     </g>
   )
 }
@@ -233,7 +221,7 @@ const calculateControlPoints = options => {
     opp = endY - startY,
     angle = Math.atan(Math.abs(opp) / Math.abs(adj)),
     linkLength = angle === 0 ? Math.abs(adj) : Math.abs(opp) / Math.sin(angle),
-    cpLength = arrowSize + linkLength * linkCurviness
+    cpLength = arrowSize * 2 + linkLength * linkCurviness
   let newOptions = { ...options }
   // Calculate starting control points.
   switch (true) {
@@ -427,3 +415,51 @@ const calculateAggregationPoints = options => {
   }
   return { ...options, arrowPoints: points }
 }
+
+export const associationMarker = size => (
+  <marker
+    id='arrow-association'
+    viewBox='-1 -1 11 11'
+    refX='10'
+    refY='5'
+    markerWidth={size * 0.8}
+    markerHeight={size * 0.8}
+    markerUnits='userSpaceOnUse'
+    orient='auto'
+  >
+    <path className='arrow arrow-association' d='M 0 0 L 10 5 L 0 10' />
+  </marker>
+)
+
+export const inheritanceMarker = size => (
+  <marker
+    id='arrow-inheritance'
+    viewBox='-1 -1 11 11'
+    refX='10'
+    refY='5'
+    markerWidth={size}
+    markerHeight={size}
+    markerUnits='userSpaceOnUse'
+    orient='auto'
+  >
+    <path className='arrow arrow-inheritance' d='M 0 0 L 10 5 L 0 10 z' />
+  </marker>
+)
+
+export const aggregationMarker = size => (
+  <marker
+    id='arrow-aggregation'
+    viewBox='-1 -1 20 10'
+    refX='20'
+    refY='5'
+    markerWidth={size}
+    markerHeight={size}
+    markerUnits='userSpaceOnUse'
+    orient='auto'
+  >
+    <path
+      className='arrow arrow-aggregation'
+      d='M 0 5 L 10 0 L 20 5 L 10 10 L z'
+    />
+  </marker>
+)

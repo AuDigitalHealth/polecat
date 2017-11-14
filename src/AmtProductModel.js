@@ -16,7 +16,12 @@ import {
   codingToGroupCode,
 } from './fhir/medication.js'
 import { translateToAmt } from './graph/translations.js'
-import { curveForLink } from './graph/links.js'
+import {
+  curveForLink,
+  associationMarker,
+  inheritanceMarker,
+  aggregationMarker,
+} from './graph/links.js'
 
 import './css/AmtProductModel.css'
 
@@ -69,8 +74,8 @@ class AmtProductModel extends Component {
     conceptHeight: 116,
     conceptGroupWidth: 100,
     conceptGroupHeight: 47,
-    linkCurviness: 0.4,
-    arrowSize: 10,
+    linkCurviness: 0.2,
+    arrowSize: 12,
     collideRadiusRatio: 1.5,
     collideRadiusThreshold: 10,
     collideRadiusMultiplier: 1.5,
@@ -357,10 +362,11 @@ class AmtProductModel extends Component {
 
   render() {
     const { viewport } = this.props
-    let concepts, relationships
+    let concepts, relationships, markers
     try {
       concepts = this.renderConcepts()
       relationships = this.renderRelationships()
+      markers = this.renderMarkers()
     } catch (error) {
       this.stopSimulation()
       throw error
@@ -380,6 +386,7 @@ class AmtProductModel extends Component {
             onMouseUp={this.handleMouseUp}
             onDoubleClick={this.handleDoubleClick}
           >
+            {markers}
             {relationships}
           </svg>
           {concepts}
@@ -436,6 +443,17 @@ class AmtProductModel extends Component {
     return links
       ? links.map((link, i) => curveForLink(link, i, this.props))
       : []
+  }
+
+  renderMarkers() {
+    const { arrowSize } = this.props
+    return (
+      <defs>
+        {associationMarker(arrowSize)}
+        {inheritanceMarker(arrowSize)}
+        {aggregationMarker(arrowSize)}
+      </defs>
+    )
   }
 
   static idForNode(node) {
