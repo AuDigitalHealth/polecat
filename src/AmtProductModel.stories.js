@@ -54,8 +54,10 @@ const fixedPos = {
   NNE: [ [ 100, 389.6986192 ], [ 400, 100 ] ],
   NE: [ [ 100, 309.6385542 ], [ 400, 100 ] ],
   ENE: [ [ 100, 194.41696971 ], [ 400, 100 ] ],
-  Close: [ [ 100, 100 ], [ 280, 232.7710843 ] ],
 }
+
+const farPos = [ [ 100, 100 ], [ 400, 309.6385542 ] ]
+const closePos = [ [ 100, 100 ], [ 280, 232.7710843 ] ]
 
 const addFixedPos = (nodes, fixedPos) =>
   nodes.map((node, i) => ({
@@ -82,3 +84,71 @@ for (const pos in fixedPos) {
     )
   })
 }
+
+stories
+  .add('Association link', () => {
+    const nodes = addFixedPos(twoNodes.nodes, farPos)
+    const links = [{ ...twoNodes.links[0], ...{ type: 'has-brand' } }]
+    return (
+      <AmtProductModel
+        nodes={nodes}
+        links={links}
+        viewport={{ width, height }}
+      />
+    )
+  })
+  .add('Association link (close)', () => {
+    const nodes = addFixedPos(twoNodes.nodes, closePos)
+    const links = [{ ...twoNodes.links[0], ...{ type: 'has-brand' } }]
+    return (
+      <AmtProductModel
+        nodes={nodes}
+        links={links}
+        viewport={{ width, height }}
+      />
+    )
+  })
+  .add('Inheritance link', () => {
+    const nodes = addFixedPos(twoNodes.nodes, farPos)
+    const links = [{ ...twoNodes.links[0], ...{ type: 'is-a' } }]
+    return (
+      <AmtProductModel
+        nodes={nodes}
+        links={links}
+        viewport={{ width, height }}
+      />
+    )
+  })
+  .add('Inheritance link (close)', () => {
+    const nodes = addFixedPos(twoNodes.nodes, closePos)
+    const links = [{ ...twoNodes.links[0], ...{ type: 'is-a' } }]
+    return (
+      <AmtProductModel
+        nodes={nodes}
+        links={links}
+        viewport={{ width, height }}
+      />
+    )
+  })
+  .add('Aggregation link', () => {
+    const nodes = addFixedPos(twoNodes.nodes, farPos)
+    const links = [{ ...twoNodes.links[0], ...{ type: 'is-component-of' } }]
+    return (
+      <AmtProductModel
+        nodes={nodes}
+        links={links}
+        viewport={{ width, height }}
+      />
+    )
+  })
+  .add('Aggregation link (close)', () => {
+    const nodes = addFixedPos(twoNodes.nodes, closePos)
+    const links = [{ ...twoNodes.links[0], ...{ type: 'is-component-of' } }]
+    return (
+      <AmtProductModel
+        nodes={nodes}
+        links={links}
+        viewport={{ width, height }}
+      />
+    )
+  })

@@ -19,15 +19,19 @@
   fill: transparent;
 }
 
-.product-model .relationship .arrow {
+.product-model .arrow {
   stroke: #666;
+  stroke-width: 1;
+}
+
+.product-model .arrow-association {
   fill: transparent;
 }
 
-.product-model .relationship-is-a .arrow {
+.product-model .arrow-inheritance {
   fill: white;
 }
 
-.product-model .relationship-is-component-of .arrow {
+.product-model .arrow-aggregation {
   fill: #666;
 }
