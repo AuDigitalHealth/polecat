@@ -11,7 +11,7 @@
 }
 
 .product-model svg {
-  cursor: pointer;
+  cursor: move;
 }
 
 .product-model .relationship .link {
