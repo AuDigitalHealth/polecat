@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import http from 'axios'
 
 import App from './App'
+import addResourceHints from './resourceHints.js'
 import registerServiceWorker from './registerServiceWorker'
 
 import './css/index.css'
@@ -14,4 +15,5 @@ http
     ReactDOM.render(<App config={config} />, document.getElementById('root'))
   })
   .catch(error => console.error(error))
+addResourceHints()
 registerServiceWorker()
