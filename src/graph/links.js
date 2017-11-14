@@ -292,130 +292,6 @@ const calculateControlPoints = options => {
   return newOptions
 }
 
-// This function renders inheritance and association type relationships.
-// Inheritance is shown as a filled triangle, while association is an open arrow
-// head.
-const calculateArrowPoints = options => {
-  const {
-      targetSouthEast: southEast,
-      targetSouthWest: southWest,
-      targetNorthWest: northWest,
-      targetNorthEast: northEast,
-      bearing,
-      endX,
-      endY,
-      arrowSize,
-      linkType,
-    } = options,
-    halfArrowSize = arrowSize / 2
-  const points = []
-  switch (true) {
-    case bearing >= northEast || bearing < southEast:
-      points.push([ endX - arrowSize, endY + halfArrowSize ])
-      points.push([ endX, endY ])
-      points.push([ endX - arrowSize, endY - halfArrowSize ])
-      if (linkType === 'is-a') {
-        points.push([ endX - arrowSize, endY + halfArrowSize ])
-      }
-      break
-    case bearing >= southEast && bearing < southWest:
-      points.push([ endX - halfArrowSize, endY - Math.sqrt(3) / 2 * arrowSize ])
-      points.push([ endX, endY ])
-      points.push([ endX + halfArrowSize, endY - Math.sqrt(3) / 2 * arrowSize ])
-      if (linkType === 'is-a') {
-        points.push([ endX - halfArrowSize, endY - Math.sqrt(3) / 2 * arrowSize ])
-      }
-      break
-    case bearing >= southWest && bearing < northWest:
-      points.push([ endX + arrowSize, endY + halfArrowSize ])
-      points.push([ endX, endY ])
-      points.push([ endX + arrowSize, endY - halfArrowSize ])
-      if (linkType === 'is-a') {
-        points.push([ endX + arrowSize, endY + halfArrowSize ])
-      }
-      break
-    case bearing >= northWest && bearing < northEast:
-      points.push([ endX - halfArrowSize, endY + Math.sqrt(3) / 2 * arrowSize ])
-      points.push([ endX, endY ])
-      points.push([ endX + halfArrowSize, endY + Math.sqrt(3) / 2 * arrowSize ])
-      if (linkType === 'is-a') {
-        points.push([ endX - halfArrowSize, endY + Math.sqrt(3) / 2 * arrowSize ])
-      }
-      break
-    default:
-      throw new Error(`Unexpected bearing: ${bearing}`)
-  }
-  return { ...options, arrowPoints: points }
-}
-
-// This function renders aggregation relationships. It is reversed, i.e. the
-// aggregation symbol is displayed at the start of the link, on the source side.
-const calculateAggregationPoints = options => {
-  const {
-      sourceSouthEast: southEast,
-      sourceSouthWest: southWest,
-      sourceNorthWest: northWest,
-      sourceNorthEast: northEast,
-      bearing,
-      startX,
-      startY,
-    } = options,
-    arrowSize = options.arrowSize * 0.7,
-    halfArrowSize = arrowSize / 2
-  const points = []
-  switch (true) {
-    case bearing >= northEast || bearing < southEast:
-      points.push([ startX + arrowSize, startY + halfArrowSize ])
-      points.push([ startX, startY ])
-      points.push([ startX + arrowSize, startY - halfArrowSize ])
-      points.push([ startX + 2 * Math.sqrt(3) / 2 * arrowSize, startY ])
-      points.push([ startX + arrowSize, startY + halfArrowSize ])
-      break
-    case bearing >= southEast && bearing < southWest:
-      points.push([
-        startX - halfArrowSize,
-        startY + Math.sqrt(3) / 2 * arrowSize,
-      ])
-      points.push([ startX, startY ])
-      points.push([
-        startX + halfArrowSize,
-        startY + Math.sqrt(3) / 2 * arrowSize,
-      ])
-      points.push([ startX, startY + 2 * Math.sqrt(3) / 2 * arrowSize ])
-      points.push([
-        startX - halfArrowSize,
-        startY + Math.sqrt(3) / 2 * arrowSize,
-      ])
-      break
-    case bearing >= southWest && bearing < northWest:
-      points.push([ startX - arrowSize, startY + halfArrowSize ])
-      points.push([ startX, startY ])
-      points.push([ startX - arrowSize, startY - halfArrowSize ])
-      points.push([ startX - 2 * Math.sqrt(3) / 2 * arrowSize, startY ])
-      points.push([ startX - arrowSize, startY + halfArrowSize ])
-      break
-    case bearing >= northWest && bearing < northEast:
-      points.push([
-        startX - halfArrowSize,
-        startY - Math.sqrt(3) / 2 * arrowSize,
-      ])
-      points.push([ startX, startY ])
-      points.push([
-        startX + halfArrowSize,
-        startY - Math.sqrt(3) / 2 * arrowSize,
-      ])
-      points.push([ startX, startY - 2 * Math.sqrt(3) / 2 * arrowSize ])
-      points.push([
-        startX - halfArrowSize,
-        startY - Math.sqrt(3) / 2 * arrowSize,
-      ])
-      break
-    default:
-      throw new Error(`Unexpected bearing: ${bearing}`)
-  }
-  return { ...options, arrowPoints: points }
-}
-
 export const associationMarker = size => (
   <marker
     id='arrow-association'
@@ -427,7 +303,7 @@ export const associationMarker = size => (
     markerUnits='userSpaceOnUse'
     orient='auto'
   >
-    <path className='arrow arrow-association' d='M 0 0 L 10 5 L 0 10' />
+    <path className='arrow arrow-association' d='M 0,0 L 10,5 L 0,10' />
   </marker>
 )
 
@@ -442,7 +318,7 @@ export const inheritanceMarker = size => (
     markerUnits='userSpaceOnUse'
     orient='auto'
   >
-    <path className='arrow arrow-inheritance' d='M 0 0 L 10 5 L 0 10 z' />
+    <path className='arrow arrow-inheritance' d='M 0,0 L 10,5 L 0,10 Z' />
   </marker>
 )
 
@@ -459,7 +335,7 @@ export const aggregationMarker = size => (
   >
     <path
       className='arrow arrow-aggregation'
-      d='M 0 5 L 10 0 L 20 5 L 10 10 L z'
+      d='M 0,5 L 10,0 L 20,5 L 10,10 Z'
     />
   </marker>
 )
