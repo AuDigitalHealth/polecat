@@ -1,4 +1,4 @@
-image: node:latest
+image: johngrimes/node-aws
 pipelines:
   default:
     - step:
@@ -9,7 +9,7 @@ pipelines:
           - yarn
           - yarn test-ci
     - step:
-        name: Build Docker image
+        name: Build Docker image and deploy
         caches:
           - node
         script:
@@ -18,5 +18,6 @@ pipelines:
           - yarn build-docker
           - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
           - docker push johngrimes/polecat
+          - yarn deploy
 options:
   docker: true
