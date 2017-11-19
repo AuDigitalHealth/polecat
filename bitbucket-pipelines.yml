@@ -2,12 +2,14 @@ image: node:latest
 pipelines:
   default:
     - step:
+        name: Run tests
         caches:
           - node
         script:
           - yarn
           - yarn test-ci
     - step:
+        name: Build Docker image
         caches:
           - node
         script:
