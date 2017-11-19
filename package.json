@@ -26,7 +26,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-docker": "docker build -t polecat .",
+    "build-docker": "docker build -t johngrimes/polecat .",
     "test": "react-scripts test --verbose --env=jsdom",
     "test-ci": "CI=true react-scripts test --verbose --env=jsdom",
     "deploy": "deploy/s3-sync.sh",

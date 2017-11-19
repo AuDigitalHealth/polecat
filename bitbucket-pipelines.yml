@@ -9,7 +9,7 @@ pipelines:
           - yarn
           - yarn test-ci
     - step:
-        name: Build Docker image and deploy
+        name: Build and deploy
         caches:
           - node
         script:
