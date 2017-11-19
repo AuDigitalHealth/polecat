@@ -7,3 +7,13 @@ pipelines:
         script:
           - yarn
           - yarn test-ci
+    - step:
+        caches:
+          - node
+        script:
+          - yarn
+          - yarn build
+          - docker build . -t johngrimes/polecat
+          - docker push johngrimes/polecat
+options:
+  docker: true
