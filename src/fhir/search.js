@@ -1,4 +1,6 @@
-const availableMedParams = [
+import pick from 'lodash.pick'
+
+export const availableMedParams = [
   'id',
   'pbs',
   'artg',
@@ -16,7 +18,7 @@ const availableMedParams = [
   'ingredient-text',
 ]
 
-const availableSubstanceParams = [ 'substance', 'substance-text' ]
+export const availableSubstanceParams = [ 'substance', 'substance-text' ]
 
 // Translates a tagged search string into a valid GET URL (path only) which will
 // execute a search on the FHIR server. Returns false if there is no searchable
@@ -28,6 +30,28 @@ export const pathForQuery = query => {
     medParams.push([ 'text', queryText ])
   }
   const substanceParams = extractSearchParams(query, availableSubstanceParams)
+  return pathFromParams(medParams, substanceParams)
+}
+
+// Translates a search object, with available search parameters as keys, into a
+// tagged search string.
+export const queryFromSearchObject = search => {
+  const params = filterSearchObject(
+    search,
+    availableMedParams.concat(availableSubstanceParams)
+  )
+  let query = params.map(p => `${p[0]}:${p[1]}`).join(' ')
+  if (search.text) query += query ? ` ${search.text}` : search.text
+  return query
+}
+
+const filterSearchObject = (search, params) => {
+  const result = Object.entries(pick(search, params))
+  // Filter any params with null, undefined or empty string values.
+  return result.filter(param => param[1])
+}
+
+const pathFromParams = (medParams, substanceParams) => {
   if (medParams.length > 0 && substanceParams.length > 0) {
     throw new Error('Cannot have both Medication and Substance search params.')
   } else if (medParams.length > 0) {
@@ -48,7 +72,7 @@ export const pathForQuery = query => {
 // Extract all tagged search parameters from the string (subject to the supplied
 // `params` whitelist), and return them as an a array of `[ param, value ]`
 // tuples.
-const extractSearchParams = (query, params) =>
+export const extractSearchParams = (query, params) =>
   params.reduce((result, param) => {
     const pattern = RegExp(`(?:^|\\s)${param}:(?:"([^"]+)"|([^"\\s]+))`, 'g')
     let match
@@ -67,7 +91,7 @@ const extractSearchParams = (query, params) =>
   }, [])
 
 // Remove any tagged parameters, leaving only the text query component.
-const extractQueryText = query =>
+export const extractQueryText = query =>
   query.replace(/[A-Za-z\\-]+:(?:"([^"]*)"|([^"\s]*))/g, '').trim()
 
 // Return the GET parameter for a specified Medication search tag and value.
@@ -78,7 +102,9 @@ const getMedicationParamFor = (param, value) => {
     case 'pbs':
       return `subsidy-code=http://pbs.gov.au/code/item|${value}`
     case 'artg':
-      return `code=https://www.tga.gov.au/australian-register-therapeutic-goods|${value}`
+      return `code=https://www.tga.gov.au/australian-register-therapeutic-goods|${
+        value
+      }`
     case 'brand':
       return `brand=http://snomed.info/sct|${value}`
     case 'brand-text':

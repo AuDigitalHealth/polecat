@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 class TextField extends Component {
   static propTypes = {
     value: PropTypes.string,
+    label: PropTypes.string,
     placeholder: PropTypes.string,
     className: PropTypes.string,
     onChange: PropTypes.func,
@@ -37,7 +38,7 @@ class TextField extends Component {
   }
 
   render() {
-    const { className, placeholder } = this.props
+    const { className, label, placeholder } = this.props
     const value = this.state.value
     const props = {
       className,
@@ -49,7 +50,13 @@ class TextField extends Component {
     }
     return (
       <div className='text-field'>
-        <input {...props} />
+        {label ? (
+          <label>
+            {label} <input {...props} />
+          </label>
+        ) : (
+          <input {...props} />
+        )}
       </div>
     )
   }

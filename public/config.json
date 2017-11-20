@@ -1,3 +1,3 @@
 {
-  "fhirServer": "http://localhost:8090/fhir"
+  "fhirServer": "http://medserve.local/fhir"
 }

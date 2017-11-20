@@ -5,6 +5,8 @@ import throttle from 'lodash.throttle'
 
 import TextField from './TextField.js'
 import QuickSearchResults from './QuickSearchResults.js'
+import FullSearchResults from './FullSearchResults.js'
+import SearchForm from './SearchForm.js'
 import Expand from './Expand.js'
 import { opOutcomeFromJsonResponse } from './fhir/core.js'
 import { sniffFormat } from './fhir/restApi'
@@ -163,7 +165,7 @@ class Search extends Component {
           onChange={this.handleQueryUpdate}
           focusUponMount={focusUponMount}
         />
-        <SearchForm query={query} onSubmit={this.handleQueryUpdate} />
+        <SearchForm query={query} onSearchUpdate={this.handleQueryUpdate} />
         <FullSearchResults
           query={query}
           results={results}
