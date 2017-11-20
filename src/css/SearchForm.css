@@ -1,0 +1,26 @@
+.search-form {
+  font-family: 'Helvetica Neue', sans-serif;
+  padding: 16px 0;
+  width: 260px;
+}
+
+.search-form .text-field {
+  margin-bottom: 12px;
+}
+
+.search-form .text-field label {
+  font-size: 14px;
+  padding: 4px;
+  position: relative;
+  display: block;
+}
+
+.search-form .text-field input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid #666;
+  border-radius: 6px;
+  padding: 3px;
+  font-size: 13px;
+}

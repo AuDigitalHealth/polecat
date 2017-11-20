@@ -67,7 +67,7 @@ class QuickSearchResults extends Component {
   render() {
     const { query, results } = this.props
     return (
-      <div className='search-results'>
+      <div className='quick-search-results'>
         {results && results.length === 0 ? (
           <div className='no-results'>No results matching "{query}".</div>
         ) : results ? (

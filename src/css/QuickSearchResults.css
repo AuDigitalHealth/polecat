@@ -1,4 +1,4 @@
-.search-results ol {
+.quick-search-results ol {
   font-family: 'Helvetica Neue', sans-serif;
   font-size: 14px;
   background-color: rgba(255, 255, 255, 0.9);
@@ -10,27 +10,27 @@
   max-width: 600px;
 }
 
-.search-result {
+.quick-search-results .search-result {
   padding: 7px 8px;
   border-bottom: 1px solid #ccc;
 }
 
-.search-result:last-of-type {
+.quick-search-results .search-result:last-of-type {
   border-bottom: 0;
 }
 
-.search-result .display {
+.quick-search-results .search-result .display {
   margin-right: 64px;
   overflow: hidden;
   display: block;
 }
 
-.search-result .display a {
+.quick-search-results .search-result .display a {
   text-decoration: none;
   color: black;
 }
 
-.search-result .type {
+.quick-search-results .search-result .type {
   float: right;
   background-color: #aaa;
   border-radius: 6px;
@@ -41,47 +41,47 @@
   font-size: 10px;
 }
 
-.search-result .type-ctpp {
+.quick-search-results .search-result .type-ctpp {
   /* Solarized Orange */
   background-color: #bd3613;
 }
 
-.search-result .type-tpp {
+.quick-search-results .search-result .type-tpp {
   /* Solarized Yellow */
   background-color: #a57706;
 }
 
-.search-result .type-tpuu {
+.quick-search-results .search-result .type-tpuu {
   /* Solarized Magenta */
   background-color: #c61c6f;
 }
 
-.search-result .type-tp {
+.quick-search-results .search-result .type-tp {
   /* Solarized Violet */
   background-color: #595ab7;
 }
 
-.search-result .type-mpp {
+.quick-search-results .search-result .type-mpp {
   /* Solarized Blue */
   background-color: #2176c7;
 }
 
-.search-result .type-mpuu {
+.quick-search-results .search-result .type-mpuu {
   /* Solarized Cyan */
   background-color: #259286;
 }
 
-.search-result .type-mp {
+.quick-search-results .search-result .type-mp {
   /* Solarized Green */
   background-color: #738a05;
 }
 
-.search-result .type-substance {
+.quick-search-results .search-result .type-substance {
   /* Solarized Red */
   background-color: #d11c24;
 }
 
-.search-results .no-results {
+.quick-search-results .no-results {
   font-size: 14px;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 7px 8px;

@@ -6,9 +6,13 @@ class TextField extends Component {
     value: PropTypes.string,
     label: PropTypes.string,
     placeholder: PropTypes.string,
+    disabled: PropTypes.bool,
     className: PropTypes.string,
     onChange: PropTypes.func,
     focusUponMount: PropTypes.bool,
+  }
+  static defaultProps = {
+    disabled: false,
   }
 
   constructor(props) {
@@ -38,13 +42,14 @@ class TextField extends Component {
   }
 
   render() {
-    const { className, label, placeholder } = this.props
+    const { className, label, placeholder, disabled } = this.props
     const value = this.state.value
     const props = {
       className,
       type: 'text',
       placeholder,
       value: value || '',
+      disabled,
       onChange: this.handleChange,
       ref: el => (this.textInput = el),
     }

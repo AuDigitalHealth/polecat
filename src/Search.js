@@ -124,14 +124,15 @@ class Search extends Component {
 
   render() {
     const { advanced } = this.state
-    return advanced ? this.renderBasicSearch() : this.renderAdvancedSearch()
+    console.log(advanced)
+    return advanced ? this.renderAdvancedSearch() : this.renderBasicSearch()
   }
 
   renderBasicSearch() {
     const { focusUponMount } = this.props
     const { query, results } = this.state
     return (
-      <div className='search'>
+      <div className='search search-basic'>
         <TextField
           value={query}
           placeholder='Search'
@@ -157,25 +158,30 @@ class Search extends Component {
     const { focusUponMount } = this.props
     const { query, results } = this.state
     return (
-      <div className='search'>
-        <TextField
-          value={query}
-          placeholder='Search'
-          className='search-input'
-          onChange={this.handleQueryUpdate}
-          focusUponMount={focusUponMount}
-        />
-        <SearchForm query={query} onSearchUpdate={this.handleQueryUpdate} />
-        <FullSearchResults
-          query={query}
-          results={results}
-          onSelectResult={this.handleSelectResult}
-        />
-        <Expand
-          active
-          className='search-toggle-advanced'
-          onToggle={this.handleToggleAdvanced}
-        />
+      <div className='search search-advanced'>
+        <div className='search-advanced-form'>
+          <TextField
+            value={query}
+            placeholder='Search'
+            className='search-input'
+            disabled
+            onChange={this.handleQueryUpdate}
+            focusUponMount={focusUponMount}
+          />
+          <SearchForm query={query} onSearchUpdate={this.handleQueryUpdate} />
+          <Expand
+            active
+            className='search-toggle-advanced'
+            onToggle={this.handleToggleAdvanced}
+          />
+        </div>
+        <div className='search-advanced-results'>
+          <FullSearchResults
+            query={query}
+            results={results}
+            onSelectResult={this.handleSelectResult}
+          />
+        </div>
       </div>
     )
   }

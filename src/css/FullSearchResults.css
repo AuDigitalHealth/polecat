@@ -1,0 +1,94 @@
+.full-search-results ol {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.full-search-results .search-result {
+  padding: 7px 20px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+}
+
+.full-search-results .search-result:last-of-type {
+  border-bottom: 0;
+}
+
+.full-search-results .search-result .sctid {
+  margin-right: 16px;
+  min-width: 140px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.full-search-results .search-result .display {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-right: 16px;
+  flex-grow: 1;
+}
+
+.full-search-results .search-result .display a {
+  text-decoration: none;
+  color: black;
+}
+
+.full-search-results .search-result .type {
+  background-color: #aaa;
+  border-radius: 6px;
+  padding: 4px 6px;
+  color: white;
+  font-size: 10px;
+}
+
+.full-search-results .search-result .type-ctpp {
+  /* Solarized Orange */
+  background-color: #bd3613;
+}
+
+.full-search-results .search-result .type-tpp {
+  /* Solarized Yellow */
+  background-color: #a57706;
+}
+
+.full-search-results .search-result .type-tpuu {
+  /* Solarized Magenta */
+  background-color: #c61c6f;
+}
+
+.full-search-results .search-result .type-tp {
+  /* Solarized Violet */
+  background-color: #595ab7;
+}
+
+.full-search-results .search-result .type-mpp {
+  /* Solarized Blue */
+  background-color: #2176c7;
+}
+
+.full-search-results .search-result .type-mpuu {
+  /* Solarized Cyan */
+  background-color: #259286;
+}
+
+.full-search-results .search-result .type-mp {
+  /* Solarized Green */
+  background-color: #738a05;
+}
+
+.full-search-results .search-result .type-substance {
+  /* Solarized Red */
+  background-color: #d11c24;
+}
+
+.full-search-results .no-results {
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 7px 8px;
+  border-radius: 0 6px 6px 6px;
+  box-shadow: 5px 5px 50px 1px rgba(0, 0, 0, 0.1);
+}
