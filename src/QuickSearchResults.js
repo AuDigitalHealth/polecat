@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
+import { searchPathFromQuery } from './Router.js'
 import { codingToSnomedCode, codingToSnomedDisplay } from './fhir/medication.js'
+import { formatNumber } from './util.js'
 
 import './css/QuickSearchResults.css'
 
@@ -31,6 +33,7 @@ class QuickSearchResults extends Component {
         ]),
       })
     ),
+    totalResults: PropTypes.number,
     onSelectResult: PropTypes.func,
   }
 
@@ -54,13 +57,19 @@ class QuickSearchResults extends Component {
     } else if (results && results.length === 0) {
       return <div className='no-results'>No results.</div>
     } else if (results && results.length > 0) {
-      return <ol>{this.renderResults(results)}</ol>
+      return (
+        <ol>
+          {this.renderResults()}
+          {this.renderMoreLink()}
+        </ol>
+      )
     } else {
       return null
     }
   }
 
-  renderResults(results) {
+  renderResults() {
+    const { results } = this.props
     if (!results) return
     return results.map((result, i) => (
       <li key={i} className='search-result'>
@@ -70,6 +79,20 @@ class QuickSearchResults extends Component {
         <span className='display'>{this.renderLinkToResult(result)}</span>
       </li>
     ))
+  }
+
+  renderMoreLink() {
+    const { results, totalResults, query } = this.props
+    if (!results || !totalResults) return
+    if (totalResults > results.length) {
+      return (
+        <li key='more' className='more-results'>
+          <Link to={searchPathFromQuery(query)}>
+            view all {formatNumber(totalResults)} matches &rarr;
+          </Link>
+        </li>
+      )
+    }
   }
 
   renderLinkToResult(result) {

@@ -10,7 +10,7 @@ import FullSearchResults from './FullSearchResults.js'
 import SearchForm from './SearchForm.js'
 import SearchSummary from './SearchSummary.js'
 import Expand from './Expand.js'
-import { rootPath, searchPathFromQuery } from './Router.js'
+import { searchPathFromQuery } from './Router.js'
 import { opOutcomeFromJsonResponse } from './fhir/core.js'
 import { sniffFormat } from './fhir/restApi'
 import { getSubjectConcept, amtConceptTypeFor } from './fhir/medication.js'
@@ -225,7 +225,7 @@ class Search extends Component {
 
   renderBasicSearch() {
     const { query: queryFromProps, focusUponMount } = this.props
-    const { query: queryFromState, results } = this.state
+    const { query: queryFromState, bundle, results } = this.state
     // If the query has been updated within state, use that over props.
     const query = queryFromState || queryFromProps
     return (
@@ -247,6 +247,7 @@ class Search extends Component {
         <QuickSearchResults
           query={query}
           results={results}
+          totalResults={bundle ? bundle.total : null}
           onSelectResult={this.handleSelectResult}
         />
       </div>

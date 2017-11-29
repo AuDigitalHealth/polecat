@@ -91,3 +91,13 @@
   border-radius: 0 6px 6px 6px;
   box-shadow: 5px 5px 50px 1px rgba(0, 0, 0, 0.1);
 }
+
+.quick-search-results .more-results {
+  padding: 7px 8px;
+  font-weight: bold;
+}
+
+.quick-search-results .more-results a {
+  text-decoration: none;
+  color: black;
+}
