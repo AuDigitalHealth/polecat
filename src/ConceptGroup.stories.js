@@ -40,16 +40,17 @@ const concepts1 = [
   },
 ]
 
-storiesOf(
-  'ConceptGroup',
-  module
-).add('With parent medication search result', () => (
-  <ConceptGroup
-    concepts={concepts1}
-    total={549}
-    width={width}
-    height={height}
-    top={20}
-    left={20}
-  />
-))
+storiesOf('ConceptGroup', module).add(
+  'With parent medication search result',
+  () => (
+    <ConceptGroup
+      concepts={concepts1}
+      linkPath='/?q=some-search'
+      total={549}
+      width={width}
+      height={height}
+      top={20}
+      left={20}
+    />
+  )
+)

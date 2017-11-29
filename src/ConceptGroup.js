@@ -19,7 +19,7 @@ class ConceptGroup extends Component {
     // is requested by the user.
     total: PropTypes.number,
     // Path to view the full expanded list of concepts.
-    linkPath: PropTypes.string,
+    linkPath: PropTypes.string.isRequired,
     top: PropTypes.number,
     left: PropTypes.number,
   }
