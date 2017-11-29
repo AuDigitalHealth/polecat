@@ -7,6 +7,9 @@ describe('pathForQuery', () => {
     // SCTID
     'id:61428011000036109':
       '/Medication?code=http://snomed.info/sct|61428011000036109&_summary=true&_count=20',
+    // Concept type
+    'type:CTPP':
+      '/Medication?medication-resource-type=BPGC&_summary=true&_count=20',
     // Combination of multiple search types
     'varicella id:959031000168106':
       '/Medication?code=http://snomed.info/sct|959031000168106&_text=varicella&_summary=true&_count=20',
@@ -54,6 +57,13 @@ describe('pathForQuery', () => {
       '/Medication?parent=Medication/931803011000036105,Medication/33623011000036103&parent=Medication/77446011000036105&_summary=true&_count=20',
     'parent-text:paracetamol':
       '/Medication?parent:text=paracetamol&_summary=true&_count=20',
+    // Package
+    'package:54112011000036105':
+      '/Medication?package-item=Medication/54112011000036105&_summary=true&_count=20',
+    'package-text:nexium':
+      '/Medication?package-item:text=nexium&_summary=true&_count=20',
+    'package-not:6140011000036103':
+      '/Medication?package-item:not=Medication/6140011000036103&_summary=true&_count=20',
     // Ingredient
     'ingredient:1978011000036103 ingredient:2442011000036104 ingredient-not:2525011000036101':
       '/Medication?ingredient=Substance/1978011000036103&ingredient=Substance/2442011000036104&ingredient:not=Substance/2525011000036101&_summary=true&_count=20',

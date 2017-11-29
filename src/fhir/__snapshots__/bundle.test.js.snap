@@ -42,6 +42,7 @@ Object {
           "type": "UPDSF",
         },
       ],
+      "query": "parent:21360011000036101 type:MPUU",
       "total": 79,
       "type": "group",
     },

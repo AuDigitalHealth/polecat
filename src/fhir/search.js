@@ -1,7 +1,10 @@
 import pick from 'lodash.pick'
 
+import { fhirMedicationTypeFor } from './medication.js'
+
 export const availableMedParams = [
   'id',
+  'type',
   'pbs',
   'artg',
   'brand',
@@ -13,6 +16,9 @@ export const availableMedParams = [
   'not-form',
   'parent',
   'parent-text',
+  'package',
+  'package-text',
+  'package-not',
   'ingredient',
   'ingredient-not',
   'ingredient-text',
@@ -99,6 +105,8 @@ const getMedicationParamFor = (param, value) => {
   switch (param) {
     case 'id':
       return `code=http://snomed.info/sct|${value}`
+    case 'type':
+      return `medication-resource-type=${fhirMedicationTypeFor(value)}`
     case 'pbs':
       return `subsidy-code=http://pbs.gov.au/code/item|${value}`
     case 'artg':
@@ -126,6 +134,12 @@ const getMedicationParamFor = (param, value) => {
         .join(',')}`
     case 'parent-text':
       return `parent:text=${value}`
+    case 'package':
+      return `package-item=Medication/${value}`
+    case 'package-text':
+      return `package-item:text=${value}`
+    case 'package-not':
+      return `package-item:not=Medication/${value}`
     case 'ingredient':
       return `ingredient=Substance/${value}`
     case 'ingredient-not':

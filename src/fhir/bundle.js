@@ -2,6 +2,7 @@ import {
   getSubjectConcept,
   codingToSnomedCode,
   relationshipTypeFor,
+  amtConceptTypeFor,
   groupUri,
   emptyConcepts,
 } from './medication.js'
@@ -28,12 +29,18 @@ export async function getBundleConcepts(subject, bundle, options = {}) {
       .map(e => getSubjectConcept(e.resource))
     // The group's code is a hash of the concept data within the group.
     const groupCode = await sha256(JSON.stringify(concepts))
+    const query = queryForGrouping(
+      codingToSnomedCode(subject.coding),
+      groupRelationshipType,
+      concepts[0].type
+    )
     return {
       concepts: [
         {
           coding: [{ system: groupUri, code: groupCode }],
           type: 'group',
           total: bundle.total,
+          query,
           concepts,
         },
       ],
@@ -48,6 +55,15 @@ export async function getBundleConcepts(subject, bundle, options = {}) {
         },
       ],
     }
+  }
+}
+
+const queryForGrouping = (code, relationshipType, childType) => {
+  switch (relationshipType) {
+    case `is-component-of`:
+      return `package:${code} type:${amtConceptTypeFor(childType)}`
+    default:
+      return `parent:${code} type:${amtConceptTypeFor(childType)}`
   }
 }
 

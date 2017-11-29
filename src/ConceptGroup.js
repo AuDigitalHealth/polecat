@@ -18,6 +18,8 @@ class ConceptGroup extends Component {
     // Total number of concepts that is available to view if the full result set
     // is requested by the user.
     total: PropTypes.number,
+    // Path to view the full expanded list of concepts.
+    linkPath: PropTypes.string,
     top: PropTypes.number,
     left: PropTypes.number,
   }
@@ -29,7 +31,7 @@ class ConceptGroup extends Component {
   }
 
   render() {
-    const { concepts, total, top, left } = this.props
+    const { concepts, total, linkPath, top, left } = this.props
     const concept = concepts[0]
     const type = concept.type
     return (
@@ -44,7 +46,7 @@ class ConceptGroup extends Component {
           {type ? (
             <div className={`type type-${type}`.toLowerCase()}>{type}</div>
           ) : null}
-          <Link to='/'>
+          <Link to={linkPath}>
             <Icon type='list' hoverType='listActive' width={20} />
           </Link>
         </div>

@@ -9,6 +9,7 @@ import debounce from 'lodash.debounce'
 
 import Concept from './Concept.js'
 import ConceptGroup from './ConceptGroup.js'
+import { searchPathFromQuery } from './Router.js'
 import {
   amtConceptTypeFor,
   mergeConcepts,
@@ -414,6 +415,7 @@ class AmtProductModel extends Component {
                 type: amtConceptTypeFor(c.type),
               }))}
               total={node.total}
+              linkPath={searchPathFromQuery(node.query)}
               top={node.y - conceptGroupHeight / 2}
               left={node.x - conceptGroupWidth / 2}
               width={conceptWidth}
