@@ -98,6 +98,13 @@ storiesOf('QuickSearchResults', module)
   .add('With full range of types', () => (
     <QuickSearchResults results={results1} />
   ))
+  .add('With more link', () => (
+    <QuickSearchResults
+      query='something'
+      results={results1}
+      totalResults={1534}
+    />
+  ))
   .add('With a query and empty results', () => (
     <QuickSearchResults query='dog' results={[]} />
   ))
