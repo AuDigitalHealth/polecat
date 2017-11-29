@@ -11,15 +11,15 @@ import './css/AmtBrowser.css'
 
 class AmtBrowser extends Component {
   static propTypes = {
-    location: PropTypes.shape({
-      pathname: PropTypes.string,
-      search: PropTypes.string,
-    }),
+    resourceType: PropTypes.oneOf([ 'Medication', 'Substance' ]),
+    id: PropTypes.string,
+    query: PropTypes.string,
     viewport: PropTypes.object.isRequired,
     config: PropTypes.object,
   }
   static defaultProps = {
     config: { fhirServer: 'http://medserve.online/fhir' },
+    resourceType: 'Medication',
   }
 
   constructor(props) {
@@ -47,30 +47,30 @@ class AmtBrowser extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { location } = this.props
-    const { location: nextLocation } = nextProps
-    if (!location || !nextLocation) return
+    const { resourceType, id, query } = nextProps
+    if (!id && !query) return
     // Reset the error state when the location changes.
     if (
-      nextLocation.pathname !== location.pathname ||
-      nextLocation.search !== location.search
+      this.props.resourceType !== resourceType ||
+      this.props.id !== id ||
+      this.props.query !== query
     ) {
       this.reset()
     }
   }
 
   render() {
-    const { location, viewport, config } = this.props
+    const { resourceType, id, query, viewport, config } = this.props
     const { loading, error } = this.state
     return (
       <div
         className='amt-browser'
         style={{ width: viewport.width, height: viewport.height }}
       >
-        {location ? (
+        {id ? (
           <RemoteFhirMedication
-            path={location.pathname}
-            query={location.search}
+            resourceType={resourceType}
+            id={id}
             viewport={viewport}
             onLoadingChange={this.handleLoadingChange}
             onError={this.handleError}
@@ -80,6 +80,7 @@ class AmtBrowser extends Component {
           </RemoteFhirMedication>
         ) : null}
         <Search
+          query={query}
           fhirServer={config.fhirServer}
           onLoadingChange={this.handleLoadingChange}
           onError={this.handleError}

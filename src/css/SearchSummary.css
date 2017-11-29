@@ -1,0 +1,19 @@
+.search-summary {
+  font-family: 'Helvetica Neue', sans-serif;
+  display: flex;
+  user-select: none;
+}
+
+.search-summary .pagination-total {
+  flex-grow: 1;
+  font-size: 14px;
+  position: relative;
+  top: 2px;
+  font-weight: bold;
+}
+
+.search-summary .pagination-next,
+.search-summary .pagination-previous {
+  cursor: pointer;
+  margin-left: 3px;
+}

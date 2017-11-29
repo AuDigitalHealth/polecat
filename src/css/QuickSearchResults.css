@@ -1,5 +1,8 @@
-.quick-search-results ol {
+.quick-search-results {
   font-family: 'Helvetica Neue', sans-serif;
+}
+
+.quick-search-results ol {
   font-size: 14px;
   background-color: rgba(255, 255, 255, 0.9);
   margin: 5px 0 0;

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import QuickSearchResults from './QuickSearchResults.js'
 
-const results1 = [
+export const results1 = [
   {
     coding: [
       {
@@ -94,6 +94,14 @@ const results1 = [
   },
 ]
 
-storiesOf('QuickSearchResults', module).add('With full range of types', () => (
-  <QuickSearchResults results={results1} />
-))
+storiesOf('QuickSearchResults', module)
+  .add('With full range of types', () => (
+    <QuickSearchResults results={results1} />
+  ))
+  .add('With a query and empty results', () => (
+    <QuickSearchResults query='dog' results={[]} />
+  ))
+  .add('With no query and empty results', () => (
+    <QuickSearchResults results={[]} />
+  ))
+  .add('With no query and no results', () => <QuickSearchResults />)

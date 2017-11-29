@@ -1,9 +1,4 @@
-import list from './img/list.svg'
-import listActive from './img/list-active.svg'
-import clipboard from './img/clipboard.svg'
-import clipboardActive from './img/clipboard-active.svg'
-import tick from './img/tick.svg'
-import spinner from './img/spinner.svg'
+import { icons } from './Icon.js'
 
 const addResourceHint = hint => {
   const { rel, href, as, type } = hint
@@ -15,7 +10,7 @@ const addResourceHint = hint => {
   document.head.appendChild(link)
 }
 
-const preloadSvg = [ list, listActive, clipboard, clipboardActive, tick, spinner ]
+const preloadSvg = Object.keys(icons)
 
 const addResourceHints = () => {
   for (const svg of preloadSvg) {

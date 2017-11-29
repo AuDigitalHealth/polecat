@@ -7,15 +7,23 @@ import graph from './img/graph.svg'
 import graphActive from './img/graph-active.svg'
 import clipboard from './img/clipboard.svg'
 import clipboardActive from './img/clipboard-active.svg'
+import next from './img/next.svg'
+import nextActive from './img/next-active.svg'
+import previous from './img/previous.svg'
+import previousActive from './img/previous-active.svg'
 import tick from './img/tick.svg'
 
-const icons = {
+export const icons = {
   list,
   listActive,
   graph,
   graphActive,
   clipboard,
   clipboardActive,
+  next,
+  nextActive,
+  previous,
+  previousActive,
   tick,
 }
 
@@ -27,6 +35,7 @@ class Icon extends Component {
     height: PropTypes.number,
     alt: PropTypes.string,
     title: PropTypes.string,
+    className: PropTypes.string,
     onClick: PropTypes.func,
   }
 
@@ -53,11 +62,11 @@ class Icon extends Component {
   }
 
   render() {
-    const { type, hoverType, width, height, alt, title } = this.props
+    const { type, hoverType, width, height, alt, title, className } = this.props
     const { mouse } = this.state
     return (
       <img
-        className='icon'
+        className={className ? `icon ${className}` : 'icon'}
         src={icons[hoverType && mouse === 'hover' ? hoverType : type]}
         width={width}
         height={height}

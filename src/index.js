@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import http from 'axios'
 
-import App from './App'
+import Router from './Router'
 import addResourceHints from './resourceHints.js'
 import registerServiceWorker from './registerServiceWorker'
 
@@ -12,7 +12,7 @@ http
   .get('/config.json')
   .then(response => {
     const config = response.data
-    ReactDOM.render(<App config={config} />, document.getElementById('root'))
+    ReactDOM.render(<Router config={config} />, document.getElementById('root'))
   })
   .catch(error => console.error(error))
 addResourceHints()

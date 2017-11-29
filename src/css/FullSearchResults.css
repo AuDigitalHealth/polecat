@@ -1,5 +1,9 @@
-.full-search-results ol {
+.full-search-results {
   font-family: 'Helvetica Neue', sans-serif;
+  z-index: 100;
+}
+
+.full-search-results ol {
   font-size: 14px;
   margin: 0;
   padding: 0;

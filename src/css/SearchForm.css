@@ -1,7 +1,7 @@
 .search-form {
   font-family: 'Helvetica Neue', sans-serif;
   padding: 16px 0;
-  width: 260px;
+  width: 265px;
 }
 
 .search-form .text-field {
@@ -23,4 +23,23 @@
   border-radius: 6px;
   padding: 3px;
   font-size: 13px;
+}
+
+.search-submit {
+  background-color: #c2dcf2;
+  border-radius: 6px;
+  border: 1px solid #c2dcf2;
+  padding: 7px 27px 7px 7px;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  background: url(../img/search.svg) #c2dcf2 no-repeat center right 4px/18px;
+  cursor: pointer;
+  float: right;
+  outline: none;
+  text-align: left;
+  margin-top: 4px;
+}
+
+.search-submit:hover {
+  border: 1px solid #aaa;
 }

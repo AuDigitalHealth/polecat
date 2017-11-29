@@ -50,3 +50,17 @@ export async function getBundleConcepts(subject, bundle, options = {}) {
     }
   }
 }
+
+export const nextLinkFromBundle = bundle => {
+  if (!bundle || !bundle.link) return null
+  const next = bundle.link.find(l => l.relation === 'next')
+  if (!next || !next.url) return null
+  return next.url
+}
+
+export const previousLinkFromBundle = bundle => {
+  if (!bundle || !bundle.link) return null
+  const previous = bundle.link.find(l => l.relation === 'previous')
+  if (!previous || !previous.url) return null
+  return previous.url
+}

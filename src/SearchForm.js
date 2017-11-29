@@ -22,14 +22,42 @@ class SearchForm extends Component {
     super(props)
     this.state = { search: {} }
     this.handleChange = this.handleChange.bind(this)
+    this.handleSearchUpdate = this.handleSearchUpdate.bind(this)
   }
 
   handleChange(param, value) {
+    const { search } = this.state
+    const updatedSearch = { ...search, ...{ [param]: value } }
+    this.setState(() => ({ search: updatedSearch }))
+  }
+
+  handleSearchUpdate(event) {
     const { onSearchUpdate } = this.props
     const { search } = this.state
     if (onSearchUpdate) {
-      const updatedSearch = { ...search, ...{ [param]: value } }
-      onSearchUpdate(queryFromSearchObject(updatedSearch))
+      onSearchUpdate(queryFromSearchObject(search))
+    }
+    event.preventDefault()
+  }
+
+  componentDidMount() {
+    const { query } = this.props
+    if (query) {
+      const availableParams = availableMedParams.concat(
+          availableSubstanceParams
+        ),
+        searchParams = extractSearchParams(query, availableParams),
+        queryText = extractQueryText(query)
+      let nextSearch = {}
+      for (const param of searchParams) {
+        nextSearch = { ...nextSearch, ...{ [param[0]]: param[1] } }
+      }
+      if (queryText && queryText[queryText.length - 1] !== ':') {
+        nextSearch.text = queryText
+      }
+      this.setState(() => ({ search: nextSearch }))
+    } else {
+      this.setState(() => ({ search: {} }))
     }
   }
 
@@ -57,11 +85,12 @@ class SearchForm extends Component {
   render() {
     const { search } = this.state
     return (
-      <div className='search-form'>
+      <form className='search-form'>
         <TextField
           value={search.text}
           label='Contains text'
           onChange={value => this.handleChange('text', value)}
+          focusUponMount
         />
         <TextField
           value={search['ingredient-text']}
@@ -98,7 +127,14 @@ class SearchForm extends Component {
           label='Parent'
           onChange={value => this.handleChange('parent-text', value)}
         />
-      </div>
+        <button
+          className='search-submit'
+          type='submit'
+          onClick={this.handleSearchUpdate}
+        >
+          Search
+        </button>
+      </form>
     )
   }
 }

@@ -24,3 +24,13 @@ function hex(buffer) {
   // Join all the hex strings into one
   return hexCodes.join('')
 }
+
+export const formatNumber = number => {
+  if (typeof number !== 'number') return undefined
+  const numString = number.toString()
+  return [...numString].reduce((prev, curr, i, arr) => {
+    return arr.length - i - 1 !== 0 && (arr.length - i - 1) % 3 === 0
+      ? prev + curr + ','
+      : prev + curr
+  }, '')
+}

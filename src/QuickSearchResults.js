@@ -33,11 +33,31 @@ class QuickSearchResults extends Component {
     ),
     onSelectResult: PropTypes.func,
   }
-  static defaultProps = { results: [] }
 
   handleSelectResult(result) {
     const { onSelectResult } = this.props
     if (onSelectResult) onSelectResult(result)
+  }
+
+  render() {
+    return (
+      <div className='quick-search-results'>
+        {this.renderResultsOrNothing()}
+      </div>
+    )
+  }
+
+  renderResultsOrNothing() {
+    const { query, results } = this.props
+    if (query && results && results.length === 0) {
+      return <div className='no-results'>No results matching "{query}".</div>
+    } else if (results && results.length === 0) {
+      return <div className='no-results'>No results.</div>
+    } else if (results && results.length > 0) {
+      return <ol>{this.renderResults(results)}</ol>
+    } else {
+      return null
+    }
   }
 
   renderResults(results) {
@@ -61,19 +81,6 @@ class QuickSearchResults extends Component {
       <Link to={to} onClick={() => this.handleSelectResult(result)}>
         {codingToSnomedDisplay(result.coding)}
       </Link>
-    )
-  }
-
-  render() {
-    const { query, results } = this.props
-    return (
-      <div className='quick-search-results'>
-        {results && results.length === 0 ? (
-          <div className='no-results'>No results matching "{query}".</div>
-        ) : results ? (
-          <ol>{this.renderResults(results)}</ol>
-        ) : null}
-      </div>
     )
   }
 }

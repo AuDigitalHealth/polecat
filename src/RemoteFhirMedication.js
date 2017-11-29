@@ -9,11 +9,14 @@ import { opOutcomeFromJsonResponse } from './fhir/core.js'
 
 class RemoteFhirMedication extends Component {
   static propTypes = {
-    path: PropTypes.string.isRequired,
-    query: PropTypes.string,
+    resourceType: PropTypes.oneOf([ 'Medication', 'Substance' ]),
+    id: PropTypes.string.isRequired,
     fhirServer: PropTypes.string.isRequired,
     onLoadingChange: PropTypes.func,
     onError: PropTypes.func,
+  }
+  static defaultProps = {
+    resourceType: 'Medication',
   }
 
   constructor(props) {
@@ -27,9 +30,9 @@ class RemoteFhirMedication extends Component {
     this.setLoadingStatus = this.setLoadingStatus.bind(this)
   }
 
-  updateResource(fhirServer, path, query) {
+  updateResource(fhirServer, resourceType, id) {
     this.setLoadingStatus(true)
-    return this.getFhirResource(fhirServer, path, query)
+    return this.getFhirResource(fhirServer, `/${resourceType}/${id}`)
       .then(resource => this.setState({ resource }))
       .then(() => this.setLoadingStatus(false))
       .catch(error => this.handleError(error))
@@ -62,8 +65,9 @@ class RemoteFhirMedication extends Component {
       if (opOutcome) throw opOutcome
     } catch (error) {}
     if (response.status === 404) {
+      const { resourceType, id } = this.props
       throw new Error(
-        `The resource you requested was not found: "${this.props.path}"`
+        `The resource you requested was not found: ${resourceType}/${id}`
       )
     } else {
       throw new Error(response.statusText || response.status)
@@ -109,7 +113,9 @@ class RemoteFhirMedication extends Component {
     this.getFhirResource(
       fhirServer,
       '/Medication',
-      `?package-item=Medication/${parentId}&medication-resource-type=${resourceType}`
+      `?package-item=Medication/${parentId}&medication-resource-type=${
+        resourceType
+      }`
     ).then(resource =>
       this.setState(prevState => ({
         packageBundles: {
@@ -127,14 +133,14 @@ class RemoteFhirMedication extends Component {
   }
 
   componentWillMount() {
-    const { fhirServer, path, query } = this.props
-    this.updateResource(fhirServer, path, query)
+    const { fhirServer, resourceType, id } = this.props
+    this.updateResource(fhirServer, resourceType, id)
   }
 
   componentWillReceiveProps(nextProps) {
     if (!isEqual(this.props, nextProps)) {
-      const { fhirServer, path, query } = nextProps
-      this.updateResource(fhirServer, path, query)
+      const { fhirServer, resourceType, id } = nextProps
+      this.updateResource(fhirServer, resourceType, id)
     }
     // Make sure related resources and bundles don't hang around when changing
     // the subject resource.
