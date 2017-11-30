@@ -43,6 +43,7 @@ class Search extends Component {
     this.handleSelectResult = this.handleSelectResult.bind(this)
     this.setLoadingStatus = this.setLoadingStatus.bind(this)
     this.handleQuickSearchFocus = this.handleQuickSearchFocus.bind(this)
+    this.handleQuickSearchKeyDown = this.handleQuickSearchKeyDown.bind(this)
     this.handleToggleAdvanced = this.handleToggleAdvanced.bind(this)
     this.handleNextClick = this.handleNextClick.bind(this)
     this.handlePreviousClick = this.handlePreviousClick.bind(this)
@@ -58,6 +59,7 @@ class Search extends Component {
         this.setState(() => ({
           bundle: parsed.bundle,
           results: parsed.results,
+          quickSearchOpen: true,
         }))
       )
       .then(() => this.setLoadingStatus(false))
@@ -160,6 +162,13 @@ class Search extends Component {
     this.setState(() => ({ quickSearchOpen: true }))
   }
 
+  handleQuickSearchKeyDown(event) {
+    // Close the quick search if Escape is pressed.
+    if (event.key === 'Escape') {
+      this.setState(() => ({ quickSearchOpen: false }))
+    }
+  }
+
   handleSelectResult() {
     this.setState(() => ({ quickSearchOpen: false, advanced: false }))
   }
@@ -246,6 +255,7 @@ class Search extends Component {
             className='search-input'
             onChange={this.handleQueryUpdate}
             onFocus={this.handleQuickSearchFocus}
+            onKeyDown={this.handleQuickSearchKeyDown}
             focusUponMount={focusUponMount}
           />
           <Expand

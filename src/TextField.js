@@ -10,6 +10,7 @@ class TextField extends Component {
     className: PropTypes.string,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
+    onKeyDown: PropTypes.func,
     focusUponMount: PropTypes.bool,
   }
   static defaultProps = {
@@ -21,6 +22,7 @@ class TextField extends Component {
     this.state = { value: this.props.value }
     this.handleChange = this.handleChange.bind(this)
     this.handleFocus = this.handleFocus.bind(this)
+    this.handleKeyDown = this.handleKeyDown.bind(this)
   }
 
   handleChange(event) {
@@ -39,6 +41,14 @@ class TextField extends Component {
     const { onFocus } = this.props
     if (onFocus) {
       onFocus()
+    }
+  }
+
+  handleKeyDown(event) {
+    const { onKeyDown } = this.props
+    console.log('handleKeyDown', event.key)
+    if (onKeyDown) {
+      onKeyDown(event)
     }
   }
 
@@ -61,6 +71,7 @@ class TextField extends Component {
       disabled,
       onChange: this.handleChange,
       onFocus: this.handleFocus,
+      onKeyDown: this.handleKeyDown,
       ref: el => (this.textInput = el),
     }
     return (
