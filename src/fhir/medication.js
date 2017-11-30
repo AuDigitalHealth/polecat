@@ -212,7 +212,9 @@ const urlForExtension = name =>
   }[name])
 
 export const urlForArtgId = id =>
-  `http://search.tga.gov.au/s/search.html?collection=tga-artg&profile=record&meta_i=${id}`
+  `http://search.tga.gov.au/s/search.html?collection=tga-artg&profile=record&meta_i=${
+    id
+  }`
 
 // Filter functions for finding different types of information within the
 // extension.
@@ -344,6 +346,8 @@ const fhirToAmtTypes = {
 }
 
 const amtToFhirTypes = invert(fhirToAmtTypes)
+
+export const amtConceptTypes = Object.values(fhirToAmtTypes)
 
 // Mapping from FHIR Medication type to AMT concept type.
 export const amtConceptTypeFor = fhirType => fhirToAmtTypes[fhirType]

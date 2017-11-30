@@ -106,7 +106,10 @@ const getMedicationParamFor = (param, value) => {
     case 'id':
       return `code=http://snomed.info/sct|${value}`
     case 'type':
-      return `medication-resource-type=${fhirMedicationTypeFor(value)}`
+      return `medication-resource-type=${value
+        .split(',')
+        .map(v => fhirMedicationTypeFor(v))
+        .join(',')}`
     case 'pbs':
       return `subsidy-code=http://pbs.gov.au/code/item|${value}`
     case 'artg':

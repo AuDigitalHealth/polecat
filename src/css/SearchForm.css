@@ -15,6 +15,28 @@
   display: block;
 }
 
+.search-form .concept-type-toggle {
+  margin-bottom: 5px;
+}
+
+.search-form .concept-type-toggle .toggles {
+  justify-content: flex-end;
+}
+
+.search-form .concept-type-toggle label {
+  padding: 4px 0 4px 4px;
+}
+
+.search-form .concept-type-toggle label span {
+  font-size: 14px;
+  min-width: 107px;
+  align-self: stretch;
+}
+
+.search-form .concept-type-toggle .toggle {
+  margin: 0 0 3px 3px;
+}
+
 .search-form .text-field input {
   position: absolute;
   top: 0;

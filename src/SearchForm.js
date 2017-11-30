@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import TextField from './TextField.js'
+import ConceptTypeToggle from './ConceptTypeToggle.js'
 import {
   availableMedParams,
   availableSubstanceParams,
@@ -126,6 +127,11 @@ class SearchForm extends Component {
           value={search['parent-text']}
           label='Parent'
           onChange={value => this.handleChange('parent-text', value)}
+        />
+        <ConceptTypeToggle
+          value={search.type ? search.type.split(',') : null}
+          label='Include only'
+          onChange={value => this.handleChange('type', value.join(','))}
         />
         <button
           className='search-submit'
