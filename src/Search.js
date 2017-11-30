@@ -34,7 +34,7 @@ class Search extends Component {
 
   constructor(props) {
     super(props)
-    this.state = { advanced: false }
+    this.state = { quickSearchOpen: false, advanced: false }
     this.handleQueryUpdate = this.handleQueryUpdate.bind(this)
     this.throttledQueryUpdate = throttle(
       this.throttledQueryUpdate.bind(this),
@@ -42,6 +42,7 @@ class Search extends Component {
     )
     this.handleSelectResult = this.handleSelectResult.bind(this)
     this.setLoadingStatus = this.setLoadingStatus.bind(this)
+    this.handleQuickSearchFocus = this.handleQuickSearchFocus.bind(this)
     this.handleToggleAdvanced = this.handleToggleAdvanced.bind(this)
     this.handleNextClick = this.handleNextClick.bind(this)
     this.handlePreviousClick = this.handlePreviousClick.bind(this)
@@ -155,9 +156,12 @@ class Search extends Component {
     throw new Error(response.statusText || response.status)
   }
 
+  handleQuickSearchFocus() {
+    this.setState(() => ({ quickSearchOpen: true }))
+  }
+
   handleSelectResult() {
-    this.handleQueryUpdate(null)
-    this.setState(() => ({ advanced: false }))
+    this.setState(() => ({ quickSearchOpen: false, advanced: false }))
   }
 
   handleToggleAdvanced() {
@@ -225,7 +229,12 @@ class Search extends Component {
 
   renderBasicSearch() {
     const { query: queryFromProps, focusUponMount } = this.props
-    const { query: queryFromState, bundle, results } = this.state
+    const {
+      query: queryFromState,
+      bundle,
+      results,
+      quickSearchOpen,
+    } = this.state
     // If the query has been updated within state, use that over props.
     const query = queryFromState || queryFromProps
     return (
@@ -236,6 +245,7 @@ class Search extends Component {
             placeholder='Search'
             className='search-input'
             onChange={this.handleQueryUpdate}
+            onFocus={this.handleQuickSearchFocus}
             focusUponMount={focusUponMount}
           />
           <Expand
@@ -244,12 +254,14 @@ class Search extends Component {
             onToggle={this.handleToggleAdvanced}
           />
         </div>
-        <QuickSearchResults
-          query={query}
-          results={results}
-          totalResults={bundle ? bundle.total : null}
-          onSelectResult={this.handleSelectResult}
-        />
+        {quickSearchOpen ? (
+          <QuickSearchResults
+            query={query}
+            results={results}
+            totalResults={bundle ? bundle.total : null}
+            onSelectResult={this.handleSelectResult}
+          />
+        ) : null}
       </div>
     )
   }

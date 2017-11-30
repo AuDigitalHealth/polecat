@@ -9,6 +9,7 @@ class TextField extends Component {
     disabled: PropTypes.bool,
     className: PropTypes.string,
     onChange: PropTypes.func,
+    onFocus: PropTypes.func,
     focusUponMount: PropTypes.bool,
   }
   static defaultProps = {
@@ -19,6 +20,7 @@ class TextField extends Component {
     super(props)
     this.state = { value: this.props.value }
     this.handleChange = this.handleChange.bind(this)
+    this.handleFocus = this.handleFocus.bind(this)
   }
 
   handleChange(event) {
@@ -31,6 +33,13 @@ class TextField extends Component {
         }
       }
     )
+  }
+
+  handleFocus(event) {
+    const { onFocus } = this.props
+    if (onFocus) {
+      onFocus()
+    }
   }
 
   componentDidMount() {
@@ -51,6 +60,7 @@ class TextField extends Component {
       value: value || '',
       disabled,
       onChange: this.handleChange,
+      onFocus: this.handleFocus,
       ref: el => (this.textInput = el),
     }
     return (
