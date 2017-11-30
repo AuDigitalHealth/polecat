@@ -222,6 +222,7 @@ class Search extends Component {
             bundle: parsed.bundle,
             results: parsed.results,
             advanced: true,
+            query,
           }))
         )
         .then(() => this.setLoadingStatus(false))
