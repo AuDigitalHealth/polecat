@@ -34,7 +34,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "update-test-files": "node scripts/updateTestFiles.js"
+    "update-test-files": "node scripts/updateTestFiles.js",
+    "loc": "sloc --exclude \".*\\.(css|svg|test.js|stories.js|js.snap)\" src"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.12",
@@ -49,6 +50,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "sinon": "^4.1.2",
+    "sloc": "^0.2.0",
     "storybook-addon-smart-knobs": "^3.2.10",
     "storybook-router": "^0.3.0"
   }
