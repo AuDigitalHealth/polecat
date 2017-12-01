@@ -26,6 +26,7 @@
   margin-right: 64px;
   overflow: hidden;
   display: block;
+  cursor: pointer;
 }
 
 .quick-search-results .search-result .display a {

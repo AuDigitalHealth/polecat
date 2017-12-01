@@ -46,7 +46,6 @@ class TextField extends Component {
 
   handleKeyDown(event) {
     const { onKeyDown } = this.props
-    console.log('handleKeyDown', event.key)
     if (onKeyDown) {
       onKeyDown(event)
     }

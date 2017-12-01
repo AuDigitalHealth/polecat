@@ -1,0 +1,46 @@
+.medication-search-field {
+  font-family: 'Helvetica Neue', sans-serif;
+  position: relative;
+}
+
+.medication-search-field .text-field input {
+  border: 1px solid #666;
+  border-radius: 6px;
+  padding: 3px;
+  font-size: 13px;
+}
+
+.medication-search-field .quick-search-results {
+  position: absolute;
+  top: 20px;
+  right: -246px;
+  width: 400px;
+  z-index: 99;
+}
+
+.medication-search-field .quick-search-results ol {
+  background-color: white;
+}
+
+.medication-search-field .selected-code {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #666;
+  color: white;
+  border-radius: 6px;
+  padding: 4px 18px 4px 6px;
+  font-size: 13px;
+  max-width: 130px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.medication-search-field .clear-code {
+  position: absolute;
+  top: 0px;
+  right: 6px;
+  font-size: 25px;
+  cursor: pointer;
+}

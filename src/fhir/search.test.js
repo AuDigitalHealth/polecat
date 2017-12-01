@@ -60,12 +60,12 @@ describe('pathForQuery', () => {
     // Package
     'package:54112011000036105':
       '/Medication?package-item=Medication/54112011000036105&_summary=true&_count=20',
+    'not-package:6140011000036103':
+      '/Medication?package-item:not=Medication/6140011000036103&_summary=true&_count=20',
     'package-text:nexium':
       '/Medication?package-item:text=nexium&_summary=true&_count=20',
-    'package-not:6140011000036103':
-      '/Medication?package-item:not=Medication/6140011000036103&_summary=true&_count=20',
     // Ingredient
-    'ingredient:1978011000036103 ingredient:2442011000036104 ingredient-not:2525011000036101':
+    'ingredient:1978011000036103 ingredient:2442011000036104 not-ingredient:2525011000036101':
       '/Medication?ingredient=Substance/1978011000036103&ingredient=Substance/2442011000036104&ingredient:not=Substance/2525011000036101&_summary=true&_count=20',
     'ingredient-text:paracetamol ingredient-text:codeine':
       '/Medication?ingredient:text=paracetamol&ingredient:text=codeine&_summary=true&_count=20',

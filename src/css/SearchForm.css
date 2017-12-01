@@ -4,11 +4,13 @@
   width: 265px;
 }
 
-.search-form .text-field {
+.search-form .text-field,
+.search-form .medication-search-field {
   margin-bottom: 12px;
 }
 
-.search-form .text-field label {
+.search-form .text-field label,
+.search-form .medication-search-field label {
   font-size: 14px;
   padding: 4px;
   position: relative;

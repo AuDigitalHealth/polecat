@@ -38,7 +38,7 @@ class Search extends Component {
     this.handleQueryUpdate = this.handleQueryUpdate.bind(this)
     this.throttledQueryUpdate = throttle(
       this.throttledQueryUpdate.bind(this),
-      this.props.minRequestFrequency
+      props.minRequestFrequency
     )
     this.handleSelectResult = this.handleSelectResult.bind(this)
     this.setLoadingStatus = this.setLoadingStatus.bind(this)
@@ -50,7 +50,7 @@ class Search extends Component {
     this.handleError = this.handleError.bind(this)
   }
 
-  throttledQueryUpdate(query, requestFunc) {
+  throttledQueryUpdate(query) {
     const { fhirServer } = this.props
     this.setLoadingStatus(true)
     this.getSearchResultsFromQuery(fhirServer, query)
@@ -278,7 +278,7 @@ class Search extends Component {
   }
 
   renderAdvancedSearch() {
-    const { query: queryFromProps } = this.props
+    const { query: queryFromProps, fhirServer } = this.props
     const { query: queryFromState, bundle, results } = this.state
     // If the query has been updated within state, use that over props.
     const query = queryFromState || queryFromProps
@@ -292,7 +292,11 @@ class Search extends Component {
             disabled
             onChange={this.handleQueryUpdate}
           />
-          <SearchForm query={query} onSearchUpdate={this.handleQueryUpdate} />
+          <SearchForm
+            fhirServer={fhirServer}
+            query={query}
+            onSearchUpdate={this.handleQueryUpdate}
+          />
           <Expand
             active
             className='search-toggle-advanced'

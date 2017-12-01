@@ -34,7 +34,11 @@ class QuickSearchResults extends Component {
       })
     ),
     totalResults: PropTypes.number,
+    renderLinks: PropTypes.bool,
     onSelectResult: PropTypes.func,
+  }
+  static defaultProps = {
+    renderLinks: true,
   }
 
   handleSelectResult(result) {
@@ -69,14 +73,18 @@ class QuickSearchResults extends Component {
   }
 
   renderResults() {
-    const { results } = this.props
+    const { results, renderLinks } = this.props
     if (!results) return
     return results.map((result, i) => (
       <li key={i} className='search-result'>
         <span className={`type type-${result.type}`.toLowerCase()}>
           {result.type}
         </span>
-        <span className='display'>{this.renderLinkToResult(result)}</span>
+        <span className='display'>
+          {renderLinks
+            ? this.renderLinkToResult(result)
+            : this.renderUnlinkedResult(result)}
+        </span>
       </li>
     ))
   }
@@ -104,6 +112,14 @@ class QuickSearchResults extends Component {
       <Link to={to} onClick={() => this.handleSelectResult(result)}>
         {codingToSnomedDisplay(result.coding)}
       </Link>
+    )
+  }
+
+  renderUnlinkedResult(result) {
+    return (
+      <div onClick={() => this.handleSelectResult(result)}>
+        {codingToSnomedDisplay(result.coding)}
+      </div>
     )
   }
 }

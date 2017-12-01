@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import TextField from './TextField.js'
 import ConceptTypeToggle from './ConceptTypeToggle.js'
+import MedicationSearchField from './MedicationSearchField.js'
 import {
   availableMedParams,
   availableSubstanceParams,
@@ -15,6 +16,7 @@ import './css/SearchForm.css'
 
 class SearchForm extends Component {
   static propTypes = {
+    fhirServer: PropTypes.string.isRequired,
     query: PropTypes.string,
     onSearchUpdate: PropTypes.func,
   }
@@ -23,6 +25,7 @@ class SearchForm extends Component {
     super(props)
     this.state = { search: {} }
     this.handleChange = this.handleChange.bind(this)
+    this.handleClear = this.handleClear.bind(this)
     this.handleSearchUpdate = this.handleSearchUpdate.bind(this)
   }
 
@@ -30,6 +33,25 @@ class SearchForm extends Component {
     const { search } = this.state
     const updatedSearch = { ...search, ...{ [param]: value } }
     this.setState(() => ({ search: updatedSearch }))
+  }
+
+  handleCodingChange(param, value) {
+    const { search } = this.state
+    // Always nullify the corresponding text value when receiving a coding.
+    const updatedSearch = {
+      ...search,
+      ...{ [param]: value, [`${param}-text`]: undefined },
+    }
+    this.setState(() => ({ search: updatedSearch }))
+  }
+
+  handleClear(...params) {
+    const { search } = this.state
+    const updatedSearch = {}
+    for (const param of params) {
+      updatedSearch[param] = undefined
+    }
+    this.setState(() => ({ search: { ...search, ...updatedSearch } }))
   }
 
   handleSearchUpdate(event) {
@@ -84,6 +106,7 @@ class SearchForm extends Component {
   }
 
   render() {
+    const { fhirServer } = this.props
     const { search } = this.state
     return (
       <form className='search-form'>
@@ -93,10 +116,15 @@ class SearchForm extends Component {
           onChange={value => this.handleChange('text', value)}
           focusUponMount
         />
-        <TextField
-          value={search['ingredient-text']}
+        <MedicationSearchField
+          fhirServer={fhirServer}
+          codingValue={search['ingredient']}
+          textValue={search['ingredient-text']}
           label='Ingredient'
-          onChange={value => this.handleChange('ingredient-text', value)}
+          searchPath={text => `/Substance?code:text=${text}`}
+          onCodingChange={value => this.handleCodingChange('ingredient', value)}
+          onTextChange={value => this.handleChange('ingredient-text', value)}
+          onClear={() => this.handleClear('ingredient', 'ingredient-text')}
         />
         <TextField
           value={search['form-text']}

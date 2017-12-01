@@ -1,6 +1,10 @@
 import pick from 'lodash.pick'
 
-import { fhirMedicationTypeFor } from './medication.js'
+import {
+  fhirMedicationTypeFor,
+  codingToSnomedCode,
+  codingToSnomedDisplay,
+} from './medication.js'
 
 export const availableMedParams = [
   'id',
@@ -12,15 +16,15 @@ export const availableMedParams = [
   'container',
   'container-text',
   'form',
-  'form-text',
   'not-form',
+  'form-text',
   'parent',
   'parent-text',
   'package',
+  'not-package',
   'package-text',
-  'package-not',
   'ingredient',
-  'ingredient-not',
+  'not-ingredient',
   'ingredient-text',
 ]
 
@@ -52,9 +56,39 @@ export const queryFromSearchObject = search => {
 }
 
 const filterSearchObject = (search, params) => {
-  const result = Object.entries(pick(search, params))
+  let result = Object.entries(pick(search, params))
   // Filter any params with null, undefined or empty string values.
-  return result.filter(param => param[1])
+  result = result.filter(param => param[1])
+  // Convert any params that can be SNOMED codes or coding objects.
+  result = result.map(param => {
+    if (
+      [
+        'container',
+        'package',
+        'ingredient',
+        'not-package',
+        'not-ingredient',
+      ].includes(param[0])
+    ) {
+      return [ param[0], codeFromCodeOrSnomedCoding(param[1]) ]
+    } else {
+      return param
+    }
+  })
+  // Convert any params that can be arrays of code-or-codings.
+  return result.map(param => {
+    if (['parent'].includes(param)) {
+      return [
+        param[0],
+        param[1]
+          .split(',')
+          .map(p => codeFromCodeOrSnomedCoding(p))
+          .join(','),
+      ]
+    } else {
+      return param
+    }
+  })
 }
 
 const pathFromParams = (medParams, substanceParams) => {
@@ -121,7 +155,7 @@ const getMedicationParamFor = (param, value) => {
     case 'brand-text':
       return `brand:text=${value}`
     case 'container':
-      return `container=http://snomed.info/sct|${value}`
+      return `container=http://snomed.info/sct|${codeFromCodeDisplay(value)}`
     case 'container-text':
       return `container:text=${value}`
     case 'form':
@@ -133,20 +167,21 @@ const getMedicationParamFor = (param, value) => {
     case 'parent':
       return `parent=${value
         .split(',')
+        .map(code => codeFromCodeDisplay(code))
         .map(id => `Medication/${id}`)
         .join(',')}`
     case 'parent-text':
       return `parent:text=${value}`
     case 'package':
-      return `package-item=Medication/${value}`
+      return `package-item=Medication/${codeFromCodeDisplay(value)}`
+    case 'not-package':
+      return `package-item:not=Medication/${codeFromCodeDisplay(value)}`
     case 'package-text':
       return `package-item:text=${value}`
-    case 'package-not':
-      return `package-item:not=Medication/${value}`
     case 'ingredient':
-      return `ingredient=Substance/${value}`
-    case 'ingredient-not':
-      return `ingredient:not=Substance/${value}`
+      return `ingredient=Substance/${codeFromCodeDisplay(value)}`
+    case 'not-ingredient':
+      return `ingredient:not=Substance/${codeFromCodeDisplay(value)}`
     case 'ingredient-text':
       return `ingredient:text=${value}`
     case 'text':
@@ -167,3 +202,20 @@ const getSubstanceParamFor = (param, value) => {
       throw new Error(`Unknown Substance parameter encountered: ${param}`)
   }
 }
+
+const codeFromCodeOrSnomedCoding = codeOrSnomedCoding => {
+  if (typeof codeOrSnomedCoding === 'string') {
+    return codeOrSnomedCoding
+  } else {
+    return codeDisplayFromCoding(codeOrSnomedCoding)
+  }
+}
+
+export const codeDisplayFromCoding = coding =>
+  `${codingToSnomedCode(coding)}|${codingToSnomedDisplay(coding)}`
+export const codeFromCodeDisplay = codeDisplay => codeDisplay.split('|')[0]
+export const displayFromCodeDisplay = codeDisplay => codeDisplay.split('|')[1]
+export const displayOrCoding = codeDisplay =>
+  displayFromCodeDisplay(codeDisplay)
+    ? displayFromCodeDisplay(codeDisplay)
+    : codeFromCodeDisplay(codeDisplay)
