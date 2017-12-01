@@ -45,22 +45,24 @@ class ConceptTypeToggle extends Component {
     const { value } = this.props
     return (
       <div className='toggles'>
-        {amtConceptTypes.filter(t => t !== 'substance').map(type => {
-          const on = value && value.includes(type)
-          return (
-            <div
-              className={
-                on
-                  ? `toggle toggle-${type.toLowerCase()} toggle-on`
-                  : `toggle toggle-${type.toLowerCase()}`
-              }
-              key={type}
-              onClick={() => this.handleChange(type, !on)}
-            >
-              {type}
-            </div>
-          )
-        })}
+        {amtConceptTypes
+          .filter(t => t !== 'substance' && t !== 'TP')
+          .map(type => {
+            const on = value && value.includes(type)
+            return (
+              <div
+                className={
+                  on
+                    ? `toggle toggle-${type.toLowerCase()} toggle-on`
+                    : `toggle toggle-${type.toLowerCase()}`
+                }
+                key={type}
+                onClick={() => this.handleChange(type, !on)}
+              >
+                {type}
+              </div>
+            )
+          })}
       </div>
     )
   }
