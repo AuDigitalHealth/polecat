@@ -51,10 +51,8 @@ describe('pathForQuery', () => {
     // Parent
     'parent:931803011000036105':
       '/Medication?parent=Medication/931803011000036105&_summary=true&_count=20',
-    'parent:931803011000036105,33623011000036103':
-      '/Medication?parent=Medication/931803011000036105,Medication/33623011000036103&_summary=true&_count=20',
-    'parent:931803011000036105,33623011000036103 parent:77446011000036105':
-      '/Medication?parent=Medication/931803011000036105,Medication/33623011000036103&parent=Medication/77446011000036105&_summary=true&_count=20',
+    'parent:931803011000036105 parent:77446011000036105':
+      '/Medication?parent=Medication/931803011000036105&parent=Medication/77446011000036105&_summary=true&_count=20',
     'parent-text:paracetamol':
       '/Medication?parent:text=paracetamol&_summary=true&_count=20',
     // Package
@@ -91,6 +89,18 @@ describe('queryFromSearchObject', () => {
     [
       { ingredient: '73620011000036103|death adder antivenom', text: 'adder' },
       'ingredient:"73620011000036103|death adder antivenom" adder',
+    ],
+    [
+      {
+        container: [
+          {
+            system: 'http://snomed.info/sct',
+            code: '51915011000036106',
+            display: 'poison bottle',
+          },
+        ],
+      },
+      'container:"51915011000036106|poison bottle"',
     ],
   ]
 

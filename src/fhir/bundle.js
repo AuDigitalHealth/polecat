@@ -6,6 +6,7 @@ import {
   groupUri,
   emptyConcepts,
 } from './medication.js'
+import { queryFromSearchObject } from './search.js'
 import { sha256 } from '../util.js'
 
 // Get concepts from the supplied bundle, relating them to the subject concept.
@@ -30,7 +31,7 @@ export async function getBundleConcepts(subject, bundle, options = {}) {
     // The group's code is a hash of the concept data within the group.
     const groupCode = await sha256(JSON.stringify(concepts))
     const query = queryForGrouping(
-      codingToSnomedCode(subject.coding),
+      subject.coding,
       groupRelationshipType,
       concepts[0].type
     )
@@ -58,12 +59,18 @@ export async function getBundleConcepts(subject, bundle, options = {}) {
   }
 }
 
-const queryForGrouping = (code, relationshipType, childType) => {
+const queryForGrouping = (coding, relationshipType, childType) => {
   switch (relationshipType) {
     case `is-component-of`:
-      return `package:${code} type:${amtConceptTypeFor(childType)}`
+      return queryFromSearchObject({
+        package: coding,
+        type: amtConceptTypeFor(childType),
+      })
     default:
-      return `parent:${code} type:${amtConceptTypeFor(childType)}`
+      return queryFromSearchObject({
+        parent: coding,
+        type: amtConceptTypeFor(childType),
+      })
   }
 }
 

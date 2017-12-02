@@ -42,7 +42,7 @@ Object {
           "type": "UPDSF",
         },
       ],
-      "query": "parent:21360011000036101 type:MPUU",
+      "query": "type:MPUU parent:\\"21360011000036101|amoxicillin + clavulanic acid\\"",
       "total": 79,
       "type": "group",
     },

@@ -126,6 +126,18 @@ class SearchForm extends Component {
           onTextChange={value => this.handleChange('ingredient-text', value)}
           onClear={() => this.handleClear('ingredient', 'ingredient-text')}
         />
+        <MedicationSearchField
+          fhirServer={fhirServer}
+          codingValue={search['package']}
+          textValue={search['package-text']}
+          label='Package item'
+          searchPath={text =>
+            `/Medication?medication-resource-type=BPSF,UPDSF&_text=${text}`
+          }
+          onCodingChange={value => this.handleCodingChange('package', value)}
+          onTextChange={value => this.handleChange('package-text', value)}
+          onClear={() => this.handleClear('package', 'package-text')}
+        />
         <TextField
           value={search['form-text']}
           label='Form'
@@ -151,10 +163,19 @@ class SearchForm extends Component {
           label='ARTG ID'
           onChange={value => this.handleChange('artg', value)}
         />
-        <TextField
-          value={search['parent-text']}
+        <MedicationSearchField
+          fhirServer={fhirServer}
+          codingValue={search['parent']}
+          textValue={search['parent-text']}
           label='Parent'
-          onChange={value => this.handleChange('parent-text', value)}
+          searchPath={text =>
+            `/Medication?medication-resource-type=BPG,brand,UPG,UPDSF,UPD&_text=${
+              text
+            }`
+          }
+          onCodingChange={value => this.handleCodingChange('parent', value)}
+          onTextChange={value => this.handleChange('parent-text', value)}
+          onClear={() => this.handleClear('parent', 'parent-text')}
         />
         <ConceptTypeToggle
           value={search.type ? search.type.split(',') : null}

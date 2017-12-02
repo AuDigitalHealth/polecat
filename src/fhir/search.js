@@ -50,7 +50,6 @@ export const queryFromSearchObject = search => {
     search,
     availableMedParams.concat(availableSubstanceParams)
   )
-  console.log('queryFromSearchObject', params)
   let query = params.map(p => `${p[0]}:${p[1]}`).join(' ')
   if (search.text) query += query ? ` ${search.text}` : search.text
   return query
@@ -64,30 +63,21 @@ const filterSearchObject = (search, params) => {
   result = result.map(param => {
     if (
       [
+        'brand',
         'container',
+        'form',
+        'not-form',
         'package',
-        'ingredient',
         'not-package',
+        'ingredient',
         'not-ingredient',
+        'parent',
       ].includes(param[0])
     ) {
       return [ param[0], codeFromCodeOrSnomedCoding(param[1]) ]
     } else {
       return param
     }
-  })
-  // Convert any params that can be arrays of code-or-codings.
-  result = result.map(param => {
-    if (['parent'].includes(param)) {
-      return [
-        param[0],
-        param[1]
-          .split(',')
-          .map(p => codeFromCodeOrSnomedCoding(p))
-          .join(','),
-      ]
-    }
-    return param
   })
   // Quote any values that contain spaces.
   return result.map(param => {
@@ -172,11 +162,7 @@ const getMedicationParamFor = (param, value) => {
     case 'not-form':
       return `form:not=http://snomed.info/sct|${value}`
     case 'parent':
-      return `parent=${value
-        .split(',')
-        .map(code => codeFromCodeDisplay(code))
-        .map(id => `Medication/${id}`)
-        .join(',')}`
+      return `parent=Medication/${codeFromCodeDisplay(value)}`
     case 'parent-text':
       return `parent:text=${value}`
     case 'package':
