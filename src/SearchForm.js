@@ -57,10 +57,10 @@ class SearchForm extends Component {
   handleSearchUpdate(event) {
     const { onSearchUpdate } = this.props
     const { search } = this.state
+    event.preventDefault()
     if (onSearchUpdate) {
       onSearchUpdate(queryFromSearchObject(search))
     }
-    event.preventDefault()
   }
 
   componentDidMount() {

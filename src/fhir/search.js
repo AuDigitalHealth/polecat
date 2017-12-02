@@ -50,6 +50,7 @@ export const queryFromSearchObject = search => {
     search,
     availableMedParams.concat(availableSubstanceParams)
   )
+  console.log('queryFromSearchObject', params)
   let query = params.map(p => `${p[0]}:${p[1]}`).join(' ')
   if (search.text) query += query ? ` ${search.text}` : search.text
   return query
@@ -76,7 +77,7 @@ const filterSearchObject = (search, params) => {
     }
   })
   // Convert any params that can be arrays of code-or-codings.
-  return result.map(param => {
+  result = result.map(param => {
     if (['parent'].includes(param)) {
       return [
         param[0],
@@ -85,9 +86,15 @@ const filterSearchObject = (search, params) => {
           .map(p => codeFromCodeOrSnomedCoding(p))
           .join(','),
       ]
-    } else {
-      return param
     }
+    return param
+  })
+  // Quote any values that contain spaces.
+  return result.map(param => {
+    if (param[1].match(/\s/)) {
+      return [ param[0], `"${param[1]}"` ]
+    }
+    return param
   })
 }
 

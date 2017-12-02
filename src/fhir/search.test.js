@@ -1,4 +1,4 @@
-import { pathForQuery } from './search.js'
+import { pathForQuery, queryFromSearchObject } from './search.js'
 
 describe('pathForQuery', () => {
   const expectedResults = {
@@ -69,11 +69,34 @@ describe('pathForQuery', () => {
       '/Medication?ingredient=Substance/1978011000036103&ingredient=Substance/2442011000036104&ingredient:not=Substance/2525011000036101&_summary=true&_count=20',
     'ingredient-text:paracetamol ingredient-text:codeine':
       '/Medication?ingredient:text=paracetamol&ingredient:text=codeine&_summary=true&_count=20',
+    // Code and display
+    'parent:21433011000036107|paracetamol':
+      '/Medication?parent=Medication/21433011000036107&_summary=true&_count=20',
+    // Quoted strings
+    'ingredient:"73620011000036103|death adder antivenom"':
+      '/Medication?ingredient=Substance/73620011000036103&_summary=true&_count=20',
+    'ingredient:"73620011000036103|death adder antivenom" adder':
+      '/Medication?ingredient=Substance/73620011000036103&_text=adder&_summary=true&_count=20',
   }
 
   for (const query in expectedResults) {
     it(`should return correct result for ${query}`, () => {
       expect(pathForQuery(query)).toEqual(expectedResults[query])
+    })
+  }
+})
+
+describe('queryFromSearchObject', () => {
+  const expectedResults = [
+    [
+      { ingredient: '73620011000036103|death adder antivenom', text: 'adder' },
+      'ingredient:"73620011000036103|death adder antivenom" adder',
+    ],
+  ]
+
+  for (const result of expectedResults) {
+    it(`should return correct query for ${JSON.stringify(result[0])}`, () => {
+      expect(queryFromSearchObject(result[0])).toEqual(result[1])
     })
   }
 })
