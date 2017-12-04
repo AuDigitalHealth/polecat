@@ -10,6 +10,7 @@ import FullSearchResults from './FullSearchResults.js'
 import SearchForm from './SearchForm.js'
 import SearchSummary from './SearchSummary.js'
 import Expand from './Expand.js'
+import Loading from './Loading.js'
 import { searchPathFromQuery } from './Router.js'
 import { opOutcomeFromJsonResponse } from './fhir/core.js'
 import { sniffFormat } from './fhir/restApi'
@@ -24,7 +25,6 @@ class Search extends Component {
     fhirServer: PropTypes.string.isRequired,
     query: PropTypes.string,
     minRequestFrequency: PropTypes.number,
-    onLoadingChange: PropTypes.func,
     onError: PropTypes.func,
     focusUponMount: PropTypes.bool,
   }
@@ -101,7 +101,9 @@ class Search extends Component {
   }
 
   async parseSearchResults(bundle) {
-    if (!bundle || bundle.total === 0) return []
+    if (!bundle || bundle.total === 0) {
+      return { bundle, results: [] }
+    }
     return {
       bundle,
       results: bundle.entry
@@ -111,9 +113,7 @@ class Search extends Component {
   }
 
   setLoadingStatus(loading) {
-    if (this.props.onLoadingChange) {
-      this.props.onLoadingChange(loading)
-    }
+    this.setState(() => ({ loading }))
   }
 
   handleQueryUpdate(query) {
@@ -244,6 +244,7 @@ class Search extends Component {
       bundle,
       results,
       quickSearchOpen,
+      loading,
     } = this.state
     // If the query has been updated within state, use that over props.
     const query = queryFromState || queryFromProps
@@ -259,11 +260,13 @@ class Search extends Component {
             onKeyDown={this.handleQuickSearchKeyDown}
             focusUponMount={focusUponMount}
           />
-          <Expand
-            active={false}
-            className='search-toggle-advanced'
-            onToggle={this.handleToggleAdvanced}
-          />
+          <Loading loading={loading}>
+            <Expand
+              active={false}
+              className='search-toggle-advanced'
+              onToggle={this.handleToggleAdvanced}
+            />
+          </Loading>
         </div>
         {quickSearchOpen ? (
           <QuickSearchResults
@@ -279,7 +282,7 @@ class Search extends Component {
 
   renderAdvancedSearch() {
     const { query: queryFromProps, fhirServer } = this.props
-    const { query: queryFromState, bundle, results } = this.state
+    const { query: queryFromState, bundle, results, loading } = this.state
     // If the query has been updated within state, use that over props.
     const query = queryFromState || queryFromProps
     return (
@@ -297,11 +300,13 @@ class Search extends Component {
             query={query}
             onSearchUpdate={this.handleQueryUpdate}
           />
-          <Expand
-            active
-            className='search-toggle-advanced'
-            onToggle={this.handleToggleAdvanced}
-          />
+          <Loading loading={loading}>
+            <Expand
+              active
+              className='search-toggle-advanced'
+              onToggle={this.handleToggleAdvanced}
+            />
+          </Loading>
         </div>
         {results ? (
           <div className='search-advanced-results'>

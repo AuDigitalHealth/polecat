@@ -67,6 +67,11 @@ class AmtBrowser extends Component {
         className='amt-browser'
         style={{ width: viewport.width, height: viewport.height }}
       >
+        {error ? (
+          <div className='errors'>
+            <ErrorMessage error={error} />
+          </div>
+        ) : null}
         {id ? (
           <RemoteFhirMedication
             resourceType={resourceType}
@@ -82,16 +87,10 @@ class AmtBrowser extends Component {
         <Search
           query={query}
           fhirServer={config.fhirServer}
-          onLoadingChange={this.handleLoadingChange}
           onError={this.handleError}
           focusUponMount
         />
         <Loading loading={loading} />
-        {error ? (
-          <div className='errors'>
-            <ErrorMessage error={error} />
-          </div>
-        ) : null}
       </div>
     )
   }

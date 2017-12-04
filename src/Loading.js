@@ -55,12 +55,15 @@ class Loading extends Component {
   }
 
   render() {
+    const { children } = this.props
     const { loading } = this.state
     return (
       <div className='loading'>
         {loading ? (
           <img src={spinner} width='20' height='20' alt='Loading' />
-        ) : null}
+        ) : (
+          children
+        )}
       </div>
     )
   }

@@ -35,6 +35,25 @@
   right: 10px;
 }
 
+.search-basic-form .loading-or-expand.loading .search-toggle-advanced,
+.search-advanced-form .loading-or-expand.loading .search-toggle-advanced {
+  display: none;
+}
+
+.search .search-basic-form .loading img {
+  top: 8px;
+  right: 8px;
+  width: 17px;
+  height: 17px;
+}
+
+.search .search-advanced-form .loading img {
+  top: 28px;
+  right: 27px;
+  width: 17px;
+  height: 17px;
+}
+
 .search.search-advanced {
   top: 0;
   left: 0;

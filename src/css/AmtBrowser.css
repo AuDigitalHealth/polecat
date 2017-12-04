@@ -4,16 +4,19 @@
 }
 
 .amt-browser .search {
-  z-index: 95;
+  z-index: 60;
 }
 
 .amt-browser .errors {
   text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 90;
 }
 
 .amt-browser .loading img {
   position: absolute;
   top: 20px;
   right: 20px;
-  z-index: 99;
+  z-index: 70;
 }

@@ -1,6 +1,6 @@
 .full-search-results {
   font-family: 'Helvetica Neue', sans-serif;
-  z-index: 100;
+  z-index: 80;
 }
 
 .full-search-results ol {
@@ -90,9 +90,6 @@
 }
 
 .full-search-results .no-results {
+  padding: 14px 20px;
   font-size: 14px;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 7px 8px;
-  border-radius: 0 6px 6px 6px;
-  box-shadow: 5px 5px 50px 1px rgba(0, 0, 0, 0.1);
 }
