@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import http from 'axios'
+import http, { CancelToken } from 'axios'
 import isEqual from 'lodash.isequal'
 
 import FhirMedication from './FhirMedication.js'
@@ -33,17 +33,23 @@ class RemoteFhirMedication extends Component {
   updateResource(fhirServer, resourceType, id) {
     this.setLoadingStatus(true)
     return this.getFhirResource(fhirServer, `/${resourceType}/${id}`)
-      .then(resource => this.setState({ resource }))
+      .then(resource => this.setState({ resource, cancelRequest: null }))
       .then(() => this.setLoadingStatus(false))
       .catch(error => this.handleError(error))
   }
 
   async getFhirResource(fhirServer, path, query) {
-    let response
+    const { cancelRequest } = this.state
+    let response, cancelToken
     try {
+      if (cancelRequest) cancelRequest()
       response = await http.get(fhirServer + path + (query || ''), {
         headers: { Accept: 'application/fhir+json, application/json' },
+        cancelToken: new CancelToken(function executor(c) {
+          cancelToken = c
+        }),
       })
+      this.setState(() => ({ cancelRequest: cancelToken }))
     } catch (error) {
       if (error.response) this.handleUnsuccessfulResponse(error.response)
       else throw error
@@ -80,7 +86,11 @@ class RemoteFhirMedication extends Component {
       if (typeof this.state.relatedResources[id] !== 'object') {
         this.getFhirResource(fhirServer, `/Medication/${id}`).then(resource => {
           this.setState(() => ({
-            relatedResources: { ...this.state.relatedResources, [id]: resource },
+            relatedResources: {
+              ...this.state.relatedResources,
+              [id]: resource,
+            },
+            cancelRequest: null,
           }))
         })
       }
@@ -100,6 +110,7 @@ class RemoteFhirMedication extends Component {
     ).then(resource =>
       this.setState(prevState => ({
         childBundles: { ...prevState.childBundles, [resourceType]: resource },
+        cancelRequest: null,
       }))
     )
   }

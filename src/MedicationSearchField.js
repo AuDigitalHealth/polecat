@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import http from 'axios'
+import http, { CancelToken } from 'axios'
 import throttle from 'lodash.throttle'
 
 import TextField from './TextField.js'
@@ -54,6 +54,7 @@ class MedicationSearchField extends Component {
         this.setState(() => ({
           bundle: parsed.bundle,
           results: parsed.results,
+          cancelRequest: null,
           quickSearchOpen: true,
         }))
       )
@@ -66,11 +67,17 @@ class MedicationSearchField extends Component {
   }
 
   async getSearchResultsFromQuery(fhirServer, query) {
-    let response
+    const { cancelRequest } = this.state
+    let response, cancelToken
     try {
+      if (cancelRequest) cancelRequest()
       response = await http.get(this.buildSearchPath(fhirServer, query), {
         headers: { Accept: 'application/fhir+json, application/json' },
+        cancelToken: new CancelToken(function executor(c) {
+          cancelToken = c
+        }),
       })
+      this.setState(() => ({ cancelRequest: cancelToken }))
     } catch (error) {
       if (error.response) this.handleUnsuccessfulResponse(error.response)
       else throw error

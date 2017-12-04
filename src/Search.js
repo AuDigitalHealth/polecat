@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import http from 'axios'
+import http, { CancelToken } from 'axios'
 import throttle from 'lodash.throttle'
 import { withRouter } from 'react-router-dom'
 
@@ -59,6 +59,7 @@ class Search extends Component {
         this.setState(() => ({
           bundle: parsed.bundle,
           results: parsed.results,
+          cancelRequest: null,
           quickSearchOpen: true,
         }))
       )
@@ -74,6 +75,7 @@ class Search extends Component {
         this.setState(() => ({
           bundle: parsed.bundle,
           results: parsed.results,
+          cancelRequest: null,
         }))
       )
       .then(() => this.setLoadingStatus(false))
@@ -87,11 +89,17 @@ class Search extends Component {
   }
 
   async getSearchResultsFromUrl(url) {
-    let response
+    const { cancelRequest } = this.state
+    let response, cancelToken
     try {
+      if (cancelRequest) cancelRequest()
       response = await http.get(url, {
         headers: { Accept: 'application/fhir+json, application/json' },
+        cancelToken: new CancelToken(function executor(c) {
+          cancelToken = c
+        }),
       })
+      this.setState(() => ({ cancelRequest: cancelToken }))
     } catch (error) {
       if (error.response) this.handleUnsuccessfulResponse(error.response)
       else throw error
@@ -200,6 +208,7 @@ class Search extends Component {
             bundle: parsed.bundle,
             results: parsed.results,
             advanced: true,
+            cancelRequest: null,
           }))
         )
         .then(() => this.setLoadingStatus(false))
@@ -222,6 +231,7 @@ class Search extends Component {
             bundle: parsed.bundle,
             results: parsed.results,
             advanced: true,
+            cancelRequest: null,
             query,
           }))
         )
