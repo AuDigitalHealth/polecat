@@ -192,9 +192,8 @@ class Search extends Component {
   }
 
   handleError(error) {
-    if (this.props.onError) {
-      this.props.onError(error)
-    }
+    const { onError } = this.props
+    if (onError) onError(error)
   }
 
   componentWillMount() {

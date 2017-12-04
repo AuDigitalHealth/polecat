@@ -59,9 +59,8 @@ class RemoteFhirMedication extends Component {
   }
 
   setLoadingStatus(loading) {
-    if (this.props.onLoadingChange) {
-      this.props.onLoadingChange(loading)
-    }
+    const { onLoadingChange } = this.props
+    if (onLoadingChange) onLoadingChange(loading)
   }
 
   handleUnsuccessfulResponse(response) {
@@ -138,9 +137,8 @@ class RemoteFhirMedication extends Component {
   }
 
   handleError(error) {
-    if (this.props.onError) {
-      this.props.onError(error)
-    }
+    const { onError } = this.props
+    if (onError) onError(error)
   }
 
   componentWillMount() {

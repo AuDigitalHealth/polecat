@@ -114,9 +114,7 @@ class MedicationSearchField extends Component {
 
   handleTextValueChange(value) {
     const { onTextChange } = this.props
-    if (onTextChange) {
-      onTextChange(value)
-    }
+    if (onTextChange) onTextChange(value)
   }
 
   handleSelectResult(result) {
@@ -147,9 +145,8 @@ class MedicationSearchField extends Component {
   }
 
   handleError(error) {
-    if (this.props.onError) {
-      this.props.onError(error)
-    }
+    const { onError } = this.props
+    if (onError) onError(error)
   }
 
   componentWillUnmount() {
