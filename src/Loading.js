@@ -44,6 +44,10 @@ class Loading extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.unsetLoading()
+  }
+
   componentWillReceiveProps(nextProps) {
     const { loading } = nextProps
     const loadingState = this.state.loading
