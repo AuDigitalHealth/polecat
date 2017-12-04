@@ -152,6 +152,11 @@ class MedicationSearchField extends Component {
     }
   }
 
+  componentWillUnmount() {
+    const { cancelRequest } = this.state
+    if (cancelRequest) cancelRequest()
+  }
+
   componentWillReceiveProps(nextProps) {
     const { textValue } = nextProps
     if (textValue && this.props.textValue !== textValue) {

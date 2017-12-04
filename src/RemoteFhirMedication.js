@@ -148,6 +148,11 @@ class RemoteFhirMedication extends Component {
     this.updateResource(fhirServer, resourceType, id)
   }
 
+  componentWillUnmount() {
+    const { cancelRequest } = this.state
+    if (cancelRequest) cancelRequest()
+  }
+
   componentWillReceiveProps(nextProps) {
     if (!isEqual(this.props, nextProps)) {
       const { fhirServer, resourceType, id } = nextProps

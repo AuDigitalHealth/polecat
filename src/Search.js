@@ -216,6 +216,11 @@ class Search extends Component {
     }
   }
 
+  componentWillUnmount() {
+    const { cancelRequest } = this.state
+    if (cancelRequest) cancelRequest()
+  }
+
   componentWillReceiveProps(nextProps) {
     const { fhirServer, query } = nextProps
     const { advanced } = this.state
