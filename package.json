@@ -26,11 +26,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && find . -name \"*.map\" -exec rm {} \\;",
     "build-docker": "docker build -t johngrimes/polecat .",
     "test": "react-scripts test --verbose --env=jsdom",
     "test-ci": "CI=true react-scripts test --verbose --env=jsdom",
     "deploy": "now -n polecat build",
+    "now-start": "serve --single",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
