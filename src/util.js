@@ -1,10 +1,19 @@
 // SHA-256 function from https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest
 export async function sha256(str) {
   // We transform the string into an arraybuffer.
-  const buffer = new TextEncoder('utf-8').encode(str)
+  const buffer = str2ab(str)
   return crypto.subtle.digest('SHA-256', buffer).then(function(hash) {
     return hex(hash)
   })
+}
+
+function str2ab(str) {
+  const buf = new ArrayBuffer(str.length * 2) // 2 bytes for each char
+  const bufView = new Uint16Array(buf)
+  for (let i = 0, strLen = str.length; i < strLen; i++) {
+    bufView[i] = str.charCodeAt(i)
+  }
+  return buf
 }
 
 function hex(buffer) {
