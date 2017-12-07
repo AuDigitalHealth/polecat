@@ -14,6 +14,9 @@ http
     const config = response.data
     ReactDOM.render(<Router config={config} />, document.getElementById('root'))
   })
-  .catch(error => console.error(error))
+  .catch(error => {
+    console.error(error)
+    ReactDOM.render(<Router />, document.getElementById('root'))
+  })
 addResourceHints()
 registerServiceWorker()

@@ -18,7 +18,7 @@ class AmtBrowser extends Component {
     config: PropTypes.object,
   }
   static defaultProps = {
-    config: { fhirServer: 'http://medserve.online/fhir' },
+    config: { fhirServer: 'https://medserve.online/fhir' },
     resourceType: 'Medication',
   }
 
