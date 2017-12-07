@@ -347,7 +347,9 @@ const fhirToAmtTypes = {
 
 const amtToFhirTypes = invert(fhirToAmtTypes)
 
-export const amtConceptTypes = Object.values(fhirToAmtTypes)
+export const amtConceptTypes = Object.keys(fhirToAmtTypes).map(
+  k => fhirToAmtTypes[k]
+)
 
 // Mapping from FHIR Medication type to AMT concept type.
 export const amtConceptTypeFor = fhirType => fhirToAmtTypes[fhirType]

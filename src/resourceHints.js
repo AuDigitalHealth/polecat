@@ -10,7 +10,7 @@ const addResourceHint = hint => {
   document.head.appendChild(link)
 }
 
-const preloadSvg = Object.values(icons)
+const preloadSvg = Object.keys(icons).map(k => icons[k])
 
 const addResourceHints = () => {
   for (const svg of preloadSvg) {
