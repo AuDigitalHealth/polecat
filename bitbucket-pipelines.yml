@@ -1,4 +1,4 @@
-image: johngrimes/node-aws
+image: johngrimes/node-now
 pipelines:
   default:
     - step:
@@ -27,6 +27,6 @@ pipelines:
             - yarn build-docker
             - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
             - docker push johngrimes/polecat
-            - yarn deploy
+            - now -n polecat -t $NOW_TOKEN build
 options:
   docker: true

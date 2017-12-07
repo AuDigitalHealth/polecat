@@ -30,7 +30,7 @@
     "build-docker": "docker build -t johngrimes/polecat .",
     "test": "react-scripts test --verbose --env=jsdom",
     "test-ci": "CI=true react-scripts test --verbose --env=jsdom",
-    "deploy": "scripts/s3-sync.sh",
+    "deploy": "now -n polecat build",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
