@@ -56,7 +56,8 @@ export const queryFromSearchObject = search => {
 }
 
 const filterSearchObject = (search, params) => {
-  let result = Object.entries(pick(search, params))
+  const searchParams = pick(search, params)
+  let result = Object.keys(searchParams).map(k => [ k, searchParams[k] ])
   // Filter any params with null, undefined or empty string values.
   result = result.filter(param => param[1])
   // Convert any params that can be SNOMED codes or coding objects.
