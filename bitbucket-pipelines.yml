@@ -11,18 +11,12 @@ pipelines:
   branches:
     master:
       - step:
-          name: Run tests
+          name: Run tests and deploy
           caches:
             - node
           script:
             - yarn
             - yarn test-ci
-      - step:
-          name: Build and deploy
-          caches:
-            - node
-          script:
-            - yarn
             - >
               echo "{ \"fhirServer\": $FHIR_SERVER }" > public/config.json
             - yarn build
