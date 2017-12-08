@@ -18,7 +18,7 @@ pipelines:
             - yarn
             - yarn test-ci
             - >
-              echo "{ \"fhirServer\": $FHIR_SERVER }" > public/config.json
+              echo "{ \"fhirServer\": \"$FHIR_SERVER\" }" > public/config.json
             - yarn build
             - yarn build-docker
             - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
