@@ -298,7 +298,10 @@ class Search extends Component {
     const { query: queryFromProps, fhirServer } = this.props
     const { query: queryFromState, bundle, results, loading } = this.state
     // If the query has been updated within state, use that over props.
-    const query = queryFromState || queryFromProps
+    const query =
+      queryFromState === null || queryFromState === undefined
+        ? queryFromProps
+        : queryFromState
     return (
       <div className='search search-advanced'>
         <div className='search-advanced-form'>
