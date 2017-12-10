@@ -105,6 +105,9 @@ storiesOf('QuickSearchResults', module)
       totalResults={1534}
     />
   ))
+  .add('With a selected row', () => (
+    <QuickSearchResults results={results1} selected={2} />
+  ))
   .add('With a query and empty results', () => (
     <QuickSearchResults query='dog' results={[]} />
   ))

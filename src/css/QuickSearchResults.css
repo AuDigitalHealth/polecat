@@ -18,6 +18,10 @@
   border-bottom: 1px solid #ccc;
 }
 
+.quick-search-results .search-result.selected {
+  background-color: #eee;
+}
+
 .quick-search-results .search-result:last-of-type {
   border-bottom: 0;
 }

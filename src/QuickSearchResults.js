@@ -35,6 +35,7 @@ class QuickSearchResults extends Component {
     ),
     totalResults: PropTypes.number,
     renderLinks: PropTypes.bool,
+    selected: PropTypes.number,
     onSelectResult: PropTypes.func,
   }
   static defaultProps = {
@@ -73,10 +74,17 @@ class QuickSearchResults extends Component {
   }
 
   renderResults() {
-    const { results, renderLinks } = this.props
+    const { results, renderLinks, selected } = this.props
     if (!results) return
     return results.map((result, i) => (
-      <li key={i} className='search-result'>
+      <li
+        key={i}
+        className={
+          selected && selected === i
+            ? 'search-result selected'
+            : 'search-result'
+        }
+      >
         <span className={`type type-${result.type}`.toLowerCase()}>
           {result.type}
         </span>
