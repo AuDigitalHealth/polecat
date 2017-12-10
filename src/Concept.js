@@ -69,7 +69,7 @@ class Concept extends Component {
           )}
           <CopyToClipboard copyText={sctid} title='Copy SCTID to clipboard' />
         </div>
-        <div className='display'>
+        <div className='display' title={display}>
           {display}
           <CopyToClipboard
             copyText={display}
