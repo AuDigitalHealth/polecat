@@ -1,8 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script src="https://cdn.ravenjs.com/3.20.1/raven.min.js" crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110992817-1"></script>
     <script>
+      Raven.config('https://437424b3205e41818fae4bff9663738c@sentry.io/257411').install()
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
