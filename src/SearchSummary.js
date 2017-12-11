@@ -39,7 +39,7 @@ class SearchSummary extends Component {
     return (
       <div className='search-summary'>
         <div className='pagination-total'>
-          {formatNumber(totalResults)} matches
+          {totalResults ? formatNumber(totalResults) : 0} matches
         </div>
         {previousLink ? (
           <Icon

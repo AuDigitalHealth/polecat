@@ -4,13 +4,8 @@ import http, { CancelToken } from 'axios'
 import throttle from 'lodash.throttle'
 import { withRouter } from 'react-router-dom'
 
-import TextField from './TextField.js'
-import QuickSearchResults from './QuickSearchResults.js'
-import FullSearchResults from './FullSearchResults.js'
-import SearchForm from './SearchForm.js'
-import SearchSummary from './SearchSummary.js'
-import Expand from './Expand.js'
-import Loading from './Loading.js'
+import BasicSearch from './BasicSearch.js'
+import AdvancedSearch from './AdvancedSearch.js'
 import { searchPathFromQuery } from './Router.js'
 import { opOutcomeFromJsonResponse } from './fhir/core.js'
 import { sniffFormat } from './fhir/restApi'
@@ -27,6 +22,7 @@ class Search extends Component {
     minRequestFrequency: PropTypes.number,
     onError: PropTypes.func,
     focusUponMount: PropTypes.bool,
+    quickSearchShouldClose: PropTypes.bool,
   }
   static defaultProps = {
     minRequestFrequency: 350,
@@ -34,7 +30,7 @@ class Search extends Component {
 
   constructor(props) {
     super(props)
-    this.state = { quickSearchOpen: false, advanced: false }
+    this.state = { advanced: false, quickSearchShouldClose: false }
     this.handleQueryUpdate = this.handleQueryUpdate.bind(this)
     this.throttledQueryUpdate = throttle(
       this.throttledQueryUpdate.bind(this),
@@ -42,11 +38,10 @@ class Search extends Component {
     )
     this.handleSelectResult = this.handleSelectResult.bind(this)
     this.setLoadingStatus = this.setLoadingStatus.bind(this)
-    this.handleQuickSearchFocus = this.handleQuickSearchFocus.bind(this)
-    this.handleQuickSearchKeyDown = this.handleQuickSearchKeyDown.bind(this)
     this.handleToggleAdvanced = this.handleToggleAdvanced.bind(this)
     this.handleNextClick = this.handleNextClick.bind(this)
     this.handlePreviousClick = this.handlePreviousClick.bind(this)
+    this.handleQuickSearchClosed = this.handleQuickSearchClosed.bind(this)
     this.handleError = this.handleError.bind(this)
   }
 
@@ -60,7 +55,6 @@ class Search extends Component {
           bundle: parsed.bundle,
           results: parsed.results,
           cancelRequest: null,
-          quickSearchOpen: true,
         }))
       )
       .then(() => this.setLoadingStatus(false))
@@ -166,19 +160,8 @@ class Search extends Component {
     throw new Error(response.statusText || response.status)
   }
 
-  handleQuickSearchFocus() {
-    this.setState(() => ({ quickSearchOpen: true }))
-  }
-
-  handleQuickSearchKeyDown(event) {
-    // Close the quick search if Escape is pressed.
-    if (event.key === 'Escape') {
-      this.setState(() => ({ quickSearchOpen: false }))
-    }
-  }
-
   handleSelectResult() {
-    this.setState(() => ({ quickSearchOpen: false, advanced: false }))
+    this.setState(() => ({ advanced: false, quickSearchShouldClose: true }))
   }
 
   handleToggleAdvanced() {
@@ -189,6 +172,10 @@ class Search extends Component {
     if (!advanced && query) {
       history.push(searchPathFromQuery(query))
     }
+  }
+
+  handleQuickSearchClosed() {
+    this.setState(() => ({ quickSearchShouldClose: false }))
   }
 
   handleError(error) {
@@ -221,7 +208,7 @@ class Search extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { fhirServer, query } = nextProps
+    const { fhirServer, query, quickSearchShouldClose } = nextProps
     const { advanced } = this.state
     if (this.props.fhirServer === fhirServer && this.props.query === query) {
       return
@@ -244,104 +231,56 @@ class Search extends Component {
     } else if (advanced === true) {
       this.setState(() => ({ advanced: false }))
     }
+    if (quickSearchShouldClose) this.setState({ quickSearchShouldClose: true })
   }
 
   render() {
-    const { advanced } = this.state
-    return advanced ? this.renderAdvancedSearch() : this.renderBasicSearch()
-  }
-
-  renderBasicSearch() {
-    const { query: queryFromProps, focusUponMount } = this.props
-    const {
-      query: queryFromState,
-      bundle,
-      results,
-      quickSearchOpen,
-      loading,
-    } = this.state
-    // If the query has been updated within state, use that over props.
-    const query = queryFromState || queryFromProps
+    const { results } = this.state
     return (
-      <div className='search search-basic'>
-        <div className='search-basic-form'>
-          <TextField
-            value={query}
-            placeholder='Search'
-            className='search-input'
-            onChange={this.handleQueryUpdate}
-            onFocus={this.handleQuickSearchFocus}
-            onKeyDown={this.handleQuickSearchKeyDown}
-            focusUponMount={focusUponMount}
-          />
-          <Loading loading={loading}>
-            <Expand
-              active={false}
-              className='search-toggle-advanced'
-              onToggle={this.handleToggleAdvanced}
-            />
-          </Loading>
-        </div>
-        {quickSearchOpen ? (
-          <QuickSearchResults
-            query={query}
-            results={results}
-            totalResults={bundle ? bundle.total : null}
-            onSelectResult={this.handleSelectResult}
-          />
-        ) : null}
+      <div className={results ? 'search with-results' : 'search'}>
+        {this.renderBasicOrAdvancedSearch()}
       </div>
     )
   }
 
-  renderAdvancedSearch() {
-    const { query: queryFromProps, fhirServer } = this.props
-    const { query: queryFromState, bundle, results, loading } = this.state
-    // If the query has been updated within state, use that over props.
-    const query =
-      queryFromState === null || queryFromState === undefined
-        ? queryFromProps
-        : queryFromState
-    return (
-      <div className='search search-advanced'>
-        <div className='search-advanced-form'>
-          <TextField
-            value={query}
-            placeholder='Search'
-            className='search-input'
-            disabled
-            onChange={this.handleQueryUpdate}
-          />
-          <SearchForm
-            fhirServer={fhirServer}
-            query={query}
-            onSearchUpdate={this.handleQueryUpdate}
-          />
-          <Loading loading={loading}>
-            <Expand
-              active
-              className='search-toggle-advanced'
-              onToggle={this.handleToggleAdvanced}
-            />
-          </Loading>
-        </div>
-        {results ? (
-          <div className='search-advanced-results'>
-            <SearchSummary
-              totalResults={bundle.total}
-              nextLink={nextLinkFromBundle(bundle)}
-              previousLink={previousLinkFromBundle(bundle)}
-              onNextClick={this.handleNextClick}
-              onPreviousClick={this.handlePreviousClick}
-            />
-            <FullSearchResults
-              query={query}
-              results={results}
-              onSelectResult={this.handleSelectResult}
-            />
-          </div>
-        ) : null}
-      </div>
+  renderBasicOrAdvancedSearch() {
+    const { query: queryFromProps, focusUponMount, fhirServer } = this.props
+    const {
+      query: queryFromState,
+      advanced,
+      results,
+      bundle,
+      loading,
+      quickSearchShouldClose,
+    } = this.state
+    return advanced ? (
+      <AdvancedSearch
+        fhirServer={fhirServer}
+        routedQuery={queryFromProps}
+        currentQuery={queryFromState}
+        results={results}
+        bundle={bundle}
+        loading={loading}
+        onQueryUpdate={this.handleQueryUpdate}
+        onToggleAdvanced={this.handleToggleAdvanced}
+        onNextClick={this.handleNextClick}
+        onPreviousClick={this.handlePreviousClick}
+        onSelectResult={this.handleSelectResult}
+      />
+    ) : (
+      <BasicSearch
+        routedQuery={queryFromProps}
+        currentQuery={queryFromState}
+        results={results}
+        bundle={bundle}
+        focusUponMount={focusUponMount}
+        loading={loading}
+        quickSearchShouldClose={quickSearchShouldClose}
+        onQueryUpdate={this.handleQueryUpdate}
+        onToggleAdvanced={this.handleToggleAdvanced}
+        onSelectResult={this.handleSelectResult}
+        onQuickSearchClosed={this.handleQuickSearchClosed}
+      />
     )
   }
 }

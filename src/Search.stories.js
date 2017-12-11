@@ -12,3 +12,9 @@ storiesOf('Search', module)
   .add('With focus on mount', () => (
     <Search fhirServer={config.fhirServer} focusUponMount />
   ))
+  .add('With a query', () => (
+    <Search
+      fhirServer={config.fhirServer}
+      query='package:&quot;22095011000036109|fenofibrate 145 mg tablet&quot;'
+    />
+  ))

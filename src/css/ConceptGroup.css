@@ -61,4 +61,5 @@
   min-width: 12px;
   text-align: center;
   transform: translate(-50%, 0);
+  user-select: none;
 }

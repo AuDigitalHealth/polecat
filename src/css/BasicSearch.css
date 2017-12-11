@@ -1,0 +1,28 @@
+.search-basic-form {
+  width: 266px;
+  position: relative;
+}
+
+.search-basic-form .search-toggle-advanced {
+  position: absolute;
+  top: 3px;
+  right: 10px;
+}
+
+.search-basic-form .loading img {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 17px;
+  height: 17px;
+}
+
+.search-basic .quick-search-results {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+}
+
+.search-basic-form .loading-or-expand.loading .search-toggle-advanced {
+  display: none;
+}

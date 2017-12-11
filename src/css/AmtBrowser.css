@@ -7,6 +7,10 @@
   z-index: 60;
 }
 
+.amt-browser .search .quick-search-results {
+  z-index: 65;
+}
+
 .amt-browser .errors {
   text-align: center;
   position: fixed;
