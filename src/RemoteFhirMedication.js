@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import http, { CancelToken } from 'axios'
-import isEqual from 'lodash.isequal'
 
 import FhirMedication from './FhirMedication.js'
 import { sniffFormat } from './fhir/restApi'
@@ -152,9 +151,10 @@ class RemoteFhirMedication extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!isEqual(this.props, nextProps)) {
-      const { fhirServer, resourceType, id } = nextProps
-      this.updateResource(fhirServer, resourceType, id)
+    const { resourceType, id } = this.props
+    const { resourceType: nextResourceType, id: nextId, fhirServer } = nextProps
+    if (resourceType !== nextResourceType || id !== nextId) {
+      this.updateResource(fhirServer, nextResourceType, nextId)
     }
     // Make sure related resources and bundles don't hang around when changing
     // the subject resource.
