@@ -26,7 +26,7 @@ pipelines:
             - cp -R build release
             - >
               find release -name "*.map" -exec rm {} \;
-            - yarn run now -n polecat -t $NOW_TOKEN alias set `now -n polecat -t $NOW_TOKEN release` $TARGET_HOSTNAME
+            - yarn run now -n polecat -t $NOW_TOKEN alias set `yarn run now -n polecat -t $NOW_TOKEN release` $TARGET_HOSTNAME
             - yarn run sentry-cli releases -p $SENTRY_PROJECT new `git rev-parse HEAD` && yarn run sentry-cli releases -p $SENTRY_PROJECT files `git rev-parse HEAD` upload-sourcemaps --url-prefix https://$TARGET_HOSTNAME/static/js build/static/js
 options:
   docker: true
