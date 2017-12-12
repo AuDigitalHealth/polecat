@@ -24,6 +24,6 @@ pipelines:
             - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
             - docker push johngrimes/polecat
             - now -n polecat -t $NOW_TOKEN build
-            - now alias -t $NOW_TOKEN $TARGET_HOSTNAME
+            - now -t $NOW_TOKEN
 options:
   docker: true
