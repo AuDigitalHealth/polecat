@@ -23,7 +23,6 @@ pipelines:
             - yarn build-docker
             - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
             - docker push johngrimes/polecat
-            - now -n polecat -t $NOW_TOKEN build
-            - now -n polecat -t $NOW_TOKEN alias
+            - now -n polecat -t $NOW_TOKEN alias set `now -n polecat -t $NOW_TOKEN build` $TARGET_HOSTNAME
 options:
   docker: true
