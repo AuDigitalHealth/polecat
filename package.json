@@ -48,6 +48,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build-docker": "docker build -t johngrimes/polecat .",
+    "push-docker": "bash scripts/pushDockerImage.sh",
     "test": "react-scripts test --verbose --env=jsdom",
     "test-ci": "CI=true react-scripts test --verbose --env=jsdom",
     "now-start": "serve --single",
@@ -55,6 +56,9 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "update-test-files": "node scripts/updateTestFiles.js",
+    "write-config": "bash scripts/writeConfig.sh",
+    "make-release": "bash scripts/makeRelease.sh",
+    "record-release": "bash scripts/recordRelease.sh",
     "loc": "sloc --exclude \".*\\.(css|svg|test.js|stories.js|js.snap)\" src"
   }
 }
