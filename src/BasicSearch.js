@@ -57,6 +57,17 @@ class BasicSearch extends Component {
     // Close the quick search if Escape is pressed.
     if (event.key === 'Escape') {
       this.setState(() => ({ quickSearchOpen: false }))
+    } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+      const { selectedResult } = this.state
+      let newSelection
+      if (selectedResult === undefined) newSelection = 0
+      else {
+        newSelection =
+          event.key === 'ArrowDown'
+            ? Math.min(selectedResult + 1, 19)
+            : Math.max(selectedResult - 1, 0)
+      }
+      this.setState(() => ({ selectedResult: newSelection }))
     }
   }
 
@@ -94,7 +105,7 @@ class BasicSearch extends Component {
       focusUponMount,
       loading,
     } = this.props
-    const { quickSearchOpen } = this.state
+    const { quickSearchOpen, selectedResult } = this.state
     // If the query has been updated within state, use that over props.
     const query = currentQuery || routedQuery
     return (
@@ -123,6 +134,7 @@ class BasicSearch extends Component {
             query={query}
             results={results}
             totalResults={bundle ? bundle.total : null}
+            selected={selectedResult}
             onSelectResult={this.handleSelectResult}
           />
         ) : null}

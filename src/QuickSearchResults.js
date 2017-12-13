@@ -80,7 +80,7 @@ class QuickSearchResults extends Component {
       <li
         key={i}
         className={
-          selected && selected === i
+          selected !== undefined && selected === i
             ? 'search-result selected'
             : 'search-result'
         }
