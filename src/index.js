@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import http from 'axios'
 import bowser from 'bowser'
+import Raven from 'raven-js'
 
 import Router from './Router'
 import addResourceHints from './resourceHints.js'
@@ -21,6 +22,7 @@ if (
     .get('/config.json')
     .then(response => {
       const config = response.data
+      if (config.sentryDsn) Raven.config(config.sentryDsn).install()
       ReactDOM.render(
         <Router config={config} />,
         document.getElementById('root')
