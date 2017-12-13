@@ -22,7 +22,9 @@ if (
     .get('/config.json')
     .then(response => {
       const config = response.data
-      if (config.sentryDsn) Raven.config(config.sentryDsn).install()
+      if (config.sentryDsn) {
+        Raven.config(config.sentryDsn, { release: config.version }).install()
+      }
       ReactDOM.render(
         <Router config={config} />,
         document.getElementById('root')
