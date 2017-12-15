@@ -5,36 +5,36 @@ an instance of [Medserve](http://medserve.online).
 
 ## Features
 
-- Provides a full-text search facility for locating medicine concepts within
+* Provides a full-text search facility for locating medicine concepts within
   AMT.
-- Supports searching of CTPP, TPP, TPUU, TP, MPP, MPUU, MP and substance
+* Supports searching of CTPP, TPP, TPUU, TP, MPP, MPUU, MP and substance
   concepts.
   Concept types are displayed alongside search results.
-- Selecting a concept renders an object diagram, showing its details along with
+* Selecting a concept renders an object diagram, showing its details along with
   its relationship to other concepts, in a manner which is faithful to the AMT
   Product Model.
-- Relationship types are rendered differently depending on whether they have
+* Relationship types are rendered differently depending on whether they have
   inheritance, association or aggregation semantics.
-- ARTG IDs are shown against applicable concepts, along with a link to the
+* ARTG IDs are shown against applicable concepts, along with a link to the
   relevant page on the TGA web site.
-- Re-focus on a related concept by clicking its SCT ID.
-- Copy an SCT ID or preferred term to the clipboard by clicking the clipboard
+* Re-focus on a related concept by clicking its SCT ID.
+* Copy an SCT ID or preferred term to the clipboard by clicking the clipboard
   icon adjacent.
-- Where child concepts or related packages are shown in large numbers, these
+* Where child concepts or related packages are shown in large numbers, these
   are grouped with a link to the full listing. (NOTE: The full listing has not
   been implemented yet)
-- The AMT Product Model view can be panned around by clicking and dragging,
+* The AMT Product Model view can be panned around by clicking and dragging,
   using scroll wheels or a trackpad. The view can be re-centred by
   double-clicking.
-- Can be configured to point to any Medserve instance, see
+* Can be configured to point to any Medserve instance, see
   [Configuration](#configuration).
 
 ## Development dependencies
 
 Polecat only has two development dependencies:
 
-- [Node.js](https://nodejs.org/)
-- [Yarn](https://yarnpkg.com/)
+* [Node.js](https://nodejs.org/)
+* [Yarn](https://yarnpkg.com/)
 
 ## Common tasks
 
@@ -92,7 +92,7 @@ served from the root of its deployment location.
 
 The available configuration parameters are:
 
-- `fhirVersion`: the FHIR endpoint of the Medserve instance.
+* `fhirVersion`: the FHIR endpoint of the Medserve instance.
 
 ##### Example configuration
 
@@ -104,11 +104,11 @@ The available configuration parameters are:
 
 ## Deployment requirements
 
-- The web server must be configured to serve files that exist within the
+* The web server must be configured to serve files that exist within the
   distribution, or return `index.html` with a `200 OK` for files which aren't
   found.
-- Polecat must be served via HTTPS. This is because it relies on APIs within the
+* Polecat must be served via HTTPS. This is because it relies on APIs within the
   browser which are not enabled in insecure contexts.
-- Polecat must communicate to Medserve via HTTPS. This is because browser
+* Polecat must communicate to Medserve via HTTPS. This is because browser
   security policy will not allow a secure page to make requests to a server
   over plain HTTP.
