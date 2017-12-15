@@ -8,7 +8,7 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
     }
   }
   currentQuery="parac"
-  fhirServer="https://medserve.local/fhir"
+  fhirServer="https://medserve.online/fhir"
   results={
     Array [
       Object {
@@ -108,7 +108,7 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
       "total": 8,
     }
   }
-  fhirServer="https://medserve.local/fhir"
+  fhirServer="https://medserve.online/fhir"
   results={
     Array [
       Object {
@@ -203,14 +203,14 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
 
 exports[`Storyshots AdvancedSearch With routed query but no results 1`] = `
 <AdvancedSearch
-  fhirServer="https://medserve.local/fhir"
+  fhirServer="https://medserve.online/fhir"
   routedQuery="para"
 />
 `;
 
 exports[`Storyshots AdvancedSearch With routed query but no results, loading 1`] = `
 <AdvancedSearch
-  fhirServer="https://medserve.local/fhir"
+  fhirServer="https://medserve.online/fhir"
   loading={true}
   routedQuery="para"
 />
@@ -220,8 +220,7 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution (TPUU) 1`] 
 <AmtBrowser
   config={
     Object {
-      "fhirServer": "https://medserve.local/fhir",
-      "version": "6d636958c346b31bbee4b9c68dea74acb9afb79c",
+      "fhirServer": "https://medserve.online/fhir",
     }
   }
   id="53743011000036103"
@@ -239,8 +238,7 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL (TP
 <AmtBrowser
   config={
     Object {
-      "fhirServer": "https://medserve.local/fhir",
-      "version": "6d636958c346b31bbee4b9c68dea74acb9afb79c",
+      "fhirServer": "https://medserve.online/fhir",
     }
   }
   id="55971011000036104"
@@ -258,8 +256,7 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL, bo
 <AmtBrowser
   config={
     Object {
-      "fhirServer": "https://medserve.local/fhir",
-      "version": "6d636958c346b31bbee4b9c68dea74acb9afb79c",
+      "fhirServer": "https://medserve.online/fhir",
     }
   }
   id="60009011000036108"
@@ -277,8 +274,7 @@ exports[`Storyshots AmtBrowser Search 1`] = `
 <AmtBrowser
   config={
     Object {
-      "fhirServer": "https://medserve.local/fhir",
-      "version": "6d636958c346b31bbee4b9c68dea74acb9afb79c",
+      "fhirServer": "https://medserve.online/fhir",
     }
   }
   query="esomeprazole"
@@ -296,8 +292,7 @@ exports[`Storyshots AmtBrowser loratadine (MP) 1`] = `
 <AmtBrowser
   config={
     Object {
-      "fhirServer": "https://medserve.local/fhir",
-      "version": "6d636958c346b31bbee4b9c68dea74acb9afb79c",
+      "fhirServer": "https://medserve.online/fhir",
     }
   }
   id="21701011000036106"
@@ -315,8 +310,7 @@ exports[`Storyshots AmtBrowser loratadine (substance) 1`] = `
 <AmtBrowser
   config={
     Object {
-      "fhirServer": "https://medserve.local/fhir",
-      "version": "6d636958c346b31bbee4b9c68dea74acb9afb79c",
+      "fhirServer": "https://medserve.online/fhir",
     }
   }
   id="2292011000036106"
@@ -334,8 +328,7 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid (MPUU) 1`] = `
 <AmtBrowser
   config={
     Object {
-      "fhirServer": "https://medserve.local/fhir",
-      "version": "6d636958c346b31bbee4b9c68dea74acb9afb79c",
+      "fhirServer": "https://medserve.online/fhir",
     }
   }
   id="62022011000036104"
@@ -353,8 +346,7 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid, 150 mL (MPP) 1`] 
 <AmtBrowser
   config={
     Object {
-      "fhirServer": "https://medserve.local/fhir",
-      "version": "6d636958c346b31bbee4b9c68dea74acb9afb79c",
+      "fhirServer": "https://medserve.online/fhir",
     }
   }
   id="63589011000036105"
@@ -2572,7 +2564,7 @@ exports[`Storyshots Loading Not loading 1`] = `
 
 exports[`Storyshots MedicationSearchField Searching TPPs 1`] = `
 <MedicationSearchField
-  fhirServer="https://medserve.local/fhir"
+  fhirServer="https://medserve.online/fhir"
   focusUponMount={true}
   label="Select product"
   minRequestFrequency={350}
@@ -2583,7 +2575,7 @@ exports[`Storyshots MedicationSearchField Searching TPPs 1`] = `
 exports[`Storyshots MedicationSearchField With coding value (code and display) 1`] = `
 <MedicationSearchField
   codingValue="49333011000036108|Proguide (66000782) green 28 cm to 32 cm two layer bandage, 1"
-  fhirServer="https://medserve.local/fhir"
+  fhirServer="https://medserve.online/fhir"
   focusUponMount={true}
   label="Select product"
   minRequestFrequency={350}
@@ -2594,7 +2586,7 @@ exports[`Storyshots MedicationSearchField With coding value (code and display) 1
 exports[`Storyshots MedicationSearchField With coding value (code only) 1`] = `
 <MedicationSearchField
   codingValue="49333011000036108"
-  fhirServer="https://medserve.local/fhir"
+  fhirServer="https://medserve.online/fhir"
   focusUponMount={true}
   label="Select product"
   minRequestFrequency={350}
@@ -2604,7 +2596,7 @@ exports[`Storyshots MedicationSearchField With coding value (code only) 1`] = `
 
 exports[`Storyshots MedicationSearchField With text value 1`] = `
 <MedicationSearchField
-  fhirServer="https://medserve.local/fhir"
+  fhirServer="https://medserve.online/fhir"
   focusUponMount={true}
   label="Select product"
   minRequestFrequency={350}
@@ -2921,34 +2913,34 @@ exports[`Storyshots QuickSearchResults With no query and no results 1`] = `
 
 exports[`Storyshots Search As configured 1`] = `
 <withRouter(Search)
-  fhirServer="https://medserve.local/fhir"
+  fhirServer="https://medserve.online/fhir"
 />
 `;
 
 exports[`Storyshots Search With a query 1`] = `
 <withRouter(Search)
-  fhirServer="https://medserve.local/fhir"
+  fhirServer="https://medserve.online/fhir"
   query="package:\\"22095011000036109|fenofibrate 145 mg tablet\\""
 />
 `;
 
 exports[`Storyshots Search With focus on mount 1`] = `
 <withRouter(Search)
-  fhirServer="https://medserve.local/fhir"
+  fhirServer="https://medserve.online/fhir"
   focusUponMount={true}
 />
 `;
 
 exports[`Storyshots Search With minimum request frequency of 2 seconds 1`] = `
 <withRouter(Search)
-  fhirServer="https://medserve.local/fhir"
+  fhirServer="https://medserve.online/fhir"
   minRequestFrequency={2000}
 />
 `;
 
 exports[`Storyshots SearchForm With a query 1`] = `
 <SearchForm
-  fhirServer="https://medserve.local/fhir"
+  fhirServer="https://medserve.online/fhir"
   query="varicella id:959031000168106"
 />
 `;
