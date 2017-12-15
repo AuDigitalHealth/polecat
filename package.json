@@ -19,6 +19,7 @@
     "lodash.values": "^4.3.0",
     "prop-types": "^15.6.0",
     "query-string": "^5.0.1",
+    "raven-js": "^3.20.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-faux-dom": "^4.0.3",
@@ -61,6 +62,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build-docker": "docker build -t johngrimes/polecat .",
+    "push-docker": "bash scripts/pushDockerImage.sh",
+    "deploy": "bash scripts/deploy.sh",
     "test": "react-scripts test --verbose --env=jsdom",
     "test-ci": "CI=true react-scripts test --verbose --env=jsdom",
     "now-start": "serve --single",
@@ -68,11 +71,12 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "update-test-files": "node scripts/updateTestFiles.js",
+    "write-config": "bash scripts/writeConfig.sh",
+    "make-release": "bash scripts/makeRelease.sh",
+    "record-release": "bash scripts/recordRelease.sh",
     "loc": "sloc --exclude \".*\\.(css|svg|test.js|stories.js|js.snap)\" src"
   },
   "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   }
 }

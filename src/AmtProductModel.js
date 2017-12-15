@@ -193,6 +193,7 @@ class AmtProductModel extends Component {
 
   moveSimulationCenter(deltaX, deltaY, newX, newY, options) {
     const model = this
+    if (!model.simulation) return
     const forceCenter = model.simulation.force('center')
     const nodes = model.simulation.nodes().map(node => ({
       ...node,
