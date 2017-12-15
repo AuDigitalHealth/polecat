@@ -6,7 +6,6 @@ pipelines:
         caches:
           - node
         script:
-          - yarn write-config
           - yarn install
           - yarn test-ci
   branches:
@@ -16,9 +15,9 @@ pipelines:
           caches:
             - node
           script:
-            - yarn write-config
             - yarn install
             - yarn test-ci
+            - yarn write-config
             - yarn build
             - yarn build-docker
             - yarn push-docker
