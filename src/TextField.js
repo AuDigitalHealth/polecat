@@ -57,7 +57,8 @@ class TextField extends Component {
   }
 
   componentDidMount() {
-    if (this.props.focusUponMount) this.textInput.focus()
+    const { focusUponMount } = this.props
+    if (focusUponMount) this.textInput.focus()
   }
 
   componentWillReceiveProps(nextProps) {

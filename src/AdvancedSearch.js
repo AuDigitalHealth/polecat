@@ -13,7 +13,7 @@ import './css/AdvancedSearch.css'
 
 class AdvancedSearch extends Component {
   static propTypes = {
-    fhirServer: PropTypes.string.isRequired,
+    fhirServer: PropTypes.string,
     routedQuery: PropTypes.string,
     currentQuery: PropTypes.string,
     results: PropTypes.array,

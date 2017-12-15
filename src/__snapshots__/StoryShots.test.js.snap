@@ -1,0 +1,3012 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots AdvancedSearch With current query 1`] = `
+<AdvancedSearch
+  bundle={
+    Object {
+      "total": 8,
+    }
+  }
+  currentQuery="parac"
+  fhirServer="https://medserve.local/fhir"
+  results={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933216161000036101",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+          Object {
+            "code": "74899",
+            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+          },
+        ],
+        "type": "CTPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933205801000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933196831000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "22131000168107",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75498011000036101",
+            "display": "death adder antivenom 6000 units injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75096011000036105",
+            "display": "king brown snake antivenom 18 000 units injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "74983011000036101",
+            "display": "taipan snake antivenom",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "2610011000036105",
+            "display": "sumatriptan",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "substance",
+      },
+    ]
+  }
+  routedQuery="para"
+/>
+`;
+
+exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
+<AdvancedSearch
+  bundle={
+    Object {
+      "total": 8,
+    }
+  }
+  fhirServer="https://medserve.local/fhir"
+  results={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933216161000036101",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+          Object {
+            "code": "74899",
+            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+          },
+        ],
+        "type": "CTPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933205801000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933196831000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "22131000168107",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75498011000036101",
+            "display": "death adder antivenom 6000 units injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75096011000036105",
+            "display": "king brown snake antivenom 18 000 units injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "74983011000036101",
+            "display": "taipan snake antivenom",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "2610011000036105",
+            "display": "sumatriptan",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "substance",
+      },
+    ]
+  }
+  routedQuery="para"
+/>
+`;
+
+exports[`Storyshots AdvancedSearch With routed query but no results 1`] = `
+<AdvancedSearch
+  fhirServer="https://medserve.local/fhir"
+  routedQuery="para"
+/>
+`;
+
+exports[`Storyshots AdvancedSearch With routed query but no results, loading 1`] = `
+<AdvancedSearch
+  fhirServer="https://medserve.local/fhir"
+  loading={true}
+  routedQuery="para"
+/>
+`;
+
+exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution (TPUU) 1`] = `
+<AmtBrowser
+  config={
+    Object {
+      "fhirServer": "https://medserve.local/fhir",
+      "version": "6d636958c346b31bbee4b9c68dea74acb9afb79c",
+    }
+  }
+  id="53743011000036103"
+  resourceType="Medication"
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL (TPP) 1`] = `
+<AmtBrowser
+  config={
+    Object {
+      "fhirServer": "https://medserve.local/fhir",
+      "version": "6d636958c346b31bbee4b9c68dea74acb9afb79c",
+    }
+  }
+  id="55971011000036104"
+  resourceType="Medication"
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL, bottle (CTPP) 1`] = `
+<AmtBrowser
+  config={
+    Object {
+      "fhirServer": "https://medserve.local/fhir",
+      "version": "6d636958c346b31bbee4b9c68dea74acb9afb79c",
+    }
+  }
+  id="60009011000036108"
+  resourceType="Medication"
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtBrowser Search 1`] = `
+<AmtBrowser
+  config={
+    Object {
+      "fhirServer": "https://medserve.local/fhir",
+      "version": "6d636958c346b31bbee4b9c68dea74acb9afb79c",
+    }
+  }
+  query="esomeprazole"
+  resourceType="Medication"
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtBrowser loratadine (MP) 1`] = `
+<AmtBrowser
+  config={
+    Object {
+      "fhirServer": "https://medserve.local/fhir",
+      "version": "6d636958c346b31bbee4b9c68dea74acb9afb79c",
+    }
+  }
+  id="21701011000036106"
+  resourceType="Medication"
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtBrowser loratadine (substance) 1`] = `
+<AmtBrowser
+  config={
+    Object {
+      "fhirServer": "https://medserve.local/fhir",
+      "version": "6d636958c346b31bbee4b9c68dea74acb9afb79c",
+    }
+  }
+  id="2292011000036106"
+  resourceType="Substance"
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid (MPUU) 1`] = `
+<AmtBrowser
+  config={
+    Object {
+      "fhirServer": "https://medserve.local/fhir",
+      "version": "6d636958c346b31bbee4b9c68dea74acb9afb79c",
+    }
+  }
+  id="62022011000036104"
+  resourceType="Medication"
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid, 150 mL (MPP) 1`] = `
+<AmtBrowser
+  config={
+    Object {
+      "fhirServer": "https://medserve.local/fhir",
+      "version": "6d636958c346b31bbee4b9c68dea74acb9afb79c",
+    }
+  }
+  id="63589011000036105"
+  resourceType="Medication"
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel Aggregation link (close) 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-component-of",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 280,
+        "fy": 232.7710843,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel Aggregation link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-component-of",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 309.6385542,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel Association link (close) 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "has-brand",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 280,
+        "fy": 232.7710843,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel Association link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "has-brand",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 309.6385542,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel E link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel ENE link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 194.41696971,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel ESE link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 194.41696971,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel Inheritance link (close) 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 280,
+        "fy": 232.7710843,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel Inheritance link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 309.6385542,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel N link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 300,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel NE link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 309.6385542,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel NNE link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 389.6986192,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel NNW link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 400,
+        "fy": 389.6986192,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel NW link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 400,
+        "fy": 309.6385542,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel S link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 300,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel SE link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 309.6385542,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel SSE link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 389.6986192,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel SSW link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 400,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 389.6986192,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel SW link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 400,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 309.6385542,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel W link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 400,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel WNW link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 400,
+        "fy": 194.41696971,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel WSW link 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 400,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 194.41696971,
+        "type": "UPD",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots AmtProductModel With nodes and links 1`] = `
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.1}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  linkCurviness={0.2}
+  linkDistance={220}
+  links={
+    Array [
+      Object {
+        "source": "812831000168109",
+        "target": "812781000168101",
+        "type": "has-brand",
+      },
+      Object {
+        "source": "812831000168109",
+        "target": "812821000168106",
+        "type": "is-a",
+      },
+      Object {
+        "source": "812821000168106",
+        "target": "812811000168104",
+        "type": "is-a",
+      },
+      Object {
+        "source": "812831000168109",
+        "target": "812801000168102",
+        "type": "unknown",
+      },
+      Object {
+        "source": "812801000168102",
+        "target": "812791000168103",
+        "type": "is-a",
+      },
+      Object {
+        "source": "812791000168103",
+        "target": "177241000036105",
+        "type": "is-a",
+      },
+      Object {
+        "source": "177241000036105",
+        "target": "21885011000036105",
+        "type": "is-a",
+      },
+      Object {
+        "source": "177241000036105",
+        "target": "21433011000036107",
+        "type": "is-a",
+      },
+      Object {
+        "source": "812801000168102",
+        "target": "812781000168101",
+        "type": "has-brand",
+      },
+    ]
+  }
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "812781000168101",
+            "display": "Nuromol",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "brand",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "812821000168106",
+            "display": "Nuromol film-coated tablet, 2",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "BPG",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "812811000168104",
+            "display": "paracetamol 500 mg + ibuprofen 200 mg tablet, 2",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "UPG",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "812801000168102",
+            "display": "Nuromol film-coated tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "BPSF",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "812791000168103",
+            "display": "paracetamol 500 mg + ibuprofen 200 mg tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "UPDSF",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "177241000036105",
+            "display": "paracetamol + ibuprofen",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21885011000036105",
+            "display": "ibuprofen",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21433011000036107",
+            "display": "paracetamol",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "812831000168109",
+            "display": "Nuromol film-coated tablet, 2, blister pack",
+            "system": "http://snomed.info/sct",
+          },
+          Object {
+            "code": "225322",
+            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+          },
+        ],
+        "focused": true,
+        "type": "BPGC",
+      },
+    ]
+  }
+  viewport={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+/>
+`;
+
+exports[`Storyshots BasicSearch With current query 1`] = `
+<BasicSearch
+  bundle={
+    Object {
+      "total": 8,
+    }
+  }
+  currentQuery="parac"
+  results={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933216161000036101",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+          Object {
+            "code": "74899",
+            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+          },
+        ],
+        "type": "CTPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933205801000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933196831000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "22131000168107",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75498011000036101",
+            "display": "death adder antivenom 6000 units injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75096011000036105",
+            "display": "king brown snake antivenom 18 000 units injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "74983011000036101",
+            "display": "taipan snake antivenom",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "2610011000036105",
+            "display": "sumatriptan",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "substance",
+      },
+    ]
+  }
+  routedQuery="para"
+/>
+`;
+
+exports[`Storyshots BasicSearch With routed query and results 1`] = `
+<BasicSearch
+  bundle={
+    Object {
+      "total": 8,
+    }
+  }
+  results={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933216161000036101",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+          Object {
+            "code": "74899",
+            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+          },
+        ],
+        "type": "CTPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933205801000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933196831000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "22131000168107",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75498011000036101",
+            "display": "death adder antivenom 6000 units injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75096011000036105",
+            "display": "king brown snake antivenom 18 000 units injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "74983011000036101",
+            "display": "taipan snake antivenom",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "2610011000036105",
+            "display": "sumatriptan",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "substance",
+      },
+    ]
+  }
+  routedQuery="para"
+/>
+`;
+
+exports[`Storyshots BasicSearch With routed query but no results 1`] = `
+<BasicSearch
+  routedQuery="para"
+/>
+`;
+
+exports[`Storyshots BasicSearch With routed query but no results, loading 1`] = `
+<BasicSearch
+  loading={true}
+  routedQuery="para"
+/>
+`;
+
+exports[`Storyshots Concept CTPP 1`] = `
+<Concept
+  coding={
+    Array [
+      Object {
+        "code": "933216161000036101",
+        "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+        "system": "http://snomed.info/sct",
+      },
+      Object {
+        "code": "74899",
+        "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+      },
+    ]
+  }
+  focused={false}
+  height={116}
+  left={20}
+  top={20}
+  type="CTPP"
+  width={166}
+/>
+`;
+
+exports[`Storyshots Concept Focused 1`] = `
+<Concept
+  coding={
+    Array [
+      Object {
+        "code": "933216161000036101",
+        "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+        "system": "http://snomed.info/sct",
+      },
+      Object {
+        "code": "74899",
+        "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+      },
+    ]
+  }
+  focused={true}
+  height={116}
+  left={20}
+  top={20}
+  type="CTPP"
+  width={166}
+/>
+`;
+
+exports[`Storyshots Concept MP 1`] = `
+<Concept
+  coding={
+    Array [
+      Object {
+        "code": "74983011000036101",
+        "display": "taipan snake antivenom",
+        "system": "http://snomed.info/sct",
+      },
+    ]
+  }
+  focused={false}
+  height={116}
+  left={20}
+  top={20}
+  type="MP"
+  width={166}
+/>
+`;
+
+exports[`Storyshots Concept MPP 1`] = `
+<Concept
+  coding={
+    Array [
+      Object {
+        "code": "75498011000036101",
+        "display": "death adder antivenom 6000 units injection, 1 vial",
+        "system": "http://snomed.info/sct",
+      },
+    ]
+  }
+  focused={false}
+  height={116}
+  left={20}
+  top={20}
+  type="MPP"
+  width={166}
+/>
+`;
+
+exports[`Storyshots Concept MPUU 1`] = `
+<Concept
+  coding={
+    Array [
+      Object {
+        "code": "75096011000036105",
+        "display": "king brown snake antivenom 18 000 units injection, vial",
+        "system": "http://snomed.info/sct",
+      },
+    ]
+  }
+  focused={false}
+  height={116}
+  left={20}
+  top={20}
+  type="MPUU"
+  width={166}
+/>
+`;
+
+exports[`Storyshots Concept TP 1`] = `
+<Concept
+  coding={
+    Array [
+      Object {
+        "code": "22131000168107",
+        "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
+        "system": "http://snomed.info/sct",
+      },
+    ]
+  }
+  focused={false}
+  height={116}
+  left={20}
+  top={20}
+  type="TP"
+  width={166}
+/>
+`;
+
+exports[`Storyshots Concept TPP 1`] = `
+<Concept
+  coding={
+    Array [
+      Object {
+        "code": "933205801000036102",
+        "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+        "system": "http://snomed.info/sct",
+      },
+    ]
+  }
+  focused={false}
+  height={116}
+  left={20}
+  top={20}
+  type="TPP"
+  width={166}
+/>
+`;
+
+exports[`Storyshots Concept TPUU 1`] = `
+<Concept
+  coding={
+    Array [
+      Object {
+        "code": "933196831000036102",
+        "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
+        "system": "http://snomed.info/sct",
+      },
+    ]
+  }
+  focused={false}
+  height={116}
+  left={20}
+  top={20}
+  type="TPUU"
+  width={166}
+/>
+`;
+
+exports[`Storyshots Concept With ARTG ID 1`] = `
+<Concept
+  coding={
+    Array [
+      Object {
+        "code": "95431000036109",
+        "display": "Xifaxan 550 mg film-coated tablet, 56, blister pack",
+        "system": "http://snomed.info/sct",
+      },
+      Object {
+        "code": "183411",
+        "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+      },
+    ]
+  }
+  focused={false}
+  height={116}
+  left={20}
+  top={20}
+  type="CTPP"
+  width={166}
+/>
+`;
+
+exports[`Storyshots Concept substance 1`] = `
+<Concept
+  coding={
+    Array [
+      Object {
+        "code": "2610011000036105",
+        "display": "sumatriptan",
+        "system": "http://snomed.info/sct",
+      },
+    ]
+  }
+  focused={false}
+  height={116}
+  left={20}
+  top={20}
+  type="substance"
+  width={166}
+/>
+`;
+
+exports[`Storyshots ConceptGroup With parent medication search result 1`] = `
+<ConceptGroup
+  concepts={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "81302011000036105",
+            "display": "zinc oxide 15% + dimeticone-350 15% + light liquid paraffin 10% cream",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "931852011000036109",
+            "display": "dimeticone-350 1.04% + zinc oxide 12.5% spray",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "61101000036107",
+            "display": "aluminium chlorohydrate 2% + benzoin Sumatra 1.2% + dimeticone-350 10% + liquid paraffin 5% + zinc oxide 20% paste",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPUU",
+      },
+    ]
+  }
+  height={116}
+  left={20}
+  linkPath="/?q=some-search"
+  top={20}
+  total={549}
+  width={166}
+/>
+`;
+
+exports[`Storyshots ConceptTypeToggle With label and no value 1`] = `
+<ConceptTypeToggle
+  label="Concept type"
+/>
+`;
+
+exports[`Storyshots ConceptTypeToggle With label and value 1`] = `
+<ConceptTypeToggle
+  label="Concept type"
+  value={
+    Array [
+      "CTPP",
+      "TPP",
+      "MPP",
+    ]
+  }
+/>
+`;
+
+exports[`Storyshots ConceptTypeToggle With value 1`] = `
+<ConceptTypeToggle
+  value={
+    Array [
+      "CTPP",
+      "TPP",
+      "MPP",
+    ]
+  }
+/>
+`;
+
+exports[`Storyshots CopyToClipboard With some text 1`] = `
+<CopyToClipboard
+  copyText="The quick brown fox jumps over the lazy dog."
+  onClick={[Function]}
+/>
+`;
+
+exports[`Storyshots ErrorMessage OperationOutcome 1`] = `
+<ErrorMessage
+  error={[Error: Invalid request: The FHIR endpoint on this server does not know how to handle GET operation[Medication] with parameters [[_text, is-brafnd]]]}
+/>
+`;
+
+exports[`Storyshots ErrorMessage Simple message 1`] = `
+<ErrorMessage
+  error={
+    Object {
+      "message": "Some especially long message: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    }
+  }
+/>
+`;
+
+exports[`Storyshots Expand Active 1`] = `
+<Expand
+  active={true}
+  className="expand"
+/>
+`;
+
+exports[`Storyshots Expand Inactive 1`] = `
+<Expand
+  active={false}
+  className="expand"
+/>
+`;
+
+exports[`Storyshots FullSearchResults With a query and empty results 1`] = `
+<FullSearchResults
+  query="dog"
+  results={Array []}
+/>
+`;
+
+exports[`Storyshots FullSearchResults With full range of types 1`] = `
+<FullSearchResults
+  results={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933216161000036101",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+          Object {
+            "code": "74899",
+            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+          },
+        ],
+        "type": "CTPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933205801000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933196831000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "22131000168107",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75498011000036101",
+            "display": "death adder antivenom 6000 units injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75096011000036105",
+            "display": "king brown snake antivenom 18 000 units injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "74983011000036101",
+            "display": "taipan snake antivenom",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "2610011000036105",
+            "display": "sumatriptan",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "substance",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`Storyshots FullSearchResults With no query and empty results 1`] = `
+<FullSearchResults
+  results={Array []}
+/>
+`;
+
+exports[`Storyshots FullSearchResults With no query and no results 1`] = `<FullSearchResults />`;
+
+exports[`Storyshots Loading Loading 1`] = `
+<Loading
+  delay={350}
+  loading={true}
+/>
+`;
+
+exports[`Storyshots Loading Loading, delay 2 seconds 1`] = `
+<Loading
+  delay={2000}
+  loading={true}
+/>
+`;
+
+exports[`Storyshots Loading Not loading 1`] = `
+<Loading
+  delay={350}
+  loading={false}
+/>
+`;
+
+exports[`Storyshots MedicationSearchField Searching TPPs 1`] = `
+<MedicationSearchField
+  fhirServer="https://medserve.local/fhir"
+  focusUponMount={true}
+  label="Select product"
+  minRequestFrequency={350}
+  searchPath={[Function]}
+/>
+`;
+
+exports[`Storyshots MedicationSearchField With coding value (code and display) 1`] = `
+<MedicationSearchField
+  codingValue="49333011000036108|Proguide (66000782) green 28 cm to 32 cm two layer bandage, 1"
+  fhirServer="https://medserve.local/fhir"
+  focusUponMount={true}
+  label="Select product"
+  minRequestFrequency={350}
+  searchPath={[Function]}
+/>
+`;
+
+exports[`Storyshots MedicationSearchField With coding value (code only) 1`] = `
+<MedicationSearchField
+  codingValue="49333011000036108"
+  fhirServer="https://medserve.local/fhir"
+  focusUponMount={true}
+  label="Select product"
+  minRequestFrequency={350}
+  searchPath={[Function]}
+/>
+`;
+
+exports[`Storyshots MedicationSearchField With text value 1`] = `
+<MedicationSearchField
+  fhirServer="https://medserve.local/fhir"
+  focusUponMount={true}
+  label="Select product"
+  minRequestFrequency={350}
+  searchPath={[Function]}
+  textValue="oxy"
+/>
+`;
+
+exports[`Storyshots QuickSearchResults With a query and empty results 1`] = `
+<QuickSearchResults
+  query="dog"
+  renderLinks={true}
+  results={Array []}
+/>
+`;
+
+exports[`Storyshots QuickSearchResults With a selected row 1`] = `
+<QuickSearchResults
+  renderLinks={true}
+  results={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933216161000036101",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+          Object {
+            "code": "74899",
+            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+          },
+        ],
+        "type": "CTPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933205801000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933196831000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "22131000168107",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75498011000036101",
+            "display": "death adder antivenom 6000 units injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75096011000036105",
+            "display": "king brown snake antivenom 18 000 units injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "74983011000036101",
+            "display": "taipan snake antivenom",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "2610011000036105",
+            "display": "sumatriptan",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "substance",
+      },
+    ]
+  }
+  selected={2}
+/>
+`;
+
+exports[`Storyshots QuickSearchResults With full range of types 1`] = `
+<QuickSearchResults
+  renderLinks={true}
+  results={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933216161000036101",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+          Object {
+            "code": "74899",
+            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+          },
+        ],
+        "type": "CTPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933205801000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933196831000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "22131000168107",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75498011000036101",
+            "display": "death adder antivenom 6000 units injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75096011000036105",
+            "display": "king brown snake antivenom 18 000 units injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "74983011000036101",
+            "display": "taipan snake antivenom",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "2610011000036105",
+            "display": "sumatriptan",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "substance",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`Storyshots QuickSearchResults With more link 1`] = `
+<QuickSearchResults
+  query="something"
+  renderLinks={true}
+  results={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933216161000036101",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+          Object {
+            "code": "74899",
+            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+          },
+        ],
+        "type": "CTPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933205801000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933196831000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "22131000168107",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "TP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75498011000036101",
+            "display": "death adder antivenom 6000 units injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75096011000036105",
+            "display": "king brown snake antivenom 18 000 units injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "74983011000036101",
+            "display": "taipan snake antivenom",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "2610011000036105",
+            "display": "sumatriptan",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "substance",
+      },
+    ]
+  }
+  totalResults={1534}
+/>
+`;
+
+exports[`Storyshots QuickSearchResults With no query and empty results 1`] = `
+<QuickSearchResults
+  renderLinks={true}
+  results={Array []}
+/>
+`;
+
+exports[`Storyshots QuickSearchResults With no query and no results 1`] = `
+<QuickSearchResults
+  renderLinks={true}
+/>
+`;
+
+exports[`Storyshots Search As configured 1`] = `
+<withRouter(Search)
+  fhirServer="https://medserve.local/fhir"
+/>
+`;
+
+exports[`Storyshots Search With a query 1`] = `
+<withRouter(Search)
+  fhirServer="https://medserve.local/fhir"
+  query="package:\\"22095011000036109|fenofibrate 145 mg tablet\\""
+/>
+`;
+
+exports[`Storyshots Search With focus on mount 1`] = `
+<withRouter(Search)
+  fhirServer="https://medserve.local/fhir"
+  focusUponMount={true}
+/>
+`;
+
+exports[`Storyshots Search With minimum request frequency of 2 seconds 1`] = `
+<withRouter(Search)
+  fhirServer="https://medserve.local/fhir"
+  minRequestFrequency={2000}
+/>
+`;
+
+exports[`Storyshots SearchForm With a query 1`] = `
+<SearchForm
+  fhirServer="https://medserve.local/fhir"
+  query="varicella id:959031000168106"
+/>
+`;
+
+exports[`Storyshots SearchSummary With next and previous links 1`] = `
+<SearchSummary
+  nextLink="something-else"
+  previousLink="something"
+  totalResults={350}
+/>
+`;
+
+exports[`Storyshots SearchSummary With next link 1`] = `
+<SearchSummary
+  nextLink="something"
+  totalResults={350}
+/>
+`;
+
+exports[`Storyshots SearchSummary With no total results 1`] = `<SearchSummary />`;
+
+exports[`Storyshots SearchSummary With previous link 1`] = `
+<SearchSummary
+  previousLink="something"
+  totalResults={350}
+/>
+`;
+
+exports[`Storyshots SearchSummary With total results 1`] = `
+<SearchSummary
+  totalResults={5345}
+/>
+`;
+
+exports[`Storyshots TextField With focus on mount 1`] = `
+<TextField
+  disabled={false}
+  focusUponMount={true}
+  value="Some value"
+/>
+`;
+
+exports[`Storyshots TextField With no value 1`] = `
+<TextField
+  disabled={false}
+/>
+`;
+
+exports[`Storyshots TextField With placeholder 1`] = `
+<TextField
+  disabled={false}
+  placeholder="Type here"
+/>
+`;
+
+exports[`Storyshots TextField With value 1`] = `
+<TextField
+  disabled={false}
+  value="Some value"
+/>
+`;

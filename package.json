@@ -36,7 +36,11 @@
     "@storybook/addons": "^3.2.17",
     "@storybook/channels": "^3.2.17",
     "@storybook/react": "^3.2.12",
+    "asn1": "^0.2.3",
     "babel-core": "^6.26.0",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "enzyme-to-json": "^3.3.0",
     "eslint": "^4.13.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-react": "^5.0.0",
@@ -65,5 +69,10 @@
     "build-storybook": "build-storybook -s public",
     "update-test-files": "node scripts/updateTestFiles.js",
     "loc": "sloc --exclude \".*\\.(css|svg|test.js|stories.js|js.snap)\" src"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }
