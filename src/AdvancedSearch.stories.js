@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import AdvancedSearch from './AdvancedSearch.js'
 import { results1 } from './QuickSearchResults.stories.js'
-import config from '../public/config.json'
+import config from '../test/config.js'
 
 storiesOf('AdvancedSearch', module)
   .add('With routed query but no results', () => (

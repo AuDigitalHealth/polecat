@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import Search from './Search.js'
-import config from '../public/config.json'
+import config from '../test/config.js'
 
 storiesOf('Search', module)
   .add('As configured', () => <Search fhirServer={config.fhirServer} />)

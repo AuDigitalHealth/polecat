@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import MedicationSearchField from './MedicationSearchField.js'
-import config from '../public/config.json'
+import config from '../test/config.js'
 
 storiesOf('MedicationSearchField', module)
   .add('Searching TPPs', () => (

@@ -10,10 +10,7 @@ addDecorator(withKnobsOptions({ debounce: { wait: 350 } }))
 addDecorator(StoryRouter())
 
 const req = require.context('../src', true, /\.stories\.js$/)
-
-function loadStories() {
-  req.keys().forEach(filename => req(filename))
-}
+const loadStories = () => req.keys().forEach(filename => req(filename))
 
 setOptions({ name: 'Polecat' })
 configure(loadStories, module)

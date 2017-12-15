@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import AmtBrowser from './AmtBrowser.js'
-import config from '../public/config.json'
+import config from '../test/config.js'
 
 const width = 800
 const height = 800
