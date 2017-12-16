@@ -1,3 +1,7 @@
+.search-basic {
+  position: relative;
+}
+
 .search-basic-form {
   width: 266px;
   position: relative;
@@ -19,8 +23,8 @@
 
 .search-basic .quick-search-results {
   position: absolute;
-  top: 50px;
-  left: 20px;
+  top: 31px;
+  min-width: 500px;
 }
 
 .search-basic-form .loading-or-expand.loading .search-toggle-advanced {
