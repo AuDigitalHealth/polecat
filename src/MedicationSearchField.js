@@ -181,7 +181,6 @@ class MedicationSearchField extends Component {
           <QuickSearchResults
             query={query}
             results={results}
-            renderLinks={false}
             onSelectResult={this.handleSelectResult}
           />
         ) : null}

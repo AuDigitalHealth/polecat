@@ -4,6 +4,10 @@
 }
 
 .medication-search-field .text-field input {
+  float: right;
+}
+
+.medication-search-field .text-field input {
   border: 1px solid #666;
   border-radius: 6px;
   padding: 3px;
@@ -12,7 +16,7 @@
 
 .medication-search-field .quick-search-results {
   position: absolute;
-  top: 20px;
+  top: 22px;
   right: -246px;
   width: 400px;
   z-index: 65;

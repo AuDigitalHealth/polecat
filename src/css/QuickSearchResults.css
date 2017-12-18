@@ -16,6 +16,7 @@
 .quick-search-results .search-result {
   padding: 7px 8px;
   border-bottom: 1px solid #ccc;
+  cursor: pointer;
 }
 
 .quick-search-results .search-result.selected {
@@ -30,10 +31,9 @@
   margin-right: 64px;
   overflow: hidden;
   display: block;
-  cursor: pointer;
 }
 
-.quick-search-results .search-result .display a {
+.quick-search-results .search-result a {
   text-decoration: none;
   color: black;
 }

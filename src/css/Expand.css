@@ -4,6 +4,7 @@
   user-select: none;
   transition: transform 0.5s;
   transform-origin: 50% 55%;
+  width: 10px;
 }
 
 .expand.active {

@@ -23,6 +23,7 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
             "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
           },
         ],
+        "link": "/Medication/933216161000036101",
         "type": "CTPP",
       },
       Object {
@@ -33,6 +34,7 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/933205801000036102",
         "type": "TPP",
       },
       Object {
@@ -43,6 +45,7 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/933196831000036102",
         "type": "TPUU",
       },
       Object {
@@ -53,6 +56,7 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/22131000168107",
         "type": "TP",
       },
       Object {
@@ -63,6 +67,7 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/75498011000036101",
         "type": "MPP",
       },
       Object {
@@ -73,6 +78,7 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/75096011000036105",
         "type": "MPUU",
       },
       Object {
@@ -83,6 +89,7 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/74983011000036101",
         "type": "MP",
       },
       Object {
@@ -93,6 +100,7 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Substance/2610011000036105",
         "type": "substance",
       },
     ]
@@ -123,6 +131,7 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
             "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
           },
         ],
+        "link": "/Medication/933216161000036101",
         "type": "CTPP",
       },
       Object {
@@ -133,6 +142,7 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/933205801000036102",
         "type": "TPP",
       },
       Object {
@@ -143,6 +153,7 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/933196831000036102",
         "type": "TPUU",
       },
       Object {
@@ -153,6 +164,7 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/22131000168107",
         "type": "TP",
       },
       Object {
@@ -163,6 +175,7 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/75498011000036101",
         "type": "MPP",
       },
       Object {
@@ -173,6 +186,7 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/75096011000036105",
         "type": "MPUU",
       },
       Object {
@@ -183,6 +197,7 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/74983011000036101",
         "type": "MP",
       },
       Object {
@@ -193,6 +208,7 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Substance/2610011000036105",
         "type": "substance",
       },
     ]
@@ -1918,6 +1934,7 @@ exports[`Storyshots BasicSearch With current query 1`] = `
             "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
           },
         ],
+        "link": "/Medication/933216161000036101",
         "type": "CTPP",
       },
       Object {
@@ -1928,6 +1945,7 @@ exports[`Storyshots BasicSearch With current query 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/933205801000036102",
         "type": "TPP",
       },
       Object {
@@ -1938,6 +1956,7 @@ exports[`Storyshots BasicSearch With current query 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/933196831000036102",
         "type": "TPUU",
       },
       Object {
@@ -1948,6 +1967,7 @@ exports[`Storyshots BasicSearch With current query 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/22131000168107",
         "type": "TP",
       },
       Object {
@@ -1958,6 +1978,7 @@ exports[`Storyshots BasicSearch With current query 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/75498011000036101",
         "type": "MPP",
       },
       Object {
@@ -1968,6 +1989,7 @@ exports[`Storyshots BasicSearch With current query 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/75096011000036105",
         "type": "MPUU",
       },
       Object {
@@ -1978,6 +2000,7 @@ exports[`Storyshots BasicSearch With current query 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/74983011000036101",
         "type": "MP",
       },
       Object {
@@ -1988,6 +2011,7 @@ exports[`Storyshots BasicSearch With current query 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Substance/2610011000036105",
         "type": "substance",
       },
     ]
@@ -2017,6 +2041,7 @@ exports[`Storyshots BasicSearch With routed query and results 1`] = `
             "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
           },
         ],
+        "link": "/Medication/933216161000036101",
         "type": "CTPP",
       },
       Object {
@@ -2027,6 +2052,7 @@ exports[`Storyshots BasicSearch With routed query and results 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/933205801000036102",
         "type": "TPP",
       },
       Object {
@@ -2037,6 +2063,7 @@ exports[`Storyshots BasicSearch With routed query and results 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/933196831000036102",
         "type": "TPUU",
       },
       Object {
@@ -2047,6 +2074,7 @@ exports[`Storyshots BasicSearch With routed query and results 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/22131000168107",
         "type": "TP",
       },
       Object {
@@ -2057,6 +2085,7 @@ exports[`Storyshots BasicSearch With routed query and results 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/75498011000036101",
         "type": "MPP",
       },
       Object {
@@ -2067,6 +2096,7 @@ exports[`Storyshots BasicSearch With routed query and results 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/75096011000036105",
         "type": "MPUU",
       },
       Object {
@@ -2077,6 +2107,7 @@ exports[`Storyshots BasicSearch With routed query and results 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/74983011000036101",
         "type": "MP",
       },
       Object {
@@ -2087,6 +2118,7 @@ exports[`Storyshots BasicSearch With routed query and results 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Substance/2610011000036105",
         "type": "substance",
       },
     ]
@@ -2456,6 +2488,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
             "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
           },
         ],
+        "link": "/Medication/933216161000036101",
         "type": "CTPP",
       },
       Object {
@@ -2466,6 +2499,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/933205801000036102",
         "type": "TPP",
       },
       Object {
@@ -2476,6 +2510,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/933196831000036102",
         "type": "TPUU",
       },
       Object {
@@ -2486,6 +2521,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/22131000168107",
         "type": "TP",
       },
       Object {
@@ -2496,6 +2532,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/75498011000036101",
         "type": "MPP",
       },
       Object {
@@ -2506,6 +2543,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/75096011000036105",
         "type": "MPUU",
       },
       Object {
@@ -2516,6 +2554,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/74983011000036101",
         "type": "MP",
       },
       Object {
@@ -2526,6 +2565,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Substance/2610011000036105",
         "type": "substance",
       },
     ]
@@ -2605,17 +2645,109 @@ exports[`Storyshots MedicationSearchField With text value 1`] = `
 />
 `;
 
-exports[`Storyshots QuickSearchResults With a query and empty results 1`] = `
+exports[`Storyshots QuickSearchResults All types, with links 1`] = `
 <QuickSearchResults
-  query="dog"
-  renderLinks={true}
-  results={Array []}
+  results={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933216161000036101",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+          Object {
+            "code": "74899",
+            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+          },
+        ],
+        "link": "/Medication/933216161000036101",
+        "type": "CTPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933205801000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "link": "/Medication/933205801000036102",
+        "type": "TPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933196831000036102",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "link": "/Medication/933196831000036102",
+        "type": "TPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "22131000168107",
+            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "link": "/Medication/22131000168107",
+        "type": "TP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75498011000036101",
+            "display": "death adder antivenom 6000 units injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "link": "/Medication/75498011000036101",
+        "type": "MPP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "75096011000036105",
+            "display": "king brown snake antivenom 18 000 units injection, vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "link": "/Medication/75096011000036105",
+        "type": "MPUU",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "74983011000036101",
+            "display": "taipan snake antivenom",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "link": "/Medication/74983011000036101",
+        "type": "MP",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "2610011000036105",
+            "display": "sumatriptan",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "link": "/Substance/2610011000036105",
+        "type": "substance",
+      },
+    ]
+  }
 />
 `;
 
-exports[`Storyshots QuickSearchResults With a selected row 1`] = `
+exports[`Storyshots QuickSearchResults All types, without links 1`] = `
 <QuickSearchResults
-  renderLinks={true}
   results={
     Array [
       Object {
@@ -2704,13 +2836,18 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
       },
     ]
   }
-  selected={2}
 />
 `;
 
-exports[`Storyshots QuickSearchResults With full range of types 1`] = `
+exports[`Storyshots QuickSearchResults With a query and empty results 1`] = `
 <QuickSearchResults
-  renderLinks={true}
+  query="dog"
+  results={Array []}
+/>
+`;
+
+exports[`Storyshots QuickSearchResults With a selected row 1`] = `
+<QuickSearchResults
   results={
     Array [
       Object {
@@ -2725,6 +2862,7 @@ exports[`Storyshots QuickSearchResults With full range of types 1`] = `
             "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
           },
         ],
+        "link": "/Medication/933216161000036101",
         "type": "CTPP",
       },
       Object {
@@ -2735,6 +2873,7 @@ exports[`Storyshots QuickSearchResults With full range of types 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/933205801000036102",
         "type": "TPP",
       },
       Object {
@@ -2745,6 +2884,8 @@ exports[`Storyshots QuickSearchResults With full range of types 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/933196831000036102",
+        "selected": true,
         "type": "TPUU",
       },
       Object {
@@ -2755,6 +2896,7 @@ exports[`Storyshots QuickSearchResults With full range of types 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/22131000168107",
         "type": "TP",
       },
       Object {
@@ -2765,6 +2907,7 @@ exports[`Storyshots QuickSearchResults With full range of types 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/75498011000036101",
         "type": "MPP",
       },
       Object {
@@ -2775,6 +2918,7 @@ exports[`Storyshots QuickSearchResults With full range of types 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/75096011000036105",
         "type": "MPUU",
       },
       Object {
@@ -2785,6 +2929,7 @@ exports[`Storyshots QuickSearchResults With full range of types 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/74983011000036101",
         "type": "MP",
       },
       Object {
@@ -2795,6 +2940,7 @@ exports[`Storyshots QuickSearchResults With full range of types 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Substance/2610011000036105",
         "type": "substance",
       },
     ]
@@ -2804,8 +2950,6 @@ exports[`Storyshots QuickSearchResults With full range of types 1`] = `
 
 exports[`Storyshots QuickSearchResults With more link 1`] = `
 <QuickSearchResults
-  query="something"
-  renderLinks={true}
   results={
     Array [
       Object {
@@ -2820,6 +2964,7 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
             "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
           },
         ],
+        "link": "/Medication/933216161000036101",
         "type": "CTPP",
       },
       Object {
@@ -2830,6 +2975,7 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/933205801000036102",
         "type": "TPP",
       },
       Object {
@@ -2840,6 +2986,7 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/933196831000036102",
         "type": "TPUU",
       },
       Object {
@@ -2850,6 +2997,7 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/22131000168107",
         "type": "TP",
       },
       Object {
@@ -2860,6 +3008,7 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/75498011000036101",
         "type": "MPP",
       },
       Object {
@@ -2870,6 +3019,7 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/75096011000036105",
         "type": "MPUU",
       },
       Object {
@@ -2880,6 +3030,7 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Medication/74983011000036101",
         "type": "MP",
       },
       Object {
@@ -2890,26 +3041,26 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
             "system": "http://snomed.info/sct",
           },
         ],
+        "link": "/Substance/2610011000036105",
         "type": "substance",
+      },
+      Object {
+        "link": "/?q=something",
+        "total": 45983,
+        "type": "more",
       },
     ]
   }
-  totalResults={1534}
 />
 `;
 
 exports[`Storyshots QuickSearchResults With no query and empty results 1`] = `
 <QuickSearchResults
-  renderLinks={true}
   results={Array []}
 />
 `;
 
-exports[`Storyshots QuickSearchResults With no query and no results 1`] = `
-<QuickSearchResults
-  renderLinks={true}
-/>
-`;
+exports[`Storyshots QuickSearchResults With no query and no results 1`] = `<QuickSearchResults />`;
 
 exports[`Storyshots Search As configured 1`] = `
 <withRouter(Search)

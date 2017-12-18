@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-import { searchPathFromQuery } from './Router.js'
-import { codingToSnomedCode, codingToSnomedDisplay } from './fhir/medication.js'
+import { codingToSnomedDisplay } from './fhir/medication.js'
 import { formatNumber } from './util.js'
 
 import './css/QuickSearchResults.css'
@@ -30,16 +29,14 @@ class QuickSearchResults extends Component {
           'MPUU',
           'MP',
           'substance',
+          'more',
         ]),
+        link: PropTypes.string,
+        selected: PropTypes.bool,
+        total: PropTypes.number,
       })
     ),
-    totalResults: PropTypes.number,
-    renderLinks: PropTypes.bool,
-    selected: PropTypes.number,
     onSelectResult: PropTypes.func,
-  }
-  static defaultProps = {
-    renderLinks: true,
   }
 
   handleSelectResult(result) {
@@ -62,72 +59,73 @@ class QuickSearchResults extends Component {
     } else if (results && results.length === 0) {
       return <div className='no-results'>No results.</div>
     } else if (results && results.length > 0) {
-      return (
-        <ol>
-          {this.renderResults()}
-          {this.renderMoreLink()}
-        </ol>
-      )
+      return <ol>{this.renderResults()}</ol>
     } else {
       return null
     }
   }
 
   renderResults() {
-    const { results, renderLinks, selected } = this.props
+    const { results } = this.props
     if (!results) return
-    return results.map((result, i) => (
+    return results.map(
+      (result, i) =>
+        result.type === 'more'
+          ? this.renderMoreLink(result, i)
+          : this.renderResult(result, i)
+    )
+  }
+
+  renderResult(result, i) {
+    return (
       <li
         key={i}
-        className={
-          selected !== undefined && selected === i
-            ? 'search-result selected'
-            : 'search-result'
-        }
+        className={result.selected ? 'search-result selected' : 'search-result'}
+      >
+        {result.link
+          ? this.renderLinkedResult(result)
+          : this.renderUnlinkedResult(result)}
+      </li>
+    )
+  }
+
+  renderLinkedResult(result) {
+    return (
+      <Link
+        className='target'
+        to={result.link}
+        onClick={() => this.handleSelectResult(result)}
       >
         <span className={`type type-${result.type}`.toLowerCase()}>
           {result.type}
         </span>
-        <span className='display'>
-          {renderLinks
-            ? this.renderLinkToResult(result)
-            : this.renderUnlinkedResult(result)}
-        </span>
-      </li>
-    ))
-  }
-
-  renderMoreLink() {
-    const { results, totalResults, query } = this.props
-    if (!results || !totalResults) return
-    if (totalResults > results.length) {
-      return (
-        <li key='more' className='more-results'>
-          <Link to={searchPathFromQuery(query)}>
-            view all {formatNumber(totalResults)} matches &rarr;
-          </Link>
-        </li>
-      )
-    }
-  }
-
-  renderLinkToResult(result) {
-    const to =
-      result.type === 'substance'
-        ? `/Substance/${codingToSnomedCode(result.coding)}`
-        : `/Medication/${codingToSnomedCode(result.coding)}`
-    return (
-      <Link to={to} onClick={() => this.handleSelectResult(result)}>
-        {codingToSnomedDisplay(result.coding)}
+        <span className='display'>{codingToSnomedDisplay(result.coding)}</span>
       </Link>
     )
   }
 
   renderUnlinkedResult(result) {
     return (
-      <div onClick={() => this.handleSelectResult(result)}>
-        {codingToSnomedDisplay(result.coding)}
+      <div className='target' onClick={() => this.handleSelectResult(result)}>
+        <span className={`type type-${result.type}`.toLowerCase()}>
+          {result.type}
+        </span>
+        <span className='display'>{codingToSnomedDisplay(result.coding)}</span>
       </div>
+    )
+  }
+
+  renderMoreLink(result, i) {
+    return (
+      <li key={i} className='more-results'>
+        <Link
+          className='target'
+          to={result.link}
+          onClick={() => this.handleSelectResult(result)}
+        >
+          view all {formatNumber(result.total)} matches &rarr;
+        </Link>
+      </li>
     )
   }
 }

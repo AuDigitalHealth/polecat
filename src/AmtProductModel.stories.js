@@ -1,5 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { host } from 'storybook-host'
+import { withKnobs } from '@storybook/addon-knobs'
+import { withSmartKnobs } from 'storybook-addon-smart-knobs'
 
 import AmtProductModel from './AmtProductModel.js'
 import nodesLinks1 from '../test/nodesLinks-813191000168107.json'
@@ -65,12 +68,19 @@ const addFixedPos = (nodes, fixedPos) =>
     ...node,
   }))
 
-const stories = storiesOf(
-  'AmtProductModel',
-  module
-).add('With nodes and links', () => (
-  <AmtProductModel nodes={nodes1} links={links1} viewport={{ width, height }} />
-))
+const stories = storiesOf('AmtProductModel', module)
+  .addDecorator(withSmartKnobs)
+  .addDecorator(withKnobs)
+  .addDecorator(
+    host({ width: '802px', height: '802px', border: '1px solid #ccc' })
+  )
+  .add('With nodes and links', () => (
+    <AmtProductModel
+      nodes={nodes1}
+      links={links1}
+      viewport={{ width, height }}
+    />
+  ))
 
 for (const pos in fixedPos) {
   stories.add(`${pos} link`, () => {

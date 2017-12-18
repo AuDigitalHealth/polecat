@@ -1,5 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import omit from 'lodash.omit'
 
 import QuickSearchResults from './QuickSearchResults.js'
 
@@ -18,6 +19,7 @@ export const results1 = [
       },
     ],
     type: 'CTPP',
+    link: '/Medication/933216161000036101',
   },
   {
     coding: [
@@ -29,6 +31,7 @@ export const results1 = [
       },
     ],
     type: 'TPP',
+    link: '/Medication/933205801000036102',
   },
   {
     coding: [
@@ -40,6 +43,7 @@ export const results1 = [
       },
     ],
     type: 'TPUU',
+    link: '/Medication/933196831000036102',
   },
   {
     coding: [
@@ -51,6 +55,7 @@ export const results1 = [
       },
     ],
     type: 'TP',
+    link: '/Medication/22131000168107',
   },
   {
     coding: [
@@ -61,6 +66,7 @@ export const results1 = [
       },
     ],
     type: 'MPP',
+    link: '/Medication/75498011000036101',
   },
   {
     coding: [
@@ -71,6 +77,7 @@ export const results1 = [
       },
     ],
     type: 'MPUU',
+    link: '/Medication/75096011000036105',
   },
   {
     coding: [
@@ -81,6 +88,7 @@ export const results1 = [
       },
     ],
     type: 'MP',
+    link: '/Medication/74983011000036101',
   },
   {
     coding: [
@@ -91,23 +99,28 @@ export const results1 = [
       },
     ],
     type: 'substance',
+    link: '/Substance/2610011000036105',
   },
 ]
 
 storiesOf('QuickSearchResults', module)
-  .add('With full range of types', () => (
-    <QuickSearchResults results={results1} />
-  ))
-  .add('With more link', () => (
-    <QuickSearchResults
-      query='something'
-      results={results1}
-      totalResults={1534}
-    />
-  ))
-  .add('With a selected row', () => (
-    <QuickSearchResults results={results1} selected={2} />
-  ))
+  .add('All types, with links', () => <QuickSearchResults results={results1} />)
+  .add('All types, without links', () => {
+    const resultsWithoutLinks = results1.map(r => omit(r, 'link'))
+    return <QuickSearchResults results={resultsWithoutLinks} />
+  })
+  .add('With more link', () => {
+    const resultsWithMore = results1.concat([
+      { type: 'more', link: '/?q=something', total: 45983 },
+    ])
+    return <QuickSearchResults results={resultsWithMore} />
+  })
+  .add('With a selected row', () => {
+    const resultsWithSelected = results1.map(
+      r => (r.type === 'TPUU' ? { ...r, selected: true } : r)
+    )
+    return <QuickSearchResults results={resultsWithSelected} />
+  })
   .add('With a query and empty results', () => (
     <QuickSearchResults query='dog' results={[]} />
   ))

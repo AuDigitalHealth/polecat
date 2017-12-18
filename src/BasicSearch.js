@@ -6,6 +6,8 @@ import TextField from './TextField.js'
 import Loading from './Loading.js'
 import Expand from './Expand.js'
 import QuickSearchResults from './QuickSearchResults.js'
+import { searchPathFromQuery } from './Router.js'
+import { codingToSnomedCode } from './fhir/medication.js'
 
 import './css/BasicSearch.css'
 
@@ -26,13 +28,47 @@ class BasicSearch extends Component {
 
   constructor(props) {
     super(props)
-    this.state = { quickSearchOpen: false }
+    this.state = { results: this.updateResults(props), quickSearchOpen: false }
     this.handleQueryUpdate = this.handleQueryUpdate.bind(this)
     this.handleFocus = this.handleFocus.bind(this)
     this.handleBlur = this.handleBlur.bind(this)
     this.handleKeyDown = this.handleKeyDown.bind(this)
     this.handleToggleAdvanced = this.handleToggleAdvanced.bind(this)
     this.handleSelectResult = this.handleSelectResult.bind(this)
+  }
+
+  updateResults(props) {
+    let { results } = props
+    results = this.addLinksToResults(results)
+    return this.addMoreLinkToResults(results, props)
+  }
+
+  addLinksToResults(results) {
+    if (!results) return results
+    return results.map(result => {
+      const snomedCode = codingToSnomedCode(result.coding)
+      if (snomedCode) {
+        const link =
+          result.type === 'substance'
+            ? `/Substance/${snomedCode}`
+            : `/Medication/${snomedCode}`
+        return { ...result, link }
+      } else return result
+    })
+  }
+
+  addMoreLinkToResults(results, { bundle, currentQuery, routedQuery }) {
+    const query = currentQuery || routedQuery
+    if (!results || !bundle || !bundle.total) return results
+    if (bundle.total > results.length) {
+      return results.concat([
+        {
+          type: 'more',
+          link: searchPathFromQuery(query),
+          total: bundle.total,
+        },
+      ])
+    } else return results
   }
 
   handleQueryUpdate(query) {
@@ -83,29 +119,22 @@ class BasicSearch extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { results } = this.props
-    const {
-      results: nextResults,
-      quickSearchShouldClose,
-      onQuickSearchClosed,
-    } = nextProps
-    if (quickSearchShouldClose) this.setState({ quickSearchOpen: false })
-    else if (!isEqual(results, nextResults)) {
-      this.setState({ quickSearchOpen: true })
+    const updateProps = [ 'routedQuery', 'currentQuery', 'results' ]
+    const { quickSearchShouldClose, onQuickSearchClosed } = nextProps
+    if (nextProps.quickSearchShouldClose) {
+      this.setState({ quickSearchOpen: false })
+    } else if (updateProps.some(p => !isEqual(this.props[p], nextProps[p]))) {
+      this.setState({
+        results: this.updateResults(nextProps),
+        quickSearchOpen: true,
+      })
     }
     if (quickSearchShouldClose && onQuickSearchClosed) onQuickSearchClosed()
   }
 
   render() {
-    const {
-      routedQuery,
-      currentQuery,
-      results,
-      bundle,
-      focusUponMount,
-      loading,
-    } = this.props
-    const { quickSearchOpen, selectedResult } = this.state
+    const { routedQuery, currentQuery, focusUponMount, loading } = this.props
+    const { results, quickSearchOpen } = this.state
     // If the query has been updated within state, use that over props.
     const query = currentQuery || routedQuery
     return (
@@ -133,8 +162,6 @@ class BasicSearch extends Component {
           <QuickSearchResults
             query={query}
             results={results}
-            totalResults={bundle ? bundle.total : null}
-            selected={selectedResult}
             onSelectResult={this.handleSelectResult}
           />
         ) : null}
