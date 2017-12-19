@@ -24,6 +24,7 @@
     "react-dom": "^16.2.0",
     "react-faux-dom": "^4.0.3",
     "react-motion": "^0.5.2",
+    "react-onclickoutside": "^6.7.0",
     "react-router-dom": "^4.1.2",
     "react-scripts": "^1.0.11"
   },
@@ -78,12 +79,8 @@
     "record-release": "bash scripts/recordRelease.sh",
     "loc": "sloc --exclude \".*\\.(css|svg|test.js|stories.js|js.snap)\" src"
   },
-  "pre-commit": [
-    "test-ci"
-  ],
+  "pre-commit": ["test-ci"],
   "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   }
 }

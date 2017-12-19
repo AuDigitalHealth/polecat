@@ -12,6 +12,7 @@ class TextField extends Component {
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
     onKeyDown: PropTypes.func,
+    onClick: PropTypes.func,
     focusUponMount: PropTypes.bool,
   }
   static defaultProps = {
@@ -25,6 +26,7 @@ class TextField extends Component {
     this.handleFocus = this.handleFocus.bind(this)
     this.handleBlur = this.handleBlur.bind(this)
     this.handleKeyDown = this.handleKeyDown.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleChange(event) {
@@ -56,6 +58,13 @@ class TextField extends Component {
     }
   }
 
+  handleClick(event) {
+    const { onClick } = this.props
+    if (onClick) {
+      onClick(event)
+    }
+  }
+
   componentDidMount() {
     const { focusUponMount } = this.props
     if (focusUponMount) this.textInput.focus()
@@ -78,6 +87,7 @@ class TextField extends Component {
       onFocus: this.handleFocus,
       onBlur: this.handleBlur,
       onKeyDown: this.handleKeyDown,
+      onClick: this.handleClick,
       ref: el => (this.textInput = el),
     }
     return (

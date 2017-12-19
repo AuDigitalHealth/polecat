@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import http, { CancelToken } from 'axios'
 import throttle from 'lodash.throttle'
 import omit from 'lodash.omit'
+import onClickOutside from 'react-onclickoutside'
 
 import TextField from './TextField.js'
 import QuickSearchResults from './QuickSearchResults.js'
@@ -13,7 +14,7 @@ import { opOutcomeFromJsonResponse } from './fhir/core.js'
 
 import './css/MedicationSearchField.css'
 
-class MedicationSearchField extends Component {
+export class MedicationSearchField extends Component {
   static propTypes = {
     fhirServer: PropTypes.string.isRequired,
     codingValue: PropTypes.string,
@@ -39,7 +40,9 @@ class MedicationSearchField extends Component {
       props.minRequestFrequency
     )
     this.handleFocus = this.handleFocus.bind(this)
+    this.handleClickOutside = this.handleClickOutside.bind(this)
     this.handleKeyDown = this.handleKeyDown.bind(this)
+    this.handleClick = this.handleClick.bind(this)
     this.handleTextValueChange = this.handleTextValueChange.bind(this)
     this.handleSelectResult = this.handleSelectResult.bind(this)
     this.handleClear = this.handleClear.bind(this)
@@ -106,6 +109,10 @@ class MedicationSearchField extends Component {
     this.setState(() => ({ quickSearchOpen: true }))
   }
 
+  handleClickOutside() {
+    this.setState(() => ({ quickSearchOpen: false }))
+  }
+
   handleKeyDown(event) {
     // Close the quick search if Escape is pressed.
     if (event.key === 'Escape') {
@@ -113,6 +120,7 @@ class MedicationSearchField extends Component {
     } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
       const { results } = this.state,
         selectedIndex = results.findIndex(r => r.selected)
+      if (event.key === 'ArrowDown') this.setState({ quickSearchOpen: true })
       let newSelection
       if (selectedIndex === -1) newSelection = 0
       else {
@@ -127,8 +135,18 @@ class MedicationSearchField extends Component {
             i === newSelection ? { ...r, selected: true } : omit(r, 'selected')
         ),
       }))
+    } else if (event.key === 'Enter') {
+      const { results } = this.state,
+        selectedResult = results.find(r => r.selected)
+      if (selectedResult) this.handleSelectResult(selectedResult)
     }
   }
+
+  handleClick() {
+    this.setState(() => ({ quickSearchOpen: true }))
+  }
+
+  // TODO: Reset selection upon close of quick search.
 
   handleTextValueChange(value) {
     const { onTextChange } = this.props
@@ -194,6 +212,7 @@ class MedicationSearchField extends Component {
           onChange={this.handleTextValueChange}
           onFocus={this.handleFocus}
           onKeyDown={this.handleKeyDown}
+          onClick={this.handleClick}
         />
         {quickSearchOpen ? (
           <QuickSearchResults
@@ -224,4 +243,4 @@ class MedicationSearchField extends Component {
   }
 }
 
-export default MedicationSearchField
+export default onClickOutside(MedicationSearchField)

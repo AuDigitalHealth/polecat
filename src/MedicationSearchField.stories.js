@@ -4,7 +4,7 @@ import { host } from 'storybook-host'
 import { withKnobs } from '@storybook/addon-knobs'
 import { withSmartKnobs } from 'storybook-addon-smart-knobs'
 
-import MedicationSearchField from './MedicationSearchField.js'
+import { MedicationSearchField } from './MedicationSearchField.js'
 import config from '../test/config.js'
 
 storiesOf('MedicationSearchField', module)

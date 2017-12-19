@@ -217,7 +217,8 @@ describe('codingToGroupCode', () => {
     const coding = [
       {
         system: 'group',
-        code: 'ad71ccb9ec7758b59d6eccfa729a8ba5bbc2350bcf41068ae75821be9e22fab6',
+        code:
+          'ad71ccb9ec7758b59d6eccfa729a8ba5bbc2350bcf41068ae75821be9e22fab6',
       },
     ]
     expect(codingToGroupCode(coding)).toEqual(

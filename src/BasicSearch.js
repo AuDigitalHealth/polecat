@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { withRouter } from 'react-router-dom'
 import isEqual from 'lodash.isequal'
 import omit from 'lodash.omit'
+import onClickOutside from 'react-onclickoutside'
 
 import TextField from './TextField.js'
 import Loading from './Loading.js'
@@ -12,7 +14,7 @@ import { codingToSnomedCode } from './fhir/medication.js'
 
 import './css/BasicSearch.css'
 
-class BasicSearch extends Component {
+export class BasicSearch extends Component {
   static propTypes = {
     routedQuery: PropTypes.string,
     currentQuery: PropTypes.string,
@@ -32,7 +34,7 @@ class BasicSearch extends Component {
     this.state = { results: this.updateResults(props), quickSearchOpen: false }
     this.handleQueryUpdate = this.handleQueryUpdate.bind(this)
     this.handleFocus = this.handleFocus.bind(this)
-    this.handleBlur = this.handleBlur.bind(this)
+    this.handleClickOutside = this.handleClickOutside.bind(this)
     this.handleKeyDown = this.handleKeyDown.bind(this)
     this.handleToggleAdvanced = this.handleToggleAdvanced.bind(this)
     this.handleSelectResult = this.handleSelectResult.bind(this)
@@ -81,14 +83,11 @@ class BasicSearch extends Component {
     this.setState(() => ({ quickSearchOpen: true }))
   }
 
-  handleBlur(event) {
-    if (
-      !event.relatedTarget ||
-      event.relatedTarget.closest('.search-basic') === null
-    ) {
-      this.setState(() => ({ quickSearchOpen: false }))
-    }
+  handleClickOutside() {
+    this.setState(() => ({ quickSearchOpen: false }))
   }
+
+  // TODO: Reset selection upon close of quick search.
 
   handleKeyDown(event) {
     // Close the quick search if Escape is pressed.
@@ -97,6 +96,7 @@ class BasicSearch extends Component {
     } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
       const { results } = this.state,
         selectedIndex = results.findIndex(r => r.selected)
+      if (event.key === 'ArrowDown') this.setState({ quickSearchOpen: true })
       let newSelection
       if (selectedIndex === -1) newSelection = 0
       else {
@@ -111,6 +111,10 @@ class BasicSearch extends Component {
             i === newSelection ? { ...r, selected: true } : omit(r, 'selected')
         ),
       }))
+    } else if (event.key === 'Enter') {
+      const { results } = this.state,
+        selectedResult = results.find(r => r.selected)
+      if (selectedResult) this.handleSelectResult(selectedResult)
     }
   }
 
@@ -119,10 +123,11 @@ class BasicSearch extends Component {
     if (onToggleAdvanced) onToggleAdvanced(false)
   }
 
-  handleSelectResult() {
-    const { onSelectResult } = this.props
+  handleSelectResult(result) {
+    const { onSelectResult, history } = this.props
     this.setState(() => ({ quickSearchOpen: false }))
     if (onSelectResult) onSelectResult()
+    if (result && result.link) history.push(result.link)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -153,7 +158,6 @@ class BasicSearch extends Component {
             className='search-input'
             onChange={this.handleQueryUpdate}
             onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
             onKeyDown={this.handleKeyDown}
             focusUponMount={focusUponMount}
           />
@@ -177,4 +181,4 @@ class BasicSearch extends Component {
   }
 }
 
-export default BasicSearch
+export default withRouter(onClickOutside(BasicSearch))

@@ -82,36 +82,15 @@ class QuickSearchResults extends Component {
         key={i}
         className={result.selected ? 'search-result selected' : 'search-result'}
       >
-        {result.link
-          ? this.renderLinkedResult(result)
-          : this.renderUnlinkedResult(result)}
+        <div className='target' onClick={() => this.handleSelectResult(result)}>
+          <span className={`type type-${result.type}`.toLowerCase()}>
+            {result.type}
+          </span>
+          <span className='display'>
+            {codingToSnomedDisplay(result.coding)}
+          </span>
+        </div>
       </li>
-    )
-  }
-
-  renderLinkedResult(result) {
-    return (
-      <Link
-        className='target'
-        to={result.link}
-        onClick={() => this.handleSelectResult(result)}
-      >
-        <span className={`type type-${result.type}`.toLowerCase()}>
-          {result.type}
-        </span>
-        <span className='display'>{codingToSnomedDisplay(result.coding)}</span>
-      </Link>
-    )
-  }
-
-  renderUnlinkedResult(result) {
-    return (
-      <div className='target' onClick={() => this.handleSelectResult(result)}>
-        <span className={`type type-${result.type}`.toLowerCase()}>
-          {result.type}
-        </span>
-        <span className='display'>{codingToSnomedDisplay(result.coding)}</span>
-      </div>
     )
   }
 
@@ -124,7 +103,7 @@ class QuickSearchResults extends Component {
         <Link
           className='target'
           to={result.link}
-          onClick={() => this.handleSelectResult(result)}
+          onClick={() => this.handleSelectResult()}
         >
           view all {formatNumber(result.total)} matches &rarr;
         </Link>

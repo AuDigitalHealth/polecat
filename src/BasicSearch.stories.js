@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import BasicSearch from './BasicSearch.js'
+import { BasicSearch } from './BasicSearch.js'
 import { results1 } from './QuickSearchResults.stories.js'
 
 storiesOf('BasicSearch', module)
