@@ -19,7 +19,8 @@
   cursor: pointer;
 }
 
-.quick-search-results .search-result.selected {
+.quick-search-results .search-result.selected,
+.quick-search-results .more-results.selected {
   background-color: #eee;
 }
 

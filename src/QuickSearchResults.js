@@ -117,7 +117,10 @@ class QuickSearchResults extends Component {
 
   renderMoreLink(result, i) {
     return (
-      <li key={i} className='more-results'>
+      <li
+        key={i}
+        className={result.selected ? 'more-results selected' : 'more-results'}
+      >
         <Link
           className='target'
           to={result.link}

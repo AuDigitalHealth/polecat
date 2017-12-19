@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import isEqual from 'lodash.isequal'
+import omit from 'lodash.omit'
 
 import TextField from './TextField.js'
 import Loading from './Loading.js'
@@ -94,16 +95,22 @@ class BasicSearch extends Component {
     if (event.key === 'Escape') {
       this.setState(() => ({ quickSearchOpen: false }))
     } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
-      const { selectedResult } = this.state
+      const { results } = this.state,
+        selectedIndex = results.findIndex(r => r.selected)
       let newSelection
-      if (selectedResult === undefined) newSelection = 0
+      if (selectedIndex === -1) newSelection = 0
       else {
         newSelection =
           event.key === 'ArrowDown'
-            ? Math.min(selectedResult + 1, 19)
-            : Math.max(selectedResult - 1, 0)
+            ? Math.min(selectedIndex + 1, results.length - 1)
+            : Math.max(selectedIndex - 1, 0)
       }
-      this.setState(() => ({ selectedResult: newSelection }))
+      this.setState(() => ({
+        results: results.map(
+          (r, i) =>
+            i === newSelection ? { ...r, selected: true } : omit(r, 'selected')
+        ),
+      }))
     }
   }
 
