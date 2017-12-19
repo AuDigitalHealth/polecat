@@ -3,7 +3,7 @@
   position: relative;
 }
 
-.amt-browser .search {
+.amt-browser .search .search-advanced {
   z-index: 60;
 }
 
