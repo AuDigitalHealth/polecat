@@ -34,12 +34,7 @@ class AmtBrowser extends Component {
   }
 
   handleError(error) {
-    this.setState(
-      () => ({ error, loading: false }),
-      () => {
-        throw error
-      }
-    )
+    this.setState(() => ({ error, loading: false }))
   }
 
   reset() {
