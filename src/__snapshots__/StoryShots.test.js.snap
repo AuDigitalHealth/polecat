@@ -1,3155 +1,4764 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots AdvancedSearch With current query 1`] = `
-<AdvancedSearch
-  bundle={
-    Object {
-      "total": 8,
-    }
-  }
-  currentQuery="parac"
-  fhirServer="https://medserve.online/fhir"
-  results={
-    Array [
-      Object {
-        "coding": Array [
+<div
+  className="search-advanced"
+>
+  <div
+    className="search-advanced-form"
+  >
+    <TextField
+      className="search-input"
+      disabled={true}
+      onChange={[Function]}
+      placeholder="Search"
+      value="parac"
+    />
+    <SearchForm
+      fhirServer="https://medserve.online/fhir"
+      onSearchUpdate={[Function]}
+      query="parac"
+    />
+    <Loading
+      delay={350}
+      loading={false}
+    >
+      <Expand
+        active={true}
+        className="search-toggle-advanced"
+        onToggle={[Function]}
+      />
+    </Loading>
+  </div>
+  <div
+    className="search-advanced-results"
+  >
+    <SearchSummary
+      nextLink={null}
+      onNextClick={[Function]}
+      onPreviousClick={[Function]}
+      previousLink={null}
+      totalResults={8}
+    />
+    <FullSearchResults
+      onSelectResult={[Function]}
+      query="parac"
+      results={
+        Array [
           Object {
-            "code": "933216161000036101",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
+            "coding": Array [
+              Object {
+                "code": "933216161000036101",
+                "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+                "system": "http://snomed.info/sct",
+              },
+              Object {
+                "code": "74899",
+                "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+              },
+            ],
+            "link": "/Medication/933216161000036101",
+            "type": "CTPP",
           },
           Object {
-            "code": "74899",
-            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+            "coding": Array [
+              Object {
+                "code": "933205801000036102",
+                "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+                "system": "http://snomed.info/sct",
+              },
+            ],
+            "link": "/Medication/933205801000036102",
+            "type": "TPP",
           },
-        ],
-        "link": "/Medication/933216161000036101",
-        "type": "CTPP",
-      },
-      Object {
-        "coding": Array [
           Object {
-            "code": "933205801000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
+            "coding": Array [
+              Object {
+                "code": "933196831000036102",
+                "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
+                "system": "http://snomed.info/sct",
+              },
+            ],
+            "link": "/Medication/933196831000036102",
+            "type": "TPUU",
           },
-        ],
-        "link": "/Medication/933205801000036102",
-        "type": "TPP",
-      },
-      Object {
-        "coding": Array [
           Object {
-            "code": "933196831000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
-            "system": "http://snomed.info/sct",
+            "coding": Array [
+              Object {
+                "code": "22131000168107",
+                "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
+                "system": "http://snomed.info/sct",
+              },
+            ],
+            "link": "/Medication/22131000168107",
+            "type": "TP",
           },
-        ],
-        "link": "/Medication/933196831000036102",
-        "type": "TPUU",
-      },
-      Object {
-        "coding": Array [
           Object {
-            "code": "22131000168107",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
-            "system": "http://snomed.info/sct",
+            "coding": Array [
+              Object {
+                "code": "75498011000036101",
+                "display": "death adder antivenom 6000 units injection, 1 vial",
+                "system": "http://snomed.info/sct",
+              },
+            ],
+            "link": "/Medication/75498011000036101",
+            "type": "MPP",
           },
-        ],
-        "link": "/Medication/22131000168107",
-        "type": "TP",
-      },
-      Object {
-        "coding": Array [
           Object {
-            "code": "75498011000036101",
-            "display": "death adder antivenom 6000 units injection, 1 vial",
-            "system": "http://snomed.info/sct",
+            "coding": Array [
+              Object {
+                "code": "75096011000036105",
+                "display": "king brown snake antivenom 18 000 units injection, vial",
+                "system": "http://snomed.info/sct",
+              },
+            ],
+            "link": "/Medication/75096011000036105",
+            "type": "MPUU",
           },
-        ],
-        "link": "/Medication/75498011000036101",
-        "type": "MPP",
-      },
-      Object {
-        "coding": Array [
           Object {
-            "code": "75096011000036105",
-            "display": "king brown snake antivenom 18 000 units injection, vial",
-            "system": "http://snomed.info/sct",
+            "coding": Array [
+              Object {
+                "code": "74983011000036101",
+                "display": "taipan snake antivenom",
+                "system": "http://snomed.info/sct",
+              },
+            ],
+            "link": "/Medication/74983011000036101",
+            "type": "MP",
           },
-        ],
-        "link": "/Medication/75096011000036105",
-        "type": "MPUU",
-      },
-      Object {
-        "coding": Array [
           Object {
-            "code": "74983011000036101",
-            "display": "taipan snake antivenom",
-            "system": "http://snomed.info/sct",
+            "coding": Array [
+              Object {
+                "code": "2610011000036105",
+                "display": "sumatriptan",
+                "system": "http://snomed.info/sct",
+              },
+            ],
+            "link": "/Substance/2610011000036105",
+            "type": "substance",
           },
-        ],
-        "link": "/Medication/74983011000036101",
-        "type": "MP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "2610011000036105",
-            "display": "sumatriptan",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Substance/2610011000036105",
-        "type": "substance",
-      },
-    ]
-  }
-  routedQuery="para"
-/>
+        ]
+      }
+    />
+  </div>
+</div>
 `;
 
 exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
-<AdvancedSearch
-  bundle={
-    Object {
-      "total": 8,
-    }
-  }
-  fhirServer="https://medserve.online/fhir"
-  results={
-    Array [
-      Object {
-        "coding": Array [
+<div
+  className="search-advanced"
+>
+  <div
+    className="search-advanced-form"
+  >
+    <TextField
+      className="search-input"
+      disabled={true}
+      onChange={[Function]}
+      placeholder="Search"
+      value="para"
+    />
+    <SearchForm
+      fhirServer="https://medserve.online/fhir"
+      onSearchUpdate={[Function]}
+      query="para"
+    />
+    <Loading
+      delay={350}
+      loading={false}
+    >
+      <Expand
+        active={true}
+        className="search-toggle-advanced"
+        onToggle={[Function]}
+      />
+    </Loading>
+  </div>
+  <div
+    className="search-advanced-results"
+  >
+    <SearchSummary
+      nextLink={null}
+      onNextClick={[Function]}
+      onPreviousClick={[Function]}
+      previousLink={null}
+      totalResults={8}
+    />
+    <FullSearchResults
+      onSelectResult={[Function]}
+      query="para"
+      results={
+        Array [
           Object {
-            "code": "933216161000036101",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
+            "coding": Array [
+              Object {
+                "code": "933216161000036101",
+                "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+                "system": "http://snomed.info/sct",
+              },
+              Object {
+                "code": "74899",
+                "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+              },
+            ],
+            "link": "/Medication/933216161000036101",
+            "type": "CTPP",
           },
           Object {
-            "code": "74899",
-            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+            "coding": Array [
+              Object {
+                "code": "933205801000036102",
+                "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
+                "system": "http://snomed.info/sct",
+              },
+            ],
+            "link": "/Medication/933205801000036102",
+            "type": "TPP",
           },
-        ],
-        "link": "/Medication/933216161000036101",
-        "type": "CTPP",
-      },
-      Object {
-        "coding": Array [
           Object {
-            "code": "933205801000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
+            "coding": Array [
+              Object {
+                "code": "933196831000036102",
+                "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
+                "system": "http://snomed.info/sct",
+              },
+            ],
+            "link": "/Medication/933196831000036102",
+            "type": "TPUU",
           },
-        ],
-        "link": "/Medication/933205801000036102",
-        "type": "TPP",
-      },
-      Object {
-        "coding": Array [
           Object {
-            "code": "933196831000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
-            "system": "http://snomed.info/sct",
+            "coding": Array [
+              Object {
+                "code": "22131000168107",
+                "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
+                "system": "http://snomed.info/sct",
+              },
+            ],
+            "link": "/Medication/22131000168107",
+            "type": "TP",
           },
-        ],
-        "link": "/Medication/933196831000036102",
-        "type": "TPUU",
-      },
-      Object {
-        "coding": Array [
           Object {
-            "code": "22131000168107",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
-            "system": "http://snomed.info/sct",
+            "coding": Array [
+              Object {
+                "code": "75498011000036101",
+                "display": "death adder antivenom 6000 units injection, 1 vial",
+                "system": "http://snomed.info/sct",
+              },
+            ],
+            "link": "/Medication/75498011000036101",
+            "type": "MPP",
           },
-        ],
-        "link": "/Medication/22131000168107",
-        "type": "TP",
-      },
-      Object {
-        "coding": Array [
           Object {
-            "code": "75498011000036101",
-            "display": "death adder antivenom 6000 units injection, 1 vial",
-            "system": "http://snomed.info/sct",
+            "coding": Array [
+              Object {
+                "code": "75096011000036105",
+                "display": "king brown snake antivenom 18 000 units injection, vial",
+                "system": "http://snomed.info/sct",
+              },
+            ],
+            "link": "/Medication/75096011000036105",
+            "type": "MPUU",
           },
-        ],
-        "link": "/Medication/75498011000036101",
-        "type": "MPP",
-      },
-      Object {
-        "coding": Array [
           Object {
-            "code": "75096011000036105",
-            "display": "king brown snake antivenom 18 000 units injection, vial",
-            "system": "http://snomed.info/sct",
+            "coding": Array [
+              Object {
+                "code": "74983011000036101",
+                "display": "taipan snake antivenom",
+                "system": "http://snomed.info/sct",
+              },
+            ],
+            "link": "/Medication/74983011000036101",
+            "type": "MP",
           },
-        ],
-        "link": "/Medication/75096011000036105",
-        "type": "MPUU",
-      },
-      Object {
-        "coding": Array [
           Object {
-            "code": "74983011000036101",
-            "display": "taipan snake antivenom",
-            "system": "http://snomed.info/sct",
+            "coding": Array [
+              Object {
+                "code": "2610011000036105",
+                "display": "sumatriptan",
+                "system": "http://snomed.info/sct",
+              },
+            ],
+            "link": "/Substance/2610011000036105",
+            "type": "substance",
           },
-        ],
-        "link": "/Medication/74983011000036101",
-        "type": "MP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "2610011000036105",
-            "display": "sumatriptan",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Substance/2610011000036105",
-        "type": "substance",
-      },
-    ]
-  }
-  routedQuery="para"
-/>
+        ]
+      }
+    />
+  </div>
+</div>
 `;
 
 exports[`Storyshots AdvancedSearch With routed query but no results 1`] = `
-<AdvancedSearch
-  fhirServer="https://medserve.online/fhir"
-  routedQuery="para"
-/>
+<div
+  className="search-advanced"
+>
+  <div
+    className="search-advanced-form"
+  >
+    <TextField
+      className="search-input"
+      disabled={true}
+      onChange={[Function]}
+      placeholder="Search"
+      value="para"
+    />
+    <SearchForm
+      fhirServer="https://medserve.online/fhir"
+      onSearchUpdate={[Function]}
+      query="para"
+    />
+    <Loading
+      delay={350}
+      loading={false}
+    >
+      <Expand
+        active={true}
+        className="search-toggle-advanced"
+        onToggle={[Function]}
+      />
+    </Loading>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AdvancedSearch With routed query but no results, loading 1`] = `
-<AdvancedSearch
-  fhirServer="https://medserve.online/fhir"
-  loading={true}
-  routedQuery="para"
-/>
+<div
+  className="search-advanced"
+>
+  <div
+    className="search-advanced-form"
+  >
+    <TextField
+      className="search-input"
+      disabled={true}
+      onChange={[Function]}
+      placeholder="Search"
+      value="para"
+    />
+    <SearchForm
+      fhirServer="https://medserve.online/fhir"
+      onSearchUpdate={[Function]}
+      query="para"
+    />
+    <Loading
+      delay={350}
+      loading={true}
+    >
+      <Expand
+        active={true}
+        className="search-toggle-advanced"
+        onToggle={[Function]}
+      />
+    </Loading>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution (TPUU) 1`] = `
-<AmtBrowser
-  config={
-    Object {
-      "fhirServer": "https://medserve.online/fhir",
-    }
-  }
-  id="53743011000036103"
-  resourceType="Medication"
-  viewport={
+<div
+  className="amt-browser"
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <RemoteFhirMedication
+    fhirServer="https://medserve.online/fhir"
+    id="53743011000036103"
+    onError={[Function]}
+    onLoadingChange={[Function]}
+    resourceType="Medication"
+    viewport={
+      Object {
+        "height": 800,
+        "width": 800,
+      }
+    }
+  >
+    <AmtProductModel
+      alpha={1.5}
+      alphaDecay={0.1}
+      arrowSize={12}
+      attraction={-1000}
+      collideRadiusMultiplier={1.5}
+      collideRadiusRatio={1.5}
+      collideRadiusThreshold={10}
+      conceptGroupHeight={47}
+      conceptGroupWidth={100}
+      conceptHeight={116}
+      conceptWidth={166}
+      linkCurviness={0.2}
+      linkDistance={220}
+      viewport={
+        Object {
+          "height": 800,
+          "width": 800,
+        }
+      }
+    />
+  </RemoteFhirMedication>
+  <withRouter(Search)
+    fhirServer="https://medserve.online/fhir"
+    focusUponMount={true}
+    onError={[Function]}
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
 `;
 
 exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL (TPP) 1`] = `
-<AmtBrowser
-  config={
-    Object {
-      "fhirServer": "https://medserve.online/fhir",
-    }
-  }
-  id="55971011000036104"
-  resourceType="Medication"
-  viewport={
+<div
+  className="amt-browser"
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <RemoteFhirMedication
+    fhirServer="https://medserve.online/fhir"
+    id="55971011000036104"
+    onError={[Function]}
+    onLoadingChange={[Function]}
+    resourceType="Medication"
+    viewport={
+      Object {
+        "height": 800,
+        "width": 800,
+      }
+    }
+  >
+    <AmtProductModel
+      alpha={1.5}
+      alphaDecay={0.1}
+      arrowSize={12}
+      attraction={-1000}
+      collideRadiusMultiplier={1.5}
+      collideRadiusRatio={1.5}
+      collideRadiusThreshold={10}
+      conceptGroupHeight={47}
+      conceptGroupWidth={100}
+      conceptHeight={116}
+      conceptWidth={166}
+      linkCurviness={0.2}
+      linkDistance={220}
+      viewport={
+        Object {
+          "height": 800,
+          "width": 800,
+        }
+      }
+    />
+  </RemoteFhirMedication>
+  <withRouter(Search)
+    fhirServer="https://medserve.online/fhir"
+    focusUponMount={true}
+    onError={[Function]}
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
 `;
 
 exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL, bottle (CTPP) 1`] = `
-<AmtBrowser
-  config={
-    Object {
-      "fhirServer": "https://medserve.online/fhir",
-    }
-  }
-  id="60009011000036108"
-  resourceType="Medication"
-  viewport={
+<div
+  className="amt-browser"
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <RemoteFhirMedication
+    fhirServer="https://medserve.online/fhir"
+    id="60009011000036108"
+    onError={[Function]}
+    onLoadingChange={[Function]}
+    resourceType="Medication"
+    viewport={
+      Object {
+        "height": 800,
+        "width": 800,
+      }
+    }
+  >
+    <AmtProductModel
+      alpha={1.5}
+      alphaDecay={0.1}
+      arrowSize={12}
+      attraction={-1000}
+      collideRadiusMultiplier={1.5}
+      collideRadiusRatio={1.5}
+      collideRadiusThreshold={10}
+      conceptGroupHeight={47}
+      conceptGroupWidth={100}
+      conceptHeight={116}
+      conceptWidth={166}
+      linkCurviness={0.2}
+      linkDistance={220}
+      viewport={
+        Object {
+          "height": 800,
+          "width": 800,
+        }
+      }
+    />
+  </RemoteFhirMedication>
+  <withRouter(Search)
+    fhirServer="https://medserve.online/fhir"
+    focusUponMount={true}
+    onError={[Function]}
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
 `;
 
 exports[`Storyshots AmtBrowser Search 1`] = `
-<AmtBrowser
-  config={
-    Object {
-      "fhirServer": "https://medserve.online/fhir",
-    }
-  }
-  query="esomeprazole"
-  resourceType="Medication"
-  viewport={
+<div
+  className="amt-browser"
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <withRouter(Search)
+    fhirServer="https://medserve.online/fhir"
+    focusUponMount={true}
+    onError={[Function]}
+    query="esomeprazole"
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
 `;
 
 exports[`Storyshots AmtBrowser loratadine (MP) 1`] = `
-<AmtBrowser
-  config={
-    Object {
-      "fhirServer": "https://medserve.online/fhir",
-    }
-  }
-  id="21701011000036106"
-  resourceType="Medication"
-  viewport={
+<div
+  className="amt-browser"
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <RemoteFhirMedication
+    fhirServer="https://medserve.online/fhir"
+    id="21701011000036106"
+    onError={[Function]}
+    onLoadingChange={[Function]}
+    resourceType="Medication"
+    viewport={
+      Object {
+        "height": 800,
+        "width": 800,
+      }
+    }
+  >
+    <AmtProductModel
+      alpha={1.5}
+      alphaDecay={0.1}
+      arrowSize={12}
+      attraction={-1000}
+      collideRadiusMultiplier={1.5}
+      collideRadiusRatio={1.5}
+      collideRadiusThreshold={10}
+      conceptGroupHeight={47}
+      conceptGroupWidth={100}
+      conceptHeight={116}
+      conceptWidth={166}
+      linkCurviness={0.2}
+      linkDistance={220}
+      viewport={
+        Object {
+          "height": 800,
+          "width": 800,
+        }
+      }
+    />
+  </RemoteFhirMedication>
+  <withRouter(Search)
+    fhirServer="https://medserve.online/fhir"
+    focusUponMount={true}
+    onError={[Function]}
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
 `;
 
 exports[`Storyshots AmtBrowser loratadine (substance) 1`] = `
-<AmtBrowser
-  config={
-    Object {
-      "fhirServer": "https://medserve.online/fhir",
-    }
-  }
-  id="2292011000036106"
-  resourceType="Substance"
-  viewport={
+<div
+  className="amt-browser"
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <RemoteFhirMedication
+    fhirServer="https://medserve.online/fhir"
+    id="2292011000036106"
+    onError={[Function]}
+    onLoadingChange={[Function]}
+    resourceType="Substance"
+    viewport={
+      Object {
+        "height": 800,
+        "width": 800,
+      }
+    }
+  >
+    <AmtProductModel
+      alpha={1.5}
+      alphaDecay={0.1}
+      arrowSize={12}
+      attraction={-1000}
+      collideRadiusMultiplier={1.5}
+      collideRadiusRatio={1.5}
+      collideRadiusThreshold={10}
+      conceptGroupHeight={47}
+      conceptGroupWidth={100}
+      conceptHeight={116}
+      conceptWidth={166}
+      linkCurviness={0.2}
+      linkDistance={220}
+      viewport={
+        Object {
+          "height": 800,
+          "width": 800,
+        }
+      }
+    />
+  </RemoteFhirMedication>
+  <withRouter(Search)
+    fhirServer="https://medserve.online/fhir"
+    focusUponMount={true}
+    onError={[Function]}
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
 `;
 
 exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid (MPUU) 1`] = `
-<AmtBrowser
-  config={
-    Object {
-      "fhirServer": "https://medserve.online/fhir",
-    }
-  }
-  id="62022011000036104"
-  resourceType="Medication"
-  viewport={
+<div
+  className="amt-browser"
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <RemoteFhirMedication
+    fhirServer="https://medserve.online/fhir"
+    id="62022011000036104"
+    onError={[Function]}
+    onLoadingChange={[Function]}
+    resourceType="Medication"
+    viewport={
+      Object {
+        "height": 800,
+        "width": 800,
+      }
+    }
+  >
+    <AmtProductModel
+      alpha={1.5}
+      alphaDecay={0.1}
+      arrowSize={12}
+      attraction={-1000}
+      collideRadiusMultiplier={1.5}
+      collideRadiusRatio={1.5}
+      collideRadiusThreshold={10}
+      conceptGroupHeight={47}
+      conceptGroupWidth={100}
+      conceptHeight={116}
+      conceptWidth={166}
+      linkCurviness={0.2}
+      linkDistance={220}
+      viewport={
+        Object {
+          "height": 800,
+          "width": 800,
+        }
+      }
+    />
+  </RemoteFhirMedication>
+  <withRouter(Search)
+    fhirServer="https://medserve.online/fhir"
+    focusUponMount={true}
+    onError={[Function]}
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
 `;
 
 exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid, 150 mL (MPP) 1`] = `
-<AmtBrowser
-  config={
-    Object {
-      "fhirServer": "https://medserve.online/fhir",
-    }
-  }
-  id="63589011000036105"
-  resourceType="Medication"
-  viewport={
+<div
+  className="amt-browser"
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <RemoteFhirMedication
+    fhirServer="https://medserve.online/fhir"
+    id="63589011000036105"
+    onError={[Function]}
+    onLoadingChange={[Function]}
+    resourceType="Medication"
+    viewport={
+      Object {
+        "height": 800,
+        "width": 800,
+      }
+    }
+  >
+    <AmtProductModel
+      alpha={1.5}
+      alphaDecay={0.1}
+      arrowSize={12}
+      attraction={-1000}
+      collideRadiusMultiplier={1.5}
+      collideRadiusRatio={1.5}
+      collideRadiusThreshold={10}
+      conceptGroupHeight={47}
+      conceptGroupWidth={100}
+      conceptHeight={116}
+      conceptWidth={166}
+      linkCurviness={0.2}
+      linkDistance={220}
+      viewport={
+        Object {
+          "height": 800,
+          "width": 800,
+        }
+      }
+    />
+  </RemoteFhirMedication>
+  <withRouter(Search)
+    fhirServer="https://medserve.online/fhir"
+    focusUponMount={true}
+    onError={[Function]}
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
 `;
 
 exports[`Storyshots AmtProductModel Aggregation link (close) 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-component-of",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 100,
-        "fy": 100,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 280,
-        "fy": 232.7710843,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel Aggregation link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-component-of",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 100,
-        "fy": 100,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 400,
-        "fy": 309.6385542,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel Association link (close) 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "has-brand",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 100,
-        "fy": 100,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 280,
-        "fy": 232.7710843,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel Association link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "has-brand",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 100,
-        "fy": 100,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 400,
-        "fy": 309.6385542,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel E link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 100,
-        "fy": 100,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 400,
-        "fy": 100,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel ENE link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 100,
-        "fy": 194.41696971,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 400,
-        "fy": 100,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel ESE link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 100,
-        "fy": 100,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 400,
-        "fy": 194.41696971,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel Inheritance link (close) 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 100,
-        "fy": 100,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 280,
-        "fy": 232.7710843,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel Inheritance link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 100,
-        "fy": 100,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 400,
-        "fy": 309.6385542,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel N link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 100,
-        "fy": 300,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 100,
-        "fy": 100,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel NE link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 100,
-        "fy": 309.6385542,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 400,
-        "fy": 100,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel NNE link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 100,
-        "fy": 389.6986192,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 400,
-        "fy": 100,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel NNW link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 400,
-        "fy": 389.6986192,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 100,
-        "fy": 100,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel NW link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 400,
-        "fy": 309.6385542,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 100,
-        "fy": 100,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel S link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 100,
-        "fy": 100,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 100,
-        "fy": 300,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel SE link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 100,
-        "fy": 100,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 400,
-        "fy": 309.6385542,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel SSE link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 100,
-        "fy": 100,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 400,
-        "fy": 389.6986192,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel SSW link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 400,
-        "fy": 100,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 100,
-        "fy": 389.6986192,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel SW link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 400,
-        "fy": 100,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 100,
-        "fy": 309.6385542,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel W link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 400,
-        "fy": 100,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 100,
-        "fy": 100,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel WNW link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 400,
-        "fy": 194.41696971,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 100,
-        "fy": 100,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel WSW link 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "21415011000036100",
-        "target": "21360011000036101",
-        "type": "is-a",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21415011000036100",
-            "display": "amoxicillin",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "fx": 400,
-        "fy": 100,
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21360011000036101",
-            "display": "amoxicillin + clavulanic acid",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "focused": true,
-        "fx": 100,
-        "fy": 194.41696971,
-        "type": "UPD",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots AmtProductModel With nodes and links 1`] = `
-<AmtProductModel
-  alpha={1.5}
-  alphaDecay={0.1}
-  arrowSize={12}
-  attraction={-1000}
-  collideRadiusMultiplier={1.5}
-  collideRadiusRatio={1.5}
-  collideRadiusThreshold={10}
-  conceptGroupHeight={47}
-  conceptGroupWidth={100}
-  conceptHeight={116}
-  conceptWidth={166}
-  linkCurviness={0.2}
-  linkDistance={220}
-  links={
-    Array [
-      Object {
-        "source": "812831000168109",
-        "target": "812781000168101",
-        "type": "has-brand",
-      },
-      Object {
-        "source": "812831000168109",
-        "target": "812821000168106",
-        "type": "is-a",
-      },
-      Object {
-        "source": "812821000168106",
-        "target": "812811000168104",
-        "type": "is-a",
-      },
-      Object {
-        "source": "812831000168109",
-        "target": "812801000168102",
-        "type": "unknown",
-      },
-      Object {
-        "source": "812801000168102",
-        "target": "812791000168103",
-        "type": "is-a",
-      },
-      Object {
-        "source": "812791000168103",
-        "target": "177241000036105",
-        "type": "is-a",
-      },
-      Object {
-        "source": "177241000036105",
-        "target": "21885011000036105",
-        "type": "is-a",
-      },
-      Object {
-        "source": "177241000036105",
-        "target": "21433011000036107",
-        "type": "is-a",
-      },
-      Object {
-        "source": "812801000168102",
-        "target": "812781000168101",
-        "type": "has-brand",
-      },
-    ]
-  }
-  nodes={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "812781000168101",
-            "display": "Nuromol",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "brand",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "812821000168106",
-            "display": "Nuromol film-coated tablet, 2",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "BPG",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "812811000168104",
-            "display": "paracetamol 500 mg + ibuprofen 200 mg tablet, 2",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "UPG",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "812801000168102",
-            "display": "Nuromol film-coated tablet",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "BPSF",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "812791000168103",
-            "display": "paracetamol 500 mg + ibuprofen 200 mg tablet",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "UPDSF",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "177241000036105",
-            "display": "paracetamol + ibuprofen",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21885011000036105",
-            "display": "ibuprofen",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21433011000036107",
-            "display": "paracetamol",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "UPD",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "812831000168109",
-            "display": "Nuromol film-coated tablet, 2, blister pack",
-            "system": "http://snomed.info/sct",
-          },
-          Object {
-            "code": "225322",
-            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
-          },
-        ],
-        "focused": true,
-        "type": "BPGC",
-      },
-    ]
-  }
-  viewport={
+<div
+  className="product-model"
+  onWheel={[Function]}
+  style={
     Object {
       "height": 800,
       "width": 800,
     }
   }
-/>
+>
+  <div
+    className="product-model-inner"
+  >
+    <svg
+      height={800}
+      onDoubleClick={[Function]}
+      onMouseMove={[Function]}
+      onMouseUp={[Function]}
+      preserveAspectRatio="none"
+      width={800}
+    >
+      <defs>
+        <marker
+          id="arrow-association"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+      </defs>
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Storyshots BasicSearch With current query 1`] = `
-<BasicSearch
-  bundle={
-    Object {
-      "total": 8,
-    }
-  }
-  currentQuery="parac"
-  results={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933216161000036101",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-          Object {
-            "code": "74899",
-            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
-          },
-        ],
-        "link": "/Medication/933216161000036101",
-        "type": "CTPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933205801000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/933205801000036102",
-        "type": "TPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933196831000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/933196831000036102",
-        "type": "TPUU",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "22131000168107",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/22131000168107",
-        "type": "TP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "75498011000036101",
-            "display": "death adder antivenom 6000 units injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/75498011000036101",
-        "type": "MPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "75096011000036105",
-            "display": "king brown snake antivenom 18 000 units injection, vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/75096011000036105",
-        "type": "MPUU",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "74983011000036101",
-            "display": "taipan snake antivenom",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/74983011000036101",
-        "type": "MP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "2610011000036105",
-            "display": "sumatriptan",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Substance/2610011000036105",
-        "type": "substance",
-      },
-    ]
-  }
-  routedQuery="para"
-/>
+<div
+  className="search-basic"
+>
+  <div
+    className="search-basic-form"
+  >
+    <TextField
+      className="search-input"
+      disabled={false}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Search"
+      value="parac"
+    />
+    <Loading
+      delay={350}
+      loading={false}
+    >
+      <Expand
+        active={false}
+        className="search-toggle-advanced"
+        onToggle={[Function]}
+      />
+    </Loading>
+  </div>
+</div>
 `;
 
 exports[`Storyshots BasicSearch With routed query and results 1`] = `
-<BasicSearch
-  bundle={
-    Object {
-      "total": 8,
-    }
-  }
-  results={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933216161000036101",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-          Object {
-            "code": "74899",
-            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
-          },
-        ],
-        "link": "/Medication/933216161000036101",
-        "type": "CTPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933205801000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/933205801000036102",
-        "type": "TPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933196831000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/933196831000036102",
-        "type": "TPUU",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "22131000168107",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/22131000168107",
-        "type": "TP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "75498011000036101",
-            "display": "death adder antivenom 6000 units injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/75498011000036101",
-        "type": "MPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "75096011000036105",
-            "display": "king brown snake antivenom 18 000 units injection, vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/75096011000036105",
-        "type": "MPUU",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "74983011000036101",
-            "display": "taipan snake antivenom",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/74983011000036101",
-        "type": "MP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "2610011000036105",
-            "display": "sumatriptan",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Substance/2610011000036105",
-        "type": "substance",
-      },
-    ]
-  }
-  routedQuery="para"
-/>
+<div
+  className="search-basic"
+>
+  <div
+    className="search-basic-form"
+  >
+    <TextField
+      className="search-input"
+      disabled={false}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Search"
+      value="para"
+    />
+    <Loading
+      delay={350}
+      loading={false}
+    >
+      <Expand
+        active={false}
+        className="search-toggle-advanced"
+        onToggle={[Function]}
+      />
+    </Loading>
+  </div>
+</div>
 `;
 
 exports[`Storyshots BasicSearch With routed query but no results 1`] = `
-<BasicSearch
-  routedQuery="para"
-/>
+<div
+  className="search-basic"
+>
+  <div
+    className="search-basic-form"
+  >
+    <TextField
+      className="search-input"
+      disabled={false}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Search"
+      value="para"
+    />
+    <Loading
+      delay={350}
+      loading={false}
+    >
+      <Expand
+        active={false}
+        className="search-toggle-advanced"
+        onToggle={[Function]}
+      />
+    </Loading>
+  </div>
+</div>
 `;
 
 exports[`Storyshots BasicSearch With routed query but no results, loading 1`] = `
-<BasicSearch
-  loading={true}
-  routedQuery="para"
-/>
+<div
+  className="search-basic"
+>
+  <div
+    className="search-basic-form"
+  >
+    <TextField
+      className="search-input"
+      disabled={false}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Search"
+      value="para"
+    />
+    <Loading
+      delay={350}
+      loading={true}
+    >
+      <Expand
+        active={false}
+        className="search-toggle-advanced"
+        onToggle={[Function]}
+      />
+    </Loading>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Concept CTPP 1`] = `
-<Concept
-  coding={
-    Array [
-      Object {
-        "code": "933216161000036101",
-        "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-        "system": "http://snomed.info/sct",
-      },
-      Object {
-        "code": "74899",
-        "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
-      },
-    ]
+<div
+  className="concept"
+  style={
+    Object {
+      "height": "116px",
+      "left": "20px",
+      "position": "absolute",
+      "top": "20px",
+      "width": "166px",
+    }
   }
-  focused={false}
-  height={116}
-  left={20}
-  top={20}
-  type="CTPP"
-  width={166}
-/>
+>
+  <div
+    className="sctid"
+  >
+    <Link
+      replace={false}
+      to="/Medication/933216161000036101"
+    >
+      933216161000036101
+    </Link>
+    <CopyToClipboard
+      copyText="933216161000036101"
+      title="Copy SCTID to clipboard"
+    />
+  </div>
+  <div
+    className="display"
+    title="Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial"
+  >
+    Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+    <CopyToClipboard
+      copyText="Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial"
+      title="Copy preferred term to clipboard"
+    />
+  </div>
+  <div
+    className="artgid"
+  >
+    ARTG ID
+     
+    <a
+      href="http://search.tga.gov.au/s/search.html?collection=tga-artg&profile=record&meta_i=74899"
+      target="_blank"
+      title="ARTG ID 74899 on the TGA website"
+    >
+      74899
+    </a>
+  </div>
+  <div
+    className="type type-ctpp"
+  >
+    CTPP
+  </div>
+</div>
 `;
 
 exports[`Storyshots Concept Focused 1`] = `
-<Concept
-  coding={
-    Array [
-      Object {
-        "code": "933216161000036101",
-        "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-        "system": "http://snomed.info/sct",
-      },
-      Object {
-        "code": "74899",
-        "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
-      },
-    ]
+<div
+  className="concept concept-focused"
+  style={
+    Object {
+      "height": "116px",
+      "left": "20px",
+      "position": "absolute",
+      "top": "20px",
+      "width": "166px",
+    }
   }
-  focused={true}
-  height={116}
-  left={20}
-  top={20}
-  type="CTPP"
-  width={166}
-/>
+>
+  <div
+    className="sctid"
+  >
+    933216161000036101
+    <CopyToClipboard
+      copyText="933216161000036101"
+      title="Copy SCTID to clipboard"
+    />
+  </div>
+  <div
+    className="display"
+    title="Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial"
+  >
+    Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+    <CopyToClipboard
+      copyText="Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial"
+      title="Copy preferred term to clipboard"
+    />
+  </div>
+  <div
+    className="artgid"
+  >
+    ARTG ID
+     
+    <a
+      href="http://search.tga.gov.au/s/search.html?collection=tga-artg&profile=record&meta_i=74899"
+      target="_blank"
+      title="ARTG ID 74899 on the TGA website"
+    >
+      74899
+    </a>
+  </div>
+  <div
+    className="type type-ctpp"
+  >
+    CTPP
+  </div>
+</div>
 `;
 
 exports[`Storyshots Concept MP 1`] = `
-<Concept
-  coding={
-    Array [
-      Object {
-        "code": "74983011000036101",
-        "display": "taipan snake antivenom",
-        "system": "http://snomed.info/sct",
-      },
-    ]
+<div
+  className="concept"
+  style={
+    Object {
+      "height": "116px",
+      "left": "20px",
+      "position": "absolute",
+      "top": "20px",
+      "width": "166px",
+    }
   }
-  focused={false}
-  height={116}
-  left={20}
-  top={20}
-  type="MP"
-  width={166}
-/>
+>
+  <div
+    className="sctid"
+  >
+    <Link
+      replace={false}
+      to="/Medication/74983011000036101"
+    >
+      74983011000036101
+    </Link>
+    <CopyToClipboard
+      copyText="74983011000036101"
+      title="Copy SCTID to clipboard"
+    />
+  </div>
+  <div
+    className="display"
+    title="taipan snake antivenom"
+  >
+    taipan snake antivenom
+    <CopyToClipboard
+      copyText="taipan snake antivenom"
+      title="Copy preferred term to clipboard"
+    />
+  </div>
+  <div
+    className="type type-mp"
+  >
+    MP
+  </div>
+</div>
 `;
 
 exports[`Storyshots Concept MPP 1`] = `
-<Concept
-  coding={
-    Array [
-      Object {
-        "code": "75498011000036101",
-        "display": "death adder antivenom 6000 units injection, 1 vial",
-        "system": "http://snomed.info/sct",
-      },
-    ]
+<div
+  className="concept"
+  style={
+    Object {
+      "height": "116px",
+      "left": "20px",
+      "position": "absolute",
+      "top": "20px",
+      "width": "166px",
+    }
   }
-  focused={false}
-  height={116}
-  left={20}
-  top={20}
-  type="MPP"
-  width={166}
-/>
+>
+  <div
+    className="sctid"
+  >
+    <Link
+      replace={false}
+      to="/Medication/75498011000036101"
+    >
+      75498011000036101
+    </Link>
+    <CopyToClipboard
+      copyText="75498011000036101"
+      title="Copy SCTID to clipboard"
+    />
+  </div>
+  <div
+    className="display"
+    title="death adder antivenom 6000 units injection, 1 vial"
+  >
+    death adder antivenom 6000 units injection, 1 vial
+    <CopyToClipboard
+      copyText="death adder antivenom 6000 units injection, 1 vial"
+      title="Copy preferred term to clipboard"
+    />
+  </div>
+  <div
+    className="type type-mpp"
+  >
+    MPP
+  </div>
+</div>
 `;
 
 exports[`Storyshots Concept MPUU 1`] = `
-<Concept
-  coding={
-    Array [
-      Object {
-        "code": "75096011000036105",
-        "display": "king brown snake antivenom 18 000 units injection, vial",
-        "system": "http://snomed.info/sct",
-      },
-    ]
+<div
+  className="concept"
+  style={
+    Object {
+      "height": "116px",
+      "left": "20px",
+      "position": "absolute",
+      "top": "20px",
+      "width": "166px",
+    }
   }
-  focused={false}
-  height={116}
-  left={20}
-  top={20}
-  type="MPUU"
-  width={166}
-/>
+>
+  <div
+    className="sctid"
+  >
+    <Link
+      replace={false}
+      to="/Medication/75096011000036105"
+    >
+      75096011000036105
+    </Link>
+    <CopyToClipboard
+      copyText="75096011000036105"
+      title="Copy SCTID to clipboard"
+    />
+  </div>
+  <div
+    className="display"
+    title="king brown snake antivenom 18 000 units injection, vial"
+  >
+    king brown snake antivenom 18 000 units injection, vial
+    <CopyToClipboard
+      copyText="king brown snake antivenom 18 000 units injection, vial"
+      title="Copy preferred term to clipboard"
+    />
+  </div>
+  <div
+    className="type type-mpuu"
+  >
+    MPUU
+  </div>
+</div>
 `;
 
 exports[`Storyshots Concept TP 1`] = `
-<Concept
-  coding={
-    Array [
-      Object {
-        "code": "22131000168107",
-        "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
-        "system": "http://snomed.info/sct",
-      },
-    ]
+<div
+  className="concept"
+  style={
+    Object {
+      "height": "116px",
+      "left": "20px",
+      "position": "absolute",
+      "top": "20px",
+      "width": "166px",
+    }
   }
-  focused={false}
-  height={116}
-  left={20}
-  top={20}
-  type="TP"
-  width={166}
-/>
+>
+  <div
+    className="sctid"
+  >
+    22131000168107
+    <CopyToClipboard
+      copyText="22131000168107"
+      title="Copy SCTID to clipboard"
+    />
+  </div>
+  <div
+    className="display"
+    title="Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)"
+  >
+    Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
+    <CopyToClipboard
+      copyText="Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)"
+      title="Copy preferred term to clipboard"
+    />
+  </div>
+  <div
+    className="type type-tp"
+  >
+    TP
+  </div>
+</div>
 `;
 
 exports[`Storyshots Concept TPP 1`] = `
-<Concept
-  coding={
-    Array [
-      Object {
-        "code": "933205801000036102",
-        "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-        "system": "http://snomed.info/sct",
-      },
-    ]
+<div
+  className="concept"
+  style={
+    Object {
+      "height": "116px",
+      "left": "20px",
+      "position": "absolute",
+      "top": "20px",
+      "width": "166px",
+    }
   }
-  focused={false}
-  height={116}
-  left={20}
-  top={20}
-  type="TPP"
-  width={166}
-/>
+>
+  <div
+    className="sctid"
+  >
+    <Link
+      replace={false}
+      to="/Medication/933205801000036102"
+    >
+      933205801000036102
+    </Link>
+    <CopyToClipboard
+      copyText="933205801000036102"
+      title="Copy SCTID to clipboard"
+    />
+  </div>
+  <div
+    className="display"
+    title="Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial"
+  >
+    Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+    <CopyToClipboard
+      copyText="Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial"
+      title="Copy preferred term to clipboard"
+    />
+  </div>
+  <div
+    className="type type-tpp"
+  >
+    TPP
+  </div>
+</div>
 `;
 
 exports[`Storyshots Concept TPUU 1`] = `
-<Concept
-  coding={
-    Array [
-      Object {
-        "code": "933196831000036102",
-        "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
-        "system": "http://snomed.info/sct",
-      },
-    ]
+<div
+  className="concept"
+  style={
+    Object {
+      "height": "116px",
+      "left": "20px",
+      "position": "absolute",
+      "top": "20px",
+      "width": "166px",
+    }
   }
-  focused={false}
-  height={116}
-  left={20}
-  top={20}
-  type="TPUU"
-  width={166}
-/>
+>
+  <div
+    className="sctid"
+  >
+    <Link
+      replace={false}
+      to="/Medication/933196831000036102"
+    >
+      933196831000036102
+    </Link>
+    <CopyToClipboard
+      copyText="933196831000036102"
+      title="Copy SCTID to clipboard"
+    />
+  </div>
+  <div
+    className="display"
+    title="Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial"
+  >
+    Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
+    <CopyToClipboard
+      copyText="Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial"
+      title="Copy preferred term to clipboard"
+    />
+  </div>
+  <div
+    className="type type-tpuu"
+  >
+    TPUU
+  </div>
+</div>
 `;
 
 exports[`Storyshots Concept With ARTG ID 1`] = `
-<Concept
-  coding={
-    Array [
-      Object {
-        "code": "95431000036109",
-        "display": "Xifaxan 550 mg film-coated tablet, 56, blister pack",
-        "system": "http://snomed.info/sct",
-      },
-      Object {
-        "code": "183411",
-        "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
-      },
-    ]
+<div
+  className="concept"
+  style={
+    Object {
+      "height": "116px",
+      "left": "20px",
+      "position": "absolute",
+      "top": "20px",
+      "width": "166px",
+    }
   }
-  focused={false}
-  height={116}
-  left={20}
-  top={20}
-  type="CTPP"
-  width={166}
-/>
+>
+  <div
+    className="sctid"
+  >
+    <Link
+      replace={false}
+      to="/Medication/95431000036109"
+    >
+      95431000036109
+    </Link>
+    <CopyToClipboard
+      copyText="95431000036109"
+      title="Copy SCTID to clipboard"
+    />
+  </div>
+  <div
+    className="display"
+    title="Xifaxan 550 mg film-coated tablet, 56, blister pack"
+  >
+    Xifaxan 550 mg film-coated tablet, 56, blister pack
+    <CopyToClipboard
+      copyText="Xifaxan 550 mg film-coated tablet, 56, blister pack"
+      title="Copy preferred term to clipboard"
+    />
+  </div>
+  <div
+    className="artgid"
+  >
+    ARTG ID
+     
+    <a
+      href="http://search.tga.gov.au/s/search.html?collection=tga-artg&profile=record&meta_i=183411"
+      target="_blank"
+      title="ARTG ID 183411 on the TGA website"
+    >
+      183411
+    </a>
+  </div>
+  <div
+    className="type type-ctpp"
+  >
+    CTPP
+  </div>
+</div>
 `;
 
 exports[`Storyshots Concept substance 1`] = `
-<Concept
-  coding={
-    Array [
-      Object {
-        "code": "2610011000036105",
-        "display": "sumatriptan",
-        "system": "http://snomed.info/sct",
-      },
-    ]
+<div
+  className="concept"
+  style={
+    Object {
+      "height": "116px",
+      "left": "20px",
+      "position": "absolute",
+      "top": "20px",
+      "width": "166px",
+    }
   }
-  focused={false}
-  height={116}
-  left={20}
-  top={20}
-  type="substance"
-  width={166}
-/>
+>
+  <div
+    className="sctid"
+  >
+    <Link
+      replace={false}
+      to="/Medication/2610011000036105"
+    >
+      2610011000036105
+    </Link>
+    <CopyToClipboard
+      copyText="2610011000036105"
+      title="Copy SCTID to clipboard"
+    />
+  </div>
+  <div
+    className="display"
+    title="sumatriptan"
+  >
+    sumatriptan
+    <CopyToClipboard
+      copyText="sumatriptan"
+      title="Copy preferred term to clipboard"
+    />
+  </div>
+  <div
+    className="type type-substance"
+  >
+    substance
+  </div>
+</div>
 `;
 
 exports[`Storyshots ConceptGroup With parent medication search result 1`] = `
-<ConceptGroup
-  concepts={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "81302011000036105",
-            "display": "zinc oxide 15% + dimeticone-350 15% + light liquid paraffin 10% cream",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "MPUU",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "931852011000036109",
-            "display": "dimeticone-350 1.04% + zinc oxide 12.5% spray",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "MPUU",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "61101000036107",
-            "display": "aluminium chlorohydrate 2% + benzoin Sumatra 1.2% + dimeticone-350 10% + liquid paraffin 5% + zinc oxide 20% paste",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "MPUU",
-      },
-    ]
+<div
+  className="concept-group"
+  style={
+    Object {
+      "left": "20px",
+      "top": "20px",
+    }
   }
-  height={116}
-  left={20}
-  linkPath="/?q=some-search"
-  top={20}
-  total={549}
-  width={166}
-/>
+>
+  <div
+    className="concept concept-stacked-1"
+  >
+    <div
+      className="type type-mpuu"
+    >
+      MPUU
+    </div>
+    <Link
+      replace={false}
+      to="/?q=some-search"
+    >
+      <Icon
+        hoverType="listActive"
+        type="list"
+        width={20}
+      />
+    </Link>
+  </div>
+  <div
+    className="concept concept-stacked-2"
+  />
+  <div
+    className="concept concept-stacked-3"
+  />
+  <div
+    className="concept-group-total"
+  >
+    549
+  </div>
+</div>
 `;
 
 exports[`Storyshots ConceptTypeToggle With label and no value 1`] = `
-<ConceptTypeToggle
-  label="Concept type"
-/>
+<div
+  className="concept-type-toggle"
+>
+  <label>
+    <span>
+      Concept type
+    </span>
+    <div
+      className="toggles"
+    >
+      <div
+        className="toggle toggle-ctpp"
+        key="CTPP"
+        onClick={[Function]}
+      >
+        CTPP
+      </div>
+      <div
+        className="toggle toggle-tpp"
+        key="TPP"
+        onClick={[Function]}
+      >
+        TPP
+      </div>
+      <div
+        className="toggle toggle-tpuu"
+        key="TPUU"
+        onClick={[Function]}
+      >
+        TPUU
+      </div>
+      <div
+        className="toggle toggle-mpp"
+        key="MPP"
+        onClick={[Function]}
+      >
+        MPP
+      </div>
+      <div
+        className="toggle toggle-mpuu"
+        key="MPUU"
+        onClick={[Function]}
+      >
+        MPUU
+      </div>
+      <div
+        className="toggle toggle-mp"
+        key="MP"
+        onClick={[Function]}
+      >
+        MP
+      </div>
+    </div>
+  </label>
+</div>
 `;
 
 exports[`Storyshots ConceptTypeToggle With label and value 1`] = `
-<ConceptTypeToggle
-  label="Concept type"
-  value={
-    Array [
-      "CTPP",
-      "TPP",
-      "MPP",
-    ]
-  }
-/>
+<div
+  className="concept-type-toggle"
+>
+  <label>
+    <span>
+      Concept type
+    </span>
+    <div
+      className="toggles"
+    >
+      <div
+        className="toggle toggle-ctpp toggle-on"
+        key="CTPP"
+        onClick={[Function]}
+      >
+        CTPP
+      </div>
+      <div
+        className="toggle toggle-tpp toggle-on"
+        key="TPP"
+        onClick={[Function]}
+      >
+        TPP
+      </div>
+      <div
+        className="toggle toggle-tpuu"
+        key="TPUU"
+        onClick={[Function]}
+      >
+        TPUU
+      </div>
+      <div
+        className="toggle toggle-mpp toggle-on"
+        key="MPP"
+        onClick={[Function]}
+      >
+        MPP
+      </div>
+      <div
+        className="toggle toggle-mpuu"
+        key="MPUU"
+        onClick={[Function]}
+      >
+        MPUU
+      </div>
+      <div
+        className="toggle toggle-mp"
+        key="MP"
+        onClick={[Function]}
+      >
+        MP
+      </div>
+    </div>
+  </label>
+</div>
 `;
 
 exports[`Storyshots ConceptTypeToggle With value 1`] = `
-<ConceptTypeToggle
-  value={
-    Array [
-      "CTPP",
-      "TPP",
-      "MPP",
-    ]
-  }
-/>
+<div
+  className="concept-type-toggle"
+>
+  <div
+    className="toggles"
+  >
+    <div
+      className="toggle toggle-ctpp toggle-on"
+      key="CTPP"
+      onClick={[Function]}
+    >
+      CTPP
+    </div>
+    <div
+      className="toggle toggle-tpp toggle-on"
+      key="TPP"
+      onClick={[Function]}
+    >
+      TPP
+    </div>
+    <div
+      className="toggle toggle-tpuu"
+      key="TPUU"
+      onClick={[Function]}
+    >
+      TPUU
+    </div>
+    <div
+      className="toggle toggle-mpp toggle-on"
+      key="MPP"
+      onClick={[Function]}
+    >
+      MPP
+    </div>
+    <div
+      className="toggle toggle-mpuu"
+      key="MPUU"
+      onClick={[Function]}
+    >
+      MPUU
+    </div>
+    <div
+      className="toggle toggle-mp"
+      key="MP"
+      onClick={[Function]}
+    >
+      MP
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots CopyToClipboard With some text 1`] = `
-<CopyToClipboard
-  copyText="The quick brown fox jumps over the lazy dog."
+<div
+  className="copy-to-clipboard"
+  data-clipboard-text="The quick brown fox jumps over the lazy dog."
   onClick={[Function]}
-/>
+>
+  <Icon
+    hoverType="clipboardActive"
+    type="clipboard"
+    width={17}
+  />
+</div>
 `;
 
 exports[`Storyshots ErrorMessage OperationOutcome 1`] = `
-<ErrorMessage
-  error={[Error: Invalid request: The FHIR endpoint on this server does not know how to handle GET operation[Medication] with parameters [[_text, is-brafnd]]]}
+<Motion
+  defaultStyle={
+    Object {
+      "y": -70,
+    }
+  }
+  style={
+    Object {
+      "y": Object {
+        "damping": 26,
+        "precision": 0.01,
+        "stiffness": 170,
+        "val": 0,
+      },
+    }
+  }
 />
 `;
 
 exports[`Storyshots ErrorMessage Simple message 1`] = `
-<ErrorMessage
-  error={
+<Motion
+  defaultStyle={
     Object {
-      "message": "Some especially long message: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "y": -70,
+    }
+  }
+  style={
+    Object {
+      "y": Object {
+        "damping": 26,
+        "precision": 0.01,
+        "stiffness": 170,
+        "val": 0,
+      },
     }
   }
 />
 `;
 
 exports[`Storyshots Expand Active 1`] = `
-<Expand
-  active={true}
-  className="expand"
-/>
+<div
+  className="expand expand active"
+>
+  ▾
+</div>
 `;
 
 exports[`Storyshots Expand Inactive 1`] = `
-<Expand
-  active={false}
-  className="expand"
-/>
+<div
+  className="expand expand"
+>
+  ▾
+</div>
 `;
 
 exports[`Storyshots FullSearchResults With a query and empty results 1`] = `
-<FullSearchResults
-  query="dog"
-  results={Array []}
-/>
+<div
+  className="full-search-results"
+>
+  <div
+    className="no-results"
+  >
+    No results matching "
+    dog
+    ".
+  </div>
+</div>
 `;
 
 exports[`Storyshots FullSearchResults With full range of types 1`] = `
-<FullSearchResults
-  results={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933216161000036101",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-          Object {
-            "code": "74899",
-            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
-          },
-        ],
-        "link": "/Medication/933216161000036101",
-        "type": "CTPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933205801000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/933205801000036102",
-        "type": "TPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933196831000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/933196831000036102",
-        "type": "TPUU",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "22131000168107",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/22131000168107",
-        "type": "TP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "75498011000036101",
-            "display": "death adder antivenom 6000 units injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/75498011000036101",
-        "type": "MPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "75096011000036105",
-            "display": "king brown snake antivenom 18 000 units injection, vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/75096011000036105",
-        "type": "MPUU",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "74983011000036101",
-            "display": "taipan snake antivenom",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/74983011000036101",
-        "type": "MP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "2610011000036105",
-            "display": "sumatriptan",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Substance/2610011000036105",
-        "type": "substance",
-      },
-    ]
-  }
-/>
+<div
+  className="full-search-results"
+>
+  <ol>
+    <li
+      className="search-result"
+      key="0"
+    >
+      <span
+        className="sctid"
+      >
+        933216161000036101
+      </span>
+      <span
+        className="display"
+      >
+        <Link
+          onClick={[Function]}
+          replace={false}
+          to="/Medication/933216161000036101"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+        </Link>
+      </span>
+      <span
+        className="type type-ctpp"
+      >
+        CTPP
+      </span>
+    </li>
+    <li
+      className="search-result"
+      key="1"
+    >
+      <span
+        className="sctid"
+      >
+        933205801000036102
+      </span>
+      <span
+        className="display"
+      >
+        <Link
+          onClick={[Function]}
+          replace={false}
+          to="/Medication/933205801000036102"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+        </Link>
+      </span>
+      <span
+        className="type type-tpp"
+      >
+        TPP
+      </span>
+    </li>
+    <li
+      className="search-result"
+      key="2"
+    >
+      <span
+        className="sctid"
+      >
+        933196831000036102
+      </span>
+      <span
+        className="display"
+      >
+        <Link
+          onClick={[Function]}
+          replace={false}
+          to="/Medication/933196831000036102"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
+        </Link>
+      </span>
+      <span
+        className="type type-tpuu"
+      >
+        TPUU
+      </span>
+    </li>
+    <li
+      className="search-result"
+      key="3"
+    >
+      <span
+        className="sctid"
+      >
+        22131000168107
+      </span>
+      <span
+        className="display"
+      >
+        <Link
+          onClick={[Function]}
+          replace={false}
+          to="/Medication/22131000168107"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
+        </Link>
+      </span>
+      <span
+        className="type type-tp"
+      >
+        TP
+      </span>
+    </li>
+    <li
+      className="search-result"
+      key="4"
+    >
+      <span
+        className="sctid"
+      >
+        75498011000036101
+      </span>
+      <span
+        className="display"
+      >
+        <Link
+          onClick={[Function]}
+          replace={false}
+          to="/Medication/75498011000036101"
+        >
+          death adder antivenom 6000 units injection, 1 vial
+        </Link>
+      </span>
+      <span
+        className="type type-mpp"
+      >
+        MPP
+      </span>
+    </li>
+    <li
+      className="search-result"
+      key="5"
+    >
+      <span
+        className="sctid"
+      >
+        75096011000036105
+      </span>
+      <span
+        className="display"
+      >
+        <Link
+          onClick={[Function]}
+          replace={false}
+          to="/Medication/75096011000036105"
+        >
+          king brown snake antivenom 18 000 units injection, vial
+        </Link>
+      </span>
+      <span
+        className="type type-mpuu"
+      >
+        MPUU
+      </span>
+    </li>
+    <li
+      className="search-result"
+      key="6"
+    >
+      <span
+        className="sctid"
+      >
+        74983011000036101
+      </span>
+      <span
+        className="display"
+      >
+        <Link
+          onClick={[Function]}
+          replace={false}
+          to="/Medication/74983011000036101"
+        >
+          taipan snake antivenom
+        </Link>
+      </span>
+      <span
+        className="type type-mp"
+      >
+        MP
+      </span>
+    </li>
+    <li
+      className="search-result"
+      key="7"
+    >
+      <span
+        className="sctid"
+      >
+        2610011000036105
+      </span>
+      <span
+        className="display"
+      >
+        <Link
+          onClick={[Function]}
+          replace={false}
+          to="/Substance/2610011000036105"
+        >
+          sumatriptan
+        </Link>
+      </span>
+      <span
+        className="type type-substance"
+      >
+        substance
+      </span>
+    </li>
+  </ol>
+</div>
 `;
 
 exports[`Storyshots FullSearchResults With no query and empty results 1`] = `
-<FullSearchResults
-  results={Array []}
+<div
+  className="full-search-results"
+>
+  <div
+    className="no-results"
+  >
+    No results.
+  </div>
+</div>
+`;
+
+exports[`Storyshots FullSearchResults With no query and no results 1`] = `
+<div
+  className="full-search-results"
 />
 `;
 
-exports[`Storyshots FullSearchResults With no query and no results 1`] = `<FullSearchResults />`;
-
 exports[`Storyshots Loading Loading 1`] = `
-<Loading
-  delay={350}
-  loading={true}
+<div
+  className="loading"
 />
 `;
 
 exports[`Storyshots Loading Loading, delay 2 seconds 1`] = `
-<Loading
-  delay={2000}
-  loading={true}
+<div
+  className="loading"
 />
 `;
 
 exports[`Storyshots Loading Not loading 1`] = `
-<Loading
-  delay={350}
-  loading={false}
+<div
+  className="loading"
 />
 `;
 
 exports[`Storyshots MedicationSearchField Searching TPPs 1`] = `
-<MedicationSearchField
-  fhirServer="https://medserve.online/fhir"
-  focusUponMount={true}
-  label="Select product"
-  minRequestFrequency={350}
-  searchPath={[Function]}
-/>
+<div
+  className="medication-search-field"
+>
+  <TextField
+    disabled={false}
+    focusUponMount={true}
+    label="Select product"
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+  />
+</div>
 `;
 
 exports[`Storyshots MedicationSearchField With coding value (code and display) 1`] = `
-<MedicationSearchField
-  codingValue="49333011000036108|Proguide (66000782) green 28 cm to 32 cm two layer bandage, 1"
-  fhirServer="https://medserve.online/fhir"
-  focusUponMount={true}
-  label="Select product"
-  minRequestFrequency={350}
-  searchPath={[Function]}
-/>
+<div
+  className="medication-search-field"
+>
+  <label>
+    Select product
+    <div
+      className="selected-code"
+      title="49333011000036108|Proguide (66000782) green 28 cm to 32 cm two layer bandage, 1"
+    >
+      Proguide (66000782) green 28 cm to 32 cm two layer bandage, 1
+      <div
+        className="clear-code"
+        onClick={[Function]}
+      >
+        ˟
+      </div>
+    </div>
+  </label>
+</div>
 `;
 
 exports[`Storyshots MedicationSearchField With coding value (code only) 1`] = `
-<MedicationSearchField
-  codingValue="49333011000036108"
-  fhirServer="https://medserve.online/fhir"
-  focusUponMount={true}
-  label="Select product"
-  minRequestFrequency={350}
-  searchPath={[Function]}
-/>
+<div
+  className="medication-search-field"
+>
+  <label>
+    Select product
+    <div
+      className="selected-code"
+      title="49333011000036108"
+    >
+      49333011000036108
+      <div
+        className="clear-code"
+        onClick={[Function]}
+      >
+        ˟
+      </div>
+    </div>
+  </label>
+</div>
 `;
 
 exports[`Storyshots MedicationSearchField With text value 1`] = `
-<MedicationSearchField
-  fhirServer="https://medserve.online/fhir"
-  focusUponMount={true}
-  label="Select product"
-  minRequestFrequency={350}
-  searchPath={[Function]}
-  textValue="oxy"
-/>
+<div
+  className="medication-search-field"
+>
+  <TextField
+    disabled={false}
+    focusUponMount={true}
+    label="Select product"
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    value="oxy"
+  />
+</div>
 `;
 
 exports[`Storyshots QuickSearchResults All types, with links 1`] = `
-<QuickSearchResults
-  results={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933216161000036101",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-          Object {
-            "code": "74899",
-            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
-          },
-        ],
-        "link": "/Medication/933216161000036101",
-        "type": "CTPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933205801000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/933205801000036102",
-        "type": "TPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933196831000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/933196831000036102",
-        "type": "TPUU",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "22131000168107",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/22131000168107",
-        "type": "TP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "75498011000036101",
-            "display": "death adder antivenom 6000 units injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/75498011000036101",
-        "type": "MPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "75096011000036105",
-            "display": "king brown snake antivenom 18 000 units injection, vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/75096011000036105",
-        "type": "MPUU",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "74983011000036101",
-            "display": "taipan snake antivenom",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/74983011000036101",
-        "type": "MP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "2610011000036105",
-            "display": "sumatriptan",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Substance/2610011000036105",
-        "type": "substance",
-      },
-    ]
-  }
-/>
+<div
+  className="quick-search-results"
+>
+  <ol>
+    <li
+      className="search-result"
+      key="0"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-ctpp"
+        >
+          CTPP
+        </span>
+        <span
+          className="display"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="1"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-tpp"
+        >
+          TPP
+        </span>
+        <span
+          className="display"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="2"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-tpuu"
+        >
+          TPUU
+        </span>
+        <span
+          className="display"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="3"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-tp"
+        >
+          TP
+        </span>
+        <span
+          className="display"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="4"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-mpp"
+        >
+          MPP
+        </span>
+        <span
+          className="display"
+        >
+          death adder antivenom 6000 units injection, 1 vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="5"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-mpuu"
+        >
+          MPUU
+        </span>
+        <span
+          className="display"
+        >
+          king brown snake antivenom 18 000 units injection, vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="6"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-mp"
+        >
+          MP
+        </span>
+        <span
+          className="display"
+        >
+          taipan snake antivenom
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="7"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-substance"
+        >
+          substance
+        </span>
+        <span
+          className="display"
+        >
+          sumatriptan
+        </span>
+      </div>
+    </li>
+  </ol>
+</div>
 `;
 
 exports[`Storyshots QuickSearchResults All types, without links 1`] = `
-<QuickSearchResults
-  results={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933216161000036101",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-          Object {
-            "code": "74899",
-            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
-          },
-        ],
-        "type": "CTPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933205801000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "TPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933196831000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "TPUU",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "22131000168107",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "TP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "75498011000036101",
-            "display": "death adder antivenom 6000 units injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "MPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "75096011000036105",
-            "display": "king brown snake antivenom 18 000 units injection, vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "MPUU",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "74983011000036101",
-            "display": "taipan snake antivenom",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "MP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "2610011000036105",
-            "display": "sumatriptan",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "substance",
-      },
-    ]
-  }
-/>
+<div
+  className="quick-search-results"
+>
+  <ol>
+    <li
+      className="search-result"
+      key="0"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-ctpp"
+        >
+          CTPP
+        </span>
+        <span
+          className="display"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="1"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-tpp"
+        >
+          TPP
+        </span>
+        <span
+          className="display"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="2"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-tpuu"
+        >
+          TPUU
+        </span>
+        <span
+          className="display"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="3"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-tp"
+        >
+          TP
+        </span>
+        <span
+          className="display"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="4"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-mpp"
+        >
+          MPP
+        </span>
+        <span
+          className="display"
+        >
+          death adder antivenom 6000 units injection, 1 vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="5"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-mpuu"
+        >
+          MPUU
+        </span>
+        <span
+          className="display"
+        >
+          king brown snake antivenom 18 000 units injection, vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="6"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-mp"
+        >
+          MP
+        </span>
+        <span
+          className="display"
+        >
+          taipan snake antivenom
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="7"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-substance"
+        >
+          substance
+        </span>
+        <span
+          className="display"
+        >
+          sumatriptan
+        </span>
+      </div>
+    </li>
+  </ol>
+</div>
 `;
 
 exports[`Storyshots QuickSearchResults With a query and empty results 1`] = `
-<QuickSearchResults
-  query="dog"
-  results={Array []}
-/>
+<div
+  className="quick-search-results"
+>
+  <div
+    className="no-results"
+  >
+    No results matching "
+    dog
+    ".
+  </div>
+</div>
 `;
 
 exports[`Storyshots QuickSearchResults With a selected row 1`] = `
-<QuickSearchResults
-  results={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933216161000036101",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-          Object {
-            "code": "74899",
-            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
-          },
-        ],
-        "link": "/Medication/933216161000036101",
-        "type": "CTPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933205801000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/933205801000036102",
-        "type": "TPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933196831000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/933196831000036102",
-        "selected": true,
-        "type": "TPUU",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "22131000168107",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/22131000168107",
-        "type": "TP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "75498011000036101",
-            "display": "death adder antivenom 6000 units injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/75498011000036101",
-        "type": "MPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "75096011000036105",
-            "display": "king brown snake antivenom 18 000 units injection, vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/75096011000036105",
-        "type": "MPUU",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "74983011000036101",
-            "display": "taipan snake antivenom",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/74983011000036101",
-        "type": "MP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "2610011000036105",
-            "display": "sumatriptan",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Substance/2610011000036105",
-        "type": "substance",
-      },
-    ]
-  }
-/>
+<div
+  className="quick-search-results"
+>
+  <ol>
+    <li
+      className="search-result"
+      key="0"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-ctpp"
+        >
+          CTPP
+        </span>
+        <span
+          className="display"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="1"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-tpp"
+        >
+          TPP
+        </span>
+        <span
+          className="display"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result selected"
+      key="2"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-tpuu"
+        >
+          TPUU
+        </span>
+        <span
+          className="display"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="3"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-tp"
+        >
+          TP
+        </span>
+        <span
+          className="display"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="4"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-mpp"
+        >
+          MPP
+        </span>
+        <span
+          className="display"
+        >
+          death adder antivenom 6000 units injection, 1 vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="5"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-mpuu"
+        >
+          MPUU
+        </span>
+        <span
+          className="display"
+        >
+          king brown snake antivenom 18 000 units injection, vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="6"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-mp"
+        >
+          MP
+        </span>
+        <span
+          className="display"
+        >
+          taipan snake antivenom
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="7"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-substance"
+        >
+          substance
+        </span>
+        <span
+          className="display"
+        >
+          sumatriptan
+        </span>
+      </div>
+    </li>
+  </ol>
+</div>
 `;
 
 exports[`Storyshots QuickSearchResults With more link 1`] = `
-<QuickSearchResults
-  results={
-    Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933216161000036101",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-          Object {
-            "code": "74899",
-            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
-          },
-        ],
-        "link": "/Medication/933216161000036101",
-        "type": "CTPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933205801000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/933205801000036102",
-        "type": "TPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "933196831000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/933196831000036102",
-        "type": "TPUU",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "22131000168107",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/22131000168107",
-        "type": "TP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "75498011000036101",
-            "display": "death adder antivenom 6000 units injection, 1 vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/75498011000036101",
-        "type": "MPP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "75096011000036105",
-            "display": "king brown snake antivenom 18 000 units injection, vial",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/75096011000036105",
-        "type": "MPUU",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "74983011000036101",
-            "display": "taipan snake antivenom",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Medication/74983011000036101",
-        "type": "MP",
-      },
-      Object {
-        "coding": Array [
-          Object {
-            "code": "2610011000036105",
-            "display": "sumatriptan",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "link": "/Substance/2610011000036105",
-        "type": "substance",
-      },
-      Object {
-        "link": "/?q=something",
-        "total": 45983,
-        "type": "more",
-      },
-    ]
-  }
-/>
+<div
+  className="quick-search-results"
+>
+  <ol>
+    <li
+      className="search-result"
+      key="0"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-ctpp"
+        >
+          CTPP
+        </span>
+        <span
+          className="display"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="1"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-tpp"
+        >
+          TPP
+        </span>
+        <span
+          className="display"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="2"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-tpuu"
+        >
+          TPUU
+        </span>
+        <span
+          className="display"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="3"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-tp"
+        >
+          TP
+        </span>
+        <span
+          className="display"
+        >
+          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="4"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-mpp"
+        >
+          MPP
+        </span>
+        <span
+          className="display"
+        >
+          death adder antivenom 6000 units injection, 1 vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="5"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-mpuu"
+        >
+          MPUU
+        </span>
+        <span
+          className="display"
+        >
+          king brown snake antivenom 18 000 units injection, vial
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="6"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-mp"
+        >
+          MP
+        </span>
+        <span
+          className="display"
+        >
+          taipan snake antivenom
+        </span>
+      </div>
+    </li>
+    <li
+      className="search-result"
+      key="7"
+    >
+      <div
+        className="target"
+        onClick={[Function]}
+      >
+        <span
+          className="type type-substance"
+        >
+          substance
+        </span>
+        <span
+          className="display"
+        >
+          sumatriptan
+        </span>
+      </div>
+    </li>
+    <li
+      className="more-results"
+      key="8"
+    >
+      <Link
+        className="target"
+        onClick={[Function]}
+        replace={false}
+        to="/?q=something"
+      >
+        view all 
+        45,983
+         matches →
+      </Link>
+    </li>
+  </ol>
+</div>
 `;
 
 exports[`Storyshots QuickSearchResults With no query and empty results 1`] = `
-<QuickSearchResults
-  results={Array []}
+<div
+  className="quick-search-results"
+>
+  <div
+    className="no-results"
+  >
+    No results.
+  </div>
+</div>
+`;
+
+exports[`Storyshots QuickSearchResults With no query and no results 1`] = `
+<div
+  className="quick-search-results"
 />
 `;
 
-exports[`Storyshots QuickSearchResults With no query and no results 1`] = `<QuickSearchResults />`;
-
 exports[`Storyshots Search As configured 1`] = `
-<withRouter(Search)
-  fhirServer="https://medserve.online/fhir"
-/>
+<div
+  className="search"
+>
+  <withRouter(OnClickOutside(BasicSearch))
+    onQueryUpdate={[Function]}
+    onQuickSearchClosed={[Function]}
+    onSelectResult={[Function]}
+    onToggleAdvanced={[Function]}
+    quickSearchShouldClose={false}
+  />
+</div>
 `;
 
 exports[`Storyshots Search With a query 1`] = `
-<withRouter(Search)
-  fhirServer="https://medserve.online/fhir"
-  query="package:\\"22095011000036109|fenofibrate 145 mg tablet\\""
-/>
+<div
+  className="search"
+>
+  <withRouter(OnClickOutside(BasicSearch))
+    loading={true}
+    onQueryUpdate={[Function]}
+    onQuickSearchClosed={[Function]}
+    onSelectResult={[Function]}
+    onToggleAdvanced={[Function]}
+    quickSearchShouldClose={false}
+    routedQuery="package:\\"22095011000036109|fenofibrate 145 mg tablet\\""
+  />
+</div>
 `;
 
 exports[`Storyshots Search With focus on mount 1`] = `
-<withRouter(Search)
-  fhirServer="https://medserve.online/fhir"
-  focusUponMount={true}
-/>
+<div
+  className="search"
+>
+  <withRouter(OnClickOutside(BasicSearch))
+    focusUponMount={true}
+    onQueryUpdate={[Function]}
+    onQuickSearchClosed={[Function]}
+    onSelectResult={[Function]}
+    onToggleAdvanced={[Function]}
+    quickSearchShouldClose={false}
+  />
+</div>
 `;
 
 exports[`Storyshots Search With minimum request frequency of 2 seconds 1`] = `
-<withRouter(Search)
-  fhirServer="https://medserve.online/fhir"
-  minRequestFrequency={2000}
-/>
+<div
+  className="search"
+>
+  <withRouter(OnClickOutside(BasicSearch))
+    onQueryUpdate={[Function]}
+    onQuickSearchClosed={[Function]}
+    onSelectResult={[Function]}
+    onToggleAdvanced={[Function]}
+    quickSearchShouldClose={false}
+  />
+</div>
 `;
 
 exports[`Storyshots SearchForm With a query 1`] = `
-<SearchForm
-  fhirServer="https://medserve.online/fhir"
-  query="varicella id:959031000168106"
-/>
+<form
+  className="search-form"
+>
+  <TextField
+    disabled={false}
+    focusUponMount={true}
+    label="Contains text"
+    onChange={[Function]}
+  />
+  <OnClickOutside(MedicationSearchField)
+    eventTypes={
+      Array [
+        "mousedown",
+        "touchstart",
+      ]
+    }
+    excludeScrollbar={false}
+    fhirServer="https://medserve.online/fhir"
+    label="Ingredient"
+    onClear={[Function]}
+    onCodingChange={[Function]}
+    onTextChange={[Function]}
+    outsideClickIgnoreClass="ignore-react-onclickoutside"
+    preventDefault={false}
+    searchPath={[Function]}
+    stopPropagation={false}
+  />
+  <OnClickOutside(MedicationSearchField)
+    eventTypes={
+      Array [
+        "mousedown",
+        "touchstart",
+      ]
+    }
+    excludeScrollbar={false}
+    fhirServer="https://medserve.online/fhir"
+    label="Package item"
+    onClear={[Function]}
+    onCodingChange={[Function]}
+    onTextChange={[Function]}
+    outsideClickIgnoreClass="ignore-react-onclickoutside"
+    preventDefault={false}
+    searchPath={[Function]}
+    stopPropagation={false}
+  />
+  <TextField
+    disabled={false}
+    label="Form"
+    onChange={[Function]}
+  />
+  <TextField
+    disabled={false}
+    label="Container"
+    onChange={[Function]}
+  />
+  <TextField
+    disabled={false}
+    label="Brand"
+    onChange={[Function]}
+  />
+  <TextField
+    disabled={false}
+    label="PBS code"
+    onChange={[Function]}
+  />
+  <TextField
+    disabled={false}
+    label="ARTG ID"
+    onChange={[Function]}
+  />
+  <OnClickOutside(MedicationSearchField)
+    eventTypes={
+      Array [
+        "mousedown",
+        "touchstart",
+      ]
+    }
+    excludeScrollbar={false}
+    fhirServer="https://medserve.online/fhir"
+    label="Parent"
+    onClear={[Function]}
+    onCodingChange={[Function]}
+    onTextChange={[Function]}
+    outsideClickIgnoreClass="ignore-react-onclickoutside"
+    preventDefault={false}
+    searchPath={[Function]}
+    stopPropagation={false}
+  />
+  <ConceptTypeToggle
+    label="Include only"
+    onChange={[Function]}
+    value={null}
+  />
+  <button
+    className="search-submit"
+    onClick={[Function]}
+    type="submit"
+  >
+    Search
+  </button>
+</form>
 `;
 
 exports[`Storyshots SearchSummary With next and previous links 1`] = `
-<SearchSummary
-  nextLink="something-else"
-  previousLink="something"
-  totalResults={350}
-/>
+<div
+  className="search-summary"
+>
+  <div
+    className="pagination-total"
+  >
+    350
+     matches
+  </div>
+  <Icon
+    alt="Previous page of results"
+    className="pagination-previous"
+    height={21}
+    hoverType="previousActive"
+    onClick={[Function]}
+    title="Previous page"
+    type="previous"
+    width={21}
+  />
+  <Icon
+    alt="Next page of results"
+    className="pagination-next"
+    height={21}
+    hoverType="nextActive"
+    onClick={[Function]}
+    title="Next page"
+    type="next"
+    width={21}
+  />
+</div>
 `;
 
 exports[`Storyshots SearchSummary With next link 1`] = `
-<SearchSummary
-  nextLink="something"
-  totalResults={350}
-/>
+<div
+  className="search-summary"
+>
+  <div
+    className="pagination-total"
+  >
+    350
+     matches
+  </div>
+  <Icon
+    alt="Next page of results"
+    className="pagination-next"
+    height={21}
+    hoverType="nextActive"
+    onClick={[Function]}
+    title="Next page"
+    type="next"
+    width={21}
+  />
+</div>
 `;
 
-exports[`Storyshots SearchSummary With no total results 1`] = `<SearchSummary />`;
+exports[`Storyshots SearchSummary With no total results 1`] = `
+<div
+  className="search-summary"
+>
+  <div
+    className="pagination-total"
+  >
+    0
+     matches
+  </div>
+</div>
+`;
 
 exports[`Storyshots SearchSummary With previous link 1`] = `
-<SearchSummary
-  previousLink="something"
-  totalResults={350}
-/>
+<div
+  className="search-summary"
+>
+  <div
+    className="pagination-total"
+  >
+    350
+     matches
+  </div>
+  <Icon
+    alt="Previous page of results"
+    className="pagination-previous"
+    height={21}
+    hoverType="previousActive"
+    onClick={[Function]}
+    title="Previous page"
+    type="previous"
+    width={21}
+  />
+</div>
 `;
 
 exports[`Storyshots SearchSummary With total results 1`] = `
-<SearchSummary
-  totalResults={5345}
-/>
+<div
+  className="search-summary"
+>
+  <div
+    className="pagination-total"
+  >
+    5,345
+     matches
+  </div>
+</div>
 `;
 
 exports[`Storyshots TextField With focus on mount 1`] = `
-<TextField
-  disabled={false}
-  focusUponMount={true}
-  value="Some value"
-/>
+<div
+  className="text-field"
+>
+  <input
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    type="text"
+    value="Some value"
+  />
+</div>
 `;
 
 exports[`Storyshots TextField With no value 1`] = `
-<TextField
-  disabled={false}
-/>
+<div
+  className="text-field"
+>
+  <input
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    type="text"
+    value=""
+  />
+</div>
 `;
 
 exports[`Storyshots TextField With placeholder 1`] = `
-<TextField
-  disabled={false}
-  placeholder="Type here"
-/>
+<div
+  className="text-field"
+>
+  <input
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    placeholder="Type here"
+    type="text"
+    value=""
+  />
+</div>
 `;
 
 exports[`Storyshots TextField With value 1`] = `
-<TextField
-  disabled={false}
-  value="Some value"
-/>
+<div
+  className="text-field"
+>
+  <input
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    type="text"
+    value="Some value"
+  />
+</div>
 `;
