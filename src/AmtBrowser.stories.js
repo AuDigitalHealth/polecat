@@ -1,8 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { host } from 'storybook-host'
-import { withKnobs } from '@storybook/addon-knobs'
-import { withSmartKnobs } from 'storybook-addon-smart-knobs'
 
 import AmtBrowser from './AmtBrowser.js'
 import config from '../test/config.js'
@@ -11,8 +9,6 @@ const width = 800
 const height = 800
 
 storiesOf('AmtBrowser', module)
-  .addDecorator(withSmartKnobs)
-  .addDecorator(withKnobs)
   .addDecorator(
     host({ width: '802px', height: '802px', border: '1px solid #ccc' })
   )

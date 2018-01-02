@@ -1,15 +1,11 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { host } from 'storybook-host'
-import { withKnobs } from '@storybook/addon-knobs'
-import { withSmartKnobs } from 'storybook-addon-smart-knobs'
 
 import { MedicationSearchField } from './MedicationSearchField.js'
 import config from '../test/config.js'
 
 storiesOf('MedicationSearchField', module)
-  .addDecorator(withSmartKnobs)
-  .addDecorator(withKnobs)
   .addDecorator(host({ width: '300px' }))
   .add('Searching TPPs', () => (
     <MedicationSearchField

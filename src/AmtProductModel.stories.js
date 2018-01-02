@@ -1,8 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { host } from 'storybook-host'
-import { withKnobs } from '@storybook/addon-knobs'
-import { withSmartKnobs } from 'storybook-addon-smart-knobs'
 
 import AmtProductModel from './AmtProductModel.js'
 import nodesLinks1 from '../test/nodesLinks-813191000168107.json'
@@ -69,8 +67,6 @@ const addFixedPos = (nodes, fixedPos) =>
   }))
 
 const stories = storiesOf('AmtProductModel', module)
-  .addDecorator(withSmartKnobs)
-  .addDecorator(withKnobs)
   .addDecorator(
     host({ width: '802px', height: '802px', border: '1px solid #ccc' })
   )
