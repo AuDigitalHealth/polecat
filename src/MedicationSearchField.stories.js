@@ -10,7 +10,7 @@ storiesOf('MedicationSearchField', module)
   .add('Searching TPPs', () => (
     <MedicationSearchField
       fhirServer={config.fhirServer}
-      label='Select product'
+      label="Select product"
       searchPath={text =>
         `/Medication?_text=${text}&medication-resource-type=BPG`
       }
@@ -20,8 +20,8 @@ storiesOf('MedicationSearchField', module)
   .add('With text value', () => (
     <MedicationSearchField
       fhirServer={config.fhirServer}
-      label='Select product'
-      textValue='oxy'
+      label="Select product"
+      textValue="oxy"
       searchPath={text =>
         `/Medication?_text=${text}&medication-resource-type=BPG`
       }
@@ -31,8 +31,8 @@ storiesOf('MedicationSearchField', module)
   .add('With coding value (code only)', () => (
     <MedicationSearchField
       fhirServer={config.fhirServer}
-      label='Select product'
-      codingValue='49333011000036108'
+      label="Select product"
+      codingValue="49333011000036108"
       searchPath={text =>
         `/Medication?_text=${text}&medication-resource-type=BPG`
       }
@@ -42,8 +42,8 @@ storiesOf('MedicationSearchField', module)
   .add('With coding value (code and display)', () => (
     <MedicationSearchField
       fhirServer={config.fhirServer}
-      label='Select product'
-      codingValue='49333011000036108|Proguide (66000782) green 28 cm to 32 cm two layer bandage, 1'
+      label="Select product"
+      codingValue="49333011000036108|Proguide (66000782) green 28 cm to 32 cm two layer bandage, 1"
       searchPath={text =>
         `/Medication?_text=${text}&medication-resource-type=BPG`
       }

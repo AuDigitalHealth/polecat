@@ -33,6 +33,7 @@
     "jest/no-disabled-tests": "error",
     "jest/no-focused-tests": "error",
     "jest/valid-expect": "error",
-    "one-var": 0
+    "one-var": 0,
+    "jsx-quotes": ["error", "prefer-double"]
   }
 }

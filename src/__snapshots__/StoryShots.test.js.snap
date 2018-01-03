@@ -4393,16 +4393,14 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
       className="more-results"
       key="8"
     >
-      <Link
+      <div
         className="target"
         onClick={[Function]}
-        replace={false}
-        to="/?q=something"
       >
         view all 
         45,983
          matches →
-      </Link>
+      </div>
     </li>
   </ol>
 </div>

@@ -17,7 +17,7 @@ class QuickSearchResults extends Component {
             system: PropTypes.string,
             code: PropTypes.string,
             display: PropTypes.string,
-          })
+          }),
         ),
         display: PropTypes.string,
         type: PropTypes.oneOf([
@@ -30,11 +30,13 @@ class QuickSearchResults extends Component {
           'MP',
           'substance',
           'more',
+          'text',
         ]),
+        query: PropTypes.string,
         link: PropTypes.string,
         selected: PropTypes.bool,
         total: PropTypes.number,
-      })
+      }),
     ),
     onSelectResult: PropTypes.func,
   }
@@ -46,7 +48,7 @@ class QuickSearchResults extends Component {
 
   render() {
     return (
-      <div className='quick-search-results'>
+      <div className="quick-search-results">
         {this.renderResultsOrNothing()}
       </div>
     )
@@ -55,9 +57,9 @@ class QuickSearchResults extends Component {
   renderResultsOrNothing() {
     const { query, results } = this.props
     if (query && results && results.length === 0) {
-      return <div className='no-results'>No results matching "{query}".</div>
+      return <div className="no-results">No results matching "{query}".</div>
     } else if (results && results.length === 0) {
-      return <div className='no-results'>No results.</div>
+      return <div className="no-results">No results.</div>
     } else if (results && results.length > 0) {
       return <ol>{this.renderResults()}</ol>
     } else {
@@ -72,7 +74,9 @@ class QuickSearchResults extends Component {
       (result, i) =>
         result.type === 'more'
           ? this.renderMoreLink(result, i)
-          : this.renderResult(result, i)
+          : result.type === 'text'
+            ? this.renderTextLink(result, i)
+            : this.renderResult(result, i),
     )
   }
 
@@ -82,13 +86,23 @@ class QuickSearchResults extends Component {
         key={i}
         className={result.selected ? 'search-result selected' : 'search-result'}
       >
-        <div className='target' onClick={() => this.handleSelectResult(result)}>
+        <div className="target" onClick={() => this.handleSelectResult(result)}>
           <span className={`type type-${result.type}`.toLowerCase()}>
             {result.type}
           </span>
-          <span className='display'>
+          <span className="display">
             {codingToSnomedDisplay(result.coding)}
           </span>
+        </div>
+      </li>
+    )
+  }
+
+  renderTextLink(result, i) {
+    return (
+      <li key={i} className={result.selected ? 'text selected' : 'text'}>
+        <div className="target" onClick={() => this.handleSelectResult(result)}>
+          All concepts containing the text "{result.query}"
         </div>
       </li>
     )
@@ -100,13 +114,9 @@ class QuickSearchResults extends Component {
         key={i}
         className={result.selected ? 'more-results selected' : 'more-results'}
       >
-        <Link
-          className='target'
-          to={result.link}
-          onClick={() => this.handleSelectResult()}
-        >
+        <div className="target" onClick={() => this.handleSelectResult(result)}>
           view all {formatNumber(result.total)} matches &rarr;
-        </Link>
+        </div>
       </li>
     )
   }

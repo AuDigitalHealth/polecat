@@ -54,6 +54,7 @@ export class MedicationSearchField extends Component {
     this.setLoadingStatus(true)
     this.getSearchResultsFromQuery(fhirServer, query)
       .then(bundle => this.parseSearchResults(bundle))
+      .then(parsed => this.addTextOptionToSearchResults(parsed, query))
       .then(parsed =>
         this.setState(() => ({
           bundle: parsed.bundle,
@@ -96,13 +97,17 @@ export class MedicationSearchField extends Component {
   }
 
   async parseSearchResults(bundle) {
-    if (!bundle || bundle.total === 0) return []
+    if (!bundle || bundle.total === 0) return { results: [] }
     return {
       bundle,
       results: bundle.entry
         .map(e => getSubjectConcept(e.resource))
         .map(result => ({ ...result, type: amtConceptTypeFor(result.type) })),
     }
+  }
+
+  async addTextOptionToSearchResults({ bundle, results }, query) {
+    return { bundle, results: [{ type: 'text', query }].concat(results) }
   }
 
   handleFocus() {
