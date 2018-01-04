@@ -45,12 +45,12 @@ storiesOf('ConceptGroup', module).add(
   () => (
     <ConceptGroup
       concepts={concepts1}
-      linkPath='/?q=some-search'
+      linkPath="/?q=some-search"
       total={549}
       width={width}
       height={height}
       top={20}
       left={20}
     />
-  )
+  ),
 )

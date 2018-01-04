@@ -13,7 +13,7 @@ class ConceptGroup extends Component {
       PropTypes.shape({
         coding: Concept.propTypes.coding,
         type: Concept.propTypes.type,
-      })
+      }),
     ),
     // Total number of concepts that is available to view if the full result set
     // is requested by the user.
@@ -36,23 +36,23 @@ class ConceptGroup extends Component {
     const type = concept.type
     return (
       <div
-        className='concept-group'
+        className="concept-group"
         style={{
           top: top + 'px',
           left: left + 'px',
         }}
       >
-        <div className='concept concept-stacked-1'>
+        <div className="concept concept-stacked-1">
           {type ? (
             <div className={`type type-${type}`.toLowerCase()}>{type}</div>
           ) : null}
           <Link to={linkPath}>
-            <Icon type='list' hoverType='listActive' width={20} />
+            <Icon type="list" hoverType="listActive" width={20} />
           </Link>
         </div>
-        <div className='concept concept-stacked-2' />
-        <div className='concept concept-stacked-3' />
-        <div className='concept-group-total'>{total}</div>
+        <div className="concept concept-stacked-2" />
+        <div className="concept concept-stacked-3" />
+        <div className="concept-group-total">{total}</div>
       </div>
     )
   }

@@ -15,7 +15,7 @@ if (
   (bowser.firefox && bowser.version < 50)
 ) {
   document.write(
-    '<div class="incompatible-browser"><p>&#x1f625&#x1f625&#x1f625</p><p>You appear to be running a very old web browser, which does not have the necessary features to run this application...</p><p>&#x1f625&#x1f625&#x1f625</p></div>'
+    '<div class="incompatible-browser"><p>&#x1f625&#x1f625&#x1f625</p><p>You appear to be running a very old web browser, which does not have the necessary features to run this application...</p><p>&#x1f625&#x1f625&#x1f625</p></div>',
   )
 } else {
   http
@@ -27,10 +27,11 @@ if (
       }
       ReactDOM.render(
         <Router config={config} />,
-        document.getElementById('root')
+        document.getElementById('root'),
       )
     })
     .catch(error => {
+      // eslint-disable-next-line no-console
       console.error(error)
       ReactDOM.render(<Router />, document.getElementById('root'))
     })

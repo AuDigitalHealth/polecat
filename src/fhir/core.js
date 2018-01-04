@@ -15,7 +15,7 @@ export const opOutcomeFromJsonResponse = parsed => {
       'details',
       'diagnostics',
       'location',
-      'expression'
-    )
+      'expression',
+    ),
   )
 }

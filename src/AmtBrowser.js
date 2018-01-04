@@ -11,7 +11,7 @@ import './css/AmtBrowser.css'
 
 class AmtBrowser extends Component {
   static propTypes = {
-    resourceType: PropTypes.oneOf([ 'Medication', 'Substance' ]),
+    resourceType: PropTypes.oneOf(['Medication', 'Substance']),
     id: PropTypes.string,
     query: PropTypes.string,
     viewport: PropTypes.object.isRequired,
@@ -59,11 +59,11 @@ class AmtBrowser extends Component {
     const { loading, error } = this.state
     return (
       <div
-        className='amt-browser'
+        className="amt-browser"
         style={{ width: viewport.width, height: viewport.height }}
       >
         {error ? (
-          <div className='errors'>
+          <div className="errors">
             <ErrorMessage error={error} />
           </div>
         ) : null}

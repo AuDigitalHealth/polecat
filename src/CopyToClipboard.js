@@ -22,7 +22,7 @@ class CopyToClipboard extends Component {
     if (this.state.timeoutId) clearTimeout(this.state.timeoutId)
     const timeoutId = setTimeout(
       () => this.setState(() => ({ status: 'ready', timeoutId: null })),
-      1000
+      1000,
     )
     this.setState(() => ({ status: 'success', timeoutId }))
   }
@@ -41,7 +41,7 @@ class CopyToClipboard extends Component {
     const { status } = this.state
     return (
       <div
-        className='copy-to-clipboard'
+        className="copy-to-clipboard"
         data-clipboard-text={copyText}
         onClick={this.handleCopySuccess}
       >

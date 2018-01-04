@@ -7,14 +7,14 @@ import config from '../test/config.js'
 
 storiesOf('AdvancedSearch', module)
   .add('With routed query but no results', () => (
-    <AdvancedSearch routedQuery='para' fhirServer={config.fhirServer} />
+    <AdvancedSearch routedQuery="para" fhirServer={config.fhirServer} />
   ))
   .add('With routed query but no results, loading', () => (
-    <AdvancedSearch routedQuery='para' fhirServer={config.fhirServer} loading />
+    <AdvancedSearch routedQuery="para" fhirServer={config.fhirServer} loading />
   ))
   .add('With routed query and results', () => (
     <AdvancedSearch
-      routedQuery='para'
+      routedQuery="para"
       fhirServer={config.fhirServer}
       results={results1}
       bundle={{ total: 8 }}
@@ -22,10 +22,10 @@ storiesOf('AdvancedSearch', module)
   ))
   .add('With current query', () => (
     <AdvancedSearch
-      routedQuery='para'
+      routedQuery="para"
       fhirServer={config.fhirServer}
       results={results1}
       bundle={{ total: 8 }}
-      currentQuery='parac'
+      currentQuery="parac"
     />
   ))

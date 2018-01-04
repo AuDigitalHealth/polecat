@@ -37,7 +37,7 @@ export class MedicationSearchField extends Component {
     this.state = { quickSearchOpen: false, loading: false }
     this.throttledQueryUpdate = throttle(
       this.throttledQueryUpdate.bind(this),
-      props.minRequestFrequency
+      props.minRequestFrequency,
     )
     this.handleFocus = this.handleFocus.bind(this)
     this.handleClickOutside = this.handleClickOutside.bind(this)
@@ -61,7 +61,7 @@ export class MedicationSearchField extends Component {
           results: parsed.results,
           cancelRequest: null,
           quickSearchOpen: true,
-        }))
+        })),
       )
       .then(() => this.setLoadingStatus(false))
       .catch(error => this.handleError(error))
@@ -137,7 +137,7 @@ export class MedicationSearchField extends Component {
       this.setState(() => ({
         results: results.map(
           (r, i) =>
-            i === newSelection ? { ...r, selected: true } : omit(r, 'selected')
+            i === newSelection ? { ...r, selected: true } : omit(r, 'selected'),
         ),
       }))
     } else if (event.key === 'Enter') {
@@ -181,7 +181,7 @@ export class MedicationSearchField extends Component {
       sniffFormat(response.headers['content-type'])
       const opOutcome = opOutcomeFromJsonResponse(response)
       if (opOutcome) throw opOutcome
-    } catch (error) {}
+    } catch (error) {} // eslint-disable-line no-empty
     throw new Error(response.statusText || response.status)
   }
 
@@ -209,7 +209,7 @@ export class MedicationSearchField extends Component {
     return codingValue ? (
       this.renderCodingSelected()
     ) : (
-      <div className='medication-search-field'>
+      <div className="medication-search-field">
         <TextField
           label={label}
           value={textValue}
@@ -233,12 +233,12 @@ export class MedicationSearchField extends Component {
   renderCodingSelected() {
     const { codingValue, label } = this.props
     return (
-      <div className='medication-search-field'>
+      <div className="medication-search-field">
         <label>
           {label}
-          <div className='selected-code' title={codingValue}>
+          <div className="selected-code" title={codingValue}>
             {displayOrCoding(codingValue)}
-            <div className='clear-code' onClick={this.handleClear}>
+            <div className="clear-code" onClick={this.handleClear}>
               &#735;
             </div>
           </div>

@@ -28,7 +28,7 @@ class ConceptTypeToggle extends Component {
   render() {
     const { label } = this.props
     return (
-      <div className='concept-type-toggle'>
+      <div className="concept-type-toggle">
         {label ? (
           <label>
             <span>{label}</span>
@@ -44,7 +44,7 @@ class ConceptTypeToggle extends Component {
   renderToggles() {
     const { value } = this.props
     return (
-      <div className='toggles'>
+      <div className="toggles">
         {amtConceptTypes
           .filter(t => t !== 'substance' && t !== 'TP')
           .map(type => {

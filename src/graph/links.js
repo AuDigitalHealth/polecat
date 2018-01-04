@@ -17,7 +17,7 @@ export const curveForLink = (link, i, options) => {
   return (
     <g key={i} className={`relationship relationship-${link.type}`}>
       <path
-        className='link'
+        className="link"
         d={linkPath}
         markerEnd={`url(#arrow-${arrowType})`}
       />
@@ -294,48 +294,48 @@ const calculateControlPoints = options => {
 
 export const associationMarker = size => (
   <marker
-    id='arrow-association'
-    viewBox='-1 -1 11 11'
-    refX='10'
-    refY='5'
+    id="arrow-association"
+    viewBox="-1 -1 11 11"
+    refX="10"
+    refY="5"
     markerWidth={size * 0.8}
     markerHeight={size * 0.8}
-    markerUnits='userSpaceOnUse'
-    orient='auto'
+    markerUnits="userSpaceOnUse"
+    orient="auto"
   >
-    <path className='arrow arrow-association' d='M 0,0 L 10,5 L 0,10' />
+    <path className="arrow arrow-association" d="M 0,0 L 10,5 L 0,10" />
   </marker>
 )
 
 export const inheritanceMarker = size => (
   <marker
-    id='arrow-inheritance'
-    viewBox='-1 -1 11 11'
-    refX='10'
-    refY='5'
+    id="arrow-inheritance"
+    viewBox="-1 -1 11 11"
+    refX="10"
+    refY="5"
     markerWidth={size}
     markerHeight={size}
-    markerUnits='userSpaceOnUse'
-    orient='auto'
+    markerUnits="userSpaceOnUse"
+    orient="auto"
   >
-    <path className='arrow arrow-inheritance' d='M 0,0 L 10,5 L 0,10 Z' />
+    <path className="arrow arrow-inheritance" d="M 0,0 L 10,5 L 0,10 Z" />
   </marker>
 )
 
 export const aggregationMarker = size => (
   <marker
-    id='arrow-aggregation'
-    viewBox='-1 -1 20 10'
-    refX='20'
-    refY='5'
+    id="arrow-aggregation"
+    viewBox="-1 -1 20 10"
+    refX="20"
+    refY="5"
     markerWidth={size}
     markerHeight={size}
-    markerUnits='userSpaceOnUse'
-    orient='auto'
+    markerUnits="userSpaceOnUse"
+    orient="auto"
   >
     <path
-      className='arrow arrow-aggregation'
-      d='M 0,5 L 10,0 L 20,5 L 10,10 Z'
+      className="arrow arrow-aggregation"
+      d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
     />
   </marker>
 )

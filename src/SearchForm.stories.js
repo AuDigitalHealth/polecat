@@ -7,6 +7,6 @@ import config from '../test/config.js'
 storiesOf('SearchForm', module).add('With a query', () => (
   <SearchForm
     fhirServer={config.fhirServer}
-    query='varicella id:959031000168106'
+    query="varicella id:959031000168106"
   />
 ))

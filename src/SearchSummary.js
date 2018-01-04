@@ -37,31 +37,31 @@ class SearchSummary extends Component {
   render() {
     const { totalResults, nextLink, previousLink } = this.props
     return (
-      <div className='search-summary'>
-        <div className='pagination-total'>
+      <div className="search-summary">
+        <div className="pagination-total">
           {totalResults ? formatNumber(totalResults) : 0} matches
         </div>
         {previousLink ? (
           <Icon
-            className='pagination-previous'
-            type='previous'
-            hoverType='previousActive'
+            className="pagination-previous"
+            type="previous"
+            hoverType="previousActive"
             width={21}
             height={21}
-            alt='Previous page of results'
-            title='Previous page'
+            alt="Previous page of results"
+            title="Previous page"
             onClick={this.handlePreviousClick}
           />
         ) : null}
         {nextLink ? (
           <Icon
-            className='pagination-next'
-            type='next'
-            hoverType='nextActive'
+            className="pagination-next"
+            type="next"
+            hoverType="nextActive"
             width={21}
             height={21}
-            alt='Next page of results'
-            title='Next page'
+            alt="Next page of results"
+            title="Next page"
             onClick={this.handleNextClick}
           />
         ) : null}

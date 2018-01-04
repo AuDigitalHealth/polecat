@@ -35,13 +35,13 @@ class AmtProductModel extends Component {
             system: PropTypes.string,
             code: PropTypes.string,
             display: PropTypes.string,
-          })
+          }),
         ),
         type: PropTypes.string.isRequired,
-      })
+      }),
     ),
     links: PropTypes.arrayOf(
-      PropTypes.shape({ source: PropTypes.string, target: PropTypes.string })
+      PropTypes.shape({ source: PropTypes.string, target: PropTypes.string }),
     ),
     attraction: PropTypes.number,
     linkDistance: PropTypes.number,
@@ -94,7 +94,7 @@ class AmtProductModel extends Component {
     this.resetSimulationAlphaDebounced = debounce(
       this.resetSimulationAlpha,
       350,
-      { leading: true, trailing: false }
+      { leading: true, trailing: false },
     )
   }
 
@@ -118,17 +118,17 @@ class AmtProductModel extends Component {
     // `resetSimulationAlpha` function for explicit resets.
     const alpha = model.simulation ? model.simulation.alpha() : options.alpha
     model.simulation = (model.simulation || d3.forceSimulation()).nodes(
-      newNodes
+      newNodes,
     )
     model.forceLink = (model.forceLink || d3.forceLink())
       .id(d => AmtProductModel.idForNode(d))
       .distance(linkDistance)
       .links(cloneDeep(links))
     model.forceManyBody = (model.forceManyBody || d3.forceManyBody()).strength(
-      attraction
+      attraction,
     )
     model.forceCollide = (model.forceCollide || d3.forceCollide()).radius(d =>
-      this.calculateCollideRadius(newNodes, d, options)
+      this.calculateCollideRadius(newNodes, d, options),
     )
     model.forceCenter = (model.forceCenter || d3.forceCenter())
       .x(centerX || viewport.width / 2)
@@ -158,12 +158,12 @@ class AmtProductModel extends Component {
     // Remove any positioning information from the incoming nodes.
     nodes = nodes.map(node => omit(node, 'x', 'y', 'vx', 'vy'))
     // Merge new nodes with old nodes.
-    let newNodes = [ oldNodes, nodes ].reduce(mergeConcepts, [])
+    let newNodes = [oldNodes, nodes].reduce(mergeConcepts, [])
     // Remove any nodes that are not present in the new set of nodes.
     newNodes = newNodes.filter(node =>
       nodes
         .map(n => AmtProductModel.idForNode(n))
-        .includes(AmtProductModel.idForNode(node))
+        .includes(AmtProductModel.idForNode(node)),
     )
     // Remove any nodes that are no longer the subject of a link (except the
     // focused node).
@@ -171,19 +171,19 @@ class AmtProductModel extends Component {
       node =>
         node.focused ||
         links
-          .reduce((acc, link) => acc.concat([ link.source, link.target ]), [])
-          .includes(AmtProductModel.idForNode(node))
+          .reduce((acc, link) => acc.concat([link.source, link.target]), [])
+          .includes(AmtProductModel.idForNode(node)),
     )
     // Fix the position of the focused node, but only if there are more than two
     // nodes.
     return newNodes.length > 2
       ? newNodes.map(node => {
-        if (node.focused) {
-          node.fx = node.x = centerX || viewport.width / 2
-          node.fy = node.y = centerY || viewport.height / 2
-        }
-        return node
-      })
+          if (node.focused) {
+            node.fx = node.x = centerX || viewport.width / 2
+            node.fy = node.y = centerY || viewport.height / 2
+          }
+          return node
+        })
       : newNodes
   }
 
@@ -267,7 +267,7 @@ class AmtProductModel extends Component {
           clientY - lastDragY,
           null,
           null,
-          this.props
+          this.props,
         )
         this.setState(() => ({
           lastDragX: clientX,
@@ -288,7 +288,7 @@ class AmtProductModel extends Component {
       event.deltaY * -1,
       null,
       null,
-      this.props
+      this.props,
     )
     event.preventDefault()
   }
@@ -300,7 +300,7 @@ class AmtProductModel extends Component {
       this.props.viewport.width / 2,
       this.props.viewport.height / 2,
       // Reset the simulation immediately, without debouncing.
-      { ...this.props, skipDebounce: true }
+      { ...this.props, skipDebounce: true },
     )
   }
 
@@ -346,7 +346,7 @@ class AmtProductModel extends Component {
     if (
       !isEqual(
         pick(this.props, simulationProps),
-        pick(nextProps, simulationProps)
+        pick(nextProps, simulationProps),
       )
     ) {
       const { concepts: nodes, relationships: links } = translateToAmt({
@@ -375,15 +375,15 @@ class AmtProductModel extends Component {
     }
     return (
       <div
-        className='product-model'
+        className="product-model"
         style={{ width: viewport.width, height: viewport.height }}
         onWheel={this.handleWheel}
       >
-        <div className='product-model-inner'>
+        <div className="product-model-inner">
           <svg
             height={viewport.height}
             width={viewport.width}
-            preserveAspectRatio='none'
+            preserveAspectRatio="none"
             onMouseMove={this.handleMouseMove}
             onMouseUp={this.handleMouseUp}
             onDoubleClick={this.handleDoubleClick}
@@ -407,37 +407,37 @@ class AmtProductModel extends Component {
       { nodes } = this.state
     return nodes
       ? nodes.map((node, i) => {
-        if (node.type === 'group') {
-          return (
-            <ConceptGroup
-              key={i}
-              concepts={node.concepts.map(c => ({
-                ...c,
-                type: amtConceptTypeFor(c.type),
-              }))}
-              total={node.total}
-              linkPath={searchPathFromQuery(node.query)}
-              top={node.y - conceptGroupHeight / 2}
-              left={node.x - conceptGroupWidth / 2}
-              width={conceptWidth}
-              height={conceptHeight}
-            />
-          )
-        } else {
-          return (
-            <Concept
-              key={i}
-              coding={node.coding}
-              type={amtConceptTypeFor(node.type)}
-              focused={node.focused}
-              top={node.y - conceptHeight / 2}
-              left={node.x - conceptWidth / 2}
-              width={conceptWidth}
-              height={conceptHeight}
-            />
-          )
-        }
-      })
+          if (node.type === 'group') {
+            return (
+              <ConceptGroup
+                key={i}
+                concepts={node.concepts.map(c => ({
+                  ...c,
+                  type: amtConceptTypeFor(c.type),
+                }))}
+                total={node.total}
+                linkPath={searchPathFromQuery(node.query)}
+                top={node.y - conceptGroupHeight / 2}
+                left={node.x - conceptGroupWidth / 2}
+                width={conceptWidth}
+                height={conceptHeight}
+              />
+            )
+          } else {
+            return (
+              <Concept
+                key={i}
+                coding={node.coding}
+                type={amtConceptTypeFor(node.type)}
+                focused={node.focused}
+                top={node.y - conceptHeight / 2}
+                left={node.x - conceptWidth / 2}
+                width={conceptWidth}
+                height={conceptHeight}
+              />
+            )
+          }
+        })
       : []
   }
 

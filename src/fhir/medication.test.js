@@ -187,9 +187,9 @@ describe('mergeConceptsAndRelationships', () => {
       },
     ]
   it('should merge correctly', () => {
-    const result = [ concepts1, ...concepts2, ...concepts3, ...concepts4 ].reduce(
+    const result = [concepts1, ...concepts2, ...concepts3, ...concepts4].reduce(
       mergeConceptsAndRelationships,
-      emptyConcepts()
+      emptyConcepts(),
     )
     expect(result).toMatchSnapshot()
   })
@@ -222,7 +222,7 @@ describe('codingToGroupCode', () => {
       },
     ]
     expect(codingToGroupCode(coding)).toEqual(
-      'ad71ccb9ec7758b59d6eccfa729a8ba5bbc2350bcf41068ae75821be9e22fab6'
+      'ad71ccb9ec7758b59d6eccfa729a8ba5bbc2350bcf41068ae75821be9e22fab6',
     )
   })
 })

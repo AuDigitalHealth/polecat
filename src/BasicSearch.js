@@ -108,7 +108,7 @@ export class BasicSearch extends Component {
       this.setState(() => ({
         results: results.map(
           (r, i) =>
-            i === newSelection ? { ...r, selected: true } : omit(r, 'selected')
+            i === newSelection ? { ...r, selected: true } : omit(r, 'selected'),
         ),
       }))
     } else if (event.key === 'Enter') {
@@ -131,7 +131,7 @@ export class BasicSearch extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const updateProps = [ 'routedQuery', 'currentQuery', 'results' ]
+    const updateProps = ['routedQuery', 'currentQuery', 'results']
     const { quickSearchShouldClose, onQuickSearchClosed } = nextProps
     if (nextProps.quickSearchShouldClose) {
       this.setState({ quickSearchOpen: false })
@@ -150,12 +150,12 @@ export class BasicSearch extends Component {
     // If the query has been updated within state, use that over props.
     const query = currentQuery || routedQuery
     return (
-      <div className='search-basic'>
-        <div className='search-basic-form'>
+      <div className="search-basic">
+        <div className="search-basic-form">
           <TextField
             value={query}
-            placeholder='Search'
-            className='search-input'
+            placeholder="Search"
+            className="search-input"
             onChange={this.handleQueryUpdate}
             onFocus={this.handleFocus}
             onKeyDown={this.handleKeyDown}
@@ -164,7 +164,7 @@ export class BasicSearch extends Component {
           <Loading loading={loading}>
             <Expand
               active={false}
-              className='search-toggle-advanced'
+              className="search-toggle-advanced"
               onToggle={this.handleToggleAdvanced}
             />
           </Loading>

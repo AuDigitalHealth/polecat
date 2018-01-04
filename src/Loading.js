@@ -7,6 +7,7 @@ class Loading extends Component {
   static propTypes = {
     loading: PropTypes.bool,
     delay: PropTypes.number,
+    children: PropTypes.any.isRequired,
   }
   static defaultProps = {
     loading: false,
@@ -62,9 +63,9 @@ class Loading extends Component {
     const { children } = this.props
     const { loading } = this.state
     return (
-      <div className='loading'>
+      <div className="loading">
         {loading ? (
-          <img src={spinner} width='20' height='20' alt='Loading' />
+          <img src={spinner} width="20" height="20" alt="Loading" />
         ) : (
           children
         )}

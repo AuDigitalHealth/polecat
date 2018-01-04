@@ -23,6 +23,7 @@ class Search extends Component {
     onError: PropTypes.func,
     focusUponMount: PropTypes.bool,
     quickSearchShouldClose: PropTypes.bool,
+    history: PropTypes.any.isRequired,
   }
   static defaultProps = {
     minRequestFrequency: 350,
@@ -34,7 +35,7 @@ class Search extends Component {
     this.handleQueryUpdate = this.handleQueryUpdate.bind(this)
     this.throttledQueryUpdate = throttle(
       this.throttledQueryUpdate.bind(this),
-      props.minRequestFrequency
+      props.minRequestFrequency,
     )
     this.handleSelectResult = this.handleSelectResult.bind(this)
     this.setLoadingStatus = this.setLoadingStatus.bind(this)
@@ -55,7 +56,7 @@ class Search extends Component {
           bundle: parsed.bundle,
           results: parsed.results,
           cancelRequest: null,
-        }))
+        })),
       )
       .then(() => this.setLoadingStatus(false))
       .catch(error => this.handleError(error))
@@ -70,7 +71,7 @@ class Search extends Component {
           bundle: parsed.bundle,
           results: parsed.results,
           cancelRequest: null,
-        }))
+        })),
       )
       .then(() => this.setLoadingStatus(false))
       .catch(error => this.handleError(error))
@@ -130,7 +131,7 @@ class Search extends Component {
             history.push(searchPathFromQuery(query))
           }
         }
-      }
+      },
     )
     if (!query) this.setState({ results: null })
   }
@@ -156,7 +157,7 @@ class Search extends Component {
       sniffFormat(response.headers['content-type'])
       const opOutcome = opOutcomeFromJsonResponse(response)
       if (opOutcome) throw opOutcome
-    } catch (error) {}
+    } catch (error) {} // eslint-disable-line no-empty
     throw new Error(response.statusText || response.status)
   }
 
@@ -195,7 +196,7 @@ class Search extends Component {
             results: parsed.results,
             advanced: true,
             cancelRequest: null,
-          }))
+          })),
         )
         .then(() => this.setLoadingStatus(false))
         .catch(error => this.handleError(error))
@@ -224,7 +225,7 @@ class Search extends Component {
             advanced: true,
             cancelRequest: null,
             query,
-          }))
+          })),
         )
         .then(() => this.setLoadingStatus(false))
         .catch(error => this.handleError(error))

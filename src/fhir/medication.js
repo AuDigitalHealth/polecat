@@ -16,7 +16,7 @@ export const getSubjectConcept = resource => {
 const getSubjectConceptType = resource => {
   if (resource.resourceType === 'Medication') {
     const resourceType = resource.extension.find(
-      extensionFilterFor('medicationResourceType')
+      extensionFilterFor('medicationResourceType'),
     )
     validateMedicationResourceType(resourceType)
     return resourceType.valueCoding.code
@@ -37,7 +37,7 @@ export const getRelatedConcepts = (resource, source) => {
   return result
 }
 
-function * getExtensionConcepts(extension, source) {
+function* getExtensionConcepts(extension, source) {
   if (!extension) return emptyConcepts()
   // Get parent medication.
   const parent = getParentMedication(extension, source)
@@ -52,13 +52,13 @@ function * getExtensionConcepts(extension, source) {
   // Recurse into each "parents" array to extract the data from each level
   // of the hierarchy.
   for (const parents of extension.filter(
-    extensionFilterFor('parentMedicationResources')
+    extensionFilterFor('parentMedicationResources'),
   )) {
-    yield * getExtensionConcepts(parents.extension, target || source)
+    yield* getExtensionConcepts(parents.extension, target || source)
   }
 }
 
-function * getPackageConcepts(medPackage, source) {
+function* getPackageConcepts(medPackage, source) {
   if (!medPackage) return emptyConcepts()
   for (const content of medPackage.content) {
     validatePackageContent(content)
@@ -73,8 +73,8 @@ function * getPackageConcepts(medPackage, source) {
     // `medicationResourceType` within the extension.
     const resourceType = validateMedicationResourceType(
       content.itemReference.extension.find(
-        extensionFilterFor('medicationResourceType')
-      )
+        extensionFilterFor('medicationResourceType'),
+      ),
     )
     const type = resourceType.valueCoding.code
     const target = { coding, type }
@@ -93,10 +93,10 @@ function * getPackageConcepts(medPackage, source) {
     // Recurse into each "parents" array to extract the data from each level
     // of the hierarchy.
     for (const parents of content.itemReference.extension.filter(
-      extensionFilterFor('parentMedicationResources')
+      extensionFilterFor('parentMedicationResources'),
     )) {
       // The target concept becomes the new source.
-      yield * getExtensionConcepts(parents.extension, target)
+      yield* getExtensionConcepts(parents.extension, target)
     }
   }
 }
@@ -107,11 +107,11 @@ const getParentMedication = (extension, source) => {
   try {
     // Get the extension which provides the parent code itself.
     const parentMedication = validateParentMedication(
-      extension.find(extensionFilterFor('parentMedication'))
+      extension.find(extensionFilterFor('parentMedication')),
     )
     // Get the extension which describes the resource type of the parent code.
     const resourceType = validateMedicationResourceType(
-      extension.find(extensionFilterFor('medicationResourceType'))
+      extension.find(extensionFilterFor('medicationResourceType')),
     )
     const coding = valueReferenceToSnomedCoding(parentMedication.valueReference)
     const type = resourceType.valueCoding.code
@@ -212,9 +212,7 @@ const urlForExtension = name =>
   }[name])
 
 export const urlForArtgId = id =>
-  `http://search.tga.gov.au/s/search.html?collection=tga-artg&profile=record&meta_i=${
-    id
-  }`
+  `http://search.tga.gov.au/s/search.html?collection=tga-artg&profile=record&meta_i=${id}`
 
 // Filter functions for finding different types of information within the
 // extension.
@@ -315,9 +313,9 @@ export const childRequirementsFor = sourceType =>
     BPGC: [],
     BPG: ['BPGC'],
     BPSF: [],
-    UPG: [ 'UPG', 'BPG' ],
-    UPDSF: [ 'UPDSF', 'BPSF' ],
-    UPD: [ 'UPD', 'UPDSF', 'BPSF' ],
+    UPG: ['UPG', 'BPG'],
+    UPDSF: ['UPDSF', 'BPSF'],
+    UPD: ['UPD', 'UPDSF', 'BPSF'],
     substance: [],
   }[sourceType])
 
@@ -348,7 +346,7 @@ const fhirToAmtTypes = {
 const amtToFhirTypes = invert(fhirToAmtTypes)
 
 export const amtConceptTypes = Object.keys(fhirToAmtTypes).map(
-  k => fhirToAmtTypes[k]
+  k => fhirToAmtTypes[k],
 )
 
 // Mapping from FHIR Medication type to AMT concept type.
@@ -450,7 +448,7 @@ export const mergeConcepts = (merged, concepts) => {
 const mergeRelationships = (merged, relationships) => {
   for (const relationship of relationships) {
     const found = merged.findIndex(r =>
-      relationshipHasSourceTarget(r, relationship.source, relationship.target)
+      relationshipHasSourceTarget(r, relationship.source, relationship.target),
     )
     if (found !== -1) {
       merged[found] = {
@@ -467,7 +465,7 @@ const conceptsHaveSameCoding = (conceptA, conceptB) => {
   for (const code of conceptA.coding) {
     if (
       !conceptB.coding.find(
-        c => c.system === code.system && c.code === code.code
+        c => c.system === code.system && c.code === code.code,
       )
     ) {
       return false

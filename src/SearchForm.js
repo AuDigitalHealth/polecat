@@ -67,7 +67,7 @@ class SearchForm extends Component {
     const { query } = this.props
     if (query) {
       const availableParams = availableMedParams.concat(
-          availableSubstanceParams
+          availableSubstanceParams,
         ),
         searchParams = extractSearchParams(query, availableParams),
         queryText = extractQueryText(query)
@@ -88,7 +88,7 @@ class SearchForm extends Component {
     const { query } = nextProps
     if (query) {
       const availableParams = availableMedParams.concat(
-          availableSubstanceParams
+          availableSubstanceParams,
         ),
         searchParams = extractSearchParams(query, availableParams),
         queryText = extractQueryText(query)
@@ -109,10 +109,10 @@ class SearchForm extends Component {
     const { fhirServer } = this.props
     const { search } = this.state
     return (
-      <form className='search-form'>
+      <form className="search-form">
         <TextField
           value={search.text}
-          label='Contains text'
+          label="Contains text"
           onChange={value => this.handleChange('text', value)}
           focusUponMount
         />
@@ -120,7 +120,7 @@ class SearchForm extends Component {
           fhirServer={fhirServer}
           codingValue={search['ingredient']}
           textValue={search['ingredient-text']}
-          label='Ingredient'
+          label="Ingredient"
           searchPath={text => `/Substance?code:text=${text}`}
           onCodingChange={value => this.handleCodingChange('ingredient', value)}
           onTextChange={value => this.handleChange('ingredient-text', value)}
@@ -130,7 +130,7 @@ class SearchForm extends Component {
           fhirServer={fhirServer}
           codingValue={search['package']}
           textValue={search['package-text']}
-          label='Package item'
+          label="Package item"
           searchPath={text =>
             `/Medication?medication-resource-type=BPSF,UPDSF&_text=${text}`
           }
@@ -140,38 +140,36 @@ class SearchForm extends Component {
         />
         <TextField
           value={search['form-text']}
-          label='Form'
+          label="Form"
           onChange={value => this.handleChange('form-text', value)}
         />
         <TextField
           value={search['container-text']}
-          label='Container'
+          label="Container"
           onChange={value => this.handleChange('container-text', value)}
         />
         <TextField
           value={search['brand-text']}
-          label='Brand'
+          label="Brand"
           onChange={value => this.handleChange('brand-text', value)}
         />
         <TextField
           value={search.pbs}
-          label='PBS code'
+          label="PBS code"
           onChange={value => this.handleChange('pbs', value)}
         />
         <TextField
           value={search.artg}
-          label='ARTG ID'
+          label="ARTG ID"
           onChange={value => this.handleChange('artg', value)}
         />
         <MedicationSearchField
           fhirServer={fhirServer}
           codingValue={search['parent']}
           textValue={search['parent-text']}
-          label='Parent'
+          label="Parent"
           searchPath={text =>
-            `/Medication?medication-resource-type=BPG,brand,UPG,UPDSF,UPD&_text=${
-              text
-            }`
+            `/Medication?medication-resource-type=BPG,brand,UPG,UPDSF,UPD&_text=${text}`
           }
           onCodingChange={value => this.handleCodingChange('parent', value)}
           onTextChange={value => this.handleChange('parent-text', value)}
@@ -179,12 +177,12 @@ class SearchForm extends Component {
         />
         <ConceptTypeToggle
           value={search.type ? search.type.split(',') : null}
-          label='Include only'
+          label="Include only"
           onChange={value => this.handleChange('type', value.join(','))}
         />
         <button
-          className='search-submit'
-          type='submit'
+          className="search-submit"
+          type="submit"
           onClick={this.handleSearchUpdate}
         >
           Search

@@ -19,18 +19,18 @@ export const translateToAmt = concepts => {
 const resolveTp = concepts => {
   let newRelationships = concepts.relationships
   const ctppTps = concepts.relationships.filter(r =>
-    relationshipMatchesTypes(r, 'CTPP', 'TP', concepts.concepts)
+    relationshipMatchesTypes(r, 'CTPP', 'TP', concepts.concepts),
   )
   ctppTps.forEach(ctppTp => {
     const ctpp = ctppTp.source
     const ctppTpp = concepts.relationships.find(r =>
-      relationshipMatchesIdAndType(r, ctpp, 'TPP', concepts.concepts)
+      relationshipMatchesIdAndType(r, ctpp, 'TPP', concepts.concepts),
     )
     if (ctppTpp) {
       const tpp = ctppTpp.target
       const tp = ctppTp.target
       const tppTp = concepts.relationships.find(r =>
-        relationshipMatchesIds(r, tpp, tp)
+        relationshipMatchesIds(r, tpp, tp),
       )
       if (!tppTp) {
         newRelationships = newRelationships.concat([
@@ -39,13 +39,13 @@ const resolveTp = concepts => {
             target: tp,
             type: relationshipTypeFor(
               fhirMedicationTypeFor('TPP'),
-              fhirMedicationTypeFor('TP')
+              fhirMedicationTypeFor('TP'),
             ),
           },
         ])
       }
       newRelationships = newRelationships.filter(
-        r => !relationshipMatchesIds(r, ctpp, tp)
+        r => !relationshipMatchesIds(r, ctpp, tp),
       )
     }
   })
@@ -57,18 +57,18 @@ const resolveTp = concepts => {
 const resolveTpuu = concepts => {
   let newRelationships = concepts.relationships
   const ctppTpuus = concepts.relationships.filter(r =>
-    relationshipMatchesTypes(r, 'CTPP', 'TPUU', concepts.concepts)
+    relationshipMatchesTypes(r, 'CTPP', 'TPUU', concepts.concepts),
   )
   ctppTpuus.forEach(ctppTpuu => {
     const ctpp = ctppTpuu.source
     const ctppTpp = concepts.relationships.find(r =>
-      relationshipMatchesIdAndType(r, ctpp, 'TPP', concepts.concepts)
+      relationshipMatchesIdAndType(r, ctpp, 'TPP', concepts.concepts),
     )
     if (ctppTpp) {
       const tpp = ctppTpp.target
       const tpuu = ctppTpuu.target
       const tppTpuu = concepts.relationships.find(r =>
-        relationshipMatchesIds(r, tpp, tpuu)
+        relationshipMatchesIds(r, tpp, tpuu),
       )
       if (!tppTpuu) {
         newRelationships = newRelationships.concat([
@@ -77,13 +77,13 @@ const resolveTpuu = concepts => {
             target: tpuu,
             type: relationshipTypeFor(
               fhirMedicationTypeFor('TPP'),
-              fhirMedicationTypeFor('TPUU')
+              fhirMedicationTypeFor('TPUU'),
             ),
           },
         ])
       }
       newRelationships = newRelationships.filter(
-        r => !relationshipMatchesIds(r, ctpp, tpuu)
+        r => !relationshipMatchesIds(r, ctpp, tpuu),
       )
     }
   })
@@ -95,16 +95,16 @@ const resolveTpuu = concepts => {
 const resolveMpuu = concepts => {
   let newRelationships = concepts.relationships
   const tppTpuus = concepts.relationships.filter(r =>
-    relationshipMatchesTypes(r, 'TPP', 'TPUU', concepts.concepts)
+    relationshipMatchesTypes(r, 'TPP', 'TPUU', concepts.concepts),
   )
   tppTpuus.forEach(tppTpuu => {
     const tpuu = tppTpuu.target
     const tpp = tppTpuu.source
     const tpuuMpuu = concepts.relationships.find(r =>
-      relationshipMatchesIdAndType(r, tpuu, 'MPUU', concepts.concepts)
+      relationshipMatchesIdAndType(r, tpuu, 'MPUU', concepts.concepts),
     )
     const tppMpp = concepts.relationships.find(r =>
-      relationshipMatchesIdAndType(r, tpp, 'MPP', concepts.concepts)
+      relationshipMatchesIdAndType(r, tpp, 'MPP', concepts.concepts),
     )
     if (tpuuMpuu && tppMpp) {
       const mpp = tppMpp.target
@@ -115,12 +115,12 @@ const resolveMpuu = concepts => {
           target: mpuu,
           type: relationshipTypeFor(
             fhirMedicationTypeFor('MPP'),
-            fhirMedicationTypeFor('MPUU')
+            fhirMedicationTypeFor('MPUU'),
           ),
         },
       ])
       newRelationships = newRelationships.filter(
-        r => !relationshipMatchesIds(r, tpuu, mpuu, concepts.concepts)
+        r => !relationshipMatchesIds(r, tpuu, mpuu, concepts.concepts),
       )
     }
   })
@@ -137,14 +137,14 @@ const relationshipMatchesTypes = (
   relationship,
   matchSource,
   matchTarget,
-  concepts
+  concepts,
 ) => {
   const source = concepts.find(
-    c => codingToSnomedCode(c.coding) === relationship.source
+    c => codingToSnomedCode(c.coding) === relationship.source,
   )
   if (!source) return false
   const target = concepts.find(
-    c => codingToSnomedCode(c.coding) === relationship.target
+    c => codingToSnomedCode(c.coding) === relationship.target,
   )
   if (!target) return false
   return (
@@ -157,10 +157,10 @@ const relationshipMatchesIdAndType = (
   relationship,
   matchSource,
   matchTarget,
-  concepts
+  concepts,
 ) => {
   const target = concepts.find(
-    c => codingToSnomedCode(c.coding) === relationship.target
+    c => codingToSnomedCode(c.coding) === relationship.target,
   )
   if (!target) return false
   return (

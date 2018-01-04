@@ -9,7 +9,7 @@ storiesOf('FullSearchResults', module)
     <FullSearchResults results={results1} />
   ))
   .add('With a query and empty results', () => (
-    <FullSearchResults query='dog' results={[]} />
+    <FullSearchResults query="dog" results={[]} />
   ))
   .add('With no query and empty results', () => (
     <FullSearchResults results={[]} />

@@ -23,6 +23,7 @@ class FhirMedication extends Component {
     childBundles: PropTypes.object,
     packageBundles: PropTypes.object,
     groupingThreshold: PropTypes.number,
+    children: PropTypes.any.isRequired,
     onRequireRelatedResources: PropTypes.func,
     onRequireChildBundle: PropTypes.func,
     onRequirePackageBundle: PropTypes.func,
@@ -64,7 +65,7 @@ class FhirMedication extends Component {
       const relatedConcepts = values(relatedResources).reduce(
         (merged, relatedResource) =>
           merged.concat(this.getConceptsForResource(relatedResource)),
-        []
+        [],
       )
       // Get child concepts from all child bundles.
       const childConcepts = await Promise.all(
@@ -74,10 +75,10 @@ class FhirMedication extends Component {
               getBundleConcepts(focused, childBundle, {
                 groupingThreshold,
                 groupRelationshipType: 'is-a',
-              })
+              }),
             ),
-          []
-        )
+          [],
+        ),
       )
       // Get package concepts from all package bundles.
       const packageConcepts = await Promise.all(
@@ -87,10 +88,10 @@ class FhirMedication extends Component {
               getBundleConcepts(focused, packageBundle, {
                 groupingThreshold,
                 groupRelationshipType: 'is-component-of',
-              })
+              }),
             ),
-          []
-        )
+          [],
+        ),
       )
       // Merge all concepts harvested from this set of props with the previous
       // set of concepts.
@@ -152,7 +153,7 @@ class FhirMedication extends Component {
       const concept = getSubjectConcept(resource)
       const code = codingToSnomedCode(concept.coding)
       childRequirementsFor(concept.type).forEach(resourceType =>
-        onRequireChildBundle(code, resourceType)
+        onRequireChildBundle(code, resourceType),
       )
       this.setState(() => ({ childConceptsRequested: true }))
     }
@@ -164,7 +165,7 @@ class FhirMedication extends Component {
       const concept = getSubjectConcept(resource)
       const code = codingToSnomedCode(concept.coding)
       packageRequirementsFor(concept.type).forEach(resourceType =>
-        onRequirePackageBundle(code, resourceType)
+        onRequirePackageBundle(code, resourceType),
       )
       this.setState(() => ({ packageConceptsRequested: true }))
     }

@@ -16,7 +16,7 @@ class FullSearchResults extends Component {
             system: PropTypes.string,
             code: PropTypes.string,
             display: PropTypes.string,
-          })
+          }),
         ),
         display: PropTypes.string,
         type: PropTypes.oneOf([
@@ -29,7 +29,7 @@ class FullSearchResults extends Component {
           'MP',
           'substance',
         ]),
-      })
+      }),
     ),
     onSelectResult: PropTypes.func,
   }
@@ -41,16 +41,20 @@ class FullSearchResults extends Component {
 
   render() {
     return (
-      <div className='full-search-results'>{this.renderResultsOrNothing()}</div>
+      <div className="full-search-results">{this.renderResultsOrNothing()}</div>
     )
   }
 
   renderResultsOrNothing() {
     const { query, results } = this.props
     if (query && results && results.length === 0) {
-      return <div className='no-results'>No results matching "{query}".</div>
+      return (
+        <div className="no-results">
+          No results matching &quot;{query}&quot;.
+        </div>
+      )
     } else if (results && results.length === 0) {
-      return <div className='no-results'>No results.</div>
+      return <div className="no-results">No results.</div>
     } else if (results && results.length > 0) {
       return <ol>{this.renderResults(results)}</ol>
     } else {
@@ -61,9 +65,9 @@ class FullSearchResults extends Component {
   renderResults(results) {
     if (!results) return
     return results.map((result, i) => (
-      <li key={i} className='search-result'>
-        <span className='sctid'>{codingToSnomedCode(result.coding)}</span>
-        <span className='display'>{this.renderLinkToResult(result)}</span>
+      <li key={i} className="search-result">
+        <span className="sctid">{codingToSnomedCode(result.coding)}</span>
+        <span className="display">{this.renderLinkToResult(result)}</span>
         <span className={`type type-${result.type}`.toLowerCase()}>
           {result.type}
         </span>

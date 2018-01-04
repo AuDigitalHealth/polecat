@@ -8,9 +8,10 @@ import { opOutcomeFromJsonResponse } from './fhir/core.js'
 
 class RemoteFhirMedication extends Component {
   static propTypes = {
-    resourceType: PropTypes.oneOf([ 'Medication', 'Substance' ]),
+    resourceType: PropTypes.oneOf(['Medication', 'Substance']),
     id: PropTypes.string.isRequired,
     fhirServer: PropTypes.string.isRequired,
+    children: PropTypes.any.isRequired,
     onLoadingChange: PropTypes.func,
     onError: PropTypes.func,
   }
@@ -22,7 +23,7 @@ class RemoteFhirMedication extends Component {
     super(props)
     this.state = { loading: false, relatedResources: {} }
     this.handleRequireRelatedResources = this.handleRequireRelatedResources.bind(
-      this
+      this,
     )
     this.handleRequireChildBundle = this.handleRequireChildBundle.bind(this)
     this.handleRequirePackageBundle = this.handleRequirePackageBundle.bind(this)
@@ -67,11 +68,11 @@ class RemoteFhirMedication extends Component {
       sniffFormat(response.headers['content-type'])
       const opOutcome = opOutcomeFromJsonResponse(response.data)
       if (opOutcome) throw opOutcome
-    } catch (error) {}
+    } catch (error) {} // eslint-disable-line no-empty
     if (response.status === 404) {
       const { resourceType, id } = this.props
       throw new Error(
-        `The resource you requested was not found: ${resourceType}/${id}`
+        `The resource you requested was not found: ${resourceType}/${id}`,
       )
     } else {
       throw new Error(response.statusText || response.status)
@@ -104,12 +105,12 @@ class RemoteFhirMedication extends Component {
     this.getFhirResource(
       fhirServer,
       '/Medication',
-      `?parent=Medication/${parentId}&medication-resource-type=${resourceType}`
+      `?parent=Medication/${parentId}&medication-resource-type=${resourceType}`,
     ).then(resource =>
       this.setState(prevState => ({
         childBundles: { ...prevState.childBundles, [resourceType]: resource },
         cancelRequest: null,
-      }))
+      })),
     )
   }
 
@@ -122,16 +123,14 @@ class RemoteFhirMedication extends Component {
     this.getFhirResource(
       fhirServer,
       '/Medication',
-      `?package-item=Medication/${parentId}&medication-resource-type=${
-        resourceType
-      }`
+      `?package-item=Medication/${parentId}&medication-resource-type=${resourceType}`,
     ).then(resource =>
       this.setState(prevState => ({
         packageBundles: {
           ...prevState.packageBundles,
           [resourceType]: resource,
         },
-      }))
+      })),
     )
   }
 

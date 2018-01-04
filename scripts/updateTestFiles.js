@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 const fs = require('fs')
 const http = require('axios')
 
@@ -20,7 +22,7 @@ fs.readFile('public/config.json', (err, data) => {
         http
           .get(
             config.fhirServer +
-              `/${type === 'substance' ? 'Substance' : 'Medication'}/${sctid}`
+              `/${type === 'substance' ? 'Substance' : 'Medication'}/${sctid}`,
           )
           .then(response => {
             const path = `test/${file}`

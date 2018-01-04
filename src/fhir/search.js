@@ -28,7 +28,7 @@ export const availableMedParams = [
   'ingredient-text',
 ]
 
-export const availableSubstanceParams = [ 'substance', 'substance-text' ]
+export const availableSubstanceParams = ['substance', 'substance-text']
 
 // Translates a tagged search string into a valid GET URL (path only) which will
 // execute a search on the FHIR server. Returns false if there is no searchable
@@ -37,7 +37,7 @@ export const pathForQuery = query => {
   const medParams = extractSearchParams(query, availableMedParams)
   const queryText = extractQueryText(query)
   if (queryText && queryText[queryText.length - 1] !== ':') {
-    medParams.push([ 'text', queryText ])
+    medParams.push(['text', queryText])
   }
   const substanceParams = extractSearchParams(query, availableSubstanceParams)
   return pathFromParams(medParams, substanceParams)
@@ -48,7 +48,7 @@ export const pathForQuery = query => {
 export const queryFromSearchObject = search => {
   const params = filterSearchObject(
     search,
-    availableMedParams.concat(availableSubstanceParams)
+    availableMedParams.concat(availableSubstanceParams),
   )
   let query = params.map(p => `${p[0]}:${p[1]}`).join(' ')
   if (search.text) query += query ? ` ${search.text}` : search.text
@@ -57,7 +57,7 @@ export const queryFromSearchObject = search => {
 
 const filterSearchObject = (search, params) => {
   const searchParams = pick(search, params)
-  let result = Object.keys(searchParams).map(k => [ k, searchParams[k] ])
+  let result = Object.keys(searchParams).map(k => [k, searchParams[k]])
   // Filter any params with null, undefined or empty string values.
   result = result.filter(param => param[1])
   // Convert any params that can be SNOMED codes or coding objects.
@@ -75,7 +75,7 @@ const filterSearchObject = (search, params) => {
         'parent',
       ].includes(param[0])
     ) {
-      return [ param[0], codeFromCodeOrSnomedCoding(param[1]) ]
+      return [param[0], codeFromCodeOrSnomedCoding(param[1])]
     } else {
       return param
     }
@@ -83,7 +83,7 @@ const filterSearchObject = (search, params) => {
   // Quote any values that contain spaces.
   return result.map(param => {
     if (param[1].match(/\s/)) {
-      return [ param[0], `"${param[1]}"` ]
+      return [param[0], `"${param[1]}"`]
     }
     return param
   })
@@ -121,7 +121,7 @@ export const extractSearchParams = (query, params) =>
           match
             .slice(1)
             .filter(x => x)
-            .map(match => [ param, match ])
+            .map(match => [param, match]),
         )
       }
     }
@@ -145,9 +145,7 @@ const getMedicationParamFor = (param, value) => {
     case 'pbs':
       return `subsidy-code=http://pbs.gov.au/code/item|${value}`
     case 'artg':
-      return `code=https://www.tga.gov.au/australian-register-therapeutic-goods|${
-        value
-      }`
+      return `code=https://www.tga.gov.au/australian-register-therapeutic-goods|${value}`
     case 'brand':
       return `brand=http://snomed.info/sct|${value}`
     case 'brand-text':

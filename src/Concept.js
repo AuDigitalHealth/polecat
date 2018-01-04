@@ -19,7 +19,7 @@ class Concept extends Component {
         system: PropTypes.string,
         code: PropTypes.string,
         display: PropTypes.string,
-      })
+      }),
     ).isRequired,
     type: PropTypes.oneOf([
       'CTPP',
@@ -61,28 +61,28 @@ class Concept extends Component {
           height: height + 'px',
         }}
       >
-        <div className='sctid'>
+        <div className="sctid">
           {type !== 'TP' && !focused ? (
             <Link to={`/Medication/${sctid}`}>{sctid}</Link>
           ) : (
             sctid
           )}
-          <CopyToClipboard copyText={sctid} title='Copy SCTID to clipboard' />
+          <CopyToClipboard copyText={sctid} title="Copy SCTID to clipboard" />
         </div>
-        <div className='display' title={display}>
+        <div className="display" title={display}>
           {display}
           <CopyToClipboard
             copyText={display}
-            title='Copy preferred term to clipboard'
+            title="Copy preferred term to clipboard"
           />
         </div>
         {artgId ? (
-          <div className='artgid'>
+          <div className="artgid">
             ARTG ID{' '}
             <a
               href={urlForArtgId(artgId)}
               title={`ARTG ID ${artgId} on the TGA website`}
-              target='_blank'
+              target="_blank"
             >
               {artgId}
             </a>

@@ -39,12 +39,12 @@ class Router extends Component {
     const { config } = this.props
     const { viewport } = this.state
     return (
-      <div className='app'>
+      <div className="app">
         <main>
           <BrowserRouter>
             <Switch>
               <Route
-                path='/Medication/:id'
+                path="/Medication/:id"
                 render={({ location, match }) => (
                   <AmtBrowser
                     id={match.params.id}
@@ -55,10 +55,10 @@ class Router extends Component {
                 )}
               />
               <Route
-                path='/Substance/:id'
+                path="/Substance/:id"
                 render={({ location, match }) => (
                   <AmtBrowser
-                    resourceType='Substance'
+                    resourceType="Substance"
                     id={match.params.id}
                     query={this.getQueryFromLocation(location)}
                     viewport={viewport}
@@ -67,8 +67,8 @@ class Router extends Component {
                 )}
               />
               <Route
-                path='/'
-                render={({ location, match }) => (
+                path="/"
+                render={({ location }) => (
                   <AmtBrowser
                     query={this.getQueryFromLocation(location)}
                     viewport={viewport}

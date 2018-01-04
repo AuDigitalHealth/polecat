@@ -38,14 +38,14 @@ class ErrorMessage extends Component {
     const attrs = { style: { top: `${motion.y}px` } }
     if (error.issue) {
       return (
-        <div className='error' {...attrs}>
+        <div className="error" {...attrs}>
           {error.issue.details && error.issue.details.display ? (
-            <p className='details'>{error.issue.details.display}</p>
+            <p className="details">{error.issue.details.display}</p>
           ) : (
             undefined
           )}
           {error.issue.diagnostics ? (
-            <p className='diagnostics'>{error.issue.diagnostics}</p>
+            <p className="diagnostics">{error.issue.diagnostics}</p>
           ) : (
             undefined
           )}
@@ -53,12 +53,12 @@ class ErrorMessage extends Component {
       )
     } else if (error.message) {
       return (
-        <div className='error' {...attrs}>
-          <p className='message'>{error.message}</p>
+        <div className="error" {...attrs}>
+          <p className="message">{error.message}</p>
         </div>
       )
     } else {
-      return <div className='error' />
+      return <div className="error" />
     }
   }
 }

@@ -33,7 +33,7 @@ export async function getBundleConcepts(subject, bundle, options = {}) {
     const query = queryForGrouping(
       subject.coding,
       groupRelationshipType,
-      concepts[0].type
+      concepts[0].type,
     )
     return {
       concepts: [

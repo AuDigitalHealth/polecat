@@ -37,7 +37,7 @@ class TextField extends Component {
         if (this.props.onChange) {
           this.props.onChange(target.value)
         }
-      }
+      },
     )
   }
 
@@ -91,7 +91,7 @@ class TextField extends Component {
       ref: el => (this.textInput = el),
     }
     return (
-      <div className='text-field'>
+      <div className="text-field">
         {label ? (
           <label>
             {label} <input {...props} />

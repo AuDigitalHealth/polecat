@@ -24,7 +24,7 @@ storiesOf('Concept', module)
           code: '74899',
         },
       ]}
-      type='CTPP'
+      type="CTPP"
       focused
       width={width}
       height={height}
@@ -47,7 +47,7 @@ storiesOf('Concept', module)
           code: '74899',
         },
       ]}
-      type='CTPP'
+      type="CTPP"
       width={width}
       height={height}
       top={top}
@@ -64,7 +64,7 @@ storiesOf('Concept', module)
             'Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial',
         },
       ]}
-      type='TPP'
+      type="TPP"
       width={width}
       height={height}
       top={top}
@@ -81,7 +81,7 @@ storiesOf('Concept', module)
             'Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial',
         },
       ]}
-      type='TPUU'
+      type="TPUU"
       width={width}
       height={height}
       top={top}
@@ -98,7 +98,7 @@ storiesOf('Concept', module)
             'Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)',
         },
       ]}
-      type='TP'
+      type="TP"
       width={width}
       height={height}
       top={top}
@@ -114,7 +114,7 @@ storiesOf('Concept', module)
           display: 'death adder antivenom 6000 units injection, 1 vial',
         },
       ]}
-      type='MPP'
+      type="MPP"
       width={width}
       height={height}
       top={top}
@@ -130,7 +130,7 @@ storiesOf('Concept', module)
           display: 'king brown snake antivenom 18 000 units injection, vial',
         },
       ]}
-      type='MPUU'
+      type="MPUU"
       width={width}
       height={height}
       top={top}
@@ -146,7 +146,7 @@ storiesOf('Concept', module)
           display: 'taipan snake antivenom',
         },
       ]}
-      type='MP'
+      type="MP"
       width={width}
       height={height}
       top={top}
@@ -162,7 +162,7 @@ storiesOf('Concept', module)
           display: 'sumatriptan',
         },
       ]}
-      type='substance'
+      type="substance"
       width={width}
       height={height}
       top={top}
@@ -183,7 +183,7 @@ storiesOf('Concept', module)
           code: '183411',
         },
       ]}
-      type='CTPP'
+      type="CTPP"
       width={width}
       height={height}
       top={top}

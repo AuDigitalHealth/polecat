@@ -117,12 +117,12 @@ storiesOf('QuickSearchResults', module)
   })
   .add('With a selected row', () => {
     const resultsWithSelected = results1.map(
-      r => (r.type === 'TPUU' ? { ...r, selected: true } : r)
+      r => (r.type === 'TPUU' ? { ...r, selected: true } : r),
     )
     return <QuickSearchResults results={resultsWithSelected} />
   })
   .add('With a query and empty results', () => (
-    <QuickSearchResults query='dog' results={[]} />
+    <QuickSearchResults query="dog" results={[]} />
   ))
   .add('With no query and empty results', () => (
     <QuickSearchResults results={[]} />

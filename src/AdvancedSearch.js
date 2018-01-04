@@ -76,12 +76,12 @@ class AdvancedSearch extends Component {
         ? routedQuery
         : currentQuery
     return (
-      <div className='search-advanced'>
-        <div className='search-advanced-form'>
+      <div className="search-advanced">
+        <div className="search-advanced-form">
           <TextField
             value={query}
-            placeholder='Search'
-            className='search-input'
+            placeholder="Search"
+            className="search-input"
             disabled
             onChange={this.handleQueryUpdate}
           />
@@ -93,13 +93,13 @@ class AdvancedSearch extends Component {
           <Loading loading={loading}>
             <Expand
               active
-              className='search-toggle-advanced'
+              className="search-toggle-advanced"
               onToggle={this.handleToggleAdvanced}
             />
           </Loading>
         </div>
         {results ? (
-          <div className='search-advanced-results'>
+          <div className="search-advanced-results">
             <SearchSummary
               totalResults={bundle.total}
               nextLink={nextLinkFromBundle(bundle)}

@@ -4,7 +4,7 @@ export const sniffFormat = contentType => {
   // - application/fhir+json (FHIR STU3)
   if (
     contentType.match(
-      /(application\/json|application\/fhir\+json|application\/json\+fhir)/
+      /(application\/json|application\/fhir\+json|application\/json\+fhir)/,
     )
   ) {
     return 'json'

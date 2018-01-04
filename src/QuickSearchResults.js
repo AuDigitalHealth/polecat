@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 
 import { codingToSnomedDisplay } from './fhir/medication.js'
 import { formatNumber } from './util.js'
@@ -57,7 +56,11 @@ class QuickSearchResults extends Component {
   renderResultsOrNothing() {
     const { query, results } = this.props
     if (query && results && results.length === 0) {
-      return <div className="no-results">No results matching "{query}".</div>
+      return (
+        <div className="no-results">
+          No results matching &quot;{query}&quot;.
+        </div>
+      )
     } else if (results && results.length === 0) {
       return <div className="no-results">No results.</div>
     } else if (results && results.length > 0) {
@@ -102,7 +105,7 @@ class QuickSearchResults extends Component {
     return (
       <li key={i} className={result.selected ? 'text selected' : 'text'}>
         <div className="target" onClick={() => this.handleSelectResult(result)}>
-          All concepts containing the text "{result.query}"
+          All concepts containing the text &quot;{result.query}&quot;
         </div>
       </li>
     )
