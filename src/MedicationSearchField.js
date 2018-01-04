@@ -110,18 +110,26 @@ export class MedicationSearchField extends Component {
     return { bundle, results: [{ type: 'text', query }].concat(results) }
   }
 
+  closeQuickSearch() {
+    const { results } = this.state
+    this.setState(() => ({
+      results: results ? results.map(r => omit(r, 'selected')) : results,
+      quickSearchOpen: false,
+    }))
+  }
+
   handleFocus() {
     this.setState(() => ({ quickSearchOpen: true }))
   }
 
   handleClickOutside() {
-    this.setState(() => ({ quickSearchOpen: false }))
+    this.closeQuickSearch()
   }
 
   handleKeyDown(event) {
     // Close the quick search if Escape is pressed.
     if (event.key === 'Escape') {
-      this.setState(() => ({ quickSearchOpen: false }))
+      this.closeQuickSearch()
     } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
       const { results } = this.state,
         selectedIndex = results.findIndex(r => r.selected)
@@ -151,8 +159,6 @@ export class MedicationSearchField extends Component {
     this.setState(() => ({ quickSearchOpen: true }))
   }
 
-  // TODO: Reset selection upon close of quick search.
-
   handleTextValueChange(value) {
     const { onTextChange } = this.props
     if (onTextChange) onTextChange(value)
@@ -165,7 +171,7 @@ export class MedicationSearchField extends Component {
     } else if (onCodingChange && result.coding) {
       onCodingChange(codeDisplayFromCoding(result.coding))
     }
-    this.setState(() => ({ quickSearchOpen: false }))
+    this.closeQuickSearch()
   }
 
   handleClear() {

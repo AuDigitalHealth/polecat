@@ -75,6 +75,14 @@ export class BasicSearch extends Component {
     } else return results
   }
 
+  closeQuickSearch() {
+    const { results } = this.state
+    this.setState(() => ({
+      results: results ? results.map(r => omit(r, 'selected')) : results,
+      quickSearchOpen: false,
+    }))
+  }
+
   handleQueryUpdate(query) {
     const { onQueryUpdate } = this.props
     if (onQueryUpdate) onQueryUpdate(query)
@@ -85,15 +93,13 @@ export class BasicSearch extends Component {
   }
 
   handleClickOutside() {
-    this.setState(() => ({ quickSearchOpen: false }))
+    this.closeQuickSearch()
   }
-
-  // TODO: Reset selection upon close of quick search.
 
   handleKeyDown(event) {
     // Close the quick search if Escape is pressed.
     if (event.key === 'Escape') {
-      this.setState(() => ({ quickSearchOpen: false }))
+      this.closeQuickSearch()
     } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
       const { results } = this.state,
         selectedIndex = results.findIndex(r => r.selected)
@@ -126,7 +132,7 @@ export class BasicSearch extends Component {
 
   handleSelectResult(result) {
     const { onSelectResult, history } = this.props
-    this.setState(() => ({ quickSearchOpen: false }))
+    this.closeQuickSearch()
     if (onSelectResult) onSelectResult()
     if (result && result.link) history.push(result.link)
   }
@@ -135,7 +141,7 @@ export class BasicSearch extends Component {
     const updateProps = ['routedQuery', 'currentQuery', 'results']
     const { quickSearchShouldClose, onQuickSearchClosed } = nextProps
     if (nextProps.quickSearchShouldClose) {
-      this.setState({ quickSearchOpen: false })
+      this.closeQuickSearch()
     } else if (updateProps.some(p => !isEqual(this.props[p], nextProps[p]))) {
       this.setState({
         results: this.updateResults(nextProps),
