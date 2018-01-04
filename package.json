@@ -52,6 +52,7 @@
     "pre-commit": "^1.2.2",
     "react-router": "^4.2.0",
     "react-test-renderer": "^16.2.0",
+    "serve": "^6.4.3",
     "sinon": "^4.1.2",
     "sloc": "^0.2.0",
     "storybook-host": "^4.1.4",
@@ -75,8 +76,12 @@
     "record-release": "bash scripts/recordRelease.sh",
     "loc": "sloc --exclude \".*\\.(css|svg|test.js|stories.js|js.snap)\" src"
   },
-  "pre-commit": ["test-ci"],
+  "pre-commit": [
+    "test-ci"
+  ],
   "jest": {
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }
