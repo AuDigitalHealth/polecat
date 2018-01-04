@@ -65,7 +65,7 @@
     "deploy": "bash scripts/deploy.sh",
     "test": "react-scripts test --verbose --env=jsdom",
     "test-ci": "CI=true react-scripts test --verbose --env=jsdom",
-    "now-start": "serve --single",
+    "now-start": "serve -s release",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-now -n polecat -t $NOW_TOKEN alias set `now -n polecat -t $NOW_TOKEN release` $TARGET_HOSTNAME
+now -n polecat -t $NOW_TOKEN alias set `now -n polecat -t $NOW_TOKEN` $TARGET_HOSTNAME
