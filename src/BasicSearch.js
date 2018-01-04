@@ -23,6 +23,7 @@ export class BasicSearch extends Component {
     focusUponMount: PropTypes.bool,
     loading: PropTypes.bool,
     quickSearchShouldClose: PropTypes.bool,
+    history: PropTypes.any.isRequired,
     onQueryUpdate: PropTypes.func,
     onToggleAdvanced: PropTypes.func,
     onSelectResult: PropTypes.func,
