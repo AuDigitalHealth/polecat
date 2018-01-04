@@ -6,7 +6,6 @@ import Raven from 'raven-js'
 
 import Router from './Router'
 import addResourceHints from './resourceHints.js'
-import registerServiceWorker from './registerServiceWorker'
 
 import './css/index.css'
 
@@ -36,5 +35,4 @@ if (
       ReactDOM.render(<Router />, document.getElementById('root'))
     })
   addResourceHints()
-  registerServiceWorker()
 }
