@@ -1,6 +1,5 @@
 #!/bin/bash
 
-react-scripts build
 cp -R build release
 find release -name "*.map" -exec rm {} \;
 rm -f release/config.json

@@ -80,12 +80,20 @@ and can be refreshed by using the following command:
 yarn update-test-files
 ```
 
-##### Build a deployable release
+##### Build a release
 
-This will output a set of static files in the build directory, and package them into a [Docker](https://www.docker.com/) image.
+This will output a set of production-optimised static files in the build directory.
 
 ```
 yarn build
+```
+
+##### Build the Docker image
+
+This will package the build into a [Docker](https://www.docker.com/) image, ready for deployment.
+
+```
+yarn dockerize
 ```
 
 This script requires you to set the `DOCKER_IMAGE` environment variable, which controls the name which is used to tag the image.

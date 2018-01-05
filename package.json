@@ -60,7 +60,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "bash scripts/build.sh",
+    "build": "react-scripts build",
+    "dockerize": "bash scripts/dockerize.sh",
     "push-docker": "bash scripts/pushDockerImage.sh",
     "deploy": "bash scripts/deploy.sh",
     "test": "react-scripts test --verbose --env=jsdom",
