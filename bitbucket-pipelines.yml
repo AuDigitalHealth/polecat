@@ -21,7 +21,6 @@ pipelines:
             - yarn build
             - yarn build-docker
             - yarn push-docker
-            - yarn make-release
             - yarn deploy
             - yarn record-release
 options:

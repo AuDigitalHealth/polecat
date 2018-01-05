@@ -1,0 +1,5 @@
+{
+  "fhirServer": "<!--#echo var="polecat_fhir_server" -->",
+  "version": "<!--#echo var="polecat_version" -->",
+  "sentryDsn": "<!--#echo var="polecat_sentry_dsn" -->"
+}

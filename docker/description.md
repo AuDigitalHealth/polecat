@@ -5,20 +5,13 @@ an instance of [Medserve](http://medserve.online).
 
 # Configuration
 
-Polecat is configured using a file called `config.js`, which it expects to be
-served from the root of its deployment location.
+Polecat is configured using the following environment variables, which can be
+passed using the `environment` key within a Docker Compose file:
 
-The available configuration parameters are:
-
-- `fhirVersion`: the FHIR endpoint of the Medserve instance.
-
-##### Example configuration
-
-```
-{
-  "fhirServer": "https://medserve.online/fhir"
-}
-```
+* `POLECAT_FHIR_SERVER`: the FHIR endpoint of the Medserve instance.
+* `POLECAT_VERSION`: the version of the application, which is used when
+  reporting to Sentry.
+* `POLECAT_SENTRY_DSN`: the string used to identify the application to Sentry.
 
 ##### Example Docker Compose file
 
@@ -30,6 +23,8 @@ services:
     image: johngrimes/polecat
     ports:
       - "80:80"
-    volumes:
-      - "./config.js:/usr/share/nginx/html/config.js"
+    environment:
+      POLECAT_FHIR_SERVER: https://medserve.online/fhir
+      POLECAT_VERSION: d025c2b579571b9bccddcac86f7105e554ebff34
+      POLECAT_SENTRY_DSN: https://437424b3205e41818fae4bff9663738c@sentry.io/257411
 ```
