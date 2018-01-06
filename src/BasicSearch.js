@@ -155,7 +155,10 @@ export class BasicSearch extends Component {
     const { routedQuery, currentQuery, focusUponMount, loading } = this.props
     const { results, quickSearchOpen } = this.state
     // If the query has been updated within state, use that over props.
-    const query = currentQuery || routedQuery
+    const query =
+      currentQuery === null || currentQuery === undefined
+        ? routedQuery
+        : currentQuery
     return (
       <div className="search-basic">
         <div className="search-basic-form">
