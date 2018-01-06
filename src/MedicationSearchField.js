@@ -127,8 +127,8 @@ export class MedicationSearchField extends Component {
   }
 
   handleKeyDown(event) {
-    // Close the quick search if Escape is pressed.
-    if (event.key === 'Escape') {
+    // Close the quick search if Escape or Tab is pressed.
+    if (event.key === 'Escape' || event.key === 'Tab') {
       this.closeQuickSearch()
     } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
       const { results } = this.state,
