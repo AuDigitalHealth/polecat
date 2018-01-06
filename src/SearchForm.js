@@ -11,6 +11,8 @@ import {
   extractQueryText,
   queryFromSearchObject,
 } from './fhir/search.js'
+import { isValidSctid } from './snomed/sctid.js'
+import { snomedUri } from './fhir/medication.js'
 
 import './css/SearchForm.css'
 
@@ -27,6 +29,29 @@ class SearchForm extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleClear = this.handleClear.bind(this)
     this.handleSearchUpdate = this.handleSearchUpdate.bind(this)
+  }
+
+  // Returns search path for populating the autocomplete on the ingredient
+  // search.
+  ingredientSearch(query) {
+    return isValidSctid(query)
+      ? `/Substance?code=${snomedUri}|${query}`
+      : `/Substance?code:text=${query}`
+  }
+
+  // Returns search path for populating the autocomplete on the package item
+  // search.
+  packageItemSearch(query) {
+    return isValidSctid(query)
+      ? `/Medication?code=${snomedUri}|${query}`
+      : `/Medication?medication-resource-type=BPSF,UPDSF&_text=${query}`
+  }
+
+  // Returns search path for populating the autocomplete on the parent search.
+  parentSearch(query) {
+    return isValidSctid(query)
+      ? `/Medication?code=${snomedUri}|${query}`
+      : `/Medication?medication-resource-type=BPG,brand,UPG,UPDSF,UPD&_text=${query}`
   }
 
   handleChange(param, value) {
@@ -121,7 +146,7 @@ class SearchForm extends Component {
           codingValue={search['ingredient']}
           textValue={search['ingredient-text']}
           label="Ingredient"
-          searchPath={text => `/Substance?code:text=${text}`}
+          searchPath={this.ingredientSearch}
           onCodingChange={value => this.handleCodingChange('ingredient', value)}
           onTextChange={value => this.handleChange('ingredient-text', value)}
           onClear={() => this.handleClear('ingredient', 'ingredient-text')}
@@ -131,9 +156,7 @@ class SearchForm extends Component {
           codingValue={search['package']}
           textValue={search['package-text']}
           label="Package item"
-          searchPath={text =>
-            `/Medication?medication-resource-type=BPSF,UPDSF&_text=${text}`
-          }
+          searchPath={this.packageItemSearch}
           onCodingChange={value => this.handleCodingChange('package', value)}
           onTextChange={value => this.handleChange('package-text', value)}
           onClear={() => this.handleClear('package', 'package-text')}
@@ -168,9 +191,7 @@ class SearchForm extends Component {
           codingValue={search['parent']}
           textValue={search['parent-text']}
           label="Parent"
-          searchPath={text =>
-            `/Medication?medication-resource-type=BPG,brand,UPG,UPDSF,UPD&_text=${text}`
-          }
+          searchPath={this.parentSearch}
           onCodingChange={value => this.handleCodingChange('parent', value)}
           onTextChange={value => this.handleChange('parent-text', value)}
           onClear={() => this.handleClear('parent', 'parent-text')}

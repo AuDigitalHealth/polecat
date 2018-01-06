@@ -11,6 +11,7 @@ import { sniffFormat } from './fhir/restApi'
 import { getSubjectConcept, amtConceptTypeFor } from './fhir/medication.js'
 import { displayOrCoding, codeDisplayFromCoding } from './fhir/search.js'
 import { opOutcomeFromJsonResponse } from './fhir/core.js'
+import { isValidSctid } from './snomed/sctid.js'
 
 import './css/MedicationSearchField.css'
 
@@ -107,7 +108,12 @@ export class MedicationSearchField extends Component {
   }
 
   async addTextOptionToSearchResults({ bundle, results }, query) {
-    return { bundle, results: [{ type: 'text', query }].concat(results) }
+    const textOption = { type: 'text', query }
+    // Put the result in front of the text option, in the case where the user
+    // has entered a valid SCTID.
+    return isValidSctid(query)
+      ? { bundle, results: results.concat([textOption]) }
+      : { bundle, results: [textOption].concat(results) }
   }
 
   closeQuickSearch() {
