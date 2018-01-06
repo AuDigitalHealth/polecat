@@ -3,7 +3,7 @@ import verhoeff from 'verhoeff'
 export const isValidSctid = sctid => {
   let int
   try {
-    int = parseInt(sctid)
+    int = parseInt(sctid, 10)
   } catch (e) {
     return false
   }
