@@ -11,6 +11,7 @@ import Expand from './Expand.js'
 import QuickSearchResults from './QuickSearchResults.js'
 import { searchPathFromQuery } from './Router.js'
 import { codingToSnomedCode } from './fhir/medication.js'
+import { isValidSctid } from './snomed/sctid.js'
 
 import './css/BasicSearch.css'
 
@@ -44,7 +45,8 @@ export class BasicSearch extends Component {
   updateResults(props) {
     let { results } = props
     results = this.addLinksToResults(results)
-    return this.addMoreLinkToResults(results, props)
+    results = this.addMoreLinkToResults(results, props)
+    return this.selectFirstResult(results)
   }
 
   addLinksToResults(results) {
@@ -75,6 +77,13 @@ export class BasicSearch extends Component {
     } else return results
   }
 
+  selectFirstResult(results) {
+    if (!results) return results
+    return results.map((result, i) => {
+      return i === 0 ? { ...result, selected: true } : result
+    })
+  }
+
   closeQuickSearch() {
     const { results } = this.state
     this.setState(() => ({
@@ -85,7 +94,10 @@ export class BasicSearch extends Component {
 
   handleQueryUpdate(query) {
     const { onQueryUpdate } = this.props
-    if (onQueryUpdate) onQueryUpdate(query)
+    // If the query is an SCTID, translate it into the tagged query sytax for
+    // specifying an SCTID.
+    if (onQueryUpdate)
+      onQueryUpdate(isValidSctid(query) ? `id:${query}` : query)
   }
 
   handleFocus() {
