@@ -7,7 +7,7 @@ class Loading extends Component {
   static propTypes = {
     loading: PropTypes.bool,
     delay: PropTypes.number,
-    children: PropTypes.any.isRequired,
+    children: PropTypes.any,
   }
   static defaultProps = {
     loading: false,
