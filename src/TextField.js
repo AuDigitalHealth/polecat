@@ -14,6 +14,7 @@ class TextField extends Component {
     onKeyDown: PropTypes.func,
     onClick: PropTypes.func,
     focusUponMount: PropTypes.bool,
+    selectAllUponFocus: PropTypes.bool,
   }
   static defaultProps = {
     disabled: false,
@@ -42,8 +43,9 @@ class TextField extends Component {
   }
 
   handleFocus(event) {
-    const { onFocus } = this.props
+    const { onFocus, selectAllUponFocus } = this.props
     if (onFocus) onFocus(event)
+    if (selectAllUponFocus) this.textInput.select()
   }
 
   handleBlur(event) {

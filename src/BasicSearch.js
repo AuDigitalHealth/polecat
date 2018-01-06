@@ -182,6 +182,7 @@ export class BasicSearch extends Component {
             onFocus={this.handleFocus}
             onKeyDown={this.handleKeyDown}
             focusUponMount={focusUponMount}
+            selectAllUponFocus={true}
           />
           <Loading loading={loading}>
             <Expand
