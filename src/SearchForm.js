@@ -67,7 +67,7 @@ class SearchForm extends Component {
       ...search,
       ...{ [param]: value, [`${param}-text`]: undefined },
     }
-    this.setState(() => ({ search: updatedSearch }))
+    this.setState(() => ({ search: updatedSearch }), this.handleSearchUpdate)
   }
 
   handleClear(...params) {
@@ -76,13 +76,16 @@ class SearchForm extends Component {
     for (const param of params) {
       updatedSearch[param] = undefined
     }
-    this.setState(() => ({ search: { ...search, ...updatedSearch } }))
+    this.setState(
+      () => ({ search: { ...search, ...updatedSearch } }),
+      this.handleSearchUpdate,
+    )
   }
 
   handleSearchUpdate(event) {
     const { onSearchUpdate } = this.props
     const { search } = this.state
-    event.preventDefault()
+    if (event) event.preventDefault()
     if (onSearchUpdate) {
       onSearchUpdate(queryFromSearchObject(search))
     }
