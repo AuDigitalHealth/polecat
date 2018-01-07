@@ -4608,6 +4608,12 @@ exports[`Storyshots SearchForm With a query 1`] = `
     onChange={[Function]}
     value={null}
   />
+  <a
+    className="clear-form"
+    onClick={[Function]}
+  >
+    Clear all
+  </a>
   <button
     className="search-submit"
     onClick={[Function]}

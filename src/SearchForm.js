@@ -27,6 +27,7 @@ class SearchForm extends Component {
   constructor(props) {
     super(props)
     this.state = { search: {} }
+    this.clearSearch = this.clearSearch.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleClear = this.handleClear.bind(this)
     this.handleSearchUpdate = this.handleSearchUpdate.bind(this)
@@ -53,6 +54,10 @@ class SearchForm extends Component {
     return isValidSctid(query)
       ? `/Medication?code=${snomedUri}|${query}`
       : `/Medication?medication-resource-type=BPG,brand,UPG,UPDSF,UPD&_text=${query}`
+  }
+
+  clearSearch() {
+    this.setState(() => ({ search: {} }), this.handleSearchUpdate)
   }
 
   handleChange(param, value) {
@@ -205,6 +210,9 @@ class SearchForm extends Component {
           label="Include only"
           onChange={value => this.handleChange('type', value.join(','))}
         />
+        <a className="clear-form" onClick={this.clearSearch}>
+          Clear all
+        </a>
         <button
           className="search-submit"
           type="submit"
