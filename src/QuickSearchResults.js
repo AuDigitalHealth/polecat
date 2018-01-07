@@ -88,8 +88,9 @@ class QuickSearchResults extends Component {
       <li
         key={i}
         className={result.selected ? 'search-result selected' : 'search-result'}
+        onClick={() => this.handleSelectResult(result)}
       >
-        <div className="target" onClick={() => this.handleSelectResult(result)}>
+        <div className="target">
           <span className={`type type-${result.type}`.toLowerCase()}>
             {result.type}
           </span>
@@ -103,8 +104,12 @@ class QuickSearchResults extends Component {
 
   renderTextLink(result, i) {
     return (
-      <li key={i} className={result.selected ? 'text selected' : 'text'}>
-        <div className="target" onClick={() => this.handleSelectResult(result)}>
+      <li
+        key={i}
+        className={result.selected ? 'text selected' : 'text'}
+        onClick={() => this.handleSelectResult(result)}
+      >
+        <div className="target">
           All concepts containing the text &quot;{result.query}&quot;
         </div>
       </li>
@@ -116,8 +121,9 @@ class QuickSearchResults extends Component {
       <li
         key={i}
         className={result.selected ? 'more-results selected' : 'more-results'}
+        onClick={() => this.handleSelectResult(result)}
       >
-        <div className="target" onClick={() => this.handleSelectResult(result)}>
+        <div className="target">
           view all {formatNumber(result.total)} matches &rarr;
         </div>
       </li>

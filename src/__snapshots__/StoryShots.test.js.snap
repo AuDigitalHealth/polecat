@@ -3750,10 +3750,10 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
     <li
       className="search-result"
       key="0"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-ctpp"
@@ -3770,10 +3770,10 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
     <li
       className="search-result"
       key="1"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-tpp"
@@ -3790,10 +3790,10 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
     <li
       className="search-result"
       key="2"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-tpuu"
@@ -3810,10 +3810,10 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
     <li
       className="search-result"
       key="3"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-tp"
@@ -3830,10 +3830,10 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
     <li
       className="search-result"
       key="4"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-mpp"
@@ -3850,10 +3850,10 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
     <li
       className="search-result"
       key="5"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-mpuu"
@@ -3870,10 +3870,10 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
     <li
       className="search-result"
       key="6"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-mp"
@@ -3890,10 +3890,10 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
     <li
       className="search-result"
       key="7"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-substance"
@@ -3919,10 +3919,10 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
     <li
       className="search-result"
       key="0"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-ctpp"
@@ -3939,10 +3939,10 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
     <li
       className="search-result"
       key="1"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-tpp"
@@ -3959,10 +3959,10 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
     <li
       className="search-result"
       key="2"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-tpuu"
@@ -3979,10 +3979,10 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
     <li
       className="search-result"
       key="3"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-tp"
@@ -3999,10 +3999,10 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
     <li
       className="search-result"
       key="4"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-mpp"
@@ -4019,10 +4019,10 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
     <li
       className="search-result"
       key="5"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-mpuu"
@@ -4039,10 +4039,10 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
     <li
       className="search-result"
       key="6"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-mp"
@@ -4059,10 +4059,10 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
     <li
       className="search-result"
       key="7"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-substance"
@@ -4102,10 +4102,10 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
     <li
       className="search-result"
       key="0"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-ctpp"
@@ -4122,10 +4122,10 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
     <li
       className="search-result"
       key="1"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-tpp"
@@ -4142,10 +4142,10 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
     <li
       className="search-result selected"
       key="2"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-tpuu"
@@ -4162,10 +4162,10 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
     <li
       className="search-result"
       key="3"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-tp"
@@ -4182,10 +4182,10 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
     <li
       className="search-result"
       key="4"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-mpp"
@@ -4202,10 +4202,10 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
     <li
       className="search-result"
       key="5"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-mpuu"
@@ -4222,10 +4222,10 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
     <li
       className="search-result"
       key="6"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-mp"
@@ -4242,10 +4242,10 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
     <li
       className="search-result"
       key="7"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-substance"
@@ -4271,10 +4271,10 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
     <li
       className="search-result"
       key="0"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-ctpp"
@@ -4291,10 +4291,10 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
     <li
       className="search-result"
       key="1"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-tpp"
@@ -4311,10 +4311,10 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
     <li
       className="search-result"
       key="2"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-tpuu"
@@ -4331,10 +4331,10 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
     <li
       className="search-result"
       key="3"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-tp"
@@ -4351,10 +4351,10 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
     <li
       className="search-result"
       key="4"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-mpp"
@@ -4371,10 +4371,10 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
     <li
       className="search-result"
       key="5"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-mpuu"
@@ -4391,10 +4391,10 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
     <li
       className="search-result"
       key="6"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-mp"
@@ -4411,10 +4411,10 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
     <li
       className="search-result"
       key="7"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         <span
           className="type type-substance"
@@ -4431,10 +4431,10 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
     <li
       className="more-results"
       key="8"
+      onClick={[Function]}
     >
       <div
         className="target"
-        onClick={[Function]}
       >
         view all 
         45,983
