@@ -45,7 +45,7 @@ class SearchSummary extends Component {
           <Icon
             className="pagination-previous"
             type="previous"
-            hoverType="previousActive"
+            hoverType="previous-active"
             width={21}
             height={21}
             alt="Previous page of results"
@@ -57,7 +57,7 @@ class SearchSummary extends Component {
           <Icon
             className="pagination-next"
             type="next"
-            hoverType="nextActive"
+            hoverType="next-active"
             width={21}
             height={21}
             alt="Next page of results"

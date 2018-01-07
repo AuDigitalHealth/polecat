@@ -1,4 +1,4 @@
-import { icons } from './Icon.js'
+import icons from './img/icons.svg'
 
 const addResourceHint = hint => {
   const { rel, href, as, type } = hint
@@ -10,7 +10,7 @@ const addResourceHint = hint => {
   document.head.appendChild(link)
 }
 
-const preloadSvg = Object.keys(icons).map(k => icons[k])
+const preloadSvg = [icons]
 
 const addResourceHints = () => {
   for (const svg of preloadSvg) {

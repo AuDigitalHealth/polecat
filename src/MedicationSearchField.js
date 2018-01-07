@@ -7,6 +7,7 @@ import onClickOutside from 'react-onclickoutside'
 
 import TextField from './TextField.js'
 import QuickSearchResults from './QuickSearchResults.js'
+import Icon from './Icon.js'
 import { sniffFormat } from './fhir/restApi'
 import { getSubjectConcept, amtConceptTypeFor } from './fhir/medication.js'
 import { displayOrCoding, codeDisplayFromCoding } from './fhir/search.js'
@@ -250,9 +251,14 @@ export class MedicationSearchField extends Component {
           {label}
           <div className="selected-code" title={codingValue}>
             {displayOrCoding(codingValue)}
-            <div className="clear-code" onClick={this.handleClear}>
-              &#735;
-            </div>
+            <Icon
+              type="cross"
+              className="clear-code"
+              width={10}
+              alt="Clear this selection"
+              title="Clear this selection"
+              onClick={this.handleClear}
+            />
           </div>
         </label>
       </div>

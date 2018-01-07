@@ -33,7 +33,7 @@
   background: #666;
   color: white;
   border-radius: 6px;
-  padding: 4px 18px 4px 6px;
+  padding: 4px 17px 4px 6px;
   font-size: 13px;
   max-width: 130px;
   overflow: hidden;
@@ -43,8 +43,8 @@
 
 .medication-search-field .clear-code {
   position: absolute;
-  top: 0px;
-  right: 6px;
-  font-size: 25px;
+  top: 7px;
+  right: 4px;
   cursor: pointer;
+  fill: white;
 }

@@ -381,6 +381,7 @@ class AmtProductModel extends Component {
       >
         <div className="product-model-inner">
           <svg
+            className="canvas"
             height={viewport.height}
             width={viewport.width}
             preserveAspectRatio="none"

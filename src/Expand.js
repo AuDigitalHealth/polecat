@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import Icon from './Icon.js'
 import './css/Expand.css'
 
 class Expand extends Component {
@@ -17,14 +18,14 @@ class Expand extends Component {
   render() {
     const { className, active, onToggle } = this.props
     return (
-      <div
+      <Icon
+        type={active ? 'expand-up' : 'expand-down'}
         className={
           active ? `expand ${className} active` : `expand ${className}`
         }
+        width={14}
         onClick={onToggle}
-      >
-        {'\u25BE'}
-      </div>
+      />
     )
   }
 }

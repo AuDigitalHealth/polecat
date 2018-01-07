@@ -791,6 +791,7 @@ exports[`Storyshots AmtProductModel Aggregation link (close) 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -865,6 +866,7 @@ exports[`Storyshots AmtProductModel Aggregation link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -939,6 +941,7 @@ exports[`Storyshots AmtProductModel Association link (close) 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -1013,6 +1016,7 @@ exports[`Storyshots AmtProductModel Association link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -1087,6 +1091,7 @@ exports[`Storyshots AmtProductModel E link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -1161,6 +1166,7 @@ exports[`Storyshots AmtProductModel ENE link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -1235,6 +1241,7 @@ exports[`Storyshots AmtProductModel ESE link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -1309,6 +1316,7 @@ exports[`Storyshots AmtProductModel Inheritance link (close) 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -1383,6 +1391,7 @@ exports[`Storyshots AmtProductModel Inheritance link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -1457,6 +1466,7 @@ exports[`Storyshots AmtProductModel N link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -1531,6 +1541,7 @@ exports[`Storyshots AmtProductModel NE link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -1605,6 +1616,7 @@ exports[`Storyshots AmtProductModel NNE link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -1679,6 +1691,7 @@ exports[`Storyshots AmtProductModel NNW link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -1753,6 +1766,7 @@ exports[`Storyshots AmtProductModel NW link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -1827,6 +1841,7 @@ exports[`Storyshots AmtProductModel S link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -1901,6 +1916,7 @@ exports[`Storyshots AmtProductModel SE link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -1975,6 +1991,7 @@ exports[`Storyshots AmtProductModel SSE link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -2049,6 +2066,7 @@ exports[`Storyshots AmtProductModel SSW link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -2123,6 +2141,7 @@ exports[`Storyshots AmtProductModel SW link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -2197,6 +2216,7 @@ exports[`Storyshots AmtProductModel W link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -2271,6 +2291,7 @@ exports[`Storyshots AmtProductModel WNW link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -2345,6 +2366,7 @@ exports[`Storyshots AmtProductModel WSW link 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -2419,6 +2441,7 @@ exports[`Storyshots AmtProductModel With nodes and links 1`] = `
     className="product-model-inner"
   >
     <svg
+      className="canvas"
       height={800}
       onDoubleClick={[Function]}
       onMouseMove={[Function]}
@@ -3104,7 +3127,7 @@ exports[`Storyshots ConceptGroup With parent medication search result 1`] = `
       to="/?q=some-search"
     >
       <Icon
-        hoverType="listActive"
+        hoverType="list-active"
         type="list"
         width={20}
       />
@@ -3300,7 +3323,7 @@ exports[`Storyshots CopyToClipboard With some text 1`] = `
   onClick={[Function]}
 >
   <Icon
-    hoverType="clipboardActive"
+    hoverType="clipboard-active"
     type="clipboard"
     width={17}
   />
@@ -3348,19 +3371,19 @@ exports[`Storyshots ErrorMessage Simple message 1`] = `
 `;
 
 exports[`Storyshots Expand Active 1`] = `
-<div
+<Icon
   className="expand expand active"
->
-  ▾
-</div>
+  type="expand-up"
+  width={14}
+/>
 `;
 
 exports[`Storyshots Expand Inactive 1`] = `
-<div
+<Icon
   className="expand expand"
->
-  ▾
-</div>
+  type="expand-down"
+  width={14}
+/>
 `;
 
 exports[`Storyshots FullSearchResults With a query and empty results 1`] = `
@@ -3657,12 +3680,14 @@ exports[`Storyshots MedicationSearchField With coding value (code and display) 1
       title="49333011000036108|Proguide (66000782) green 28 cm to 32 cm two layer bandage, 1"
     >
       Proguide (66000782) green 28 cm to 32 cm two layer bandage, 1
-      <div
+      <Icon
+        alt="Clear this selection"
         className="clear-code"
         onClick={[Function]}
-      >
-        ˟
-      </div>
+        title="Clear this selection"
+        type="cross"
+        width={10}
+      />
     </div>
   </label>
 </div>
@@ -3679,12 +3704,14 @@ exports[`Storyshots MedicationSearchField With coding value (code only) 1`] = `
       title="49333011000036108"
     >
       49333011000036108
-      <div
+      <Icon
+        alt="Clear this selection"
         className="clear-code"
         onClick={[Function]}
-      >
-        ˟
-      </div>
+        title="Clear this selection"
+        type="cross"
+        width={10}
+      />
     </div>
   </label>
 </div>
@@ -4587,6 +4614,10 @@ exports[`Storyshots SearchForm With a query 1`] = `
     type="submit"
   >
     Search
+    <Icon
+      type="search"
+      width={18}
+    />
   </button>
 </form>
 `;
@@ -4605,7 +4636,7 @@ exports[`Storyshots SearchSummary With next and previous links 1`] = `
     alt="Previous page of results"
     className="pagination-previous"
     height={21}
-    hoverType="previousActive"
+    hoverType="previous-active"
     onClick={[Function]}
     title="Previous page"
     type="previous"
@@ -4615,7 +4646,7 @@ exports[`Storyshots SearchSummary With next and previous links 1`] = `
     alt="Next page of results"
     className="pagination-next"
     height={21}
-    hoverType="nextActive"
+    hoverType="next-active"
     onClick={[Function]}
     title="Next page"
     type="next"
@@ -4638,7 +4669,7 @@ exports[`Storyshots SearchSummary With next link 1`] = `
     alt="Next page of results"
     className="pagination-next"
     height={21}
-    hoverType="nextActive"
+    hoverType="next-active"
     onClick={[Function]}
     title="Next page"
     type="next"
@@ -4674,7 +4705,7 @@ exports[`Storyshots SearchSummary With previous link 1`] = `
     alt="Previous page of results"
     className="pagination-previous"
     height={21}
-    hoverType="previousActive"
+    hoverType="previous-active"
     onClick={[Function]}
     title="Previous page"
     type="previous"

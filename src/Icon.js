@@ -1,36 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import list from './img/list.svg'
-import listActive from './img/list-active.svg'
-import graph from './img/graph.svg'
-import graphActive from './img/graph-active.svg'
-import clipboard from './img/clipboard.svg'
-import clipboardActive from './img/clipboard-active.svg'
-import next from './img/next.svg'
-import nextActive from './img/next-active.svg'
-import previous from './img/previous.svg'
-import previousActive from './img/previous-active.svg'
-import tick from './img/tick.svg'
-
-export const icons = {
-  list,
-  listActive,
-  graph,
-  graphActive,
-  clipboard,
-  clipboardActive,
-  next,
-  nextActive,
-  previous,
-  previousActive,
-  tick,
-}
+import icons from './img/icons.svg'
 
 class Icon extends Component {
   static propTypes = {
-    type: PropTypes.oneOf(Object.keys(icons)),
-    hoverType: PropTypes.oneOf(Object.keys(icons)),
+    type: PropTypes.string.isRequired,
+    hoverType: PropTypes.string,
     width: PropTypes.number,
     height: PropTypes.number,
     alt: PropTypes.string,
@@ -65,17 +41,21 @@ class Icon extends Component {
     const { type, hoverType, width, height, alt, title, className } = this.props
     const { mouse } = this.state
     return (
-      <img
+      <svg
         className={className ? `icon ${className}` : 'icon'}
-        src={icons[hoverType && mouse === 'hover' ? hoverType : type]}
         width={width}
         height={height}
-        alt={alt}
-        title={title}
+        viewBox="0 0 100 100"
         onMouseOver={this.handleMouseOver}
         onMouseLeave={this.handleMouseLeave}
         onClick={this.handleClick}
-      />
+      >
+        <title>{title}</title>
+        <desc>{alt}</desc>
+        <use
+          href={`${icons}#${hoverType && mouse === 'hover' ? hoverType : type}`}
+        />
+      </svg>
     )
   }
 }

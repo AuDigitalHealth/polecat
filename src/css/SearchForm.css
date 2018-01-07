@@ -57,14 +57,20 @@
   padding: 7px 27px 7px 7px;
   font-family: 'Helvetica Neue', sans-serif;
   font-size: 14px;
-  background: url(../img/search.svg) #c2dcf2 no-repeat center right 4px/18px;
   cursor: pointer;
   float: right;
   outline: none;
   text-align: left;
   margin-top: 4px;
+  position: relative;
 }
 
 .search-submit:hover {
   border: 1px solid #aaa;
+}
+
+.search-submit .icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }

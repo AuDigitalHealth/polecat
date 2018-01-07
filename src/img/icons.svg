@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="highlight">
+      <rect class="highlight" style="fill: #ccc" width="100" height="100" rx="26.08" ry="26.08"/>
+    </g>
+    <g id="expand-down">
+      <polygon points="86.01 20.47 13.99 20.47 49.95 79.53 86.01 20.47"/>
+    </g>
+    <g id="expand-up">
+      <use href="#expand-down" transform="translate(100, 100) rotate(180)"/>
+    </g>
+    <g id="cross">
+      <polygon points="85.97 29.89 70.11 14.03 50 34.14 29.89 14.03 14.03 29.89 34.14 50 14.03 70.11 29.89 85.97 50 65.86 70.11 85.97 85.97 70.11 65.86 50 85.97 29.89"/>
+    </g>
+    <g id="search">
+      <path d="M86,74.7,64.78,53.48A27,27,0,1,0,53.53,64.65L74.79,85.91ZM23,40.76a18,18,0,1,1,18,18A18,18,0,0,1,23,40.76Z"/>
+    </g>
+    <g id="tick">
+      <path style="fill: #39b54a" d="M14.84,56.08a2.9,2.9,0,0,1,0-4.08L22,44.8a2.9,2.9,0,0,1,4.08,0L37.81,56.46a2.89,2.89,0,0,0,4.07,0l32-32.11a2.9,2.9,0,0,1,4.08,0l7.16,7.11a2.88,2.88,0,0,1,0,4.07L46.31,74.46a8,8,0,0,1-4.91,2H38a8,8,0,0,1-4.91-2Z"/>
+    </g>
+    <g id="previous">
+      <polygon points="50.83 18.14 13.98 50 50.83 81.86 50.83 61.96 86.02 61.96 86.02 38.04 50.83 38.04 50.83 18.14"/>
+    </g>
+    <g id="previous-active">
+      <use href="#highlight"/>
+      <use href="#previous"/>
+    </g>
+    <g id="next">
+      <polygon points="49.17 81.86 86.02 50 49.17 18.14 49.17 38.04 13.98 38.04 13.98 61.96 49.17 61.96 49.17 81.86"/>
+    </g>
+    <g id="next-active">
+      <use href="#highlight"/>
+      <use href="#next"/>
+    </g>
+    <g id="clipboard">
+      <path d="M65.94,20H61.39V18.53a3,3,0,0,0-3-3H31.48a3,3,0,0,0-3,3V20H23.92a9,9,0,0,0-9,9V77.44a9,9,0,0,0,9,9h42a9,9,0,0,0,9-9V29A9,9,0,0,0,65.94,20Z"/>
+      <path d="M41.4,15.49a3.54,3.54,0,0,1,7.07,0h6.58c0-.24,0-.48,0-.72a10.15,10.15,0,0,0-20.3,0c0,.24,0,.48,0,.72Z"/>
+      <rect class="paper" style="fill: #fff; stroke: #000; stroke-miterlimit: 10; stroke-width: 6px;" x="29.92" y="31.39" width="54.02" height="58.1" rx="6" ry="6"/>
+      <line class="text" style="stroke: #000; stroke-miterlimit: 10; stroke-width: 6px; fill: none; stroke-linecap: round;" x1="40.48" y1="47.44" x2="73.39" y2="47.44"/>
+      <line class="text" style="stroke: #000; stroke-miterlimit: 10; stroke-width: 6px; fill: none; stroke-linecap: round;" x1="40.48" y1="61" x2="73.39" y2="61"/>
+      <line class="text" style="stroke: #000; stroke-miterlimit: 10; stroke-width: 6px; fill: none; stroke-linecap: round;" x1="40.48" y1="74.56" x2="73.39" y2="74.56"/>
+    </g>
+    <g id="clipboard-active">
+      <use href="#highlight"/>
+      <use href="#clipboard"/>
+    </g>
+    <g id="list">
+      <rect x="33.83" y="19.63" width="52.62" height="11.56"/>
+      <rect x="33.83" y="44.22" width="52.62" height="11.56"/>
+      <rect x="33.83" y="68.94" width="52.62" height="11.56"/>
+      <path d="M20.19,19.63A5.77,5.77,0,1,0,26,25.4,5.77,5.77,0,0,0,20.19,19.63Z"/>
+      <path d="M20.19,44.19A5.77,5.77,0,1,0,26,50,5.77,5.77,0,0,0,20.19,44.19Z"/>
+      <path d="M20.19,68.85A5.78,5.78,0,1,0,26,74.63,5.78,5.78,0,0,0,20.19,68.85Z"/>
+    </g>
+    <g id="list-active">
+      <use href="#highlight"/>
+      <use href="#list"/>
+    </g>
+  </defs>
+</svg>

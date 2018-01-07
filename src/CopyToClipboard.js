@@ -47,7 +47,7 @@ class CopyToClipboard extends Component {
       >
         <Icon
           type={status === 'success' ? 'tick' : 'clipboard'}
-          hoverType={status === 'ready' ? 'clipboardActive' : null}
+          hoverType={status === 'ready' ? 'clipboard-active' : null}
           width={17}
           alt={title}
           title={title}

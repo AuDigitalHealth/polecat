@@ -47,7 +47,7 @@ class ConceptGroup extends Component {
             <div className={`type type-${type}`.toLowerCase()}>{type}</div>
           ) : null}
           <Link to={linkPath}>
-            <Icon type="list" hoverType="listActive" width={20} />
+            <Icon type="list" hoverType="list-active" width={20} />
           </Link>
         </div>
         <div className="concept concept-stacked-2" />

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import TextField from './TextField.js'
 import ConceptTypeToggle from './ConceptTypeToggle.js'
 import MedicationSearchField from './MedicationSearchField.js'
+import Icon from './Icon.js'
 import {
   availableMedParams,
   availableSubstanceParams,
@@ -210,6 +211,7 @@ class SearchForm extends Component {
           onClick={this.handleSearchUpdate}
         >
           Search
+          <Icon type="search" width={18} />
         </button>
       </form>
     )
