@@ -21,13 +21,24 @@ an instance of [Medserve](http://medserve.online).
 * Copy an SCT ID or preferred term to the clipboard by clicking the clipboard
   icon adjacent.
 * Where child concepts or related packages are shown in large numbers, these
-  are grouped with a link to the full listing. (NOTE: The full listing has not
-  been implemented yet)
+  are grouped with a link to the full listing.
 * The AMT Product Model view can be panned around by clicking and dragging,
   using scroll wheels or a trackpad. The view can be re-centred by
   double-clicking.
+* Perform an advanced search, using the following fields:
+  * Contains text - returns concepts which contain the supplied text within the preferred term.
+  * Ingredient - returns concepts which have ingredients that match the supplied concept ID or text.
+  * Package item - returns packages (MPP, TPP or CTPP) that contain concepts which match the supplied MPUU or TPUU concept or text.
+  * Form - returns concepts which have a form which matches the supplied text (e.g. tablet).
+  * Container - returns concepts which have a container which matches the supplied text (e.g. bottle).
+  * Brand - returns concepts which have a brand (TP) which matches the supplied text (e.g. Voltaren).
+  * PBS code - returns concepts which are mapped to a [PBS](https://pbs.gov.au/) item code.
+  * ARTG ID - returns concepts which are mapped to a product listed on the [Australian Register of Therapeutic Goods](https://www.tga.gov.au/australian-register-therapeutic-goods).
+  * Parent - Returns concepts which are descendants of concepts that match the supplied text or concept ID.
+  * Include only - Narrow the search to only include a subset of concept types, i.e. CTPP, TPP, TPUU, MPP, MPUU or MP.
 * Can be configured to point to any Medserve instance, see
   [Configuration](#configuration).
+* Can be configured to report errors to [Sentry](https://sentry.io).
 
 ## Development dependencies
 
@@ -69,9 +80,9 @@ and can be refreshed by using the following command:
 yarn update-test-files
 ```
 
-##### Build a deployable release
+##### Build a release
 
-This will output a set of static files in the build directory.
+This will output a set of production-optimised static files in the build directory.
 
 ```
 yarn build
@@ -79,34 +90,42 @@ yarn build
 
 ##### Build the Docker image
 
-Polecat can also be packaged up as a [Docker](https://www.docker.com/) image.
+This will package the build into a [Docker](https://www.docker.com/) image, ready for deployment.
 
 ```
-yarn build-docker
+yarn dockerize
 ```
 
-## Configuration
+This script requires you to set the `DOCKER_IMAGE` environment variable, which controls the name which is used to tag the image.
 
-Polecat is configured using a file called `config.js`, which it expects to be
-served from the root of its deployment location.
+# Configuration
 
-The available configuration parameters are:
+Polecat is configured using the following environment variables, which can be
+passed using the `environment` key within a Docker Compose file:
 
-* `fhirVersion`: the FHIR endpoint of the Medserve instance.
+* `POLECAT_FHIR_SERVER`: the FHIR endpoint of the Medserve instance.
+* `POLECAT_VERSION`: the version of the application, which is used when
+  reporting to Sentry.
+* `POLECAT_SENTRY_DSN`: the string used to identify the application to Sentry.
 
-##### Example configuration
+##### Example Docker Compose file
 
 ```
-{
-  "fhirServer": "https://medserve.online/fhir"
-}
+version: "3"
+
+services:
+  polecat:
+    image: johngrimes/polecat
+    ports:
+      - "80:80"
+    environment:
+      POLECAT_FHIR_SERVER: https://medserve.online/fhir
+      POLECAT_VERSION: d025c2b579571b9bccddcac86f7105e554ebff34
+      POLECAT_SENTRY_DSN: https://437424b3205e41818fae4bff9663738c@sentry.io/257411
 ```
 
 ## Deployment requirements
 
-* The web server must be configured to serve files that exist within the
-  distribution, or return `index.html` with a `200 OK` for files which aren't
-  found.
 * Polecat must be served via HTTPS. This is because it relies on APIs within the
   browser which are not enabled in insecure contexts.
 * Polecat must communicate to Medserve via HTTPS. This is because browser

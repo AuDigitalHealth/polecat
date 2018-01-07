@@ -1,3 +1,3 @@
 #!/bin/bash
 
-now -n polecat -t $NOW_TOKEN alias set `now --npm -n polecat -t $NOW_TOKEN` $TARGET_HOSTNAME
+ssh $DEPLOY_USER@$SERVER_HOSTNAME "cd $DEPLOY_DIRECTORY && docker-compose pull johngrimes/polecat && docker-compose up -d"
