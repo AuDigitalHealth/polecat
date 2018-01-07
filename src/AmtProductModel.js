@@ -293,7 +293,7 @@ class AmtProductModel extends Component {
     event.preventDefault()
   }
 
-  handleDoubleClick(event) {
+  handleDoubleClick() {
     this.moveSimulationCenter(
       null,
       null,
@@ -319,7 +319,7 @@ class AmtProductModel extends Component {
     this.stopSimulation()
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate(nextProps) {
     const { nodes, links } = nextProps
     if (!(nodes && links)) return false
     return true

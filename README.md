@@ -80,6 +80,12 @@ and can be refreshed by using the following command:
 yarn update-test-files
 ```
 
+##### Run the linter
+
+```
+yarn lint
+```
+
 ##### Build a release
 
 This will output a set of production-optimised static files in the build directory.

@@ -61,6 +61,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "lint": "eslint src",
     "build": "react-scripts build",
     "dockerize": "bash scripts/dockerize.sh",
     "push-docker": "bash scripts/pushDockerImage.sh",
@@ -74,7 +75,7 @@
     "record-release": "bash scripts/recordRelease.sh",
     "loc": "sloc --exclude \".*\\.(css|svg|test.js|stories.js|js.snap)\" src"
   },
-  "pre-commit": ["test-ci"],
+  "pre-commit": ["lint", "test-ci"],
   "jest": {
     "snapshotSerializers": ["enzyme-to-json/serializer"]
   }

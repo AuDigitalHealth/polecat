@@ -6,13 +6,18 @@ import { results1 } from './QuickSearchResults.stories.js'
 
 storiesOf('BasicSearch', module)
   .add('With routed query but no results', () => (
-    <BasicSearch routedQuery="para" />
+    <BasicSearch routedQuery="para" history={{}} />
   ))
   .add('With routed query but no results, loading', () => (
-    <BasicSearch routedQuery="para" loading />
+    <BasicSearch routedQuery="para" loading history={{}} />
   ))
   .add('With routed query and results', () => (
-    <BasicSearch routedQuery="para" results={results1} bundle={{ total: 8 }} />
+    <BasicSearch
+      routedQuery="para"
+      results={results1}
+      bundle={{ total: 8 }}
+      history={{}}
+    />
   ))
   .add('With current query', () => (
     <BasicSearch
@@ -20,5 +25,6 @@ storiesOf('BasicSearch', module)
       results={results1}
       bundle={{ total: 8 }}
       currentQuery="parac"
+      history={{}}
     />
   ))
