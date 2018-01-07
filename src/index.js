@@ -5,7 +5,6 @@ import bowser from 'bowser'
 import Raven from 'raven-js'
 
 import Router from './Router'
-import addResourceHints from './resourceHints.js'
 
 import './css/index.css'
 
@@ -34,5 +33,4 @@ if (
       console.error(error)
       ReactDOM.render(<Router />, document.getElementById('root'))
     })
-  addResourceHints()
 }
