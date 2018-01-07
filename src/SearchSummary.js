@@ -41,30 +41,30 @@ class SearchSummary extends Component {
         <div className="pagination-total">
           {totalResults ? formatNumber(totalResults) : 0} matches
         </div>
-        {previousLink ? (
-          <Icon
-            className="pagination-previous"
-            type="previous"
-            hoverType="previous-active"
-            width={21}
-            height={21}
-            alt="Previous page of results"
-            title="Previous page"
-            onClick={this.handlePreviousClick}
-          />
-        ) : null}
-        {nextLink ? (
-          <Icon
-            className="pagination-next"
-            type="next"
-            hoverType="next-active"
-            width={21}
-            height={21}
-            alt="Next page of results"
-            title="Next page"
-            onClick={this.handleNextClick}
-          />
-        ) : null}
+        <Icon
+          className={
+            previousLink
+              ? 'pagination-previous'
+              : 'pagination-previous disabled'
+          }
+          type="previous"
+          hoverType={previousLink ? 'previous-active' : null}
+          width={21}
+          height={21}
+          alt="Previous page of results"
+          title="Previous page"
+          onClick={previousLink ? this.handlePreviousClick : null}
+        />
+        <Icon
+          className={nextLink ? 'pagination-next' : 'pagination-next disabled'}
+          type="next"
+          hoverType={nextLink ? 'next-active' : null}
+          width={21}
+          height={21}
+          alt="Next page of results"
+          title="Next page"
+          onClick={nextLink ? this.handleNextClick : null}
+        />
       </div>
     )
   }

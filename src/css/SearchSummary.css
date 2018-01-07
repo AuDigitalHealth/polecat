@@ -17,3 +17,9 @@
   cursor: pointer;
   margin-left: 3px;
 }
+
+.search-summary .pagination-next.disabled,
+.search-summary .pagination-previous.disabled {
+  opacity: 0.3;
+  cursor: default;
+}
