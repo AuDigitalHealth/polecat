@@ -22,7 +22,7 @@
   z-index: 91;
 }
 
-.amt-browser .loading img {
+.amt-browser .search > .loading img {
   position: absolute;
   top: 15px;
   right: 15px;

@@ -8,6 +8,7 @@ import onClickOutside from 'react-onclickoutside'
 import TextField from './TextField.js'
 import QuickSearchResults from './QuickSearchResults.js'
 import Icon from './Icon.js'
+import Loading from './Loading.js'
 import { sniffFormat } from './fhir/restApi'
 import { getSubjectConcept, amtConceptTypeFor } from './fhir/medication.js'
 import { displayOrCoding, codeDisplayFromCoding } from './fhir/search.js'
@@ -217,7 +218,7 @@ export class MedicationSearchField extends Component {
 
   render() {
     const { codingValue, textValue, label, focusUponMount } = this.props
-    const { quickSearchOpen, query, results } = this.state
+    const { quickSearchOpen, query, results, loading } = this.state
 
     return codingValue ? (
       this.renderCodingSelected()
@@ -239,6 +240,7 @@ export class MedicationSearchField extends Component {
             onSelectResult={this.handleSelectResult}
           />
         ) : null}
+        <Loading loading={loading} />
       </div>
     )
   }

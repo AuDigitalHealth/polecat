@@ -3,15 +3,14 @@
   position: relative;
 }
 
-.medication-search-field .text-field input {
+.medication-search-field .text-field input[type='text'] {
   float: right;
-}
-
-.medication-search-field .text-field input {
   border: 1px solid #666;
   border-radius: 6px;
   padding: 3px;
   font-size: 13px;
+  padding-right: 22px;
+  width: 127px;
 }
 
 .medication-search-field .quick-search-results {
@@ -47,4 +46,12 @@
   right: 4px;
   cursor: pointer;
   fill: white;
+}
+
+.medication-search-field .loading img {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 15px;
+  height: 15px;
 }

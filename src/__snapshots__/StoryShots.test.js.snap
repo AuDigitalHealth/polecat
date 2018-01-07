@@ -3666,6 +3666,10 @@ exports[`Storyshots MedicationSearchField Searching TPPs 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
   />
+  <Loading
+    delay={350}
+    loading={false}
+  />
 </div>
 `;
 
@@ -3730,6 +3734,10 @@ exports[`Storyshots MedicationSearchField With text value 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     value="oxy"
+  />
+  <Loading
+    delay={350}
+    loading={false}
   />
 </div>
 `;

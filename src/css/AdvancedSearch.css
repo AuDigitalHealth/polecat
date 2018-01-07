@@ -17,7 +17,7 @@
   right: 28px;
 }
 
-.search-advanced .search-advanced-form .loading img {
+.search-advanced .search-advanced-form > .loading img {
   position: absolute;
   top: 28px;
   right: 27px;
