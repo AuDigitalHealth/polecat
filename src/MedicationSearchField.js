@@ -251,7 +251,11 @@ export class MedicationSearchField extends Component {
       <div className="medication-search-field">
         <label>
           {label}
-          <div className="selected-code" title={codingValue}>
+          <div
+            className="selected-code"
+            title={codingValue}
+            onClick={this.handleClear}
+          >
             {displayOrCoding(codingValue)}
             <Icon
               type="cross"
@@ -259,7 +263,6 @@ export class MedicationSearchField extends Component {
               width={10}
               alt="Clear this selection"
               title="Clear this selection"
-              onClick={this.handleClear}
             />
           </div>
         </label>

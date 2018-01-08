@@ -3681,13 +3681,13 @@ exports[`Storyshots MedicationSearchField With coding value (code and display) 1
     Select product
     <div
       className="selected-code"
+      onClick={[Function]}
       title="49333011000036108|Proguide (66000782) green 28 cm to 32 cm two layer bandage, 1"
     >
       Proguide (66000782) green 28 cm to 32 cm two layer bandage, 1
       <Icon
         alt="Clear this selection"
         className="clear-code"
-        onClick={[Function]}
         title="Clear this selection"
         type="cross"
         width={10}
@@ -3705,13 +3705,13 @@ exports[`Storyshots MedicationSearchField With coding value (code only) 1`] = `
     Select product
     <div
       className="selected-code"
+      onClick={[Function]}
       title="49333011000036108"
     >
       49333011000036108
       <Icon
         alt="Clear this selection"
         className="clear-code"
-        onClick={[Function]}
         title="Clear this selection"
         type="cross"
         width={10}

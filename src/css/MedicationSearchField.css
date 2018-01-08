@@ -38,13 +38,13 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  cursor: pointer;
 }
 
 .medication-search-field .clear-code {
   position: absolute;
   top: 7px;
   right: 4px;
-  cursor: pointer;
   fill: white;
 }
 
