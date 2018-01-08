@@ -62,7 +62,7 @@
   "scripts": {
     "start": "react-scripts start",
     "lint": "eslint src",
-    "build": "react-scripts build",
+    "build": "bash scripts/build.sh",
     "dockerize": "bash scripts/dockerize.sh",
     "push-docker": "bash scripts/pushDockerImage.sh",
     "deploy": "bash scripts/deploy.sh",
