@@ -17,9 +17,8 @@ pipelines:
           script:
             - yarn install
             - yarn test-ci
-            - yarn write-config
             - yarn build
-            - yarn build-docker
+            - yarn dockerize
             - yarn push-docker
             - yarn deploy
             - yarn record-release
