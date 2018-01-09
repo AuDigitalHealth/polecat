@@ -10,7 +10,7 @@ import './css/index.css'
 
 if (
   (bowser.msie && bowser.version <= 11) ||
-  (bowser.firefox && bowser.version < 50)
+  (bowser.firefox && bowser.version < 45)
 ) {
   document.write(
     '<div class="incompatible-browser"><p>&#x1f625&#x1f625&#x1f625</p><p>You appear to be running a very old web browser, which does not have the necessary features to run this application...</p><p>&#x1f625&#x1f625&#x1f625</p></div>',

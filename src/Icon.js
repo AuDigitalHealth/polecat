@@ -1,7 +1,45 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import bowser from 'bowser'
 
 import icons from './img/icons.svg'
+
+// Fallback graphics
+import clipboardActive from './img/clipboard-active.png'
+import clipboard from './img/clipboard.png'
+import cross from './img/cross.png'
+import expandDown from './img/expand-down.png'
+import expandUp from './img/expand-up.png'
+import graphActive from './img/graph-active.png'
+import graph from './img/graph.png'
+import listActive from './img/list-active.png'
+import list from './img/list.png'
+import nextActive from './img/next-active.png'
+import next from './img/next.png'
+import previousActive from './img/previous-active.png'
+import previous from './img/previous.png'
+import search from './img/search.png'
+import tick from './img/tick.png'
+
+const rasterIcons = {
+  'clipboard-active': clipboardActive,
+  clipboard,
+  cross,
+  'expand-down': expandDown,
+  'expand-up': expandUp,
+  'graph-active': graphActive,
+  graph,
+  'list-active': listActive,
+  list,
+  'next-active': nextActive,
+  next,
+  'previous-active': previousActive,
+  previous,
+  search,
+  tick,
+}
+
+const fallback = bowser.firefox && bowser.version < 50
 
 class Icon extends Component {
   static propTypes = {
@@ -40,7 +78,23 @@ class Icon extends Component {
   render() {
     const { type, hoverType, width, height, alt, title, className } = this.props
     const { mouse } = this.state
-    return (
+    return fallback ? (
+      <img
+        className={className ? `icon ${className}` : 'icon'}
+        alt={alt}
+        title={title}
+        width={width}
+        height={height}
+        src={
+          hoverType && mouse === 'hover'
+            ? rasterIcons[hoverType]
+            : rasterIcons[type]
+        }
+        onMouseOver={this.handleMouseOver}
+        onMouseLeave={this.handleMouseLeave}
+        onClick={this.handleClick}
+      />
+    ) : (
       <svg
         className={className ? `icon ${className}` : 'icon'}
         width={width}
