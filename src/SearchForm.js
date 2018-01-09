@@ -107,9 +107,12 @@ class SearchForm extends Component {
   componentDidMount() {
     const { query } = this.props
     if (query) {
-      const availableParams = availableMedParams.concat(
-          availableSubstanceParams,
-        ),
+      // Filter ID from the list of parameters taken into the search object, as
+      // it is not in the form and it is not valid to combine it with any other
+      // parameter.
+      const availableParams = availableMedParams
+          .concat(availableSubstanceParams)
+          .filter(p => p !== 'id'),
         searchParams = extractSearchParams(query, availableParams),
         queryText = extractQueryText(query)
       let nextSearch = {}
