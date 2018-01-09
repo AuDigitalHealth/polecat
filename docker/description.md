@@ -1,7 +1,7 @@
 # Polecat
 
 A tool for browsing the Australian Medicines Terminology (AMT), using data from
-an instance of [Medserve](http://medserve.online).
+an instance of [Medserve](https://medserve.online).
 
 # Configuration
 
