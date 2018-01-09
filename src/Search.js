@@ -218,6 +218,7 @@ class Search extends Component {
       return
     }
     if (query) {
+      this.setState(() => ({ advanced: true }))
       this.setLoadingStatus(true)
       this.getSearchResultsFromQuery(fhirServer, query)
         .then(bundle => this.parseSearchResults(bundle))
@@ -225,7 +226,6 @@ class Search extends Component {
           this.setState(() => ({
             bundle: parsed.bundle,
             results: parsed.results,
-            advanced: true,
             cancelRequest: null,
             query,
           })),
