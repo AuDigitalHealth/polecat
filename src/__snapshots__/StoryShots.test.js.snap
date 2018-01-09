@@ -16,6 +16,7 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
     />
     <SearchForm
       fhirServer="https://medserve.online/fhir"
+      onError={[Function]}
       onSearchUpdate={[Function]}
       query="parac"
     />
@@ -160,6 +161,7 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
     />
     <SearchForm
       fhirServer="https://medserve.online/fhir"
+      onError={[Function]}
       onSearchUpdate={[Function]}
       query="para"
     />
@@ -304,6 +306,7 @@ exports[`Storyshots AdvancedSearch With routed query but no results 1`] = `
     />
     <SearchForm
       fhirServer="https://medserve.online/fhir"
+      onError={[Function]}
       onSearchUpdate={[Function]}
       query="para"
     />
@@ -337,6 +340,7 @@ exports[`Storyshots AdvancedSearch With routed query but no results, loading 1`]
     />
     <SearchForm
       fhirServer="https://medserve.online/fhir"
+      onError={[Function]}
       onSearchUpdate={[Function]}
       query="para"
     />
@@ -4544,6 +4548,7 @@ exports[`Storyshots SearchForm With a query 1`] = `
     label="Ingredient"
     onClear={[Function]}
     onCodingChange={[Function]}
+    onError={[Function]}
     onTextChange={[Function]}
     outsideClickIgnoreClass="ignore-react-onclickoutside"
     preventDefault={false}
@@ -4562,6 +4567,7 @@ exports[`Storyshots SearchForm With a query 1`] = `
     label="Package item"
     onClear={[Function]}
     onCodingChange={[Function]}
+    onError={[Function]}
     onTextChange={[Function]}
     outsideClickIgnoreClass="ignore-react-onclickoutside"
     preventDefault={false}
@@ -4605,6 +4611,7 @@ exports[`Storyshots SearchForm With a query 1`] = `
     label="Parent"
     onClear={[Function]}
     onCodingChange={[Function]}
+    onError={[Function]}
     onTextChange={[Function]}
     outsideClickIgnoreClass="ignore-react-onclickoutside"
     preventDefault={false}

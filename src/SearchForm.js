@@ -22,6 +22,7 @@ class SearchForm extends Component {
     fhirServer: PropTypes.string.isRequired,
     query: PropTypes.string,
     onSearchUpdate: PropTypes.func,
+    onError: PropTypes.func,
   }
 
   constructor(props) {
@@ -31,6 +32,7 @@ class SearchForm extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleClear = this.handleClear.bind(this)
     this.handleSearchUpdate = this.handleSearchUpdate.bind(this)
+    this.handleError = this.handleError.bind(this)
   }
 
   // Returns search path for populating the autocomplete on the ingredient
@@ -97,6 +99,11 @@ class SearchForm extends Component {
     }
   }
 
+  handleError(error) {
+    const { onError } = this.props
+    if (onError) onError(error)
+  }
+
   componentDidMount() {
     const { query } = this.props
     if (query) {
@@ -119,8 +126,9 @@ class SearchForm extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { query } = nextProps
-    if (query) {
+    const { query } = nextProps,
+      { search } = this.state
+    if (query && search === {}) {
       const availableParams = availableMedParams.concat(
           availableSubstanceParams,
         ),
@@ -134,8 +142,6 @@ class SearchForm extends Component {
         nextSearch.text = queryText
       }
       this.setState(() => ({ search: nextSearch }))
-    } else {
-      this.setState(() => ({ search: {} }))
     }
   }
 
@@ -159,6 +165,7 @@ class SearchForm extends Component {
           onCodingChange={value => this.handleCodingChange('ingredient', value)}
           onTextChange={value => this.handleChange('ingredient-text', value)}
           onClear={() => this.handleClear('ingredient', 'ingredient-text')}
+          onError={this.handleError}
         />
         <MedicationSearchField
           fhirServer={fhirServer}
@@ -169,6 +176,7 @@ class SearchForm extends Component {
           onCodingChange={value => this.handleCodingChange('package', value)}
           onTextChange={value => this.handleChange('package-text', value)}
           onClear={() => this.handleClear('package', 'package-text')}
+          onError={this.handleError}
         />
         <TextField
           value={search['form-text']}
@@ -204,6 +212,7 @@ class SearchForm extends Component {
           onCodingChange={value => this.handleCodingChange('parent', value)}
           onTextChange={value => this.handleChange('parent-text', value)}
           onClear={() => this.handleClear('parent', 'parent-text')}
+          onError={this.handleError}
         />
         <ConceptTypeToggle
           value={search.type ? search.type.split(',') : null}

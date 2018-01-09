@@ -24,6 +24,7 @@ class AdvancedSearch extends Component {
     onNextClick: PropTypes.func,
     onPreviousClick: PropTypes.func,
     onSelectResult: PropTypes.func,
+    onError: PropTypes.func,
   }
 
   constructor(props) {
@@ -33,6 +34,7 @@ class AdvancedSearch extends Component {
     this.handleNextClick = this.handleNextClick.bind(this)
     this.handlePreviousClick = this.handlePreviousClick.bind(this)
     this.handleSelectResult = this.handleSelectResult.bind(this)
+    this.handleError = this.handleError.bind(this)
   }
 
   handleQueryUpdate(query) {
@@ -59,6 +61,11 @@ class AdvancedSearch extends Component {
     const { onSelectResult } = this.props
     this.setState(() => ({ quickSearchOpen: false }))
     if (onSelectResult) onSelectResult()
+  }
+
+  handleError(error) {
+    const { onError } = this.props
+    if (onError) onError(error)
   }
 
   render() {
@@ -89,6 +96,7 @@ class AdvancedSearch extends Component {
             fhirServer={fhirServer}
             query={query}
             onSearchUpdate={this.handleQueryUpdate}
+            onError={this.handleError}
           />
           <Loading loading={loading}>
             <Expand

@@ -270,6 +270,7 @@ class Search extends Component {
         onNextClick={this.handleNextClick}
         onPreviousClick={this.handlePreviousClick}
         onSelectResult={this.handleSelectResult}
+        onError={this.handleError}
       />
     ) : (
       <BasicSearch
