@@ -36,6 +36,7 @@ class RemoteFhirMedication extends Component {
       .then(resource => this.setState({ resource, cancelRequest: null }))
       .then(() => this.setLoadingStatus(false))
       .catch(error => this.handleError(error))
+      .then(() => this.setLoadingStatus(false))
   }
 
   async getFhirResource(fhirServer, path, query) {
@@ -48,6 +49,7 @@ class RemoteFhirMedication extends Component {
         cancelToken: new CancelToken(function executor(c) {
           cancelToken = c
         }),
+        timeout: 10000,
       })
       this.setState(() => ({ cancelRequest: cancelToken }))
     } catch (error) {
@@ -64,12 +66,10 @@ class RemoteFhirMedication extends Component {
   }
 
   handleUnsuccessfulResponse(response) {
-    try {
-      sniffFormat(response.headers['content-type'])
-      const opOutcome = opOutcomeFromJsonResponse(response.data)
-      if (opOutcome) throw opOutcome
-    } catch (error) {} // eslint-disable-line no-empty
-    if (response.status === 404) {
+    sniffFormat(response.headers['content-type'])
+    const opOutcome = opOutcomeFromJsonResponse(response.data)
+    if (opOutcome) throw opOutcome
+    else if (response.status === 404) {
       const { resourceType, id } = this.props
       throw new Error(
         `The resource you requested was not found: ${resourceType}/${id}`,

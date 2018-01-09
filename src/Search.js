@@ -60,6 +60,7 @@ class Search extends Component {
       )
       .then(() => this.setLoadingStatus(false))
       .catch(error => this.handleError(error))
+      .then(() => this.setLoadingStatus(false))
   }
 
   urlUpdate(url) {
@@ -75,6 +76,7 @@ class Search extends Component {
       )
       .then(() => this.setLoadingStatus(false))
       .catch(error => this.handleError(error))
+      .then(() => this.setLoadingStatus(false))
   }
 
   async getSearchResultsFromQuery(fhirServer, query) {
@@ -93,6 +95,7 @@ class Search extends Component {
         cancelToken: new CancelToken(function executor(c) {
           cancelToken = c
         }),
+        timeout: 10000,
       })
       this.setState(() => ({ cancelRequest: cancelToken }))
     } catch (error) {
@@ -153,12 +156,11 @@ class Search extends Component {
   }
 
   handleUnsuccessfulResponse(response) {
-    try {
-      sniffFormat(response.headers['content-type'])
-      const opOutcome = opOutcomeFromJsonResponse(response)
-      if (opOutcome) throw opOutcome
-    } catch (error) {} // eslint-disable-line no-empty
-    throw new Error(response.statusText || response.status)
+    sniffFormat(response.headers['content-type'])
+    const opOutcome = opOutcomeFromJsonResponse(response)
+    throw opOutcome
+      ? opOutcome
+      : new Error(response.statusText || response.status)
   }
 
   handleSelectResult() {
@@ -200,6 +202,7 @@ class Search extends Component {
         )
         .then(() => this.setLoadingStatus(false))
         .catch(error => this.handleError(error))
+        .then(() => this.setLoadingStatus(false))
     }
   }
 

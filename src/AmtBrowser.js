@@ -54,6 +54,10 @@ class AmtBrowser extends Component {
     }
   }
 
+  componentDidCatch(error) {
+    this.setState({ error, loading: false })
+  }
+
   render() {
     const { resourceType, id, query, viewport, config } = this.props
     const { loading, error } = this.state
