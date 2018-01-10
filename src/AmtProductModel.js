@@ -47,6 +47,7 @@ class AmtProductModel extends Component {
     linkDistance: PropTypes.number,
     alpha: PropTypes.number,
     alphaDecay: PropTypes.number,
+    alphaMin: PropTypes.number,
     conceptWidth: PropTypes.number,
     conceptHeight: PropTypes.number,
     conceptGroupWidth: PropTypes.number,
@@ -71,6 +72,7 @@ class AmtProductModel extends Component {
     linkDistance: 220,
     alpha: 1.5,
     alphaDecay: 0.015,
+    alphaMin: 0.05,
     conceptWidth: 166,
     conceptHeight: 116,
     conceptGroupWidth: 100,
@@ -105,6 +107,7 @@ class AmtProductModel extends Component {
       attraction,
       linkDistance,
       alphaDecay,
+      alphaMin,
       centerX,
       centerY,
       viewport,
@@ -146,6 +149,7 @@ class AmtProductModel extends Component {
       })
       .alpha(alpha)
       .alphaDecay(alphaDecay)
+      .alphaMin(alphaMin)
       .restart()
   }
 
@@ -153,7 +157,9 @@ class AmtProductModel extends Component {
     const model = this
     let oldNodes = model.simulation.nodes()
     // Remove focus and fixing from any existing nodes.
-    oldNodes = oldNodes.map(node => omit(node, 'focused', 'fx', 'fy'))
+    oldNodes = oldNodes.map(node =>
+      omit(node, 'focused', 'fx', 'fy', 'vx', 'vy'),
+    )
     // Remove any positioning information from the incoming nodes.
     nodes = nodes.map(node => omit(node, 'x', 'y', 'vx', 'vy'))
     // Merge new nodes with old nodes.
@@ -333,6 +339,7 @@ class AmtProductModel extends Component {
       'linkDistance',
       'alpha',
       'alphaDecay',
+      'alphaMin',
       'conceptWidth',
       'conceptHeight',
       'conceptGroupWidth',
