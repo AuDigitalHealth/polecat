@@ -149,16 +149,15 @@ class AmtProductModel extends Component {
       .restart()
   }
 
-  updateSimulation(nodes, links, options) {
+  updateSimulation(nodes, links, { centerX, centerY, viewport }) {
     const model = this
-    const { centerX, centerY, viewport } = options
     let oldNodes = model.simulation.nodes()
     // Remove focus and fixing from any existing nodes.
     oldNodes = oldNodes.map(node => omit(node, 'focused', 'fx', 'fy'))
     // Remove any positioning information from the incoming nodes.
     nodes = nodes.map(node => omit(node, 'x', 'y', 'vx', 'vy'))
     // Merge new nodes with old nodes.
-    let newNodes = [oldNodes, nodes].reduce(mergeConcepts, [])
+    let newNodes = [oldNodes, nodes].reduce(mergeConcepts)
     // Remove any nodes that are not present in the new set of nodes.
     newNodes = newNodes.filter(node =>
       nodes

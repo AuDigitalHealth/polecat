@@ -185,9 +185,91 @@ describe('mergeConceptsAndRelationships', () => {
           },
         ],
       },
+    ],
+    concepts5 = [
+      {
+        concepts: [
+          {
+            type: 'BPGC',
+            coding: [
+              {
+                system: 'http://snomed.info/sct',
+                code: '1016471000168105',
+                display:
+                  'Drospirenone/EE 3/20 (Apotex) (24 x 3 mg/20 microgram tablets, 4 x inert tablets), 3 x 28, blister packs',
+              },
+              {
+                system:
+                  'https://www.tga.gov.au/australian-register-therapeutic-goods',
+                code: '200632',
+              },
+            ],
+          },
+          {
+            type: 'BPGC',
+            coding: [
+              {
+                system: 'http://snomed.info/sct',
+                code: '1016421000168109',
+                display:
+                  'Drospirenone/EE 3/20 (Apotex) (24 x 3 mg/20 microgram tablets, 4 x inert tablets), 28, blister pack',
+              },
+            ],
+          },
+        ],
+        relationships: [
+          {
+            source: '1016471000168105',
+            target: '1016421000168109',
+            type: 'is-component-of',
+          },
+        ],
+      },
+    ],
+    concepts6 = [
+      {
+        concepts: [
+          {
+            type: 'BPGC',
+            coding: [
+              {
+                system: 'http://snomed.info/sct',
+                code: '1016471000168105',
+                display:
+                  'Drospirenone/EE 3/20 (Apotex) (24 x 3 mg/20 microgram tablets, 4 x inert tablets), 3 x 28, blister packs',
+              },
+            ],
+          },
+          {
+            type: 'BPGC',
+            coding: [
+              {
+                system: 'http://snomed.info/sct',
+                code: '1016421000168109',
+                display:
+                  'Drospirenone/EE 3/20 (Apotex) (24 x 3 mg/20 microgram tablets, 4 x inert tablets), 28, blister pack',
+              },
+            ],
+          },
+        ],
+        relationships: [
+          {
+            source: '1016471000168105',
+            target: '1016421000168109',
+            type: 'is-component-of',
+          },
+        ],
+      },
     ]
   it('should merge correctly', () => {
     const result = [concepts1, ...concepts2, ...concepts3, ...concepts4].reduce(
+      mergeConceptsAndRelationships,
+      emptyConcepts(),
+    )
+    expect(result).toMatchSnapshot()
+  })
+  it('should not create duplicate when the same concept has an alternate code provided', () => {
+    const result = [...concepts5, ...concepts6].reduce(
       mergeConceptsAndRelationships,
       emptyConcepts(),
     )

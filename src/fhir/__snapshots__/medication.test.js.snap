@@ -2070,3 +2070,37 @@ Object {
   ],
 }
 `;
+
+exports[`mergeConceptsAndRelationships should not create duplicate when the same concept has an alternate code provided 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "1016471000168105",
+          "display": "Drospirenone/EE 3/20 (Apotex) (24 x 3 mg/20 microgram tablets, 4 x inert tablets), 3 x 28, blister packs",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPGC",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "1016421000168109",
+          "display": "Drospirenone/EE 3/20 (Apotex) (24 x 3 mg/20 microgram tablets, 4 x inert tablets), 28, blister pack",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPGC",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "1016471000168105",
+      "target": "1016421000168109",
+      "type": "is-component-of",
+    },
+  ],
+}
+`;

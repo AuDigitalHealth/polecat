@@ -457,21 +457,15 @@ const mergeRelationships = (merged, relationships) => {
       }
     } else merged.push(relationship)
   }
+  return merged
 }
 
-// Concepts A and B are deemed to have the same coding if all of the codes in
-// concept A are present in concept B, matched using `system` and `code`.
+// Concepts A and B are deemed to have the same coding if the SNOMED CT codes
+// are present and match.
 const conceptsHaveSameCoding = (conceptA, conceptB) => {
-  for (const code of conceptA.coding) {
-    if (
-      !conceptB.coding.find(
-        c => c.system === code.system && c.code === code.code,
-      )
-    ) {
-      return false
-    }
-  }
-  return true
+  const conceptACode = codingToSnomedCode(conceptA.coding),
+    conceptBCode = codingToSnomedCode(conceptB.coding)
+  return conceptACode && conceptBCode && conceptACode === conceptBCode
 }
 
 // A relationship's uniqueness is defined by its source and target codes.
