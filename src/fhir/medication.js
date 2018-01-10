@@ -463,8 +463,10 @@ const mergeRelationships = (merged, relationships) => {
 // Concepts A and B are deemed to have the same coding if the SNOMED CT codes
 // are present and match.
 const conceptsHaveSameCoding = (conceptA, conceptB) => {
-  const conceptACode = codingToSnomedCode(conceptA.coding),
-    conceptBCode = codingToSnomedCode(conceptB.coding)
+  const conceptACode =
+      codingToSnomedCode(conceptA.coding) || codingToGroupCode(conceptA.coding),
+    conceptBCode =
+      codingToSnomedCode(conceptB.coding) || codingToGroupCode(conceptB.coding)
   return conceptACode && conceptBCode && conceptACode === conceptBCode
 }
 
