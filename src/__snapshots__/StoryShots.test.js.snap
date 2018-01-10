@@ -383,7 +383,7 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution (TPUU) 1`] 
   >
     <AmtProductModel
       alpha={1.5}
-      alphaDecay={0.1}
+      alphaDecay={0.015}
       arrowSize={12}
       attraction={-1000}
       collideRadiusMultiplier={1.5}
@@ -440,7 +440,7 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL (TP
   >
     <AmtProductModel
       alpha={1.5}
-      alphaDecay={0.1}
+      alphaDecay={0.015}
       arrowSize={12}
       attraction={-1000}
       collideRadiusMultiplier={1.5}
@@ -497,7 +497,7 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL, bo
   >
     <AmtProductModel
       alpha={1.5}
-      alphaDecay={0.1}
+      alphaDecay={0.015}
       arrowSize={12}
       attraction={-1000}
       collideRadiusMultiplier={1.5}
@@ -577,7 +577,7 @@ exports[`Storyshots AmtBrowser loratadine (MP) 1`] = `
   >
     <AmtProductModel
       alpha={1.5}
-      alphaDecay={0.1}
+      alphaDecay={0.015}
       arrowSize={12}
       attraction={-1000}
       collideRadiusMultiplier={1.5}
@@ -634,7 +634,7 @@ exports[`Storyshots AmtBrowser loratadine (substance) 1`] = `
   >
     <AmtProductModel
       alpha={1.5}
-      alphaDecay={0.1}
+      alphaDecay={0.015}
       arrowSize={12}
       attraction={-1000}
       collideRadiusMultiplier={1.5}
@@ -691,7 +691,7 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid (MPUU) 1`] = `
   >
     <AmtProductModel
       alpha={1.5}
-      alphaDecay={0.1}
+      alphaDecay={0.015}
       arrowSize={12}
       attraction={-1000}
       collideRadiusMultiplier={1.5}
@@ -748,7 +748,7 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid, 150 mL (MPP) 1`] 
   >
     <AmtProductModel
       alpha={1.5}
-      alphaDecay={0.1}
+      alphaDecay={0.015}
       arrowSize={12}
       attraction={-1000}
       collideRadiusMultiplier={1.5}

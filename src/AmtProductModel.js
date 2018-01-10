@@ -70,7 +70,7 @@ class AmtProductModel extends Component {
     attraction: -1000,
     linkDistance: 220,
     alpha: 1.5,
-    alphaDecay: 0.1,
+    alphaDecay: 0.015,
     conceptWidth: 166,
     conceptHeight: 116,
     conceptGroupWidth: 100,
