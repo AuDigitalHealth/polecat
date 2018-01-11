@@ -347,17 +347,17 @@ Object {
     Object {
       "source": "28214011000036106",
       "target": "46431011000036106",
-      "type": "is-component-of",
+      "type": "has-component",
     },
     Object {
       "source": "28214011000036106",
       "target": "700031841000036104",
-      "type": "is-component-of",
+      "type": "has-component",
     },
     Object {
       "source": "28214011000036106",
       "target": "700031831000036109",
-      "type": "is-component-of",
+      "type": "has-component",
     },
     Object {
       "source": "21062011000036103",
@@ -407,7 +407,7 @@ Object {
     Object {
       "source": "21062011000036103",
       "target": "700027211000036107",
-      "type": "is-component-of",
+      "type": "has-component",
     },
     Object {
       "source": "700027211000036107",
@@ -422,7 +422,7 @@ Object {
     Object {
       "source": "21062011000036103",
       "target": "44134011000036100",
-      "type": "is-component-of",
+      "type": "has-component",
     },
     Object {
       "source": "44134011000036100",
@@ -437,7 +437,7 @@ Object {
     Object {
       "source": "21062011000036103",
       "target": "700027201000036105",
-      "type": "is-component-of",
+      "type": "has-component",
     },
     Object {
       "source": "700027201000036105",
@@ -785,27 +785,27 @@ Object {
     Object {
       "source": "933205811000036100",
       "target": "75498011000036101",
-      "type": "is-component-of",
+      "type": "has-component",
     },
     Object {
       "source": "933205811000036100",
       "target": "75497011000036102",
-      "type": "is-component-of",
+      "type": "has-component",
     },
     Object {
       "source": "933205811000036100",
       "target": "75500011000036108",
-      "type": "is-component-of",
+      "type": "has-component",
     },
     Object {
       "source": "933205811000036100",
       "target": "75496011000036100",
-      "type": "is-component-of",
+      "type": "has-component",
     },
     Object {
       "source": "933205811000036100",
       "target": "75499011000036109",
-      "type": "is-component-of",
+      "type": "has-component",
     },
     Object {
       "source": "933216161000036101",
@@ -1005,17 +1005,17 @@ Object {
     Object {
       "source": "28214011000036106",
       "target": "46431011000036106",
-      "type": "is-component-of",
+      "type": "has-component",
     },
     Object {
       "source": "28214011000036106",
       "target": "700031841000036104",
-      "type": "is-component-of",
+      "type": "has-component",
     },
     Object {
       "source": "28214011000036106",
       "target": "700031831000036109",
-      "type": "is-component-of",
+      "type": "has-component",
     },
     Object {
       "source": "28214011000036106",
@@ -1419,17 +1419,17 @@ Object {
     Object {
       "source": "28214011000036106",
       "target": "46431011000036106",
-      "type": "is-component-of",
+      "type": "has-component",
     },
     Object {
       "source": "28214011000036106",
       "target": "700031841000036104",
-      "type": "is-component-of",
+      "type": "has-component",
     },
     Object {
       "source": "28214011000036106",
       "target": "700031831000036109",
-      "type": "is-component-of",
+      "type": "has-component",
     },
     Object {
       "source": "14207011000036103",
@@ -1479,7 +1479,7 @@ Object {
     Object {
       "source": "14207011000036103",
       "target": "191000168108",
-      "type": "unknown",
+      "type": "has-component",
     },
     Object {
       "source": "191000168108",
@@ -1489,7 +1489,7 @@ Object {
     Object {
       "source": "14207011000036103",
       "target": "41610011000036105",
-      "type": "unknown",
+      "type": "has-component",
     },
     Object {
       "source": "41610011000036105",
@@ -1499,7 +1499,7 @@ Object {
     Object {
       "source": "14207011000036103",
       "target": "181000168105",
-      "type": "unknown",
+      "type": "has-component",
     },
     Object {
       "source": "181000168105",
@@ -2099,7 +2099,7 @@ Object {
     Object {
       "source": "1016471000168105",
       "target": "1016421000168109",
-      "type": "is-component-of",
+      "type": "has-component",
     },
   ],
 }

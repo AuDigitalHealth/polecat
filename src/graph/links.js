@@ -11,15 +11,25 @@ export const curveForLink = (link, i, options) => {
   const { startX, startY, endX, endY, cp1x, cp1y, cp2x, cp2y } = mergedOptions
   const linkPath = `M ${startX},${startY} C ${cp1x},${cp1y} ${cp2x},${cp2y} ${endX},${endY}`
   const arrowType =
-    link.type === 'is-component-of'
+    link.type === 'has-component'
       ? 'aggregation'
       : link.type === 'is-a' ? 'inheritance' : 'association'
   return (
     <g key={i} className={`relationship relationship-${link.type}`}>
       <path
-        className="link"
+        className={link.highlight ? 'link link-highlighted' : 'link'}
         d={linkPath}
-        markerEnd={`url(#arrow-${arrowType})`}
+        markerEnd={
+          link.highlight
+            ? `url(#arrow-${arrowType}-highlighted)`
+            : `url(#arrow-${arrowType})`
+        }
+      />
+      <path
+        className="link-hover-target"
+        d={linkPath}
+        onMouseMove={options.mouseMoveLink}
+        onMouseLeave={options.mouseLeaveLink}
       />
     </g>
   )
@@ -292,9 +302,9 @@ const calculateControlPoints = options => {
   return newOptions
 }
 
-export const associationMarker = size => (
+export const associationMarker = (size, highlighted) => (
   <marker
-    id="arrow-association"
+    id={highlighted ? 'arrow-association-highlighted' : 'arrow-association'}
     viewBox="-1 -1 11 11"
     refX="10"
     refY="5"
@@ -303,13 +313,20 @@ export const associationMarker = size => (
     markerUnits="userSpaceOnUse"
     orient="auto"
   >
-    <path className="arrow arrow-association" d="M 0,0 L 10,5 L 0,10" />
+    <path
+      className={
+        highlighted
+          ? 'arrow arrow-association arrow-highlighted'
+          : 'arrow arrow-association'
+      }
+      d="M 0,0 L 10,5 L 0,10"
+    />
   </marker>
 )
 
-export const inheritanceMarker = size => (
+export const inheritanceMarker = (size, highlighted) => (
   <marker
-    id="arrow-inheritance"
+    id={highlighted ? 'arrow-inheritance-highlighted' : 'arrow-inheritance'}
     viewBox="-1 -1 11 11"
     refX="10"
     refY="5"
@@ -318,13 +335,20 @@ export const inheritanceMarker = size => (
     markerUnits="userSpaceOnUse"
     orient="auto"
   >
-    <path className="arrow arrow-inheritance" d="M 0,0 L 10,5 L 0,10 Z" />
+    <path
+      className={
+        highlighted
+          ? 'arrow arrow-inheritance arrow-highlighted'
+          : 'arrow arrow-inheritance'
+      }
+      d="M 0,0 L 10,5 L 0,10 Z"
+    />
   </marker>
 )
 
-export const aggregationMarker = size => (
+export const aggregationMarker = (size, highlighted) => (
   <marker
-    id="arrow-aggregation"
+    id={highlighted ? 'arrow-aggregation-highlighted' : 'arrow-aggregation'}
     viewBox="-1 -1 20 10"
     refX="20"
     refY="5"
@@ -334,7 +358,11 @@ export const aggregationMarker = size => (
     orient="auto"
   >
     <path
-      className="arrow arrow-aggregation"
+      className={
+        highlighted
+          ? 'arrow arrow-aggregation arrow-highlighted'
+          : 'arrow arrow-aggregation'
+      }
       d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
     />
   </marker>

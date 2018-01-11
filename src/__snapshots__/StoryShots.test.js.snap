@@ -856,6 +856,51 @@ exports[`Storyshots AmtProductModel Aggregation link (close) 1`] = `
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
       </defs>
     </svg>
   </div>
@@ -928,6 +973,51 @@ exports[`Storyshots AmtProductModel Aggregation link 1`] = `
         >
           <path
             className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
@@ -1006,6 +1096,51 @@ exports[`Storyshots AmtProductModel Association link (close) 1`] = `
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
       </defs>
     </svg>
   </div>
@@ -1078,6 +1213,51 @@ exports[`Storyshots AmtProductModel Association link 1`] = `
         >
           <path
             className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
@@ -1156,6 +1336,51 @@ exports[`Storyshots AmtProductModel E link 1`] = `
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
       </defs>
     </svg>
   </div>
@@ -1228,6 +1453,51 @@ exports[`Storyshots AmtProductModel ENE link 1`] = `
         >
           <path
             className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
@@ -1306,6 +1576,51 @@ exports[`Storyshots AmtProductModel ESE link 1`] = `
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
       </defs>
     </svg>
   </div>
@@ -1378,6 +1693,51 @@ exports[`Storyshots AmtProductModel Inheritance link (close) 1`] = `
         >
           <path
             className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
@@ -1456,6 +1816,51 @@ exports[`Storyshots AmtProductModel Inheritance link 1`] = `
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
       </defs>
     </svg>
   </div>
@@ -1528,6 +1933,51 @@ exports[`Storyshots AmtProductModel N link 1`] = `
         >
           <path
             className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
@@ -1606,6 +2056,51 @@ exports[`Storyshots AmtProductModel NE link 1`] = `
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
       </defs>
     </svg>
   </div>
@@ -1678,6 +2173,51 @@ exports[`Storyshots AmtProductModel NNE link 1`] = `
         >
           <path
             className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
@@ -1756,6 +2296,51 @@ exports[`Storyshots AmtProductModel NNW link 1`] = `
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
       </defs>
     </svg>
   </div>
@@ -1828,6 +2413,51 @@ exports[`Storyshots AmtProductModel NW link 1`] = `
         >
           <path
             className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
@@ -1906,6 +2536,51 @@ exports[`Storyshots AmtProductModel S link 1`] = `
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
       </defs>
     </svg>
   </div>
@@ -1978,6 +2653,51 @@ exports[`Storyshots AmtProductModel SE link 1`] = `
         >
           <path
             className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
@@ -2056,6 +2776,51 @@ exports[`Storyshots AmtProductModel SSE link 1`] = `
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
       </defs>
     </svg>
   </div>
@@ -2128,6 +2893,51 @@ exports[`Storyshots AmtProductModel SSW link 1`] = `
         >
           <path
             className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
@@ -2206,6 +3016,51 @@ exports[`Storyshots AmtProductModel SW link 1`] = `
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
       </defs>
     </svg>
   </div>
@@ -2278,6 +3133,51 @@ exports[`Storyshots AmtProductModel W link 1`] = `
         >
           <path
             className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
@@ -2356,6 +3256,51 @@ exports[`Storyshots AmtProductModel WNW link 1`] = `
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
       </defs>
     </svg>
   </div>
@@ -2431,6 +3376,51 @@ exports[`Storyshots AmtProductModel WSW link 1`] = `
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
       </defs>
     </svg>
   </div>
@@ -2503,6 +3493,51 @@ exports[`Storyshots AmtProductModel With nodes and links 1`] = `
         >
           <path
             className="arrow arrow-aggregation"
+            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-association-highlighted"
+          markerHeight={9.600000000000001}
+          markerUnits="userSpaceOnUse"
+          markerWidth={9.600000000000001}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-association arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10"
+          />
+        </marker>
+        <marker
+          id="arrow-inheritance-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="10"
+          refY="5"
+          viewBox="-1 -1 11 11"
+        >
+          <path
+            className="arrow arrow-inheritance arrow-highlighted"
+            d="M 0,0 L 10,5 L 0,10 Z"
+          />
+        </marker>
+        <marker
+          id="arrow-aggregation-highlighted"
+          markerHeight={12}
+          markerUnits="userSpaceOnUse"
+          markerWidth={12}
+          orient="auto"
+          refX="20"
+          refY="5"
+          viewBox="-1 -1 20 10"
+        >
+          <path
+            className="arrow arrow-aggregation arrow-highlighted"
             d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
           />
         </marker>

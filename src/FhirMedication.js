@@ -87,7 +87,7 @@ class FhirMedication extends Component {
             merged.concat(
               getBundleConcepts(focused, packageBundle, {
                 groupingThreshold,
-                groupRelationshipType: 'is-component-of',
+                groupRelationshipType: 'has-component',
               }),
             ),
           [],

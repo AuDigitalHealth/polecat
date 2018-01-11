@@ -232,7 +232,7 @@ export const relationshipTypeFor = (sourceType, targetType) => {
     // CTPP -> CTPP
     // Branded package with container -> Branded package with container
     case 'BPGC-BPGC':
-      return 'is-component-of'
+      return 'has-component'
     // CTPP -> TPP
     // Branded package with container -> Branded package with no container
     case 'BPGC-BPG':
@@ -267,7 +267,12 @@ export const relationshipTypeFor = (sourceType, targetType) => {
     // Unbranded package with no container ->
     //   Unbranded product with no container
     case 'UPG-UPG':
-      return 'is-component-of'
+      return 'has-component'
+    // TPP -> TPP
+    // Branded package with no container ->
+    //   Branded product with no container
+    case 'BPG-BPG':
+      return 'has-component'
     // MPP -> MPUU
     // Unbranded package with no container ->
     //   Unbranded product with strengths and form
@@ -292,6 +297,16 @@ export const relationshipTypeFor = (sourceType, targetType) => {
       return 'unknown'
   }
 }
+
+export const humaniseRelationshipType = type =>
+  ({
+    'is-a': 'is a subtype of',
+    'has-updsf': 'has unit of use',
+    'has-component': 'has component',
+    'has-brand': 'has brand',
+    'has-bpsf': 'has unit of use',
+    unknown: null,
+  }[type])
 
 // Settings that control the set of additional resources requested for each
 // given concept type.

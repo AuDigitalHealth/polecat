@@ -15,6 +15,7 @@ import {
   mergeConcepts,
   codingToSnomedCode,
   codingToGroupCode,
+  humaniseRelationshipType,
 } from './fhir/medication.js'
 import { translateToAmt } from './graph/translations.js'
 import {
@@ -98,6 +99,8 @@ class AmtProductModel extends Component {
       350,
       { leading: true, trailing: false },
     )
+    this.highlightLink = this.highlightLink.bind(this)
+    this.clearLinkHighlight = this.clearLinkHighlight.bind(this)
   }
 
   startOrUpdateSimulation(nodes, links, options) {
@@ -252,6 +255,31 @@ class AmtProductModel extends Component {
     this.simulation.alpha(alpha).restart()
   }
 
+  highlightLink(i) {
+    const { links } = this.state,
+      oldLink = links[i]
+    const newLink = { ...oldLink, ...{ highlight: true } }
+    links[i] = newLink
+    this.setState({ links })
+  }
+
+  clearLinkHighlight(i, event) {
+    // Don't clear the highlight if the mouse is exiting on to a link, or a link
+    // type label.
+    if (
+      event &&
+      event.relatedTarget &&
+      (event.relatedTarget.className === 'link-type' ||
+        event.relatedTarget.className === 'link-hover-target')
+    )
+      return
+    const { links } = this.state,
+      oldLink = links[i],
+      newLink = omit(oldLink, 'highlight')
+    links[i] = newLink
+    this.setState({ links })
+  }
+
   handleMouseUp(event) {
     if (event.buttons === 0) {
       const { lastDragX, lastDragY } = this.state
@@ -370,11 +398,12 @@ class AmtProductModel extends Component {
 
   render() {
     const { viewport } = this.props
-    let concepts, relationships, markers
+    let concepts, relationships, markers, linkTypes
     try {
       concepts = this.renderConcepts()
       relationships = this.renderRelationships()
       markers = this.renderMarkers()
+      linkTypes = this.renderLinkTypes()
     } catch (error) {
       this.stopSimulation()
       throw error
@@ -399,6 +428,7 @@ class AmtProductModel extends Component {
             {relationships}
           </svg>
           {concepts}
+          {linkTypes}
         </div>
       </div>
     )
@@ -451,7 +481,14 @@ class AmtProductModel extends Component {
   renderRelationships() {
     const { links } = this.state
     return links
-      ? links.map((link, i) => curveForLink(link, i, this.props))
+      ? links.map((link, i) => {
+          const options = {
+            ...this.props,
+            mouseMoveLink: () => this.highlightLink(i),
+            mouseLeaveLink: event => this.clearLinkHighlight(i, event),
+          }
+          return curveForLink(link, i, options)
+        })
       : []
   }
 
@@ -462,7 +499,39 @@ class AmtProductModel extends Component {
         {associationMarker(arrowSize)}
         {inheritanceMarker(arrowSize)}
         {aggregationMarker(arrowSize)}
+        {associationMarker(arrowSize, true)}
+        {inheritanceMarker(arrowSize, true)}
+        {aggregationMarker(arrowSize, true)}
       </defs>
+    )
+  }
+
+  renderLinkTypes() {
+    const { links } = this.state
+    if (!links) return null
+    return (
+      <div className="link-types">
+        {links.map((link, i) => {
+          const linkLabelPos = {
+            x: link.source.x + (link.target.x - link.source.x) / 2,
+            y: link.source.y + (link.target.y - link.source.y) / 2,
+          }
+          return link.highlight ? (
+            <div
+              className="link-type"
+              style={{
+                top: `${linkLabelPos.y}px`,
+                left: `${linkLabelPos.x}px`,
+              }}
+              key={i}
+              onMouseMove={() => this.highlightLink(i)}
+              onMouseLeave={event => this.clearLinkHighlight(i, event)}
+            >
+              {humaniseRelationshipType(link.type)}
+            </div>
+          ) : null
+        })}
+      </div>
     )
   }
 

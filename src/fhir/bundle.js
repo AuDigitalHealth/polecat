@@ -61,7 +61,7 @@ export async function getBundleConcepts(subject, bundle, options = {}) {
 
 const queryForGrouping = (coding, relationshipType, childType) => {
   switch (relationshipType) {
-    case `is-component-of`:
+    case `has-component`:
       return queryFromSearchObject({
         package: coding,
         type: amtConceptTypeFor(childType),

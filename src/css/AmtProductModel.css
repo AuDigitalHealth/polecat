@@ -19,9 +19,41 @@
   fill: transparent;
 }
 
+.product-model .relationship .link.link-highlighted {
+  stroke: #f53855;
+  stroke-width: 3;
+}
+
+.product-model .relationship .link-hover-target {
+  stroke: transparent;
+  fill: transparent;
+  stroke-width: 40px;
+  cursor: default;
+}
+
+.product-model .link-type {
+  font-size: 12px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-weight: semibold;
+  background-color: #f53855;
+  color: white;
+  padding: 3px 5px;
+  border-radius: 3px;
+  border: 3px solid white;
+  user-select: none;
+  cursor: default;
+}
+
 .product-model .arrow {
   stroke: #666;
   stroke-width: 1;
+}
+
+.product-model .arrow.arrow-highlighted {
+  stroke: #f53855;
+  cursor: pointer;
+  fill: #f53855;
 }
 
 .product-model .arrow-association {

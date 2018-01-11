@@ -138,7 +138,7 @@ stories
   })
   .add('Aggregation link', () => {
     const nodes = addFixedPos(twoNodes.nodes, farPos)
-    const links = [{ ...twoNodes.links[0], ...{ type: 'is-component-of' } }]
+    const links = [{ ...twoNodes.links[0], ...{ type: 'has-component' } }]
     return (
       <AmtProductModel
         nodes={nodes}
@@ -149,7 +149,7 @@ stories
   })
   .add('Aggregation link (close)', () => {
     const nodes = addFixedPos(twoNodes.nodes, closePos)
-    const links = [{ ...twoNodes.links[0], ...{ type: 'is-component-of' } }]
+    const links = [{ ...twoNodes.links[0], ...{ type: 'has-component' } }]
     return (
       <AmtProductModel
         nodes={nodes}

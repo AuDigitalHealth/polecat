@@ -221,7 +221,7 @@ describe('mergeConceptsAndRelationships', () => {
           {
             source: '1016471000168105',
             target: '1016421000168109',
-            type: 'is-component-of',
+            type: 'has-component',
           },
         ],
       },
@@ -256,7 +256,7 @@ describe('mergeConceptsAndRelationships', () => {
           {
             source: '1016471000168105',
             target: '1016421000168109',
-            type: 'is-component-of',
+            type: 'has-component',
           },
         ],
       },
