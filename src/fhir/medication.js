@@ -259,6 +259,11 @@ export const relationshipTypeFor = (sourceType, targetType) => {
     //   Unbranded product with strengths and form
     case 'BPSF-UPDSF':
       return 'is-a'
+    // TPUU -> MP
+    // Branded product with strengths and form ->
+    //   Unbranded product with no strengths or form
+    case 'BPSF-UPD':
+      return 'is-a'
     // TPP -> MPP
     // Branded package with no container -> Unbranded package with no container
     case 'BPG-UPG':
@@ -298,15 +303,24 @@ export const relationshipTypeFor = (sourceType, targetType) => {
   }
 }
 
-export const humaniseRelationshipType = type =>
-  ({
-    'is-a': 'is a subtype of',
-    'has-updsf': 'has unit of use',
-    'has-component': 'has component',
-    'has-brand': 'has brand',
-    'has-bpsf': 'has unit of use',
-    unknown: null,
-  }[type])
+export const humaniseRelationshipType = (type, plural) =>
+  plural
+    ? {
+        'is-a': 'are subtypes of',
+        'has-updsf': 'are packages containing',
+        'has-component': 'have component',
+        'has-brand': 'have brand',
+        'has-bpsf': 'are packages containing',
+        unknown: null,
+      }[type]
+    : {
+        'is-a': 'is a subtype of',
+        'has-updsf': 'has unit of use',
+        'has-component': 'has component',
+        'has-brand': 'has brand',
+        'has-bpsf': 'has unit of use',
+        unknown: null,
+      }[type]
 
 // Settings that control the set of additional resources requested for each
 // given concept type.

@@ -527,7 +527,9 @@ class AmtProductModel extends Component {
               onMouseMove={() => this.highlightLink(i)}
               onMouseLeave={event => this.clearLinkHighlight(i, event)}
             >
-              {humaniseRelationshipType(link.type)}
+              {link.sourceIsGroup
+                ? humaniseRelationshipType(link.type, true)
+                : humaniseRelationshipType(link.type)}
             </div>
           ) : null
         })}

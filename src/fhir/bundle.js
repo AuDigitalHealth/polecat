@@ -11,7 +11,7 @@ import { sha256 } from '../util.js'
 
 // Get concepts from the supplied bundle, relating them to the subject concept.
 export async function getBundleConcepts(subject, bundle, options = {}) {
-  const { groupingThreshold = 3, groupRelationshipType = 'is-a' } = options
+  const { groupingThreshold = 3, queryType = 'children' } = options
   if (!bundle || bundle.total === 0) return emptyConcepts()
   if (bundle.total <= groupingThreshold) {
     return bundle.entry.reduce((acc, e) => {
@@ -29,12 +29,17 @@ export async function getBundleConcepts(subject, bundle, options = {}) {
       .slice(0, groupingThreshold)
       .map(e => getSubjectConcept(e.resource))
     // The group's code is a hash of the concept data within the group.
-    const groupCode = await sha256(JSON.stringify(concepts))
-    const query = queryForGrouping(
-      subject.coding,
-      groupRelationshipType,
-      concepts[0].type,
-    )
+    const groupCode = await sha256(JSON.stringify(concepts)),
+      // Group relationship type defaults to the relationship type inferred from
+      // the first concept in the group as the source, and the subject concept
+      // as the target.
+      {
+        groupRelationshipType = relationshipTypeFor(
+          concepts[0].type,
+          subject.type,
+        ),
+      } = options,
+      query = queryForGrouping(subject.coding, queryType, concepts[0].type)
     return {
       concepts: [
         {
@@ -53,24 +58,28 @@ export async function getBundleConcepts(subject, bundle, options = {}) {
           source: `group-${groupCode}`,
           target: codingToSnomedCode(subject.coding),
           type: groupRelationshipType,
+          // This flag is set so that we know to pluralise link labels.
+          sourceIsGroup: true,
         },
       ],
     }
   }
 }
 
-const queryForGrouping = (coding, relationshipType, childType) => {
-  switch (relationshipType) {
-    case `has-component`:
+const queryForGrouping = (coding, queryType, childType) => {
+  switch (queryType) {
+    case 'packages':
       return queryFromSearchObject({
         package: coding,
         type: amtConceptTypeFor(childType),
       })
-    default:
+    case 'children':
       return queryFromSearchObject({
         parent: coding,
         type: amtConceptTypeFor(childType),
       })
+    default:
+      throw new Error('Unknown query type')
   }
 }
 

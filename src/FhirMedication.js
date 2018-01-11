@@ -74,7 +74,7 @@ class FhirMedication extends Component {
             merged.concat(
               getBundleConcepts(focused, childBundle, {
                 groupingThreshold,
-                groupRelationshipType: 'is-a',
+                queryType: 'children',
               }),
             ),
           [],
@@ -87,7 +87,7 @@ class FhirMedication extends Component {
             merged.concat(
               getBundleConcepts(focused, packageBundle, {
                 groupingThreshold,
-                groupRelationshipType: 'has-component',
+                queryType: 'packages',
               }),
             ),
           [],

@@ -50,6 +50,7 @@ Object {
   "relationships": Array [
     Object {
       "source": "group-somesha",
+      "sourceIsGroup": true,
       "target": "21360011000036101",
       "type": "is-a",
     },
