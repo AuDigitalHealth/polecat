@@ -903,6 +903,9 @@ exports[`Storyshots AmtProductModel Aggregation link (close) 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -1023,6 +1026,9 @@ exports[`Storyshots AmtProductModel Aggregation link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -1143,6 +1149,9 @@ exports[`Storyshots AmtProductModel Association link (close) 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -1263,6 +1272,9 @@ exports[`Storyshots AmtProductModel Association link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -1383,6 +1395,9 @@ exports[`Storyshots AmtProductModel E link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -1503,6 +1518,9 @@ exports[`Storyshots AmtProductModel ENE link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -1623,6 +1641,9 @@ exports[`Storyshots AmtProductModel ESE link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -1743,6 +1764,9 @@ exports[`Storyshots AmtProductModel Inheritance link (close) 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -1863,6 +1887,9 @@ exports[`Storyshots AmtProductModel Inheritance link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -1983,6 +2010,9 @@ exports[`Storyshots AmtProductModel N link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -2103,6 +2133,9 @@ exports[`Storyshots AmtProductModel NE link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -2223,6 +2256,9 @@ exports[`Storyshots AmtProductModel NNE link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -2343,6 +2379,9 @@ exports[`Storyshots AmtProductModel NNW link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -2463,6 +2502,9 @@ exports[`Storyshots AmtProductModel NW link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -2583,6 +2625,9 @@ exports[`Storyshots AmtProductModel S link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -2703,6 +2748,9 @@ exports[`Storyshots AmtProductModel SE link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -2823,6 +2871,9 @@ exports[`Storyshots AmtProductModel SSE link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -2943,6 +2994,9 @@ exports[`Storyshots AmtProductModel SSW link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -3063,6 +3117,9 @@ exports[`Storyshots AmtProductModel SW link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -3183,6 +3240,9 @@ exports[`Storyshots AmtProductModel W link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -3303,6 +3363,9 @@ exports[`Storyshots AmtProductModel WNW link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -3423,6 +3486,9 @@ exports[`Storyshots AmtProductModel WSW link 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;
@@ -3543,6 +3609,9 @@ exports[`Storyshots AmtProductModel With nodes and links 1`] = `
         </marker>
       </defs>
     </svg>
+    <div
+      className="link-types"
+    />
   </div>
 </div>
 `;

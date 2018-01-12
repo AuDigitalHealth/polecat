@@ -15,11 +15,12 @@ import {
   mergeConcepts,
   codingToSnomedCode,
   codingToGroupCode,
-  humaniseRelationshipType,
 } from './fhir/medication.js'
 import { translateToAmt } from './graph/translations.js'
 import {
+  calculateLinkOptions,
   curveForLink,
+  labelForLink,
   associationMarker,
   inheritanceMarker,
   aggregationMarker,
@@ -397,13 +398,20 @@ class AmtProductModel extends Component {
   }
 
   render() {
-    const { viewport } = this.props
-    let concepts, relationships, markers, linkTypes
+    const { viewport } = this.props,
+      { links } = this.state
+    let linksWithOptions, concepts, relationships, markers, linkTypes
     try {
+      linksWithOptions = links
+        ? links.map(link => ({
+            ...link,
+            ...{ options: calculateLinkOptions(link, this.props) },
+          }))
+        : []
       concepts = this.renderConcepts()
-      relationships = this.renderRelationships()
+      relationships = this.renderRelationships(linksWithOptions)
       markers = this.renderMarkers()
-      linkTypes = this.renderLinkTypes()
+      linkTypes = this.renderLinkTypes(linksWithOptions)
     } catch (error) {
       this.stopSimulation()
       throw error
@@ -478,18 +486,15 @@ class AmtProductModel extends Component {
       : []
   }
 
-  renderRelationships() {
-    const { links } = this.state
-    return links
-      ? links.map((link, i) => {
-          const options = {
-            ...this.props,
-            mouseMoveLink: () => this.highlightLink(i),
-            mouseLeaveLink: event => this.clearLinkHighlight(i, event),
-          }
-          return curveForLink(link, i, options)
-        })
-      : []
+  renderRelationships(linksWithOptions) {
+    return linksWithOptions.map((link, i) => {
+      const options = {
+        ...link.options,
+        mouseMoveLink: () => this.highlightLink(i),
+        mouseLeaveLink: event => this.clearLinkHighlight(i, event),
+      }
+      return curveForLink(link, i, options)
+    })
   }
 
   renderMarkers() {
@@ -506,32 +511,18 @@ class AmtProductModel extends Component {
     )
   }
 
-  renderLinkTypes() {
-    const { links } = this.state
-    if (!links) return null
+  renderLinkTypes(linksWithOptions) {
     return (
       <div className="link-types">
-        {links.map((link, i) => {
-          const linkLabelPos = {
-            x: link.source.x + (link.target.x - link.source.x) / 2,
-            y: link.source.y + (link.target.y - link.source.y) / 2,
+        {linksWithOptions.map((link, i) => {
+          const options = {
+            ...link.options,
+            ...{
+              onMouseMove: () => this.highlightLink(i),
+              onMouseLeave: event => this.clearLinkHighlight(i, event),
+            },
           }
-          return link.highlight ? (
-            <div
-              className="link-type"
-              style={{
-                top: `${linkLabelPos.y}px`,
-                left: `${linkLabelPos.x}px`,
-              }}
-              key={i}
-              onMouseMove={() => this.highlightLink(i)}
-              onMouseLeave={event => this.clearLinkHighlight(i, event)}
-            >
-              {link.sourceIsGroup
-                ? humaniseRelationshipType(link.type, true)
-                : humaniseRelationshipType(link.type)}
-            </div>
-          ) : null
+          return link.highlight ? labelForLink(link, i, options) : null
         })}
       </div>
     )

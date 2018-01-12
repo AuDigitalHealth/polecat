@@ -1,14 +1,22 @@
 import React from 'react'
 
-import { codingToGroupCode } from '../fhir/medication.js'
+import {
+  codingToGroupCode,
+  humaniseRelationshipType,
+} from '../fhir/medication.js'
+
+export const calculateLinkOptions = (link, options) => {
+  let mergedOptions = calculateBearings(link, options)
+  mergedOptions = calculateLinkEndings(link, mergedOptions)
+  mergedOptions = calculateLinkMidpoint(link, mergedOptions)
+  mergedOptions = calculateControlPoints(mergedOptions)
+  return mergedOptions
+}
 
 // Returns a SVG representation of a curved arrow with an arrow head based upon
 // the type of relationship.
 export const curveForLink = (link, i, options) => {
-  let mergedOptions = calculateBearings(link, options)
-  mergedOptions = calculateLinkEndings(link, mergedOptions)
-  mergedOptions = calculateControlPoints(mergedOptions)
-  const { startX, startY, endX, endY, cp1x, cp1y, cp2x, cp2y } = mergedOptions
+  const { startX, startY, endX, endY, cp1x, cp1y, cp2x, cp2y } = options
   const linkPath = `M ${startX},${startY} C ${cp1x},${cp1y} ${cp2x},${cp2y} ${endX},${endY}`
   const arrowType =
     link.type === 'has-component'
@@ -32,6 +40,29 @@ export const curveForLink = (link, i, options) => {
         onMouseLeave={options.mouseLeaveLink}
       />
     </g>
+  )
+}
+
+// Returns markup that will render a label for the link, describing the type of
+// relationship.
+export const labelForLink = (link, i, options) => {
+  const { midpointX, midpointY, onMouseMove, onMouseLeave } = options
+
+  return (
+    <div
+      className="link-type"
+      style={{
+        top: `${midpointY}px`,
+        left: `${midpointX}px`,
+      }}
+      key={i}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+    >
+      {link.sourceIsGroup
+        ? humaniseRelationshipType(link.type, true)
+        : humaniseRelationshipType(link.type)}
+    </div>
   )
 }
 
@@ -205,6 +236,18 @@ const calculateLinkEndings = (link, options) => {
       throw new Error(`Unexpected bearing: ${bearing}`)
   }
   return newOptions
+}
+
+// Calculates the midpoint of the link for labelling purposes.
+const calculateLinkMidpoint = (link, options) => {
+  const { startX, startY, endX, endY } = options
+  return {
+    ...options,
+    ...{
+      midpointX: startX + (endX - startX) / 2,
+      midpointY: startY + (endY - startY) / 2,
+    },
+  }
 }
 
 // Calculates the control points for the Bézier curve, based on the curviness
