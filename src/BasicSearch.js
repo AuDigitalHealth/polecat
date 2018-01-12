@@ -132,7 +132,7 @@ export class BasicSearch extends Component {
       }))
     } else if (event.key === 'Enter') {
       const { results } = this.state,
-        selectedResult = results.find(r => r.selected)
+        selectedResult = results ? results.find(r => r.selected) : null
       if (selectedResult) this.handleSelectResult(selectedResult)
     }
   }
