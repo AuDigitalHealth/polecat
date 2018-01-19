@@ -75,7 +75,7 @@ const queryForGrouping = (coding, queryType, childType) => {
       })
     case 'children':
       return queryFromSearchObject({
-        parent: coding,
+        ancestor: coding,
         type: amtConceptTypeFor(childType),
       })
     default:

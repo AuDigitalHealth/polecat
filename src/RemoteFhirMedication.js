@@ -105,7 +105,7 @@ class RemoteFhirMedication extends Component {
     this.getFhirResource(
       fhirServer,
       '/Medication',
-      `?parent=Medication/${parentId}&medication-resource-type=${resourceType}`,
+      `?ancestor=Medication/${parentId}&medication-resource-type=${resourceType}`,
     ).then(resource =>
       this.setState(prevState => ({
         childBundles: { ...prevState.childBundles, [resourceType]: resource },

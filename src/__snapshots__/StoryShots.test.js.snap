@@ -5729,6 +5729,25 @@ exports[`Storyshots SearchForm With a query 1`] = `
     searchPath={[Function]}
     stopPropagation={false}
   />
+  <OnClickOutside(MedicationSearchField)
+    eventTypes={
+      Array [
+        "mousedown",
+        "touchstart",
+      ]
+    }
+    excludeScrollbar={false}
+    fhirServer="https://medserve.online/fhir"
+    label="Ancestor"
+    onClear={[Function]}
+    onCodingChange={[Function]}
+    onError={[Function]}
+    onTextChange={[Function]}
+    outsideClickIgnoreClass="ignore-react-onclickoutside"
+    preventDefault={false}
+    searchPath={[Function]}
+    stopPropagation={false}
+  />
   <ConceptTypeToggle
     label="Include only"
     onChange={[Function]}

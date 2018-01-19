@@ -55,6 +55,13 @@ describe('pathForQuery', () => {
       '/Medication?parent=Medication/931803011000036105&parent=Medication/77446011000036105&_summary=true&_count=20',
     'parent-text:paracetamol':
       '/Medication?parent:text=paracetamol&_summary=true&_count=20',
+    // Ancestor
+    'ancestor:931803011000036105':
+      '/Medication?ancestor=Medication/931803011000036105&_summary=true&_count=20',
+    'ancestor:931803011000036105 ancestor:77446011000036105':
+      '/Medication?ancestor=Medication/931803011000036105&ancestor=Medication/77446011000036105&_summary=true&_count=20',
+    'ancestor-text:paracetamol':
+      '/Medication?ancestor:text=paracetamol&_summary=true&_count=20',
     // Package
     'package:54112011000036105':
       '/Medication?package-item=Medication/54112011000036105&_summary=true&_count=20',

@@ -20,6 +20,8 @@ export const availableMedParams = [
   'form-text',
   'parent',
   'parent-text',
+  'ancestor',
+  'ancestor-text',
   'package',
   'not-package',
   'package-text',
@@ -73,6 +75,7 @@ const filterSearchObject = (search, params) => {
         'ingredient',
         'not-ingredient',
         'parent',
+        'ancestor',
       ].includes(param[0])
     ) {
       return [param[0], codeFromCodeOrSnomedCoding(param[1])]
@@ -164,6 +167,10 @@ const getMedicationParamFor = (param, value) => {
       return `parent=Medication/${codeFromCodeDisplay(value)}`
     case 'parent-text':
       return `parent:text=${value}`
+    case 'ancestor':
+      return `ancestor=Medication/${codeFromCodeDisplay(value)}`
+    case 'ancestor-text':
+      return `ancestor:text=${value}`
     case 'package':
       return `package-item=Medication/${codeFromCodeDisplay(value)}`
     case 'not-package':

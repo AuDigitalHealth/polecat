@@ -52,7 +52,7 @@ class SearchForm extends Component {
   }
 
   // Returns search path for populating the autocomplete on the parent search.
-  parentSearch(query) {
+  parentOrAncestorSearch(query) {
     return isValidSctid(query)
       ? `/Medication?code=${snomedUri}|${query}`
       : `/Medication?medication-resource-type=BPG,brand,UPG,UPDSF,UPD&_text=${query}`
@@ -211,10 +211,21 @@ class SearchForm extends Component {
           codingValue={search['parent']}
           textValue={search['parent-text']}
           label="Parent"
-          searchPath={this.parentSearch}
+          searchPath={this.parentOrAncestorSearch}
           onCodingChange={value => this.handleCodingChange('parent', value)}
           onTextChange={value => this.handleChange('parent-text', value)}
           onClear={() => this.handleClear('parent', 'parent-text')}
+          onError={this.handleError}
+        />
+        <MedicationSearchField
+          fhirServer={fhirServer}
+          codingValue={search['ancestor']}
+          textValue={search['ancestor-text']}
+          label="Ancestor"
+          searchPath={this.parentOrAncestorSearch}
+          onCodingChange={value => this.handleCodingChange('ancestor', value)}
+          onTextChange={value => this.handleChange('ancestor-text', value)}
+          onClear={() => this.handleClear('ancestor', 'ancestor-text')}
           onError={this.handleError}
         />
         <ConceptTypeToggle
