@@ -64,6 +64,8 @@ class AmtProductModel extends Component {
     // Increases collide radius by an additional multiplier for each concept
     // over the `collideRadiusThreshold`.
     collideRadiusMultiplier: PropTypes.number,
+    // Alpha value to reset to when moving the center of the simulation.
+    moveCenterAlpha: PropTypes.number,
     viewport: PropTypes.shape({
       width: PropTypes.number,
       height: PropTypes.number,
@@ -84,6 +86,7 @@ class AmtProductModel extends Component {
     collideRadiusRatio: 1.5,
     collideRadiusThreshold: 10,
     collideRadiusMultiplier: 1.5,
+    moveCenterAlpha: 0.01,
   }
 
   constructor(props) {
@@ -223,9 +226,9 @@ class AmtProductModel extends Component {
       centerY,
     })
     if (options.skipDebounce) {
-      this.resetSimulationAlpha(options.alpha)
+      this.resetSimulationAlpha(options.moveCenterAlpha)
     } else {
-      this.resetSimulationAlphaDebounced(options.alpha)
+      this.resetSimulationAlphaDebounced(options.moveCenterAlpha)
     }
   }
 
