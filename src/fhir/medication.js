@@ -6,7 +6,8 @@ export const getSubjectConcept = resource => {
   if (!resource.code.coding) throw new Error('No code.coding element found.')
   const coding = resource.code.coding
   const type = getSubjectConceptType(resource)
-  return { type, coding }
+  const sourceCodeSystem = getSourceCodeSystem(resource)
+  return { type, coding, ...sourceCodeSystem }
 }
 
 // Get the type of subject concept, which will either be:
@@ -98,6 +99,29 @@ function* getPackageConcepts(medPackage, source) {
       // The target concept becomes the new source.
       yield* getExtensionConcepts(parents.extension, target)
     }
+  }
+}
+
+// Get the source code system URI and version from a Medication resource.
+const getSourceCodeSystem = resource => {
+  if (!resource.extension) return {}
+  const sourceCodeSystem = resource.extension.find(
+    extensionFilterFor('sourceCodeSystem'),
+  )
+  if (!sourceCodeSystem) throw new Error('Missing sourceCodeSystem.')
+  const sourceCodeSystemUri = sourceCodeSystem.extension.find(
+    extensionFilterFor('sourceCodeSystemUri'),
+  )
+  const sourceCodeSystemVersion = sourceCodeSystem.extension.find(
+    extensionFilterFor('sourceCodeSystemVersion'),
+  )
+  if (!sourceCodeSystemUri || !sourceCodeSystemUri.valueUri)
+    throw new Error('Missing sourceCodeSystemUri.')
+  if (!sourceCodeSystemVersion || !sourceCodeSystemVersion.valueString)
+    throw new Error('Missing sourceCodeSystemVersion.')
+  return {
+    sourceCodeSystemUri: sourceCodeSystemUri.valueUri,
+    sourceCodeSystemVersion: sourceCodeSystemVersion.valueString,
   }
 }
 
@@ -204,6 +228,12 @@ const urlForExtension = name =>
   ({
     medicationResourceType:
       'http://medserve.online/fhir/StructureDefinition/medicationResourceType',
+    sourceCodeSystem:
+      'http://medserve.online/fhir/StructureDefinition/sourceCodeSystem',
+    sourceCodeSystemUri:
+      'http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri',
+    sourceCodeSystemVersion:
+      'http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion',
     parentMedication:
       'http://medserve.online/fhir/StructureDefinition/parentMedication',
     parentMedicationResources:
@@ -220,6 +250,11 @@ const extensionFilterFor = key =>
   ({
     medicationResourceType: ext =>
       ext.url === urlForExtension('medicationResourceType'),
+    sourceCodeSystem: ext => ext.url === urlForExtension('sourceCodeSystem'),
+    sourceCodeSystemUri: ext =>
+      ext.url === urlForExtension('sourceCodeSystemUri'),
+    sourceCodeSystemVersion: ext =>
+      ext.url === urlForExtension('sourceCodeSystemVersion'),
     parentMedication: ext => ext.url === urlForExtension('parentMedication'),
     parentMedicationResources: ext =>
       ext.url === urlForExtension('parentMedicationResources') && ext.extension,

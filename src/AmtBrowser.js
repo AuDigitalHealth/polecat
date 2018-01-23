@@ -16,6 +16,7 @@ class AmtBrowser extends Component {
     query: PropTypes.string,
     viewport: PropTypes.object.isRequired,
     config: PropTypes.object,
+    onLoadSubjectConcept: PropTypes.func,
   }
   static defaultProps = {
     config: { fhirServer: 'https://medserve.online/fhir' },
@@ -26,11 +27,17 @@ class AmtBrowser extends Component {
     super(props)
     this.state = { loading: false }
     this.handleLoadingChange = this.handleLoadingChange.bind(this)
+    this.handleLoadSubjectConcept = this.handleLoadSubjectConcept.bind(this)
     this.handleError = this.handleError.bind(this)
   }
 
   handleLoadingChange(loading) {
     this.setState(() => ({ loading }))
+  }
+
+  handleLoadSubjectConcept(concept) {
+    const { onLoadSubjectConcept } = this.props
+    if (onLoadSubjectConcept) onLoadSubjectConcept(concept)
   }
 
   handleError(error) {
@@ -77,6 +84,7 @@ class AmtBrowser extends Component {
             id={id}
             viewport={viewport}
             onLoadingChange={this.handleLoadingChange}
+            onLoadSubjectConcept={this.handleLoadSubjectConcept}
             onError={this.handleError}
             {...config}
           >

@@ -27,6 +27,7 @@ class FhirMedication extends Component {
     onRequireRelatedResources: PropTypes.func,
     onRequireChildBundle: PropTypes.func,
     onRequirePackageBundle: PropTypes.func,
+    onLoadSubjectConcept: PropTypes.func,
   }
   static defaultProps = {
     relatedResources: {},
@@ -51,6 +52,7 @@ class FhirMedication extends Component {
       childBundles = this.props.childBundles,
       packageBundles = this.props.packageBundles,
       groupingThreshold = this.props.groupingThreshold,
+      onLoadSubjectConcept = this.props.onLoadSubjectConcept,
       prevConcepts = emptyConcepts(),
       additionalResourcesRequested = false,
       childConceptsRequested = false,
@@ -117,6 +119,9 @@ class FhirMedication extends Component {
       }
       // Update state with merged concepts and relationships values.
       this.setState(() => allConcepts)
+      // Notify upstream components that a new subject concept has been loaded.
+      // This is used for things such as updating the page title.
+      if (onLoadSubjectConcept) onLoadSubjectConcept(focused)
     }
   }
 

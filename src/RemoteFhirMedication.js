@@ -13,6 +13,7 @@ class RemoteFhirMedication extends Component {
     fhirServer: PropTypes.string.isRequired,
     children: PropTypes.any.isRequired,
     onLoadingChange: PropTypes.func,
+    onLoadSubjectConcept: PropTypes.func,
     onError: PropTypes.func,
   }
   static defaultProps = {
@@ -27,6 +28,7 @@ class RemoteFhirMedication extends Component {
     )
     this.handleRequireChildBundle = this.handleRequireChildBundle.bind(this)
     this.handleRequirePackageBundle = this.handleRequirePackageBundle.bind(this)
+    this.handleLoadSubjectConcept = this.handleLoadSubjectConcept.bind(this)
     this.setLoadingStatus = this.setLoadingStatus.bind(this)
   }
 
@@ -134,6 +136,11 @@ class RemoteFhirMedication extends Component {
     )
   }
 
+  handleLoadSubjectConcept(concept) {
+    const { onLoadSubjectConcept } = this.props
+    if (onLoadSubjectConcept) onLoadSubjectConcept(concept)
+  }
+
   handleError(error) {
     const { onError } = this.props
     if (onError) onError(error)
@@ -183,6 +190,7 @@ class RemoteFhirMedication extends Component {
         onRequireRelatedResources={this.handleRequireRelatedResources}
         onRequireChildBundle={this.handleRequireChildBundle}
         onRequirePackageBundle={this.handleRequirePackageBundle}
+        onLoadSubjectConcept={this.handleLoadSubjectConcept}
         onError={this.handleError}
       >
         {this.props.children}

@@ -5,6 +5,7 @@ import throttle from 'lodash.throttle'
 import queryString from 'query-string'
 
 import AmtBrowser from './AmtBrowser.js'
+import { codingToSnomedDisplay } from './fhir/medication.js'
 
 class Router extends Component {
   static propTypes = {
@@ -17,6 +18,7 @@ class Router extends Component {
       viewport: { width: window.innerWidth, height: window.innerHeight },
     }
     this.handleWindowResize = throttle(this.handleWindowResize.bind(this), 50)
+    this.handleLoadSubjectConcept = this.handleLoadSubjectConcept.bind(this)
   }
 
   getQueryFromLocation(location) {
@@ -29,6 +31,15 @@ class Router extends Component {
     this.setState(() => ({
       viewport: { width: window.innerWidth, height: window.innerHeight },
     }))
+  }
+
+  handleLoadSubjectConcept(concept) {
+    if (concept) {
+      const display = codingToSnomedDisplay(concept.coding)
+      document.title = display ? `${display} - Polecat` : 'Polecat'
+    } else {
+      document.title = 'Polecat'
+    }
   }
 
   componentDidMount() {
@@ -51,6 +62,7 @@ class Router extends Component {
                     query={this.getQueryFromLocation(location)}
                     viewport={viewport}
                     config={config}
+                    onLoadSubjectConcept={this.handleLoadSubjectConcept}
                   />
                 )}
               />
@@ -63,18 +75,22 @@ class Router extends Component {
                     query={this.getQueryFromLocation(location)}
                     viewport={viewport}
                     config={config}
+                    onLoadSubjectConcept={this.handleLoadSubjectConcept}
                   />
                 )}
               />
               <Route
                 path="/"
-                render={({ location }) => (
-                  <AmtBrowser
-                    query={this.getQueryFromLocation(location)}
-                    viewport={viewport}
-                    config={config}
-                  />
-                )}
+                render={({ location }) => {
+                  this.handleLoadSubjectConcept()
+                  return (
+                    <AmtBrowser
+                      query={this.getQueryFromLocation(location)}
+                      viewport={viewport}
+                      config={config}
+                    />
+                  )
+                }}
               />
               <Route
                 render={() => (
