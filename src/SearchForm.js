@@ -13,7 +13,7 @@ import {
   queryFromSearchObject,
 } from './fhir/search.js'
 import { isValidSctid } from './snomed/sctid.js'
-import { snomedUri } from './fhir/medication.js'
+import { snomedUri } from './snomed/core.js'
 
 import './css/SearchForm.css'
 

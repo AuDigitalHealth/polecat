@@ -5,6 +5,7 @@ import RemoteFhirMedication from './RemoteFhirMedication.js'
 import AmtProductModel from './AmtProductModel.js'
 import Search from './Search.js'
 import Loading from './Loading.js'
+import SourceCodeSystem from './SourceCodeSystem.js'
 import ErrorMessage from './ErrorMessage.js'
 
 import './css/AmtBrowser.css'
@@ -37,6 +38,11 @@ class AmtBrowser extends Component {
 
   handleLoadSubjectConcept(concept) {
     const { onLoadSubjectConcept } = this.props
+    if (concept)
+      this.setState(() => ({
+        sourceCodeSystemUri: concept.sourceCodeSystemUri,
+        sourceCodeSystemVersion: concept.sourceCodeSystemVersion,
+      }))
     if (onLoadSubjectConcept) onLoadSubjectConcept(concept)
   }
 
@@ -67,7 +73,12 @@ class AmtBrowser extends Component {
 
   render() {
     const { resourceType, id, query, viewport, config } = this.props
-    const { loading, error } = this.state
+    const {
+      loading,
+      sourceCodeSystemUri,
+      sourceCodeSystemVersion,
+      error,
+    } = this.state
     return (
       <div
         className="amt-browser"
@@ -98,6 +109,12 @@ class AmtBrowser extends Component {
           focusUponMount
         />
         <Loading loading={loading} />
+        {sourceCodeSystemUri && sourceCodeSystemVersion ? (
+          <SourceCodeSystem
+            uri={sourceCodeSystemUri}
+            version={sourceCodeSystemVersion}
+          />
+        ) : null}
       </div>
     )
   }

@@ -1,5 +1,7 @@
 import invert from 'lodash.invert'
 
+import { snomedUri } from '../snomed/core.js'
+
 // Get `{ coding, type }` for the subject concept of a Medication resource.
 export const getSubjectConcept = resource => {
   if (!resource.code) throw new Error('No code element found.')
@@ -219,7 +221,6 @@ const validatePackageContent = content => {
   return content
 }
 
-export const snomedUri = 'http://snomed.info/sct'
 export const artgUri =
   'https://www.tga.gov.au/australian-register-therapeutic-goods'
 export const groupUri = 'group'
