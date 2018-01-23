@@ -72,11 +72,11 @@ class AmtProductModel extends Component {
     }).isRequired,
   }
   static defaultProps = {
-    attraction: -1000,
+    attraction: -1500,
     linkDistance: 220,
     alpha: 1.5,
     alphaDecay: 0.015,
-    alphaMin: 0.05,
+    alphaMin: 0.01,
     conceptWidth: 166,
     conceptHeight: 116,
     conceptGroupWidth: 100,
@@ -86,7 +86,7 @@ class AmtProductModel extends Component {
     collideRadiusRatio: 1.5,
     collideRadiusThreshold: 10,
     collideRadiusMultiplier: 1.5,
-    moveCenterAlpha: 0.01,
+    moveCenterAlpha: 0.05,
   }
 
   constructor(props) {
@@ -124,6 +124,18 @@ class AmtProductModel extends Component {
     if (model.simulation) {
       newNodes = this.updateSimulation(nodes, links, options)
     } else newNodes = nodes
+    // Fix the position of the focused node, but only if there are more than two
+    // nodes.
+    newNodes =
+      newNodes.length > 2
+        ? newNodes.map(node => {
+            if (node.focused) {
+              node.fx = node.x = centerX || viewport.width / 2
+              node.fy = node.y = centerY || viewport.height / 2
+            }
+            return node
+          })
+        : newNodes
     // Leave alpha unchanged if the simulation is already running - there is a
     // `resetSimulationAlpha` function for explicit resets.
     const alpha = model.simulation ? model.simulation.alpha() : options.alpha
@@ -160,7 +172,7 @@ class AmtProductModel extends Component {
       .restart()
   }
 
-  updateSimulation(nodes, links, { centerX, centerY, viewport }) {
+  updateSimulation(nodes, links) {
     const model = this
     let oldNodes = model.simulation.nodes()
     // Remove focus and fixing from any existing nodes.
@@ -179,24 +191,13 @@ class AmtProductModel extends Component {
     )
     // Remove any nodes that are no longer the subject of a link (except the
     // focused node).
-    newNodes = newNodes.filter(
+    return newNodes.filter(
       node =>
         node.focused ||
         links
           .reduce((acc, link) => acc.concat([link.source, link.target]), [])
           .includes(AmtProductModel.idForNode(node)),
     )
-    // Fix the position of the focused node, but only if there are more than two
-    // nodes.
-    return newNodes.length > 2
-      ? newNodes.map(node => {
-          if (node.focused) {
-            node.fx = node.x = centerX || viewport.width / 2
-            node.fy = node.y = centerY || viewport.height / 2
-          }
-          return node
-        })
-      : newNodes
   }
 
   stopSimulation() {
@@ -337,7 +338,7 @@ class AmtProductModel extends Component {
       this.props.viewport.width / 2,
       this.props.viewport.height / 2,
       // Reset the simulation immediately, without debouncing.
-      { ...this.props, skipDebounce: true },
+      { ...this.props, skipDebounce: true, moveCenterAlpha: this.props.alpha },
     )
   }
 

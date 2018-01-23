@@ -385,9 +385,9 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution (TPUU) 1`] 
     <AmtProductModel
       alpha={1.5}
       alphaDecay={0.015}
-      alphaMin={0.05}
+      alphaMin={0.01}
       arrowSize={12}
-      attraction={-1000}
+      attraction={-1500}
       collideRadiusMultiplier={1.5}
       collideRadiusRatio={1.5}
       collideRadiusThreshold={10}
@@ -397,7 +397,7 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution (TPUU) 1`] 
       conceptWidth={166}
       linkCurviness={0.2}
       linkDistance={220}
-      moveCenterAlpha={0.01}
+      moveCenterAlpha={0.05}
       viewport={
         Object {
           "height": 800,
@@ -445,9 +445,9 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL (TP
     <AmtProductModel
       alpha={1.5}
       alphaDecay={0.015}
-      alphaMin={0.05}
+      alphaMin={0.01}
       arrowSize={12}
-      attraction={-1000}
+      attraction={-1500}
       collideRadiusMultiplier={1.5}
       collideRadiusRatio={1.5}
       collideRadiusThreshold={10}
@@ -457,7 +457,7 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL (TP
       conceptWidth={166}
       linkCurviness={0.2}
       linkDistance={220}
-      moveCenterAlpha={0.01}
+      moveCenterAlpha={0.05}
       viewport={
         Object {
           "height": 800,
@@ -505,9 +505,9 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL, bo
     <AmtProductModel
       alpha={1.5}
       alphaDecay={0.015}
-      alphaMin={0.05}
+      alphaMin={0.01}
       arrowSize={12}
-      attraction={-1000}
+      attraction={-1500}
       collideRadiusMultiplier={1.5}
       collideRadiusRatio={1.5}
       collideRadiusThreshold={10}
@@ -517,7 +517,7 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL, bo
       conceptWidth={166}
       linkCurviness={0.2}
       linkDistance={220}
-      moveCenterAlpha={0.01}
+      moveCenterAlpha={0.05}
       viewport={
         Object {
           "height": 800,
@@ -588,9 +588,9 @@ exports[`Storyshots AmtBrowser loratadine (MP) 1`] = `
     <AmtProductModel
       alpha={1.5}
       alphaDecay={0.015}
-      alphaMin={0.05}
+      alphaMin={0.01}
       arrowSize={12}
-      attraction={-1000}
+      attraction={-1500}
       collideRadiusMultiplier={1.5}
       collideRadiusRatio={1.5}
       collideRadiusThreshold={10}
@@ -600,7 +600,7 @@ exports[`Storyshots AmtBrowser loratadine (MP) 1`] = `
       conceptWidth={166}
       linkCurviness={0.2}
       linkDistance={220}
-      moveCenterAlpha={0.01}
+      moveCenterAlpha={0.05}
       viewport={
         Object {
           "height": 800,
@@ -648,9 +648,9 @@ exports[`Storyshots AmtBrowser loratadine (substance) 1`] = `
     <AmtProductModel
       alpha={1.5}
       alphaDecay={0.015}
-      alphaMin={0.05}
+      alphaMin={0.01}
       arrowSize={12}
-      attraction={-1000}
+      attraction={-1500}
       collideRadiusMultiplier={1.5}
       collideRadiusRatio={1.5}
       collideRadiusThreshold={10}
@@ -660,7 +660,7 @@ exports[`Storyshots AmtBrowser loratadine (substance) 1`] = `
       conceptWidth={166}
       linkCurviness={0.2}
       linkDistance={220}
-      moveCenterAlpha={0.01}
+      moveCenterAlpha={0.05}
       viewport={
         Object {
           "height": 800,
@@ -708,9 +708,9 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid (MPUU) 1`] = `
     <AmtProductModel
       alpha={1.5}
       alphaDecay={0.015}
-      alphaMin={0.05}
+      alphaMin={0.01}
       arrowSize={12}
-      attraction={-1000}
+      attraction={-1500}
       collideRadiusMultiplier={1.5}
       collideRadiusRatio={1.5}
       collideRadiusThreshold={10}
@@ -720,7 +720,7 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid (MPUU) 1`] = `
       conceptWidth={166}
       linkCurviness={0.2}
       linkDistance={220}
-      moveCenterAlpha={0.01}
+      moveCenterAlpha={0.05}
       viewport={
         Object {
           "height": 800,
@@ -768,9 +768,9 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid, 150 mL (MPP) 1`] 
     <AmtProductModel
       alpha={1.5}
       alphaDecay={0.015}
-      alphaMin={0.05}
+      alphaMin={0.01}
       arrowSize={12}
-      attraction={-1000}
+      attraction={-1500}
       collideRadiusMultiplier={1.5}
       collideRadiusRatio={1.5}
       collideRadiusThreshold={10}
@@ -780,7 +780,7 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid, 150 mL (MPP) 1`] 
       conceptWidth={166}
       linkCurviness={0.2}
       linkDistance={220}
-      moveCenterAlpha={0.01}
+      moveCenterAlpha={0.05}
       viewport={
         Object {
           "height": 800,
