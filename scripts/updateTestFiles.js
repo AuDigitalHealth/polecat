@@ -2,6 +2,7 @@
 
 const fs = require('fs')
 const http = require('axios')
+const https = require('https')
 
 const handleError = err => {
   console.error(err)
@@ -19,10 +20,15 @@ fs.readFile('public/config.json', (err, data) => {
       if (match) {
         const type = match[1],
           sctid = match[2]
+        // Configure a custom agent to ignore self-signed certificates.
+        const agent = new https.Agent({
+          rejectUnauthorized: false,
+        })
         http
           .get(
             config.fhirServer +
               `/${type === 'substance' ? 'Substance' : 'Medication'}/${sctid}`,
+            { httpsAgent: agent },
           )
           .then(response => {
             const path = `test/${file}`
