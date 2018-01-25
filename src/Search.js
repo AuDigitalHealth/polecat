@@ -91,7 +91,7 @@ class Search extends Component {
     try {
       if (cancelRequest) cancelRequest()
       response = await http.get(url, {
-        headers: { Accept: 'application/fhir+json, application/json' },
+        headers: { Accept: 'application/fhir+json' },
         cancelToken: new CancelToken(function executor(c) {
           cancelToken = c
         }),

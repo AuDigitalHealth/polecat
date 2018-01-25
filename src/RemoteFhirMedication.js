@@ -47,7 +47,7 @@ class RemoteFhirMedication extends Component {
     try {
       if (cancelRequest) cancelRequest()
       response = await http.get(fhirServer + path + (query || ''), {
-        headers: { Accept: 'application/fhir+json, application/json' },
+        headers: { Accept: 'application/fhir+json' },
         cancelToken: new CancelToken(function executor(c) {
           cancelToken = c
         }),
