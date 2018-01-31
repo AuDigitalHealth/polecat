@@ -43,17 +43,18 @@ class RemoteFhirMedication extends Component {
 
   async getFhirResource(fhirServer, path, query) {
     const { cancelRequest } = this.state
-    let response, cancelToken
+    let response, newCancelRequest
     try {
       if (cancelRequest) cancelRequest()
+      const cancelToken = new CancelToken(function executor(c) {
+        newCancelRequest = c
+      })
+      this.setState(() => ({ cancelRequest: newCancelRequest }))
       response = await http.get(fhirServer + path + (query || ''), {
         headers: { Accept: 'application/fhir+json' },
-        cancelToken: new CancelToken(function executor(c) {
-          cancelToken = c
-        }),
+        cancelToken,
         timeout: 10000,
       })
-      this.setState(() => ({ cancelRequest: cancelToken }))
     } catch (error) {
       if (error.response) this.handleUnsuccessfulResponse(error.response)
       else throw error
@@ -85,15 +86,17 @@ class RemoteFhirMedication extends Component {
     const { fhirServer } = this.props
     for (const id of ids) {
       if (typeof this.state.relatedResources[id] !== 'object') {
-        this.getFhirResource(fhirServer, `/Medication/${id}`).then(resource => {
-          this.setState(() => ({
-            relatedResources: {
-              ...this.state.relatedResources,
-              [id]: resource,
-            },
-            cancelRequest: null,
-          }))
-        })
+        this.getFhirResource(fhirServer, `/Medication/${id}`)
+          .then(resource => {
+            this.setState(() => ({
+              relatedResources: {
+                ...this.state.relatedResources,
+                [id]: resource,
+              },
+              cancelRequest: null,
+            }))
+          })
+          .catch(error => this.handleError(error))
       }
     }
   }
@@ -108,12 +111,14 @@ class RemoteFhirMedication extends Component {
       fhirServer,
       '/Medication',
       `?ancestor=Medication/${parentId}&medication-resource-type=${resourceType}`,
-    ).then(resource =>
-      this.setState(prevState => ({
-        childBundles: { ...prevState.childBundles, [resourceType]: resource },
-        cancelRequest: null,
-      })),
     )
+      .then(resource =>
+        this.setState(prevState => ({
+          childBundles: { ...prevState.childBundles, [resourceType]: resource },
+          cancelRequest: null,
+        })),
+      )
+      .catch(error => this.handleError(error))
   }
 
   // Requests the packages that contain a specified concept type, scoped down to
@@ -126,14 +131,16 @@ class RemoteFhirMedication extends Component {
       fhirServer,
       '/Medication',
       `?package-item=Medication/${parentId}&medication-resource-type=${resourceType}`,
-    ).then(resource =>
-      this.setState(prevState => ({
-        packageBundles: {
-          ...prevState.packageBundles,
-          [resourceType]: resource,
-        },
-      })),
     )
+      .then(resource =>
+        this.setState(prevState => ({
+          packageBundles: {
+            ...prevState.packageBundles,
+            [resourceType]: resource,
+          },
+        })),
+      )
+      .catch(error => this.handleError(error))
   }
 
   handleLoadSubjectConcept(concept) {
@@ -143,7 +150,9 @@ class RemoteFhirMedication extends Component {
 
   handleError(error) {
     const { onError } = this.props
-    if (onError) onError(error)
+    // Only notify upstream components about the error if it is not a request
+    // cancellation.
+    if (onError && !http.isCancel(error)) onError(error)
   }
 
   componentWillMount() {
