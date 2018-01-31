@@ -77,17 +77,18 @@ export class MedicationSearchField extends Component {
 
   async getSearchResultsFromQuery(fhirServer, query) {
     const { cancelRequest } = this.state
-    let response, cancelToken
+    let response, newCancelRequest
     try {
       if (cancelRequest) cancelRequest()
+      const cancelToken = new CancelToken(function executor(c) {
+        newCancelRequest = c
+      })
+      this.setState(() => ({ cancelRequest: newCancelRequest }))
       response = await http.get(this.buildSearchPath(fhirServer, query), {
         headers: { Accept: 'application/fhir+json' },
-        cancelToken: new CancelToken(function executor(c) {
-          cancelToken = c
-        }),
+        cancelToken,
         timeout: 10000,
       })
-      this.setState(() => ({ cancelRequest: cancelToken }))
     } catch (error) {
       if (error.response) this.handleUnsuccessfulResponse(error.response)
       else throw error
@@ -202,7 +203,9 @@ export class MedicationSearchField extends Component {
 
   handleError(error) {
     const { onError } = this.props
-    if (onError) onError(error)
+    // Only notify upstream components about the error if it is not a request
+    // cancellation.
+    if (onError && !http.isCancel(error)) onError(error)
   }
 
   componentWillUnmount() {
