@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import * as d3 from 'd3'
+import * as d3 from 'd3-force'
 import cloneDeep from 'lodash.clonedeep'
 import isEqual from 'lodash.isequal'
 import omit from 'lodash.omit'
