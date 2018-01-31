@@ -136,12 +136,13 @@ class Search extends Component {
   }
 
   handleQueryUpdate(query) {
+    const { fhirServer } = this.props
     this.setState(
       () => ({ query }),
       () => {
         if (query) {
           const { advanced } = this.state
-          this.throttledUpdateResults({ query })
+          this.throttledUpdateResults({ fhirServer, query })
           if (advanced) {
             const { history } = this.props
             history.push(searchPathFromQuery(query))
