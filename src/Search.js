@@ -60,7 +60,7 @@ class Search extends Component {
           : async function() {
               return search.getSearchResultsFromUrl(url)
             }
-    if (!(fhirServer && query) || url)
+    if (!((fhirServer && query) || url))
       throw new Error('Must supply fhirServer and query, or url.')
     this.setLoadingStatus(true)
     updateFn()
