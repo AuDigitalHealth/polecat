@@ -85,10 +85,8 @@ class Search extends Component {
   }
 
   async getSearchResultsFromUrl(url) {
-    const { cancelRequest } = this.state
     let response, newCancelRequest
     try {
-      if (cancelRequest) cancelRequest()
       const cancelToken = new CancelToken(function executor(c) {
         newCancelRequest = c
       })
@@ -137,7 +135,11 @@ class Search extends Component {
   }
 
   handleQueryUpdate(query) {
-    const { fhirServer } = this.props
+    const { fhirServer } = this.props,
+      { cancelRequest } = this.state
+    // Cancel any outstanding search requests, we will update to match the
+    // results to this search now or when the throttle period renews.
+    if (cancelRequest) cancelRequest()
     this.setState(
       () => ({ query }),
       () => {

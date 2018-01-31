@@ -42,10 +42,8 @@ class RemoteFhirMedication extends Component {
   }
 
   async getFhirResource(fhirServer, path, query) {
-    const { cancelRequest } = this.state
     let response, newCancelRequest
     try {
-      if (cancelRequest) cancelRequest()
       const cancelToken = new CancelToken(function executor(c) {
         newCancelRequest = c
       })
@@ -166,9 +164,13 @@ class RemoteFhirMedication extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { resourceType, id } = this.props
-    const { resourceType: nextResourceType, id: nextId, fhirServer } = nextProps
+    const { resourceType, id } = this.props,
+      { resourceType: nextResourceType, id: nextId, fhirServer } = nextProps,
+      { cancelRequest } = this.state
     if (resourceType !== nextResourceType || id !== nextId) {
+      // Cancel any outstanding search requests, we will update to match the
+      // results to this search now or when the throttle period renews.
+      if (cancelRequest) cancelRequest()
       this.updateResource(fhirServer, nextResourceType, nextId)
     }
     // Make sure related resources and bundles don't hang around when changing

@@ -38,8 +38,8 @@ export class MedicationSearchField extends Component {
   constructor(props) {
     super(props)
     this.state = { quickSearchOpen: false, loading: false }
-    this.throttledQueryUpdate = throttle(
-      this.throttledQueryUpdate.bind(this),
+    this.throttledUpdateResults = throttle(
+      this.updateResults.bind(this),
       props.minRequestFrequency,
     )
     this.handleFocus = this.handleFocus.bind(this)
@@ -52,7 +52,7 @@ export class MedicationSearchField extends Component {
     this.handleError = this.handleError.bind(this)
   }
 
-  throttledQueryUpdate(query) {
+  updateResults(query) {
     const { fhirServer } = this.props
     this.setLoadingStatus(true)
     this.getSearchResultsFromQuery(fhirServer, query)
@@ -76,10 +76,8 @@ export class MedicationSearchField extends Component {
   }
 
   async getSearchResultsFromQuery(fhirServer, query) {
-    const { cancelRequest } = this.state
     let response, newCancelRequest
     try {
-      if (cancelRequest) cancelRequest()
       const cancelToken = new CancelToken(function executor(c) {
         newCancelRequest = c
       })
@@ -214,9 +212,13 @@ export class MedicationSearchField extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { textValue } = nextProps
+    const { textValue } = nextProps,
+      { cancelRequest } = this.state
     if (textValue && this.props.textValue !== textValue) {
-      this.throttledQueryUpdate(textValue)
+      // Cancel any outstanding search requests, we will update to match the
+      // results to this search now or when the throttle period renews.
+      if (cancelRequest) cancelRequest()
+      this.throttledUpdateResults(textValue)
     }
   }
 
