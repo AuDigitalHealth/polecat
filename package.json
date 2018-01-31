@@ -25,7 +25,6 @@
     "react-motion": "^0.5.2",
     "react-onclickoutside": "^6.7.0",
     "react-router-dom": "^4.1.2",
-    "react-scripts": "^1.0.11",
     "verhoeff": "^0.0.5"
   },
   "devDependencies": {
@@ -38,17 +37,38 @@
     "@storybook/channels": "^3.2.17",
     "@storybook/react": "^3.2.12",
     "asn1": "^0.2.3",
+    "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-react-app": "^3.1.1",
+    "babel-runtime": "^6.23.0",
+    "case-sensitive-paths-webpack-plugin": "^2.1.1",
+    "chalk": "^1.1.3",
+    "css-loader": "^0.28.7",
+    "dotenv": "^4.0.0",
+    "dotenv-expand": "^4.0.1",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.3.0",
     "eslint": "^4.13.1",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-flowtype": "^2.39.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jest": "^20.0.3",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.5.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.5",
+    "fs-extra": "^3.0.1",
+    "html-webpack-plugin": "^2.29.0",
+    "jest": "^20.0.4",
     "pre-commit": "^1.2.2",
+    "react-dev-utils": "^5.0.0",
     "react-router": "^4.2.0",
     "react-test-renderer": "^16.2.0",
     "serve": "^6.4.3",
@@ -56,31 +76,64 @@
     "sloc": "^0.2.0",
     "storybook-host": "^4.1.4",
     "storybook-router": "^0.3.0",
+    "style-loader": "^0.19.0",
+    "sw-precache-webpack-plugin": "^0.11.4",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4",
+    "webpack-manifest-plugin": "^1.3.2",
     "weigh": "^5.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node scripts/start.js",
     "lint": "eslint src",
-    "build": "react-scripts build",
+    "build": "node scripts/build.js",
     "dockerize": "bash scripts/dockerize.sh",
     "push-docker": "bash scripts/pushDockerImage.sh",
     "deploy": "bash scripts/deploy.sh",
-    "test": "react-scripts test --verbose --env=jsdom",
-    "test-ci": "CI=true react-scripts test --verbose --env=jsdom",
-    "eject": "react-scripts eject",
+    "test": "node scripts/test.js --verbose --env=jsdom",
+    "test-ci": "CI=true node scripts/test.js --verbose --env=jsdom",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "update-test-files": "node scripts/updateTestFiles.js",
     "record-release": "bash scripts/recordRelease.sh",
     "loc": "sloc --exclude \".*\\.(css|svg|test.js|stories.js|js.snap)\" src"
   },
-  "pre-commit": [
-    "lint",
-    "test-ci"
-  ],
+  "pre-commit": ["lint", "test-ci"],
   "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "collectCoverageFrom": ["src/**/*.{js,jsx,mjs}"],
+    "setupFiles": ["<rootDir>/config/polyfills.js"],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
+      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
+    ],
+    "testEnvironment": "node",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)":
+        "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web"
+    },
+    "moduleFileExtensions": [
+      "web.js",
+      "mjs",
+      "js",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ],
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
+  },
+  "babel": {
+    "presets": ["react-app"]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   }
 }
