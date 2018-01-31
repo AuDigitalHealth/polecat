@@ -86,7 +86,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "lint": "eslint src",
+    "lint": "eslint --max-warnings 0 src",
     "build": "node scripts/build.js",
     "dockerize": "bash scripts/dockerize.sh",
     "push-docker": "bash scripts/pushDockerImage.sh",
@@ -99,14 +99,9 @@
     "record-release": "bash scripts/recordRelease.sh",
     "loc": "sloc --exclude \".*\\.(css|svg|test.js|stories.js|js.snap)\" src"
   },
-  "pre-commit": [
-    "lint",
-    "test-ci"
-  ],
+  "pre-commit": ["lint", "test-ci"],
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,mjs}"
-    ],
+    "collectCoverageFrom": ["src/**/*.{js,jsx,mjs}"],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
       "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
@@ -116,11 +111,10 @@
     "transform": {
       "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)":
+        "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
-    ],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
@@ -133,14 +127,10 @@
       "jsx",
       "node"
     ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   },
   "babel": {
-    "presets": [
-      "react-app"
-    ]
+    "presets": ["react-app"]
   },
   "eslintConfig": {
     "extends": "react-app"

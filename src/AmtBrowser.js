@@ -69,6 +69,7 @@ class AmtBrowser extends Component {
 
   componentDidCatch(error) {
     this.setState({ error, loading: false })
+    throw error
   }
 
   render() {

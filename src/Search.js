@@ -39,6 +39,7 @@ class Search extends Component {
       this.updateResults.bind(this),
       props.minRequestFrequency,
     )
+    this.getSearchResultsFromUrl = this.getSearchResultsFromUrl.bind(this)
     this.handleSelectResult = this.handleSelectResult.bind(this)
     this.setLoadingStatus = this.setLoadingStatus.bind(this)
     this.handleToggleAdvanced = this.handleToggleAdvanced.bind(this)
@@ -69,7 +70,6 @@ class Search extends Component {
         this.setState(() => ({
           bundle: parsed.bundle,
           results: this.addLinksToResults(parsed.results),
-          cancelRequest: null,
           query,
         })),
       )
@@ -86,17 +86,18 @@ class Search extends Component {
 
   async getSearchResultsFromUrl(url) {
     const { cancelRequest } = this.state
-    let response, cancelToken
+    let response, newCancelRequest
     try {
       if (cancelRequest) cancelRequest()
+      const cancelToken = new CancelToken(function executor(c) {
+        newCancelRequest = c
+      })
+      this.setState(() => ({ cancelRequest: newCancelRequest }))
       response = await http.get(url, {
         headers: { Accept: 'application/fhir+json' },
-        cancelToken: new CancelToken(function executor(c) {
-          cancelToken = c
-        }),
+        cancelToken,
         timeout: 10000,
       })
-      this.setState(() => ({ cancelRequest: cancelToken }))
     } catch (error) {
       if (error.response) this.handleUnsuccessfulResponse(error.response)
       else throw error
@@ -199,7 +200,9 @@ class Search extends Component {
 
   handleError(error) {
     const { onError } = this.props
-    if (onError) onError(error)
+    // Only notify upstream components about the error if it is not a request
+    // cancellation.
+    if (onError && !http.isCancel(error)) onError(error)
   }
 
   componentWillMount() {
