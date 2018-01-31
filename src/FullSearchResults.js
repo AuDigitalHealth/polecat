@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 
 import { codingToSnomedCode, codingToSnomedDisplay } from './fhir/medication.js'
 
@@ -65,26 +64,18 @@ class FullSearchResults extends Component {
   renderResults(results) {
     if (!results) return
     return results.map((result, i) => (
-      <li key={i} className="search-result">
+      <li
+        key={i}
+        className="search-result"
+        onClick={() => this.handleSelectResult(result)}
+      >
         <span className="sctid">{codingToSnomedCode(result.coding)}</span>
-        <span className="display">{this.renderLinkToResult(result)}</span>
+        <span className="display">{codingToSnomedDisplay(result.coding)}</span>
         <span className={`type type-${result.type}`.toLowerCase()}>
           {result.type}
         </span>
       </li>
     ))
-  }
-
-  renderLinkToResult(result) {
-    const to =
-      result.type === 'substance'
-        ? `/Substance/${codingToSnomedCode(result.coding)}`
-        : `/Medication/${codingToSnomedCode(result.coding)}`
-    return (
-      <Link to={to} onClick={() => this.handleSelectResult(result)}>
-        {codingToSnomedDisplay(result.coding)}
-      </Link>
-    )
   }
 }
 

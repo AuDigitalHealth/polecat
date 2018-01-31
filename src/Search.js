@@ -12,6 +12,7 @@ import { sniffFormat } from './fhir/restApi'
 import { getSubjectConcept, amtConceptTypeFor } from './fhir/medication.js'
 import { nextLinkFromBundle, previousLinkFromBundle } from './fhir/bundle.js'
 import { pathForQuery } from './fhir/search.js'
+import { codingToSnomedCode } from './fhir/medication.js'
 
 import './css/Search.css'
 
@@ -33,8 +34,9 @@ class Search extends Component {
     super(props)
     this.state = { advanced: false, quickSearchShouldClose: false }
     this.handleQueryUpdate = this.handleQueryUpdate.bind(this)
-    this.throttledQueryUpdate = throttle(
-      this.throttledQueryUpdate.bind(this),
+    this.updateResults = this.updateResults.bind(this)
+    this.throttledUpdateResults = throttle(
+      this.updateResults.bind(this),
       props.minRequestFrequency,
     )
     this.handleSelectResult = this.handleSelectResult.bind(this)
@@ -46,32 +48,29 @@ class Search extends Component {
     this.handleError = this.handleError.bind(this)
   }
 
-  throttledQueryUpdate(query) {
-    const { fhirServer } = this.props
+  // Gets the search results using either a search query string or a search URL,
+  // then updates the state with the results.
+  updateResults({ fhirServer, query, url }) {
+    const search = this,
+      updateFn =
+        fhirServer && query
+          ? async function() {
+              return search.getSearchResultsFromQuery(fhirServer, query)
+            }
+          : async function() {
+              return search.getSearchResultsFromUrl(url)
+            }
+    if (!(fhirServer && query) || url)
+      throw new Error('Must supply fhirServer and query, or url.')
     this.setLoadingStatus(true)
-    this.getSearchResultsFromQuery(fhirServer, query)
+    updateFn()
       .then(bundle => this.parseSearchResults(bundle))
       .then(parsed =>
         this.setState(() => ({
           bundle: parsed.bundle,
-          results: parsed.results,
+          results: this.addLinksToResults(parsed.results),
           cancelRequest: null,
-        })),
-      )
-      .then(() => this.setLoadingStatus(false))
-      .catch(error => this.handleError(error))
-      .then(() => this.setLoadingStatus(false))
-  }
-
-  urlUpdate(url) {
-    this.setLoadingStatus(true)
-    this.getSearchResultsFromUrl(url)
-      .then(bundle => this.parseSearchResults(bundle))
-      .then(parsed =>
-        this.setState(() => ({
-          bundle: parsed.bundle,
-          results: parsed.results,
-          cancelRequest: null,
+          query,
         })),
       )
       .then(() => this.setLoadingStatus(false))
@@ -118,6 +117,20 @@ class Search extends Component {
     }
   }
 
+  addLinksToResults(results) {
+    if (!results) return results
+    return results.map(result => {
+      const snomedCode = codingToSnomedCode(result.coding)
+      if (snomedCode) {
+        const link =
+          result.type === 'substance'
+            ? `/Substance/${snomedCode}`
+            : `/Medication/${snomedCode}`
+        return { ...result, link }
+      } else return result
+    })
+  }
+
   setLoadingStatus(loading) {
     this.setState(() => ({ loading }))
   }
@@ -128,7 +141,7 @@ class Search extends Component {
       () => {
         if (query) {
           const { advanced } = this.state
-          this.throttledQueryUpdate(query)
+          this.throttledUpdateResults({ query })
           if (advanced) {
             const { history } = this.props
             history.push(searchPathFromQuery(query))
@@ -152,7 +165,7 @@ class Search extends Component {
   }
 
   handleLinkNavigation(url) {
-    this.urlUpdate(url)
+    this.updateResults({ url })
   }
 
   handleUnsuccessfulResponse(response) {
@@ -163,8 +176,10 @@ class Search extends Component {
       : new Error(response.statusText || response.status)
   }
 
-  handleSelectResult() {
+  handleSelectResult(result) {
+    const { history } = this.props
     this.setState(() => ({ advanced: false, quickSearchShouldClose: true }))
+    if (result && result.link) history.push(result.link)
   }
 
   handleToggleAdvanced() {
@@ -189,20 +204,8 @@ class Search extends Component {
   componentWillMount() {
     const { fhirServer, query } = this.props
     if (query) {
-      this.setLoadingStatus(true)
-      this.getSearchResultsFromQuery(fhirServer, query)
-        .then(bundle => this.parseSearchResults(bundle))
-        .then(parsed =>
-          this.setState(() => ({
-            bundle: parsed.bundle,
-            results: parsed.results,
-            advanced: true,
-            cancelRequest: null,
-          })),
-        )
-        .then(() => this.setLoadingStatus(false))
-        .catch(error => this.handleError(error))
-        .then(() => this.setLoadingStatus(false))
+      this.setState(() => ({ advanced: true }))
+      this.updateResults({ fhirServer, query })
     }
   }
 
@@ -219,19 +222,7 @@ class Search extends Component {
     }
     if (query) {
       this.setState(() => ({ advanced: true }))
-      this.setLoadingStatus(true)
-      this.getSearchResultsFromQuery(fhirServer, query)
-        .then(bundle => this.parseSearchResults(bundle))
-        .then(parsed =>
-          this.setState(() => ({
-            bundle: parsed.bundle,
-            results: parsed.results,
-            cancelRequest: null,
-            query,
-          })),
-        )
-        .then(() => this.setLoadingStatus(false))
-        .catch(error => this.handleError(error))
+      this.updateResults({ fhirServer, query })
     } else if (advanced === true) {
       this.setState(() => ({ advanced: false }))
     }

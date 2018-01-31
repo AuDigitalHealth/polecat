@@ -4537,6 +4537,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
     <li
       className="search-result"
       key="0"
+      onClick={[Function]}
     >
       <span
         className="sctid"
@@ -4546,13 +4547,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
       <span
         className="display"
       >
-        <Link
-          onClick={[Function]}
-          replace={false}
-          to="/Medication/933216161000036101"
-        >
-          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
-        </Link>
+        Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
       </span>
       <span
         className="type type-ctpp"
@@ -4563,6 +4558,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
     <li
       className="search-result"
       key="1"
+      onClick={[Function]}
     >
       <span
         className="sctid"
@@ -4572,13 +4568,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
       <span
         className="display"
       >
-        <Link
-          onClick={[Function]}
-          replace={false}
-          to="/Medication/933205801000036102"
-        >
-          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
-        </Link>
+        Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
       </span>
       <span
         className="type type-tpp"
@@ -4589,6 +4579,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
     <li
       className="search-result"
       key="2"
+      onClick={[Function]}
     >
       <span
         className="sctid"
@@ -4598,13 +4589,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
       <span
         className="display"
       >
-        <Link
-          onClick={[Function]}
-          replace={false}
-          to="/Medication/933196831000036102"
-        >
-          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
-        </Link>
+        Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
       </span>
       <span
         className="type type-tpuu"
@@ -4615,6 +4600,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
     <li
       className="search-result"
       key="3"
+      onClick={[Function]}
     >
       <span
         className="sctid"
@@ -4624,13 +4610,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
       <span
         className="display"
       >
-        <Link
-          onClick={[Function]}
-          replace={false}
-          to="/Medication/22131000168107"
-        >
-          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
-        </Link>
+        Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
       </span>
       <span
         className="type type-tp"
@@ -4641,6 +4621,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
     <li
       className="search-result"
       key="4"
+      onClick={[Function]}
     >
       <span
         className="sctid"
@@ -4650,13 +4631,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
       <span
         className="display"
       >
-        <Link
-          onClick={[Function]}
-          replace={false}
-          to="/Medication/75498011000036101"
-        >
-          death adder antivenom 6000 units injection, 1 vial
-        </Link>
+        death adder antivenom 6000 units injection, 1 vial
       </span>
       <span
         className="type type-mpp"
@@ -4667,6 +4642,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
     <li
       className="search-result"
       key="5"
+      onClick={[Function]}
     >
       <span
         className="sctid"
@@ -4676,13 +4652,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
       <span
         className="display"
       >
-        <Link
-          onClick={[Function]}
-          replace={false}
-          to="/Medication/75096011000036105"
-        >
-          king brown snake antivenom 18 000 units injection, vial
-        </Link>
+        king brown snake antivenom 18 000 units injection, vial
       </span>
       <span
         className="type type-mpuu"
@@ -4693,6 +4663,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
     <li
       className="search-result"
       key="6"
+      onClick={[Function]}
     >
       <span
         className="sctid"
@@ -4702,13 +4673,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
       <span
         className="display"
       >
-        <Link
-          onClick={[Function]}
-          replace={false}
-          to="/Medication/74983011000036101"
-        >
-          taipan snake antivenom
-        </Link>
+        taipan snake antivenom
       </span>
       <span
         className="type type-mp"
@@ -4719,6 +4684,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
     <li
       className="search-result"
       key="7"
+      onClick={[Function]}
     >
       <span
         className="sctid"
@@ -4728,13 +4694,7 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
       <span
         className="display"
       >
-        <Link
-          onClick={[Function]}
-          replace={false}
-          to="/Substance/2610011000036105"
-        >
-          sumatriptan
-        </Link>
+        sumatriptan
       </span>
       <span
         className="type type-substance"
@@ -5596,12 +5556,22 @@ exports[`Storyshots Search As configured 1`] = `
 <div
   className="search"
 >
-  <withRouter(OnClickOutside(BasicSearch))
+  <OnClickOutside(BasicSearch)
+    eventTypes={
+      Array [
+        "mousedown",
+        "touchstart",
+      ]
+    }
+    excludeScrollbar={false}
     onQueryUpdate={[Function]}
     onQuickSearchClosed={[Function]}
     onSelectResult={[Function]}
     onToggleAdvanced={[Function]}
+    outsideClickIgnoreClass="ignore-react-onclickoutside"
+    preventDefault={false}
     quickSearchShouldClose={false}
+    stopPropagation={false}
   />
 </div>
 `;
@@ -5610,13 +5580,15 @@ exports[`Storyshots Search With a query 1`] = `
 <div
   className="search"
 >
-  <withRouter(OnClickOutside(BasicSearch))
+  <withRouter(AdvancedSearch)
+    fhirServer="https://medserve.online/fhir"
     loading={true}
+    onError={[Function]}
+    onNextClick={[Function]}
+    onPreviousClick={[Function]}
     onQueryUpdate={[Function]}
-    onQuickSearchClosed={[Function]}
     onSelectResult={[Function]}
     onToggleAdvanced={[Function]}
-    quickSearchShouldClose={false}
     routedQuery="package:\\"22095011000036109|fenofibrate 145 mg tablet\\""
   />
 </div>
@@ -5626,13 +5598,23 @@ exports[`Storyshots Search With focus on mount 1`] = `
 <div
   className="search"
 >
-  <withRouter(OnClickOutside(BasicSearch))
+  <OnClickOutside(BasicSearch)
+    eventTypes={
+      Array [
+        "mousedown",
+        "touchstart",
+      ]
+    }
+    excludeScrollbar={false}
     focusUponMount={true}
     onQueryUpdate={[Function]}
     onQuickSearchClosed={[Function]}
     onSelectResult={[Function]}
     onToggleAdvanced={[Function]}
+    outsideClickIgnoreClass="ignore-react-onclickoutside"
+    preventDefault={false}
     quickSearchShouldClose={false}
+    stopPropagation={false}
   />
 </div>
 `;
@@ -5641,12 +5623,22 @@ exports[`Storyshots Search With minimum request frequency of 2 seconds 1`] = `
 <div
   className="search"
 >
-  <withRouter(OnClickOutside(BasicSearch))
+  <OnClickOutside(BasicSearch)
+    eventTypes={
+      Array [
+        "mousedown",
+        "touchstart",
+      ]
+    }
+    excludeScrollbar={false}
     onQueryUpdate={[Function]}
     onQuickSearchClosed={[Function]}
     onSelectResult={[Function]}
     onToggleAdvanced={[Function]}
+    outsideClickIgnoreClass="ignore-react-onclickoutside"
+    preventDefault={false}
     quickSearchShouldClose={false}
+    stopPropagation={false}
   />
 </div>
 `;

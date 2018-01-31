@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { withRouter } from 'react-router-dom'
 import isEqual from 'lodash.isequal'
 import omit from 'lodash.omit'
 import onClickOutside from 'react-onclickoutside'
@@ -10,7 +9,6 @@ import Loading from './Loading.js'
 import Expand from './Expand.js'
 import QuickSearchResults from './QuickSearchResults.js'
 import { searchPathFromQuery } from './Router.js'
-import { codingToSnomedCode } from './fhir/medication.js'
 import { isValidSctid } from './snomed/sctid.js'
 
 import './css/BasicSearch.css'
@@ -24,7 +22,6 @@ export class BasicSearch extends Component {
     focusUponMount: PropTypes.bool,
     loading: PropTypes.bool,
     quickSearchShouldClose: PropTypes.bool,
-    history: PropTypes.any.isRequired,
     onQueryUpdate: PropTypes.func,
     onToggleAdvanced: PropTypes.func,
     onSelectResult: PropTypes.func,
@@ -44,23 +41,8 @@ export class BasicSearch extends Component {
 
   updateResults(props) {
     let { results } = props
-    results = this.addLinksToResults(results)
     results = this.addMoreLinkToResults(results, props)
     return this.selectFirstResult(results)
-  }
-
-  addLinksToResults(results) {
-    if (!results) return results
-    return results.map(result => {
-      const snomedCode = codingToSnomedCode(result.coding)
-      if (snomedCode) {
-        const link =
-          result.type === 'substance'
-            ? `/Substance/${snomedCode}`
-            : `/Medication/${snomedCode}`
-        return { ...result, link }
-      } else return result
-    })
   }
 
   addMoreLinkToResults(results, { bundle, currentQuery, routedQuery }) {
@@ -143,10 +125,9 @@ export class BasicSearch extends Component {
   }
 
   handleSelectResult(result) {
-    const { onSelectResult, history } = this.props
+    const { onSelectResult } = this.props
     this.closeQuickSearch()
-    if (onSelectResult) onSelectResult()
-    if (result && result.link) history.push(result.link)
+    if (onSelectResult) onSelectResult(result)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -204,4 +185,4 @@ export class BasicSearch extends Component {
   }
 }
 
-export default withRouter(onClickOutside(BasicSearch))
+export default onClickOutside(BasicSearch)

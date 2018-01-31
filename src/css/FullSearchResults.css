@@ -14,6 +14,7 @@
   padding: 7px 20px;
   border-bottom: 1px solid #ccc;
   display: flex;
+  cursor: pointer;
 }
 
 .full-search-results .search-result:last-of-type {
@@ -34,11 +35,6 @@
   text-overflow: ellipsis;
   margin-right: 16px;
   flex-grow: 1;
-}
-
-.full-search-results .search-result .display a {
-  text-decoration: none;
-  color: black;
 }
 
 .full-search-results .search-result .type {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { withRouter } from 'react-router-dom'
 
 import TextField from './TextField.js'
 import SearchForm from './SearchForm.js'
@@ -19,6 +20,7 @@ class AdvancedSearch extends Component {
     results: PropTypes.array,
     bundle: PropTypes.shape({ total: PropTypes.number }),
     loading: PropTypes.bool,
+    history: PropTypes.any.isRequired,
     onQueryUpdate: PropTypes.func,
     onToggleAdvanced: PropTypes.func,
     onNextClick: PropTypes.func,
@@ -57,10 +59,10 @@ class AdvancedSearch extends Component {
     if (onPreviousClick) onPreviousClick()
   }
 
-  handleSelectResult() {
-    const { onSelectResult } = this.props
-    this.setState(() => ({ quickSearchOpen: false }))
-    if (onSelectResult) onSelectResult()
+  handleSelectResult(result) {
+    const { onSelectResult, history } = this.props
+    if (onSelectResult) onSelectResult(result)
+    if (result && result.link) history.push(result.link)
   }
 
   handleError(error) {
@@ -127,4 +129,4 @@ class AdvancedSearch extends Component {
   }
 }
 
-export default AdvancedSearch
+export default withRouter(AdvancedSearch)
