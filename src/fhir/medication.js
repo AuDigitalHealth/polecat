@@ -81,8 +81,16 @@ function* getPackageConcepts(medPackage, source) {
         extensionFilterFor('medicationResourceType'),
       ),
     )
+    // Get the status of the primary package concept by finding the
+    // `medicationResourceReferenceStatus` within the extension.
+    const resourceStatus = validateMedicationResourceReferenceStatus(
+      content.itemReference.extension.find(
+        extensionFilterFor('medicationResourceReferenceStatus'),
+      ),
+    )
     const type = resourceType.valueCoding.code
-    const target = { coding, type }
+    const status = resourceStatus.valueCode
+    const target = { coding, type, status }
     // Return the new concept, along with a relationship between the source
     // concept and the new concept.
     yield {
@@ -144,13 +152,18 @@ const getParentMedication = (extension, source) => {
     const resourceType = validateMedicationResourceType(
       extension.find(extensionFilterFor('medicationResourceType')),
     )
+    // Get the extension which describes the status of the parent code.
+    const resourceStatus = validateMedicationResourceReferenceStatus(
+      extension.find(extensionFilterFor('medicationResourceReferenceStatus')),
+    )
     const coding = valueReferenceToSnomedCoding(parentMedication.valueReference)
     const type = resourceType.valueCoding.code
+    const status = resourceStatus.valueCode
     // Yield a structure with an array of concepts, and an array of
     // relationships. This will be merged with data found elsewhere in the
     // resource, and in other resources, later on.
     return {
-      concepts: [{ coding, type }],
+      concepts: [{ coding, type, status }],
       relationships: [
         {
           source: codingToSnomedCode(source.coding),
@@ -203,6 +216,16 @@ const validateMedicationResourceType = medicationResourceType => {
   return medicationResourceType
 }
 
+const validateMedicationResourceReferenceStatus = medResourceRefStatus => {
+  if (!medResourceRefStatus) {
+    throw new Error('Missing medicationResourceReferenceStatus value.')
+  }
+  if (!medResourceRefStatus.valueCode) {
+    throw new Error('Missing medicationResourceType.valueCode.')
+  }
+  return medResourceRefStatus
+}
+
 const validateBrand = brand => {
   if (!brand) throw new Error('Missing brand value.')
   if (!brand.valueCodeableConcept) {
@@ -234,6 +257,8 @@ const urlForExtension = name =>
   ({
     medicationResourceType:
       'http://medserve.online/fhir/StructureDefinition/medicationResourceType',
+    medicationResourceReferenceStatus:
+      'http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus',
     sourceCodeSystem:
       'http://medserve.online/fhir/StructureDefinition/sourceCodeSystem',
     sourceCodeSystemUri:
@@ -256,6 +281,8 @@ const extensionFilterFor = key =>
   ({
     medicationResourceType: ext =>
       ext.url === urlForExtension('medicationResourceType'),
+    medicationResourceReferenceStatus: ext =>
+      ext.url === urlForExtension('medicationResourceReferenceStatus'),
     sourceCodeSystem: ext => ext.url === urlForExtension('sourceCodeSystem'),
     sourceCodeSystemUri: ext =>
       ext.url === urlForExtension('sourceCodeSystemUri'),

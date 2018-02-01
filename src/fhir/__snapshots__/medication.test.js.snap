@@ -21,6 +21,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPG",
     },
     Object {
@@ -31,6 +32,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -41,6 +43,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPSF",
     },
     Object {
@@ -51,6 +54,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -61,6 +65,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
     Object {
@@ -71,6 +76,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
   ],
@@ -114,6 +120,365 @@ Object {
 }
 `;
 
+exports[`getRelatedConcepts should return correct result for CTPP 20833011000036107 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "3868011000036108",
+          "display": "Klacid Hp7",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "13996011000036100",
+          "display": "Klacid Hp 7 (14 x 20 mg capsules, 14 x 500 mg tablets, 28 x 500 mg capsules), 1 pack",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "entered-in-error",
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "28061011000036102",
+          "display": "omeprazole 20 mg capsule [14 capsules] (&) clarithromycin 500 mg tablet [14] (&) amoxycillin 500 mg capsule [28 capsules], 1 pack",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "entered-in-error",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "46431011000036106",
+          "display": "clarithromycin 500 mg tablet, 14",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "924203011000036107",
+          "display": "omeprazole 20 mg capsule, 14",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "entered-in-error",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "700031841000036104",
+          "display": "amoxicillin 500 mg capsule, 28",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "7276011000036104",
+          "display": "Probitor 20 mg capsule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "entered-in-error",
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23375011000036106",
+          "display": "omeprazole 20 mg capsule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "entered-in-error",
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21676011000036101",
+          "display": "omeprazole",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "7489011000036101",
+          "display": "Klacid 500 mg film-coated tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23527011000036104",
+          "display": "clarithromycin 500 mg tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21836011000036107",
+          "display": "clarithromycin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "7277011000036101",
+          "display": "Amoxycillin (Sandoz) 500 mg hard capsule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23551011000036108",
+          "display": "amoxicillin 500 mg capsule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21415011000036100",
+          "display": "amoxicillin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "700029381000036101",
+          "display": "Klacid 500 mg film-coated tablet, 14 tablets, bottle",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPGC",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "41610011000036105",
+          "display": "Klacid 500 mg film-coated tablet, 14",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "700027401000036109",
+          "display": "Probitor 20 mg capsule, 14 capsules, blister pack",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "entered-in-error",
+      "type": "BPGC",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "221000168102",
+          "display": "Probitor 20 mg capsule, 14 capsules",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "entered-in-error",
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "700027411000036106",
+          "display": "Amoxycillin (Sandoz) 500 mg hard capsule, 28, blister pack",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPGC",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "231000168104",
+          "display": "Amoxycillin (Sandoz) 500 mg hard capsule, 28",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPG",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "20833011000036107",
+      "target": "3868011000036108",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "20833011000036107",
+      "target": "13996011000036100",
+      "type": "is-a",
+    },
+    Object {
+      "source": "13996011000036100",
+      "target": "28061011000036102",
+      "type": "is-a",
+    },
+    Object {
+      "source": "28061011000036102",
+      "target": "46431011000036106",
+      "type": "has-component",
+    },
+    Object {
+      "source": "28061011000036102",
+      "target": "924203011000036107",
+      "type": "has-component",
+    },
+    Object {
+      "source": "28061011000036102",
+      "target": "700031841000036104",
+      "type": "has-component",
+    },
+    Object {
+      "source": "20833011000036107",
+      "target": "7276011000036104",
+      "type": "unknown",
+    },
+    Object {
+      "source": "7276011000036104",
+      "target": "23375011000036106",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23375011000036106",
+      "target": "21676011000036101",
+      "type": "is-a",
+    },
+    Object {
+      "source": "20833011000036107",
+      "target": "7489011000036101",
+      "type": "unknown",
+    },
+    Object {
+      "source": "7489011000036101",
+      "target": "23527011000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23527011000036104",
+      "target": "21836011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "20833011000036107",
+      "target": "7277011000036101",
+      "type": "unknown",
+    },
+    Object {
+      "source": "7277011000036101",
+      "target": "23551011000036108",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23551011000036108",
+      "target": "21415011000036100",
+      "type": "is-a",
+    },
+    Object {
+      "source": "20833011000036107",
+      "target": "700029381000036101",
+      "type": "has-component",
+    },
+    Object {
+      "source": "700029381000036101",
+      "target": "41610011000036105",
+      "type": "is-a",
+    },
+    Object {
+      "source": "41610011000036105",
+      "target": "46431011000036106",
+      "type": "is-a",
+    },
+    Object {
+      "source": "20833011000036107",
+      "target": "700027401000036109",
+      "type": "has-component",
+    },
+    Object {
+      "source": "700027401000036109",
+      "target": "221000168102",
+      "type": "is-a",
+    },
+    Object {
+      "source": "221000168102",
+      "target": "924203011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "20833011000036107",
+      "target": "700027411000036106",
+      "type": "has-component",
+    },
+    Object {
+      "source": "700027411000036106",
+      "target": "231000168104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "231000168104",
+      "target": "700031841000036104",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
 exports[`getRelatedConcepts should return correct result for CTPP 21062011000036103 1`] = `
 Object {
   "concepts": Array [
@@ -135,6 +500,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPG",
     },
     Object {
@@ -145,6 +511,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -155,6 +522,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -165,6 +533,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -175,6 +544,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -185,6 +555,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPSF",
     },
     Object {
@@ -195,6 +566,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -205,6 +577,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
     Object {
@@ -215,6 +588,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPSF",
     },
     Object {
@@ -225,6 +599,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -235,6 +610,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
     Object {
@@ -245,6 +621,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPSF",
     },
     Object {
@@ -255,6 +632,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -265,6 +643,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
     Object {
@@ -275,6 +654,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPGC",
     },
     Object {
@@ -285,6 +665,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPG",
     },
     Object {
@@ -295,6 +676,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPGC",
     },
     Object {
@@ -305,6 +687,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPG",
     },
     Object {
@@ -315,6 +698,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPGC",
     },
     Object {
@@ -325,6 +709,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPG",
     },
   ],
@@ -474,6 +859,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPG",
     },
     Object {
@@ -484,6 +870,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -494,6 +881,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPSF",
     },
     Object {
@@ -504,6 +892,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -514,6 +903,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
   ],
@@ -573,6 +963,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPG",
     },
     Object {
@@ -583,6 +974,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -593,6 +985,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -603,6 +996,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -613,6 +1007,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -623,6 +1018,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -633,6 +1029,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -643,6 +1040,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPSF",
     },
     Object {
@@ -653,6 +1051,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -663,6 +1062,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -673,6 +1073,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
     Object {
@@ -683,6 +1084,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -693,6 +1095,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
     Object {
@@ -703,6 +1106,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -713,6 +1117,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
     Object {
@@ -723,6 +1128,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -733,6 +1139,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
     Object {
@@ -743,6 +1150,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
     Object {
@@ -753,6 +1161,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
     Object {
@@ -763,6 +1172,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
   ],
@@ -887,6 +1297,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
   ],
@@ -918,6 +1329,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -928,6 +1340,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -938,6 +1351,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -948,6 +1362,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -958,6 +1373,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
     Object {
@@ -968,6 +1384,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -978,6 +1395,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
     Object {
@@ -988,6 +1406,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -998,6 +1417,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
   ],
@@ -1062,6 +1482,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -1072,6 +1493,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
   ],
@@ -1101,6 +1523,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -1111,6 +1534,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
   ],
@@ -1140,6 +1564,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -1150,6 +1575,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
   ],
@@ -1179,6 +1605,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -1189,6 +1616,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
   ],
@@ -1218,6 +1646,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
   ],
@@ -1252,6 +1681,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -1262,6 +1692,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -1272,6 +1703,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -1282,6 +1714,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -1292,6 +1725,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPSF",
     },
     Object {
@@ -1302,6 +1736,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -1312,6 +1747,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
     Object {
@@ -1322,6 +1758,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPSF",
     },
     Object {
@@ -1332,6 +1769,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -1342,6 +1780,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
     Object {
@@ -1352,6 +1791,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPSF",
     },
     Object {
@@ -1362,6 +1802,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -1372,6 +1813,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
     Object {
@@ -1382,6 +1824,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPG",
     },
     Object {
@@ -1392,6 +1835,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPG",
     },
     Object {
@@ -1402,6 +1846,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPG",
     },
   ],
@@ -1531,6 +1976,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPG",
     },
     Object {
@@ -1541,6 +1987,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "BPSF",
     },
     Object {
@@ -1551,6 +1998,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -1561,6 +2009,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
   ],
@@ -1615,6 +2064,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -1625,6 +2075,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
     Object {
@@ -1635,6 +2086,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
   ],
@@ -1684,6 +2136,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPDSF",
     },
     Object {
@@ -1694,6 +2147,7 @@ Object {
           "system": "http://snomed.info/sct",
         },
       ],
+      "status": "active",
       "type": "UPD",
     },
   ],
@@ -1740,6 +2194,26 @@ Object {
   "sourceCodeSystemUri": "http://snomed.info/sct",
   "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
   "status": "active",
+  "type": "BPGC",
+}
+`;
+
+exports[`getSubjectConcept should return correct result for CTPP 20833011000036107 1`] = `
+Object {
+  "coding": Array [
+    Object {
+      "code": "20833011000036107",
+      "display": "Klacid Hp 7 (14 x 20 mg capsules, 14 x 500 mg tablets, 28 x 500 mg capsules), 1 pack, composite pack",
+      "system": "http://snomed.info/sct",
+    },
+    Object {
+      "code": "91895",
+      "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+    },
+  ],
+  "sourceCodeSystemUri": "http://snomed.info/sct",
+  "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+  "status": "entered-in-error",
   "type": "BPGC",
 }
 `;
