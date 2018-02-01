@@ -190,3 +190,37 @@ storiesOf('Concept', module)
       left={left}
     />
   ))
+  .add('Entered in error', () => (
+    <Concept
+      coding={[
+        {
+          system: 'http://snomed.info/sct',
+          code: '61765011000036100',
+          display: 'dexchlorpheniramine + paracetamol + pseudoephedrine',
+        },
+      ]}
+      type="MP"
+      status="entered-in-error"
+      width={width}
+      height={height}
+      top={top}
+      left={left}
+    />
+  ))
+  .add('Inactive', () => (
+    <Concept
+      coding={[
+        {
+          system: 'http://snomed.info/sct',
+          code: '42148011000036101',
+          display: 'Metvix 200 mg/g cream, 2 g',
+        },
+      ]}
+      type="TPP"
+      status="inactive"
+      width={width}
+      height={height}
+      top={top}
+      left={left}
+    />
+  ))

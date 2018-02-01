@@ -31,6 +31,7 @@ class Concept extends Component {
       'MP',
       'substance',
     ]).isRequired,
+    status: PropTypes.oneOf(['active', 'inactive', 'entered-in-error']),
     focused: PropTypes.bool,
     top: PropTypes.number,
     left: PropTypes.number,
@@ -46,20 +47,14 @@ class Concept extends Component {
   }
 
   render() {
-    const { coding, type, focused, top, left, width, height } = this.props
+    const { coding, type, focused } = this.props
     const sctid = codingToSnomedCode(coding)
     const display = codingToSnomedDisplay(coding)
     const artgId = codingToArtgId(coding)
     return (
       <div
         className={focused ? 'concept concept-focused' : 'concept'}
-        style={{
-          position: 'absolute',
-          top: top + 'px',
-          left: left + 'px',
-          width: width + 'px',
-          height: height + 'px',
-        }}
+        style={this.renderConceptStyle()}
       >
         <div className="sctid">
           {type !== 'TP' && !focused ? (
@@ -93,6 +88,25 @@ class Concept extends Component {
         ) : null}
       </div>
     )
+  }
+
+  renderConceptStyle() {
+    const { top, left, width, height, status } = this.props,
+      style = {
+        position: 'absolute',
+        top: top + 'px',
+        left: left + 'px',
+        width: width + 'px',
+        height: height + 'px',
+      }
+    switch (status) {
+      case 'inactive':
+        return { ...style, borderStyle: 'dashed' }
+      case 'entered-in-error':
+        return { ...style, borderStyle: 'dashed' }
+      default:
+        return style
+    }
   }
 }
 

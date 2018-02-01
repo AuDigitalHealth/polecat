@@ -8,8 +8,9 @@ export const getSubjectConcept = resource => {
   if (!resource.code.coding) throw new Error('No code.coding element found.')
   const coding = resource.code.coding
   const type = getSubjectConceptType(resource)
+  const status = getStatus(resource)
   const sourceCodeSystem = getSourceCodeSystem(resource)
-  return { type, coding, ...sourceCodeSystem }
+  return { type, coding, status, ...sourceCodeSystem }
 }
 
 // Get the type of subject concept, which will either be:
@@ -103,6 +104,9 @@ function* getPackageConcepts(medPackage, source) {
     }
   }
 }
+
+// Get the status of the Medication resource.
+const getStatus = resource => resource.status
 
 // Get the source code system URI and version from a Medication resource.
 const getSourceCodeSystem = resource => {

@@ -1739,6 +1739,7 @@ Object {
   ],
   "sourceCodeSystemUri": "http://snomed.info/sct",
   "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930",
+  "status": "active",
   "type": "BPGC",
 }
 `;
@@ -1758,6 +1759,7 @@ Object {
   ],
   "sourceCodeSystemUri": "http://snomed.info/sct",
   "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930",
+  "status": "active",
   "type": "BPGC",
 }
 `;
@@ -1777,6 +1779,7 @@ Object {
   ],
   "sourceCodeSystemUri": "http://snomed.info/sct",
   "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930",
+  "status": "active",
   "type": "BPGC",
 }
 `;
@@ -1796,6 +1799,7 @@ Object {
   ],
   "sourceCodeSystemUri": "http://snomed.info/sct",
   "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930",
+  "status": "active",
   "type": "BPGC",
 }
 `;
@@ -1811,6 +1815,7 @@ Object {
   ],
   "sourceCodeSystemUri": "http://snomed.info/sct",
   "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930",
+  "status": "active",
   "type": "UPD",
 }
 `;
@@ -1826,6 +1831,7 @@ Object {
   ],
   "sourceCodeSystemUri": "http://snomed.info/sct",
   "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930",
+  "status": "active",
   "type": "UPD",
 }
 `;
@@ -1841,6 +1847,7 @@ Object {
   ],
   "sourceCodeSystemUri": "http://snomed.info/sct",
   "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930",
+  "status": "active",
   "type": "UPG",
 }
 `;
@@ -1856,6 +1863,7 @@ Object {
   ],
   "sourceCodeSystemUri": "http://snomed.info/sct",
   "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930",
+  "status": "active",
   "type": "UPG",
 }
 `;
@@ -1871,6 +1879,7 @@ Object {
   ],
   "sourceCodeSystemUri": "http://snomed.info/sct",
   "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930",
+  "status": "active",
   "type": "UPG",
 }
 `;
@@ -1886,6 +1895,7 @@ Object {
   ],
   "sourceCodeSystemUri": "http://snomed.info/sct",
   "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930",
+  "status": "active",
   "type": "UPG",
 }
 `;
@@ -1901,6 +1911,7 @@ Object {
   ],
   "sourceCodeSystemUri": "http://snomed.info/sct",
   "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930",
+  "status": "active",
   "type": "UPG",
 }
 `;
@@ -1916,6 +1927,7 @@ Object {
   ],
   "sourceCodeSystemUri": "http://snomed.info/sct",
   "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930",
+  "status": "active",
   "type": "UPDSF",
 }
 `;
@@ -1931,6 +1943,7 @@ Object {
   ],
   "sourceCodeSystemUri": "http://snomed.info/sct",
   "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930",
+  "status": "active",
   "type": "BPG",
 }
 `;
@@ -1946,6 +1959,7 @@ Object {
   ],
   "sourceCodeSystemUri": "http://snomed.info/sct",
   "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930",
+  "status": "active",
   "type": "BPG",
 }
 `;
@@ -1961,6 +1975,7 @@ Object {
   ],
   "sourceCodeSystemUri": "http://snomed.info/sct",
   "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930",
+  "status": "active",
   "type": "BPSF",
 }
 `;
@@ -1976,6 +1991,7 @@ Object {
   ],
   "sourceCodeSystemUri": "http://snomed.info/sct",
   "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930",
+  "status": "active",
   "type": "BPSF",
 }
 `;
@@ -1989,6 +2005,7 @@ Object {
       "system": "http://snomed.info/sct",
     },
   ],
+  "status": undefined,
   "type": "substance",
 }
 `;

@@ -40,6 +40,8 @@ class AmtProductModel extends Component {
           }),
         ),
         type: PropTypes.string.isRequired,
+        focused: PropTypes.bool,
+        status: PropTypes.string,
       }),
     ),
     links: PropTypes.arrayOf(
@@ -479,6 +481,7 @@ class AmtProductModel extends Component {
                 coding={node.coding}
                 type={amtConceptTypeFor(node.type)}
                 focused={node.focused}
+                status={node.status}
                 top={node.y - conceptHeight / 2}
                 left={node.x - conceptWidth / 2}
                 width={conceptWidth}

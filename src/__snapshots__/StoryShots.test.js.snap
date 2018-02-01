@@ -3812,6 +3812,52 @@ exports[`Storyshots Concept CTPP 1`] = `
 </div>
 `;
 
+exports[`Storyshots Concept Entered in error 1`] = `
+<div
+  className="concept"
+  style={
+    Object {
+      "borderStyle": "dashed",
+      "height": "116px",
+      "left": "20px",
+      "position": "absolute",
+      "top": "20px",
+      "width": "166px",
+    }
+  }
+>
+  <div
+    className="sctid"
+  >
+    <Link
+      replace={false}
+      to="/Medication/61765011000036100"
+    >
+      61765011000036100
+    </Link>
+    <CopyToClipboard
+      copyText="61765011000036100"
+      title="Copy SCTID to clipboard"
+    />
+  </div>
+  <div
+    className="display"
+    title="dexchlorpheniramine + paracetamol + pseudoephedrine"
+  >
+    dexchlorpheniramine + paracetamol + pseudoephedrine
+    <CopyToClipboard
+      copyText="dexchlorpheniramine + paracetamol + pseudoephedrine"
+      title="Copy preferred term to clipboard"
+    />
+  </div>
+  <div
+    className="type type-mp"
+  >
+    MP
+  </div>
+</div>
+`;
+
 exports[`Storyshots Concept Focused 1`] = `
 <div
   className="concept concept-focused"
@@ -3861,6 +3907,52 @@ exports[`Storyshots Concept Focused 1`] = `
     className="type type-ctpp"
   >
     CTPP
+  </div>
+</div>
+`;
+
+exports[`Storyshots Concept Inactive 1`] = `
+<div
+  className="concept"
+  style={
+    Object {
+      "borderStyle": "dashed",
+      "height": "116px",
+      "left": "20px",
+      "position": "absolute",
+      "top": "20px",
+      "width": "166px",
+    }
+  }
+>
+  <div
+    className="sctid"
+  >
+    <Link
+      replace={false}
+      to="/Medication/42148011000036101"
+    >
+      42148011000036101
+    </Link>
+    <CopyToClipboard
+      copyText="42148011000036101"
+      title="Copy SCTID to clipboard"
+    />
+  </div>
+  <div
+    className="display"
+    title="Metvix 200 mg/g cream, 2 g"
+  >
+    Metvix 200 mg/g cream, 2 g
+    <CopyToClipboard
+      copyText="Metvix 200 mg/g cream, 2 g"
+      title="Copy preferred term to clipboard"
+    />
+  </div>
+  <div
+    className="type type-tpp"
+  >
+    TPP
   </div>
 </div>
 `;
