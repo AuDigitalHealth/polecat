@@ -28,6 +28,14 @@
             "code": "UPG",
             "display": "Unbranded package with no container"
           }
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+          "valueCode": "active"
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+          "valueDate": "2014-06-30"
         }
       ]
     },
@@ -60,9 +68,13 @@
         },
         {
           "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
-          "valueString": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930"
+          "valueString": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
         }
       ]
+    },
+    {
+      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+      "valueDate": "2016-08-31"
     }
   ],
   "code": {
@@ -116,8 +128,24 @@
                         "code": "UPD",
                         "display": "Unbranded product with no strengths or form"
                       }
+                    },
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                      "valueCode": "active"
+                    },
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                      "valueDate": "2014-06-30"
                     }
                   ]
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "valueCode": "active"
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "valueDate": "2014-06-30"
                 }
               ]
             },
@@ -128,6 +156,14 @@
                 "code": "BPSF",
                 "display": "Branded product with strengths and form"
               }
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2016-08-31"
             }
           ],
           "reference": "Medication/54282011000036105",

@@ -64,6 +64,14 @@
                     "code": "UPG",
                     "display": "Unbranded package with no container"
                   }
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "valueCode": "active"
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "valueDate": "2014-06-30"
                 }
               ]
             },
@@ -84,6 +92,14 @@
                     "code": "UPG",
                     "display": "Unbranded package with no container"
                   }
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "valueCode": "active"
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "valueDate": "2016-11-30"
                 }
               ]
             },
@@ -104,10 +120,34 @@
                     "code": "UPG",
                     "display": "Unbranded package with no container"
                   }
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "valueCode": "active"
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "valueDate": "2016-06-30"
                 }
               ]
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2016-11-30"
             }
           ]
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+          "valueCode": "active"
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+          "valueDate": "2017-02-28"
         }
       ]
     },
@@ -140,117 +180,13 @@
         },
         {
           "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
-          "valueString": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930"
+          "valueString": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
         }
       ]
     },
     {
-      "url": "http://medserve.online/fhir/StructureDefinition/subsidy",
-      "extension": [
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/subsidyCode",
-          "valueCoding": {
-            "system": "http://pbs.gov.au/code/item",
-            "code": "8738X"
-          }
-        },
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/programCode",
-          "valueCoding": {
-            "system": "http://pbs.gov.au/code/program",
-            "code": "GE",
-            "display": "Generally Available Pharmaceutical Benefits"
-          }
-        },
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/subsidyNotes",
-          "valueAnnotation": {
-            "text": "Pharmaceutical benefits that have the form pack containing 14 tablets (enteric coated) containing esomeprazole 20 mg (as magnesium trihydrate), 14 tablets clarithromycin 500 mg and 28 capsules amoxycillin 500 mg (as trihydrate) and pack containing 14 tablets (enteric coated) containing esomeprazole 20 mg (as magnesium), 14 tablets clarithromycin 500 mg and 28 capsules amoxycillin 500 mg (as trihydrate) are equivalent for the purposes of substitution."
-          }
-        },
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/restriction",
-          "valueCoding": {
-            "system": "http://pbs.gov.au/code/restriction",
-            "code": "R",
-            "display": "Restricted benefit"
-          }
-        },
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/commonwealthExManufacturerPrice",
-          "valueDecimal": 28.77
-        },
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/manufacturerExManufacturerPrice",
-          "valueDecimal": 28.77
-        },
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/atcCode",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "http://www.whocc.no/atc",
-                "code": "A02BD06",
-                "display": "esomeprazole, amoxicillin and clarithromycin"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "url": "http://medserve.online/fhir/StructureDefinition/subsidy",
-      "extension": [
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/subsidyCode",
-          "valueCoding": {
-            "system": "http://pbs.gov.au/code/item",
-            "code": "8738X"
-          }
-        },
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/programCode",
-          "valueCoding": {
-            "system": "http://pbs.gov.au/code/program",
-            "code": "GE",
-            "display": "Generally Available Pharmaceutical Benefits"
-          }
-        },
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/subsidyNotes",
-          "valueAnnotation": {
-            "text": "Pharmaceutical benefits that have the form pack containing 14 tablets (enteric coated) containing esomeprazole 20 mg (as magnesium trihydrate), 14 tablets clarithromycin 500 mg and 28 capsules amoxycillin 500 mg (as trihydrate) and pack containing 14 tablets (enteric coated) containing esomeprazole 20 mg (as magnesium), 14 tablets clarithromycin 500 mg and 28 capsules amoxycillin 500 mg (as trihydrate) are equivalent for the purposes of substitution."
-          }
-        },
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/restriction",
-          "valueCoding": {
-            "system": "http://pbs.gov.au/code/restriction",
-            "code": "R",
-            "display": "Restricted benefit"
-          }
-        },
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/commonwealthExManufacturerPrice",
-          "valueDecimal": 28.77
-        },
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/manufacturerExManufacturerPrice",
-          "valueDecimal": 28.77
-        },
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/atcCode",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "http://www.whocc.no/atc",
-                "code": "A02BD06",
-                "display": "esomeprazole, amoxicillin and clarithromycin"
-              }
-            ]
-          }
-        }
-      ]
+      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+      "valueDate": "2017-02-28"
     }
   ],
   "code": {
@@ -268,10 +204,6 @@
   },
   "status": "active",
   "isBrand": true,
-  "manufacturer": {
-    "reference": "Organization/AP",
-    "display": "AstraZeneca Pty Ltd"
-  },
   "package": {
     "container": {
       "coding": [
@@ -321,8 +253,24 @@
                         "code": "UPD",
                         "display": "Unbranded product with no strengths or form"
                       }
+                    },
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                      "valueCode": "active"
+                    },
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                      "valueDate": "2016-11-30"
                     }
                   ]
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "valueCode": "active"
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "valueDate": "2016-11-30"
                 }
               ]
             },
@@ -333,6 +281,14 @@
                 "code": "BPSF",
                 "display": "Branded product with strengths and form"
               }
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2016-11-30"
             }
           ],
           "reference": "Medication/6140011000036103",
@@ -343,68 +299,6 @@
           "unit": "capsule",
           "system": "http://snomed.info/sct",
           "code": "67011000036100"
-        }
-      },
-      {
-        "itemReference": {
-          "extension": [
-            {
-              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
-              "extension": [
-                {
-                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
-                  "valueReference": {
-                    "reference": "Medication/23527011000036104",
-                    "display": "clarithromycin 500 mg tablet"
-                  }
-                },
-                {
-                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "UPDSF",
-                    "display": "Unbranded product with strengths and form"
-                  }
-                },
-                {
-                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
-                  "extension": [
-                    {
-                      "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
-                      "valueReference": {
-                        "reference": "Medication/21836011000036107",
-                        "display": "clarithromycin"
-                      }
-                    },
-                    {
-                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                      "valueCoding": {
-                        "system": "http://hl7.org/fhir/medication_type",
-                        "code": "UPD",
-                        "display": "Unbranded product with no strengths or form"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-              "valueCoding": {
-                "system": "http://hl7.org/fhir/medication_type",
-                "code": "BPSF",
-                "display": "Branded product with strengths and form"
-              }
-            }
-          ],
-          "reference": "Medication/7489011000036101",
-          "display": "Klacid 500 mg film-coated tablet"
-        },
-        "amount": {
-          "value": 14,
-          "unit": "tablet",
-          "system": "http://snomed.info/sct",
-          "code": "63011000036109"
         }
       },
       {
@@ -445,8 +339,24 @@
                         "code": "UPD",
                         "display": "Unbranded product with no strengths or form"
                       }
+                    },
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                      "valueCode": "active"
+                    },
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                      "valueDate": "2014-06-30"
                     }
                   ]
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "valueCode": "active"
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "valueDate": "2016-06-30"
                 }
               ]
             },
@@ -457,6 +367,14 @@
                 "code": "BPSF",
                 "display": "Branded product with strengths and form"
               }
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2016-06-30"
             }
           ],
           "reference": "Medication/7488011000036109",
@@ -467,6 +385,175 @@
           "unit": "tablet",
           "system": "http://snomed.info/sct",
           "code": "63011000036109"
+        }
+      },
+      {
+        "itemReference": {
+          "extension": [
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "extension": [
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "valueReference": {
+                    "reference": "Medication/23527011000036104",
+                    "display": "clarithromycin 500 mg tablet"
+                  }
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "UPDSF",
+                    "display": "Unbranded product with strengths and form"
+                  }
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                  "extension": [
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                      "valueReference": {
+                        "reference": "Medication/21836011000036107",
+                        "display": "clarithromycin"
+                      }
+                    },
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                      "valueCoding": {
+                        "system": "http://hl7.org/fhir/medication_type",
+                        "code": "UPD",
+                        "display": "Unbranded product with no strengths or form"
+                      }
+                    },
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                      "valueCode": "active"
+                    },
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                      "valueDate": "2014-06-30"
+                    }
+                  ]
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "valueCode": "active"
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "valueDate": "2014-06-30"
+                }
+              ]
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/medication_type",
+                "code": "BPSF",
+                "display": "Branded product with strengths and form"
+              }
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2017-02-28"
+            }
+          ],
+          "reference": "Medication/7489011000036101",
+          "display": "Klacid 500 mg film-coated tablet"
+        },
+        "amount": {
+          "value": 14,
+          "unit": "tablet",
+          "system": "http://snomed.info/sct",
+          "code": "63011000036109"
+        }
+      },
+      {
+        "itemReference": {
+          "extension": [
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "extension": [
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "valueReference": {
+                    "reference": "Medication/181000168105",
+                    "display": "Nexium 20 mg enteric tablet, 14"
+                  }
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "BPG",
+                    "display": "Branded package with no container"
+                  }
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                  "extension": [
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                      "valueReference": {
+                        "reference": "Medication/700031831000036109",
+                        "display": "esomeprazole 20 mg enteric tablet, 14"
+                      }
+                    },
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                      "valueCoding": {
+                        "system": "http://hl7.org/fhir/medication_type",
+                        "code": "UPG",
+                        "display": "Unbranded package with no container"
+                      }
+                    },
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                      "valueCode": "active"
+                    },
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                      "valueDate": "2016-06-30"
+                    }
+                  ]
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "valueCode": "active"
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "valueDate": "2016-06-30"
+                }
+              ]
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/medication_type",
+                "code": "BPGC",
+                "display": "Branded package with container"
+              }
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2016-06-30"
+            }
+          ],
+          "reference": "Medication/700027201000036105",
+          "display": "Nexium 20 mg enteric tablet, 14, blister pack"
+        },
+        "amount": {
+          "value": 1
         }
       },
       {
@@ -507,8 +594,24 @@
                         "code": "UPG",
                         "display": "Unbranded package with no container"
                       }
+                    },
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                      "valueCode": "active"
+                    },
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                      "valueDate": "2016-11-30"
                     }
                   ]
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "valueCode": "active"
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "valueDate": "2016-11-30"
                 }
               ]
             },
@@ -519,6 +622,14 @@
                 "code": "BPGC",
                 "display": "Branded package with container"
               }
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2016-11-30"
             }
           ],
           "reference": "Medication/700027211000036107",
@@ -566,8 +677,24 @@
                         "code": "UPG",
                         "display": "Unbranded package with no container"
                       }
+                    },
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                      "valueCode": "active"
+                    },
+                    {
+                      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                      "valueDate": "2014-06-30"
                     }
                   ]
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "valueCode": "active"
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "valueDate": "2017-02-28"
                 }
               ]
             },
@@ -578,69 +705,18 @@
                 "code": "BPGC",
                 "display": "Branded package with container"
               }
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2017-02-28"
             }
           ],
           "reference": "Medication/44134011000036100",
           "display": "Klacid 500 mg film-coated tablet, 14, blister pack"
-        },
-        "amount": {
-          "value": 1
-        }
-      },
-      {
-        "itemReference": {
-          "extension": [
-            {
-              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
-              "extension": [
-                {
-                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
-                  "valueReference": {
-                    "reference": "Medication/181000168105",
-                    "display": "Nexium 20 mg enteric tablet, 14"
-                  }
-                },
-                {
-                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "BPG",
-                    "display": "Branded package with no container"
-                  }
-                },
-                {
-                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
-                  "extension": [
-                    {
-                      "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
-                      "valueReference": {
-                        "reference": "Medication/700031831000036109",
-                        "display": "esomeprazole 20 mg enteric tablet, 14"
-                      }
-                    },
-                    {
-                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                      "valueCoding": {
-                        "system": "http://hl7.org/fhir/medication_type",
-                        "code": "UPG",
-                        "display": "Unbranded package with no container"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-              "valueCoding": {
-                "system": "http://hl7.org/fhir/medication_type",
-                "code": "BPGC",
-                "display": "Branded package with container"
-              }
-            }
-          ],
-          "reference": "Medication/700027201000036105",
-          "display": "Nexium 20 mg enteric tablet, 14, blister pack"
         },
         "amount": {
           "value": 1

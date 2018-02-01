@@ -28,6 +28,14 @@
             "code": "UPG",
             "display": "Unbranded package with no container"
           }
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+          "valueCode": "active"
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+          "valueDate": "2014-06-30"
         }
       ]
     },
@@ -48,6 +56,14 @@
             "code": "UPG",
             "display": "Unbranded package with no container"
           }
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+          "valueCode": "active"
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+          "valueDate": "2016-11-30"
         }
       ]
     },
@@ -68,6 +84,14 @@
             "code": "UPG",
             "display": "Unbranded package with no container"
           }
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+          "valueCode": "active"
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+          "valueDate": "2016-06-30"
         }
       ]
     },
@@ -88,9 +112,13 @@
         },
         {
           "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
-          "valueString": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930"
+          "valueString": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
         }
       ]
+    },
+    {
+      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+      "valueDate": "2016-11-30"
     }
   ],
   "code": {
@@ -115,8 +143,8 @@
                 {
                   "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
                   "valueReference": {
-                    "reference": "Medication/21697011000036107",
-                    "display": "esomeprazole"
+                    "reference": "Medication/21415011000036100",
+                    "display": "amoxicillin"
                   }
                 },
                 {
@@ -126,6 +154,14 @@
                     "code": "UPD",
                     "display": "Unbranded product with no strengths or form"
                   }
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "valueCode": "active"
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "valueDate": "2016-11-30"
                 }
               ]
             },
@@ -136,16 +172,24 @@
                 "code": "UPDSF",
                 "display": "Unbranded product with strengths and form"
               }
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2016-11-30"
             }
           ],
-          "reference": "Medication/23526011000036102",
-          "display": "esomeprazole 20 mg enteric tablet"
+          "reference": "Medication/23551011000036108",
+          "display": "amoxicillin 500 mg capsule"
         },
         "amount": {
-          "value": 14,
-          "unit": "tablet",
+          "value": 28,
+          "unit": "capsule",
           "system": "http://snomed.info/sct",
-          "code": "63011000036109"
+          "code": "67011000036100"
         }
       },
       {
@@ -168,6 +212,14 @@
                     "code": "UPD",
                     "display": "Unbranded product with no strengths or form"
                   }
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "valueCode": "active"
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "valueDate": "2014-06-30"
                 }
               ]
             },
@@ -178,6 +230,14 @@
                 "code": "UPDSF",
                 "display": "Unbranded product with strengths and form"
               }
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2014-06-30"
             }
           ],
           "reference": "Medication/23527011000036104",
@@ -199,8 +259,8 @@
                 {
                   "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
                   "valueReference": {
-                    "reference": "Medication/21415011000036100",
-                    "display": "amoxicillin"
+                    "reference": "Medication/21697011000036107",
+                    "display": "esomeprazole"
                   }
                 },
                 {
@@ -210,6 +270,14 @@
                     "code": "UPD",
                     "display": "Unbranded product with no strengths or form"
                   }
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "valueCode": "active"
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "valueDate": "2014-06-30"
                 }
               ]
             },
@@ -220,16 +288,24 @@
                 "code": "UPDSF",
                 "display": "Unbranded product with strengths and form"
               }
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2016-06-30"
             }
           ],
-          "reference": "Medication/23551011000036108",
-          "display": "amoxicillin 500 mg capsule"
+          "reference": "Medication/23526011000036102",
+          "display": "esomeprazole 20 mg enteric tablet"
         },
         "amount": {
-          "value": 28,
-          "unit": "capsule",
+          "value": 14,
+          "unit": "tablet",
           "system": "http://snomed.info/sct",
-          "code": "67011000036100"
+          "code": "63011000036109"
         }
       },
       {
@@ -242,25 +318,14 @@
                 "code": "UPG",
                 "display": "Unbranded package with no container"
               }
-            }
-          ],
-          "reference": "Medication/700031841000036104",
-          "display": "amoxicillin 500 mg capsule, 28"
-        },
-        "amount": {
-          "value": 1
-        }
-      },
-      {
-        "itemReference": {
-          "extension": [
+            },
             {
-              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-              "valueCoding": {
-                "system": "http://hl7.org/fhir/medication_type",
-                "code": "UPG",
-                "display": "Unbranded package with no container"
-              }
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2014-06-30"
             }
           ],
           "reference": "Medication/46431011000036106",
@@ -280,10 +345,45 @@
                 "code": "UPG",
                 "display": "Unbranded package with no container"
               }
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2016-06-30"
             }
           ],
           "reference": "Medication/700031831000036109",
           "display": "esomeprazole 20 mg enteric tablet, 14"
+        },
+        "amount": {
+          "value": 1
+        }
+      },
+      {
+        "itemReference": {
+          "extension": [
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/medication_type",
+                "code": "UPG",
+                "display": "Unbranded package with no container"
+              }
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2016-11-30"
+            }
+          ],
+          "reference": "Medication/700031841000036104",
+          "display": "amoxicillin 500 mg capsule, 28"
         },
         "amount": {
           "value": 1

@@ -1,10 +1,22 @@
 {
   "resourceType": "Substance",
   "id": "2292011000036106",
+  "meta": {
+    "profile": [
+      "http://medserve.online/fhir/Profile/ExtendedMedication"
+    ]
+  },
   "text": {
     "status": "generated",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>loratadine</p></div>"
   },
+  "extension": [
+    {
+      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+      "valueDate": "2014-06-30"
+    }
+  ],
+  "status": "active",
   "code": {
     "coding": [
       {

@@ -64,10 +64,34 @@
                     "code": "UPD",
                     "display": "Unbranded product with no strengths or form"
                   }
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "valueCode": "active"
+                },
+                {
+                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "valueDate": "2016-11-30"
                 }
               ]
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2016-11-30"
             }
           ]
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+          "valueCode": "active"
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+          "valueDate": "2016-11-30"
         }
       ]
     },
@@ -100,9 +124,13 @@
         },
         {
           "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
-          "valueString": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20170930"
+          "valueString": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
         }
       ]
+    },
+    {
+      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+      "valueDate": "2017-02-28"
     }
   ],
   "code": {
@@ -128,12 +156,12 @@
   "ingredient": [
     {
       "itemReference": {
-        "reference": "Substance/1962011000036108",
-        "display": "clavulanic acid"
+        "reference": "Substance/1799011000036105",
+        "display": "amoxicillin"
       },
       "amount": {
         "numerator": {
-          "value": 125,
+          "value": 875,
           "unit": "mg",
           "system": "http://snomed.info/sct",
           "code": "99011000036109"
@@ -148,12 +176,12 @@
     },
     {
       "itemReference": {
-        "reference": "Substance/1799011000036105",
-        "display": "amoxicillin"
+        "reference": "Substance/1962011000036108",
+        "display": "clavulanic acid"
       },
       "amount": {
         "numerator": {
-          "value": 875,
+          "value": 125,
           "unit": "mg",
           "system": "http://snomed.info/sct",
           "code": "99011000036109"

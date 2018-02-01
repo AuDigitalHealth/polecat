@@ -9,7 +9,8 @@ export const getSubjectConcept = resource => {
   const coding = resource.code.coding
   const type = getSubjectConceptType(resource)
   const status = getStatus(resource)
-  const sourceCodeSystem = getSourceCodeSystem(resource)
+  const sourceCodeSystem =
+    resource.resourceType === 'Medication' ? getSourceCodeSystem(resource) : {}
   return { type, coding, status, ...sourceCodeSystem }
 }
 
