@@ -74,10 +74,10 @@ class AmtProductModel extends Component {
     }).isRequired,
   }
   static defaultProps = {
-    attraction: -1500,
-    linkDistance: 220,
+    attraction: -1000,
+    linkDistance: 250,
     alpha: 1.5,
-    alphaDecay: 0.015,
+    alphaDecay: 0.05,
     alphaMin: 0.01,
     conceptWidth: 166,
     conceptHeight: 116,
