@@ -34,12 +34,9 @@
       <use xlink:href="#next"/>
     </symbol>
     <symbol id="clipboard">
-      <path d="M65.94,20H61.39V18.53a3,3,0,0,0-3-3H31.48a3,3,0,0,0-3,3V20H23.92a9,9,0,0,0-9,9V77.44a9,9,0,0,0,9,9h42a9,9,0,0,0,9-9V29A9,9,0,0,0,65.94,20Z"/>
-      <path d="M41.4,15.49a3.54,3.54,0,0,1,7.07,0h6.58c0-.24,0-.48,0-.72a10.15,10.15,0,0,0-20.3,0c0,.24,0,.48,0,.72Z"/>
-      <rect class="paper" style="fill: #fff; stroke: #000; stroke-miterlimit: 10; stroke-width: 6px;" x="29.92" y="31.39" width="54.02" height="58.1" rx="6" ry="6"/>
-      <line class="text" style="stroke: #000; stroke-miterlimit: 10; stroke-width: 6px; fill: none; stroke-linecap: round;" x1="40.48" y1="47.44" x2="73.39" y2="47.44"/>
-      <line class="text" style="stroke: #000; stroke-miterlimit: 10; stroke-width: 6px; fill: none; stroke-linecap: round;" x1="40.48" y1="61" x2="73.39" y2="61"/>
-      <line class="text" style="stroke: #000; stroke-miterlimit: 10; stroke-width: 6px; fill: none; stroke-linecap: round;" x1="40.48" y1="74.56" x2="73.39" y2="74.56"/>
+      <polygon style="fill: #fff" points="73.03 29.13 27.62 29.13 27.62 21.03 41.21 20.62 44.21 12.1 50 9.11 56.78 12.68 60.03 19.74 67.08 21.28 73.03 23.87 73.03 29.13"/>
+      <polygon style="fill: #fff" points="84.38 51.84 78.71 51.84 78.71 34.81 21.94 34.81 21.94 85.9 78.71 85.9 78.71 74.54 84.38 74.54 84.38 51.84"/>
+      <path d="M27.62,74.54h22.7v5.68H27.62ZM56,40.49H27.62v5.67H56Zm11.35,17V46.16l-17,17,17,17V68.87H95.74V57.51ZM41.81,51.84H27.62v5.67H41.81Zm-14.19,17H41.81V63.19H27.62Zm51.09,5.67h5.67V85.9a5.78,5.78,0,0,1-1.7,4,6.19,6.19,0,0,1-4,1.7H21.94a5.69,5.69,0,0,1-5.68-5.67V23.46a5.7,5.7,0,0,1,5.68-5.68H39a11.36,11.36,0,0,1,22.71,0h17a5.69,5.69,0,0,1,5.67,5.68V51.84H78.71v-17H21.94V85.9H78.71ZM27.62,29.13H73a5.69,5.69,0,0,0-5.68-5.67H61.68A5.7,5.7,0,0,1,56,17.78a5.68,5.68,0,1,0-11.35,0A5.7,5.7,0,0,1,39,23.46H33.29A5.68,5.68,0,0,0,27.62,29.13Z"/>
     </symbol>
     <symbol id="clipboard-active">
       <use xlink:href="#highlight"/>
