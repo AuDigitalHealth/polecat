@@ -38,6 +38,12 @@
   position: relative;
   font-size: 10px;
   border-radius: 5px;
+  top: -2px;
+  right: -3px;
+}
+
+.quick-search-results .search-result .concept-type-inactive {
+  top: -3px;
 }
 
 .quick-search-results .no-results {
