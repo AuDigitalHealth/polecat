@@ -33,55 +33,11 @@
   display: block;
 }
 
-.quick-search-results .search-result .type {
+.quick-search-results .search-result .concept-type {
   float: right;
-  background-color: #aaa;
-  border-radius: 6px;
-  padding: 4px 6px;
-  color: white;
   position: relative;
-  top: -2px;
   font-size: 10px;
-}
-
-.quick-search-results .search-result .type-ctpp {
-  /* Solarized Orange */
-  background-color: #bd3613;
-}
-
-.quick-search-results .search-result .type-tpp {
-  /* Solarized Yellow */
-  background-color: #a57706;
-}
-
-.quick-search-results .search-result .type-tpuu {
-  /* Solarized Magenta */
-  background-color: #c61c6f;
-}
-
-.quick-search-results .search-result .type-tp {
-  /* Solarized Violet */
-  background-color: #595ab7;
-}
-
-.quick-search-results .search-result .type-mpp {
-  /* Solarized Blue */
-  background-color: #2176c7;
-}
-
-.quick-search-results .search-result .type-mpuu {
-  /* Solarized Cyan */
-  background-color: #259286;
-}
-
-.quick-search-results .search-result .type-mp {
-  /* Solarized Green */
-  background-color: #738a05;
-}
-
-.quick-search-results .search-result .type-substance {
-  /* Solarized Red */
-  background-color: #d11c24;
+  border-radius: 5px;
 }
 
 .quick-search-results .no-results {

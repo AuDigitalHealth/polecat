@@ -9,6 +9,7 @@ import {
 export const availableMedParams = [
   'id',
   'type',
+  'status',
   'pbs',
   'artg',
   'brand',
@@ -38,10 +39,16 @@ export const availableSubstanceParams = ['substance', 'substance-text']
 export const pathForQuery = query => {
   const medParams = extractSearchParams(query, availableMedParams)
   const queryText = extractQueryText(query)
+  const substanceParams = extractSearchParams(query, availableSubstanceParams)
+  // If there are no substance params, and no status parameter is present in the
+  // query, default it to all statuses.
+  if (substanceParams.length === 0 && !medParams.find(p => p[0] === 'status'))
+    medParams.push(['status', 'active,inactive,entered-in-error'])
+  // If there is query text present within the query, add a `text` parameter to
+  // the Medication params.
   if (queryText && queryText[queryText.length - 1] !== ':') {
     medParams.push(['text', queryText])
   }
-  const substanceParams = extractSearchParams(query, availableSubstanceParams)
   return pathFromParams(medParams, substanceParams)
 }
 
@@ -145,6 +152,8 @@ const getMedicationParamFor = (param, value) => {
         .split(',')
         .map(v => fhirMedicationTypeFor(v))
         .join(',')}`
+    case 'status':
+      return `status=${value}`
     case 'pbs':
       return `subsidy-code=http://pbs.gov.au/code/item|${value}`
     case 'artg':

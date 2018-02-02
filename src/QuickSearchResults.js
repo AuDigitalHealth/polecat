@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import ConceptType from './ConceptType.js'
 import { codingToSnomedDisplay } from './fhir/medication.js'
 import { formatNumber } from './util.js'
 
@@ -91,9 +92,7 @@ class QuickSearchResults extends Component {
         onClick={() => this.handleSelectResult(result)}
       >
         <div className="target">
-          <span className={`type type-${result.type}`.toLowerCase()}>
-            {result.type}
-          </span>
+          <ConceptType type={result.type} status={result.status} />
           <span className="display">
             {codingToSnomedDisplay(result.coding)}
           </span>

@@ -11,55 +11,12 @@
   flex-wrap: wrap;
 }
 
-.concept-type-toggle .toggle {
-  background-color: #aaa;
-  border-radius: 6px;
-  padding: 4px 6px;
-  color: white;
+.concept-type-toggle .concept-type {
+  border-radius: 5px;
   font-size: 11px;
   position: relative;
   box-sizing: border-box;
   margin: 0 3px 3px 0;
   cursor: pointer;
   user-select: none;
-}
-
-.concept-type-toggle .toggle-on.toggle-ctpp {
-  /* Solarized Orange */
-  background-color: #bd3613;
-}
-
-.concept-type-toggle .toggle-on.toggle-tpp {
-  /* Solarized Yellow */
-  background-color: #a57706;
-}
-
-.concept-type-toggle .toggle-on.toggle-tpuu {
-  /* Solarized Magenta */
-  background-color: #c61c6f;
-}
-
-.concept-type-toggle .toggle-on.toggle-tp {
-  /* Solarized Violet */
-  background-color: #595ab7;
-}
-
-.concept-type-toggle .toggle-on.toggle-mpp {
-  /* Solarized Blue */
-  background-color: #2176c7;
-}
-
-.concept-type-toggle .toggle-on.toggle-mpuu {
-  /* Solarized Cyan */
-  background-color: #259286;
-}
-
-.concept-type-toggle .toggle-on.toggle-mp {
-  /* Solarized Green */
-  background-color: #738a05;
-}
-
-.concept-type-toggle .toggle-on.toggle-substance {
-  /* Solarized Red */
-  background-color: #d11c24;
 }

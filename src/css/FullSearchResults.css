@@ -37,52 +37,9 @@
   flex-grow: 1;
 }
 
-.full-search-results .search-result .type {
-  background-color: #aaa;
-  border-radius: 6px;
-  padding: 4px 6px;
-  color: white;
+.full-search-results .search-result .concept-type {
   font-size: 10px;
-}
-
-.full-search-results .search-result .type-ctpp {
-  /* Solarized Orange */
-  background-color: #bd3613;
-}
-
-.full-search-results .search-result .type-tpp {
-  /* Solarized Yellow */
-  background-color: #a57706;
-}
-
-.full-search-results .search-result .type-tpuu {
-  /* Solarized Magenta */
-  background-color: #c61c6f;
-}
-
-.full-search-results .search-result .type-tp {
-  /* Solarized Violet */
-  background-color: #595ab7;
-}
-
-.full-search-results .search-result .type-mpp {
-  /* Solarized Blue */
-  background-color: #2176c7;
-}
-
-.full-search-results .search-result .type-mpuu {
-  /* Solarized Cyan */
-  background-color: #259286;
-}
-
-.full-search-results .search-result .type-mp {
-  /* Solarized Green */
-  background-color: #738a05;
-}
-
-.full-search-results .search-result .type-substance {
-  /* Solarized Red */
-  background-color: #d11c24;
+  border-radius: 5px;
 }
 
 .full-search-results .no-results {

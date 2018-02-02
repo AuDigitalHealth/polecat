@@ -3804,11 +3804,11 @@ exports[`Storyshots Concept CTPP 1`] = `
       74899
     </a>
   </div>
-  <div
-    className="type type-ctpp"
-  >
-    CTPP
-  </div>
+  <ConceptType
+    enabled={true}
+    status="active"
+    type="CTPP"
+  />
 </div>
 `;
 
@@ -3850,11 +3850,11 @@ exports[`Storyshots Concept Entered in error 1`] = `
       title="Copy preferred term to clipboard"
     />
   </div>
-  <div
-    className="type type-mp"
-  >
-    MP
-  </div>
+  <ConceptType
+    enabled={true}
+    status="entered-in-error"
+    type="MP"
+  />
 </div>
 `;
 
@@ -3903,11 +3903,11 @@ exports[`Storyshots Concept Focused 1`] = `
       74899
     </a>
   </div>
-  <div
-    className="type type-ctpp"
-  >
-    CTPP
-  </div>
+  <ConceptType
+    enabled={true}
+    status="active"
+    type="CTPP"
+  />
 </div>
 `;
 
@@ -3949,11 +3949,11 @@ exports[`Storyshots Concept Inactive 1`] = `
       title="Copy preferred term to clipboard"
     />
   </div>
-  <div
-    className="type type-tpp"
-  >
-    TPP
-  </div>
+  <ConceptType
+    enabled={true}
+    status="inactive"
+    type="TPP"
+  />
 </div>
 `;
 
@@ -3994,11 +3994,11 @@ exports[`Storyshots Concept MP 1`] = `
       title="Copy preferred term to clipboard"
     />
   </div>
-  <div
-    className="type type-mp"
-  >
-    MP
-  </div>
+  <ConceptType
+    enabled={true}
+    status="active"
+    type="MP"
+  />
 </div>
 `;
 
@@ -4039,11 +4039,11 @@ exports[`Storyshots Concept MPP 1`] = `
       title="Copy preferred term to clipboard"
     />
   </div>
-  <div
-    className="type type-mpp"
-  >
-    MPP
-  </div>
+  <ConceptType
+    enabled={true}
+    status="active"
+    type="MPP"
+  />
 </div>
 `;
 
@@ -4084,11 +4084,11 @@ exports[`Storyshots Concept MPUU 1`] = `
       title="Copy preferred term to clipboard"
     />
   </div>
-  <div
-    className="type type-mpuu"
-  >
-    MPUU
-  </div>
+  <ConceptType
+    enabled={true}
+    status="active"
+    type="MPUU"
+  />
 </div>
 `;
 
@@ -4124,11 +4124,11 @@ exports[`Storyshots Concept TP 1`] = `
       title="Copy preferred term to clipboard"
     />
   </div>
-  <div
-    className="type type-tp"
-  >
-    TP
-  </div>
+  <ConceptType
+    enabled={true}
+    status="active"
+    type="TP"
+  />
 </div>
 `;
 
@@ -4169,11 +4169,11 @@ exports[`Storyshots Concept TPP 1`] = `
       title="Copy preferred term to clipboard"
     />
   </div>
-  <div
-    className="type type-tpp"
-  >
-    TPP
-  </div>
+  <ConceptType
+    enabled={true}
+    status="active"
+    type="TPP"
+  />
 </div>
 `;
 
@@ -4214,11 +4214,11 @@ exports[`Storyshots Concept TPUU 1`] = `
       title="Copy preferred term to clipboard"
     />
   </div>
-  <div
-    className="type type-tpuu"
-  >
-    TPUU
-  </div>
+  <ConceptType
+    enabled={true}
+    status="active"
+    type="TPUU"
+  />
 </div>
 `;
 
@@ -4272,11 +4272,11 @@ exports[`Storyshots Concept With ARTG ID 1`] = `
       183411
     </a>
   </div>
-  <div
-    className="type type-ctpp"
-  >
-    CTPP
-  </div>
+  <ConceptType
+    enabled={true}
+    status="active"
+    type="CTPP"
+  />
 </div>
 `;
 
@@ -4317,11 +4317,11 @@ exports[`Storyshots Concept substance 1`] = `
       title="Copy preferred term to clipboard"
     />
   </div>
-  <div
-    className="type type-substance"
-  >
-    substance
-  </div>
+  <ConceptType
+    enabled={true}
+    status="active"
+    type="substance"
+  />
 </div>
 `;
 
@@ -4338,11 +4338,11 @@ exports[`Storyshots ConceptGroup With parent medication search result 1`] = `
   <div
     className="concept concept-stacked-1"
   >
-    <div
-      className="type type-mpuu"
-    >
-      MPUU
-    </div>
+    <ConceptType
+      enabled={true}
+      status="active"
+      type="MPUU"
+    />
     <Link
       replace={false}
       to="/?q=some-search"
@@ -4379,48 +4379,48 @@ exports[`Storyshots ConceptTypeToggle With label and no value 1`] = `
     <div
       className="toggles"
     >
-      <div
-        className="toggle toggle-ctpp"
+      <ConceptType
+        enabled={true}
         key="CTPP"
         onClick={[Function]}
-      >
-        CTPP
-      </div>
-      <div
-        className="toggle toggle-tpp"
+        status="active"
+        type="CTPP"
+      />
+      <ConceptType
+        enabled={true}
         key="TPP"
         onClick={[Function]}
-      >
-        TPP
-      </div>
-      <div
-        className="toggle toggle-tpuu"
+        status="active"
+        type="TPP"
+      />
+      <ConceptType
+        enabled={true}
         key="TPUU"
         onClick={[Function]}
-      >
-        TPUU
-      </div>
-      <div
-        className="toggle toggle-mpp"
+        status="active"
+        type="TPUU"
+      />
+      <ConceptType
+        enabled={true}
         key="MPP"
         onClick={[Function]}
-      >
-        MPP
-      </div>
-      <div
-        className="toggle toggle-mpuu"
+        status="active"
+        type="MPP"
+      />
+      <ConceptType
+        enabled={true}
         key="MPUU"
         onClick={[Function]}
-      >
-        MPUU
-      </div>
-      <div
-        className="toggle toggle-mp"
+        status="active"
+        type="MPUU"
+      />
+      <ConceptType
+        enabled={true}
         key="MP"
         onClick={[Function]}
-      >
-        MP
-      </div>
+        status="active"
+        type="MP"
+      />
     </div>
   </label>
 </div>
@@ -4437,48 +4437,48 @@ exports[`Storyshots ConceptTypeToggle With label and value 1`] = `
     <div
       className="toggles"
     >
-      <div
-        className="toggle toggle-ctpp toggle-on"
+      <ConceptType
+        enabled={true}
         key="CTPP"
         onClick={[Function]}
-      >
-        CTPP
-      </div>
-      <div
-        className="toggle toggle-tpp toggle-on"
+        status="active"
+        type="CTPP"
+      />
+      <ConceptType
+        enabled={true}
         key="TPP"
         onClick={[Function]}
-      >
-        TPP
-      </div>
-      <div
-        className="toggle toggle-tpuu"
+        status="active"
+        type="TPP"
+      />
+      <ConceptType
+        enabled={false}
         key="TPUU"
         onClick={[Function]}
-      >
-        TPUU
-      </div>
-      <div
-        className="toggle toggle-mpp toggle-on"
+        status="active"
+        type="TPUU"
+      />
+      <ConceptType
+        enabled={true}
         key="MPP"
         onClick={[Function]}
-      >
-        MPP
-      </div>
-      <div
-        className="toggle toggle-mpuu"
+        status="active"
+        type="MPP"
+      />
+      <ConceptType
+        enabled={false}
         key="MPUU"
         onClick={[Function]}
-      >
-        MPUU
-      </div>
-      <div
-        className="toggle toggle-mp"
+        status="active"
+        type="MPUU"
+      />
+      <ConceptType
+        enabled={false}
         key="MP"
         onClick={[Function]}
-      >
-        MP
-      </div>
+        status="active"
+        type="MP"
+      />
     </div>
   </label>
 </div>
@@ -4491,48 +4491,48 @@ exports[`Storyshots ConceptTypeToggle With value 1`] = `
   <div
     className="toggles"
   >
-    <div
-      className="toggle toggle-ctpp toggle-on"
+    <ConceptType
+      enabled={true}
       key="CTPP"
       onClick={[Function]}
-    >
-      CTPP
-    </div>
-    <div
-      className="toggle toggle-tpp toggle-on"
+      status="active"
+      type="CTPP"
+    />
+    <ConceptType
+      enabled={true}
       key="TPP"
       onClick={[Function]}
-    >
-      TPP
-    </div>
-    <div
-      className="toggle toggle-tpuu"
+      status="active"
+      type="TPP"
+    />
+    <ConceptType
+      enabled={false}
       key="TPUU"
       onClick={[Function]}
-    >
-      TPUU
-    </div>
-    <div
-      className="toggle toggle-mpp toggle-on"
+      status="active"
+      type="TPUU"
+    />
+    <ConceptType
+      enabled={true}
       key="MPP"
       onClick={[Function]}
-    >
-      MPP
-    </div>
-    <div
-      className="toggle toggle-mpuu"
+      status="active"
+      type="MPP"
+    />
+    <ConceptType
+      enabled={false}
       key="MPUU"
       onClick={[Function]}
-    >
-      MPUU
-    </div>
-    <div
-      className="toggle toggle-mp"
+      status="active"
+      type="MPUU"
+    />
+    <ConceptType
+      enabled={false}
       key="MP"
       onClick={[Function]}
-    >
-      MP
-    </div>
+      status="active"
+      type="MP"
+    />
   </div>
 </div>
 `;
@@ -4641,11 +4641,11 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
       >
         Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
       </span>
-      <span
-        className="type type-ctpp"
-      >
-        CTPP
-      </span>
+      <ConceptType
+        enabled={true}
+        status="active"
+        type="CTPP"
+      />
     </li>
     <li
       className="search-result"
@@ -4662,11 +4662,11 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
       >
         Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
       </span>
-      <span
-        className="type type-tpp"
-      >
-        TPP
-      </span>
+      <ConceptType
+        enabled={true}
+        status="active"
+        type="TPP"
+      />
     </li>
     <li
       className="search-result"
@@ -4683,11 +4683,11 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
       >
         Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
       </span>
-      <span
-        className="type type-tpuu"
-      >
-        TPUU
-      </span>
+      <ConceptType
+        enabled={true}
+        status="active"
+        type="TPUU"
+      />
     </li>
     <li
       className="search-result"
@@ -4704,11 +4704,11 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
       >
         Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
       </span>
-      <span
-        className="type type-tp"
-      >
-        TP
-      </span>
+      <ConceptType
+        enabled={true}
+        status="active"
+        type="TP"
+      />
     </li>
     <li
       className="search-result"
@@ -4725,11 +4725,11 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
       >
         death adder antivenom 6000 units injection, 1 vial
       </span>
-      <span
-        className="type type-mpp"
-      >
-        MPP
-      </span>
+      <ConceptType
+        enabled={true}
+        status="active"
+        type="MPP"
+      />
     </li>
     <li
       className="search-result"
@@ -4746,11 +4746,11 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
       >
         king brown snake antivenom 18 000 units injection, vial
       </span>
-      <span
-        className="type type-mpuu"
-      >
-        MPUU
-      </span>
+      <ConceptType
+        enabled={true}
+        status="active"
+        type="MPUU"
+      />
     </li>
     <li
       className="search-result"
@@ -4767,11 +4767,11 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
       >
         taipan snake antivenom
       </span>
-      <span
-        className="type type-mp"
-      >
-        MP
-      </span>
+      <ConceptType
+        enabled={true}
+        status="active"
+        type="MP"
+      />
     </li>
     <li
       className="search-result"
@@ -4788,11 +4788,11 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
       >
         sumatriptan
       </span>
-      <span
-        className="type type-substance"
-      >
-        substance
-      </span>
+      <ConceptType
+        enabled={true}
+        status="active"
+        type="substance"
+      />
     </li>
   </ol>
 </div>
@@ -4936,11 +4936,11 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-ctpp"
-        >
-          CTPP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="CTPP"
+        />
         <span
           className="display"
         >
@@ -4956,11 +4956,11 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-tpp"
-        >
-          TPP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="TPP"
+        />
         <span
           className="display"
         >
@@ -4976,11 +4976,11 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-tpuu"
-        >
-          TPUU
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="TPUU"
+        />
         <span
           className="display"
         >
@@ -4996,11 +4996,11 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-tp"
-        >
-          TP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="TP"
+        />
         <span
           className="display"
         >
@@ -5016,11 +5016,11 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-mpp"
-        >
-          MPP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="MPP"
+        />
         <span
           className="display"
         >
@@ -5036,11 +5036,11 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-mpuu"
-        >
-          MPUU
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="MPUU"
+        />
         <span
           className="display"
         >
@@ -5056,11 +5056,11 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-mp"
-        >
-          MP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="MP"
+        />
         <span
           className="display"
         >
@@ -5076,11 +5076,11 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-substance"
-        >
-          substance
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="substance"
+        />
         <span
           className="display"
         >
@@ -5105,11 +5105,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-ctpp"
-        >
-          CTPP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="CTPP"
+        />
         <span
           className="display"
         >
@@ -5125,11 +5125,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-tpp"
-        >
-          TPP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="TPP"
+        />
         <span
           className="display"
         >
@@ -5145,11 +5145,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-tpuu"
-        >
-          TPUU
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="TPUU"
+        />
         <span
           className="display"
         >
@@ -5165,11 +5165,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-tp"
-        >
-          TP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="TP"
+        />
         <span
           className="display"
         >
@@ -5185,11 +5185,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-mpp"
-        >
-          MPP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="MPP"
+        />
         <span
           className="display"
         >
@@ -5205,11 +5205,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-mpuu"
-        >
-          MPUU
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="MPUU"
+        />
         <span
           className="display"
         >
@@ -5225,11 +5225,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-mp"
-        >
-          MP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="MP"
+        />
         <span
           className="display"
         >
@@ -5245,11 +5245,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-substance"
-        >
-          substance
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="substance"
+        />
         <span
           className="display"
         >
@@ -5288,11 +5288,11 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-ctpp"
-        >
-          CTPP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="CTPP"
+        />
         <span
           className="display"
         >
@@ -5308,11 +5308,11 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-tpp"
-        >
-          TPP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="TPP"
+        />
         <span
           className="display"
         >
@@ -5328,11 +5328,11 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-tpuu"
-        >
-          TPUU
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="TPUU"
+        />
         <span
           className="display"
         >
@@ -5348,11 +5348,11 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-tp"
-        >
-          TP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="TP"
+        />
         <span
           className="display"
         >
@@ -5368,11 +5368,11 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-mpp"
-        >
-          MPP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="MPP"
+        />
         <span
           className="display"
         >
@@ -5388,11 +5388,11 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-mpuu"
-        >
-          MPUU
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="MPUU"
+        />
         <span
           className="display"
         >
@@ -5408,11 +5408,11 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-mp"
-        >
-          MP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="MP"
+        />
         <span
           className="display"
         >
@@ -5428,11 +5428,11 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-substance"
-        >
-          substance
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="substance"
+        />
         <span
           className="display"
         >
@@ -5457,11 +5457,11 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-ctpp"
-        >
-          CTPP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="CTPP"
+        />
         <span
           className="display"
         >
@@ -5477,11 +5477,11 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-tpp"
-        >
-          TPP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="TPP"
+        />
         <span
           className="display"
         >
@@ -5497,11 +5497,11 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-tpuu"
-        >
-          TPUU
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="TPUU"
+        />
         <span
           className="display"
         >
@@ -5517,11 +5517,11 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-tp"
-        >
-          TP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="TP"
+        />
         <span
           className="display"
         >
@@ -5537,11 +5537,11 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-mpp"
-        >
-          MPP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="MPP"
+        />
         <span
           className="display"
         >
@@ -5557,11 +5557,11 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-mpuu"
-        >
-          MPUU
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="MPUU"
+        />
         <span
           className="display"
         >
@@ -5577,11 +5577,11 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-mp"
-        >
-          MP
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="MP"
+        />
         <span
           className="display"
         >
@@ -5597,11 +5597,11 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
       <div
         className="target"
       >
-        <span
-          className="type type-substance"
-        >
-          substance
-        </span>
+        <ConceptType
+          enabled={true}
+          status="active"
+          type="substance"
+        />
         <span
           className="display"
         >

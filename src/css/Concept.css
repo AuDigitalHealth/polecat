@@ -21,14 +21,10 @@
   overflow: hidden;
 }
 
-.concept .type {
+.concept .concept-type {
   position: absolute;
   bottom: 6px;
   right: 6px;
-  background-color: #aaa;
-  border-radius: 6px;
-  padding: 4px 6px;
-  color: white;
 }
 
 .concept .sctid {
@@ -60,44 +56,4 @@
   top: 0;
   right: 0;
   margin: 0;
-}
-
-.concept .type-ctpp {
-  /* Solarized Orange */
-  background-color: #bd3613;
-}
-
-.concept .type-tpp {
-  /* Solarized Yellow */
-  background-color: #a57706;
-}
-
-.concept .type-tpuu {
-  /* Solarized Magenta */
-  background-color: #c61c6f;
-}
-
-.concept .type-tp {
-  /* Solarized Violet */
-  background-color: #595ab7;
-}
-
-.concept .type-mpp {
-  /* Solarized Blue */
-  background-color: #2176c7;
-}
-
-.concept .type-mpuu {
-  /* Solarized Cyan */
-  background-color: #259286;
-}
-
-.concept .type-mp {
-  /* Solarized Green */
-  background-color: #738a05;
-}
-
-.concept .type-substance {
-  /* Solarized Red */
-  background-color: #d11c24;
 }

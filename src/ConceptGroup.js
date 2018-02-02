@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 import Concept from './Concept.js'
+import ConceptType from './ConceptType.js'
 import Icon from './Icon.js'
 
 import './css/ConceptGroup.css'
@@ -33,7 +34,7 @@ class ConceptGroup extends Component {
   render() {
     const { concepts, total, linkPath, top, left } = this.props
     const concept = concepts[0]
-    const type = concept.type
+    const { type, status } = concept
     return (
       <div
         className="concept-group"
@@ -43,9 +44,7 @@ class ConceptGroup extends Component {
         }}
       >
         <div className="concept concept-stacked-1">
-          {type ? (
-            <div className={`type type-${type}`.toLowerCase()}>{type}</div>
-          ) : null}
+          <ConceptType type={type} status={status} />
           <Link to={linkPath}>
             <Icon type="list" hoverType="list-active" width={20} />
           </Link>

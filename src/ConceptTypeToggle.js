@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import ConceptType from './ConceptType.js'
 import { amtConceptTypes } from './fhir/medication.js'
 
 import './css/ConceptTypeToggle.css'
@@ -50,17 +51,12 @@ class ConceptTypeToggle extends Component {
           .map(type => {
             const on = value && value.includes(type)
             return (
-              <div
-                className={
-                  on
-                    ? `toggle toggle-${type.toLowerCase()} toggle-on`
-                    : `toggle toggle-${type.toLowerCase()}`
-                }
+              <ConceptType
                 key={type}
+                type={type}
+                enabled={on}
                 onClick={() => this.handleChange(type, !on)}
-              >
-                {type}
-              </div>
+              />
             )
           })}
       </div>

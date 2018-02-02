@@ -29,7 +29,7 @@
   padding: 4px 0 4px 4px;
 }
 
-.search-form .concept-type-toggle label span {
+.search-form .concept-type-toggle label > span {
   font-size: 14px;
   min-width: 107px;
   align-self: stretch;

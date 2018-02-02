@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import ConceptType from './ConceptType.js'
 import { codingToSnomedCode, codingToSnomedDisplay } from './fhir/medication.js'
 
 import './css/FullSearchResults.css'
@@ -71,9 +72,7 @@ class FullSearchResults extends Component {
       >
         <span className="sctid">{codingToSnomedCode(result.coding)}</span>
         <span className="display">{codingToSnomedDisplay(result.coding)}</span>
-        <span className={`type type-${result.type}`.toLowerCase()}>
-          {result.type}
-        </span>
+        <ConceptType type={result.type} status={result.status} />
       </li>
     ))
   }

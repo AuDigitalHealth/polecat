@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 import CopyToClipboard from './CopyToClipboard.js'
+import ConceptType from './ConceptType.js'
 import {
   codingToSnomedCode,
   codingToSnomedDisplay,
@@ -47,7 +48,7 @@ class Concept extends Component {
   }
 
   render() {
-    const { coding, type, focused } = this.props
+    const { coding, type, status, focused } = this.props
     const sctid = codingToSnomedCode(coding)
     const display = codingToSnomedDisplay(coding)
     const artgId = codingToArtgId(coding)
@@ -83,9 +84,7 @@ class Concept extends Component {
             </a>
           </div>
         ) : null}
-        {type ? (
-          <div className={`type type-${type}`.toLowerCase()}>{type}</div>
-        ) : null}
+        <ConceptType type={type} status={status} />
       </div>
     )
   }
@@ -99,14 +98,9 @@ class Concept extends Component {
         width: width + 'px',
         height: height + 'px',
       }
-    switch (status) {
-      case 'inactive':
-        return { ...style, borderStyle: 'dashed' }
-      case 'entered-in-error':
-        return { ...style, borderStyle: 'dashed' }
-      default:
-        return style
-    }
+    return !status || status === 'active'
+      ? style
+      : { ...style, borderStyle: 'dashed' }
   }
 }
 

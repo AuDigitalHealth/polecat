@@ -1,0 +1,96 @@
+.concept-type {
+  background-color: #aaa;
+  border-radius: 6px;
+  padding: 4px 6px;
+  color: white;
+  font-size: 11px;
+}
+
+.concept-type.concept-type-inactive {
+  background-color: white;
+  font-weight: bold;
+}
+
+.concept-type.concept-type-disabled {
+  background-color: #aaa;
+}
+
+.concept-type-ctpp {
+  /* Solarized Orange */
+  background-color: #bd3613;
+}
+
+.concept-type-ctpp.concept-type-inactive {
+  color: #bd3613;
+  border: 1px solid #bd3613;
+}
+
+.concept-type-tpp {
+  /* Solarized Yellow */
+  background-color: #a57706;
+}
+
+.concept-type-tpp.concept-type-inactive {
+  color: #a57706;
+  border: 1px solid #a57706;
+}
+
+.concept-type-tpuu {
+  /* Solarized Magenta */
+  background-color: #c61c6f;
+}
+
+.concept-type-tpuu.concept-type-inactive {
+  color: #c61c6f;
+  border: 1px solid #c61c6f;
+}
+
+.concept-type-tp {
+  /* Solarized Violet */
+  background-color: #595ab7;
+}
+
+.concept-type-tp.concept-type-inactive {
+  color: #595ab7;
+  border: 1px solid #595ab7;
+}
+
+.concept-type-mpp {
+  /* Solarized Blue */
+  background-color: #2176c7;
+}
+
+.concept-type-mpp.concept-type-inactive {
+  color: #2176c7;
+  border: 1px solid #2176c7;
+}
+
+.concept-type-mpuu {
+  /* Solarized Cyan */
+  background-color: #259286;
+}
+
+.concept-type-mpuu.concept-type-inactive {
+  color: #259286;
+  border: 1px solid #259286;
+}
+
+.concept-type-mp {
+  /* Solarized Green */
+  background-color: #738a05;
+}
+
+.concept-type-mp.concept-type-inactive {
+  color: #738a05;
+  border: 1px solid #738a05;
+}
+
+.concept-type-substance {
+  /* Solarized Red */
+  background-color: #d11c24;
+}
+
+.concept-type-substance.concept-type-inactive {
+  color: #d11c24;
+  border: 1px solid #d11c24;
+}
