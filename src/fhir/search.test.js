@@ -11,15 +11,15 @@ describe('pathForQuery', () => {
       '/Medication?status=active&_text=something&_summary=true&_count=20',
     // SCTID
     'id:61428011000036109':
-      '/Medication?code=http://snomed.info/sct|61428011000036109&status=active&_summary=true&_count=20',
+      '/Medication?code=http://snomed.info/sct|61428011000036109&_summary=true&_count=20',
     // Concept type
     'type:CTPP':
       '/Medication?medication-resource-type=BPGC&status=active&_summary=true&_count=20',
-    // Combination of multiple search types
+    // Code should not be combined with other parameters
     'varicella id:959031000168106':
-      '/Medication?code=http://snomed.info/sct|959031000168106&status=active&_text=varicella&_summary=true&_count=20',
+      '/Medication?code=http://snomed.info/sct|959031000168106&_summary=true&_count=20',
     'id:959031000168106 varicella':
-      '/Medication?code=http://snomed.info/sct|959031000168106&status=active&_text=varicella&_summary=true&_count=20',
+      '/Medication?code=http://snomed.info/sct|959031000168106&_summary=true&_count=20',
     // Empty value should be omitted
     'phenylephrine id:':
       '/Medication?status=active&_text=phenylephrine&_summary=true&_count=20',
@@ -80,6 +80,11 @@ describe('pathForQuery', () => {
       '/Medication?ingredient=Substance/1978011000036103&ingredient=Substance/2442011000036104&ingredient:not=Substance/2525011000036101&status=active&_summary=true&_count=20',
     'ingredient-text:paracetamol ingredient-text:codeine':
       '/Medication?ingredient:text=paracetamol&ingredient:text=codeine&status=active&_summary=true&_count=20',
+    // Combination of multiple different search parameters
+    'parent:931803011000036105 spray':
+      '/Medication?parent=Medication/931803011000036105&status=active&_text=spray&_summary=true&_count=20',
+    'spray parent:931803011000036105':
+      '/Medication?parent=Medication/931803011000036105&status=active&_text=spray&_summary=true&_count=20',
     // Code and display
     'parent:21433011000036107|paracetamol':
       '/Medication?parent=Medication/21433011000036107&status=active&_summary=true&_count=20',

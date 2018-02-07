@@ -51,8 +51,12 @@ export const paramsFromQuery = query => {
   // query, default it to all statuses.
   if (substanceParams.length === 0) medParams = applyDefaultStatus(medParams)
   // If there is query text present within the query, add a `text` parameter to
-  // the Medication params.
-  if (queryText && queryText[queryText.length - 1] !== ':') {
+  // the Medication params. Don't add a text parameter if it is an ID search.
+  if (
+    queryText &&
+    !searchIncludesParam(medParams, 'id') &&
+    queryText[queryText.length - 1] !== ':'
+  ) {
     medParams.push(['text', queryText])
   }
   return {
@@ -157,9 +161,9 @@ const extractQueryText = query =>
 // Defaults the `status` parameter within a search object when it has not been
 // specified.
 const applyDefaultStatus = search =>
-  search.find(p => p[0] === 'status') === undefined
-    ? search.concat([['status', 'active']])
-    : search
+  searchIncludesParam(search, 'status') || searchIncludesParam(search, 'id')
+    ? search
+    : search.concat([['status', 'active']])
 
 // Omits the default `status` value when constructing a path from a search
 // object.
@@ -251,3 +255,6 @@ export const displayOrCoding = codeDisplay =>
   displayFromCodeDisplay(codeDisplay)
     ? displayFromCodeDisplay(codeDisplay)
     : codeFromCodeDisplay(codeDisplay)
+
+const searchIncludesParam = (search, param) =>
+  search.find(p => p[0] === param) !== undefined
