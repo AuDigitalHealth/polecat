@@ -15,6 +15,7 @@ describe('isValidSctid', () => {
     '21258001000036102',
     '0438505003',
     '001256',
+    '53919011000036101.',
   ]
 
   for (const sctid of validSctids) {

@@ -1,6 +1,7 @@
 import verhoeff from 'verhoeff'
 
 export const isValidSctid = sctid => {
+  if (!sctid.match(/^\d+$/)) return false
   const int = parseInt(sctid, 10)
   if (!int) return false
   if (int <= 10 ** 5 || int > 10 ** 18) return false
