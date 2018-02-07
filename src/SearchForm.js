@@ -5,15 +5,10 @@ import TextField from './TextField.js'
 import ConceptTypeToggle from './ConceptTypeToggle.js'
 import MedicationSearchField from './MedicationSearchField.js'
 import Icon from './Icon.js'
-import {
-  availableMedParams,
-  availableSubstanceParams,
-  extractSearchParams,
-  extractQueryText,
-  queryFromSearchObject,
-} from './fhir/search.js'
+import { paramsFromQuery, queryFromSearchObject } from './fhir/search.js'
 import { isValidSctid } from './snomed/sctid.js'
 import { snomedUri } from './snomed/core.js'
+import { amtConceptTypes } from './fhir/medication.js'
 
 import './css/SearchForm.css'
 
@@ -107,20 +102,13 @@ class SearchForm extends Component {
   componentDidMount() {
     const { query } = this.props
     if (query) {
+      const params = paramsFromQuery(query)
+      let nextSearch = {}
       // Filter ID from the list of parameters taken into the search object, as
       // it is not in the form and it is not valid to combine it with any other
       // parameter.
-      const availableParams = availableMedParams
-          .concat(availableSubstanceParams)
-          .filter(p => p !== 'id'),
-        searchParams = extractSearchParams(query, availableParams),
-        queryText = extractQueryText(query)
-      let nextSearch = {}
-      for (const param of searchParams) {
+      for (const param of params.allParams.filter(p => p[0] !== 'id')) {
         nextSearch = { ...nextSearch, ...{ [param[0]]: param[1] } }
-      }
-      if (queryText && queryText[queryText.length - 1] !== ':') {
-        nextSearch.text = queryText
       }
       this.setState(() => ({ search: nextSearch }))
     } else {
@@ -132,17 +120,10 @@ class SearchForm extends Component {
     const { query } = nextProps,
       { search } = this.state
     if (query && search === {}) {
-      const availableParams = availableMedParams.concat(
-          availableSubstanceParams,
-        ),
-        searchParams = extractSearchParams(query, availableParams),
-        queryText = extractQueryText(query)
+      const params = paramsFromQuery(query)
       let nextSearch = {}
-      for (const param of searchParams) {
+      for (const param of params.allParams) {
         nextSearch = { ...nextSearch, ...{ [param[0]]: param[1] } }
-      }
-      if (queryText && queryText[queryText.length - 1] !== ':') {
-        nextSearch.text = queryText
       }
       this.setState(() => ({ search: nextSearch }))
     }
@@ -229,9 +210,16 @@ class SearchForm extends Component {
           onError={this.handleError}
         />
         <ConceptTypeToggle
+          types={amtConceptTypes.filter(t => t !== 'substance' && t !== 'TP')}
           value={search.type ? search.type.split(',') : null}
-          label="Include only"
+          label="Type"
           onChange={value => this.handleChange('type', value.join(','))}
+        />
+        <ConceptTypeToggle
+          types={['active', 'inactive', 'entered-in-error']}
+          value={search.status ? search.status.split(',') : null}
+          label="Status"
+          onChange={value => this.handleChange('status', value.join(','))}
         />
         <a className="clear-form" onClick={this.clearSearch}>
           Clear all

@@ -6,7 +6,7 @@
   font-size: 11px;
 }
 
-.concept-type.concept-type-inactive {
+.concept-type.concept-type-status-inactive {
   background-color: white;
   font-weight: bold;
 }
@@ -20,7 +20,7 @@
   background-color: #bd3613;
 }
 
-.concept-type-ctpp.concept-type-inactive {
+.concept-type-ctpp.concept-type-status-inactive {
   color: #bd3613;
   border: 1px solid #bd3613;
 }
@@ -30,7 +30,7 @@
   background-color: #a57706;
 }
 
-.concept-type-tpp.concept-type-inactive {
+.concept-type-tpp.concept-type-status-inactive {
   color: #a57706;
   border: 1px solid #a57706;
 }
@@ -40,7 +40,7 @@
   background-color: #c61c6f;
 }
 
-.concept-type-tpuu.concept-type-inactive {
+.concept-type-tpuu.concept-type-status-inactive {
   color: #c61c6f;
   border: 1px solid #c61c6f;
 }
@@ -50,7 +50,7 @@
   background-color: #595ab7;
 }
 
-.concept-type-tp.concept-type-inactive {
+.concept-type-tp.concept-type-status-inactive {
   color: #595ab7;
   border: 1px solid #595ab7;
 }
@@ -60,7 +60,7 @@
   background-color: #2176c7;
 }
 
-.concept-type-mpp.concept-type-inactive {
+.concept-type-mpp.concept-type-status-inactive {
   color: #2176c7;
   border: 1px solid #2176c7;
 }
@@ -70,7 +70,7 @@
   background-color: #259286;
 }
 
-.concept-type-mpuu.concept-type-inactive {
+.concept-type-mpuu.concept-type-status-inactive {
   color: #259286;
   border: 1px solid #259286;
 }
@@ -80,7 +80,7 @@
   background-color: #738a05;
 }
 
-.concept-type-mp.concept-type-inactive {
+.concept-type-mp.concept-type-status-inactive {
   color: #738a05;
   border: 1px solid #738a05;
 }
@@ -90,7 +90,25 @@
   background-color: #d11c24;
 }
 
-.concept-type-substance.concept-type-inactive {
+.concept-type-substance.concept-type-status-inactive {
   color: #d11c24;
   border: 1px solid #d11c24;
 }
+
+.concept-type.concept-type-active,
+.concept-type.concept-type-inactive,
+.concept-type.concept-type-entered-in-error {
+  color: black;
+  border: 1px solid black;
+  font-weight: bold;
+  background-color: white;
+}
+
+.concept-type.concept-type-active.concept-type-disabled,
+.concept-type.concept-type-inactive.concept-type-disabled,
+.concept-type.concept-type-entered-in-error.concept-type-disabled {
+  color: #999;
+  border-color: #999;
+}
+
+/* .concept-type.concept-type-active.concept; */

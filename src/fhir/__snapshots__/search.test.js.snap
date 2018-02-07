@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`paramsFromQuery should return correct object for "" 1`] = `
+Object {
+  "allParams": Array [
+    Array [
+      "status",
+      "active",
+    ],
+  ],
+  "medParams": Array [
+    Array [
+      "status",
+      "active",
+    ],
+  ],
+  "substanceParams": Array [],
+}
+`;
+
+exports[`paramsFromQuery should return correct object for "soma" 1`] = `
+Object {
+  "allParams": Array [
+    Array [
+      "status",
+      "active",
+    ],
+    Array [
+      "text",
+      "soma",
+    ],
+  ],
+  "medParams": Array [
+    Array [
+      "status",
+      "active",
+    ],
+    Array [
+      "text",
+      "soma",
+    ],
+  ],
+  "substanceParams": Array [],
+}
+`;
+
+exports[`paramsFromQuery should return correct object for "type:TPUU ancestor:21821011000036104|codeine" 1`] = `
+Object {
+  "allParams": Array [
+    Array [
+      "type",
+      "TPUU",
+    ],
+    Array [
+      "ancestor",
+      "21821011000036104|codeine",
+    ],
+    Array [
+      "status",
+      "active",
+    ],
+  ],
+  "medParams": Array [
+    Array [
+      "type",
+      "TPUU",
+    ],
+    Array [
+      "ancestor",
+      "21821011000036104|codeine",
+    ],
+    Array [
+      "status",
+      "active",
+    ],
+  ],
+  "substanceParams": Array [],
+}
+`;
+
+exports[`paramsFromQuery should return correct object for "type:TPUU status:active,entered-in-error ancestor:"23628011000036109|paracetamol 500 mg tablet"" 1`] = `
+Object {
+  "allParams": Array [
+    Array [
+      "type",
+      "TPUU",
+    ],
+    Array [
+      "status",
+      "active,entered-in-error",
+    ],
+    Array [
+      "ancestor",
+      "23628011000036109|paracetamol 500 mg tablet",
+    ],
+  ],
+  "medParams": Array [
+    Array [
+      "type",
+      "TPUU",
+    ],
+    Array [
+      "status",
+      "active,entered-in-error",
+    ],
+    Array [
+      "ancestor",
+      "23628011000036109|paracetamol 500 mg tablet",
+    ],
+  ],
+  "substanceParams": Array [],
+}
+`;

@@ -8,6 +8,11 @@ import './css/ConceptTypeToggle.css'
 
 class ConceptTypeToggle extends Component {
   static propTypes = {
+    types: PropTypes.arrayOf(
+      PropTypes.oneOf(
+        amtConceptTypes.concat(['active', 'inactive', 'entered-in-error']),
+      ),
+    ),
     value: PropTypes.arrayOf(PropTypes.string),
     label: PropTypes.string,
     onChange: PropTypes.func,
@@ -43,22 +48,20 @@ class ConceptTypeToggle extends Component {
   }
 
   renderToggles() {
-    const { value } = this.props
+    const { types, value } = this.props
     return (
       <div className="toggles">
-        {amtConceptTypes
-          .filter(t => t !== 'substance' && t !== 'TP')
-          .map(type => {
-            const on = value && value.includes(type)
-            return (
-              <ConceptType
-                key={type}
-                type={type}
-                enabled={on}
-                onClick={() => this.handleChange(type, !on)}
-              />
-            )
-          })}
+        {types.map(type => {
+          const on = value && value.includes(type)
+          return (
+            <ConceptType
+              key={type}
+              type={type}
+              enabled={on || false}
+              onClick={() => this.handleChange(type, !on)}
+            />
+          )
+        })}
       </div>
     )
   }

@@ -6,7 +6,7 @@ import {
   codingToSnomedDisplay,
 } from './medication.js'
 
-export const availableMedParams = [
+const availableMedParams = [
   'id',
   'type',
   'status',
@@ -31,33 +31,45 @@ export const availableMedParams = [
   'ingredient-text',
 ]
 
-export const availableSubstanceParams = ['substance', 'substance-text']
+const availableSubstanceParams = ['substance', 'substance-text']
 
 // Translates a tagged search string into a valid GET URL (path only) which will
 // execute a search on the FHIR server. Returns false if there is no searchable
 // information in the query, e.g. `brand:`.
 export const pathForQuery = query => {
-  const medParams = extractSearchParams(query, availableMedParams)
+  const params = paramsFromQuery(query)
+  return pathFromParams(params.medParams, params.substanceParams)
+}
+
+// Extracts all parameters from a search query and returns an object: `{
+// medParams, substanceParams, allParams }`.
+export const paramsFromQuery = query => {
+  let medParams = extractSearchParams(query, availableMedParams)
   const queryText = extractQueryText(query)
   const substanceParams = extractSearchParams(query, availableSubstanceParams)
   // If there are no substance params, and no status parameter is present in the
   // query, default it to all statuses.
-  if (substanceParams.length === 0 && !medParams.find(p => p[0] === 'status'))
-    medParams.push(['status', 'active,inactive,entered-in-error'])
+  if (substanceParams.length === 0) medParams = applyDefaultStatus(medParams)
   // If there is query text present within the query, add a `text` parameter to
   // the Medication params.
   if (queryText && queryText[queryText.length - 1] !== ':') {
     medParams.push(['text', queryText])
   }
-  return pathFromParams(medParams, substanceParams)
+  return {
+    medParams,
+    substanceParams,
+    allParams: medParams.concat(substanceParams),
+  }
 }
 
 // Translates a search object, with available search parameters as keys, into a
 // tagged search string.
 export const queryFromSearchObject = search => {
-  const params = filterSearchObject(
-    search,
-    availableMedParams.concat(availableSubstanceParams),
+  const params = stripDefaultStatusFromSearch(
+    filterSearchObject(
+      search,
+      availableMedParams.concat(availableSubstanceParams),
+    ),
   )
   let query = params.map(p => `${p[0]}:${p[1]}`).join(' ')
   if (search.text) query += query ? ` ${search.text}` : search.text
@@ -120,7 +132,7 @@ const pathFromParams = (medParams, substanceParams) => {
 // Extract all tagged search parameters from the string (subject to the supplied
 // `params` whitelist), and return them as an a array of `[ param, value ]`
 // tuples.
-export const extractSearchParams = (query, params) =>
+const extractSearchParams = (query, params) =>
   params.reduce((result, param) => {
     const pattern = RegExp(`(?:^|\\s)${param}:(?:"([^"]+)"|([^"\\s]+))`, 'g')
     let match
@@ -139,8 +151,20 @@ export const extractSearchParams = (query, params) =>
   }, [])
 
 // Remove any tagged parameters, leaving only the text query component.
-export const extractQueryText = query =>
+const extractQueryText = query =>
   query.replace(/[A-Za-z\\-]+:(?:"([^"]*)"|([^"\s]*))/g, '').trim()
+
+// Defaults the `status` parameter within a search object when it has not been
+// specified.
+const applyDefaultStatus = search =>
+  search.find(p => p[0] === 'status') === undefined
+    ? search.concat([['status', 'active']])
+    : search
+
+// Omits the default `status` value when constructing a path from a search
+// object.
+const stripDefaultStatusFromSearch = search =>
+  search.filter(p => !(p[0] === 'status' && p[1] === 'active'))
 
 // Return the GET parameter for a specified Medication search tag and value.
 const getMedicationParamFor = (param, value) => {

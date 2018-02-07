@@ -14,6 +14,9 @@ class ConceptType extends Component {
       'MPUU',
       'MP',
       'substance',
+      'active',
+      'inactive',
+      'entered-in-error',
     ]),
     status: PropTypes.oneOf(['active', 'inactive', 'entered-in-error']),
     enabled: PropTypes.bool,
@@ -44,7 +47,9 @@ class ConceptType extends Component {
     const { type, status, enabled } = this.props
     let className = `concept-type concept-type-${type}`.toLowerCase()
     className =
-      status === 'active' ? className : className + ' concept-type-inactive'
+      status == 'active'
+        ? className
+        : className + ' concept-type-status-inactive'
     className = enabled ? className : className + ' concept-type-disabled'
     return (
       <span

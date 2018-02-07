@@ -4368,6 +4368,203 @@ exports[`Storyshots ConceptGroup With parent medication search result 1`] = `
 </div>
 `;
 
+exports[`Storyshots ConceptType CTPP (active) 1`] = `
+<span
+  className="concept-type concept-type-ctpp"
+  onClick={[Function]}
+  title="Active"
+>
+  CTPP
+</span>
+`;
+
+exports[`Storyshots ConceptType CTPP (entered-in-error) 1`] = `
+<span
+  className="concept-type concept-type-ctpp concept-type-status-inactive"
+  onClick={[Function]}
+  title="Entered in error"
+>
+  CTPP
+</span>
+`;
+
+exports[`Storyshots ConceptType CTPP (inactive) 1`] = `
+<span
+  className="concept-type concept-type-ctpp concept-type-status-inactive"
+  onClick={[Function]}
+  title="Inactive"
+>
+  CTPP
+</span>
+`;
+
+exports[`Storyshots ConceptType CTPP 1`] = `
+<span
+  className="concept-type concept-type-ctpp"
+  onClick={[Function]}
+  title="Active"
+>
+  CTPP
+</span>
+`;
+
+exports[`Storyshots ConceptType MP 1`] = `
+<span
+  className="concept-type concept-type-mp"
+  onClick={[Function]}
+  title="Active"
+>
+  MP
+</span>
+`;
+
+exports[`Storyshots ConceptType MPP (disabled) 1`] = `
+<span
+  className="concept-type concept-type-mpp concept-type-disabled"
+  onClick={[Function]}
+  title="Active"
+>
+  MPP
+</span>
+`;
+
+exports[`Storyshots ConceptType MPP 1`] = `
+<span
+  className="concept-type concept-type-mpp"
+  onClick={[Function]}
+  title="Active"
+>
+  MPP
+</span>
+`;
+
+exports[`Storyshots ConceptType MPUU 1`] = `
+<span
+  className="concept-type concept-type-mpuu"
+  onClick={[Function]}
+  title="Active"
+>
+  MPUU
+</span>
+`;
+
+exports[`Storyshots ConceptType TP 1`] = `
+<span
+  className="concept-type concept-type-tp"
+  onClick={[Function]}
+  title="Active"
+>
+  TP
+</span>
+`;
+
+exports[`Storyshots ConceptType TPP 1`] = `
+<span
+  className="concept-type concept-type-tpp"
+  onClick={[Function]}
+  title="Active"
+>
+  TPP
+</span>
+`;
+
+exports[`Storyshots ConceptType TPUU 1`] = `
+<span
+  className="concept-type concept-type-tpuu"
+  onClick={[Function]}
+  title="Active"
+>
+  TPUU
+</span>
+`;
+
+exports[`Storyshots ConceptType active (disabled) 1`] = `
+<span
+  className="concept-type concept-type-active concept-type-disabled"
+  onClick={[Function]}
+  title="Active"
+>
+  active
+</span>
+`;
+
+exports[`Storyshots ConceptType active 1`] = `
+<span
+  className="concept-type concept-type-active"
+  onClick={[Function]}
+  title="Active"
+>
+  active
+</span>
+`;
+
+exports[`Storyshots ConceptType entered-in-error 1`] = `
+<span
+  className="concept-type concept-type-entered-in-error"
+  onClick={[Function]}
+  title="Active"
+>
+  entered-in-error
+</span>
+`;
+
+exports[`Storyshots ConceptType inactive 1`] = `
+<span
+  className="concept-type concept-type-inactive"
+  onClick={[Function]}
+  title="Active"
+>
+  inactive
+</span>
+`;
+
+exports[`Storyshots ConceptType substance 1`] = `
+<span
+  className="concept-type concept-type-substance"
+  onClick={[Function]}
+  title="Active"
+>
+  substance
+</span>
+`;
+
+exports[`Storyshots ConceptTypeToggle Statuses 1`] = `
+<div
+  className="concept-type-toggle"
+>
+  <label>
+    <span>
+      Concept status
+    </span>
+    <div
+      className="toggles"
+    >
+      <ConceptType
+        enabled={false}
+        key="active"
+        onClick={[Function]}
+        status="active"
+        type="active"
+      />
+      <ConceptType
+        enabled={false}
+        key="inactive"
+        onClick={[Function]}
+        status="active"
+        type="inactive"
+      />
+      <ConceptType
+        enabled={false}
+        key="entered-in-error"
+        onClick={[Function]}
+        status="active"
+        type="entered-in-error"
+      />
+    </div>
+  </label>
+</div>
+`;
+
 exports[`Storyshots ConceptTypeToggle With label and no value 1`] = `
 <div
   className="concept-type-toggle"
@@ -4380,42 +4577,42 @@ exports[`Storyshots ConceptTypeToggle With label and no value 1`] = `
       className="toggles"
     >
       <ConceptType
-        enabled={true}
+        enabled={false}
         key="CTPP"
         onClick={[Function]}
         status="active"
         type="CTPP"
       />
       <ConceptType
-        enabled={true}
+        enabled={false}
         key="TPP"
         onClick={[Function]}
         status="active"
         type="TPP"
       />
       <ConceptType
-        enabled={true}
+        enabled={false}
         key="TPUU"
         onClick={[Function]}
         status="active"
         type="TPUU"
       />
       <ConceptType
-        enabled={true}
+        enabled={false}
         key="MPP"
         onClick={[Function]}
         status="active"
         type="MPP"
       />
       <ConceptType
-        enabled={true}
+        enabled={false}
         key="MPUU"
         onClick={[Function]}
         status="active"
         type="MPUU"
       />
       <ConceptType
-        enabled={true}
+        enabled={false}
         key="MP"
         onClick={[Function]}
         status="active"
@@ -5847,8 +6044,30 @@ exports[`Storyshots SearchForm With a query 1`] = `
     stopPropagation={false}
   />
   <ConceptTypeToggle
-    label="Include only"
+    label="Type"
     onChange={[Function]}
+    types={
+      Array [
+        "CTPP",
+        "TPP",
+        "TPUU",
+        "MPP",
+        "MPUU",
+        "MP",
+      ]
+    }
+    value={null}
+  />
+  <ConceptTypeToggle
+    label="Status"
+    onChange={[Function]}
+    types={
+      Array [
+        "active",
+        "inactive",
+        "entered-in-error",
+      ]
+    }
     value={null}
   />
   <a
