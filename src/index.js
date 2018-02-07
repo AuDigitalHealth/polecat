@@ -11,11 +11,13 @@ import './css/index.css'
 // Deregister any service workers. This is to make sure that service workers
 // that were installed within previous versions of the code are now removed from
 // all clients. This was causing some problems with caching of the JS bundle.
-navigator.serviceWorker.getRegistrations().then(function(registrations) {
-  for (let registration of registrations) {
-    registration.unregister()
-  }
-})
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.getRegistrations().then(function(registrations) {
+    for (let registration of registrations) {
+      registration.unregister()
+    }
+  })
+}
 
 if (
   (bowser.msie && bowser.version <= 11) ||
