@@ -117,9 +117,8 @@ class SearchForm extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { query } = nextProps,
-      { search } = this.state
-    if (query && search === {}) {
+    const { query } = nextProps
+    if (query) {
       const params = paramsFromQuery(query)
       let nextSearch = {}
       for (const param of params.allParams) {
