@@ -187,13 +187,8 @@ class Search extends Component {
   }
 
   handleToggleAdvanced() {
-    const { query: queryFromProps, history } = this.props
-    const { query: queryFromState, advanced } = this.state
-    const query = queryFromState || queryFromProps
+    const { advanced } = this.state
     this.setState(() => ({ advanced: !advanced }))
-    if (!advanced && query) {
-      history.push(searchPathFromQuery(query))
-    }
   }
 
   handleQuickSearchClosed() {
