@@ -20,11 +20,8 @@ export const getSubjectConcept = resource => {
 // - `substance`, in the case of a Substance resource.
 const getSubjectConceptType = resource => {
   if (resource.resourceType === 'Medication') {
-    const resourceType = resource.extension.find(
-      extensionFilterFor('medicationResourceType'),
-    )
-    validateMedicationResourceType(resourceType)
-    return resourceType.valueCoding.code
+    const type = getExtension(resource, 'medicationResourceType', 'valueCoding')
+    return type.code
   } else if (resource.resourceType === 'Substance') {
     return 'substance'
   } else {
@@ -36,80 +33,69 @@ export const getRelatedConcepts = (resource, source) => {
   // Call the generator function and merge together the results into a single
   // object with all concepts and all relationships.
   const result = [
-    ...getExtensionConcepts(resource.extension, source),
-    ...getPackageConcepts(resource.package, source),
+    ...getExtensionConcepts(resource, source),
+    ...getPackageConcepts(resource, source),
   ].reduce(mergeConceptsAndRelationships, emptyConcepts())
   return result
 }
 
-function* getExtensionConcepts(extension, source) {
-  if (!extension) return emptyConcepts()
-  // Get parent medication.
-  const parent = getParentMedication(extension, source)
-  let target
-  // Grab the parent medication, if there is one at this level.
-  if (parent) {
-    yield parent
-    target = parent.concepts[0]
-  }
+function* getExtensionConcepts(resource, sourceConcept) {
+  if (!resource.extension) return emptyConcepts()
   // Get brand.
-  yield getBrand(extension, source)
-  // Recurse into each "parents" array to extract the data from each level
-  // of the hierarchy.
-  for (const parents of extension.filter(
-    extensionFilterFor('parentMedicationResources'),
-  )) {
-    yield* getExtensionConcepts(parents.extension, target || source)
-  }
+  yield getBrand(resource, sourceConcept)
+  // Recursively yield all parent medications.
+  yield* getParentMedications(resource, sourceConcept)
+  // Get concepts that the source concept is replaced by.
+  yield* getReplacedByConcepts(resource, sourceConcept)
+  // Get concepts that the source concept replaces.
+  yield* getReplacesConcepts(resource, sourceConcept)
 }
 
-function* getPackageConcepts(medPackage, source) {
-  if (!medPackage) return emptyConcepts()
-  for (const content of medPackage.content) {
-    validatePackageContent(content)
-    const coding = [
-      {
-        system: snomedUri,
-        code: referenceToCode(content.itemReference.reference),
-        display: content.itemReference.display,
-      },
-    ]
-    // Get the type of the primary package concept by finding the
-    // `medicationResourceType` within the extension.
-    const resourceType = validateMedicationResourceType(
-      content.itemReference.extension.find(
-        extensionFilterFor('medicationResourceType'),
-      ),
-    )
-    // Get the status of the primary package concept by finding the
-    // `medicationResourceReferenceStatus` within the extension.
-    const resourceStatus = validateMedicationResourceReferenceStatus(
-      content.itemReference.extension.find(
-        extensionFilterFor('medicationResourceReferenceStatus'),
-      ),
-    )
-    const type = resourceType.valueCoding.code
-    const status = resourceStatus.valueCode
-    const target = { coding, type, status }
-    // Return the new concept, along with a relationship between the source
-    // concept and the new concept.
-    yield {
-      concepts: [target],
-      relationships: [
+function* getPackageConcepts(resource, sourceConcept) {
+  if (!resource.package) return emptyConcepts()
+  for (const content of resource.package.content) {
+    try {
+      if (!content.itemReference)
+        throw new Error('content.itemReference not found.')
+      const coding = [
         {
-          source: codingToSnomedCode(source.coding),
-          target: codingToSnomedCode(target.coding),
-          type: relationshipTypeFor(source.type, target.type),
+          system: snomedUri,
+          code: referenceToId(content.itemReference.reference),
+          display: content.itemReference.display,
         },
-      ],
-    }
-    // Recurse into each "parents" array to extract the data from each level
-    // of the hierarchy.
-    for (const parents of content.itemReference.extension.filter(
-      extensionFilterFor('parentMedicationResources'),
-    )) {
-      // The target concept becomes the new source.
-      yield* getExtensionConcepts(parents.extension, target)
+      ]
+      // Get the type of the primary package concept by finding the
+      // `medicationResourceType` within the extension.
+      const resourceType = getExtension(
+        content.itemReference,
+        'medicationResourceType',
+      )
+      // Get the status of the primary package concept by finding the
+      // `medicationResourceReferenceStatus` within the extension.
+      const resourceStatus = getExtension(
+        content.itemReference,
+        'medicationResourceReferenceStatus',
+      )
+      const type = resourceType.code
+      const status = resourceStatus
+      const targetConcept = { coding, type, status }
+      // Return the new concept, along with a relationship between the source
+      // concept and the new concept.
+      yield {
+        concepts: [targetConcept],
+        relationships: [
+          {
+            source: codingToSnomedCode(sourceConcept.coding),
+            target: codingToSnomedCode(targetConcept.coding),
+            type: relationshipTypeFor(sourceConcept.type, targetConcept.type),
+          },
+        ],
+      }
+      // Recursively process further parent medications.
+      yield* getParentMedications(content.itemReference, targetConcept)
+    } catch (error) {
+      // If there is an error, skip this content item and try the next one.
+      continue
     }
   }
 }
@@ -119,77 +105,84 @@ const getStatus = resource => resource.status
 
 // Get the source code system URI and version from a Medication resource.
 const getSourceCodeSystem = resource => {
-  if (!resource.extension) return {}
-  const sourceCodeSystem = resource.extension.find(
-    extensionFilterFor('sourceCodeSystem'),
-  )
-  if (!sourceCodeSystem) throw new Error('Missing sourceCodeSystem.')
-  const sourceCodeSystemUri = sourceCodeSystem.extension.find(
-    extensionFilterFor('sourceCodeSystemUri'),
-  )
-  const sourceCodeSystemVersion = sourceCodeSystem.extension.find(
-    extensionFilterFor('sourceCodeSystemVersion'),
-  )
-  if (!sourceCodeSystemUri || !sourceCodeSystemUri.valueUri)
-    throw new Error('Missing sourceCodeSystemUri.')
-  if (!sourceCodeSystemVersion || !sourceCodeSystemVersion.valueString)
-    throw new Error('Missing sourceCodeSystemVersion.')
-  return {
-    sourceCodeSystemUri: sourceCodeSystemUri.valueUri,
-    sourceCodeSystemVersion: sourceCodeSystemVersion.valueString,
+  try {
+    const sourceCodeSystem = getExtension(resource, 'sourceCodeSystem')
+    const sourceCodeSystemUri = getExtension(
+      sourceCodeSystem,
+      'sourceCodeSystemUri',
+    )
+    const sourceCodeSystemVersion = getExtension(
+      sourceCodeSystem,
+      'sourceCodeSystemVersion',
+    )
+    return { sourceCodeSystemUri, sourceCodeSystemVersion }
+  } catch (error) {
+    return {}
   }
 }
 
-// Get the code and type of a parent medication, and work out its relationship
-// to a given source code.
-const getParentMedication = (extension, source) => {
-  try {
-    // Get the extension which provides the parent code itself.
-    const parentMedication = validateParentMedication(
-      extension.find(extensionFilterFor('parentMedication')),
-    )
-    // Get the extension which describes the resource type of the parent code.
-    const resourceType = validateMedicationResourceType(
-      extension.find(extensionFilterFor('medicationResourceType')),
-    )
-    // Get the extension which describes the status of the parent code.
-    const resourceStatus = validateMedicationResourceReferenceStatus(
-      extension.find(extensionFilterFor('medicationResourceReferenceStatus')),
-    )
-    const coding = valueReferenceToSnomedCoding(parentMedication.valueReference)
-    const type = resourceType.valueCoding.code
-    const status = resourceStatus.valueCode
-    // Yield a structure with an array of concepts, and an array of
-    // relationships. This will be merged with data found elsewhere in the
-    // resource, and in other resources, later on.
-    return {
-      concepts: [{ coding, type, status }],
-      relationships: [
-        {
-          source: codingToSnomedCode(source.coding),
-          target: codingToSnomedCode(coding),
-          type: relationshipTypeFor(source.type, type),
-        },
-      ],
+// Yield the concepts and relationships between all parent medications
+// represented within the extension of the given element, using the given
+// concept as the source of the child-parent relationship.
+function* getParentMedications(resourceOrExtension, sourceConcept) {
+  for (const parentMedicationResources of getAllExtensions(
+    resourceOrExtension,
+    'parentMedicationResources',
+  )) {
+    try {
+      // Get the extension which provides the parent code itself.
+      const parentMedication = getExtension(
+        parentMedicationResources,
+        'parentMedication',
+      )
+      // Get the extension which describes the resource type of the parent code.
+      const resourceType = getExtension(
+        parentMedicationResources,
+        'medicationResourceType',
+      )
+      // Get the extension which describes the status of the parent code.
+      const status = getExtension(
+        parentMedicationResources,
+        'medicationResourceReferenceStatus',
+      )
+      const coding = referenceToSnomedCoding(parentMedication)
+      const type = resourceType.code
+      const targetConcept = { coding, type, status }
+      // Yield a structure with an array of concepts, and an array of
+      // relationships. This will be merged with data found elsewhere in the
+      // resource, and in other resources, later on.
+      yield {
+        concepts: [targetConcept],
+        relationships: [
+          {
+            source: codingToSnomedCode(sourceConcept.coding),
+            target: codingToSnomedCode(coding),
+            type: relationshipTypeFor(sourceConcept.type, type),
+          },
+        ],
+      }
+      // Recursively process further parent medications.
+      yield* getParentMedications(parentMedicationResources, targetConcept)
+    } catch (error) {
+      // If there is an error processing one of the `parentMedicationResources`,
+      // abort and go on to the next one.
+      continue
     }
-  } catch (error) {
-    return null
   }
 }
 
 // Get brand information from within the extension.
-const getBrand = (extension, source) => {
+const getBrand = (resource, subjectConcept) => {
   try {
     // Get the extension which provides the brand information.
-    const brand = validateBrand(extension.find(extensionFilterFor('brand')))
-    const coding = brand.valueCodeableConcept.coding
+    const coding = getExtension(resource, 'brand').coding
     return {
       concepts: [{ coding, type: 'brand' }],
       relationships: [
         {
-          source: codingToSnomedCode(source.coding),
+          source: codingToSnomedCode(subjectConcept.coding),
           target: codingToSnomedCode(coding),
-          type: relationshipTypeFor(source.type, 'brand'),
+          type: relationshipTypeFor(subjectConcept.type, 'brand'),
         },
       ],
     }
@@ -198,55 +191,104 @@ const getBrand = (extension, source) => {
   }
 }
 
-const validateParentMedication = parentMedication => {
-  if (!parentMedication) throw new Error('Missing parentMedication.')
-  return parentMedication
+// Get concepts that replace the source concept, from within the supplied
+// resource.
+function* getReplacedByConcepts(resource, subjectConcept) {
+  try {
+    for (const ext of getAllExtensions(resource, 'isReplacedByResources')) {
+      const replacedByResource = getExtension(ext, 'isReplacedBy')
+      const replacementDate = getExtension(ext, 'replacementDate')
+      yield {
+        concepts: [
+          {
+            coding: referenceToSnomedCoding(replacedByResource),
+            // FIXME: These are guesses, waiting on type and status to be added
+            // so that we can put the correct values here.
+            type: subjectConcept.type,
+            status: 'active',
+          },
+        ],
+        relationships: [
+          {
+            source: codingToSnomedCode(subjectConcept.coding),
+            target: referenceToId(replacedByResource.reference),
+            type: 'replaced-by',
+            replacementDate,
+          },
+        ],
+      }
+    }
+  } catch (error) {
+    return emptyConcepts()
+  }
 }
 
-const validateMedicationResourceType = medicationResourceType => {
-  if (!medicationResourceType) {
-    throw new Error('Missing medicationResourceType value.')
+// Get concepts that the source concept replaces, from within the supplied
+// extension.
+function* getReplacesConcepts(resource, subjectConcept) {
+  try {
+    for (const replacesResources of getAllExtensions(
+      resource,
+      'replacesResources',
+    )) {
+      const replacesResource = getExtension(
+        replacesResources,
+        'replacesResource',
+      )
+      const replacementDate = getExtension(replacesResources, 'replacementDate')
+      yield {
+        concepts: [
+          {
+            coding: referenceToSnomedCoding(replacesResource),
+            // FIXME: These are guesses, waiting on type and status to be added
+            // so that we can put the correct values here.
+            type: subjectConcept.type,
+            status: 'entered-in-error',
+          },
+        ],
+        relationships: [
+          {
+            source: codingToSnomedCode(subjectConcept.coding),
+            target: referenceToId(replacesResource.reference),
+            type: 'replaces',
+            replacementDate,
+          },
+        ],
+      }
+    }
+  } catch (error) {
+    return emptyConcepts()
   }
-  if (!medicationResourceType.valueCoding) {
-    throw new Error('Missing medicationResourceType.valueCoding.')
-  }
-  if (!medicationResourceType.valueCoding.code) {
-    throw new Error('Missing medicationResourceType.valueCoding.code.')
-  }
-  return medicationResourceType
 }
 
-const validateMedicationResourceReferenceStatus = medResourceRefStatus => {
-  if (!medResourceRefStatus) {
-    throw new Error('Missing medicationResourceReferenceStatus value.')
-  }
-  if (!medResourceRefStatus.valueCode) {
-    throw new Error('Missing medicationResourceType.valueCode.')
-  }
-  return medResourceRefStatus
+const getExtension = (element, extensionName, { valueOnly = true } = {}) => {
+  if (!(element && element.extension)) throw new Error('Extension not found.')
+  const extension = element.extension.find(
+    ext => ext.url === urlForExtension(extensionName),
+  )
+  if (!extension) throw new Error(`Extension not found: ${extensionName}`)
+  const type = typeForExtension(extensionName)
+  // If the extension is of type `extension`, just give it back rather than its
+  // child extension. This allows us to properly walk the extension hierarchy
+  // using this same function. Otherwise, give the value back.
+  return type === 'extension' || valueOnly === false
+    ? extension
+    : extension[typeForExtension(extensionName)]
 }
 
-const validateBrand = brand => {
-  if (!brand) throw new Error('Missing brand value.')
-  if (!brand.valueCodeableConcept) {
-    throw new Error('Missing brand.valueCodeableConcept.')
-  }
-  return brand
-}
-
-const validatePackageContent = content => {
-  if (!content) throw new Error('Missing package content.')
-  if (!content.itemReference) throw new Error('Missing content.itemReference.')
-  if (!content.itemReference.reference) {
-    throw new Error('Missing content.itemReference.reference.')
-  }
-  if (!content.itemReference.display) {
-    throw new Error('Missing content.itemReference.display.')
-  }
-  if (!content.itemReference.extension) {
-    throw new Error('Missing content.itemReference.extension.')
-  }
-  return content
+const getAllExtensions = (
+  element,
+  extensionName,
+  { valueOnly = true } = {},
+) => {
+  if (!(element && element.extension)) return []
+  const extensions = element.extension.filter(
+    ext => ext.url === urlForExtension(extensionName),
+  )
+  const type = typeForExtension(extensionName)
+  return extensions.map(
+    ext => (type === 'extension' || valueOnly === false ? ext : ext[type]),
+  )
 }
 
 export const artgUri =
@@ -270,31 +312,42 @@ const urlForExtension = name =>
     parentMedicationResources:
       'http://medserve.online/fhir/StructureDefinition/parentMedicationResources',
     brand: 'http://medserve.online/fhir/StructureDefinition/brand',
+    isReplacedByResources:
+      'http://medserve.online/fhir/StructureDefinition/isReplacedByResources',
+    isReplacedBy:
+      'http://medserve.online/fhir/StructureDefinition/isReplacedBy',
+    replacesResources:
+      'http://medserve.online/fhir/StructureDefinition/replacesResources',
+    replacesResource:
+      'http://medserve.online/fhir/StructureDefinition/replacesResource',
+    replacementType:
+      'http://medserve.online/fhir/StructureDefinition/replacementType',
+    replacementDate:
+      'http://medserve.online/fhir/StructureDefinition/replacementDate',
+  }[name])
+
+const typeForExtension = name =>
+  ({
+    medicationResourceType: 'valueCoding',
+    medicationResourceReferenceStatus: 'valueCode',
+    sourceCodeSystem: 'extension',
+    sourceCodeSystemUri: 'valueUri',
+    sourceCodeSystemVersion: 'valueString',
+    parentMedication: 'valueReference',
+    parentMedicationResources: 'extension',
+    brand: 'valueCodeableConcept',
+    isReplacedByResources: 'extension',
+    isReplacedBy: 'valueReference',
+    replacesResources: 'extension',
+    replacesResource: 'valueReference',
+    replacementType: 'valueCoding',
+    replacementDate: 'valueDate',
   }[name])
 
 export const urlForArtgId = id =>
   `http://search.tga.gov.au/s/search.html?collection=tga-artg&profile=record&meta_i=${id}`
 
-// Filter functions for finding different types of information within the
-// extension.
-const extensionFilterFor = key =>
-  ({
-    medicationResourceType: ext =>
-      ext.url === urlForExtension('medicationResourceType'),
-    medicationResourceReferenceStatus: ext =>
-      ext.url === urlForExtension('medicationResourceReferenceStatus'),
-    sourceCodeSystem: ext => ext.url === urlForExtension('sourceCodeSystem'),
-    sourceCodeSystemUri: ext =>
-      ext.url === urlForExtension('sourceCodeSystemUri'),
-    sourceCodeSystemVersion: ext =>
-      ext.url === urlForExtension('sourceCodeSystemVersion'),
-    parentMedication: ext => ext.url === urlForExtension('parentMedication'),
-    parentMedicationResources: ext =>
-      ext.url === urlForExtension('parentMedicationResources') && ext.extension,
-    brand: ext => ext.url === urlForExtension('brand'),
-  }[key])
-
-// Relationship types for different combinations of concept types.
+// Inferred relationship types for different combinations of concept types.
 export const relationshipTypeFor = (sourceType, targetType) => {
   switch (`${sourceType}-${targetType}`) {
     // CTPP -> CTPP
@@ -379,6 +432,8 @@ export const humaniseRelationshipType = (type, plural) =>
         'has-component': 'have component',
         'has-brand': 'have brand',
         'has-bpsf': 'are packages containing',
+        'replaced-by': 'are replaced by',
+        replaces: 'replace',
         unknown: null,
       }[type]
     : {
@@ -387,6 +442,8 @@ export const humaniseRelationshipType = (type, plural) =>
         'has-component': 'has component',
         'has-brand': 'has brand',
         'has-bpsf': 'has unit of use',
+        'replaced-by': 'is replaced by',
+        replaces: 'replaces',
         unknown: null,
       }[type]
 
@@ -452,8 +509,8 @@ export const amtConceptTypeFor = fhirType => fhirToAmtTypes[fhirType]
 // Mapping from AMT concept type to FHIR Medication type.
 export const fhirMedicationTypeFor = amtType => amtToFhirTypes[amtType]
 
-// Conversion from `Medication/[code]` to code.
-const referenceToCode = reference => {
+// Conversion from `Medication/[id]` to id.
+const referenceToId = reference => {
   if (!reference) {
     throw new Error('Missing reference.')
   }
@@ -496,7 +553,7 @@ export const codingToGroupCode = coding => {
   return found ? found.code : null
 }
 
-// Takes a `valueReference` element and returns a `coding` element, containing a
+// Takes a `Reference` element and returns a `coding` element, containing a
 // single SNOMED 'code', e.g.
 // {
 //   "reference": "Medication/813181000168109",
@@ -510,12 +567,12 @@ export const codingToGroupCode = coding => {
 //     "display": "Nuromol film-coated tablet, 16"
 //   },
 // ]
-const valueReferenceToSnomedCoding = valueReference => {
+const referenceToSnomedCoding = valueReference => {
   if (!valueReference) throw new Error('Missing valueReference.')
   return [
     {
       system: snomedUri,
-      code: referenceToCode(valueReference.reference),
+      code: referenceToId(valueReference.reference),
       display: valueReference.display,
     },
   ]
