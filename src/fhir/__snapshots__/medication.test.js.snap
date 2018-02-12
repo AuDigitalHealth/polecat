@@ -1,5 +1,205 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`getRelatedConcepts should return correct result for CTPP 19255011000036102 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "60751000168107",
+          "display": "Codalgin Forte",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "12545011000036102",
+          "display": "Codalgin Forte uncoated tablet, 20",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "entered-in-error",
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "28329011000036108",
+          "display": "paracetamol 500 mg + codeine phosphate 30 mg tablet, 20",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "entered-in-error",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "27087011000036102",
+          "display": "codeine phosphate 30 mg tablet, 20",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "entered-in-error",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "46259011000036105",
+          "display": "paracetamol 500 mg tablet, 20",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "4543011000036106",
+          "display": "Codalgin Forte uncoated tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "entered-in-error",
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23641011000036102",
+          "display": "paracetamol 500 mg + codeine phosphate 30 mg tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "entered-in-error",
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23628011000036109",
+          "display": "paracetamol 500 mg tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21433011000036107",
+          "display": "paracetamol",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21286011000036106",
+          "display": "paracetamol + codeine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21821011000036104",
+          "display": "codeine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "22456011000036101",
+          "display": "codeine phosphate 30 mg tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "entered-in-error",
+      "type": "UPDSF",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "19255011000036102",
+      "target": "60751000168107",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "19255011000036102",
+      "target": "12545011000036102",
+      "type": "is-a",
+    },
+    Object {
+      "source": "12545011000036102",
+      "target": "28329011000036108",
+      "type": "is-a",
+    },
+    Object {
+      "source": "28329011000036108",
+      "target": "27087011000036102",
+      "type": "has-component",
+    },
+    Object {
+      "source": "28329011000036108",
+      "target": "46259011000036105",
+      "type": "has-component",
+    },
+    Object {
+      "source": "19255011000036102",
+      "target": "4543011000036106",
+      "type": "unknown",
+    },
+    Object {
+      "source": "4543011000036106",
+      "target": "23641011000036102",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23641011000036102",
+      "target": "23628011000036109",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23628011000036109",
+      "target": "21433011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23641011000036102",
+      "target": "21286011000036106",
+      "type": "is-a",
+    },
+    Object {
+      "source": "21286011000036106",
+      "target": "21821011000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23641011000036102",
+      "target": "22456011000036101",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
 exports[`getRelatedConcepts should return correct result for CTPP 19481011000036105 1`] = `
 Object {
   "concepts": Array [
@@ -2175,6 +2375,26 @@ exports[`getRelatedConcepts should return correct result for substance 229201100
 Object {
   "concepts": Array [],
   "relationships": Array [],
+}
+`;
+
+exports[`getSubjectConcept should return correct result for CTPP 19255011000036102 1`] = `
+Object {
+  "coding": Array [
+    Object {
+      "code": "19255011000036102",
+      "display": "Codalgin Forte uncoated tablet, 20, blister pack",
+      "system": "http://snomed.info/sct",
+    },
+    Object {
+      "code": "47807",
+      "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+    },
+  ],
+  "sourceCodeSystemUri": "http://snomed.info/sct",
+  "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+  "status": "entered-in-error",
+  "type": "BPGC",
 }
 `;
 

@@ -62,10 +62,27 @@ storiesOf('AmtBrowser', module)
       viewport={{ width, height }}
     />
   ))
-  .add('Search', () => (
+  .add('Search for esomeprazole', () => (
     <AmtBrowser
       query="esomeprazole"
       config={config}
       viewport={{ width, height }}
     />
   ))
+  .add('Codalgin Forte uncoated tablet, 20, blister pack (inactive)', () => (
+    <AmtBrowser
+      id="19255011000036102"
+      config={config}
+      viewport={{ width, height }}
+    />
+  ))
+  .add(
+    'Codalgin Forte uncoated tablet, 20, blister pack (replaces inactive)',
+    () => (
+      <AmtBrowser
+        id="835891000168108"
+        config={config}
+        viewport={{ width, height }}
+      />
+    ),
+  )
