@@ -27,7 +27,6 @@ class ErrorMessage extends Component {
     const defaultStyle = { y: -70 }
     const style = { y: spring(0) }
 
-    // TODO: Remove dependency on react-motion in favour of CSS transitions.
     return (
       <Motion defaultStyle={defaultStyle} style={style}>
         {motion => this.renderError(error, motion)}
