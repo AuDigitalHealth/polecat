@@ -17,6 +17,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn test-ci
       - run: yarn build
+      - setup_remote_docker
       - run: yarn dockerize
       - run: yarn push-docker
       - run: yarn deploy
