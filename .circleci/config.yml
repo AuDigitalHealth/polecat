@@ -21,5 +21,6 @@ jobs:
       - run: yarn dockerize
       - run: yarn push-docker
       - run: ssh-keyscan $SERVER_HOSTNAME >> ~/.ssh/known_hosts
+      - add_ssh_keys
       - run: yarn deploy
       - run: yarn record-release
