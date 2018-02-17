@@ -35,6 +35,7 @@ export const getRelatedConcepts = (resource, source) => {
   const result = [
     ...getExtensionConcepts(resource, source),
     ...getPackageConcepts(resource, source),
+    ...getIngredients(resource, source),
   ].reduce(mergeConceptsAndRelationships, emptyConcepts())
   return result
 }
@@ -97,6 +98,39 @@ function* getPackageConcepts(resource, sourceConcept) {
       yield* getParentMedications(content.itemReference, targetConcept)
     } catch (error) {
       // If there is an error, skip this content item and try the next one.
+      continue
+    }
+  }
+}
+
+function* getIngredients(resource, sourceConcept) {
+  if (!resource.ingredient) return []
+  for (const ingredient of resource.ingredient) {
+    try {
+      if (!ingredient.itemReference)
+        throw new Error('ingredient.itemReference not found.')
+      // Get the details of the coding from the `ingredient` element.
+      const coding = [
+        {
+          system: snomedUri,
+          code: referenceToId(ingredient.itemReference.reference),
+          display: ingredient.itemReference.display,
+        },
+      ]
+      // Return the Substance concept, along with a relationship between it and
+      // the source concept.
+      const targetConcept = { coding, type: 'substance' }
+      yield {
+        concepts: [targetConcept],
+        relationships: [
+          {
+            source: codingToSnomedCode(sourceConcept.coding),
+            target: codingToSnomedCode(targetConcept.coding),
+            type: relationshipTypeFor(sourceConcept.type, targetConcept.type),
+          },
+        ],
+      }
+    } catch (error) {
       continue
     }
   }
@@ -421,6 +455,18 @@ export const relationshipTypeFor = (sourceType, targetType) => {
     //   Unbranded product with strengths and form
     case 'UPD-UPD':
       return 'is-a'
+    // MP -> substance
+    // Unbranded product with strengths and form -> Substance
+    case 'UPD-substance':
+      return 'has-ingredient'
+    // MPUU -> substance
+    // Unbranded product with strengths and form -> Substance
+    case 'UPDSF-substance':
+      return 'has-boss'
+    // TPUU -> substance
+    // Branded product with strengths and form -> Substance
+    case 'BPSF-substance':
+      return 'has-boss'
     default:
       return 'unknown'
   }
@@ -435,6 +481,8 @@ export const humaniseRelationshipType = (type, plural) =>
         'has-brand': 'have brand',
         'has-bpsf': 'are packages containing',
         'replaced-by': 'are replaced by',
+        'has-ingredient': 'have ingredient',
+        'has-boss': 'have ingredient',
         replaces: 'replace',
         unknown: null,
       }[type]
@@ -445,6 +493,8 @@ export const humaniseRelationshipType = (type, plural) =>
         'has-brand': 'has brand',
         'has-bpsf': 'has unit of use',
         'replaced-by': 'is replaced by',
+        'has-ingredient': 'has ingredient',
+        'has-boss': 'has ingredient',
         replaces: 'replaces',
         unknown: null,
       }[type]

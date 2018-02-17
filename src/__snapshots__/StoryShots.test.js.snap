@@ -4418,7 +4418,7 @@ exports[`Storyshots Concept substance 1`] = `
   >
     <Link
       replace={false}
-      to="/Medication/2610011000036105"
+      to="/Substance/2610011000036105"
     >
       2610011000036105
     </Link>

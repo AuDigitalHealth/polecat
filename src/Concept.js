@@ -49,7 +49,6 @@ class Concept extends Component {
 
   render() {
     const { coding, type, status, focused } = this.props
-    const sctid = codingToSnomedCode(coding)
     const display = codingToSnomedDisplay(coding)
     const artgId = codingToArtgId(coding)
     return (
@@ -57,14 +56,7 @@ class Concept extends Component {
         className={focused ? 'concept concept-focused' : 'concept'}
         style={this.renderConceptStyle()}
       >
-        <div className="sctid">
-          {type !== 'TP' && !focused ? (
-            <Link to={`/Medication/${sctid}`}>{sctid}</Link>
-          ) : (
-            sctid
-          )}
-          <CopyToClipboard copyText={sctid} title="Copy SCTID to clipboard" />
-        </div>
+        {this.renderSctId()}
         <div className="display" title={display}>
           {display}
           <CopyToClipboard
@@ -85,6 +77,23 @@ class Concept extends Component {
           </div>
         ) : null}
         <ConceptType type={type} status={status} />
+      </div>
+    )
+  }
+
+  renderSctId() {
+    const { coding, type, focused } = this.props
+    const sctid = codingToSnomedCode(coding)
+    let content = sctid
+    if (type === 'substance' && !focused) {
+      content = <Link to={`/Substance/${sctid}`}>{sctid}</Link>
+    } else if (type !== 'TP' && !focused) {
+      content = <Link to={`/Medication/${sctid}`}>{sctid}</Link>
+    }
+    return (
+      <div className="sctid">
+        {content}
+        <CopyToClipboard copyText={sctid} title="Copy SCTID to clipboard" />
       </div>
     )
   }

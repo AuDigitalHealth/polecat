@@ -1500,6 +1500,26 @@ Object {
       "status": "active",
       "type": "UPD",
     },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "1799011000036105",
+          "display": "amoxicillin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "substance",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "1962011000036108",
+          "display": "clavulanic acid",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "substance",
+    },
   ],
   "relationships": Array [
     Object {
@@ -1507,14 +1527,41 @@ Object {
       "target": "21415011000036100",
       "type": "is-a",
     },
+    Object {
+      "source": "21360011000036101",
+      "target": "1799011000036105",
+      "type": "has-ingredient",
+    },
+    Object {
+      "source": "21360011000036101",
+      "target": "1962011000036108",
+      "type": "has-ingredient",
+    },
   ],
 }
 `;
 
 exports[`getRelatedConcepts should return correct result for MP 21836011000036107 1`] = `
 Object {
-  "concepts": Array [],
-  "relationships": Array [],
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "1960011000036109",
+          "display": "clarithromycin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "substance",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "21836011000036107",
+      "target": "1960011000036109",
+      "type": "has-ingredient",
+    },
+  ],
 }
 `;
 
@@ -1849,12 +1896,27 @@ Object {
       "status": "active",
       "type": "UPD",
     },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "2442011000036104",
+          "display": "paracetamol",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "substance",
+    },
   ],
   "relationships": Array [
     Object {
       "source": "23628011000036109",
       "target": "21433011000036107",
       "type": "is-a",
+    },
+    Object {
+      "source": "23628011000036109",
+      "target": "2442011000036104",
+      "type": "has-boss",
     },
   ],
 }
@@ -2289,6 +2351,26 @@ Object {
       "status": "active",
       "type": "UPD",
     },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "1799011000036105",
+          "display": "amoxicillin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "substance",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "1962011000036108",
+          "display": "clavulanic acid",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "substance",
+    },
   ],
   "relationships": Array [
     Object {
@@ -2310,6 +2392,16 @@ Object {
       "source": "21360011000036101",
       "target": "21415011000036100",
       "type": "is-a",
+    },
+    Object {
+      "source": "6052011000036107",
+      "target": "1799011000036105",
+      "type": "has-boss",
+    },
+    Object {
+      "source": "6052011000036107",
+      "target": "1962011000036108",
+      "type": "has-boss",
     },
   ],
 }
@@ -2350,6 +2442,16 @@ Object {
       "status": "active",
       "type": "UPD",
     },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "1960011000036109",
+          "display": "clarithromycin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "substance",
+    },
   ],
   "relationships": Array [
     Object {
@@ -2366,6 +2468,11 @@ Object {
       "source": "23527011000036104",
       "target": "21836011000036107",
       "type": "is-a",
+    },
+    Object {
+      "source": "7489011000036101",
+      "target": "1960011000036109",
+      "type": "has-boss",
     },
   ],
 }
