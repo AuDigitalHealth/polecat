@@ -28,6 +28,9 @@ class RemoteFhirMedication extends Component {
     )
     this.handleRequireChildBundle = this.handleRequireChildBundle.bind(this)
     this.handleRequirePackageBundle = this.handleRequirePackageBundle.bind(this)
+    this.handleRequireContainsIngredientBundle = this.handleRequireContainsIngredientBundle.bind(
+      this,
+    )
     this.handleLoadSubjectConcept = this.handleLoadSubjectConcept.bind(this)
     this.setLoadingStatus = this.setLoadingStatus.bind(this)
   }
@@ -123,17 +126,39 @@ class RemoteFhirMedication extends Component {
   // a particular resource type, e.g. all BPG (TPP) packages for a specified
   // BPSF (TPUU).
   // Updates an object in state, with resources keyed by resource type.
-  handleRequirePackageBundle(parentId, resourceType) {
+  handleRequirePackageBundle(subjectId, resourceType) {
     const { fhirServer } = this.props
     this.getFhirResource(
       fhirServer,
       '/Medication',
-      `?package-item=Medication/${parentId}&medication-resource-type=${resourceType}`,
+      `?package-item=Medication/${subjectId}&medication-resource-type=${resourceType}`,
     )
       .then(resource =>
         this.setState(prevState => ({
           packageBundles: {
             ...prevState.packageBundles,
+            [resourceType]: resource,
+          },
+        })),
+      )
+      .catch(error => this.handleError(error))
+  }
+
+  // Requests concepts that contain a specified substance as an ingredient,
+  // scoped down to a particular resource type, e.g. all UPDSF (MPUU) concepts
+  // that contain a specified substance.
+  // Updates an object in state, with resources keyed by resource type.
+  handleRequireContainsIngredientBundle(substanceId, resourceType) {
+    const { fhirServer } = this.props
+    this.getFhirResource(
+      fhirServer,
+      '/Medication',
+      `?ingredient=Substance/${substanceId}&medication-resource-type=${resourceType}`,
+    )
+      .then(resource =>
+        this.setState(prevState => ({
+          containsIngredientBundles: {
+            ...prevState.containsIngredientBundles,
             [resourceType]: resource,
           },
         })),
@@ -188,6 +213,7 @@ class RemoteFhirMedication extends Component {
       relatedResources,
       childBundles,
       packageBundles,
+      containsIngredientBundles,
     } = this.state
 
     // This component expects a single child element, which it will pass down to
@@ -198,9 +224,13 @@ class RemoteFhirMedication extends Component {
         relatedResources={relatedResources}
         childBundles={childBundles}
         packageBundles={packageBundles}
+        containsIngredientBundles={containsIngredientBundles}
         onRequireRelatedResources={this.handleRequireRelatedResources}
         onRequireChildBundle={this.handleRequireChildBundle}
         onRequirePackageBundle={this.handleRequirePackageBundle}
+        onRequireContainsIngredientBundle={
+          this.handleRequireContainsIngredientBundle
+        }
         onLoadSubjectConcept={this.handleLoadSubjectConcept}
         onError={this.handleError}
       >

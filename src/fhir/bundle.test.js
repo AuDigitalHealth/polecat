@@ -3,7 +3,9 @@ import sinon from 'sinon'
 import { getBundleConcepts } from './bundle.js'
 import * as util from '../util.js'
 
-import bundle from '../../test/childBundle-21360011000036101.json'
+import childBundle from '../../test/childBundle-21360011000036101.json'
+import packageBundle from '../../test/packageBundle-53975011000036108.json'
+import ingredientBundle from '../../test/ingredientBundle-1975011000036109.json'
 
 describe('getBundleConcepts', () => {
   beforeEach(() => {
@@ -12,7 +14,7 @@ describe('getBundleConcepts', () => {
     sinon.stub(util, 'sha256').callsFake(() => Promise.resolve('somesha'))
   })
 
-  it('should return correct concepts', () => {
+  it('should return correct concepts from child bundle', () => {
     const subject = {
       coding: [
         {
@@ -23,7 +25,43 @@ describe('getBundleConcepts', () => {
       ],
       type: 'UPD',
     }
-    const result = getBundleConcepts(subject, bundle)
+    const result = getBundleConcepts(subject, childBundle, {
+      queryType: 'children',
+    })
+    expect(result).resolves.toMatchSnapshot()
+  })
+
+  it('should return correct concepts from package bundle', () => {
+    const subject = {
+      coding: [
+        {
+          system: 'http://snomed.info/sct',
+          code: '53975011000036108',
+          display: 'Canesten Clotrimazole 1% cream',
+        },
+      ],
+      type: 'BPSF',
+    }
+    const result = getBundleConcepts(subject, packageBundle, {
+      queryType: 'packages',
+    })
+    expect(result).resolves.toMatchSnapshot()
+  })
+
+  it('should return correct concepts from ingredient bundle', () => {
+    const subject = {
+      coding: [
+        {
+          system: 'http://snomed.info/sct',
+          code: '1975011000036109',
+          display: 'clotrimazole',
+        },
+      ],
+      type: 'substance',
+    }
+    const result = getBundleConcepts(subject, ingredientBundle, {
+      queryType: 'contains-ingredient',
+    })
     expect(result).resolves.toMatchSnapshot()
   })
 

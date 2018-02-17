@@ -78,6 +78,11 @@ const queryForGrouping = (coding, queryType, childType) => {
         ancestor: coding,
         type: amtConceptTypeFor(childType),
       })
+    case 'contains-ingredient':
+      return queryFromSearchObject({
+        ingredient: coding,
+        type: amtConceptTypeFor(childType),
+      })
     default:
       throw new Error('Unknown query type')
   }

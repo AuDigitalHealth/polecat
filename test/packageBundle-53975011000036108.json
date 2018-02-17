@@ -1,0 +1,2263 @@
+{
+  "resourceType": "Bundle",
+  "id": "dd8d718e-5589-4d8f-98de-08ae3fc10d54",
+  "meta": { "lastUpdated": "2018-02-17T20:43:26.130+00:00" },
+  "type": "searchset",
+  "total": 8,
+  "link": [
+    {
+      "relation": "self",
+      "url":
+        "https://medserve.local/fhir/Medication?medication-resource-type=BPG&package-item=Medication%2F53975011000036108"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/201000168106",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "201000168106",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Canesten Clotrimazole 1% cream, 10 g</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/63088011000036100",
+                  "display": "clotrimazole 1% cream, 10 g"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPG",
+                  "display": "Unbranded package with no container"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2015-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPG",
+              "display": "Branded package with no container"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "4270011000036105",
+                  "display": "Canesten Clotrimazole"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2015-06-30"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "201000168106",
+              "display": "Canesten Clotrimazole 1% cream, 10 g"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "package": {
+          "content": [
+            {
+              "itemReference": {
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/23418011000036101",
+                          "display": "clotrimazole 1% cream"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPDSF",
+                          "display": "Unbranded product with strengths and form"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                        "extension": [
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                            "valueReference": {
+                              "reference": "Medication/21684011000036100",
+                              "display": "clotrimazole"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                            "valueCoding": {
+                              "system": "http://hl7.org/fhir/medication_type",
+                              "code": "UPD",
+                              "display":
+                                "Unbranded product with no strengths or form"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                            "valueCode": "active"
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/lastModified",
+                            "valueDate": "2014-06-30"
+                          }
+                        ]
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2015-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "BPSF",
+                      "display": "Branded product with strengths and form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2015-06-30"
+                  }
+                ],
+                "reference": "Medication/53975011000036108",
+                "display": "Canesten Clotrimazole 1% cream"
+              },
+              "amount": {
+                "value": 10.0,
+                "unit": "g",
+                "system": "http://snomed.info/sct",
+                "code": "100011000036107"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/56200011000036104",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "56200011000036104",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Canesoral Duo (1 x Canesoral capsule, 1 x Canesten Clotrimazole cream), 1 pack</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/63259011000036107",
+                  "display":
+                    "fluconazole 150 mg capsule [1] (&) clotrimazole 1% cream [10 g], 1 pack"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPG",
+                  "display": "Unbranded package with no container"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/38534011000036105",
+                      "display": "fluconazole 150 mg capsule, 1"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPG",
+                      "display": "Unbranded package with no container"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/63088011000036100",
+                      "display": "clotrimazole 1% cream, 10 g"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPG",
+                      "display": "Unbranded package with no container"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2015-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2014-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPG",
+              "display": "Branded package with no container"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "53501011000036106",
+                  "display": "Canesoral Duo"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2016-07-31"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "56200011000036104",
+              "display":
+                "Canesoral Duo (1 x Canesoral capsule, 1 x Canesten Clotrimazole cream), 1 pack"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "package": {
+          "content": [
+            {
+              "itemReference": {
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/37820011000036108",
+                          "display": "fluconazole 150 mg capsule"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPDSF",
+                          "display": "Unbranded product with strengths and form"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                        "extension": [
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                            "valueReference": {
+                              "reference": "Medication/21365011000036105",
+                              "display": "fluconazole"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                            "valueCoding": {
+                              "system": "http://hl7.org/fhir/medication_type",
+                              "code": "UPD",
+                              "display":
+                                "Unbranded product with no strengths or form"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                            "valueCode": "active"
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/lastModified",
+                            "valueDate": "2014-06-30"
+                          }
+                        ]
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2014-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "BPSF",
+                      "display": "Branded product with strengths and form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2016-07-31"
+                  }
+                ],
+                "reference": "Medication/53839011000036104",
+                "display": "Canesoral 150 mg hard capsule"
+              },
+              "amount": {
+                "value": 1.0,
+                "unit": "capsule",
+                "system": "http://snomed.info/sct",
+                "code": "67011000036100"
+              }
+            },
+            {
+              "itemReference": {
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/23418011000036101",
+                          "display": "clotrimazole 1% cream"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPDSF",
+                          "display": "Unbranded product with strengths and form"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                        "extension": [
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                            "valueReference": {
+                              "reference": "Medication/21684011000036100",
+                              "display": "clotrimazole"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                            "valueCoding": {
+                              "system": "http://hl7.org/fhir/medication_type",
+                              "code": "UPD",
+                              "display":
+                                "Unbranded product with no strengths or form"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                            "valueCode": "active"
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/lastModified",
+                            "valueDate": "2014-06-30"
+                          }
+                        ]
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2015-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "BPSF",
+                      "display": "Branded product with strengths and form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2015-06-30"
+                  }
+                ],
+                "reference": "Medication/53975011000036108",
+                "display": "Canesten Clotrimazole 1% cream"
+              },
+              "amount": {
+                "value": 10.0,
+                "unit": "g",
+                "system": "http://snomed.info/sct",
+                "code": "100011000036107"
+              }
+            },
+            {
+              "itemReference": {
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/38534011000036105",
+                          "display": "fluconazole 150 mg capsule, 1"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPG",
+                          "display": "Unbranded package with no container"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2014-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "BPG",
+                      "display": "Branded package with no container"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2016-07-31"
+                  }
+                ],
+                "reference": "Medication/56139011000036102",
+                "display": "Canesoral 150 mg hard capsule, 1"
+              },
+              "amount": { "value": 1 }
+            },
+            {
+              "itemReference": {
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/63088011000036100",
+                          "display": "clotrimazole 1% cream, 10 g"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPG",
+                          "display": "Unbranded package with no container"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2015-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "BPG",
+                      "display": "Branded package with no container"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2015-06-30"
+                  }
+                ],
+                "reference": "Medication/201000168106",
+                "display": "Canesten Clotrimazole 1% cream, 10 g"
+              },
+              "amount": { "value": 1 }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/56565011000036103",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "56565011000036103",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Canesten Clotrimazole 1% cream, 70 g</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/63428011000036102",
+                  "display": "clotrimazole 1% cream, 70 g"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPG",
+                  "display": "Unbranded package with no container"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2015-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPG",
+              "display": "Branded package with no container"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "4270011000036105",
+                  "display": "Canesten Clotrimazole"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2015-06-30"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "56565011000036103",
+              "display": "Canesten Clotrimazole 1% cream, 70 g"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "package": {
+          "content": [
+            {
+              "itemReference": {
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/23418011000036101",
+                          "display": "clotrimazole 1% cream"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPDSF",
+                          "display": "Unbranded product with strengths and form"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                        "extension": [
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                            "valueReference": {
+                              "reference": "Medication/21684011000036100",
+                              "display": "clotrimazole"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                            "valueCoding": {
+                              "system": "http://hl7.org/fhir/medication_type",
+                              "code": "UPD",
+                              "display":
+                                "Unbranded product with no strengths or form"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                            "valueCode": "active"
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/lastModified",
+                            "valueDate": "2014-06-30"
+                          }
+                        ]
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2015-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "BPSF",
+                      "display": "Branded product with strengths and form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2015-06-30"
+                  }
+                ],
+                "reference": "Medication/53975011000036108",
+                "display": "Canesten Clotrimazole 1% cream"
+              },
+              "amount": {
+                "value": 70.0,
+                "unit": "g",
+                "system": "http://snomed.info/sct",
+                "code": "100011000036107"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/56562011000036106",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "56562011000036106",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Canesten Clotrimazole 1% cream, 30 g</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/63795011000036108",
+                  "display": "clotrimazole 1% cream, 30 g"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPG",
+                  "display": "Unbranded package with no container"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2015-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPG",
+              "display": "Branded package with no container"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "4270011000036105",
+                  "display": "Canesten Clotrimazole"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2015-06-30"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "56562011000036106",
+              "display": "Canesten Clotrimazole 1% cream, 30 g"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "package": {
+          "content": [
+            {
+              "itemReference": {
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/23418011000036101",
+                          "display": "clotrimazole 1% cream"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPDSF",
+                          "display": "Unbranded product with strengths and form"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                        "extension": [
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                            "valueReference": {
+                              "reference": "Medication/21684011000036100",
+                              "display": "clotrimazole"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                            "valueCoding": {
+                              "system": "http://hl7.org/fhir/medication_type",
+                              "code": "UPD",
+                              "display":
+                                "Unbranded product with no strengths or form"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                            "valueCode": "active"
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/lastModified",
+                            "valueDate": "2014-06-30"
+                          }
+                        ]
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2015-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "BPSF",
+                      "display": "Branded product with strengths and form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2015-06-30"
+                  }
+                ],
+                "reference": "Medication/53975011000036108",
+                "display": "Canesten Clotrimazole 1% cream"
+              },
+              "amount": {
+                "value": 30.0,
+                "unit": "g",
+                "system": "http://snomed.info/sct",
+                "code": "100011000036107"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/56561011000036100",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "56561011000036100",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Canesten Clotrimazole 1% cream, 20 g</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/26936011000036100",
+                  "display": "clotrimazole 1% cream, 20 g"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPG",
+                  "display": "Unbranded package with no container"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2015-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPG",
+              "display": "Branded package with no container"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "4270011000036105",
+                  "display": "Canesten Clotrimazole"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2015-06-30"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "56561011000036100",
+              "display": "Canesten Clotrimazole 1% cream, 20 g"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "package": {
+          "content": [
+            {
+              "itemReference": {
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/23418011000036101",
+                          "display": "clotrimazole 1% cream"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPDSF",
+                          "display": "Unbranded product with strengths and form"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                        "extension": [
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                            "valueReference": {
+                              "reference": "Medication/21684011000036100",
+                              "display": "clotrimazole"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                            "valueCoding": {
+                              "system": "http://hl7.org/fhir/medication_type",
+                              "code": "UPD",
+                              "display":
+                                "Unbranded product with no strengths or form"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                            "valueCode": "active"
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/lastModified",
+                            "valueDate": "2014-06-30"
+                          }
+                        ]
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2015-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "BPSF",
+                      "display": "Branded product with strengths and form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2015-06-30"
+                  }
+                ],
+                "reference": "Medication/53975011000036108",
+                "display": "Canesten Clotrimazole 1% cream"
+              },
+              "amount": {
+                "value": 20.0,
+                "unit": "g",
+                "system": "http://snomed.info/sct",
+                "code": "100011000036107"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/924904011000036108",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "924904011000036108",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Canesten Clotrimazole Thrush Treatment Once Pessary and Cream (1 x Canesten Clotrimazole Thrush Treatment Once pessary, 1 x Canesten Clotrimazole cream), 1 pack</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/63321011000036104",
+                  "display":
+                    "clotrimazole 500 mg pessary [1] (&) clotrimazole 1% cream [10 g], 1 pack"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPG",
+                  "display": "Unbranded package with no container"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/28089011000036100",
+                      "display": "clotrimazole 500 mg pessary, 1"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPG",
+                      "display": "Unbranded package with no container"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/63088011000036100",
+                      "display": "clotrimazole 1% cream, 10 g"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPG",
+                      "display": "Unbranded package with no container"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2015-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2014-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPG",
+              "display": "Branded package with no container"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "648281000168105",
+                  "display":
+                    "Canesten Clotrimazole Thrush Treatment Once Pessary and Cream"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2016-05-31"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "924904011000036108",
+              "display":
+                "Canesten Clotrimazole Thrush Treatment Once Pessary and Cream (1 x Canesten Clotrimazole Thrush Treatment Once pessary, 1 x Canesten Clotrimazole cream), 1 pack"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "package": {
+          "content": [
+            {
+              "itemReference": {
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/23397011000036105",
+                          "display": "clotrimazole 500 mg pessary"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPDSF",
+                          "display": "Unbranded product with strengths and form"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                        "extension": [
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                            "valueReference": {
+                              "reference": "Medication/21684011000036100",
+                              "display": "clotrimazole"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                            "valueCoding": {
+                              "system": "http://hl7.org/fhir/medication_type",
+                              "code": "UPD",
+                              "display":
+                                "Unbranded product with no strengths or form"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                            "valueCode": "active"
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/lastModified",
+                            "valueDate": "2014-06-30"
+                          }
+                        ]
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2014-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "BPSF",
+                      "display": "Branded product with strengths and form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2016-05-31"
+                  }
+                ],
+                "reference": "Medication/7302011000036101",
+                "display":
+                  "Canesten Clotrimazole Thrush Treatment Once 500 mg compressed pessary"
+              },
+              "amount": {
+                "value": 1.0,
+                "unit": "pessary",
+                "system": "http://snomed.info/sct",
+                "code": "84011000036109"
+              }
+            },
+            {
+              "itemReference": {
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/23418011000036101",
+                          "display": "clotrimazole 1% cream"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPDSF",
+                          "display": "Unbranded product with strengths and form"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                        "extension": [
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                            "valueReference": {
+                              "reference": "Medication/21684011000036100",
+                              "display": "clotrimazole"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                            "valueCoding": {
+                              "system": "http://hl7.org/fhir/medication_type",
+                              "code": "UPD",
+                              "display":
+                                "Unbranded product with no strengths or form"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                            "valueCode": "active"
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/lastModified",
+                            "valueDate": "2014-06-30"
+                          }
+                        ]
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2015-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "BPSF",
+                      "display": "Branded product with strengths and form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2015-06-30"
+                  }
+                ],
+                "reference": "Medication/53975011000036108",
+                "display": "Canesten Clotrimazole 1% cream"
+              },
+              "amount": {
+                "value": 10.0,
+                "unit": "g",
+                "system": "http://snomed.info/sct",
+                "code": "100011000036107"
+              }
+            },
+            {
+              "itemReference": {
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/63088011000036100",
+                          "display": "clotrimazole 1% cream, 10 g"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPG",
+                          "display": "Unbranded package with no container"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2015-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "BPG",
+                      "display": "Branded package with no container"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2015-06-30"
+                  }
+                ],
+                "reference": "Medication/201000168106",
+                "display": "Canesten Clotrimazole 1% cream, 10 g"
+              },
+              "amount": { "value": 1 }
+            },
+            {
+              "itemReference": {
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/28089011000036100",
+                          "display": "clotrimazole 500 mg pessary, 1"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPG",
+                          "display": "Unbranded package with no container"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2014-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "BPG",
+                      "display": "Branded package with no container"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2016-05-31"
+                  }
+                ],
+                "reference": "Medication/14026011000036103",
+                "display":
+                  "Canesten Clotrimazole Thrush Treatment Once 500 mg compressed pessary, 1"
+              },
+              "amount": { "value": 1 }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/56564011000036102",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "56564011000036102",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Canesten Clotrimazole 1% cream, 50 g</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/63887011000036102",
+                  "display": "clotrimazole 1% cream, 50 g"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPG",
+                  "display": "Unbranded package with no container"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2015-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPG",
+              "display": "Branded package with no container"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "4270011000036105",
+                  "display": "Canesten Clotrimazole"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2015-06-30"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "56564011000036102",
+              "display": "Canesten Clotrimazole 1% cream, 50 g"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "package": {
+          "content": [
+            {
+              "itemReference": {
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/23418011000036101",
+                          "display": "clotrimazole 1% cream"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPDSF",
+                          "display": "Unbranded product with strengths and form"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                        "extension": [
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                            "valueReference": {
+                              "reference": "Medication/21684011000036100",
+                              "display": "clotrimazole"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                            "valueCoding": {
+                              "system": "http://hl7.org/fhir/medication_type",
+                              "code": "UPD",
+                              "display":
+                                "Unbranded product with no strengths or form"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                            "valueCode": "active"
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/lastModified",
+                            "valueDate": "2014-06-30"
+                          }
+                        ]
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2015-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "BPSF",
+                      "display": "Branded product with strengths and form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2015-06-30"
+                  }
+                ],
+                "reference": "Medication/53975011000036108",
+                "display": "Canesten Clotrimazole 1% cream"
+              },
+              "amount": {
+                "value": 50.0,
+                "unit": "g",
+                "system": "http://snomed.info/sct",
+                "code": "100011000036107"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/56563011000036104",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "56563011000036104",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Canesten Clotrimazole 1% cream, 5 g</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/63427011000036103",
+                  "display": "clotrimazole 1% cream, 5 g"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPG",
+                  "display": "Unbranded package with no container"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2015-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPG",
+              "display": "Branded package with no container"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "4270011000036105",
+                  "display": "Canesten Clotrimazole"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2015-06-30"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "56563011000036104",
+              "display": "Canesten Clotrimazole 1% cream, 5 g"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "package": {
+          "content": [
+            {
+              "itemReference": {
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/23418011000036101",
+                          "display": "clotrimazole 1% cream"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPDSF",
+                          "display": "Unbranded product with strengths and form"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                        "extension": [
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                            "valueReference": {
+                              "reference": "Medication/21684011000036100",
+                              "display": "clotrimazole"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                            "valueCoding": {
+                              "system": "http://hl7.org/fhir/medication_type",
+                              "code": "UPD",
+                              "display":
+                                "Unbranded product with no strengths or form"
+                            }
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                            "valueCode": "active"
+                          },
+                          {
+                            "url":
+                              "http://medserve.online/fhir/StructureDefinition/lastModified",
+                            "valueDate": "2014-06-30"
+                          }
+                        ]
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2015-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "BPSF",
+                      "display": "Branded product with strengths and form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2015-06-30"
+                  }
+                ],
+                "reference": "Medication/53975011000036108",
+                "display": "Canesten Clotrimazole 1% cream"
+              },
+              "amount": {
+                "value": 5.0,
+                "unit": "g",
+                "system": "http://snomed.info/sct",
+                "code": "100011000036107"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

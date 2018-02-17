@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getBundleConcepts should return correct concepts 1`] = `
+exports[`getBundleConcepts should return correct concepts from child bundle 1`] = `
 Object {
   "concepts": Array [
     Object {
@@ -62,6 +62,140 @@ Object {
       "sourceIsGroup": true,
       "target": "21360011000036101",
       "type": "is-a",
+    },
+  ],
+}
+`;
+
+exports[`getBundleConcepts should return correct concepts from ingredient bundle 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "somesha",
+          "system": "group",
+        },
+      ],
+      "concepts": Array [
+        Object {
+          "coding": Array [
+            Object {
+              "code": "735761000168107",
+              "display": "Clotrimazole (Apohealth) 1% cream",
+              "system": "http://snomed.info/sct",
+            },
+          ],
+          "sourceCodeSystemUri": "http://snomed.info/sct",
+          "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+          "status": "active",
+          "type": "BPSF",
+        },
+        Object {
+          "coding": Array [
+            Object {
+              "code": "54194011000036100",
+              "display": "Clotreme Anti-Fungal (Hexal) 1% cream",
+              "system": "http://snomed.info/sct",
+            },
+          ],
+          "sourceCodeSystemUri": "http://snomed.info/sct",
+          "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+          "status": "active",
+          "type": "BPSF",
+        },
+        Object {
+          "coding": Array [
+            Object {
+              "code": "54261011000036102",
+              "display": "Anti-Fungal (Pharmacy Health) 1% cream",
+              "system": "http://snomed.info/sct",
+            },
+          ],
+          "sourceCodeSystemUri": "http://snomed.info/sct",
+          "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+          "status": "active",
+          "type": "BPSF",
+        },
+      ],
+      "query": "type:TPUU ingredient:1975011000036109|clotrimazole",
+      "total": 70,
+      "type": "group",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "group-somesha",
+      "sourceIsGroup": true,
+      "target": "1975011000036109",
+      "type": "has-boss",
+    },
+  ],
+}
+`;
+
+exports[`getBundleConcepts should return correct concepts from package bundle 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "somesha",
+          "system": "group",
+        },
+      ],
+      "concepts": Array [
+        Object {
+          "coding": Array [
+            Object {
+              "code": "201000168106",
+              "display": "Canesten Clotrimazole 1% cream, 10 g",
+              "system": "http://snomed.info/sct",
+            },
+          ],
+          "sourceCodeSystemUri": "http://snomed.info/sct",
+          "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+          "status": "active",
+          "type": "BPG",
+        },
+        Object {
+          "coding": Array [
+            Object {
+              "code": "56200011000036104",
+              "display": "Canesoral Duo (1 x Canesoral capsule, 1 x Canesten Clotrimazole cream), 1 pack",
+              "system": "http://snomed.info/sct",
+            },
+          ],
+          "sourceCodeSystemUri": "http://snomed.info/sct",
+          "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+          "status": "active",
+          "type": "BPG",
+        },
+        Object {
+          "coding": Array [
+            Object {
+              "code": "56565011000036103",
+              "display": "Canesten Clotrimazole 1% cream, 70 g",
+              "system": "http://snomed.info/sct",
+            },
+          ],
+          "sourceCodeSystemUri": "http://snomed.info/sct",
+          "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+          "status": "active",
+          "type": "BPG",
+        },
+      ],
+      "query": "type:TPP package:\\"53975011000036108|Canesten Clotrimazole 1% cream\\"",
+      "total": 8,
+      "type": "group",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "group-somesha",
+      "sourceIsGroup": true,
+      "target": "53975011000036108",
+      "type": "has-bpsf",
     },
   ],
 }

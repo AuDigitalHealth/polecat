@@ -13,6 +13,7 @@ import {
   childRequirementsFor,
   packageRequirementsFor,
   codingToSnomedCode,
+  containsIngredientRequirementsFor,
 } from './fhir/medication.js'
 import { getBundleConcepts } from './fhir/bundle.js'
 
@@ -22,17 +23,20 @@ class FhirMedication extends Component {
     relatedResources: PropTypes.object,
     childBundles: PropTypes.object,
     packageBundles: PropTypes.object,
+    containsIngredientBundles: PropTypes.object,
     groupingThreshold: PropTypes.number,
     children: PropTypes.any.isRequired,
     onRequireRelatedResources: PropTypes.func,
     onRequireChildBundle: PropTypes.func,
     onRequirePackageBundle: PropTypes.func,
+    onRequireContainsIngredientBundle: PropTypes.func,
     onLoadSubjectConcept: PropTypes.func,
   }
   static defaultProps = {
     relatedResources: {},
     childBundles: {},
     packageBundles: {},
+    containsIngredientBundles: {},
     groupingThreshold: 3,
   }
 
@@ -51,12 +55,14 @@ class FhirMedication extends Component {
       relatedResources = this.props.relatedResources,
       childBundles = this.props.childBundles,
       packageBundles = this.props.packageBundles,
+      containsIngredientBundles = this.props.containsIngredientBundles,
       groupingThreshold = this.props.groupingThreshold,
       onLoadSubjectConcept = this.props.onLoadSubjectConcept,
       prevConcepts = emptyConcepts(),
       additionalResourcesRequested = false,
       childConceptsRequested = false,
       packageConceptsRequested = false,
+      containsIngredientConceptsRequested = false,
     } = options
     if (resource) {
       const focused = getSubjectConcept(resource)
@@ -95,6 +101,19 @@ class FhirMedication extends Component {
           [],
         ),
       )
+      // Get concepts from all contains ingredient bundles.
+      const containsIngredientConcepts = await Promise.all(
+        values(containsIngredientBundles).reduce(
+          (merged, containsIngredientBundle) =>
+            merged.concat(
+              getBundleConcepts(focused, containsIngredientBundle, {
+                groupingThreshold,
+                queryType: 'contains-ingredient',
+              }),
+            ),
+          [],
+        ),
+      )
       // Merge all concepts harvested from this set of props with the previous
       // set of concepts.
       const allConcepts = [
@@ -102,21 +121,20 @@ class FhirMedication extends Component {
         ...relatedConcepts,
         ...childConcepts,
         ...packageConcepts,
+        ...containsIngredientConcepts,
       ].reduce(mergeConceptsAndRelationships, cloneDeep(prevConcepts))
       // Request additional resources of particular types found within the
       // original resource. Only do this once, don't recurse into related
       // resources.
-      if (!additionalResourcesRequested) {
+      if (!additionalResourcesRequested)
         this.requireAdditionalResources(resource, conceptsFromFocused.concepts)
-      }
-      // Request bundle of child concepts for the subject resource.
-      if (!childConceptsRequested) {
-        this.requireChildConcepts(resource)
-      }
-      // Request bundle of package concepts for the subject resource.
-      if (!packageConceptsRequested) {
-        this.requirePackageConcepts(resource)
-      }
+      // Request bundles of child concepts for the subject resource.
+      if (!childConceptsRequested) this.requireChildConcepts(resource)
+      // Request bundles of package concepts for the subject resource.
+      if (!packageConceptsRequested) this.requirePackageConcepts(resource)
+      // Request bundles of resources that contain the subject resource as an ingredient.
+      if (!containsIngredientConceptsRequested)
+        this.requireContainsIngredientConcepts(resource)
       // Update state with merged concepts and relationships values.
       this.setState(() => allConcepts)
       // Notify upstream components that a new subject concept has been loaded.
@@ -176,6 +194,18 @@ class FhirMedication extends Component {
     }
   }
 
+  requireContainsIngredientConcepts(resource) {
+    const { onRequireContainsIngredientBundle } = this.props
+    if (onRequireContainsIngredientBundle) {
+      const concept = getSubjectConcept(resource)
+      const code = codingToSnomedCode(concept.coding)
+      containsIngredientRequirementsFor(concept.type).forEach(resourceType =>
+        onRequireContainsIngredientBundle(code, resourceType),
+      )
+      this.setState(() => ({ containsIngredientConceptsRequested: true }))
+    }
+  }
+
   componentWillMount() {
     this.parseResources()
   }
@@ -186,6 +216,7 @@ class FhirMedication extends Component {
       relatedResources,
       childBundles,
       packageBundles,
+      containsIngredientBundles,
       groupingThreshold,
     } = nextProps
     const { concepts, relationships } = this.state
@@ -198,6 +229,7 @@ class FhirMedication extends Component {
         relatedResources,
         childBundles,
         packageBundles,
+        containsIngredientBundles,
         groupingThreshold,
       })
       // If only related resources are changing, preserve the set of concepts
@@ -205,7 +237,11 @@ class FhirMedication extends Component {
     } else if (
       (!isEqual(this.props.relatedResources, relatedResources) ||
         !isEqual(this.props.childBundles, childBundles) ||
-        !isEqual(this.props.packageBundles, packageBundles)) &&
+        !isEqual(this.props.packageBundles, packageBundles) ||
+        !isEqual(
+          this.props.containsIngredientBundles,
+          containsIngredientBundles,
+        )) &&
       concepts &&
       relationships
     ) {
@@ -213,12 +249,14 @@ class FhirMedication extends Component {
         additionalResourcesRequested,
         childConceptsRequested,
         packageConceptsRequested,
+        containsIngredientConceptsRequested,
       } = this.state
       this.parseResources({
         resource,
         relatedResources,
         childBundles,
         packageBundles,
+        containsIngredientBundles,
         groupingThreshold,
         // Ensure that a copy of the concepts and relationships are taken before
         // passing them in.
@@ -229,6 +267,7 @@ class FhirMedication extends Component {
         additionalResourcesRequested,
         childConceptsRequested,
         packageConceptsRequested,
+        containsIngredientConceptsRequested,
       })
     }
   }

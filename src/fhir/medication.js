@@ -481,8 +481,8 @@ export const humaniseRelationshipType = (type, plural) =>
         'has-brand': 'have brand',
         'has-bpsf': 'are packages containing',
         'replaced-by': 'are replaced by',
-        'has-ingredient': 'have ingredient',
-        'has-boss': 'have ingredient',
+        'has-ingredient': 'contain ingredient',
+        'has-boss': 'contain ingredient',
         replaces: 'replace',
         unknown: null,
       }[type]
@@ -493,8 +493,8 @@ export const humaniseRelationshipType = (type, plural) =>
         'has-brand': 'has brand',
         'has-bpsf': 'has unit of use',
         'replaced-by': 'is replaced by',
-        'has-ingredient': 'has ingredient',
-        'has-boss': 'has ingredient',
+        'has-ingredient': 'contains ingredient',
+        'has-boss': 'contains ingredient',
         replaces: 'replaces',
         unknown: null,
       }[type]
@@ -536,6 +536,19 @@ export const packageRequirementsFor = sourceType =>
     UPDSF: ['UPG'],
     UPD: [],
     substance: [],
+  }[sourceType])
+
+// Settings that control the set of resource types requested when querying for
+// resources that contain an ingredient.
+export const containsIngredientRequirementsFor = sourceType =>
+  ({
+    BPGC: [],
+    BPG: [],
+    BPSF: [],
+    UPG: [],
+    UPDSF: [],
+    UPD: [],
+    substance: ['UPD', 'UPDSF', 'BPSF'],
   }[sourceType])
 
 const fhirToAmtTypes = {
