@@ -89,6 +89,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "lint": "eslint --max-warnings 0 src",
+    "lint-staged": "bash scripts/lintStagedFiles.sh",
     "format-staged": "bash scripts/formatStagedFiles.sh",
     "build": "node scripts/build.js",
     "dockerize": "bash scripts/dockerize.sh",
@@ -103,7 +104,7 @@
     "record-release": "bash scripts/recordRelease.sh",
     "loc": "sloc --exclude \".*\\.(css|svg|test.js|stories.js|js.snap)\" src"
   },
-  "pre-commit": ["lint", "format-staged", "test-ci"],
+  "pre-commit": ["lint-staged", "format-staged", "test-ci"],
   "jest": {
     "collectCoverageFrom": ["src/**/*.{js,jsx,mjs}"],
     "testMatch": [
