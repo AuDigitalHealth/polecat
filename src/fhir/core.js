@@ -1,6 +1,6 @@
 import pick from 'lodash.pick'
 
-import { OpOutcomeError } from '../errorTypes.js'
+import { OpOutcomeError } from '../OpOutcomeError.js'
 
 export const opOutcomeFromJsonResponse = parsed => {
   if (parsed.resourceType !== 'OperationOutcome') return null
