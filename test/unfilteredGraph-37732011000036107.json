@@ -1,0 +1,99 @@
+{
+  "concepts": [
+    {
+      "coding": [
+        {
+          "system": "http:/snomed.info/sct",
+          "code": "2476011000036101",
+          "display": "phenylephrine"
+        }
+      ],
+      "type": "substance"
+    },
+    {
+      "type": "UPD",
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "37732011000036107",
+          "display": "phenylephrine"
+        }
+      ],
+      "status": "active",
+      "sourceCodeSystemUri": "http://snomed.info/sct",
+      "sourceCodeSystemVersion":
+        "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+      "focused": true
+    },
+    {
+      "coding": [
+        {
+          "system": "group",
+          "code":
+            "cb0bef8846e01b62bebf8845b2f74ad0852d7bb4c4ee46db6e67733e29122451"
+        }
+      ],
+      "type": "group",
+      "total": 23,
+      "query": "type:MP ancestor:37732011000036107|phenylephrine",
+      "concepts": [
+        {
+          "type": "UPD",
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "61786011000036109",
+              "display": "chlorphenamine + phenylephrine"
+            }
+          ],
+          "status": "active",
+          "sourceCodeSystemUri": "http://snomed.info/sct",
+          "sourceCodeSystemVersion":
+            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
+        },
+        {
+          "type": "UPD",
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "61803011000036104",
+              "display": "dextromethorphan + phenylephrine"
+            }
+          ],
+          "status": "active",
+          "sourceCodeSystemUri": "http://snomed.info/sct",
+          "sourceCodeSystemVersion":
+            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
+        },
+        {
+          "type": "UPD",
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "61800011000036107",
+              "display": "phenylephrine + paracetamol"
+            }
+          ],
+          "status": "active",
+          "sourceCodeSystemUri": "http://snomed.info/sct",
+          "sourceCodeSystemVersion":
+            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "37732011000036107",
+      "target": "2476011000036101",
+      "type": "has-ingredient"
+    },
+    {
+      "source":
+        "group-cb0bef8846e01b62bebf8845b2f74ad0852d7bb4c4ee46db6e67733e29122451",
+      "target": "37732011000036107",
+      "type": "is-a",
+      "sourceIsGroup": true
+    }
+  ]
+}

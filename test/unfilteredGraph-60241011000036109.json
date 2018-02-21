@@ -1,0 +1,284 @@
+{
+  "concepts": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "53501011000036106",
+          "display": "Canesoral Duo"
+        }
+      ],
+      "type": "brand"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "56200011000036104",
+          "display":
+            "Canesoral Duo (1 x Canesoral capsule, 1 x Canesten Clotrimazole cream), 1 pack"
+        }
+      ],
+      "type": "BPG",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "63259011000036107",
+          "display":
+            "fluconazole 150 mg capsule [1] (&) clotrimazole 1% cream [10 g], 1 pack"
+        }
+      ],
+      "type": "UPG",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "38534011000036105",
+          "display": "fluconazole 150 mg capsule, 1"
+        }
+      ],
+      "type": "UPG",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "63088011000036100",
+          "display": "clotrimazole 1% cream, 10 g"
+        }
+      ],
+      "type": "UPG",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "53839011000036104",
+          "display": "Canesoral 150 mg hard capsule"
+        }
+      ],
+      "type": "BPSF",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "37820011000036108",
+          "display": "fluconazole 150 mg capsule"
+        }
+      ],
+      "type": "UPDSF",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "21365011000036105",
+          "display": "fluconazole"
+        }
+      ],
+      "type": "UPD",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "53975011000036108",
+          "display": "Canesten Clotrimazole 1% cream"
+        }
+      ],
+      "type": "BPSF",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "23418011000036101",
+          "display": "clotrimazole 1% cream"
+        }
+      ],
+      "type": "UPDSF",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "21684011000036100",
+          "display": "clotrimazole"
+        }
+      ],
+      "type": "UPD",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "700027381000036109",
+          "display": "Canesten Clotrimazole 1% cream, 10 g, tube"
+        }
+      ],
+      "type": "BPGC",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "201000168106",
+          "display": "Canesten Clotrimazole 1% cream, 10 g"
+        }
+      ],
+      "type": "BPG",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "60180011000036107",
+          "display": "Canesoral 150 mg hard capsule, 1, blister pack"
+        }
+      ],
+      "type": "BPGC",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "56139011000036102",
+          "display": "Canesoral 150 mg hard capsule, 1"
+        }
+      ],
+      "type": "BPG",
+      "status": "active"
+    },
+    {
+      "type": "BPGC",
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "60241011000036109",
+          "display":
+            "Canesoral Duo (1 x Canesoral capsule, 1 x Canesten Clotrimazole cream), 1 pack, composite pack"
+        },
+        {
+          "system":
+            "https://www.tga.gov.au/australian-register-therapeutic-goods",
+          "code": "203513"
+        },
+        {
+          "system":
+            "https://www.tga.gov.au/australian-register-therapeutic-goods",
+          "code": "134639"
+        },
+        {
+          "system":
+            "https://www.tga.gov.au/australian-register-therapeutic-goods",
+          "code": "163461"
+        }
+      ],
+      "status": "active",
+      "sourceCodeSystemUri": "http://snomed.info/sct",
+      "sourceCodeSystemVersion":
+        "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+      "focused": true
+    }
+  ],
+  "relationships": [
+    {
+      "source": "60241011000036109",
+      "target": "53501011000036106",
+      "type": "has-brand"
+    },
+    {
+      "source": "60241011000036109",
+      "target": "56200011000036104",
+      "type": "is-a"
+    },
+    {
+      "source": "56200011000036104",
+      "target": "63259011000036107",
+      "type": "is-a"
+    },
+    {
+      "source": "63259011000036107",
+      "target": "38534011000036105",
+      "type": "is-a"
+    },
+    {
+      "source": "63259011000036107",
+      "target": "63088011000036100",
+      "type": "is-a"
+    },
+    {
+      "source": "60241011000036109",
+      "target": "53839011000036104",
+      "type": "unknown"
+    },
+    {
+      "source": "53839011000036104",
+      "target": "37820011000036108",
+      "type": "is-a"
+    },
+    {
+      "source": "37820011000036108",
+      "target": "21365011000036105",
+      "type": "is-a"
+    },
+    {
+      "source": "60241011000036109",
+      "target": "53975011000036108",
+      "type": "unknown"
+    },
+    {
+      "source": "53975011000036108",
+      "target": "23418011000036101",
+      "type": "is-a"
+    },
+    {
+      "source": "23418011000036101",
+      "target": "21684011000036100",
+      "type": "is-a"
+    },
+    {
+      "source": "60241011000036109",
+      "target": "700027381000036109",
+      "type": "has-component"
+    },
+    {
+      "source": "700027381000036109",
+      "target": "201000168106",
+      "type": "is-a"
+    },
+    { "source": "201000168106", "target": "63088011000036100", "type": "is-a" },
+    {
+      "source": "60241011000036109",
+      "target": "60180011000036107",
+      "type": "has-component"
+    },
+    {
+      "source": "60180011000036107",
+      "target": "56139011000036102",
+      "type": "is-a"
+    },
+    {
+      "source": "56139011000036102",
+      "target": "38534011000036105",
+      "type": "is-a"
+    }
+  ]
+}

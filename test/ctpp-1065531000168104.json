@@ -1,0 +1,386 @@
+{
+  "resourceType": "Medication",
+  "id": "1065531000168104",
+  "meta": {
+    "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+  },
+  "text": {
+    "status": "generated",
+    "div":
+      "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Strong Pain Relief (Terry White Chemists) uncoated tablet, 40, blister pack</p></div>"
+  },
+  "extension": [
+    {
+      "url":
+        "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+      "extension": [
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/parentMedication",
+          "valueReference": {
+            "reference": "Medication/1065521000168102",
+            "display":
+              "Strong Pain Relief (Terry White Chemists) uncoated tablet, 40"
+          }
+        },
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+          "valueCoding": {
+            "system": "http://hl7.org/fhir/medication_type",
+            "code": "BPG",
+            "display": "Branded package with no container"
+          }
+        },
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+          "extension": [
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/parentMedication",
+              "valueReference": {
+                "reference": "Medication/932460011000036106",
+                "display":
+                  "paracetamol 500 mg + codeine phosphate hemihydrate 10 mg tablet, 40"
+              }
+            },
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/medication_type",
+                "code": "UPG",
+                "display": "Unbranded package with no container"
+              }
+            },
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "extension": [
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "valueReference": {
+                    "reference": "Medication/170231000036101",
+                    "display": "paracetamol 500 mg tablet, 40"
+                  }
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "UPG",
+                    "display": "Unbranded package with no container"
+                  }
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "valueCode": "active"
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "valueDate": "2014-06-30"
+                }
+              ]
+            },
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2014-06-30"
+            }
+          ]
+        },
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+          "valueCode": "active"
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+          "valueDate": "2018-01-31"
+        }
+      ]
+    },
+    {
+      "url":
+        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+      "valueCoding": {
+        "system": "http://hl7.org/fhir/medication_type",
+        "code": "BPGC",
+        "display": "Branded package with container"
+      }
+    },
+    {
+      "url": "http://medserve.online/fhir/StructureDefinition/brand",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "1065481000168102",
+            "display": "Strong Pain Relief (Terry White Chemists)"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+      "extension": [
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+          "valueUri": "http://snomed.info/sct"
+        },
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+          "valueString":
+            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
+        }
+      ]
+    },
+    {
+      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+      "valueDate": "2018-01-31"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "1065531000168104",
+        "display":
+          "Strong Pain Relief (Terry White Chemists) uncoated tablet, 40, blister pack"
+      },
+      {
+        "system":
+          "https://www.tga.gov.au/australian-register-therapeutic-goods",
+        "code": "171010"
+      }
+    ]
+  },
+  "status": "active",
+  "isBrand": true,
+  "package": {
+    "container": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "287011000036106",
+          "display": "blister pack"
+        }
+      ]
+    },
+    "content": [
+      {
+        "itemReference": {
+          "extension": [
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "extension": [
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "valueReference": {
+                    "reference": "Medication/52258011000036105",
+                    "display":
+                      "paracetamol 500 mg + codeine phosphate hemihydrate 10 mg tablet"
+                  }
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "UPDSF",
+                    "display": "Unbranded product with strengths and form"
+                  }
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                  "extension": [
+                    {
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                      "valueReference": {
+                        "reference": "Medication/23628011000036109",
+                        "display": "paracetamol 500 mg tablet"
+                      }
+                    },
+                    {
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                      "valueCoding": {
+                        "system": "http://hl7.org/fhir/medication_type",
+                        "code": "UPDSF",
+                        "display": "Unbranded product with strengths and form"
+                      }
+                    },
+                    {
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                      "extension": [
+                        {
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                          "valueReference": {
+                            "reference": "Medication/21433011000036107",
+                            "display": "paracetamol"
+                          }
+                        },
+                        {
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                          "valueCoding": {
+                            "system": "http://hl7.org/fhir/medication_type",
+                            "code": "UPD",
+                            "display":
+                              "Unbranded product with no strengths or form"
+                          }
+                        },
+                        {
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                          "valueCode": "active"
+                        },
+                        {
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/lastModified",
+                          "valueDate": "2014-06-30"
+                        }
+                      ]
+                    },
+                    {
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                      "valueCode": "active"
+                    },
+                    {
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/lastModified",
+                      "valueDate": "2014-06-30"
+                    }
+                  ]
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                  "extension": [
+                    {
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                      "valueReference": {
+                        "reference": "Medication/21286011000036106",
+                        "display": "paracetamol + codeine"
+                      }
+                    },
+                    {
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                      "valueCoding": {
+                        "system": "http://hl7.org/fhir/medication_type",
+                        "code": "UPD",
+                        "display": "Unbranded product with no strengths or form"
+                      }
+                    },
+                    {
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                      "extension": [
+                        {
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                          "valueReference": {
+                            "reference": "Medication/21821011000036104",
+                            "display": "codeine"
+                          }
+                        },
+                        {
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                          "valueCoding": {
+                            "system": "http://hl7.org/fhir/medication_type",
+                            "code": "UPD",
+                            "display":
+                              "Unbranded product with no strengths or form"
+                          }
+                        },
+                        {
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                          "valueCode": "active"
+                        },
+                        {
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/lastModified",
+                          "valueDate": "2014-06-30"
+                        }
+                      ]
+                    },
+                    {
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                      "valueCode": "active"
+                    },
+                    {
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/lastModified",
+                      "valueDate": "2014-06-30"
+                    }
+                  ]
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "valueCode": "active"
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "valueDate": "2014-06-30"
+                }
+              ]
+            },
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/medication_type",
+                "code": "BPSF",
+                "display": "Branded product with strengths and form"
+              }
+            },
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2018-01-31"
+            }
+          ],
+          "reference": "Medication/1065491000168104",
+          "display": "Strong Pain Relief (Terry White Chemists) uncoated tablet"
+        },
+        "amount": {
+          "value": 40.0,
+          "unit": "tablet",
+          "system": "http://snomed.info/sct",
+          "code": "63011000036109"
+        }
+      }
+    ]
+  }
+}

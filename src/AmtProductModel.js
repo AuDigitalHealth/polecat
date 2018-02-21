@@ -13,9 +13,9 @@ import { searchPathFromQuery } from './Router.js'
 import {
   amtConceptTypeFor,
   mergeConcepts,
-  codingToSnomedCode,
   codingToGroupCode,
 } from './fhir/medication.js'
+import { idForNode } from './graph/common.js'
 import { translateToAmt } from './graph/translations.js'
 import {
   calculateLinkOptions,
@@ -47,6 +47,7 @@ class AmtProductModel extends Component {
     links: PropTypes.arrayOf(
       PropTypes.shape({ source: PropTypes.string, target: PropTypes.string }),
     ),
+    filters: PropTypes.arrayOf(PropTypes.oneOf(['mp', 'parent-of-mp', 'mpuu'])),
     attraction: PropTypes.number,
     linkDistance: PropTypes.number,
     alpha: PropTypes.number,
@@ -74,6 +75,7 @@ class AmtProductModel extends Component {
     }).isRequired,
   }
   static defaultProps = {
+    filters: [],
     attraction: -1000,
     linkDistance: 250,
     alpha: 1.5,
@@ -145,7 +147,7 @@ class AmtProductModel extends Component {
       newNodes,
     )
     model.forceLink = (model.forceLink || d3.forceLink())
-      .id(d => AmtProductModel.idForNode(d))
+      .id(d => idForNode(d))
       .distance(linkDistance)
       .links(cloneDeep(links))
     model.forceManyBody = (model.forceManyBody || d3.forceManyBody()).strength(
@@ -174,6 +176,8 @@ class AmtProductModel extends Component {
       .restart()
   }
 
+  // FIXME: There is some sort of problem around substances and not clearing out
+  // groups when updating the subject concept.
   updateSimulation(nodes, links) {
     const model = this
     let oldNodes = model.simulation.nodes()
@@ -187,9 +191,7 @@ class AmtProductModel extends Component {
     let newNodes = [oldNodes, nodes].reduce(mergeConcepts)
     // Remove any nodes that are not present in the new set of nodes.
     newNodes = newNodes.filter(node =>
-      nodes
-        .map(n => AmtProductModel.idForNode(n))
-        .includes(AmtProductModel.idForNode(node)),
+      nodes.map(n => idForNode(n)).includes(idForNode(node)),
     )
     // Remove any nodes that are no longer the subject of a link (except the
     // focused node).
@@ -198,7 +200,7 @@ class AmtProductModel extends Component {
         node.focused ||
         links
           .reduce((acc, link) => acc.concat([link.source, link.target]), [])
-          .includes(AmtProductModel.idForNode(node)),
+          .includes(idForNode(node)),
     )
   }
 
@@ -217,10 +219,13 @@ class AmtProductModel extends Component {
       fx: node.fx ? node.fx + deltaX : null,
       fy: node.fy ? node.fy + deltaY : null,
     }))
-    const { relationships: translatedLinks } = translateToAmt({
-      concepts: nodes,
-      relationships: options.links,
-    })
+    const { relationships: translatedLinks } = translateToAmt(
+      {
+        concepts: nodes,
+        relationships: options.links,
+      },
+      { filters: options.filters },
+    )
     const centerX = deltaX !== null ? forceCenter.x() + deltaX : newX
     const centerY = deltaY !== null ? forceCenter.y() + deltaY : newY
     this.startOrUpdateSimulation(nodes, translatedLinks, {
@@ -345,12 +350,15 @@ class AmtProductModel extends Component {
   }
 
   componentDidMount() {
-    const { nodes, links } = this.props
+    const { nodes, links, filters } = this.props
     if (nodes && links) {
-      const { relationships: translatedLinks } = translateToAmt({
-        concepts: nodes,
-        relationships: links,
-      })
+      const { relationships: translatedLinks } = translateToAmt(
+        {
+          concepts: nodes,
+          relationships: links,
+        },
+        { filters },
+      )
       this.startOrUpdateSimulation(nodes, translatedLinks, this.props)
     }
   }
@@ -370,6 +378,7 @@ class AmtProductModel extends Component {
     const simulationProps = [
       'nodes',
       'links',
+      'filters',
       'attraction',
       'linkDistance',
       'alpha',
@@ -390,10 +399,13 @@ class AmtProductModel extends Component {
         pick(nextProps, simulationProps),
       )
     ) {
-      const { concepts: nodes, relationships: links } = translateToAmt({
-        concepts: nextProps.nodes,
-        relationships: nextProps.links,
-      })
+      const { concepts: nodes, relationships: links } = translateToAmt(
+        {
+          concepts: nextProps.nodes,
+          relationships: nextProps.links,
+        },
+        { filters: nextProps.filters },
+      )
       this.startOrUpdateSimulation(nodes, links, nextProps)
       this.resetSimulationAlpha(nextProps.alpha)
     }
@@ -533,12 +545,6 @@ class AmtProductModel extends Component {
         })}
       </div>
     )
-  }
-
-  static idForNode(node) {
-    return node.type === 'group'
-      ? `group-${codingToGroupCode(node.coding)}`
-      : codingToSnomedCode(node.coding)
   }
 }
 

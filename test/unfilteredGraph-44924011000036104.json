@@ -1,0 +1,163 @@
+{
+  "concepts": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "61737011000036102",
+          "display": "pseudoephedrine + chlorphenamine"
+        }
+      ],
+      "type": "UPD",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "21540011000036109",
+          "display": "pseudoephedrine"
+        }
+      ],
+      "type": "UPD",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "61727011000036100",
+          "display": "chlorphenamine + paracetamol"
+        }
+      ],
+      "type": "UPD",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "21433011000036107",
+          "display": "paracetamol"
+        }
+      ],
+      "type": "UPD",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "44951011000036101",
+          "display": "paracetamol + pseudoephedrine"
+        }
+      ],
+      "type": "UPD",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "61765011000036100",
+          "display": "dexchlorpheniramine + paracetamol + pseudoephedrine"
+        }
+      ],
+      "type": "UPD",
+      "status": "entered-in-error"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "2525011000036101",
+          "display": "pseudoephedrine"
+        }
+      ],
+      "type": "substance"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "2442011000036104",
+          "display": "paracetamol"
+        }
+      ],
+      "type": "substance"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "30971011000036102",
+          "display": "chlorphenamine"
+        }
+      ],
+      "type": "substance"
+    },
+    {
+      "type": "UPD",
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "44924011000036104",
+          "display": "paracetamol + pseudoephedrine + chlorphenamine"
+        }
+      ],
+      "status": "active",
+      "sourceCodeSystemUri": "http://snomed.info/sct",
+      "sourceCodeSystemVersion":
+        "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+      "focused": true
+    }
+  ],
+  "relationships": [
+    {
+      "source": "44924011000036104",
+      "target": "61737011000036102",
+      "type": "is-a"
+    },
+    {
+      "source": "61737011000036102",
+      "target": "21540011000036109",
+      "type": "is-a"
+    },
+    {
+      "source": "44924011000036104",
+      "target": "61727011000036100",
+      "type": "is-a"
+    },
+    {
+      "source": "61727011000036100",
+      "target": "21433011000036107",
+      "type": "is-a"
+    },
+    {
+      "source": "44924011000036104",
+      "target": "44951011000036101",
+      "type": "is-a"
+    },
+    {
+      "source": "44924011000036104",
+      "target": "61765011000036100",
+      "type": "replaces",
+      "replacementDate": "2017-07-31"
+    },
+    {
+      "source": "44924011000036104",
+      "target": "2525011000036101",
+      "type": "has-ingredient"
+    },
+    {
+      "source": "44924011000036104",
+      "target": "2442011000036104",
+      "type": "has-ingredient"
+    },
+    {
+      "source": "44924011000036104",
+      "target": "30971011000036102",
+      "type": "has-ingredient"
+    }
+  ]
+}

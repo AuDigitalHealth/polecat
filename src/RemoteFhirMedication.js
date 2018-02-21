@@ -204,6 +204,7 @@ class RemoteFhirMedication extends Component {
       relatedResources: {},
       childBundles: {},
       packageBundles: {},
+      containsIngredientBundles: {},
     }))
   }
 

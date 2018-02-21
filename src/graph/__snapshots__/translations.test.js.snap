@@ -1,5 +1,1267 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`translateToAmt should apply the "Parent of MP" filter correctly 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53235011000036105",
+          "display": "Lemsip Max Cold and Flu plus Chesty Cough",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "56431011000036100",
+          "display": "Lemsip Max Cold and Flu plus Chesty Cough Lemon and Menthol powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "63351011000036103",
+          "display": "paracetamol 1 g + phenylephrine hydrochloride 12.2 mg + guaifenesin 200 mg powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "71931011000036102",
+          "display": "paracetamol 1 g powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53919011000036101",
+          "display": "Lemsip Max Cold and Flu plus Chesty Cough Lemon and Menthol powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "61926011000036108",
+          "display": "paracetamol 1 g + phenylephrine hydrochloride 12.2 mg + guaifenesin 200 mg powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "931833011000036101",
+          "display": "phenylephrine hydrochloride 12.2 mg + paracetamol 1 g powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "70253011000036109",
+          "display": "paracetamol 1 g powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21433011000036107",
+          "display": "paracetamol",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "61800011000036107",
+          "display": "phenylephrine + paracetamol",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "61754011000036107",
+          "display": "paracetamol + phenylephrine + guaifenesin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "60473011000036105",
+          "display": "Lemsip Max Cold and Flu plus Chesty Cough Lemon and Menthol powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+        Object {
+          "code": "150168",
+          "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+        },
+      ],
+      "focused": true,
+      "sourceCodeSystemUri": "http://snomed.info/sct",
+      "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+      "status": "active",
+      "type": "BPGC",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "60473011000036105",
+      "target": "56431011000036100",
+      "type": "is-a",
+    },
+    Object {
+      "source": "56431011000036100",
+      "target": "63351011000036103",
+      "type": "is-a",
+    },
+    Object {
+      "source": "63351011000036103",
+      "target": "71931011000036102",
+      "type": "has-component",
+    },
+    Object {
+      "source": "61926011000036108",
+      "target": "931833011000036101",
+      "type": "is-a",
+    },
+    Object {
+      "source": "931833011000036101",
+      "target": "70253011000036109",
+      "type": "is-a",
+    },
+    Object {
+      "source": "70253011000036109",
+      "target": "21433011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "931833011000036101",
+      "target": "61800011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "61926011000036108",
+      "target": "61754011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "56431011000036100",
+      "target": "53235011000036105",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "56431011000036100",
+      "target": "53919011000036101",
+      "type": "has-bpsf",
+    },
+    Object {
+      "source": "63351011000036103",
+      "target": "61926011000036108",
+      "type": "has-updsf",
+    },
+  ],
+}
+`;
+
+exports[`translateToAmt should apply the "is replaced by" filter correctly 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "37723011000036102",
+          "display": "dexchlorpheniramine + pseudoephedrine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "61749011000036105",
+          "display": "dexchlorpheniramine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21540011000036109",
+          "display": "pseudoephedrine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "44951011000036101",
+          "display": "paracetamol + pseudoephedrine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21433011000036107",
+          "display": "paracetamol",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "31097011000036102",
+          "display": "dexchlorpheniramine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "substance",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "2442011000036104",
+          "display": "paracetamol",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "substance",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "2525011000036101",
+          "display": "pseudoephedrine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "substance",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "61765011000036100",
+          "display": "dexchlorpheniramine + paracetamol + pseudoephedrine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "focused": true,
+      "sourceCodeSystemUri": "http://snomed.info/sct",
+      "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+      "status": "entered-in-error",
+      "type": "UPD",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "61765011000036100",
+      "target": "37723011000036102",
+      "type": "is-a",
+    },
+    Object {
+      "source": "37723011000036102",
+      "target": "61749011000036105",
+      "type": "is-a",
+    },
+    Object {
+      "source": "37723011000036102",
+      "target": "21540011000036109",
+      "type": "is-a",
+    },
+    Object {
+      "source": "61765011000036100",
+      "target": "44951011000036101",
+      "type": "is-a",
+    },
+    Object {
+      "source": "44951011000036101",
+      "target": "21433011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "61765011000036100",
+      "target": "31097011000036102",
+      "type": "has-ingredient",
+    },
+    Object {
+      "source": "61765011000036100",
+      "target": "2442011000036104",
+      "type": "has-ingredient",
+    },
+    Object {
+      "source": "61765011000036100",
+      "target": "2525011000036101",
+      "type": "has-ingredient",
+    },
+  ],
+}
+`;
+
+exports[`translateToAmt should apply the "replaces" filter correctly 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "61737011000036102",
+          "display": "pseudoephedrine + chlorphenamine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21540011000036109",
+          "display": "pseudoephedrine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "61727011000036100",
+          "display": "chlorphenamine + paracetamol",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21433011000036107",
+          "display": "paracetamol",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "44951011000036101",
+          "display": "paracetamol + pseudoephedrine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "2525011000036101",
+          "display": "pseudoephedrine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "substance",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "2442011000036104",
+          "display": "paracetamol",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "substance",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "30971011000036102",
+          "display": "chlorphenamine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "substance",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "44924011000036104",
+          "display": "paracetamol + pseudoephedrine + chlorphenamine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "focused": true,
+      "sourceCodeSystemUri": "http://snomed.info/sct",
+      "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+      "status": "active",
+      "type": "UPD",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "44924011000036104",
+      "target": "61737011000036102",
+      "type": "is-a",
+    },
+    Object {
+      "source": "61737011000036102",
+      "target": "21540011000036109",
+      "type": "is-a",
+    },
+    Object {
+      "source": "44924011000036104",
+      "target": "61727011000036100",
+      "type": "is-a",
+    },
+    Object {
+      "source": "61727011000036100",
+      "target": "21433011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "44924011000036104",
+      "target": "44951011000036101",
+      "type": "is-a",
+    },
+    Object {
+      "source": "44924011000036104",
+      "target": "2525011000036101",
+      "type": "has-ingredient",
+    },
+    Object {
+      "source": "44924011000036104",
+      "target": "2442011000036104",
+      "type": "has-ingredient",
+    },
+    Object {
+      "source": "44924011000036104",
+      "target": "30971011000036102",
+      "type": "has-ingredient",
+    },
+  ],
+}
+`;
+
+exports[`translateToAmt should apply the MP filter correctly 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53259011000036106",
+          "display": "Lorapaed",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "55971011000036104",
+          "display": "Lorapaed 1 mg/mL oral liquid solution, 150 mL",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "63589011000036105",
+          "display": "loratadine 1 mg/mL oral liquid, 150 mL",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53743011000036103",
+          "display": "Lorapaed 1 mg/mL oral liquid solution",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "62022011000036104",
+          "display": "loratadine 1 mg/mL oral liquid",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "60009011000036108",
+          "display": "Lorapaed 1 mg/mL oral liquid solution, 150 mL, bottle",
+          "system": "http://snomed.info/sct",
+        },
+        Object {
+          "code": "123270",
+          "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+        },
+      ],
+      "focused": true,
+      "type": "BPGC",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "60009011000036108",
+      "target": "55971011000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "55971011000036104",
+      "target": "63589011000036105",
+      "type": "is-a",
+    },
+    Object {
+      "source": "55971011000036104",
+      "target": "53259011000036106",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "55971011000036104",
+      "target": "53743011000036103",
+      "type": "has-bpsf",
+    },
+    Object {
+      "source": "63589011000036105",
+      "target": "62022011000036104",
+      "type": "has-updsf",
+    },
+  ],
+}
+`;
+
+exports[`translateToAmt should apply the MPP filter correctly 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53259011000036106",
+          "display": "Lorapaed",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "55971011000036104",
+          "display": "Lorapaed 1 mg/mL oral liquid solution, 150 mL",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53743011000036103",
+          "display": "Lorapaed 1 mg/mL oral liquid solution",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "60009011000036108",
+          "display": "Lorapaed 1 mg/mL oral liquid solution, 150 mL, bottle",
+          "system": "http://snomed.info/sct",
+        },
+        Object {
+          "code": "123270",
+          "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+        },
+      ],
+      "focused": true,
+      "type": "BPGC",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "60009011000036108",
+      "target": "55971011000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "55971011000036104",
+      "target": "53259011000036106",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "55971011000036104",
+      "target": "53743011000036103",
+      "type": "has-bpsf",
+    },
+  ],
+}
+`;
+
+exports[`translateToAmt should apply the MPUU filter correctly 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53259011000036106",
+          "display": "Lorapaed",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "55971011000036104",
+          "display": "Lorapaed 1 mg/mL oral liquid solution, 150 mL",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "63589011000036105",
+          "display": "loratadine 1 mg/mL oral liquid, 150 mL",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53743011000036103",
+          "display": "Lorapaed 1 mg/mL oral liquid solution",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "60009011000036108",
+          "display": "Lorapaed 1 mg/mL oral liquid solution, 150 mL, bottle",
+          "system": "http://snomed.info/sct",
+        },
+        Object {
+          "code": "123270",
+          "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+        },
+      ],
+      "focused": true,
+      "type": "BPGC",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "60009011000036108",
+      "target": "55971011000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "55971011000036104",
+      "target": "63589011000036105",
+      "type": "is-a",
+    },
+    Object {
+      "source": "55971011000036104",
+      "target": "53259011000036106",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "55971011000036104",
+      "target": "53743011000036103",
+      "type": "has-bpsf",
+    },
+  ],
+}
+`;
+
+exports[`translateToAmt should apply the TP filter correctly 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "55971011000036104",
+          "display": "Lorapaed 1 mg/mL oral liquid solution, 150 mL",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "63589011000036105",
+          "display": "loratadine 1 mg/mL oral liquid, 150 mL",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53743011000036103",
+          "display": "Lorapaed 1 mg/mL oral liquid solution",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "62022011000036104",
+          "display": "loratadine 1 mg/mL oral liquid",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21701011000036106",
+          "display": "loratadine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "60009011000036108",
+          "display": "Lorapaed 1 mg/mL oral liquid solution, 150 mL, bottle",
+          "system": "http://snomed.info/sct",
+        },
+        Object {
+          "code": "123270",
+          "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+        },
+      ],
+      "focused": true,
+      "type": "BPGC",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "60009011000036108",
+      "target": "55971011000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "55971011000036104",
+      "target": "63589011000036105",
+      "type": "is-a",
+    },
+    Object {
+      "source": "62022011000036104",
+      "target": "21701011000036106",
+      "type": "is-a",
+    },
+    Object {
+      "source": "55971011000036104",
+      "target": "53743011000036103",
+      "type": "has-bpsf",
+    },
+    Object {
+      "source": "63589011000036105",
+      "target": "62022011000036104",
+      "type": "has-updsf",
+    },
+  ],
+}
+`;
+
+exports[`translateToAmt should apply the TPP filter correctly 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "60009011000036108",
+          "display": "Lorapaed 1 mg/mL oral liquid solution, 150 mL, bottle",
+          "system": "http://snomed.info/sct",
+        },
+        Object {
+          "code": "123270",
+          "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+        },
+      ],
+      "focused": true,
+      "type": "BPGC",
+    },
+  ],
+  "relationships": Array [],
+}
+`;
+
+exports[`translateToAmt should apply the TPUU filter correctly 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53259011000036106",
+          "display": "Lorapaed",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "55971011000036104",
+          "display": "Lorapaed 1 mg/mL oral liquid solution, 150 mL",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "63589011000036105",
+          "display": "loratadine 1 mg/mL oral liquid, 150 mL",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "62022011000036104",
+          "display": "loratadine 1 mg/mL oral liquid",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21701011000036106",
+          "display": "loratadine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "60009011000036108",
+          "display": "Lorapaed 1 mg/mL oral liquid solution, 150 mL, bottle",
+          "system": "http://snomed.info/sct",
+        },
+        Object {
+          "code": "123270",
+          "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+        },
+      ],
+      "focused": true,
+      "type": "BPGC",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "60009011000036108",
+      "target": "55971011000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "55971011000036104",
+      "target": "63589011000036105",
+      "type": "is-a",
+    },
+    Object {
+      "source": "62022011000036104",
+      "target": "21701011000036106",
+      "type": "is-a",
+    },
+    Object {
+      "source": "55971011000036104",
+      "target": "53259011000036106",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "63589011000036105",
+      "target": "62022011000036104",
+      "type": "has-updsf",
+    },
+  ],
+}
+`;
+
+exports[`translateToAmt should apply the component packs filter correctly 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53501011000036106",
+          "display": "Canesoral Duo",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "56200011000036104",
+          "display": "Canesoral Duo (1 x Canesoral capsule, 1 x Canesten Clotrimazole cream), 1 pack",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "63259011000036107",
+          "display": "fluconazole 150 mg capsule [1] (&) clotrimazole 1% cream [10 g], 1 pack",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "38534011000036105",
+          "display": "fluconazole 150 mg capsule, 1",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "63088011000036100",
+          "display": "clotrimazole 1% cream, 10 g",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53839011000036104",
+          "display": "Canesoral 150 mg hard capsule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "37820011000036108",
+          "display": "fluconazole 150 mg capsule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21365011000036105",
+          "display": "fluconazole",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53975011000036108",
+          "display": "Canesten Clotrimazole 1% cream",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23418011000036101",
+          "display": "clotrimazole 1% cream",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21684011000036100",
+          "display": "clotrimazole",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "60241011000036109",
+          "display": "Canesoral Duo (1 x Canesoral capsule, 1 x Canesten Clotrimazole cream), 1 pack, composite pack",
+          "system": "http://snomed.info/sct",
+        },
+        Object {
+          "code": "203513",
+          "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+        },
+        Object {
+          "code": "134639",
+          "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+        },
+        Object {
+          "code": "163461",
+          "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+        },
+      ],
+      "focused": true,
+      "sourceCodeSystemUri": "http://snomed.info/sct",
+      "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+      "status": "active",
+      "type": "BPGC",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "60241011000036109",
+      "target": "56200011000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "56200011000036104",
+      "target": "63259011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "63259011000036107",
+      "target": "38534011000036105",
+      "type": "is-a",
+    },
+    Object {
+      "source": "63259011000036107",
+      "target": "63088011000036100",
+      "type": "is-a",
+    },
+    Object {
+      "source": "37820011000036108",
+      "target": "21365011000036105",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23418011000036101",
+      "target": "21684011000036100",
+      "type": "is-a",
+    },
+    Object {
+      "source": "56200011000036104",
+      "target": "53501011000036106",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "56200011000036104",
+      "target": "53839011000036104",
+      "type": "has-bpsf",
+    },
+    Object {
+      "source": "56200011000036104",
+      "target": "53975011000036108",
+      "type": "has-bpsf",
+    },
+    Object {
+      "source": "63259011000036107",
+      "target": "37820011000036108",
+      "type": "has-updsf",
+    },
+    Object {
+      "source": "63259011000036107",
+      "target": "23418011000036101",
+      "type": "has-updsf",
+    },
+  ],
+}
+`;
+
+exports[`translateToAmt should apply the substance filter correctly 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "37732011000036107",
+          "display": "phenylephrine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "focused": true,
+      "sourceCodeSystemUri": "http://snomed.info/sct",
+      "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "cb0bef8846e01b62bebf8845b2f74ad0852d7bb4c4ee46db6e67733e29122451",
+          "system": "group",
+        },
+      ],
+      "concepts": Array [
+        Object {
+          "coding": Array [
+            Object {
+              "code": "61786011000036109",
+              "display": "chlorphenamine + phenylephrine",
+              "system": "http://snomed.info/sct",
+            },
+          ],
+          "sourceCodeSystemUri": "http://snomed.info/sct",
+          "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+          "status": "active",
+          "type": "UPD",
+        },
+        Object {
+          "coding": Array [
+            Object {
+              "code": "61803011000036104",
+              "display": "dextromethorphan + phenylephrine",
+              "system": "http://snomed.info/sct",
+            },
+          ],
+          "sourceCodeSystemUri": "http://snomed.info/sct",
+          "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+          "status": "active",
+          "type": "UPD",
+        },
+        Object {
+          "coding": Array [
+            Object {
+              "code": "61800011000036107",
+              "display": "phenylephrine + paracetamol",
+              "system": "http://snomed.info/sct",
+            },
+          ],
+          "sourceCodeSystemUri": "http://snomed.info/sct",
+          "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+          "status": "active",
+          "type": "UPD",
+        },
+      ],
+      "query": "type:MP ancestor:37732011000036107|phenylephrine",
+      "total": 23,
+      "type": "group",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "group-cb0bef8846e01b62bebf8845b2f74ad0852d7bb4c4ee46db6e67733e29122451",
+      "sourceIsGroup": true,
+      "target": "37732011000036107",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
 exports[`translateToAmt should translate the raw graph as expected 1`] = `
 Object {
   "concepts": Array [

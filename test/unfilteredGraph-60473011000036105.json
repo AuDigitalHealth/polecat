@@ -1,0 +1,255 @@
+{
+  "concepts": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "53235011000036105",
+          "display": "Lemsip Max Cold and Flu plus Chesty Cough"
+        }
+      ],
+      "type": "brand"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "56431011000036100",
+          "display":
+            "Lemsip Max Cold and Flu plus Chesty Cough Lemon and Menthol powder for oral liquid, 1 sachet"
+        }
+      ],
+      "type": "BPG",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "63351011000036103",
+          "display":
+            "paracetamol 1 g + phenylephrine hydrochloride 12.2 mg + guaifenesin 200 mg powder for oral liquid, 1 sachet"
+        }
+      ],
+      "type": "UPG",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "71931011000036102",
+          "display": "paracetamol 1 g powder for oral liquid, 1 sachet"
+        }
+      ],
+      "type": "UPG",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "53919011000036101",
+          "display":
+            "Lemsip Max Cold and Flu plus Chesty Cough Lemon and Menthol powder for oral liquid, 1 sachet"
+        }
+      ],
+      "type": "BPSF",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "61926011000036108",
+          "display":
+            "paracetamol 1 g + phenylephrine hydrochloride 12.2 mg + guaifenesin 200 mg powder for oral liquid, 1 sachet"
+        }
+      ],
+      "type": "UPDSF",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "931833011000036101",
+          "display":
+            "phenylephrine hydrochloride 12.2 mg + paracetamol 1 g powder for oral liquid, 1 sachet"
+        }
+      ],
+      "type": "UPDSF",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "70253011000036109",
+          "display": "paracetamol 1 g powder for oral liquid, 1 sachet"
+        }
+      ],
+      "type": "UPDSF",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "21433011000036107",
+          "display": "paracetamol"
+        }
+      ],
+      "type": "UPD",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "61800011000036107",
+          "display": "phenylephrine + paracetamol"
+        }
+      ],
+      "type": "UPD",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "37732011000036107",
+          "display": "phenylephrine"
+        }
+      ],
+      "type": "UPD",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "61754011000036107",
+          "display": "paracetamol + phenylephrine + guaifenesin"
+        }
+      ],
+      "type": "UPD",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "61724011000036106",
+          "display": "guaifenesin + phenylephrine"
+        }
+      ],
+      "type": "UPD",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "61763011000036101",
+          "display": "guaifenesin"
+        }
+      ],
+      "type": "UPD",
+      "status": "active"
+    },
+    {
+      "type": "BPGC",
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "60473011000036105",
+          "display":
+            "Lemsip Max Cold and Flu plus Chesty Cough Lemon and Menthol powder for oral liquid, 1 sachet"
+        },
+        {
+          "system":
+            "https://www.tga.gov.au/australian-register-therapeutic-goods",
+          "code": "150168"
+        }
+      ],
+      "status": "active",
+      "sourceCodeSystemUri": "http://snomed.info/sct",
+      "sourceCodeSystemVersion":
+        "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+      "focused": true
+    }
+  ],
+  "relationships": [
+    {
+      "source": "60473011000036105",
+      "target": "53235011000036105",
+      "type": "has-brand"
+    },
+    {
+      "source": "60473011000036105",
+      "target": "56431011000036100",
+      "type": "is-a"
+    },
+    {
+      "source": "56431011000036100",
+      "target": "63351011000036103",
+      "type": "is-a"
+    },
+    {
+      "source": "63351011000036103",
+      "target": "71931011000036102",
+      "type": "has-component"
+    },
+    {
+      "source": "60473011000036105",
+      "target": "53919011000036101",
+      "type": "unknown"
+    },
+    {
+      "source": "53919011000036101",
+      "target": "61926011000036108",
+      "type": "is-a"
+    },
+    {
+      "source": "61926011000036108",
+      "target": "931833011000036101",
+      "type": "is-a"
+    },
+    {
+      "source": "931833011000036101",
+      "target": "70253011000036109",
+      "type": "is-a"
+    },
+    {
+      "source": "70253011000036109",
+      "target": "21433011000036107",
+      "type": "is-a"
+    },
+    {
+      "source": "931833011000036101",
+      "target": "61800011000036107",
+      "type": "is-a"
+    },
+    {
+      "source": "61800011000036107",
+      "target": "37732011000036107",
+      "type": "is-a"
+    },
+    {
+      "source": "61926011000036108",
+      "target": "61754011000036107",
+      "type": "is-a"
+    },
+    {
+      "source": "61754011000036107",
+      "target": "61724011000036106",
+      "type": "is-a"
+    },
+    {
+      "source": "61724011000036106",
+      "target": "61763011000036101",
+      "type": "is-a"
+    }
+  ]
+}

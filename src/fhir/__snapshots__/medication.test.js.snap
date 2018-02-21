@@ -1,5 +1,173 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`getRelatedConcepts should return correct result for CTPP 1065531000168104 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "1065481000168102",
+          "display": "Strong Pain Relief (Terry White Chemists)",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "1065521000168102",
+          "display": "Strong Pain Relief (Terry White Chemists) uncoated tablet, 40",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "932460011000036106",
+          "display": "paracetamol 500 mg + codeine phosphate hemihydrate 10 mg tablet, 40",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "170231000036101",
+          "display": "paracetamol 500 mg tablet, 40",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "1065491000168104",
+          "display": "Strong Pain Relief (Terry White Chemists) uncoated tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "52258011000036105",
+          "display": "paracetamol 500 mg + codeine phosphate hemihydrate 10 mg tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "23628011000036109",
+          "display": "paracetamol 500 mg tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21433011000036107",
+          "display": "paracetamol",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21286011000036106",
+          "display": "paracetamol + codeine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21821011000036104",
+          "display": "codeine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "1065531000168104",
+      "target": "1065481000168102",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "1065531000168104",
+      "target": "1065521000168102",
+      "type": "is-a",
+    },
+    Object {
+      "source": "1065521000168102",
+      "target": "932460011000036106",
+      "type": "is-a",
+    },
+    Object {
+      "source": "932460011000036106",
+      "target": "170231000036101",
+      "type": "is-a",
+    },
+    Object {
+      "source": "1065531000168104",
+      "target": "1065491000168104",
+      "type": "unknown",
+    },
+    Object {
+      "source": "1065491000168104",
+      "target": "52258011000036105",
+      "type": "is-a",
+    },
+    Object {
+      "source": "52258011000036105",
+      "target": "23628011000036109",
+      "type": "is-a",
+    },
+    Object {
+      "source": "23628011000036109",
+      "target": "21433011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "52258011000036105",
+      "target": "21286011000036106",
+      "type": "is-a",
+    },
+    Object {
+      "source": "21286011000036106",
+      "target": "21821011000036104",
+      "type": "is-a",
+    },
+  ],
+}
+`;
+
 exports[`getRelatedConcepts should return correct result for CTPP 19255011000036102 1`] = `
 Object {
   "concepts": Array [
@@ -154,12 +322,12 @@ Object {
     Object {
       "source": "28329011000036108",
       "target": "27087011000036102",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "28329011000036108",
       "target": "46259011000036105",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "19255011000036102",
@@ -573,17 +741,17 @@ Object {
     Object {
       "source": "28061011000036102",
       "target": "46431011000036106",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "28061011000036102",
       "target": "924203011000036107",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "28061011000036102",
       "target": "700031841000036104",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "20833011000036107",
@@ -932,17 +1100,17 @@ Object {
     Object {
       "source": "28214011000036106",
       "target": "46431011000036106",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "28214011000036106",
       "target": "700031841000036104",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "28214011000036106",
       "target": "700031831000036109",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "21062011000036103",
@@ -1395,27 +1563,27 @@ Object {
     Object {
       "source": "933205811000036100",
       "target": "75498011000036101",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "933205811000036100",
       "target": "75497011000036102",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "933205811000036100",
       "target": "75500011000036108",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "933205811000036100",
       "target": "75496011000036100",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "933205811000036100",
       "target": "75499011000036109",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "933216161000036101",
@@ -1672,17 +1840,17 @@ Object {
     Object {
       "source": "28214011000036106",
       "target": "46431011000036106",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "28214011000036106",
       "target": "700031841000036104",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "28214011000036106",
       "target": "700031831000036109",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "28214011000036106",
@@ -2126,17 +2294,17 @@ Object {
     Object {
       "source": "28214011000036106",
       "target": "46431011000036106",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "28214011000036106",
       "target": "700031841000036104",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "28214011000036106",
       "target": "700031831000036109",
-      "type": "has-component",
+      "type": "is-a",
     },
     Object {
       "source": "14207011000036103",
@@ -2482,6 +2650,26 @@ exports[`getRelatedConcepts should return correct result for substance 229201100
 Object {
   "concepts": Array [],
   "relationships": Array [],
+}
+`;
+
+exports[`getSubjectConcept should return correct result for CTPP 1065531000168104 1`] = `
+Object {
+  "coding": Array [
+    Object {
+      "code": "1065531000168104",
+      "display": "Strong Pain Relief (Terry White Chemists) uncoated tablet, 40, blister pack",
+      "system": "http://snomed.info/sct",
+    },
+    Object {
+      "code": "171010",
+      "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+    },
+  ],
+  "sourceCodeSystemUri": "http://snomed.info/sct",
+  "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+  "status": "active",
+  "type": "BPGC",
 }
 `;
 

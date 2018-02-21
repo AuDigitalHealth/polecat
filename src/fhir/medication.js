@@ -429,7 +429,7 @@ export const relationshipTypeFor = (sourceType, targetType) => {
     // Unbranded package with no container ->
     //   Unbranded product with no container
     case 'UPG-UPG':
-      return 'has-component'
+      return 'is-a'
     // TPP -> TPP
     // Branded package with no container ->
     //   Branded product with no container
@@ -477,7 +477,7 @@ export const humaniseRelationshipType = (type, plural) =>
     ? {
         'is-a': 'are subtypes of',
         'has-updsf': 'are packages containing',
-        'has-component': 'have component',
+        'has-component': 'have component pack',
         'has-brand': 'have brand',
         'has-bpsf': 'are packages containing',
         'replaced-by': 'are replaced by',
@@ -489,7 +489,7 @@ export const humaniseRelationshipType = (type, plural) =>
     : {
         'is-a': 'is a subtype of',
         'has-updsf': 'has unit of use',
-        'has-component': 'has component',
+        'has-component': 'has component pack',
         'has-brand': 'has brand',
         'has-bpsf': 'has unit of use',
         'replaced-by': 'is replaced by',
@@ -681,7 +681,7 @@ const mergeRelationships = (merged, relationships) => {
 
 // Concepts A and B are deemed to have the same coding if the SNOMED CT codes
 // are present and match.
-const conceptsHaveSameCoding = (conceptA, conceptB) => {
+export const conceptsHaveSameCoding = (conceptA, conceptB) => {
   const conceptACode =
       codingToSnomedCode(conceptA.coding) || codingToGroupCode(conceptA.coding),
     conceptBCode =
