@@ -4,6 +4,7 @@ import http, { CancelToken } from 'axios'
 import throttle from 'lodash.throttle'
 import omit from 'lodash.omit'
 import onClickOutside from 'react-onclickoutside'
+import { connect } from 'react-redux'
 
 import TextField from './TextField.js'
 import QuickSearchResults from './QuickSearchResults.js'
@@ -277,4 +278,6 @@ export class MedicationSearchField extends Component {
   }
 }
 
-export default onClickOutside(MedicationSearchField)
+export default connect(({ fhirServer }) => ({ fhirServer }))(
+  onClickOutside(MedicationSearchField),
+)

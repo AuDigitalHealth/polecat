@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import http, { CancelToken } from 'axios'
+import { connect } from 'react-redux'
 
 import FhirMedication from './FhirMedication.js'
 import { sniffFormat } from './fhir/restApi'
@@ -241,4 +242,7 @@ class RemoteFhirMedication extends Component {
   }
 }
 
-export default RemoteFhirMedication
+// Bring `fhirServer` into props.
+export default connect(({ fhirServer }) => ({ fhirServer }))(
+  RemoteFhirMedication,
+)

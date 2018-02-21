@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 import RemoteFhirMedication from './RemoteFhirMedication.js'
 import AmtProductModel from './AmtProductModel.js'
@@ -10,7 +11,7 @@ import ErrorMessage from './ErrorMessage.js'
 
 import './css/AmtBrowser.css'
 
-class AmtBrowser extends Component {
+export class AmtBrowser extends Component {
   static propTypes = {
     resourceType: PropTypes.oneOf(['Medication', 'Substance']),
     id: PropTypes.string,
@@ -20,7 +21,6 @@ class AmtBrowser extends Component {
     onLoadSubjectConcept: PropTypes.func,
   }
   static defaultProps = {
-    config: { fhirServer: 'https://medserve.online/fhir' },
     resourceType: 'Medication',
   }
 
@@ -73,7 +73,7 @@ class AmtBrowser extends Component {
   }
 
   render() {
-    const { resourceType, id, query, viewport, config } = this.props
+    const { resourceType, id, query, viewport } = this.props
     const {
       loading,
       sourceCodeSystemUri,
@@ -98,17 +98,11 @@ class AmtBrowser extends Component {
             onLoadingChange={this.handleLoadingChange}
             onLoadSubjectConcept={this.handleLoadSubjectConcept}
             onError={this.handleError}
-            {...config}
           >
             <AmtProductModel viewport={viewport} />
           </RemoteFhirMedication>
         ) : null}
-        <Search
-          query={query}
-          fhirServer={config.fhirServer}
-          onError={this.handleError}
-          focusUponMount
-        />
+        <Search query={query} onError={this.handleError} focusUponMount />
         <Loading loading={loading} />
         {sourceCodeSystemUri && sourceCodeSystemVersion ? (
           <SourceCodeSystem
@@ -121,4 +115,5 @@ class AmtBrowser extends Component {
   }
 }
 
-export default AmtBrowser
+// Map config from global state into props of this component.
+export default connect(config => ({ config }))(AmtBrowser)

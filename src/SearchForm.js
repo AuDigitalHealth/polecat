@@ -14,7 +14,6 @@ import './css/SearchForm.css'
 
 class SearchForm extends Component {
   static propTypes = {
-    fhirServer: PropTypes.string.isRequired,
     query: PropTypes.string,
     onSearchUpdate: PropTypes.func,
     onError: PropTypes.func,
@@ -129,7 +128,6 @@ class SearchForm extends Component {
   }
 
   render() {
-    const { fhirServer } = this.props
     const { search } = this.state
     return (
       <form className="search-form">
@@ -140,7 +138,6 @@ class SearchForm extends Component {
           focusUponMount
         />
         <MedicationSearchField
-          fhirServer={fhirServer}
           codingValue={search['ingredient']}
           textValue={search['ingredient-text']}
           label="Ingredient"
@@ -151,7 +148,6 @@ class SearchForm extends Component {
           onError={this.handleError}
         />
         <MedicationSearchField
-          fhirServer={fhirServer}
           codingValue={search['package']}
           textValue={search['package-text']}
           label="Package item"
@@ -187,7 +183,6 @@ class SearchForm extends Component {
           onChange={value => this.handleChange('artg', value)}
         />
         <MedicationSearchField
-          fhirServer={fhirServer}
           codingValue={search['parent']}
           textValue={search['parent-text']}
           label="Parent"
@@ -198,7 +193,6 @@ class SearchForm extends Component {
           onError={this.handleError}
         />
         <MedicationSearchField
-          fhirServer={fhirServer}
           codingValue={search['ancestor']}
           textValue={search['ancestor-text']}
           label="Ancestor"

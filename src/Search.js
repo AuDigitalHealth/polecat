@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import http, { CancelToken } from 'axios'
 import throttle from 'lodash.throttle'
 import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import BasicSearch from './BasicSearch.js'
 import AdvancedSearch from './AdvancedSearch.js'
@@ -16,7 +17,7 @@ import { codingToSnomedCode } from './fhir/medication.js'
 
 import './css/Search.css'
 
-class Search extends Component {
+export class Search extends Component {
   static propTypes = {
     fhirServer: PropTypes.string.isRequired,
     query: PropTypes.string,
@@ -240,7 +241,7 @@ class Search extends Component {
   }
 
   renderBasicOrAdvancedSearch() {
-    const { query: queryFromProps, focusUponMount, fhirServer } = this.props
+    const { query: queryFromProps, focusUponMount } = this.props
     const {
       query: queryFromState,
       advanced,
@@ -251,7 +252,6 @@ class Search extends Component {
     } = this.state
     return advanced ? (
       <AdvancedSearch
-        fhirServer={fhirServer}
         routedQuery={queryFromProps}
         currentQuery={queryFromState}
         results={results}
@@ -282,4 +282,5 @@ class Search extends Component {
   }
 }
 
-export default withRouter(Search)
+// Bring `fhirServer` and `history` into props.
+export default connect(({ fhirServer }) => ({ fhirServer }))(withRouter(Search))

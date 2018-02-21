@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import http from 'axios'
+import { Provider } from 'react-redux'
 import bowser from 'bowser'
 import Raven from 'raven-js'
 
+import { getResolvedConfig, createConfigStore } from './config.js'
 import Router from './Router'
 
 import './css/index.css'
@@ -27,21 +28,22 @@ if (
     '<div class="incompatible-browser"><p>&#x1f625&#x1f625&#x1f625</p><p>You appear to be running a very old web browser, which does not have the necessary features to run this application...</p><p>&#x1f625&#x1f625&#x1f625</p></div>',
   )
 } else {
-  http
-    .get('/config.json')
-    .then(response => {
-      const config = response.data
+  getResolvedConfig()
+    .then(config => {
       if (config.sentryDsn) {
         Raven.config(config.sentryDsn, { release: config.version }).install()
       }
-      ReactDOM.render(
-        <Router config={config} />,
-        document.getElementById('root'),
-      )
+      return config
     })
-    .catch(error => {
-      // eslint-disable-next-line no-console
-      console.error(error)
-      ReactDOM.render(<Router />, document.getElementById('root'))
+    .then(config => {
+      createConfigStore(config).then(store =>
+        // eslint-disable-next-line react/no-render-return-value
+        ReactDOM.render(
+          <Provider store={store}>
+            <Router />
+          </Provider>,
+          document.getElementById('root'),
+        ),
+      )
     })
 }

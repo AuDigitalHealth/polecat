@@ -14,7 +14,6 @@ import './css/AdvancedSearch.css'
 
 class AdvancedSearch extends Component {
   static propTypes = {
-    fhirServer: PropTypes.string,
     routedQuery: PropTypes.string,
     currentQuery: PropTypes.string,
     results: PropTypes.array,
@@ -71,14 +70,7 @@ class AdvancedSearch extends Component {
   }
 
   render() {
-    const {
-      routedQuery,
-      currentQuery,
-      bundle,
-      results,
-      loading,
-      fhirServer,
-    } = this.props
+    const { routedQuery, currentQuery, bundle, results, loading } = this.props
     // If the query has been updated within state, use that over props.
     const query =
       currentQuery === null || currentQuery === undefined
@@ -95,7 +87,6 @@ class AdvancedSearch extends Component {
             onChange={this.handleQueryUpdate}
           />
           <SearchForm
-            fhirServer={fhirServer}
             query={query}
             onSearchUpdate={this.handleQueryUpdate}
             onError={this.handleError}

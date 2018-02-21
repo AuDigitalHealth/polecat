@@ -15,7 +15,6 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
       value="parac"
     />
     <SearchForm
-      fhirServer="https://medserve.online/fhir"
       onError={[Function]}
       onSearchUpdate={[Function]}
       query="parac"
@@ -160,7 +159,6 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
       value="para"
     />
     <SearchForm
-      fhirServer="https://medserve.online/fhir"
       onError={[Function]}
       onSearchUpdate={[Function]}
       query="para"
@@ -305,7 +303,6 @@ exports[`Storyshots AdvancedSearch With routed query but no results 1`] = `
       value="para"
     />
     <SearchForm
-      fhirServer="https://medserve.online/fhir"
       onError={[Function]}
       onSearchUpdate={[Function]}
       query="para"
@@ -339,7 +336,6 @@ exports[`Storyshots AdvancedSearch With routed query but no results, loading 1`]
       value="para"
     />
     <SearchForm
-      fhirServer="https://medserve.online/fhir"
       onError={[Function]}
       onSearchUpdate={[Function]}
       query="para"
@@ -368,8 +364,7 @@ exports[`Storyshots AmtBrowser Codalgin Forte uncoated tablet, 20, blister pack 
     }
   }
 >
-  <RemoteFhirMedication
-    fhirServer="https://medserve.online/fhir"
+  <Connect(RemoteFhirMedication)
     id="19255011000036102"
     onError={[Function]}
     onLoadSubjectConcept={[Function]}
@@ -406,9 +401,8 @@ exports[`Storyshots AmtBrowser Codalgin Forte uncoated tablet, 20, blister pack 
         }
       }
     />
-  </RemoteFhirMedication>
-  <withRouter(Search)
-    fhirServer="https://medserve.online/fhir"
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
     focusUponMount={true}
     onError={[Function]}
   />
@@ -429,8 +423,7 @@ exports[`Storyshots AmtBrowser Codalgin Forte uncoated tablet, 20, blister pack 
     }
   }
 >
-  <RemoteFhirMedication
-    fhirServer="https://medserve.online/fhir"
+  <Connect(RemoteFhirMedication)
     id="835891000168108"
     onError={[Function]}
     onLoadSubjectConcept={[Function]}
@@ -467,9 +460,8 @@ exports[`Storyshots AmtBrowser Codalgin Forte uncoated tablet, 20, blister pack 
         }
       }
     />
-  </RemoteFhirMedication>
-  <withRouter(Search)
-    fhirServer="https://medserve.online/fhir"
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
     focusUponMount={true}
     onError={[Function]}
   />
@@ -490,8 +482,7 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution (TPUU) 1`] 
     }
   }
 >
-  <RemoteFhirMedication
-    fhirServer="https://medserve.online/fhir"
+  <Connect(RemoteFhirMedication)
     id="53743011000036103"
     onError={[Function]}
     onLoadSubjectConcept={[Function]}
@@ -528,9 +519,8 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution (TPUU) 1`] 
         }
       }
     />
-  </RemoteFhirMedication>
-  <withRouter(Search)
-    fhirServer="https://medserve.online/fhir"
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
     focusUponMount={true}
     onError={[Function]}
   />
@@ -551,8 +541,7 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL (TP
     }
   }
 >
-  <RemoteFhirMedication
-    fhirServer="https://medserve.online/fhir"
+  <Connect(RemoteFhirMedication)
     id="55971011000036104"
     onError={[Function]}
     onLoadSubjectConcept={[Function]}
@@ -589,9 +578,8 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL (TP
         }
       }
     />
-  </RemoteFhirMedication>
-  <withRouter(Search)
-    fhirServer="https://medserve.online/fhir"
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
     focusUponMount={true}
     onError={[Function]}
   />
@@ -612,8 +600,7 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL, bo
     }
   }
 >
-  <RemoteFhirMedication
-    fhirServer="https://medserve.online/fhir"
+  <Connect(RemoteFhirMedication)
     id="60009011000036108"
     onError={[Function]}
     onLoadSubjectConcept={[Function]}
@@ -650,9 +637,8 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL, bo
         }
       }
     />
-  </RemoteFhirMedication>
-  <withRouter(Search)
-    fhirServer="https://medserve.online/fhir"
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
     focusUponMount={true}
     onError={[Function]}
   />
@@ -673,8 +659,7 @@ exports[`Storyshots AmtBrowser Search for esomeprazole 1`] = `
     }
   }
 >
-  <withRouter(Search)
-    fhirServer="https://medserve.online/fhir"
+  <Connect(withRouter(Search))
     focusUponMount={true}
     onError={[Function]}
     query="esomeprazole"
@@ -696,8 +681,7 @@ exports[`Storyshots AmtBrowser loratadine (MP) 1`] = `
     }
   }
 >
-  <RemoteFhirMedication
-    fhirServer="https://medserve.online/fhir"
+  <Connect(RemoteFhirMedication)
     id="21701011000036106"
     onError={[Function]}
     onLoadSubjectConcept={[Function]}
@@ -734,9 +718,8 @@ exports[`Storyshots AmtBrowser loratadine (MP) 1`] = `
         }
       }
     />
-  </RemoteFhirMedication>
-  <withRouter(Search)
-    fhirServer="https://medserve.online/fhir"
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
     focusUponMount={true}
     onError={[Function]}
   />
@@ -757,8 +740,7 @@ exports[`Storyshots AmtBrowser loratadine (substance) 1`] = `
     }
   }
 >
-  <RemoteFhirMedication
-    fhirServer="https://medserve.online/fhir"
+  <Connect(RemoteFhirMedication)
     id="2292011000036106"
     onError={[Function]}
     onLoadSubjectConcept={[Function]}
@@ -795,9 +777,8 @@ exports[`Storyshots AmtBrowser loratadine (substance) 1`] = `
         }
       }
     />
-  </RemoteFhirMedication>
-  <withRouter(Search)
-    fhirServer="https://medserve.online/fhir"
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
     focusUponMount={true}
     onError={[Function]}
   />
@@ -818,8 +799,7 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid (MPUU) 1`] = `
     }
   }
 >
-  <RemoteFhirMedication
-    fhirServer="https://medserve.online/fhir"
+  <Connect(RemoteFhirMedication)
     id="62022011000036104"
     onError={[Function]}
     onLoadSubjectConcept={[Function]}
@@ -856,9 +836,8 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid (MPUU) 1`] = `
         }
       }
     />
-  </RemoteFhirMedication>
-  <withRouter(Search)
-    fhirServer="https://medserve.online/fhir"
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
     focusUponMount={true}
     onError={[Function]}
   />
@@ -879,8 +858,7 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid, 150 mL (MPP) 1`] 
     }
   }
 >
-  <RemoteFhirMedication
-    fhirServer="https://medserve.online/fhir"
+  <Connect(RemoteFhirMedication)
     id="63589011000036105"
     onError={[Function]}
     onLoadSubjectConcept={[Function]}
@@ -917,9 +895,8 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid, 150 mL (MPP) 1`] 
         }
       }
     />
-  </RemoteFhirMedication>
-  <withRouter(Search)
-    fhirServer="https://medserve.online/fhir"
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
     focusUponMount={true}
     onError={[Function]}
   />
@@ -5999,7 +5976,6 @@ exports[`Storyshots Search With a query 1`] = `
   className="search"
 >
   <withRouter(AdvancedSearch)
-    fhirServer="https://medserve.online/fhir"
     loading={true}
     onError={[Function]}
     onNextClick={[Function]}
@@ -6071,43 +6047,21 @@ exports[`Storyshots SearchForm With a query 1`] = `
     label="Contains text"
     onChange={[Function]}
   />
-  <OnClickOutside(MedicationSearchField)
-    eventTypes={
-      Array [
-        "mousedown",
-        "touchstart",
-      ]
-    }
-    excludeScrollbar={false}
-    fhirServer="https://medserve.online/fhir"
+  <Connect(OnClickOutside(MedicationSearchField))
     label="Ingredient"
     onClear={[Function]}
     onCodingChange={[Function]}
     onError={[Function]}
     onTextChange={[Function]}
-    outsideClickIgnoreClass="ignore-react-onclickoutside"
-    preventDefault={false}
     searchPath={[Function]}
-    stopPropagation={false}
   />
-  <OnClickOutside(MedicationSearchField)
-    eventTypes={
-      Array [
-        "mousedown",
-        "touchstart",
-      ]
-    }
-    excludeScrollbar={false}
-    fhirServer="https://medserve.online/fhir"
+  <Connect(OnClickOutside(MedicationSearchField))
     label="Package item"
     onClear={[Function]}
     onCodingChange={[Function]}
     onError={[Function]}
     onTextChange={[Function]}
-    outsideClickIgnoreClass="ignore-react-onclickoutside"
-    preventDefault={false}
     searchPath={[Function]}
-    stopPropagation={false}
   />
   <TextField
     disabled={false}
@@ -6134,43 +6088,21 @@ exports[`Storyshots SearchForm With a query 1`] = `
     label="ARTG ID"
     onChange={[Function]}
   />
-  <OnClickOutside(MedicationSearchField)
-    eventTypes={
-      Array [
-        "mousedown",
-        "touchstart",
-      ]
-    }
-    excludeScrollbar={false}
-    fhirServer="https://medserve.online/fhir"
+  <Connect(OnClickOutside(MedicationSearchField))
     label="Parent"
     onClear={[Function]}
     onCodingChange={[Function]}
     onError={[Function]}
     onTextChange={[Function]}
-    outsideClickIgnoreClass="ignore-react-onclickoutside"
-    preventDefault={false}
     searchPath={[Function]}
-    stopPropagation={false}
   />
-  <OnClickOutside(MedicationSearchField)
-    eventTypes={
-      Array [
-        "mousedown",
-        "touchstart",
-      ]
-    }
-    excludeScrollbar={false}
-    fhirServer="https://medserve.online/fhir"
+  <Connect(OnClickOutside(MedicationSearchField))
     label="Ancestor"
     onClear={[Function]}
     onCodingChange={[Function]}
     onError={[Function]}
     onTextChange={[Function]}
-    outsideClickIgnoreClass="ignore-react-onclickoutside"
-    preventDefault={false}
     searchPath={[Function]}
-    stopPropagation={false}
   />
   <ConceptTypeToggle
     label="Type"

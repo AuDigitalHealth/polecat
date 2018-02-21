@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import Search from './Search.js'
+import { Search } from './Search.js'
 import config from '../test/config.js'
 
 storiesOf('Search', module)
