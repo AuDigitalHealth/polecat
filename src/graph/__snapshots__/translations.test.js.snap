@@ -350,6 +350,46 @@ Object {
 }
 `;
 
+exports[`translateToAmt should apply the "not replaced by" filter correctly 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "44924011000036104",
+          "display": "paracetamol + pseudoephedrine + chlorphenamine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "61765011000036100",
+          "display": "dexchlorpheniramine + paracetamol + pseudoephedrine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "focused": true,
+      "sourceCodeSystemUri": "http://snomed.info/sct",
+      "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+      "status": "entered-in-error",
+      "type": "UPD",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "replacementDate": "2017-07-31",
+      "source": "61765011000036100",
+      "target": "44924011000036104",
+      "type": "replaced-by",
+    },
+  ],
+}
+`;
+
 exports[`translateToAmt should apply the "replaces" filter correctly 1`] = `
 Object {
   "concepts": Array [
@@ -493,6 +533,140 @@ Object {
       "source": "44924011000036104",
       "target": "30971011000036102",
       "type": "has-ingredient",
+    },
+  ],
+}
+`;
+
+exports[`translateToAmt should apply the CTPP filter correctly 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "812781000168101",
+          "display": "Nuromol",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "813231000168103",
+          "display": "paracetamol 500 mg + ibuprofen 200 mg tablet, 24",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "812801000168102",
+          "display": "Nuromol film-coated tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "812791000168103",
+          "display": "paracetamol 500 mg + ibuprofen 200 mg tablet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "177241000036105",
+          "display": "paracetamol + ibuprofen",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21885011000036105",
+          "display": "ibuprofen",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21433011000036107",
+          "display": "paracetamol",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "813241000168107",
+          "display": "Nuromol film-coated tablet, 24",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "focused": true,
+      "sourceCodeSystemUri": "http://snomed.info/sct",
+      "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+      "status": "active",
+      "type": "BPG",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "813241000168107",
+      "target": "812781000168101",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "813241000168107",
+      "target": "813231000168103",
+      "type": "is-a",
+    },
+    Object {
+      "source": "813241000168107",
+      "target": "812801000168102",
+      "type": "has-bpsf",
+    },
+    Object {
+      "source": "812791000168103",
+      "target": "177241000036105",
+      "type": "is-a",
+    },
+    Object {
+      "source": "177241000036105",
+      "target": "21885011000036105",
+      "type": "is-a",
+    },
+    Object {
+      "source": "177241000036105",
+      "target": "21433011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "813231000168103",
+      "target": "812791000168103",
+      "type": "has-updsf",
     },
   ],
 }

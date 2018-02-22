@@ -6,6 +6,7 @@ import isEqual from 'lodash.isequal'
 import omit from 'lodash.omit'
 import pick from 'lodash.pick'
 import debounce from 'lodash.debounce'
+import { connect } from 'react-redux'
 
 import Concept from './Concept.js'
 import ConceptGroup from './ConceptGroup.js'
@@ -16,7 +17,10 @@ import {
   codingToGroupCode,
 } from './fhir/medication.js'
 import { idForNode } from './graph/common.js'
-import { translateToAmt } from './graph/translations.js'
+import {
+  translateToAmt,
+  filters as availableFilters,
+} from './graph/translations.js'
 import {
   calculateLinkOptions,
   curveForLink,
@@ -25,6 +29,7 @@ import {
   inheritanceMarker,
   aggregationMarker,
 } from './graph/links.js'
+import { visibilityConfig } from './config.js'
 
 import './css/AmtProductModel.css'
 
@@ -47,7 +52,7 @@ class AmtProductModel extends Component {
     links: PropTypes.arrayOf(
       PropTypes.shape({ source: PropTypes.string, target: PropTypes.string }),
     ),
-    filters: PropTypes.arrayOf(PropTypes.oneOf(['mp', 'parent-of-mp', 'mpuu'])),
+    filters: PropTypes.arrayOf(PropTypes.oneOf(Object.keys(availableFilters))),
     attraction: PropTypes.number,
     linkDistance: PropTypes.number,
     alpha: PropTypes.number,
@@ -548,4 +553,38 @@ class AmtProductModel extends Component {
   }
 }
 
-export default AmtProductModel
+// Read configuration props and return an array of filters based upon the
+// current subject concept type and the visibility settings.
+const filtersFromProps = (state, props) => {
+  const { nodes } = props
+  if (!nodes || !state) return []
+  const subject = nodes.find(n => n.focused),
+    subjectType = amtConceptTypeFor(subject.type)
+  // Visibility settings follow the convention:
+  // `visibility.[subject concept type].[filtered concept type]
+  const keys = Object.keys(visibilityConfig).filter(k => {
+    const matchedType = k.match(/visibility\.(\w+)\.\w+/)[1]
+    return matchedType === subjectType.toLowerCase()
+  })
+  const filters = keys.reduce(
+    // The presence of a visibility setting with a value of `false` means that
+    // we should filter concepts of that type.
+    (acc, k) => acc.concat(state[k] === false ? [visibilityConfig[k]] : []),
+    [],
+  )
+  // The `hideAllExceptReplacedBy` setting for inactive concepts works a bit
+  // differently: if it is set to `true`, all related concepts are hidden except
+  // those with a "is replaced by" relationship to the subject concept.
+  if (
+    (subject.status === 'inactive' || subject.status === 'entered-in-error') &&
+    state['visibility.inactive.hideAllExceptReplacedBy']
+  ) {
+    filters.push('not-replaced-by')
+  }
+  return filters
+}
+
+// Add filters into props.
+export default connect((state, ownProps) => ({
+  filters: filtersFromProps(state, ownProps),
+}))(AmtProductModel)

@@ -6,6 +6,7 @@ import concepts3 from '../../test/unfilteredGraph-37732011000036107.json'
 import concepts4 from '../../test/unfilteredGraph-60241011000036109.json'
 import concepts5 from '../../test/unfilteredGraph-61765011000036100.json'
 import concepts6 from '../../test/unfilteredGraph-44924011000036104.json'
+import concepts7 from '../../test/unfilteredGraph-813241000168107.json'
 
 describe('translateToAmt', () => {
   it('should translate the raw graph as expected', () => {
@@ -53,6 +54,11 @@ describe('translateToAmt', () => {
     expect(result).toMatchSnapshot()
   })
 
+  it('should apply the CTPP filter correctly', () => {
+    const result = translateToAmt(concepts7, { filters: ['ctpp'] })
+    expect(result).toMatchSnapshot()
+  })
+
   it('should apply the component packs filter correctly', () => {
     const result = translateToAmt(concepts4, { filters: ['component-pack'] })
     expect(result).toMatchSnapshot()
@@ -65,6 +71,11 @@ describe('translateToAmt', () => {
 
   it('should apply the "replaces" filter correctly', () => {
     const result = translateToAmt(concepts6, { filters: ['replaces'] })
+    expect(result).toMatchSnapshot()
+  })
+
+  it('should apply the "not replaced by" filter correctly', () => {
+    const result = translateToAmt(concepts5, { filters: ['not-replaced-by'] })
     expect(result).toMatchSnapshot()
   })
 })

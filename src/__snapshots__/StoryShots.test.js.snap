@@ -377,23 +377,7 @@ exports[`Storyshots AmtBrowser Codalgin Forte uncoated tablet, 20, blister pack 
       }
     }
   >
-    <AmtProductModel
-      alpha={1.5}
-      alphaDecay={0.05}
-      alphaMin={0.01}
-      arrowSize={12}
-      attraction={-1000}
-      collideRadiusMultiplier={1.5}
-      collideRadiusRatio={1.5}
-      collideRadiusThreshold={10}
-      conceptGroupHeight={47}
-      conceptGroupWidth={100}
-      conceptHeight={116}
-      conceptWidth={166}
-      filters={Array []}
-      linkCurviness={0.2}
-      linkDistance={250}
-      moveCenterAlpha={0.05}
+    <Connect(AmtProductModel)
       viewport={
         Object {
           "height": 800,
@@ -436,23 +420,7 @@ exports[`Storyshots AmtBrowser Codalgin Forte uncoated tablet, 20, blister pack 
       }
     }
   >
-    <AmtProductModel
-      alpha={1.5}
-      alphaDecay={0.05}
-      alphaMin={0.01}
-      arrowSize={12}
-      attraction={-1000}
-      collideRadiusMultiplier={1.5}
-      collideRadiusRatio={1.5}
-      collideRadiusThreshold={10}
-      conceptGroupHeight={47}
-      conceptGroupWidth={100}
-      conceptHeight={116}
-      conceptWidth={166}
-      filters={Array []}
-      linkCurviness={0.2}
-      linkDistance={250}
-      moveCenterAlpha={0.05}
+    <Connect(AmtProductModel)
       viewport={
         Object {
           "height": 800,
@@ -495,23 +463,7 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution (TPUU) 1`] 
       }
     }
   >
-    <AmtProductModel
-      alpha={1.5}
-      alphaDecay={0.05}
-      alphaMin={0.01}
-      arrowSize={12}
-      attraction={-1000}
-      collideRadiusMultiplier={1.5}
-      collideRadiusRatio={1.5}
-      collideRadiusThreshold={10}
-      conceptGroupHeight={47}
-      conceptGroupWidth={100}
-      conceptHeight={116}
-      conceptWidth={166}
-      filters={Array []}
-      linkCurviness={0.2}
-      linkDistance={250}
-      moveCenterAlpha={0.05}
+    <Connect(AmtProductModel)
       viewport={
         Object {
           "height": 800,
@@ -554,23 +506,7 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL (TP
       }
     }
   >
-    <AmtProductModel
-      alpha={1.5}
-      alphaDecay={0.05}
-      alphaMin={0.01}
-      arrowSize={12}
-      attraction={-1000}
-      collideRadiusMultiplier={1.5}
-      collideRadiusRatio={1.5}
-      collideRadiusThreshold={10}
-      conceptGroupHeight={47}
-      conceptGroupWidth={100}
-      conceptHeight={116}
-      conceptWidth={166}
-      filters={Array []}
-      linkCurviness={0.2}
-      linkDistance={250}
-      moveCenterAlpha={0.05}
+    <Connect(AmtProductModel)
       viewport={
         Object {
           "height": 800,
@@ -613,23 +549,7 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL, bo
       }
     }
   >
-    <AmtProductModel
-      alpha={1.5}
-      alphaDecay={0.05}
-      alphaMin={0.01}
-      arrowSize={12}
-      attraction={-1000}
-      collideRadiusMultiplier={1.5}
-      collideRadiusRatio={1.5}
-      collideRadiusThreshold={10}
-      conceptGroupHeight={47}
-      conceptGroupWidth={100}
-      conceptHeight={116}
-      conceptWidth={166}
-      filters={Array []}
-      linkCurviness={0.2}
-      linkDistance={250}
-      moveCenterAlpha={0.05}
+    <Connect(AmtProductModel)
       viewport={
         Object {
           "height": 800,
@@ -694,23 +614,7 @@ exports[`Storyshots AmtBrowser loratadine (MP) 1`] = `
       }
     }
   >
-    <AmtProductModel
-      alpha={1.5}
-      alphaDecay={0.05}
-      alphaMin={0.01}
-      arrowSize={12}
-      attraction={-1000}
-      collideRadiusMultiplier={1.5}
-      collideRadiusRatio={1.5}
-      collideRadiusThreshold={10}
-      conceptGroupHeight={47}
-      conceptGroupWidth={100}
-      conceptHeight={116}
-      conceptWidth={166}
-      filters={Array []}
-      linkCurviness={0.2}
-      linkDistance={250}
-      moveCenterAlpha={0.05}
+    <Connect(AmtProductModel)
       viewport={
         Object {
           "height": 800,
@@ -753,23 +657,7 @@ exports[`Storyshots AmtBrowser loratadine (substance) 1`] = `
       }
     }
   >
-    <AmtProductModel
-      alpha={1.5}
-      alphaDecay={0.05}
-      alphaMin={0.01}
-      arrowSize={12}
-      attraction={-1000}
-      collideRadiusMultiplier={1.5}
-      collideRadiusRatio={1.5}
-      collideRadiusThreshold={10}
-      conceptGroupHeight={47}
-      conceptGroupWidth={100}
-      conceptHeight={116}
-      conceptWidth={166}
-      filters={Array []}
-      linkCurviness={0.2}
-      linkDistance={250}
-      moveCenterAlpha={0.05}
+    <Connect(AmtProductModel)
       viewport={
         Object {
           "height": 800,
@@ -812,23 +700,7 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid (MPUU) 1`] = `
       }
     }
   >
-    <AmtProductModel
-      alpha={1.5}
-      alphaDecay={0.05}
-      alphaMin={0.01}
-      arrowSize={12}
-      attraction={-1000}
-      collideRadiusMultiplier={1.5}
-      collideRadiusRatio={1.5}
-      collideRadiusThreshold={10}
-      conceptGroupHeight={47}
-      conceptGroupWidth={100}
-      conceptHeight={116}
-      conceptWidth={166}
-      filters={Array []}
-      linkCurviness={0.2}
-      linkDistance={250}
-      moveCenterAlpha={0.05}
+    <Connect(AmtProductModel)
       viewport={
         Object {
           "height": 800,
@@ -871,23 +743,7 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid, 150 mL (MPP) 1`] 
       }
     }
   >
-    <AmtProductModel
-      alpha={1.5}
-      alphaDecay={0.05}
-      alphaMin={0.01}
-      arrowSize={12}
-      attraction={-1000}
-      collideRadiusMultiplier={1.5}
-      collideRadiusRatio={1.5}
-      collideRadiusThreshold={10}
-      conceptGroupHeight={47}
-      conceptGroupWidth={100}
-      conceptHeight={116}
-      conceptWidth={166}
-      filters={Array []}
-      linkCurviness={0.2}
-      linkDistance={250}
-      moveCenterAlpha={0.05}
+    <Connect(AmtProductModel)
       viewport={
         Object {
           "height": 800,
@@ -908,2832 +764,2183 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid, 150 mL (MPP) 1`] 
 `;
 
 exports[`Storyshots AmtProductModel Aggregation link (close) 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "has-component",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 280,
+        "fy": 232.7710843,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel Aggregation link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "has-component",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 309.6385542,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel Association link (close) 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "has-brand",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 280,
+        "fy": 232.7710843,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel Association link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "has-brand",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 309.6385542,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel E link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel ENE link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 194.41696971,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel ESE link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 194.41696971,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel Inheritance link (close) 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 280,
+        "fy": 232.7710843,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel Inheritance link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 309.6385542,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel N link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 300,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel NE link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 309.6385542,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel NNE link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 389.6986192,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel NNW link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 400,
+        "fy": 389.6986192,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel NW link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 400,
+        "fy": 309.6385542,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel S link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 300,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel SE link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 309.6385542,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel SSE link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 400,
+        "fy": 389.6986192,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel SSW link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 400,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 389.6986192,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel SW link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 400,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 309.6385542,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel W link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 400,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel WNW link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 400,
+        "fy": 194.41696971,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 100,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel WSW link 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "21415011000036100",
+        "target": "21360011000036101",
+        "type": "is-a",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21415011000036100",
+            "display": "amoxicillin",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "fx": 400,
+        "fy": 100,
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21360011000036101",
+            "display": "amoxicillin + clavulanic acid",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "focused": true,
+        "fx": 100,
+        "fy": 194.41696971,
+        "type": "UPD",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots AmtProductModel With nodes and links 1`] = `
-<div
-  className="product-model"
-  onWheel={[Function]}
-  style={
+<AmtProductModel
+  alpha={1.5}
+  alphaDecay={0.05}
+  alphaMin={0.01}
+  arrowSize={12}
+  attraction={-1000}
+  collideRadiusMultiplier={1.5}
+  collideRadiusRatio={1.5}
+  collideRadiusThreshold={10}
+  conceptGroupHeight={47}
+  conceptGroupWidth={100}
+  conceptHeight={116}
+  conceptWidth={166}
+  dispatch={[Function]}
+  filters={Array []}
+  linkCurviness={0.2}
+  linkDistance={250}
+  links={
+    Array [
+      Object {
+        "source": "812831000168109",
+        "target": "812781000168101",
+        "type": "has-brand",
+      },
+      Object {
+        "source": "812831000168109",
+        "target": "812821000168106",
+        "type": "is-a",
+      },
+      Object {
+        "source": "812821000168106",
+        "target": "812811000168104",
+        "type": "is-a",
+      },
+      Object {
+        "source": "812831000168109",
+        "target": "812801000168102",
+        "type": "unknown",
+      },
+      Object {
+        "source": "812801000168102",
+        "target": "812791000168103",
+        "type": "is-a",
+      },
+      Object {
+        "source": "812791000168103",
+        "target": "177241000036105",
+        "type": "is-a",
+      },
+      Object {
+        "source": "177241000036105",
+        "target": "21885011000036105",
+        "type": "is-a",
+      },
+      Object {
+        "source": "177241000036105",
+        "target": "21433011000036107",
+        "type": "is-a",
+      },
+      Object {
+        "source": "812801000168102",
+        "target": "812781000168101",
+        "type": "has-brand",
+      },
+    ]
+  }
+  moveCenterAlpha={0.05}
+  nodes={
+    Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "812781000168101",
+            "display": "Nuromol",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "brand",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "812821000168106",
+            "display": "Nuromol film-coated tablet, 2",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "BPG",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "812811000168104",
+            "display": "paracetamol 500 mg + ibuprofen 200 mg tablet, 2",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "UPG",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "812801000168102",
+            "display": "Nuromol film-coated tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "BPSF",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "812791000168103",
+            "display": "paracetamol 500 mg + ibuprofen 200 mg tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "UPDSF",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "177241000036105",
+            "display": "paracetamol + ibuprofen",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21885011000036105",
+            "display": "ibuprofen",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "21433011000036107",
+            "display": "paracetamol",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "UPD",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "812831000168109",
+            "display": "Nuromol film-coated tablet, 2, blister pack",
+            "system": "http://snomed.info/sct",
+          },
+          Object {
+            "code": "225322",
+            "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+          },
+        ],
+        "focused": true,
+        "type": "BPGC",
+      },
+    ]
+  }
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "notify": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": null,
+    }
+  }
+  viewport={
     Object {
       "height": 800,
       "width": 800,
     }
   }
->
-  <div
-    className="product-model-inner"
-  >
-    <svg
-      className="canvas"
-      height={800}
-      onDoubleClick={[Function]}
-      onMouseMove={[Function]}
-      onMouseUp={[Function]}
-      preserveAspectRatio="none"
-      width={800}
-    >
-      <defs>
-        <marker
-          id="arrow-association"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-association-highlighted"
-          markerHeight={9.600000000000001}
-          markerUnits="userSpaceOnUse"
-          markerWidth={9.600000000000001}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-association arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10"
-          />
-        </marker>
-        <marker
-          id="arrow-inheritance-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="10"
-          refY="5"
-          viewBox="-1 -1 11 11"
-        >
-          <path
-            className="arrow arrow-inheritance arrow-highlighted"
-            d="M 0,0 L 10,5 L 0,10 Z"
-          />
-        </marker>
-        <marker
-          id="arrow-aggregation-highlighted"
-          markerHeight={12}
-          markerUnits="userSpaceOnUse"
-          markerWidth={12}
-          orient="auto"
-          refX="20"
-          refY="5"
-          viewBox="-1 -1 20 10"
-        >
-          <path
-            className="arrow arrow-aggregation arrow-highlighted"
-            d="M 0,5 L 10,0 L 20,5 L 10,10 Z"
-          />
-        </marker>
-      </defs>
-    </svg>
-    <div
-      className="link-types"
-    />
-  </div>
-</div>
+/>
 `;
 
 exports[`Storyshots BasicSearch With current query 1`] = `

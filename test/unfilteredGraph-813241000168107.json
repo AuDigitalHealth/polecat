@@ -1,0 +1,132 @@
+{
+  "concepts": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "812781000168101",
+          "display": "Nuromol"
+        }
+      ],
+      "type": "brand"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "813231000168103",
+          "display": "paracetamol 500 mg + ibuprofen 200 mg tablet, 24"
+        }
+      ],
+      "type": "UPG",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "812801000168102",
+          "display": "Nuromol film-coated tablet"
+        }
+      ],
+      "type": "BPSF",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "812791000168103",
+          "display": "paracetamol 500 mg + ibuprofen 200 mg tablet"
+        }
+      ],
+      "type": "UPDSF",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "177241000036105",
+          "display": "paracetamol + ibuprofen"
+        }
+      ],
+      "type": "UPD",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "21885011000036105",
+          "display": "ibuprofen"
+        }
+      ],
+      "type": "UPD",
+      "status": "active"
+    },
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "21433011000036107",
+          "display": "paracetamol"
+        }
+      ],
+      "type": "UPD",
+      "status": "active"
+    },
+    {
+      "type": "BPG",
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "813241000168107",
+          "display": "Nuromol film-coated tablet, 24"
+        }
+      ],
+      "status": "active",
+      "sourceCodeSystemUri": "http://snomed.info/sct",
+      "sourceCodeSystemVersion":
+        "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+      "focused": true
+    }
+  ],
+  "relationships": [
+    {
+      "source": "813241000168107",
+      "target": "812781000168101",
+      "type": "has-brand"
+    },
+    {
+      "source": "813241000168107",
+      "target": "813231000168103",
+      "type": "is-a"
+    },
+    {
+      "source": "813241000168107",
+      "target": "812801000168102",
+      "type": "has-bpsf"
+    },
+    {
+      "source": "812801000168102",
+      "target": "812791000168103",
+      "type": "is-a"
+    },
+    {
+      "source": "812791000168103",
+      "target": "177241000036105",
+      "type": "is-a"
+    },
+    {
+      "source": "177241000036105",
+      "target": "21885011000036105",
+      "type": "is-a"
+    },
+    {
+      "source": "177241000036105",
+      "target": "21433011000036107",
+      "type": "is-a"
+    }
+  ]
+}

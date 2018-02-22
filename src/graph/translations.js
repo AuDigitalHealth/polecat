@@ -18,13 +18,13 @@ export const translateToAmt = (concepts, { filters = [] } = {}) => {
 
 // Pre-defined filters for use in screening out classes of concepts within an
 // AMT product model.
-const filters = {
-  substance: concept => concept.type !== fhirMedicationTypeFor('substance'),
-  mp: concept => concept.type !== fhirMedicationTypeFor('MP'),
+export const filters = {
+  substance: concept => !conceptHasType(concept, 'substance'),
+  mp: concept => !conceptHasType(concept, 'MP'),
   'parent-of-mp': (concept, concepts) =>
     // Filter any concept that is an MP that has a child MP.
     !(
-      concept.type === fhirMedicationTypeFor('MP') &&
+      conceptHasType(concept, 'MP') &&
       concepts.relationships.find(r =>
         relationshipMatchesTargetIdAndType(
           r,
@@ -38,7 +38,7 @@ const filters = {
   'parent-of-mpuu': (concept, concepts) =>
     // Filter any concept that is an MPUU that has a child MPUU.
     !(
-      concept.type === fhirMedicationTypeFor('MPUU') &&
+      conceptHasType(concept, 'MPUU') &&
       concepts.relationships.find(r =>
         relationshipMatchesTargetIdAndType(
           r,
@@ -52,7 +52,7 @@ const filters = {
   'parent-of-mpp': (concept, concepts) =>
     // Filter any concept that is an MPP that has a child MPP.
     !(
-      concept.type === fhirMedicationTypeFor('MPP') &&
+      conceptHasType(concept, 'MPP') &&
       concepts.relationships.find(r =>
         relationshipMatchesTargetIdAndType(
           r,
@@ -62,9 +62,10 @@ const filters = {
         ),
       )
     ),
-  tp: concept => concept.type !== fhirMedicationTypeFor('TP'),
-  tpuu: concept => concept.type !== fhirMedicationTypeFor('TPUU'),
-  tpp: concept => concept.type !== fhirMedicationTypeFor('TPP'),
+  tp: concept => !conceptHasType(concept, 'TP'),
+  tpuu: concept => !conceptHasType(concept, 'TPUU'),
+  tpp: concept => !conceptHasType(concept, 'TPP'),
+  ctpp: concept => !conceptHasType(concept, 'CTPP'),
   'component-pack': (concept, concepts) =>
     // Filter any concept that is the target of a `has-component` relationship.
     !concepts.relationships.find(
@@ -78,6 +79,11 @@ const filters = {
   'replaced-by': (concept, concepts) =>
     // Filter any concept that is the target of a `replaces` relationship.
     !concepts.relationships.find(
+      r => r.type === 'replaced-by' && r.target === idForNode(concept),
+    ),
+  'not-replaced-by': (concept, concepts) =>
+    // Filter any concepts that are not the target of a `replaces` relationship.
+    concepts.relationships.find(
       r => r.type === 'replaced-by' && r.target === idForNode(concept),
     ),
 }
@@ -331,3 +337,11 @@ const relationshipMatchesTargetIdAndType = (
     amtConceptTypeFor(source.type) === matchSource
   )
 }
+
+// Returns true if the supplied concept has an AMT type of `type`, or if it is a
+// group containing concepts with that type.
+const conceptHasType = (concept, type) =>
+  concept.type === fhirMedicationTypeFor(type) ||
+  (concept.type === 'group' &&
+    concept.concepts.length > 0 &&
+    concept.concepts[0].type === fhirMedicationTypeFor(type))
