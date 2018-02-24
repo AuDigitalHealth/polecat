@@ -68,8 +68,10 @@ class TextField extends Component {
   }
 
   componentDidMount() {
-    const { focusUponMount } = this.props
-    if (focusUponMount) this.textInput.focus()
+    const { focusUponMount, value } = this.props
+    // Only auto-focus if the text input is empty. This prevents the quick
+    // search popping up after clicking on a result in the advanced search.
+    if (focusUponMount && !value) this.textInput.focus()
   }
 
   componentWillReceiveProps(nextProps) {
