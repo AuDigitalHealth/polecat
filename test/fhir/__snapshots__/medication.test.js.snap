@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mergeConceptsAndRelationships should merge correctly 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "34839011000036106",
+          "display": "pethidine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "34848011000036104",
+          "display": "pethidine hydrochloride 100 mg/2 mL injection, ampoule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "focused": true,
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "33964011000036109",
+          "display": "Pethidine Hydrochloride (DBL) 100 mg/2 mL injection solution, 2 mL ampoule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "921063011000036106",
+          "display": "Pethidine Hydrochloride (AstraZeneca) 100 mg/2 mL injection solution, 2 mL ampoule",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "35098011000036100",
+          "display": "pethidine hydrochloride 100 mg/2 mL injection, 50 x 2 mL ampoules",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "922650011000036103",
+          "display": "pethidine hydrochloride 100 mg/2 mL injection, 10 x 2 mL ampoules",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "35097011000036101",
+          "display": "pethidine hydrochloride 100 mg/2 mL injection, 5 x 2 mL ampoules",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "UPG",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "34848011000036104",
+      "target": "34839011000036106",
+      "type": "is-a",
+    },
+    Object {
+      "source": "33964011000036109",
+      "target": "34848011000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "921063011000036106",
+      "target": "34848011000036104",
+      "type": "is-a",
+    },
+    Object {
+      "source": "35098011000036100",
+      "target": "34848011000036104",
+      "type": "has-updsf",
+    },
+    Object {
+      "source": "922650011000036103",
+      "target": "34848011000036104",
+      "type": "has-updsf",
+    },
+    Object {
+      "source": "35097011000036101",
+      "target": "34848011000036104",
+      "type": "has-updsf",
+    },
+  ],
+}
+`;
+
+exports[`mergeConceptsAndRelationships should not create duplicate when the same concept has an alternate code provided 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "1016471000168105",
+          "display": "Drospirenone/EE 3/20 (Apotex) (24 x 3 mg/20 microgram tablets, 4 x inert tablets), 3 x 28, blister packs",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPGC",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "1016421000168109",
+          "display": "Drospirenone/EE 3/20 (Apotex) (24 x 3 mg/20 microgram tablets, 4 x inert tablets), 28, blister pack",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "BPGC",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "1016471000168105",
+      "target": "1016421000168109",
+      "type": "has-component",
+    },
+  ],
+}
+`;

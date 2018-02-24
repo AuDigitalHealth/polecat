@@ -13,7 +13,7 @@ fs.readFile('public/config.json', (err, data) => {
   if (err) handleError(err)
   const config = JSON.parse(data)
 
-  fs.readdir('test', (err, files) => {
+  fs.readdir('test/fixtures', (err, files) => {
     if (err) handleError(err)
     files.forEach(file => {
       const match = file.match(/(ctpp|tpp|tpuu|tp|mpp|mpuu|mp|substance)-(\d+)/)
@@ -31,7 +31,7 @@ fs.readFile('public/config.json', (err, data) => {
             { httpsAgent: agent },
           )
           .then(response => {
-            const path = `test/${file}`
+            const path = `test/fixtures/${file}`
             const newContent = JSON.stringify(response.data, null, 2)
             fs.writeFile(path, newContent, err => {
               if (err) handleError(err)

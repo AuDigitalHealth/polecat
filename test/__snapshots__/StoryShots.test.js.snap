@@ -1,0 +1,410 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots AmtBrowser Codalgin Forte uncoated tablet, 20, blister pack (inactive) 1`] = `
+<div
+  className="amt-browser"
+  style={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+>
+  <Connect(RemoteFhirMedication)
+    id="19255011000036102"
+    onError={[Function]}
+    onLoadSubjectConcept={[Function]}
+    onLoadingChange={[Function]}
+    resourceType="Medication"
+    viewport={
+      Object {
+        "height": 800,
+        "width": 800,
+      }
+    }
+  >
+    <Connect(AmtProductModel)
+      viewport={
+        Object {
+          "height": 800,
+          "width": 800,
+        }
+      }
+    />
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
+    focusUponMount={true}
+    onError={[Function]}
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
+`;
+
+exports[`Storyshots AmtBrowser Codalgin Forte uncoated tablet, 20, blister pack (replaces inactive) 1`] = `
+<div
+  className="amt-browser"
+  style={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+>
+  <Connect(RemoteFhirMedication)
+    id="835891000168108"
+    onError={[Function]}
+    onLoadSubjectConcept={[Function]}
+    onLoadingChange={[Function]}
+    resourceType="Medication"
+    viewport={
+      Object {
+        "height": 800,
+        "width": 800,
+      }
+    }
+  >
+    <Connect(AmtProductModel)
+      viewport={
+        Object {
+          "height": 800,
+          "width": 800,
+        }
+      }
+    />
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
+    focusUponMount={true}
+    onError={[Function]}
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
+`;
+
+exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution (TPUU) 1`] = `
+<div
+  className="amt-browser"
+  style={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+>
+  <Connect(RemoteFhirMedication)
+    id="53743011000036103"
+    onError={[Function]}
+    onLoadSubjectConcept={[Function]}
+    onLoadingChange={[Function]}
+    resourceType="Medication"
+    viewport={
+      Object {
+        "height": 800,
+        "width": 800,
+      }
+    }
+  >
+    <Connect(AmtProductModel)
+      viewport={
+        Object {
+          "height": 800,
+          "width": 800,
+        }
+      }
+    />
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
+    focusUponMount={true}
+    onError={[Function]}
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
+`;
+
+exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL (TPP) 1`] = `
+<div
+  className="amt-browser"
+  style={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+>
+  <Connect(RemoteFhirMedication)
+    id="55971011000036104"
+    onError={[Function]}
+    onLoadSubjectConcept={[Function]}
+    onLoadingChange={[Function]}
+    resourceType="Medication"
+    viewport={
+      Object {
+        "height": 800,
+        "width": 800,
+      }
+    }
+  >
+    <Connect(AmtProductModel)
+      viewport={
+        Object {
+          "height": 800,
+          "width": 800,
+        }
+      }
+    />
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
+    focusUponMount={true}
+    onError={[Function]}
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
+`;
+
+exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL, bottle (CTPP) 1`] = `
+<div
+  className="amt-browser"
+  style={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+>
+  <Connect(RemoteFhirMedication)
+    id="60009011000036108"
+    onError={[Function]}
+    onLoadSubjectConcept={[Function]}
+    onLoadingChange={[Function]}
+    resourceType="Medication"
+    viewport={
+      Object {
+        "height": 800,
+        "width": 800,
+      }
+    }
+  >
+    <Connect(AmtProductModel)
+      viewport={
+        Object {
+          "height": 800,
+          "width": 800,
+        }
+      }
+    />
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
+    focusUponMount={true}
+    onError={[Function]}
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
+`;
+
+exports[`Storyshots AmtBrowser Search for esomeprazole 1`] = `
+<div
+  className="amt-browser"
+  style={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+>
+  <Connect(withRouter(Search))
+    focusUponMount={true}
+    onError={[Function]}
+    query="esomeprazole"
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
+`;
+
+exports[`Storyshots AmtBrowser loratadine (MP) 1`] = `
+<div
+  className="amt-browser"
+  style={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+>
+  <Connect(RemoteFhirMedication)
+    id="21701011000036106"
+    onError={[Function]}
+    onLoadSubjectConcept={[Function]}
+    onLoadingChange={[Function]}
+    resourceType="Medication"
+    viewport={
+      Object {
+        "height": 800,
+        "width": 800,
+      }
+    }
+  >
+    <Connect(AmtProductModel)
+      viewport={
+        Object {
+          "height": 800,
+          "width": 800,
+        }
+      }
+    />
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
+    focusUponMount={true}
+    onError={[Function]}
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
+`;
+
+exports[`Storyshots AmtBrowser loratadine (substance) 1`] = `
+<div
+  className="amt-browser"
+  style={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+>
+  <Connect(RemoteFhirMedication)
+    id="2292011000036106"
+    onError={[Function]}
+    onLoadSubjectConcept={[Function]}
+    onLoadingChange={[Function]}
+    resourceType="Substance"
+    viewport={
+      Object {
+        "height": 800,
+        "width": 800,
+      }
+    }
+  >
+    <Connect(AmtProductModel)
+      viewport={
+        Object {
+          "height": 800,
+          "width": 800,
+        }
+      }
+    />
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
+    focusUponMount={true}
+    onError={[Function]}
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
+`;
+
+exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid (MPUU) 1`] = `
+<div
+  className="amt-browser"
+  style={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+>
+  <Connect(RemoteFhirMedication)
+    id="62022011000036104"
+    onError={[Function]}
+    onLoadSubjectConcept={[Function]}
+    onLoadingChange={[Function]}
+    resourceType="Medication"
+    viewport={
+      Object {
+        "height": 800,
+        "width": 800,
+      }
+    }
+  >
+    <Connect(AmtProductModel)
+      viewport={
+        Object {
+          "height": 800,
+          "width": 800,
+        }
+      }
+    />
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
+    focusUponMount={true}
+    onError={[Function]}
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
+`;
+
+exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid, 150 mL (MPP) 1`] = `
+<div
+  className="amt-browser"
+  style={
+    Object {
+      "height": 800,
+      "width": 800,
+    }
+  }
+>
+  <Connect(RemoteFhirMedication)
+    id="63589011000036105"
+    onError={[Function]}
+    onLoadSubjectConcept={[Function]}
+    onLoadingChange={[Function]}
+    resourceType="Medication"
+    viewport={
+      Object {
+        "height": 800,
+        "width": 800,
+      }
+    }
+  >
+    <Connect(AmtProductModel)
+      viewport={
+        Object {
+          "height": 800,
+          "width": 800,
+        }
+      }
+    />
+  </Connect(RemoteFhirMedication)>
+  <Connect(withRouter(Search))
+    focusUponMount={true}
+    onError={[Function]}
+  />
+  <Loading
+    delay={350}
+    loading={false}
+  />
+</div>
+`;

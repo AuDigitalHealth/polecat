@@ -42,7 +42,7 @@
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
-    "babel-jest": "^20.0.3",
+    "babel-jest": "^22.4.1",
     "babel-loader": "^7.1.2",
     "babel-preset-react-app": "^3.1.1",
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
@@ -58,7 +58,7 @@
     "eslint-loader": "^1.9.0",
     "eslint-plugin-flowtype": "^2.39.1",
     "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jest": "^21.12.2",
+    "eslint-plugin-jest": "^22.4.1",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
@@ -67,7 +67,7 @@
     "file-loader": "^1.1.5",
     "fs-extra": "^3.0.1",
     "html-webpack-plugin": "^2.29.0",
-    "jest": "^22.3.0",
+    "jest": "^22.4.1",
     "pre-commit": "^1.2.2",
     "prettier": "^1.10.2",
     "react-dev-utils": "^5.0.0",
@@ -107,11 +107,8 @@
   },
   "pre-commit": ["lint-staged", "format-staged", "test-ci"],
   "jest": {
-    "collectCoverageFrom": ["src/**/*.{js,jsx,mjs}"],
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
-      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
-    ],
+    "collectCoverageFrom": ["src/**/*.js"],
+    "testMatch": ["<rootDir>/test/**/*.test.js"],
     "testEnvironment": "node",
     "testURL": "http://localhost",
     "transform": {
@@ -121,18 +118,6 @@
         "<rootDir>/config/jest/fileTransform.js"
     },
     "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web"
-    },
-    "moduleFileExtensions": [
-      "web.js",
-      "mjs",
-      "js",
-      "json",
-      "web.jsx",
-      "jsx",
-      "node"
-    ],
     "snapshotSerializers": ["enzyme-to-json/serializer"]
   },
   "babel": {
