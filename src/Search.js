@@ -22,13 +22,16 @@ export class Search extends Component {
     fhirServer: PropTypes.string.isRequired,
     query: PropTypes.string,
     minRequestFrequency: PropTypes.number,
-    onError: PropTypes.func,
     focusUponMount: PropTypes.bool,
     quickSearchShouldClose: PropTypes.bool,
+    loading: PropTypes.bool,
     history: PropTypes.any.isRequired,
+    onError: PropTypes.func,
+    onLoadingChange: PropTypes.func,
   }
   static defaultProps = {
     minRequestFrequency: 350,
+    loading: false,
   }
 
   constructor(props) {
@@ -132,7 +135,8 @@ export class Search extends Component {
   }
 
   setLoadingStatus(loading) {
-    this.setState(() => ({ loading }))
+    const { onLoadingChange } = this.props
+    if (onLoadingChange) onLoadingChange(loading)
   }
 
   handleQueryUpdate(query) {
@@ -241,13 +245,12 @@ export class Search extends Component {
   }
 
   renderBasicOrAdvancedSearch() {
-    const { query: queryFromProps, focusUponMount } = this.props
+    const { query: queryFromProps, focusUponMount, loading } = this.props
     const {
       query: queryFromState,
       advanced,
       results,
       bundle,
-      loading,
       quickSearchShouldClose,
     } = this.state
     return advanced ? (

@@ -202,6 +202,426 @@ Object {
 }
 `;
 
+exports[`translateToAmt should apply the "Parent of MPP" filter correctly 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53235011000036105",
+          "display": "Lemsip Max Cold and Flu plus Chesty Cough",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "56431011000036100",
+          "display": "Lemsip Max Cold and Flu plus Chesty Cough Lemon and Menthol powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "63351011000036103",
+          "display": "paracetamol 1 g + phenylephrine hydrochloride 12.2 mg + guaifenesin 200 mg powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "71931011000036102",
+          "display": "paracetamol 1 g powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53919011000036101",
+          "display": "Lemsip Max Cold and Flu plus Chesty Cough Lemon and Menthol powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "61926011000036108",
+          "display": "paracetamol 1 g + phenylephrine hydrochloride 12.2 mg + guaifenesin 200 mg powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "931833011000036101",
+          "display": "phenylephrine hydrochloride 12.2 mg + paracetamol 1 g powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "70253011000036109",
+          "display": "paracetamol 1 g powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "21433011000036107",
+          "display": "paracetamol",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "61800011000036107",
+          "display": "phenylephrine + paracetamol",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "37732011000036107",
+          "display": "phenylephrine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "61754011000036107",
+          "display": "paracetamol + phenylephrine + guaifenesin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "61724011000036106",
+          "display": "guaifenesin + phenylephrine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "61763011000036101",
+          "display": "guaifenesin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "60473011000036105",
+          "display": "Lemsip Max Cold and Flu plus Chesty Cough Lemon and Menthol powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+        Object {
+          "code": "150168",
+          "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+        },
+      ],
+      "focused": true,
+      "sourceCodeSystemUri": "http://snomed.info/sct",
+      "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+      "status": "active",
+      "type": "BPGC",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "60473011000036105",
+      "target": "56431011000036100",
+      "type": "is-a",
+    },
+    Object {
+      "source": "56431011000036100",
+      "target": "63351011000036103",
+      "type": "is-a",
+    },
+    Object {
+      "source": "63351011000036103",
+      "target": "71931011000036102",
+      "type": "has-component",
+    },
+    Object {
+      "source": "61926011000036108",
+      "target": "931833011000036101",
+      "type": "is-a",
+    },
+    Object {
+      "source": "931833011000036101",
+      "target": "70253011000036109",
+      "type": "is-a",
+    },
+    Object {
+      "source": "70253011000036109",
+      "target": "21433011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "931833011000036101",
+      "target": "61800011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "61800011000036107",
+      "target": "37732011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "61926011000036108",
+      "target": "61754011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "61754011000036107",
+      "target": "61724011000036106",
+      "type": "is-a",
+    },
+    Object {
+      "source": "61724011000036106",
+      "target": "61763011000036101",
+      "type": "is-a",
+    },
+    Object {
+      "source": "56431011000036100",
+      "target": "53235011000036105",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "56431011000036100",
+      "target": "53919011000036101",
+      "type": "has-bpsf",
+    },
+    Object {
+      "source": "63351011000036103",
+      "target": "61926011000036108",
+      "type": "has-updsf",
+    },
+  ],
+}
+`;
+
+exports[`translateToAmt should apply the "Parent of MPUU" filter 1`] = `
+Object {
+  "concepts": Array [
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53235011000036105",
+          "display": "Lemsip Max Cold and Flu plus Chesty Cough",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "type": "brand",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "56431011000036100",
+          "display": "Lemsip Max Cold and Flu plus Chesty Cough Lemon and Menthol powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "63351011000036103",
+          "display": "paracetamol 1 g + phenylephrine hydrochloride 12.2 mg + guaifenesin 200 mg powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "71931011000036102",
+          "display": "paracetamol 1 g powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPG",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "53919011000036101",
+          "display": "Lemsip Max Cold and Flu plus Chesty Cough Lemon and Menthol powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "BPSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "61926011000036108",
+          "display": "paracetamol 1 g + phenylephrine hydrochloride 12.2 mg + guaifenesin 200 mg powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPDSF",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "61754011000036107",
+          "display": "paracetamol + phenylephrine + guaifenesin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "61724011000036106",
+          "display": "guaifenesin + phenylephrine",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "61763011000036101",
+          "display": "guaifenesin",
+          "system": "http://snomed.info/sct",
+        },
+      ],
+      "status": "active",
+      "type": "UPD",
+    },
+    Object {
+      "coding": Array [
+        Object {
+          "code": "60473011000036105",
+          "display": "Lemsip Max Cold and Flu plus Chesty Cough Lemon and Menthol powder for oral liquid, 1 sachet",
+          "system": "http://snomed.info/sct",
+        },
+        Object {
+          "code": "150168",
+          "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+        },
+      ],
+      "focused": true,
+      "sourceCodeSystemUri": "http://snomed.info/sct",
+      "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131",
+      "status": "active",
+      "type": "BPGC",
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "source": "60473011000036105",
+      "target": "56431011000036100",
+      "type": "is-a",
+    },
+    Object {
+      "source": "56431011000036100",
+      "target": "63351011000036103",
+      "type": "is-a",
+    },
+    Object {
+      "source": "63351011000036103",
+      "target": "71931011000036102",
+      "type": "has-component",
+    },
+    Object {
+      "source": "61926011000036108",
+      "target": "61754011000036107",
+      "type": "is-a",
+    },
+    Object {
+      "source": "61754011000036107",
+      "target": "61724011000036106",
+      "type": "is-a",
+    },
+    Object {
+      "source": "61724011000036106",
+      "target": "61763011000036101",
+      "type": "is-a",
+    },
+    Object {
+      "source": "56431011000036100",
+      "target": "53235011000036105",
+      "type": "has-brand",
+    },
+    Object {
+      "source": "56431011000036100",
+      "target": "53919011000036101",
+      "type": "has-bpsf",
+    },
+    Object {
+      "source": "63351011000036103",
+      "target": "61926011000036108",
+      "type": "has-updsf",
+    },
+  ],
+}
+`;
+
 exports[`translateToAmt should apply the "is replaced by" filter correctly 1`] = `
 Object {
   "concepts": Array [

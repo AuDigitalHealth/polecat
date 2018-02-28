@@ -5,9 +5,10 @@ import { connect } from 'react-redux'
 import RemoteFhirMedication from './RemoteFhirMedication.js'
 import AmtProductModel from './AmtProductModel.js'
 import Search from './Search.js'
-import Loading from './Loading.js'
+import VisibilityFilter from './VisibilityFilter.js'
 import SourceCodeSystem from './SourceCodeSystem.js'
 import ErrorMessage from './ErrorMessage.js'
+import { amtConceptTypeFor } from './fhir/medication.js'
 
 import './css/AmtBrowser.css'
 
@@ -38,11 +39,7 @@ export class AmtBrowser extends Component {
 
   handleLoadSubjectConcept(concept) {
     const { onLoadSubjectConcept } = this.props
-    if (concept)
-      this.setState(() => ({
-        sourceCodeSystemUri: concept.sourceCodeSystemUri,
-        sourceCodeSystemVersion: concept.sourceCodeSystemVersion,
-      }))
+    if (concept) this.setState(() => ({ subjectConcept: concept }))
     if (onLoadSubjectConcept) onLoadSubjectConcept(concept)
   }
 
@@ -76,8 +73,12 @@ export class AmtBrowser extends Component {
     const { resourceType, id, query, viewport } = this.props
     const {
       loading,
-      sourceCodeSystemUri,
-      sourceCodeSystemVersion,
+      subjectConcept: {
+        type: subjectConceptType,
+        status: subjectConceptStatus,
+        sourceCodeSystemUri,
+        sourceCodeSystemVersion,
+      } = {},
       error,
     } = this.state
     return (
@@ -102,8 +103,19 @@ export class AmtBrowser extends Component {
             <AmtProductModel viewport={viewport} />
           </RemoteFhirMedication>
         ) : null}
-        <Search query={query} onError={this.handleError} focusUponMount />
-        <Loading loading={loading} />
+        <Search
+          query={query}
+          loading={loading}
+          focusUponMount
+          onError={this.handleError}
+          onLoadingChange={this.handleLoadingChange}
+        />
+        {subjectConceptType && subjectConceptStatus ? (
+          <VisibilityFilter
+            subjectConceptType={amtConceptTypeFor(subjectConceptType)}
+            subjectConceptStatus={subjectConceptStatus}
+          />
+        ) : null}
         {sourceCodeSystemUri && sourceCodeSystemVersion ? (
           <SourceCodeSystem
             uri={sourceCodeSystemUri}

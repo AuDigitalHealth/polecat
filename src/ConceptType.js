@@ -20,6 +20,8 @@ class ConceptType extends Component {
     ]),
     status: PropTypes.oneOf(['active', 'inactive', 'entered-in-error']),
     enabled: PropTypes.bool,
+    className: PropTypes.string,
+    title: PropTypes.string,
     onClick: PropTypes.func,
   }
   static defaultProps = { status: 'active', enabled: true }
@@ -27,6 +29,23 @@ class ConceptType extends Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
+  }
+
+  expandedConceptType() {
+    const { type } = this.props
+    return {
+      CTPP: 'Containered Trade Product Pack',
+      TPP: 'Trade Product Pack',
+      TPUU: 'Trade Product Unit of Use',
+      TP: 'Trade Product',
+      MPP: 'Medicinal Product Pack',
+      MPUU: 'Medicinal Product Unit of Use',
+      MP: 'Medicinal Product',
+      substance: 'Substance',
+      active: 'Active',
+      inactive: 'Inactive',
+      'entered-in-error': 'Entered in error',
+    }[type]
   }
 
   humanisedStatus() {
@@ -43,7 +62,7 @@ class ConceptType extends Component {
     if (onClick) onClick(event)
   }
 
-  render() {
+  getClassName() {
     const { type, status, enabled } = this.props
     let className = `concept-type concept-type-${type}`.toLowerCase()
     className =
@@ -51,10 +70,24 @@ class ConceptType extends Component {
         ? className
         : className + ' concept-type-status-inactive'
     className = enabled ? className : className + ' concept-type-disabled'
+    if (this.props.className) className += ` ${this.props.className}`
+    return className
+  }
+
+  getTitle() {
+    const { status } = this.props
+    if (this.props.title !== undefined) return this.props.title
+    return status === 'active'
+      ? this.expandedConceptType()
+      : `${this.expandedConceptType()} - ${this.humanisedStatus()}`
+  }
+
+  render() {
+    const { type } = this.props
     return (
       <span
-        className={className}
-        title={this.humanisedStatus()}
+        className={this.getClassName()}
+        title={this.getTitle()}
         onClick={this.handleClick}
       >
         {type}

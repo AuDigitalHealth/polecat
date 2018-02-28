@@ -47,11 +47,9 @@ function* getExtensionConcepts(resource, sourceConcept) {
   // Recursively yield all parent medications.
   yield* getParentMedications(resource, sourceConcept)
   // Get concepts that the source concept is replaced by.
-  // TODO: Enable this when replaced by lands in Medserve.
-  // yield* getReplacedByConcepts(resource, sourceConcept)
+  yield* getReplacedByConcepts(resource, sourceConcept)
   // Get concepts that the source concept replaces.
-  // TODO: Enable this when replaces lands in Medserve.
-  // yield* getReplacesConcepts(resource, sourceConcept)
+  yield* getReplacesConcepts(resource, sourceConcept)
 }
 
 function* getPackageConcepts(resource, sourceConcept) {
@@ -229,73 +227,73 @@ const getBrand = (resource, subjectConcept) => {
 
 // Get concepts that replace the source concept, from within the supplied
 // resource.
-// function* getReplacedByConcepts(resource, subjectConcept) {
-//   try {
-//     for (const ext of getAllExtensions(resource, 'isReplacedByResources')) {
-//       const replacedByResource = getExtension(ext, 'isReplacedBy')
-//       const replacementDate = getExtension(ext, 'replacementDate')
-//       yield {
-//         concepts: [
-//           {
-//             coding: referenceToSnomedCoding(replacedByResource),
-//             // FIXME: These are guesses, waiting on type and status to be added
-//             // so that we can put the correct values here.
-//             type: subjectConcept.type,
-//             status: 'active',
-//           },
-//         ],
-//         relationships: [
-//           {
-//             source: codingToSnomedCode(subjectConcept.coding),
-//             target: referenceToId(replacedByResource.reference),
-//             type: 'replaced-by',
-//             replacementDate,
-//           },
-//         ],
-//       }
-//     }
-//   } catch (error) {
-//     return emptyConcepts()
-//   }
-// }
+function* getReplacedByConcepts(resource, subjectConcept) {
+  try {
+    for (const ext of getAllExtensions(resource, 'isReplacedByResources')) {
+      const replacedByResource = getExtension(ext, 'isReplacedBy')
+      const replacementDate = getExtension(ext, 'replacementDate')
+      yield {
+        concepts: [
+          {
+            coding: referenceToSnomedCoding(replacedByResource),
+            // FIXME: These are guesses, waiting on type and status to be added
+            // so that we can put the correct values here.
+            type: subjectConcept.type,
+            status: 'active',
+          },
+        ],
+        relationships: [
+          {
+            source: codingToSnomedCode(subjectConcept.coding),
+            target: referenceToId(replacedByResource.reference),
+            type: 'replaced-by',
+            replacementDate,
+          },
+        ],
+      }
+    }
+  } catch (error) {
+    return emptyConcepts()
+  }
+}
 
 // Get concepts that the source concept replaces, from within the supplied
 // extension.
-// function* getReplacesConcepts(resource, subjectConcept) {
-//   try {
-//     for (const replacesResources of getAllExtensions(
-//       resource,
-//       'replacesResources',
-//     )) {
-//       const replacesResource = getExtension(
-//         replacesResources,
-//         'replacesResource',
-//       )
-//       const replacementDate = getExtension(replacesResources, 'replacementDate')
-//       yield {
-//         concepts: [
-//           {
-//             coding: referenceToSnomedCoding(replacesResource),
-//             // FIXME: These are guesses, waiting on type and status to be added
-//             // so that we can put the correct values here.
-//             type: subjectConcept.type,
-//             status: 'entered-in-error',
-//           },
-//         ],
-//         relationships: [
-//           {
-//             source: codingToSnomedCode(subjectConcept.coding),
-//             target: referenceToId(replacesResource.reference),
-//             type: 'replaces',
-//             replacementDate,
-//           },
-//         ],
-//       }
-//     }
-//   } catch (error) {
-//     return emptyConcepts()
-//   }
-// }
+function* getReplacesConcepts(resource, subjectConcept) {
+  try {
+    for (const replacesResources of getAllExtensions(
+      resource,
+      'replacesResources',
+    )) {
+      const replacesResource = getExtension(
+        replacesResources,
+        'replacesResource',
+      )
+      const replacementDate = getExtension(replacesResources, 'replacementDate')
+      yield {
+        concepts: [
+          {
+            coding: referenceToSnomedCoding(replacesResource),
+            // FIXME: These are guesses, waiting on type and status to be added
+            // so that we can put the correct values here.
+            type: subjectConcept.type,
+            status: 'entered-in-error',
+          },
+        ],
+        relationships: [
+          {
+            source: codingToSnomedCode(subjectConcept.coding),
+            target: referenceToId(replacesResource.reference),
+            type: 'replaces',
+            replacementDate,
+          },
+        ],
+      }
+    }
+  } catch (error) {
+    return emptyConcepts()
+  }
+}
 
 const getExtension = (element, extensionName, { valueOnly = true } = {}) => {
   if (!(element && element.extension)) throw new Error('Extension not found.')

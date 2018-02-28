@@ -11,6 +11,11 @@ const fakeStore = {
   replaceReducer: () => null,
 }
 
+// FIXME: Error when running Storybook:
+// Could not find "store" in either the context or props of
+// "Connect(RemoteFhirMedication)". Either wrap the root component in a
+// <Provider>, or explicitly pass "store" as a prop to
+// "Connect(RemoteFhirMedication)".
 const shallowSnapshot = ({ story, context }) => {
   const element = story.render(context)
   const options = { disableLifecycleMethods: true }

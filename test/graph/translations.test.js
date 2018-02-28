@@ -29,8 +29,18 @@ describe('translateToAmt', () => {
     expect(result).toMatchSnapshot()
   })
 
+  it('should apply the "Parent of MPUU" filter', () => {
+    const result = translateToAmt(concepts2, { filters: ['parent-of-mpuu'] })
+    expect(result).toMatchSnapshot()
+  })
+
   it('should apply the MPUU filter correctly', () => {
     const result = translateToAmt(concepts1, { filters: ['mpuu'] })
+    expect(result).toMatchSnapshot()
+  })
+
+  it('should apply the "Parent of MPP" filter correctly', () => {
+    const result = translateToAmt(concepts2, { filters: ['parent-of-mpp'] })
     expect(result).toMatchSnapshot()
   })
 

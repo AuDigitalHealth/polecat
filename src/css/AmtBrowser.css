@@ -29,6 +29,13 @@
   z-index: 70;
 }
 
+.amt-browser > .visibility-filter {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  z-index: 50;
+}
+
 .amt-browser .source-code-system {
   position: fixed;
   bottom: 20px;

@@ -1,9 +1,11 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import http from 'axios'
 
 // List of available concept visibility settings, along with the mapping to the
 // internal filtering function that is used.
 export const visibilityConfig = {
+  // Inactive
+  'visibility.inactive.hideAllExceptReplacedBy': 'not-replaced-by',
   // CTPP
   'visibility.ctpp.parentOfMp': 'parent-of-mp',
   'visibility.ctpp.mp': 'mp',
@@ -36,17 +38,27 @@ export const visibilityConfig = {
   'visibility.tpuu.tp': 'tp',
   'visibility.tpuu.tpp': 'tpp',
   'visibility.tpuu.replaces': 'replaces',
+  // MPP
+  'visibility.mpp.parentOfMp': 'parent-of-mp',
+  'visibility.mpp.mp': 'mp',
+  'visibility.mpp.parentOfMpuu': 'parent-of-mpuu',
+  'visibility.mpp.mpuu': 'mpuu',
+  'visibility.mpp.parentOfMpp': 'parent-of-mpp',
+  'visibility.mpp.tpp': 'tpp',
+  'visibility.mpp.replaces': 'replaces',
   // MPUU
   'visibility.mpuu.substance': 'substance',
   'visibility.mpuu.parentOfMp': 'parent-of-mp',
   'visibility.mpuu.mp': 'mp',
   'visibility.mpuu.parentOfMpuu': 'parent-of-mpuu',
+  'visibility.mpuu.mpuu': 'mpuu',
   'visibility.mpuu.mpp': 'mpp',
   'visibility.mpuu.tpuu': 'tpuu',
   'visibility.mpuu.replaces': 'replaces',
   // MP
   'visibility.mp.substance': 'substance',
   'visibility.mp.parentOfMp': 'parent-of-mp',
+  'visibility.mp.mp': 'mp',
   'visibility.mp.mpuu': 'mpuu',
   'visibility.mp.tpuu': 'tpuu',
   'visibility.mp.replaces': 'replaces',
@@ -54,8 +66,6 @@ export const visibilityConfig = {
   'visibility.substance.mp': 'mp',
   'visibility.substance.mpuu': 'mpuu',
   'visibility.substance.tpuu': 'tpuu',
-  // Inactive
-  'visibility.inactive.hideAllExceptReplacedBy': 'not-replaced-by',
 }
 
 // List of all valid configuration keys.
@@ -66,8 +76,10 @@ const availableConfig = ['fhirServer', 'version', 'sentryDsn'].concat(
 // Default configuration settings that act as a fallback if no other value is specified.
 const defaultConfig = {
   fhirServer: 'https://medserve.online/fhir',
+  // Inactive
+  'visibility.inactive.hideAllExceptReplacedBy': true,
   // CTPP
-  'visibility.ctpp.parentOfMp': false,
+  'visibility.ctpp.parentOfMp': [{}, {}],
   'visibility.ctpp.mp': true,
   'visibility.ctpp.parentOfMpuu': false,
   'visibility.ctpp.mpuu': true,
@@ -98,17 +110,27 @@ const defaultConfig = {
   'visibility.tpuu.tp': true,
   'visibility.tpuu.tpp': true,
   'visibility.tpuu.replaces': false,
+  // MPP
+  'visibility.mpp.parentOfMp': true,
+  'visibility.mpp.mp': true,
+  'visibility.mpp.parentOfMpuu': true,
+  'visibility.mpp.mpuu': true,
+  'visibility.mpp.parentOfMpp': true,
+  'visibility.mpp.tpp': true,
+  'visibility.mpp.replaces': false,
   // MPUU
   'visibility.mpuu.substance': false,
   'visibility.mpuu.parentOfMp': true,
   'visibility.mpuu.mp': true,
   'visibility.mpuu.parentOfMpuu': true,
+  'visibility.mpuu.mpuu': true,
   'visibility.mpuu.mpp': true,
   'visibility.mpuu.tpuu': true,
   'visibility.mpuu.replaces': false,
   // MP
   'visibility.mp.substance': true,
   'visibility.mp.parentOfMp': true,
+  'visibility.mp.mp': true,
   'visibility.mp.mpuu': true,
   'visibility.mp.tpuu': true,
   'visibility.mp.replaces': false,
@@ -116,8 +138,192 @@ const defaultConfig = {
   'visibility.substance.mp': true,
   'visibility.substance.mpuu': true,
   'visibility.substance.tpuu': true,
-  // Inactive
-  'visibility.inactive.hideAllExceptReplacedBy': true,
+}
+
+const configValueImplications = {
+  // CTPP
+  'visibility.ctpp.parentOfMp': [
+    {
+      'visibility.ctpp.mp': true,
+      'visibility.ctpp.mpuu': true,
+      'visibility.ctpp.mpp': true,
+      'visibility.ctpp.tpp': true,
+    },
+    {},
+  ],
+  'visibility.ctpp.mp': [
+    {
+      'visibility.ctpp.mpuu': true,
+      'visibility.ctpp.mpp': true,
+      'visibility.ctpp.tpp': true,
+    },
+    { 'visibility.ctpp.parentOfMp': false },
+  ],
+  'visibility.ctpp.parentOfMpuu': [
+    { 'visibility.ctpp.mpuu': true, 'visibility.ctpp.mpp': true },
+    {},
+  ],
+  'visibility.ctpp.mpuu': [
+    { 'visibility.ctpp.mpp': true, 'visibility.ctpp.tpp': true },
+    {
+      'visibility.ctpp.parentOfMp': false,
+      'visibility.ctpp.mp': false,
+      'visibility.ctpp.parentOfMpuu': false,
+    },
+  ],
+  'visibility.ctpp.parentOfMpp': [{ 'visibility.ctpp.mpp': true }, {}],
+  'visibility.ctpp.mpp': [
+    { 'visibility.ctpp.tpp': true },
+    {
+      'visibility.ctpp.parentOfMp': false,
+      'visibility.ctpp.mp': false,
+      'visibility.ctpp.parentOfMpuu': false,
+      'visibility.ctpp.mpuu': false,
+      'visibility.ctpp.parentOfMpp': false,
+    },
+  ],
+  'visibility.ctpp.tp': [{ 'visibility.ctpp.tpp': true }, {}],
+  'visibility.ctpp.tpuu': [{ 'visibility.ctpp.tpp': true }, {}],
+  'visibility.ctpp.tpp': [
+    {},
+    {
+      'visibility.ctpp.parentOfMp': false,
+      'visibility.ctpp.mp': false,
+      'visibility.ctpp.parentOfMpuu': false,
+      'visibility.ctpp.mpuu': false,
+      'visibility.ctpp.parentOfMpp': false,
+      'visibility.ctpp.mpp': false,
+      'visibility.ctpp.tp': false,
+      'visibility.ctpp.tpuu': false,
+    },
+  ],
+  'visibility.ctpp.componentPack': [{}, {}],
+  'visibility.ctpp.replaces': [{}, {}],
+  // TPP
+  'visibility.tpp.parentOfMp': [
+    {
+      'visibility.tpp.mp': true,
+      'visibility.tpp.mpuu': true,
+      'visibility.tpp.mpp': true,
+    },
+    {},
+  ],
+  'visibility.tpp.mp': [
+    { 'visibility.tpp.mpuu': true, 'visibility.tpp.mpp': true },
+    { 'visibility.tpp.parentOfMp': false },
+  ],
+  'visibility.tpp.parentOfMpuu': [{ 'visibility.tpp.mpuu': true }, {}],
+  'visibility.tpp.mpuu': [
+    {},
+    {
+      'visibility.tpp.parentOfMp': false,
+      'visibility.tpp.mp': false,
+      'visibility.tpp.parentOfMpuu': false,
+    },
+  ],
+  'visibility.tpp.parentOfMpp': [{ 'visibility.tpp.mpp': true }, {}],
+  'visibility.tpp.mpp': [
+    {},
+    {
+      'visibility.tpp.parentOfMp': false,
+      'visibility.tpp.mp': false,
+      'visibility.tpp.parentOfMpuu': false,
+      'visibility.tpp.mpuu': false,
+      'visibility.tpp.parentOfMpp': false,
+    },
+  ],
+  'visibility.tpp.tp': [{}, {}],
+  'visibility.tpp.tpuu': [{}, {}],
+  'visibility.tpp.ctpp': [{}, {}],
+  'visibility.tpp.replaces': [{}, {}],
+  // TPUU
+  'visibility.tpuu.substance': [{}, {}],
+  'visibility.tpuu.parentOfMp': [
+    { 'visibility.tpuu.mp': true, 'visibility.tpuu.mpuu': true },
+    {},
+  ],
+  'visibility.tpuu.mp': [
+    { 'visibility.tpuu.mpuu': true },
+    { 'visibility.tpuu.parentOfMp': false },
+  ],
+  'visibility.tpuu.parentOfMpuu': [{ 'visibility.tpuu.mpuu': true }, {}],
+  'visibility.tpuu.mpuu': [
+    {},
+    {
+      'visibility.tpuu.parentOfMp': false,
+      'visibility.tpuu.mp': false,
+      'visibility.tpuu.parentOfMpuu': false,
+    },
+  ],
+  'visibility.tpuu.tp': [{}, {}],
+  'visibility.tpuu.tpp': [{}, {}],
+  'visibility.tpuu.replaces': [{}, {}],
+  // MPP
+  'visibility.mpp.parentOfMp': [
+    {
+      'visibility.mpp.mp': true,
+      'visibility.mpp.mpuu': true,
+    },
+    {},
+  ],
+  'visibility.mpp.mp': [
+    { 'visibility.mpp.mpuu': true },
+    { 'visibility.mpp.parentOfMp': false },
+  ],
+  'visibility.mpp.parentOfMpuu': [
+    {
+      'visibility.mpp.mpuu': true,
+    },
+    {},
+  ],
+  'visibility.mpp.mpuu': [
+    {},
+    {
+      'visibility.mpp.parentOfMp': false,
+      'visibility.mpp.mp': false,
+      'visibility.mpp.parentOfMpuu': false,
+    },
+  ],
+  'visibility.mpp.parentOfMpp': [{}, {}],
+  'visibility.mpp.tpp': [{}, {}],
+  'visibility.mpp.replaces': [{}, {}],
+  // MPUU
+  'visibility.mpuu.substance': [{}, {}],
+  'visibility.mpuu.parentOfMp': [{ 'visibility.mpuu.mp': true }, {}],
+  'visibility.mpuu.mp': [{}, { 'visibility.mpuu.parentOfMp': false }],
+  'visibility.mpuu.parentOfMpuu': [{ 'visibility.mpuu.mpuu': true }, {}],
+  'visibility.mpuu.mpuu': [{}, { 'visibility.mpuu.parentOfMpuu': false }],
+  'visibility.mpuu.mpp': [{}, {}],
+  'visibility.mpuu.tpuu': [{}, {}],
+  'visibility.mpuu.replaces': [{}, {}],
+  // MP
+  'visibility.mp.substance': [{}, {}],
+  'visibility.mp.parentOfMp': [{ 'visibility.mp.mp': true }, {}],
+  'visibility.mp.mp': [{}, { 'visibility.mp.parentOfMp': false }],
+  'visibility.mp.mpuu': [{}, {}],
+  'visibility.mp.tpuu': [{}, {}],
+  'visibility.mp.replaces': [{}, {}],
+  // Substance
+  'visibility.substance.mp': [{}, {}],
+  'visibility.substance.mpuu': [{}, {}],
+  'visibility.substance.tpuu': [{}, {}],
+}
+
+// Accepts a configuration value and returns an object containing all other
+// configuration values that this implies, e.g. hiding MPUUs on a CTPP model
+// implies that MPs will also be hidden.
+export const configValueImplies = (key, value, subjectConceptType) => {
+  if (key === 'visibility.inactive.hideAllExceptReplacedBy') {
+    // If this is the "hide all except replaced by" option, imply all other
+    // visibility settings relating to this subject concept type.
+    return Object.keys(visibilityConfig)
+      .filter(k => k.split('.')[1] === subjectConceptType.toLowerCase())
+      .reduce((acc, k) => ({ ...acc, [k]: false }), {})
+  } else {
+    return value
+      ? configValueImplications[key][0]
+      : configValueImplications[key][1]
+  }
 }
 
 // Get a config object that contains the resolved values determined by getting
@@ -143,7 +349,9 @@ const getLocalConfig = () => {
   try {
     const config = {}
     for (const c of availableConfig) {
-      const value = window.localStorage.getItem(c)
+      // Values need to be deserialised on the way out of local storage, as it
+      // only stores strings.
+      const value = JSON.parse(window.localStorage.getItem(c))
       if (value !== null) config[c] = value
     }
     return config
@@ -158,7 +366,7 @@ export async function createConfigStore(config) {
   return createStore(
     configReducer,
     config,
-    // applyMiddleware(localConfigMiddleware),
+    applyMiddleware(localConfigMiddleware),
   )
 }
 
@@ -166,22 +374,35 @@ const configReducer = (state = {}, action) => {
   switch (action.type) {
     // {
     //   type: 'SET_CONFIG',
-    //   key: '[key]',
-    //   value: '[value]'
+    //   config: {...},
     // }
     case 'SET_CONFIG':
       return {
         ...state,
-        ...{ [action.key]: action.value },
+        ...action.config,
       }
     default:
       return state
   }
 }
 
+export const configActions = {
+  setConfig: config => {
+    return {
+      type: 'SET_CONFIG',
+      config,
+    }
+  },
+}
+
 // Redux middleware that intercepts `SET_CONFIG` actions and writes the values
 // to local storage.
-// const localConfigMiddleware = store => next => action => {
-//   console.log(store.getState())
-//   return next(action)
-// }
+const localConfigMiddleware = () => next => action => {
+  if (action.type === 'SET_CONFIG')
+    for (const key in action.config) {
+      // Values need to be serialised on the way in to local storage, as it only
+      // stores strings.
+      window.localStorage.setItem(key, JSON.stringify(action.config[key]))
+    }
+  return next(action)
+}

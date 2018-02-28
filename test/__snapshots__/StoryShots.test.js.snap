@@ -34,11 +34,9 @@ exports[`Storyshots AmtBrowser Codalgin Forte uncoated tablet, 20, blister pack 
   </Connect(RemoteFhirMedication)>
   <Connect(withRouter(Search))
     focusUponMount={true}
-    onError={[Function]}
-  />
-  <Loading
-    delay={350}
     loading={false}
+    onError={[Function]}
+    onLoadingChange={[Function]}
   />
 </div>
 `;
@@ -77,11 +75,9 @@ exports[`Storyshots AmtBrowser Codalgin Forte uncoated tablet, 20, blister pack 
   </Connect(RemoteFhirMedication)>
   <Connect(withRouter(Search))
     focusUponMount={true}
-    onError={[Function]}
-  />
-  <Loading
-    delay={350}
     loading={false}
+    onError={[Function]}
+    onLoadingChange={[Function]}
   />
 </div>
 `;
@@ -120,11 +116,9 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution (TPUU) 1`] 
   </Connect(RemoteFhirMedication)>
   <Connect(withRouter(Search))
     focusUponMount={true}
-    onError={[Function]}
-  />
-  <Loading
-    delay={350}
     loading={false}
+    onError={[Function]}
+    onLoadingChange={[Function]}
   />
 </div>
 `;
@@ -163,11 +157,9 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL (TP
   </Connect(RemoteFhirMedication)>
   <Connect(withRouter(Search))
     focusUponMount={true}
-    onError={[Function]}
-  />
-  <Loading
-    delay={350}
     loading={false}
+    onError={[Function]}
+    onLoadingChange={[Function]}
   />
 </div>
 `;
@@ -206,11 +198,9 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL, bo
   </Connect(RemoteFhirMedication)>
   <Connect(withRouter(Search))
     focusUponMount={true}
-    onError={[Function]}
-  />
-  <Loading
-    delay={350}
     loading={false}
+    onError={[Function]}
+    onLoadingChange={[Function]}
   />
 </div>
 `;
@@ -227,12 +217,10 @@ exports[`Storyshots AmtBrowser Search for esomeprazole 1`] = `
 >
   <Connect(withRouter(Search))
     focusUponMount={true}
-    onError={[Function]}
-    query="esomeprazole"
-  />
-  <Loading
-    delay={350}
     loading={false}
+    onError={[Function]}
+    onLoadingChange={[Function]}
+    query="esomeprazole"
   />
 </div>
 `;
@@ -271,11 +259,9 @@ exports[`Storyshots AmtBrowser loratadine (MP) 1`] = `
   </Connect(RemoteFhirMedication)>
   <Connect(withRouter(Search))
     focusUponMount={true}
-    onError={[Function]}
-  />
-  <Loading
-    delay={350}
     loading={false}
+    onError={[Function]}
+    onLoadingChange={[Function]}
   />
 </div>
 `;
@@ -314,11 +300,9 @@ exports[`Storyshots AmtBrowser loratadine (substance) 1`] = `
   </Connect(RemoteFhirMedication)>
   <Connect(withRouter(Search))
     focusUponMount={true}
-    onError={[Function]}
-  />
-  <Loading
-    delay={350}
     loading={false}
+    onError={[Function]}
+    onLoadingChange={[Function]}
   />
 </div>
 `;
@@ -357,11 +341,9 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid (MPUU) 1`] = `
   </Connect(RemoteFhirMedication)>
   <Connect(withRouter(Search))
     focusUponMount={true}
-    onError={[Function]}
-  />
-  <Loading
-    delay={350}
     loading={false}
+    onError={[Function]}
+    onLoadingChange={[Function]}
   />
 </div>
 `;
@@ -400,11 +382,9 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid, 150 mL (MPP) 1`] 
   </Connect(RemoteFhirMedication)>
   <Connect(withRouter(Search))
     focusUponMount={true}
-    onError={[Function]}
-  />
-  <Loading
-    delay={350}
     loading={false}
+    onError={[Function]}
+    onLoadingChange={[Function]}
   />
 </div>
 `;

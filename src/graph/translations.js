@@ -25,41 +25,44 @@ export const filters = {
     // Filter any concept that is an MP that has a child MP.
     !(
       conceptHasType(concept, 'MP') &&
-      concepts.relationships.find(r =>
-        relationshipMatchesTargetIdAndType(
-          r,
-          'MP',
-          idForNode(concept),
-          concepts.concepts,
-        ),
+      concepts.relationships.find(
+        r =>
+          relationshipMatchesTargetIdAndType(
+            r,
+            'MP',
+            idForNode(concept),
+            concepts.concepts,
+          ) && r.type === 'is-a',
       )
     ),
-  mpuu: concept => concept.type !== fhirMedicationTypeFor('MPUU'),
+  mpuu: concept => !conceptHasType(concept, 'MPUU'),
   'parent-of-mpuu': (concept, concepts) =>
     // Filter any concept that is an MPUU that has a child MPUU.
     !(
       conceptHasType(concept, 'MPUU') &&
-      concepts.relationships.find(r =>
-        relationshipMatchesTargetIdAndType(
-          r,
-          'MPUU',
-          idForNode(concept),
-          concepts.concepts,
-        ),
+      concepts.relationships.find(
+        r =>
+          relationshipMatchesTargetIdAndType(
+            r,
+            'MPUU',
+            idForNode(concept),
+            concepts.concepts,
+          ) && r.type === 'is-a',
       )
     ),
-  mpp: concept => concept.type !== fhirMedicationTypeFor('MPP'),
+  mpp: concept => !conceptHasType(concept, 'MPP'),
   'parent-of-mpp': (concept, concepts) =>
     // Filter any concept that is an MPP that has a child MPP.
     !(
       conceptHasType(concept, 'MPP') &&
-      concepts.relationships.find(r =>
-        relationshipMatchesTargetIdAndType(
-          r,
-          'MPP',
-          idForNode(concept),
-          concepts.concepts,
-        ),
+      concepts.relationships.find(
+        r =>
+          relationshipMatchesTargetIdAndType(
+            r,
+            'MPP',
+            idForNode(concept),
+            concepts.concepts,
+          ) && r.type === 'is-a',
       )
     ),
   tp: concept => !conceptHasType(concept, 'TP'),
@@ -91,6 +94,10 @@ export const filters = {
 // Filters a concepts object ({ concepts, relationships }) using a set of
 // pre-defined filters.
 const applyFilters = (concepts, filtersToApply) => {
+  // The `not-replaces-by` filter is a special case, and needs to be applied
+  // exclusively if present.
+  if (filtersToApply.includes('not-replaced-by'))
+    filtersToApply = ['not-replaced-by']
   let filteredConcepts = concepts.concepts
   for (const filter of filtersToApply) {
     if (filters[filter]) {

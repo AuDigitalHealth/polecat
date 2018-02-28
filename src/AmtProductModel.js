@@ -181,8 +181,6 @@ class AmtProductModel extends Component {
       .restart()
   }
 
-  // FIXME: There is some sort of problem around substances and not clearing out
-  // groups when updating the subject concept.
   updateSimulation(nodes, links) {
     const model = this
     let oldNodes = model.simulation.nodes()

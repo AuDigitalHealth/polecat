@@ -1,0 +1,59 @@
+.visibility-filter {
+  position: relative;
+  padding-top: 36px;
+}
+
+.visibility-filter-icon {
+  opacity: 0.6;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 4px;
+}
+
+.visibility-filter-icon:hover {
+  opacity: 0.8;
+}
+
+.visibility-filter-icon.active {
+  opacity: 1;
+}
+
+.visibility-filter ol {
+  text-align: right;
+  font-size: 13px;
+  list-style-type: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  padding: 3px 8px 8px;
+  border-radius: 6px;
+}
+
+.visibility-filter li {
+  margin: 0 0 3px;
+  padding: 0;
+}
+
+.visibility-filter .toggle {
+  margin-left: 8px;
+  position: relative;
+  top: 5px;
+}
+
+.visibility-filter .concept-type {
+  font-size: 10px;
+  padding: 3px 5px;
+}
+
+.visibility-filter .concept-type.ghosted {
+  opacity: 0.5;
+}
+
+.visibility-filter-options label {
+  cursor: pointer;
+}
+
+.visibility-filter-options label .icon {
+  position: relative;
+  top: 6px;
+}
