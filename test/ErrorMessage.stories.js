@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import ErrorMessage from '../src/ErrorMessage.js'
 import { opOutcomeFromJsonResponse } from '../src/fhir/core.js'
-import operationOutcome1 from './operationOutcome.json'
+import operationOutcome1 from './fixtures/operationOutcome.json'
 
 storiesOf('ErrorMessage', module)
   .add('Simple message', () => (

@@ -2,8 +2,8 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { host } from 'storybook-host'
 
-import { AmtBrowser } from './AmtBrowser.js'
-import config from '../test/config.js'
+import { AmtBrowser } from '../src/AmtBrowser.js'
+import config from './config.js'
 
 const width = 800
 const height = 800

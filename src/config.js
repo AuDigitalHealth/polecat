@@ -5,6 +5,8 @@ import http from 'axios'
 // internal filtering function that is used.
 export const visibilityConfig = {
   // Inactive
+  // TODO: Simplify configuration logic by giving inactive concepts a full set
+  // of settings to themselves.
   'visibility.inactive.hideAllExceptReplacedBy': 'not-replaced-by',
   // CTPP
   'visibility.ctpp.parentOfMp': 'parent-of-mp',
