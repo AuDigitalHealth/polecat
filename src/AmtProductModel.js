@@ -557,7 +557,8 @@ const filtersFromProps = (state, props) => {
   const { nodes } = props
   if (!nodes || !state) return []
   const subject = nodes.find(n => n.focused),
-    subjectType = amtConceptTypeFor(subject.type)
+    subjectType =
+      subject.status === 'active' ? amtConceptTypeFor(subject.type) : 'inactive'
   // Visibility settings follow the convention:
   // `visibility.[subject concept type].[filtered concept type]
   const keys = Object.keys(visibilityConfig).filter(k => {
@@ -570,15 +571,6 @@ const filtersFromProps = (state, props) => {
     (acc, k) => acc.concat(state[k] === false ? [visibilityConfig[k]] : []),
     [],
   )
-  // The `hideAllExceptReplacedBy` setting for inactive concepts works a bit
-  // differently: if it is set to `true`, all related concepts are hidden except
-  // those with a "is replaced by" relationship to the subject concept.
-  if (
-    (subject.status === 'inactive' || subject.status === 'entered-in-error') &&
-    state['visibility.inactive.hideAllExceptReplacedBy']
-  ) {
-    filters.push('not-replaced-by')
-  }
   return filters
 }
 

@@ -10,6 +10,7 @@ import {
   configValueImplies,
 } from './config.js'
 import ConceptType from './ConceptType.js'
+import { capitalise } from './util.js'
 
 import './css/VisibilityFilter.css'
 
@@ -38,17 +39,27 @@ class VisibilityFilter extends Component {
   constructor(props) {
     super(props)
     this.handleMenuToggle = this.handleMenuToggle.bind(this)
+    this.handleShowAll = this.handleShowAll.bind(this)
     this.state = { menuOpen: false }
   }
 
   handleOptionToggle(key) {
-    const { config, setConfig, subjectConceptType } = this.props
+    const { config, setConfig } = this.props
     // Set the config value to the opposite of what it was, and additionally
     // check for futher implications and set those config values as well.
     setConfig({
       [key]: !config[key],
-      ...configValueImplies(key, !config[key], subjectConceptType),
+      ...configValueImplies(key, !config[key]),
     })
+  }
+
+  handleShowAll() {
+    const { config, setConfig } = this.props
+    // Remove all filters, except the one for "not replaced by".
+    for (const c in config) {
+      config[c] = true
+    }
+    setConfig(config)
   }
 
   handleMenuToggle() {
@@ -93,12 +104,13 @@ class VisibilityFilter extends Component {
         componentPack: 'Component packs',
         replaces: 'Replaced concepts',
         substance: <ConceptType type="substance" />,
-        hideAllExceptReplacedBy: 'Show only replacements',
+        notReplacedBy: 'Show only replacements',
       }[key] || key
     )
   }
 
   render() {
+    const { subjectConceptStatus, subjectConceptType } = this.props
     const { menuOpen } = this.state
     return (
       <div className="visibility-filter">
@@ -115,7 +127,21 @@ class VisibilityFilter extends Component {
           }
           onClick={this.handleMenuToggle}
         />
-        {menuOpen ? this.renderOptions() : null}
+        {menuOpen ? (
+          <div className="visibility-filter-menu">
+            <h2>
+              {capitalise(
+                subjectConceptStatus === 'active'
+                  ? subjectConceptType
+                  : 'inactive concept',
+              )}
+            </h2>
+            {this.renderOptions()}
+            <div className="show-all" onClick={this.handleShowAll}>
+              Show all
+            </div>
+          </div>
+        ) : null}
       </div>
     )
   }
@@ -128,7 +154,9 @@ class VisibilityFilter extends Component {
             {this.humaniseConfig(k)}
           </label>
           <Toggle
-            value={config[k]}
+            value={
+              k === 'visibility.inactive.notReplacedBy' ? !config[k] : config[k]
+            }
             onClick={() => this.handleOptionToggle(k)}
           />
         </li>
@@ -140,24 +168,20 @@ class VisibilityFilter extends Component {
 // Select the configuration parameters applicable to the subject concept, based
 // on type and status.
 const visibilityConfigFromProps = (state, props) => {
-  const { subjectConceptType } = props,
-    subjectConceptStatus =
+  const subjectConceptType =
       props.subjectConceptStatus === 'active'
-        ? props.subjectConceptStatus
+        ? props.subjectConceptType
         : 'inactive',
     config = {}
   // Visibility settings follow the convention:
   // `visibility.[subject concept type].[filtered concept type]
   const keys = Object.keys(visibilityConfig).filter(k =>
-    k.match(
-      `visibility\\.(${subjectConceptType.toLowerCase()}|${subjectConceptStatus})\\.\\w+`,
-    ),
+    k.match(`visibility\\.(${subjectConceptType.toLowerCase()})\\.\\w+`),
   )
-  const notReplacedByKey = 'visibility.inactive.hideAllExceptReplacedBy',
-    notReplacedByPresent = config[notReplacedByKey]
+  // Select the configuration values from global state that are applicable to
+  // this concept.
   for (const key of keys) {
-    config[key] =
-      notReplacedByPresent && key !== notReplacedByKey ? false : state[key]
+    config[key] = state[key]
   }
   return config
 }

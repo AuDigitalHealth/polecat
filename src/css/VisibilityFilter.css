@@ -19,14 +19,17 @@
   opacity: 1;
 }
 
-.visibility-filter ol {
-  text-align: right;
-  font-size: 13px;
-  list-style-type: none;
+.visibility-filter-menu {
   background-color: rgba(255, 255, 255, 0.9);
-  margin: 0;
   padding: 3px 8px 8px;
   border-radius: 6px;
+  font-size: 13px;
+  text-align: right;
+}
+
+.visibility-filter-menu ol {
+  list-style-type: none;
+  margin: 0;
 }
 
 .visibility-filter li {
@@ -56,4 +59,16 @@
 .visibility-filter-options label .icon {
   position: relative;
   top: 6px;
+}
+
+.visibility-filter-menu h2 {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 5px 0 5px;
+}
+
+.visibility-filter-menu .show-all {
+  text-decoration: underline;
+  margin-top: 12px;
+  cursor: pointer;
 }

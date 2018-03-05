@@ -94,10 +94,6 @@ export const filters = {
 // Filters a concepts object ({ concepts, relationships }) using a set of
 // pre-defined filters.
 const applyFilters = (concepts, filtersToApply) => {
-  // The `not-replaces-by` filter is a special case, and needs to be applied
-  // exclusively if present.
-  if (filtersToApply.includes('not-replaced-by'))
-    filtersToApply = ['not-replaced-by']
   let filteredConcepts = concepts.concepts
   for (const filter of filtersToApply) {
     if (filters[filter]) {

@@ -7,7 +7,19 @@ export const visibilityConfig = {
   // Inactive
   // TODO: Simplify configuration logic by giving inactive concepts a full set
   // of settings to themselves.
-  'visibility.inactive.hideAllExceptReplacedBy': 'not-replaced-by',
+  'visibility.inactive.notReplacedBy': 'not-replaced-by',
+  'visibility.inactive.substance': 'substance',
+  'visibility.inactive.parentOfMp': 'parent-of-mp',
+  'visibility.inactive.mp': 'mp',
+  'visibility.inactive.parentOfMpuu': 'parent-of-mpuu',
+  'visibility.inactive.mpuu': 'mpuu',
+  'visibility.inactive.parentOfMpp': 'parent-of-mpp',
+  'visibility.inactive.mpp': 'mpp',
+  'visibility.inactive.tp': 'tp',
+  'visibility.inactive.tpuu': 'tpuu',
+  'visibility.inactive.tpp': 'tpp',
+  'visibility.inactive.componentPack': 'component-pack',
+  'visibility.inactive.replaces': 'replaces',
   // CTPP
   'visibility.ctpp.parentOfMp': 'parent-of-mp',
   'visibility.ctpp.mp': 'mp',
@@ -79,7 +91,19 @@ const availableConfig = ['fhirServer', 'version', 'sentryDsn'].concat(
 const defaultConfig = {
   fhirServer: 'https://medserve.online/fhir',
   // Inactive
-  'visibility.inactive.hideAllExceptReplacedBy': true,
+  'visibility.inactive.notReplacedBy': true,
+  'visibility.inactive.substance': false,
+  'visibility.inactive.parentOfMp': false,
+  'visibility.inactive.mp': false,
+  'visibility.inactive.parentOfMpuu': false,
+  'visibility.inactive.mpuu': false,
+  'visibility.inactive.parentOfMpp': false,
+  'visibility.inactive.mpp': false,
+  'visibility.inactive.tp': false,
+  'visibility.inactive.tpuu': false,
+  'visibility.inactive.tpp': false,
+  'visibility.inactive.componentPack': false,
+  'visibility.inactive.replaces': false,
   // CTPP
   'visibility.ctpp.parentOfMp': [{}, {}],
   'visibility.ctpp.mp': true,
@@ -143,6 +167,66 @@ const defaultConfig = {
 }
 
 const configValueImplications = {
+  // Inactive
+  'visibility.inactive.notReplacedBy': [
+    {},
+    {
+      'visibility.inactive.substance': false,
+      'visibility.inactive.parentOfMp': false,
+      'visibility.inactive.mp': false,
+      'visibility.inactive.parentOfMpuu': false,
+      'visibility.inactive.mpuu': false,
+      'visibility.inactive.parentOfMpp': false,
+      'visibility.inactive.mpp': false,
+      'visibility.inactive.tp': false,
+      'visibility.inactive.tpuu': false,
+      'visibility.inactive.tpp': false,
+      'visibility.inactive.componentPack': false,
+      'visibility.inactive.replaces': false,
+    },
+  ],
+  'visibility.inactive.substance': [
+    { 'visibility.inactive.notReplacedBy': true },
+    {},
+  ],
+  'visibility.inactive.parentOfMp': [
+    { 'visibility.inactive.notReplacedBy': true },
+    {},
+  ],
+  'visibility.inactive.mp': [{ 'visibility.inactive.notReplacedBy': true }, {}],
+  'visibility.inactive.parentOfMpuu': [
+    { 'visibility.inactive.notReplacedBy': true },
+    {},
+  ],
+  'visibility.inactive.mpuu': [
+    { 'visibility.inactive.notReplacedBy': true },
+    {},
+  ],
+  'visibility.inactive.parentOfMpp': [
+    { 'visibility.inactive.notReplacedBy': true },
+    {},
+  ],
+  'visibility.inactive.mpp': [
+    { 'visibility.inactive.notReplacedBy': true },
+    {},
+  ],
+  'visibility.inactive.tp': [{ 'visibility.inactive.notReplacedBy': true }, {}],
+  'visibility.inactive.tpuu': [
+    { 'visibility.inactive.notReplacedBy': true },
+    {},
+  ],
+  'visibility.inactive.tpp': [
+    { 'visibility.inactive.notReplacedBy': true },
+    {},
+  ],
+  'visibility.inactive.componentPack': [
+    { 'visibility.inactive.notReplacedBy': true },
+    {},
+  ],
+  'visibility.inactive.replaces': [
+    { 'visibility.inactive.notReplacedBy': true },
+    {},
+  ],
   // CTPP
   'visibility.ctpp.parentOfMp': [
     {
@@ -314,19 +398,8 @@ const configValueImplications = {
 // Accepts a configuration value and returns an object containing all other
 // configuration values that this implies, e.g. hiding MPUUs on a CTPP model
 // implies that MPs will also be hidden.
-export const configValueImplies = (key, value, subjectConceptType) => {
-  if (key === 'visibility.inactive.hideAllExceptReplacedBy') {
-    // If this is the "hide all except replaced by" option, imply all other
-    // visibility settings relating to this subject concept type.
-    return Object.keys(visibilityConfig)
-      .filter(k => k.split('.')[1] === subjectConceptType.toLowerCase())
-      .reduce((acc, k) => ({ ...acc, [k]: false }), {})
-  } else {
-    return value
-      ? configValueImplications[key][0]
-      : configValueImplications[key][1]
-  }
-}
+export const configValueImplies = (key, value) =>
+  value ? configValueImplications[key][0] : configValueImplications[key][1]
 
 // Get a config object that contains the resolved values determined by getting
 // the configuration from `config.json`, then overriding that with any values
