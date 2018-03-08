@@ -7,12 +7,12 @@ import FhirMedication from './FhirMedication.js'
 import { sniffFormat } from './fhir/restApi'
 import { opOutcomeFromJsonResponse } from './fhir/core.js'
 
-class RemoteFhirMedication extends Component {
+export class RemoteFhirMedication extends Component {
   static propTypes = {
     resourceType: PropTypes.oneOf(['Medication', 'Substance']),
     id: PropTypes.string.isRequired,
     fhirServer: PropTypes.string.isRequired,
-    children: PropTypes.any.isRequired,
+    children: PropTypes.any,
     onLoadingChange: PropTypes.func,
     onLoadSubjectConcept: PropTypes.func,
     onError: PropTypes.func,
@@ -41,8 +41,10 @@ class RemoteFhirMedication extends Component {
     return this.getFhirResource(fhirServer, `/${resourceType}/${id}`)
       .then(resource => this.setState({ resource, cancelRequest: null }))
       .then(() => this.setLoadingStatus(false))
-      .catch(error => this.handleError(error))
-      .then(() => this.setLoadingStatus(false))
+      .catch(error => {
+        this.handleError(error)
+        this.setLoadingStatus(false)
+      })
   }
 
   async getFhirResource(fhirServer, path, query) {
@@ -71,8 +73,11 @@ class RemoteFhirMedication extends Component {
   }
 
   handleUnsuccessfulResponse(response) {
-    sniffFormat(response.headers['content-type'])
-    const opOutcome = opOutcomeFromJsonResponse(response.data)
+    let opOutcome
+    try {
+      sniffFormat(response.headers['content-type'])
+      opOutcome = opOutcomeFromJsonResponse(response.data)
+    } catch (error) {} // eslint-disable-line no-empty
     if (opOutcome) throw opOutcome
     else if (response.status === 404) {
       const { resourceType, id } = this.props
@@ -84,6 +89,9 @@ class RemoteFhirMedication extends Component {
     }
   }
 
+  // Requests any additional Medication resources that may be required to fully represent
+  // the medication within the browser.
+  // NOTE: This does not currently support related Substance resources.
   handleRequireRelatedResources(ids) {
     const { fhirServer } = this.props
     for (const id of ids) {

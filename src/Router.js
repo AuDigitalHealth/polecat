@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import throttle from 'lodash.throttle'
 import queryString from 'query-string'
 
 import AmtBrowser from './AmtBrowser.js'
 import { codingToSnomedDisplay } from './fhir/medication.js'
+
+export const rootPath = () => '/'
+export const searchPathFromQuery = query => `/?q=${encodeURIComponent(query)}`
 
 class Router extends Component {
   static propTypes = {
@@ -52,60 +55,53 @@ class Router extends Component {
     return (
       <div className="app">
         <main>
-          <BrowserRouter>
-            <Switch>
-              <Route
-                path="/Medication/:id"
-                render={({ location, match }) => (
+          <Switch>
+            <Route
+              path="/Medication/:id"
+              render={({ location, match }) => (
+                <AmtBrowser
+                  id={match.params.id}
+                  query={this.getQueryFromLocation(location)}
+                  viewport={viewport}
+                  config={config}
+                  onLoadSubjectConcept={this.handleLoadSubjectConcept}
+                />
+              )}
+            />
+            <Route
+              path="/Substance/:id"
+              render={({ location, match }) => (
+                <AmtBrowser
+                  resourceType="Substance"
+                  id={match.params.id}
+                  query={this.getQueryFromLocation(location)}
+                  viewport={viewport}
+                  config={config}
+                  onLoadSubjectConcept={this.handleLoadSubjectConcept}
+                />
+              )}
+            />
+            <Route
+              path="/"
+              render={({ location }) => {
+                this.handleLoadSubjectConcept()
+                return (
                   <AmtBrowser
-                    id={match.params.id}
                     query={this.getQueryFromLocation(location)}
                     viewport={viewport}
                     config={config}
-                    onLoadSubjectConcept={this.handleLoadSubjectConcept}
                   />
-                )}
-              />
-              <Route
-                path="/Substance/:id"
-                render={({ location, match }) => (
-                  <AmtBrowser
-                    resourceType="Substance"
-                    id={match.params.id}
-                    query={this.getQueryFromLocation(location)}
-                    viewport={viewport}
-                    config={config}
-                    onLoadSubjectConcept={this.handleLoadSubjectConcept}
-                  />
-                )}
-              />
-              <Route
-                path="/"
-                render={({ location }) => {
-                  this.handleLoadSubjectConcept()
-                  return (
-                    <AmtBrowser
-                      query={this.getQueryFromLocation(location)}
-                      viewport={viewport}
-                      config={config}
-                    />
-                  )
-                }}
-              />
-              <Route
-                render={() => (
-                  <AmtBrowser viewport={viewport} config={config} />
-                )}
-              />
-            </Switch>
-          </BrowserRouter>
+                )
+              }}
+            />
+            <Route
+              render={() => <AmtBrowser viewport={viewport} config={config} />}
+            />
+          </Switch>
         </main>
       </div>
     )
   }
 }
-
-export const rootPath = () => '/'
-export const searchPathFromQuery = query => `/?q=${encodeURIComponent(query)}`
 
 export default Router

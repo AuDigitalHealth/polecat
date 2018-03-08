@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RemoteFhirMedication error handling should call the onError callback on 400 OperationOutcome 1`] = `
+Object {
+  "code": "processing",
+  "diagnostics": "Invalid request: The FHIR endpoint on this server does not know how to handle GET operation[Medication] with parameters [[_text, is-brafnd]]",
+  "severity": "error",
+}
+`;
