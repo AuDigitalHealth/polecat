@@ -95,7 +95,6 @@ export class AmtBrowser extends Component {
           <RemoteFhirMedication
             resourceType={resourceType}
             id={id}
-            viewport={viewport}
             onLoadingChange={this.handleLoadingChange}
             onLoadSubjectConcept={this.handleLoadSubjectConcept}
             onError={this.handleError}
