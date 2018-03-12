@@ -8,8 +8,7 @@ an instance of [Medserve](https://medserve.online).
 * Provides a full-text search facility for locating medicine concepts within
   AMT.
 * Supports searching of CTPP, TPP, TPUU, TP, MPP, MPUU, MP and substance
-  concepts.
-  Concept types are displayed alongside search results.
+  concepts. Concept types are displayed alongside search results.
 * Selecting a concept renders an object diagram, showing its details along with
   its relationship to other concepts, in a manner which is faithful to the AMT
   Product Model.
@@ -20,22 +19,35 @@ an instance of [Medserve](https://medserve.online).
 * Re-focus on a related concept by clicking its SCT ID.
 * Copy an SCT ID or preferred term to the clipboard by clicking the clipboard
   icon adjacent.
-* Where child concepts or related packages are shown in large numbers, these
-  are grouped with a link to the full listing.
+* Where child concepts or related packages are shown in large numbers, these are
+  grouped with a link to the full listing.
 * The AMT Product Model view can be panned around by clicking and dragging,
   using scroll wheels or a trackpad. The view can be re-centred by
   double-clicking.
 * Perform an advanced search, using the following fields:
-  * Contains text - returns concepts which contain the supplied text within the preferred term.
-  * Ingredient - returns concepts which have ingredients that match the supplied concept ID or text.
-  * Package item - returns packages (MPP, TPP or CTPP) that contain concepts which match the supplied MPUU or TPUU concept or text.
-  * Form - returns concepts which have a form which matches the supplied text (e.g. tablet).
-  * Container - returns concepts which have a container which matches the supplied text (e.g. bottle).
-  * Brand - returns concepts which have a brand (TP) which matches the supplied text (e.g. Voltaren).
-  * PBS code - returns concepts which are mapped to a [PBS](https://pbs.gov.au/) item code.
-  * ARTG ID - returns concepts which are mapped to a product listed on the [Australian Register of Therapeutic Goods](https://www.tga.gov.au/australian-register-therapeutic-goods).
-  * Parent - Returns concepts which are descendants of concepts that match the supplied text or concept ID.
-  * Include only - Narrow the search to only include a subset of concept types, i.e. CTPP, TPP, TPUU, MPP, MPUU or MP.
+  * Contains text - returns concepts which contain the supplied text within the
+    preferred term.
+  * Ingredient - returns concepts which have ingredients that match the supplied
+    concept ID or text.
+  * Package item - returns packages (MPP, TPP or CTPP) that contain concepts
+    which match the supplied MPUU or TPUU concept or text.
+  * Form - returns concepts which have a form which matches the supplied text
+    (e.g. tablet).
+  * Container - returns concepts which have a container which matches the
+    supplied text (e.g. bottle).
+  * Brand - returns concepts which have a brand (TP) which matches the supplied
+    text (e.g. Voltaren).
+  * PBS code - returns concepts which are mapped to a [PBS](https://pbs.gov.au/)
+    item code.
+  * ARTG ID - returns concepts which are mapped to a product listed on the
+    [Australian Register of Therapeutic Goods](https://www.tga.gov.au/australian-register-therapeutic-goods).
+  * Parent - Returns concepts which are descendants of concepts that match the
+    supplied text or concept ID.
+  * Type - Narrow the search to only include a subset of concept types, i.e.
+    CTPP, TPP, TPUU, MPP, MPUU or MP.
+  * Status - Narrow the search to include only concepts with one of the selected
+    statuses, i.e. Active, Inactive or Entered in Error.
+* Control visibility of each type of concept. Settings are remembered once set.
 * Can be configured to point to any Medserve instance, see
   [Configuration](#configuration).
 * Can be configured to report errors to [Sentry](https://sentry.io).
@@ -88,7 +100,8 @@ yarn lint
 
 ##### Build a release
 
-This will output a set of production-optimised static files in the build directory.
+This will output a set of production-optimised static files in the build
+directory.
 
 ```
 yarn build
@@ -96,13 +109,15 @@ yarn build
 
 ##### Build the Docker image
 
-This will package the build into a [Docker](https://www.docker.com/) image, ready for deployment.
+This will package the build into a [Docker](https://www.docker.com/) image,
+ready for deployment.
 
 ```
 yarn dockerize
 ```
 
-This script requires you to set the `DOCKER_IMAGE` environment variable, which controls the name which is used to tag the image.
+This script requires you to set the `DOCKER_IMAGE` environment variable, which
+controls the name which is used to tag the image.
 
 # Configuration
 
@@ -135,5 +150,5 @@ services:
 * Polecat must be served via HTTPS. This is because it relies on APIs within the
   browser which are not enabled in insecure contexts.
 * Polecat must communicate to Medserve via HTTPS. This is because browser
-  security policy will not allow a secure page to make requests to a server
-  over plain HTTP.
+  security policy will not allow a secure page to make requests to a server over
+  plain HTTP.
