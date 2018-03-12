@@ -20,10 +20,14 @@ import { getBundleConcepts } from './fhir/bundle.js'
 class FhirMedication extends Component {
   static propTypes = {
     resource: PropTypes.object,
-    relatedResources: PropTypes.object,
-    childBundles: PropTypes.object,
-    packageBundles: PropTypes.object,
-    containsIngredientBundles: PropTypes.object,
+    // { [id]: [resource] }
+    relatedResources: PropTypes.objectOf(PropTypes.object),
+    // { [FHIR medication type]: [bundle] }
+    childBundles: PropTypes.objectOf(PropTypes.object),
+    // { [FHIR medication type]: [bundle] }
+    packageBundles: PropTypes.objectOf(PropTypes.object),
+    // { [FHIR medication type]: [bundle] }
+    containsIngredientBundles: PropTypes.objectOf(PropTypes.object),
     groupingThreshold: PropTypes.number,
     children: PropTypes.any.isRequired,
     onRequireRelatedResources: PropTypes.func,

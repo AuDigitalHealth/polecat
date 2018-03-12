@@ -370,12 +370,6 @@ exports[`Storyshots AmtBrowser Codalgin Forte uncoated tablet, 20, blister pack 
     onLoadSubjectConcept={[Function]}
     onLoadingChange={[Function]}
     resourceType="Medication"
-    viewport={
-      Object {
-        "height": 800,
-        "width": 800,
-      }
-    }
   >
     <Connect(AmtProductModel)
       viewport={
@@ -411,12 +405,6 @@ exports[`Storyshots AmtBrowser Codalgin Forte uncoated tablet, 20, blister pack 
     onLoadSubjectConcept={[Function]}
     onLoadingChange={[Function]}
     resourceType="Medication"
-    viewport={
-      Object {
-        "height": 800,
-        "width": 800,
-      }
-    }
   >
     <Connect(AmtProductModel)
       viewport={
@@ -452,12 +440,6 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution (TPUU) 1`] 
     onLoadSubjectConcept={[Function]}
     onLoadingChange={[Function]}
     resourceType="Medication"
-    viewport={
-      Object {
-        "height": 800,
-        "width": 800,
-      }
-    }
   >
     <Connect(AmtProductModel)
       viewport={
@@ -493,12 +475,6 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL (TP
     onLoadSubjectConcept={[Function]}
     onLoadingChange={[Function]}
     resourceType="Medication"
-    viewport={
-      Object {
-        "height": 800,
-        "width": 800,
-      }
-    }
   >
     <Connect(AmtProductModel)
       viewport={
@@ -534,12 +510,6 @@ exports[`Storyshots AmtBrowser Lorapaed 1 mg/mL oral liquid solution, 150 mL, bo
     onLoadSubjectConcept={[Function]}
     onLoadingChange={[Function]}
     resourceType="Medication"
-    viewport={
-      Object {
-        "height": 800,
-        "width": 800,
-      }
-    }
   >
     <Connect(AmtProductModel)
       viewport={
@@ -595,12 +565,6 @@ exports[`Storyshots AmtBrowser loratadine (MP) 1`] = `
     onLoadSubjectConcept={[Function]}
     onLoadingChange={[Function]}
     resourceType="Medication"
-    viewport={
-      Object {
-        "height": 800,
-        "width": 800,
-      }
-    }
   >
     <Connect(AmtProductModel)
       viewport={
@@ -636,12 +600,6 @@ exports[`Storyshots AmtBrowser loratadine (substance) 1`] = `
     onLoadSubjectConcept={[Function]}
     onLoadingChange={[Function]}
     resourceType="Substance"
-    viewport={
-      Object {
-        "height": 800,
-        "width": 800,
-      }
-    }
   >
     <Connect(AmtProductModel)
       viewport={
@@ -677,12 +635,6 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid (MPUU) 1`] = `
     onLoadSubjectConcept={[Function]}
     onLoadingChange={[Function]}
     resourceType="Medication"
-    viewport={
-      Object {
-        "height": 800,
-        "width": 800,
-      }
-    }
   >
     <Connect(AmtProductModel)
       viewport={
@@ -718,12 +670,6 @@ exports[`Storyshots AmtBrowser loratadine 1 mg/mL oral liquid, 150 mL (MPP) 1`] 
     onLoadSubjectConcept={[Function]}
     onLoadingChange={[Function]}
     resourceType="Medication"
-    viewport={
-      Object {
-        "height": 800,
-        "width": 800,
-      }
-    }
   >
     <Connect(AmtProductModel)
       viewport={

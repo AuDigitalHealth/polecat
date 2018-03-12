@@ -1,0 +1,1872 @@
+{
+  "resourceType": "Bundle",
+  "id": "251fdbe3-4d55-48ba-92e6-aa7a07f7547a",
+  "meta": {
+    "lastUpdated": "2018-03-11T22:49:27.079+00:00"
+  },
+  "type": "searchset",
+  "total": 27,
+  "link": [
+    {
+      "relation": "self",
+      "url":
+        "https://medserve.local/fhir/Medication?ingredient=Substance%2F2292011000036106&medication-resource-type=BPSF"
+    },
+    {
+      "relation": "next",
+      "url":
+        "https://medserve.local/fhir?_getpages=ff4c21d9-ed84-4511-8103-21649b866ad7&_getpagesoffset=10&_count=10&_bundletype=searchset"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/924539011000036107",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "924539011000036107",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Claratyne-D with Decongestant Repetab modified release tablet</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/45158011000036102",
+                  "display":
+                    "loratadine 5 mg + pseudoephedrine sulfate 120 mg modified release tablet"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPDSF",
+                  "display": "Unbranded product with strengths and form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/86233011000036101",
+                      "display": "pseudoephedrine sulfate 120 mg tablet"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPDSF",
+                      "display": "Unbranded product with strengths and form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/21540011000036109",
+                          "display": "pseudoephedrine"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPD",
+                          "display":
+                            "Unbranded product with no strengths or form"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2014-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/44955011000036104",
+                      "display": "loratadine + pseudoephedrine"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/21701011000036106",
+                          "display": "loratadine"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPD",
+                          "display":
+                            "Unbranded product with no strengths or form"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2014-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2016-05-31"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPSF",
+              "display": "Branded product with strengths and form"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "62911000168105",
+                  "display": "Claratyne-D with Decongestant Repetab"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2016-05-31"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "924539011000036107",
+              "display":
+                "Claratyne-D with Decongestant Repetab modified release tablet"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "261011000036101",
+              "display": "modified release tablet"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "modifierExtension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/basisOfStrengthSubstance",
+                "valueCoding": {
+                  "system": "http://snomed.info/sct",
+                  "code": "31841011000036100",
+                  "display": "pseudoephedrine sulfate"
+                }
+              }
+            ],
+            "itemReference": {
+              "reference": "Substance/2525011000036101",
+              "display": "pseudoephedrine"
+            },
+            "amount": {
+              "numerator": {
+                "value": 120,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/2292011000036106",
+              "display": "loratadine"
+            },
+            "amount": {
+              "numerator": {
+                "value": 5,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/54112011000036105",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "54112011000036105",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Claratyne 10 mg effervescent tablet</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/86001000036103",
+                  "display": "loratadine 10 mg effervescent tablet"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPDSF",
+                  "display": "Unbranded product with strengths and form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/22427011000036102",
+                      "display": "loratadine 10 mg tablet"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPDSF",
+                      "display": "Unbranded product with strengths and form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/21701011000036106",
+                          "display": "loratadine"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPD",
+                          "display":
+                            "Unbranded product with no strengths or form"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2014-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2016-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPSF",
+              "display": "Branded product with strengths and form"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "4061000168104",
+                  "display": "Claratyne"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2016-06-30"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "54112011000036105",
+              "display": "Claratyne 10 mg effervescent tablet"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "260011000036108",
+              "display": "effervescent tablet"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/2292011000036106",
+              "display": "loratadine"
+            },
+            "amount": {
+              "numerator": {
+                "value": 10,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/649061000168101",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "649061000168101",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Lorastyne (Pharmacy Action) 10 mg uncoated tablet</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/22427011000036102",
+                  "display": "loratadine 10 mg tablet"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPDSF",
+                  "display": "Unbranded product with strengths and form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21701011000036106",
+                      "display": "loratadine"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2014-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPSF",
+              "display": "Branded product with strengths and form"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "649051000168103",
+                  "display": "Lorastyne (Pharmacy Action)"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2016-08-31"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "649061000168101",
+              "display": "Lorastyne (Pharmacy Action) 10 mg uncoated tablet"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "265011000036104",
+              "display": "uncoated tablet"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/2292011000036106",
+              "display": "loratadine"
+            },
+            "amount": {
+              "numerator": {
+                "value": 10,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/54089011000036109",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "54089011000036109",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Lorastyne Syrup 1 mg/mL oral liquid solution</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/62022011000036104",
+                  "display": "loratadine 1 mg/mL oral liquid"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPDSF",
+                  "display": "Unbranded product with strengths and form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21701011000036106",
+                      "display": "loratadine"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2014-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPSF",
+              "display": "Branded product with strengths and form"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "27141000168100",
+                  "display": "Lorastyne Syrup"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2017-01-31"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "54089011000036109",
+              "display": "Lorastyne Syrup 1 mg/mL oral liquid solution"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "225011000036109",
+              "display": "oral liquid solution"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/2292011000036106",
+              "display": "loratadine"
+            },
+            "amount": {
+              "numerator": {
+                "value": 1,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "mL",
+                "system": "http://snomed.info/sct",
+                "code": "30011000036107"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/83691011000036103",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "83691011000036103",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Loratadine (Pharmacist Formula) 10 mg uncoated tablet</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/22427011000036102",
+                  "display": "loratadine 10 mg tablet"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPDSF",
+                  "display": "Unbranded product with strengths and form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21701011000036106",
+                      "display": "loratadine"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2014-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPSF",
+              "display": "Branded product with strengths and form"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "83591011000036107",
+                  "display": "Loratadine (Pharmacist Formula)"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2016-08-31"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "83691011000036103",
+              "display": "Loratadine (Pharmacist Formula) 10 mg uncoated tablet"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "265011000036104",
+              "display": "uncoated tablet"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/2292011000036106",
+              "display": "loratadine"
+            },
+            "amount": {
+              "numerator": {
+                "value": 10,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/54028011000036105",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "54028011000036105",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Claratyne Children's peach 1 mg/mL oral liquid solution</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/62022011000036104",
+                  "display": "loratadine 1 mg/mL oral liquid"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPDSF",
+                  "display": "Unbranded product with strengths and form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21701011000036106",
+                      "display": "loratadine"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2014-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPSF",
+              "display": "Branded product with strengths and form"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "1851000168105",
+                  "display": "Claratyne Children's"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2017-01-31"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "54028011000036105",
+              "display":
+                "Claratyne Children's peach 1 mg/mL oral liquid solution"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "225011000036109",
+              "display": "oral liquid solution"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/2292011000036106",
+              "display": "loratadine"
+            },
+            "amount": {
+              "numerator": {
+                "value": 1,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "mL",
+                "system": "http://snomed.info/sct",
+                "code": "30011000036107"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/33023011000036109",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "33023011000036109",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Lorano 10 mg uncoated tablet</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/22427011000036102",
+                  "display": "loratadine 10 mg tablet"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPDSF",
+                  "display": "Unbranded product with strengths and form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21701011000036106",
+                      "display": "loratadine"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2014-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPSF",
+              "display": "Branded product with strengths and form"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "32980011000036109",
+                  "display": "Lorano"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2016-08-31"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "33023011000036109",
+              "display": "Lorano 10 mg uncoated tablet"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "265011000036104",
+              "display": "uncoated tablet"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/2292011000036106",
+              "display": "loratadine"
+            },
+            "amount": {
+              "numerator": {
+                "value": 10,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/5278011000036101",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "5278011000036101",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Claratyne 10 mg uncoated tablet</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/22427011000036102",
+                  "display": "loratadine 10 mg tablet"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPDSF",
+                  "display": "Unbranded product with strengths and form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21701011000036106",
+                      "display": "loratadine"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2014-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPSF",
+              "display": "Branded product with strengths and form"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "4061000168104",
+                  "display": "Claratyne"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2016-08-31"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "5278011000036101",
+              "display": "Claratyne 10 mg uncoated tablet"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "265011000036104",
+              "display": "uncoated tablet"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/2292011000036106",
+              "display": "loratadine"
+            },
+            "amount": {
+              "numerator": {
+                "value": 10,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/53783011000036107",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "53783011000036107",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Loratadine (Guardian) 10 mg tablet</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/22427011000036102",
+                  "display": "loratadine 10 mg tablet"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPDSF",
+                  "display": "Unbranded product with strengths and form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21701011000036106",
+                      "display": "loratadine"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2014-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPSF",
+              "display": "Branded product with strengths and form"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "53375011000036102",
+                  "display": "Loratadine (Guardian)"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2014-06-30"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "53783011000036107",
+              "display": "Loratadine (Guardian) 10 mg tablet"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "154011000036109",
+              "display": "tablet"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/2292011000036106",
+              "display": "loratadine"
+            },
+            "amount": {
+              "numerator": {
+                "value": 10,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/85375011000036106",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "85375011000036106",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Loratadine (Trust) 10 mg uncoated tablet</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/22427011000036102",
+                  "display": "loratadine 10 mg tablet"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPDSF",
+                  "display": "Unbranded product with strengths and form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21701011000036106",
+                      "display": "loratadine"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2014-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "BPSF",
+              "display": "Branded product with strengths and form"
+            }
+          },
+          {
+            "url": "http://medserve.online/fhir/StructureDefinition/brand",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "85288011000036102",
+                  "display": "Loratadine (Trust)"
+                }
+              ]
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2016-08-31"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "85375011000036106",
+              "display": "Loratadine (Trust) 10 mg uncoated tablet"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": true,
+        "form": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "265011000036104",
+              "display": "uncoated tablet"
+            }
+          ]
+        },
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/2292011000036106",
+              "display": "loratadine"
+            },
+            "amount": {
+              "numerator": {
+                "value": 10,
+                "unit": "mg",
+                "system": "http://snomed.info/sct",
+                "code": "99011000036109"
+              },
+              "denominator": {
+                "value": 1,
+                "unit": "each",
+                "system": "http://snomed.info/sct",
+                "code": "700001301000036101"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

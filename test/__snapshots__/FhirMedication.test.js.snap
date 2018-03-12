@@ -1,0 +1,565 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FhirMedication should pass nodes and links through for UPDSF 1`] = `
+Array [
+  Object {
+    "coding": Array [
+      Object {
+        "code": "21433011000036107",
+        "display": "paracetamol",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "status": "active",
+    "type": "UPD",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "2442011000036104",
+        "display": "paracetamol",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "type": "substance",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "23628011000036109",
+        "display": "paracetamol 500 mg tablet",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "focused": true,
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "UPDSF",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "12aad20a353d89d7ce8cdac2f37171034b7d113de9414ad9991af3c37a41ad25",
+        "system": "group",
+      },
+    ],
+    "concepts": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "52258011000036105",
+            "display": "paracetamol 500 mg + codeine phosphate hemihydrate 10 mg tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "UPDSF",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "52806011000036108",
+            "display": "paracetamol 500 mg + codeine phosphate hemihydrate 10 mg + doxylamine succinate 5.1 mg tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "UPDSF",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "52803011000036102",
+            "display": "paracetamol 500 mg + codeine phosphate hemihydrate 15 mg tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "UPDSF",
+      },
+    ],
+    "query": "type:MPUU ancestor:\\"23628011000036109|paracetamol 500 mg tablet\\"",
+    "total": 28,
+    "type": "group",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "bcf25985d3b0828215bed10d738514b09df7e5a2f9df8643d2958976248147af",
+        "system": "group",
+      },
+    ],
+    "concepts": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "54282011000036105",
+            "display": "Paracetamol (Herron) 500 mg uncoated tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "BPSF",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "88341000036103",
+            "display": "Calmative Pain Relief (Pharmacy Action) uncoated tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "BPSF",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1062931000168103",
+            "display": "Pain Relief Paracetamol plus Codeine with Calmative (Cipla) uncoated tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "BPSF",
+      },
+    ],
+    "query": "type:TPUU ancestor:\\"23628011000036109|paracetamol 500 mg tablet\\"",
+    "total": 406,
+    "type": "group",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "dbe0e38ad1d1a2f03f33c5faab7bfe194879612ad1685a7888f76ea58b3a2694",
+        "system": "group",
+      },
+    ],
+    "concepts": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63941011000036106",
+            "display": "paracetamol 500 mg tablet, 48",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "UPG",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "46260011000036106",
+            "display": "paracetamol 500 mg tablet, 24",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "UPG",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "46259011000036105",
+            "display": "paracetamol 500 mg tablet, 20",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "UPG",
+      },
+    ],
+    "query": "type:MPP package:\\"23628011000036109|paracetamol 500 mg tablet\\"",
+    "total": 25,
+    "type": "group",
+  },
+]
+`;
+
+exports[`FhirMedication should pass nodes and links through for UPDSF 2`] = `
+Array [
+  Object {
+    "source": "23628011000036109",
+    "target": "21433011000036107",
+    "type": "is-a",
+  },
+  Object {
+    "source": "23628011000036109",
+    "target": "2442011000036104",
+    "type": "has-boss",
+  },
+  Object {
+    "source": "group-12aad20a353d89d7ce8cdac2f37171034b7d113de9414ad9991af3c37a41ad25",
+    "sourceIsGroup": true,
+    "target": "23628011000036109",
+    "type": "is-a",
+  },
+  Object {
+    "source": "group-bcf25985d3b0828215bed10d738514b09df7e5a2f9df8643d2958976248147af",
+    "sourceIsGroup": true,
+    "target": "23628011000036109",
+    "type": "is-a",
+  },
+  Object {
+    "source": "group-dbe0e38ad1d1a2f03f33c5faab7bfe194879612ad1685a7888f76ea58b3a2694",
+    "sourceIsGroup": true,
+    "target": "23628011000036109",
+    "type": "has-updsf",
+  },
+]
+`;
+
+exports[`FhirMedication should pass nodes and links through for substance 1`] = `
+Array [
+  Object {
+    "coding": Array [
+      Object {
+        "code": "2292011000036106",
+        "display": "loratadine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "focused": true,
+    "status": "active",
+    "type": "substance",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "21701011000036106",
+        "display": "loratadine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "UPD",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "44955011000036104",
+        "display": "loratadine + pseudoephedrine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "UPD",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "9aadc3ce89a5e672d435fe1e85e21d39f825808e8ee69f7f38ae567da581b55d",
+        "system": "group",
+      },
+    ],
+    "concepts": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "45158011000036102",
+            "display": "loratadine 5 mg + pseudoephedrine sulfate 120 mg modified release tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "UPDSF",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "22427011000036102",
+            "display": "loratadine 10 mg tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "UPDSF",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "86001000036103",
+            "display": "loratadine 10 mg effervescent tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "UPDSF",
+      },
+    ],
+    "query": "type:MPUU ingredient:2292011000036106|loratadine",
+    "total": 7,
+    "type": "group",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "e8ddf1e3c67e3e440b538bb6dc232248614be20d60409593e180052b6bb72658",
+        "system": "group",
+      },
+    ],
+    "concepts": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "924539011000036107",
+            "display": "Claratyne-D with Decongestant Repetab modified release tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "BPSF",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "54112011000036105",
+            "display": "Claratyne 10 mg effervescent tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "BPSF",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "649061000168101",
+            "display": "Lorastyne (Pharmacy Action) 10 mg uncoated tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "BPSF",
+      },
+    ],
+    "query": "type:TPUU ingredient:2292011000036106|loratadine",
+    "total": 27,
+    "type": "group",
+  },
+]
+`;
+
+exports[`FhirMedication should pass nodes and links through for substance 2`] = `
+Array [
+  Object {
+    "source": "21701011000036106",
+    "target": "2292011000036106",
+    "type": "has-ingredient",
+  },
+  Object {
+    "source": "44955011000036104",
+    "target": "2292011000036106",
+    "type": "has-ingredient",
+  },
+  Object {
+    "source": "group-9aadc3ce89a5e672d435fe1e85e21d39f825808e8ee69f7f38ae567da581b55d",
+    "sourceIsGroup": true,
+    "target": "2292011000036106",
+    "type": "has-boss",
+  },
+  Object {
+    "source": "group-e8ddf1e3c67e3e440b538bb6dc232248614be20d60409593e180052b6bb72658",
+    "sourceIsGroup": true,
+    "target": "2292011000036106",
+    "type": "has-boss",
+  },
+]
+`;
+
+exports[`FhirMedication should update child bundles 1`] = `
+Array [
+  Object {
+    "coding": Array [
+      Object {
+        "code": "21433011000036107",
+        "display": "paracetamol",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "status": "active",
+    "type": "UPD",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "2442011000036104",
+        "display": "paracetamol",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "type": "substance",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "23628011000036109",
+        "display": "paracetamol 500 mg tablet",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "focused": true,
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "UPDSF",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "12aad20a353d89d7ce8cdac2f37171034b7d113de9414ad9991af3c37a41ad25",
+        "system": "group",
+      },
+    ],
+    "concepts": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "52258011000036105",
+            "display": "paracetamol 500 mg + codeine phosphate hemihydrate 10 mg tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "UPDSF",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "52806011000036108",
+            "display": "paracetamol 500 mg + codeine phosphate hemihydrate 10 mg + doxylamine succinate 5.1 mg tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "UPDSF",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "52803011000036102",
+            "display": "paracetamol 500 mg + codeine phosphate hemihydrate 15 mg tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "UPDSF",
+      },
+    ],
+    "query": "type:MPUU ancestor:\\"23628011000036109|paracetamol 500 mg tablet\\"",
+    "total": 28,
+    "type": "group",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "bcf25985d3b0828215bed10d738514b09df7e5a2f9df8643d2958976248147af",
+        "system": "group",
+      },
+    ],
+    "concepts": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "54282011000036105",
+            "display": "Paracetamol (Herron) 500 mg uncoated tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "BPSF",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "88341000036103",
+            "display": "Calmative Pain Relief (Pharmacy Action) uncoated tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "BPSF",
+      },
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1062931000168103",
+            "display": "Pain Relief Paracetamol plus Codeine with Calmative (Cipla) uncoated tablet",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "sourceCodeSystemUri": "http://snomed.info/sct",
+        "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+        "status": "active",
+        "type": "BPSF",
+      },
+    ],
+    "query": "type:TPUU ancestor:\\"23628011000036109|paracetamol 500 mg tablet\\"",
+    "total": 406,
+    "type": "group",
+  },
+]
+`;
+
+exports[`FhirMedication should update the primary resource 1`] = `
+Array [
+  Object {
+    "coding": Array [
+      Object {
+        "code": "2292011000036106",
+        "display": "loratadine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "focused": true,
+    "status": "active",
+    "type": "substance",
+  },
+]
+`;
