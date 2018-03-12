@@ -57,6 +57,23 @@ class ConceptType extends Component {
     }[status]
   }
 
+  humanisedType() {
+    const { type } = this.props
+    return {
+      CTPP: 'CTPP',
+      TPP: 'TPP',
+      TPUU: 'TPUU',
+      TP: 'TP',
+      MPP: 'MPP',
+      MPUU: 'MPUU',
+      MP: 'MP',
+      substance: 'substance',
+      active: 'active',
+      inactive: 'inactive',
+      'entered-in-error': 'entered in error',
+    }[type]
+  }
+
   handleClick(event) {
     const { onClick } = this.props
     if (onClick) onClick(event)
@@ -83,14 +100,13 @@ class ConceptType extends Component {
   }
 
   render() {
-    const { type } = this.props
     return (
       <span
         className={this.getClassName()}
         title={this.getTitle()}
         onClick={this.handleClick}
       >
-        {type}
+        {this.humanisedType()}
       </span>
     )
   }
