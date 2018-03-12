@@ -3743,7 +3743,7 @@ exports[`Storyshots ConceptType entered-in-error 1`] = `
   onClick={[Function]}
   title="Entered in error"
 >
-  entered-in-error
+  entered in error
 </span>
 `;
 
