@@ -91,7 +91,7 @@ const availableConfig = ['fhirServer', 'version', 'sentryDsn'].concat(
 const defaultConfig = {
   fhirServer: 'https://medserve.online/fhir',
   // Inactive
-  'visibility.inactive.notReplacedBy': true,
+  'visibility.inactive.notReplacedBy': false,
   'visibility.inactive.substance': false,
   'visibility.inactive.parentOfMp': false,
   'visibility.inactive.mp': false,
@@ -105,7 +105,7 @@ const defaultConfig = {
   'visibility.inactive.componentPack': false,
   'visibility.inactive.replaces': false,
   // CTPP
-  'visibility.ctpp.parentOfMp': [{}, {}],
+  'visibility.ctpp.parentOfMp': false,
   'visibility.ctpp.mp': true,
   'visibility.ctpp.parentOfMpuu': false,
   'visibility.ctpp.mpuu': true,
@@ -114,7 +114,7 @@ const defaultConfig = {
   'visibility.ctpp.tp': true,
   'visibility.ctpp.tpuu': true,
   'visibility.ctpp.tpp': true,
-  'visibility.ctpp.componentPack': true,
+  'visibility.ctpp.componentPack': false,
   'visibility.ctpp.replaces': false,
   // TPP
   'visibility.tpp.parentOfMp': false,
@@ -154,7 +154,7 @@ const defaultConfig = {
   'visibility.mpuu.tpuu': true,
   'visibility.mpuu.replaces': false,
   // MP
-  'visibility.mp.substance': true,
+  'visibility.mp.substance': false,
   'visibility.mp.parentOfMp': true,
   'visibility.mp.mp': true,
   'visibility.mp.mpuu': true,
