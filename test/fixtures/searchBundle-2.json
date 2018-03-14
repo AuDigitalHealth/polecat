@@ -1,0 +1,1047 @@
+{
+  "resourceType": "Bundle",
+  "id": "1636bddc-8566-48fe-8304-f50540800868",
+  "meta": { "lastUpdated": "2018-03-18T11:33:18.507+00:00" },
+  "type": "searchset",
+  "total": 23,
+  "link": [
+    {
+      "relation": "self",
+      "url":
+        "https://medserve.local/fhir?_getpages=ac0f1c84-093d-4696-af6a-d8245e92f846&_getpagesoffset=20&_count=20&_bundletype=searchset"
+    },
+    {
+      "relation": "previous",
+      "url":
+        "https://medserve.local/fhir?_getpages=ac0f1c84-093d-4696-af6a-d8245e92f846&_getpagesoffset=0&_count=20&_bundletype=searchset"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/61815011000036101",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "61815011000036101",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>paracetamol + dextromethorphan + phenylephrine + chlorphenamine</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/61802011000036106",
+                  "display": "phenylephrine + paracetamol + chlorphenamine"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPD",
+                  "display": "Unbranded product with no strengths or form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/61786011000036109",
+                      "display": "chlorphenamine + phenylephrine"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/37732011000036107",
+                          "display": "phenylephrine"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPD",
+                          "display":
+                            "Unbranded product with no strengths or form"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2014-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2016-10-31"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/61727011000036100",
+                      "display": "chlorphenamine + paracetamol"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/21433011000036107",
+                          "display": "paracetamol"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPD",
+                          "display":
+                            "Unbranded product with no strengths or form"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2014-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2016-10-31"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/61800011000036107",
+                      "display": "phenylephrine + paracetamol"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2016-01-31"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2016-10-31"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/61764011000036104",
+                  "display": "paracetamol + phenylephrine + dextromethorphan"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPD",
+                  "display": "Unbranded product with no strengths or form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/61803011000036104",
+                      "display": "dextromethorphan + phenylephrine"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                    "extension": [
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                        "valueReference": {
+                          "reference": "Medication/61744011000036109",
+                          "display": "dextromethorphan"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                        "valueCoding": {
+                          "system": "http://hl7.org/fhir/medication_type",
+                          "code": "UPD",
+                          "display":
+                            "Unbranded product with no strengths or form"
+                        }
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                        "valueCode": "active"
+                      },
+                      {
+                        "url":
+                          "http://medserve.online/fhir/StructureDefinition/lastModified",
+                        "valueDate": "2014-06-30"
+                      }
+                    ]
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/61766011000036107",
+                      "display": "paracetamol + dextromethorphan"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2017-05-31"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2017-04-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/61767011000036105",
+                  "display": "paracetamol + chlorphenamine + dextromethorphan"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPD",
+                  "display": "Unbranded product with no strengths or form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2017-04-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "UPD",
+              "display": "Unbranded product with no strengths or form"
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2017-04-30"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "61815011000036101",
+              "display":
+                "paracetamol + dextromethorphan + phenylephrine + chlorphenamine"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": false,
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/30971011000036102",
+              "display": "chlorphenamine"
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/2442011000036104",
+              "display": "paracetamol"
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/2476011000036101",
+              "display": "phenylephrine"
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/31105011000036100",
+              "display": "dextromethorphan"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/61756011000036104",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "61756011000036104",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>ascorbic acid + aspirin + chlorphenamine + phenylephrine</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/21719011000036107",
+                  "display": "aspirin"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPD",
+                  "display": "Unbranded product with no strengths or form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2014-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/61786011000036109",
+                  "display": "chlorphenamine + phenylephrine"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPD",
+                  "display": "Unbranded product with no strengths or form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/37732011000036107",
+                      "display": "phenylephrine"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2016-10-31"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/77435011000036104",
+                  "display": "ascorbic acid"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPD",
+                  "display": "Unbranded product with no strengths or form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2014-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "UPD",
+              "display": "Unbranded product with no strengths or form"
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2016-10-31"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "61756011000036104",
+              "display":
+                "ascorbic acid + aspirin + chlorphenamine + phenylephrine"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": false,
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/30971011000036102",
+              "display": "chlorphenamine"
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/30781011000036102",
+              "display": "ascorbic acid"
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/2476011000036101",
+              "display": "phenylephrine"
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/1817011000036100",
+              "display": "aspirin"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://medserve.local/fhir/Medication/61814011000036100",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "61814011000036100",
+        "meta": {
+          "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
+        },
+        "text": {
+          "status": "generated",
+          "div":
+            "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>ammonium chloride + codeine + guaifenesin + phenylephrine + pseudoephedrine</p></div>"
+        },
+        "extension": [
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/61743011000036107",
+                  "display": "guaifenesin + pseudoephedrine"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPD",
+                  "display": "Unbranded product with no strengths or form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/61763011000036101",
+                      "display": "guaifenesin"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2016-10-31"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21540011000036109",
+                      "display": "pseudoephedrine"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2016-10-31"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/69860011000036103",
+                  "display": "ammonium chloride"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPD",
+                  "display": "Unbranded product with no strengths or form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2014-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/61724011000036106",
+                  "display": "guaifenesin + phenylephrine"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPD",
+                  "display": "Unbranded product with no strengths or form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/37732011000036107",
+                      "display": "phenylephrine"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2016-10-31"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                "valueReference": {
+                  "reference": "Medication/61752011000036103",
+                  "display": "codeine + pseudoephedrine"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/medication_type",
+                  "code": "UPD",
+                  "display": "Unbranded product with no strengths or form"
+                }
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                "extension": [
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                    "valueReference": {
+                      "reference": "Medication/21821011000036104",
+                      "display": "codeine"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                    "valueCoding": {
+                      "system": "http://hl7.org/fhir/medication_type",
+                      "code": "UPD",
+                      "display": "Unbranded product with no strengths or form"
+                    }
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                    "valueCode": "active"
+                  },
+                  {
+                    "url":
+                      "http://medserve.online/fhir/StructureDefinition/lastModified",
+                    "valueDate": "2014-06-30"
+                  }
+                ]
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                "valueCode": "active"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/lastModified",
+                "valueDate": "2014-06-30"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/medication_type",
+              "code": "UPD",
+              "display": "Unbranded product with no strengths or form"
+            }
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+            "extension": [
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+                "valueUri": "http://snomed.info/sct"
+              },
+              {
+                "url":
+                  "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+                "valueString":
+                  "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228"
+              }
+            ]
+          },
+          {
+            "url":
+              "http://medserve.online/fhir/StructureDefinition/lastModified",
+            "valueDate": "2016-10-31"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "61814011000036100",
+              "display":
+                "ammonium chloride + codeine + guaifenesin + phenylephrine + pseudoephedrine"
+            }
+          ]
+        },
+        "status": "active",
+        "isBrand": false,
+        "ingredient": [
+          {
+            "itemReference": {
+              "reference": "Substance/31323011000036100",
+              "display": "guaifenesin"
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/30734011000036106",
+              "display": "ammonium chloride"
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/2525011000036101",
+              "display": "pseudoephedrine"
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/2476011000036101",
+              "display": "phenylephrine"
+            }
+          },
+          {
+            "itemReference": {
+              "reference": "Substance/1978011000036103",
+              "display": "codeine"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

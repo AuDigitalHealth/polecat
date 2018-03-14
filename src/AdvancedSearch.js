@@ -17,6 +17,7 @@ class AdvancedSearch extends Component {
     routedQuery: PropTypes.string,
     currentQuery: PropTypes.string,
     results: PropTypes.array,
+    allResults: PropTypes.array,
     bundle: PropTypes.shape({ total: PropTypes.number }),
     loading: PropTypes.bool,
     history: PropTypes.any.isRequired,
@@ -24,6 +25,7 @@ class AdvancedSearch extends Component {
     onToggleAdvanced: PropTypes.func,
     onNextClick: PropTypes.func,
     onPreviousClick: PropTypes.func,
+    onDownloadClick: PropTypes.func,
     onSelectResult: PropTypes.func,
     onError: PropTypes.func,
   }
@@ -34,6 +36,7 @@ class AdvancedSearch extends Component {
     this.handleToggleAdvanced = this.handleToggleAdvanced.bind(this)
     this.handleNextClick = this.handleNextClick.bind(this)
     this.handlePreviousClick = this.handlePreviousClick.bind(this)
+    this.handleDownloadClick = this.handleDownloadClick.bind(this)
     this.handleSelectResult = this.handleSelectResult.bind(this)
     this.handleError = this.handleError.bind(this)
   }
@@ -58,6 +61,11 @@ class AdvancedSearch extends Component {
     if (onPreviousClick) onPreviousClick()
   }
 
+  handleDownloadClick() {
+    const { onDownloadClick } = this.props
+    if (onDownloadClick) onDownloadClick()
+  }
+
   handleSelectResult(result) {
     const { onSelectResult, history } = this.props
     if (onSelectResult) onSelectResult(result)
@@ -70,7 +78,14 @@ class AdvancedSearch extends Component {
   }
 
   render() {
-    const { routedQuery, currentQuery, bundle, results, loading } = this.props
+    const {
+      routedQuery,
+      currentQuery,
+      bundle,
+      results,
+      allResults,
+      loading,
+    } = this.props
     // If the query has been updated within state, use that over props.
     const query =
       currentQuery === null || currentQuery === undefined
@@ -103,10 +118,13 @@ class AdvancedSearch extends Component {
           <div className="search-advanced-results">
             <SearchSummary
               totalResults={bundle.total}
+              allResults={allResults}
               nextLink={nextLinkFromBundle(bundle)}
               previousLink={previousLinkFromBundle(bundle)}
+              loading={loading}
               onNextClick={this.handleNextClick}
               onPreviousClick={this.handlePreviousClick}
+              onDownloadClick={this.handleDownloadClick}
             />
             <FullSearchResults
               query={query}

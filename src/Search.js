@@ -4,6 +4,8 @@ import http, { CancelToken } from 'axios'
 import throttle from 'lodash.throttle'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+import pick from 'lodash.pick'
+import isEqual from 'lodash.isequal'
 
 import BasicSearch from './BasicSearch.js'
 import AdvancedSearch from './AdvancedSearch.js'
@@ -49,6 +51,7 @@ export class Search extends Component {
     this.handleToggleAdvanced = this.handleToggleAdvanced.bind(this)
     this.handleNextClick = this.handleNextClick.bind(this)
     this.handlePreviousClick = this.handlePreviousClick.bind(this)
+    this.handleDownloadClick = this.handleDownloadClick.bind(this)
     this.handleQuickSearchClosed = this.handleQuickSearchClosed.bind(this)
     this.handleError = this.handleError.bind(this)
   }
@@ -56,17 +59,7 @@ export class Search extends Component {
   // Gets the search results using either a search query string or a search URL,
   // then updates the state with the results.
   updateResults({ fhirServer, query, url }) {
-    const search = this,
-      updateFn =
-        fhirServer && query
-          ? async function() {
-              return search.getSearchResultsFromQuery(fhirServer, query)
-            }
-          : async function() {
-              return search.getSearchResultsFromUrl(url)
-            }
-    if (!((fhirServer && query) || url))
-      throw new Error('Must supply fhirServer and query, or url.')
+    const updateFn = this.getUpdateFn({ fhirServer, query, url })
     this.setLoadingStatus(true)
     updateFn()
       .then(bundle => this.parseSearchResults(bundle))
@@ -80,6 +73,54 @@ export class Search extends Component {
       .then(() => this.setLoadingStatus(false))
       .catch(error => this.handleError(error))
       .then(() => this.setLoadingStatus(false))
+  }
+
+  updateAllResults({ fhirServer, query, url }) {
+    this.setLoadingStatus(true)
+    this.getAllResults({ fhirServer, query, url })
+      .then(results =>
+        this.setState(() => ({
+          allResults: results,
+        })),
+      )
+      .then(() => this.setLoadingStatus(false))
+      .catch(error => {
+        this.handleError(error)
+        this.setLoadingStatus(false)
+      })
+  }
+
+  getAllResults({ fhirServer, query, url, acc = [] }) {
+    return new Promise(resolve => {
+      const updateFn = this.getUpdateFn({ fhirServer, query, url })
+      updateFn()
+        .then(bundle => this.parseSearchResults(bundle))
+        .then(parsed => {
+          const nextLink = parsed.bundle.link.find(l => l.relation === 'next')
+          if (nextLink) {
+            this.getAllResults({
+              fhirServer,
+              url: nextLink.url,
+              acc: acc.concat(parsed.results),
+            }).then(nextBundle => resolve(nextBundle))
+          } else resolve(acc.concat(parsed.results))
+        })
+    })
+  }
+
+  getUpdateFn({ fhirServer, query, url }) {
+    const search = this,
+      updateFn =
+        fhirServer && query
+          ? async function() {
+              return search.getSearchResultsFromQuery(fhirServer, query)
+            }
+          : async function() {
+              return search.getSearchResultsFromUrl(url)
+            }
+    if (!((fhirServer && query) || url))
+      throw new Error('Must supply fhirServer and query, or url.')
+    return updateFn
   }
 
   async getSearchResultsFromQuery(fhirServer, query) {
@@ -173,6 +214,12 @@ export class Search extends Component {
     if (previousLink) this.handleLinkNavigation(previousLink)
   }
 
+  handleDownloadClick() {
+    const { fhirServer } = this.props,
+      { query } = this.state
+    this.updateAllResults({ fhirServer, query })
+  }
+
   handleLinkNavigation(url) {
     this.updateResults({ url })
   }
@@ -235,6 +282,22 @@ export class Search extends Component {
     if (quickSearchShouldClose) this.setState({ quickSearchShouldClose: true })
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    const triggerProps = ['query', 'focusUponMount', 'loading'],
+      triggerState = [
+        'query',
+        'advanced',
+        'results',
+        'allResults',
+        'bundle',
+        'quickSearchShouldClose',
+      ]
+    return (
+      !isEqual(pick(nextProps, triggerProps), pick(this.props, triggerProps)) ||
+      !isEqual(pick(nextState, triggerState), pick(this.state, triggerState))
+    )
+  }
+
   render() {
     const { results } = this.state
     return (
@@ -250,6 +313,7 @@ export class Search extends Component {
       query: queryFromState,
       advanced,
       results,
+      allResults,
       bundle,
       quickSearchShouldClose,
     } = this.state
@@ -258,12 +322,14 @@ export class Search extends Component {
         routedQuery={queryFromProps}
         currentQuery={queryFromState}
         results={results}
+        allResults={allResults}
         bundle={bundle}
         loading={loading}
         onQueryUpdate={this.handleQueryUpdate}
         onToggleAdvanced={this.handleToggleAdvanced}
         onNextClick={this.handleNextClick}
         onPreviousClick={this.handlePreviousClick}
+        onDownloadClick={this.handleDownloadClick}
         onSelectResult={this.handleSelectResult}
         onError={this.handleError}
       />

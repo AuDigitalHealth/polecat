@@ -24,6 +24,7 @@ an instance of [Medserve](https://medserve.online).
 * The AMT Product Model view can be panned around by clicking and dragging,
   using scroll wheels or a trackpad. The view can be re-centred by
   double-clicking.
+* Control visibility of each type of concept. Settings are remembered once set.
 * Perform an advanced search, using the following fields:
   * Contains text - returns concepts which contain the supplied text within the
     preferred term.
@@ -47,7 +48,8 @@ an instance of [Medserve](https://medserve.online).
     CTPP, TPP, TPUU, MPP, MPUU or MP.
   * Status - Narrow the search to include only concepts with one of the selected
     statuses, i.e. Active, Inactive or Entered in Error.
-* Control visibility of each type of concept. Settings are remembered once set.
+* Download the results of an advanced search in TSV (tab-separated values)
+  format.
 * Can be configured to point to any Medserve instance, see
   [Configuration](#configuration).
 * Can be configured to report errors to [Sentry](https://sentry.io).

@@ -1,0 +1,305 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search should retrieve all results on download click 1`] = `
+Array [
+  Object {
+    "coding": Array [
+      Object {
+        "code": "61786011000036109",
+        "display": "chlorphenamine + phenylephrine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "61803011000036104",
+        "display": "dextromethorphan + phenylephrine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "61800011000036107",
+        "display": "phenylephrine + paracetamol",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "61764011000036104",
+        "display": "paracetamol + phenylephrine + dextromethorphan",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "21375011000036101",
+        "display": "prednisolone acetate + phenylephrine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "61726011000036103",
+        "display": "brompheniramine + phenylephrine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "61722011000036102",
+        "display": "brompheniramine + phenylephrine + dextromethorphan",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "61802011000036106",
+        "display": "phenylephrine + paracetamol + chlorphenamine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "61725011000036105",
+        "display": "paracetamol + codeine + phenylephrine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "61724011000036106",
+        "display": "guaifenesin + phenylephrine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "61754011000036107",
+        "display": "paracetamol + phenylephrine + guaifenesin",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "61812011000036109",
+        "display": "diphenhydramine + phenylephrine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "74988011000036106",
+        "display": "lidocaine (lignocaine) + phenylephrine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "926976011000036103",
+        "display": "phenylephrine + pholcodine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "879421000168105",
+        "display": "zinc sulfate + phenylephrine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "61788011000036108",
+        "display": "pholcodine + phenylephrine + chlorphenamine + ammonium chloride",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "85071011000036108",
+        "display": "phenylephrine + ibuprofen",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1067911000168106",
+        "display": "paracetamol + codeine + phenylephrine + chlorphenamine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "776541000168109",
+        "display": "bromhexine + phenylephrine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "69881011000036108",
+        "display": "phenylephrine + chlorhexidine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "61815011000036101",
+        "display": "paracetamol + dextromethorphan + phenylephrine + chlorphenamine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "61756011000036104",
+        "display": "ascorbic acid + aspirin + chlorphenamine + phenylephrine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "61814011000036100",
+        "display": "ammonium chloride + codeine + guaifenesin + phenylephrine + pseudoephedrine",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
+    "status": "active",
+    "type": "MP",
+  },
+]
+`;

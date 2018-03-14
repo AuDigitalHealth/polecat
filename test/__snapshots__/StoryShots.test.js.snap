@@ -35,6 +35,7 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
   >
     <SearchSummary
       nextLink={null}
+      onDownloadClick={[Function]}
       onNextClick={[Function]}
       onPreviousClick={[Function]}
       previousLink={null}
@@ -179,6 +180,7 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
   >
     <SearchSummary
       nextLink={null}
+      onDownloadClick={[Function]}
       onNextClick={[Function]}
       onPreviousClick={[Function]}
       previousLink={null}
@@ -5111,6 +5113,7 @@ exports[`Storyshots Search With a query 1`] = `
 >
   <withRouter(AdvancedSearch)
     loading={false}
+    onDownloadClick={[Function]}
     onError={[Function]}
     onNextClick={[Function]}
     onPreviousClick={[Function]}
@@ -5291,32 +5294,39 @@ exports[`Storyshots SearchSummary With next and previous links 1`] = `
 <div
   className="search-summary"
 >
-  <div
-    className="pagination-total"
-  >
-    350
-     matches
+  <div>
+    <div
+      className="pagination-total"
+    >
+      350
+       matches
+    </div>
+    <DownloadResults
+      onClick={[Function]}
+    />
   </div>
-  <Icon
-    alt="Previous page of results"
-    className="pagination-previous"
-    height={21}
-    hoverType="previous-active"
-    onClick={[Function]}
-    title="Previous page"
-    type="previous"
-    width={21}
-  />
-  <Icon
-    alt="Next page of results"
-    className="pagination-next"
-    height={21}
-    hoverType="next-active"
-    onClick={[Function]}
-    title="Next page"
-    type="next"
-    width={21}
-  />
+  <div>
+    <Icon
+      alt="Previous page of results"
+      className="pagination-previous"
+      height={21}
+      hoverType="previous-active"
+      onClick={[Function]}
+      title="Previous page"
+      type="previous"
+      width={21}
+    />
+    <Icon
+      alt="Next page of results"
+      className="pagination-next"
+      height={21}
+      hoverType="next-active"
+      onClick={[Function]}
+      title="Next page"
+      type="next"
+      width={21}
+    />
+  </div>
 </div>
 `;
 
@@ -5324,32 +5334,39 @@ exports[`Storyshots SearchSummary With next link 1`] = `
 <div
   className="search-summary"
 >
-  <div
-    className="pagination-total"
-  >
-    350
-     matches
+  <div>
+    <div
+      className="pagination-total"
+    >
+      350
+       matches
+    </div>
+    <DownloadResults
+      onClick={[Function]}
+    />
   </div>
-  <Icon
-    alt="Previous page of results"
-    className="pagination-previous disabled"
-    height={21}
-    hoverType={null}
-    onClick={null}
-    title="Previous page"
-    type="previous"
-    width={21}
-  />
-  <Icon
-    alt="Next page of results"
-    className="pagination-next"
-    height={21}
-    hoverType="next-active"
-    onClick={[Function]}
-    title="Next page"
-    type="next"
-    width={21}
-  />
+  <div>
+    <Icon
+      alt="Previous page of results"
+      className="pagination-previous disabled"
+      height={21}
+      hoverType={null}
+      onClick={null}
+      title="Previous page"
+      type="previous"
+      width={21}
+    />
+    <Icon
+      alt="Next page of results"
+      className="pagination-next"
+      height={21}
+      hoverType="next-active"
+      onClick={[Function]}
+      title="Next page"
+      type="next"
+      width={21}
+    />
+  </div>
 </div>
 `;
 
@@ -5357,32 +5374,39 @@ exports[`Storyshots SearchSummary With no total results 1`] = `
 <div
   className="search-summary"
 >
-  <div
-    className="pagination-total"
-  >
-    0
-     matches
+  <div>
+    <div
+      className="pagination-total"
+    >
+      0
+       matches
+    </div>
+    <DownloadResults
+      onClick={[Function]}
+    />
   </div>
-  <Icon
-    alt="Previous page of results"
-    className="pagination-previous disabled"
-    height={21}
-    hoverType={null}
-    onClick={null}
-    title="Previous page"
-    type="previous"
-    width={21}
-  />
-  <Icon
-    alt="Next page of results"
-    className="pagination-next disabled"
-    height={21}
-    hoverType={null}
-    onClick={null}
-    title="Next page"
-    type="next"
-    width={21}
-  />
+  <div>
+    <Icon
+      alt="Previous page of results"
+      className="pagination-previous disabled"
+      height={21}
+      hoverType={null}
+      onClick={null}
+      title="Previous page"
+      type="previous"
+      width={21}
+    />
+    <Icon
+      alt="Next page of results"
+      className="pagination-next disabled"
+      height={21}
+      hoverType={null}
+      onClick={null}
+      title="Next page"
+      type="next"
+      width={21}
+    />
+  </div>
 </div>
 `;
 
@@ -5390,32 +5414,39 @@ exports[`Storyshots SearchSummary With previous link 1`] = `
 <div
   className="search-summary"
 >
-  <div
-    className="pagination-total"
-  >
-    350
-     matches
+  <div>
+    <div
+      className="pagination-total"
+    >
+      350
+       matches
+    </div>
+    <DownloadResults
+      onClick={[Function]}
+    />
   </div>
-  <Icon
-    alt="Previous page of results"
-    className="pagination-previous"
-    height={21}
-    hoverType="previous-active"
-    onClick={[Function]}
-    title="Previous page"
-    type="previous"
-    width={21}
-  />
-  <Icon
-    alt="Next page of results"
-    className="pagination-next disabled"
-    height={21}
-    hoverType={null}
-    onClick={null}
-    title="Next page"
-    type="next"
-    width={21}
-  />
+  <div>
+    <Icon
+      alt="Previous page of results"
+      className="pagination-previous"
+      height={21}
+      hoverType="previous-active"
+      onClick={[Function]}
+      title="Previous page"
+      type="previous"
+      width={21}
+    />
+    <Icon
+      alt="Next page of results"
+      className="pagination-next disabled"
+      height={21}
+      hoverType={null}
+      onClick={null}
+      title="Next page"
+      type="next"
+      width={21}
+    />
+  </div>
 </div>
 `;
 
@@ -5423,32 +5454,39 @@ exports[`Storyshots SearchSummary With total results 1`] = `
 <div
   className="search-summary"
 >
-  <div
-    className="pagination-total"
-  >
-    5,345
-     matches
+  <div>
+    <div
+      className="pagination-total"
+    >
+      5,345
+       matches
+    </div>
+    <DownloadResults
+      onClick={[Function]}
+    />
   </div>
-  <Icon
-    alt="Previous page of results"
-    className="pagination-previous disabled"
-    height={21}
-    hoverType={null}
-    onClick={null}
-    title="Previous page"
-    type="previous"
-    width={21}
-  />
-  <Icon
-    alt="Next page of results"
-    className="pagination-next disabled"
-    height={21}
-    hoverType={null}
-    onClick={null}
-    title="Next page"
-    type="next"
-    width={21}
-  />
+  <div>
+    <Icon
+      alt="Previous page of results"
+      className="pagination-previous disabled"
+      height={21}
+      hoverType={null}
+      onClick={null}
+      title="Previous page"
+      type="previous"
+      width={21}
+    />
+    <Icon
+      alt="Next page of results"
+      className="pagination-next disabled"
+      height={21}
+      hoverType={null}
+      onClick={null}
+      title="Next page"
+      type="next"
+      width={21}
+    />
+  </div>
 </div>
 `;
 

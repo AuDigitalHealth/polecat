@@ -25,7 +25,9 @@ class Loading extends Component {
     // Unset any pending timeout.
     this.unsetLoading()
     let func = function() {
-      this.setState({ loading: true })
+      this.setState(() => ({
+        loading: true,
+      }))
     }
     func = func.bind(this)
     const timeoutId = setTimeout(func, this.props.delay)

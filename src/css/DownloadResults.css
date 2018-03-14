@@ -1,0 +1,8 @@
+.download-results {
+  cursor: pointer;
+}
+
+.download-results.disabled {
+  opacity: 0.3;
+  cursor: default;
+}
