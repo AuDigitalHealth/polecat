@@ -33,7 +33,7 @@ import { visibilityConfig } from './config.js'
 
 import './css/AmtProductModel.css'
 
-class AmtProductModel extends Component {
+export class AmtProductModel extends Component {
   static propTypes = {
     nodes: PropTypes.arrayOf(
       PropTypes.shape({
@@ -189,7 +189,7 @@ class AmtProductModel extends Component {
       omit(node, 'focused', 'fx', 'fy', 'vx', 'vy'),
     )
     // Remove any positioning information from the incoming nodes.
-    nodes = nodes.map(node => omit(node, 'x', 'y', 'vx', 'vy'))
+    nodes = nodes.map(node => omit(node, 'fx', 'fy', 'x', 'y', 'vx', 'vy'))
     // Merge new nodes with old nodes.
     let newNodes = [oldNodes, nodes].reduce(mergeConcepts)
     // Remove any nodes that are not present in the new set of nodes.
