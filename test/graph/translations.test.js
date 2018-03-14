@@ -88,4 +88,14 @@ describe('translateToAmt', () => {
     const result = translateToAmt(concepts5, { filters: ['not-replaced-by'] })
     expect(result).toMatchSnapshot()
   })
+
+  it('should apply the "not replaced" filter exclusively', () => {
+    const result = translateToAmt(concepts5, {
+      filters: ['not-replaced-by', 'mp'],
+    })
+    const replacementMp = result.concepts.find(concept =>
+      concept.coding.find(c => c.code === '44924011000036104'),
+    )
+    expect(replacementMp).not.toBe(undefined)
+  })
 })

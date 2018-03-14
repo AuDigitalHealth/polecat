@@ -80,12 +80,12 @@ export const filters = {
       r => r.type === 'replaces' && r.target === idForNode(concept),
     ),
   'replaced-by': (concept, concepts) =>
-    // Filter any concept that is the target of a `replaces` relationship.
+    // Filter any concept that is the target of a `replaced-by` relationship.
     !concepts.relationships.find(
       r => r.type === 'replaced-by' && r.target === idForNode(concept),
     ),
   'not-replaced-by': (concept, concepts) =>
-    // Filter any concepts that are not the target of a `replaces` relationship.
+    // Filter any concepts that are not the target of a `replaced-by` relationship.
     concepts.relationships.find(
       r => r.type === 'replaced-by' && r.target === idForNode(concept),
     ),
@@ -94,6 +94,10 @@ export const filters = {
 // Filters a concepts object ({ concepts, relationships }) using a set of
 // pre-defined filters.
 const applyFilters = (concepts, filtersToApply) => {
+  // The `not-replaced-by` filter must always be applied exclusively, to prevent
+  // replacement concepts being filtered out by the other filter types.
+  if (filtersToApply.includes('not-replaced-by'))
+    filtersToApply = ['not-replaced-by']
   let filteredConcepts = concepts.concepts
   for (const filter of filtersToApply) {
     if (filters[filter]) {
