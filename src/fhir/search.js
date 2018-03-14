@@ -161,14 +161,18 @@ const extractQueryText = query =>
 // Defaults the `status` parameter within a search object when it has not been
 // specified.
 const applyDefaultStatus = search =>
-  searchIncludesParam(search, 'status') || searchIncludesParam(search, 'id')
+  searchIncludesParam(search, 'status')
     ? search
-    : search.concat([['status', 'active']])
+    : search.concat([['status', 'active,inactive,entered-in-error']])
+// const applyDefaultStatus = search => search
 
 // Omits the default `status` value when constructing a path from a search
 // object.
 const stripDefaultStatusFromSearch = search =>
-  search.filter(p => !(p[0] === 'status' && p[1] === 'active'))
+  search.filter(
+    p => !(p[0] === 'status' && p[1] === 'active,inactive,entered-in-error'),
+  )
+// const stripDefaultStatusFromSearch = search => search
 
 // Return the GET parameter for a specified Medication search tag and value.
 const getMedicationParamFor = (param, value) => {
