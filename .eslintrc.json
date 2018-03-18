@@ -24,7 +24,6 @@
   "rules": {
     "no-console": "warn",
     "no-debugger": "warn",
-    "jest/no-focused-tests": "warn",
-    "react/no-unused-prop-types": "warn"
+    "jest/no-focused-tests": "warn"
   }
 }
