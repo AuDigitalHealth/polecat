@@ -31,15 +31,21 @@ class DownloadResults extends Component {
   }
 
   downloadResults(results) {
-    let tsv = 'SCTID\tPreferred term\tAMT concept type\n'
+    let tsv = 'SCTID\tPreferred term\tAMT concept type\tView in browser\n'
     for (const result of results) {
       const code = codingToSnomedCode(result.coding),
         display = codingToSnomedDisplay(result.coding),
-        type = result.type
-      tsv += `${code}\t${display}\t${type}\n`
+        type = result.type,
+        browserLink = `${this.getBrowserUrl()}/Medication/${code}`
+      tsv += `${code}\t${display}\t${type}\t${browserLink}\n`
     }
     const blob = new Blob([tsv], { type: 'text/tab-separated-values' })
     FileSaver.saveAs(blob, 'results.tsv')
+  }
+
+  getBrowserUrl() {
+    const { protocol, host } = window.location
+    return `${protocol}//${host}`
   }
 
   handleClick(event) {

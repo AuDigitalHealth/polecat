@@ -154,3 +154,6 @@ services:
 * Polecat must communicate to Medserve via HTTPS. This is because browser
   security policy will not allow a secure page to make requests to a server over
   plain HTTP.
+* Polecat currently only supports deployment at the server root. For example,
+  https://browse.medserve.online would be ok, while
+  https://medserve.online/browse would not be supported.

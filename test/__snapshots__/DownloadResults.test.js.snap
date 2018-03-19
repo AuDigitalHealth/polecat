@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DownloadResults should download results when they are passed through props 1`] = `
-"SCTID	Preferred term	AMT concept type
-725751000168107	PKU Cooler 20 Green oral liquid solution, 174 mL pouch	TPUU
-710331000168102	PKU Air 20 Red (Berry Blast) oral liquid solution, 174 mL pouch	TPUU
+"SCTID	Preferred term	AMT concept type	View in browser
+725751000168107	PKU Cooler 20 Green oral liquid solution, 174 mL pouch	TPUU	http://localhost/Medication/725751000168107
+710331000168102	PKU Air 20 Red (Berry Blast) oral liquid solution, 174 mL pouch	TPUU	http://localhost/Medication/710331000168102
 "
 `;
