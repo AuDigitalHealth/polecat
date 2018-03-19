@@ -23,6 +23,8 @@ export class MedicationSearchField extends Component {
     fhirServer: PropTypes.string.isRequired,
     codingValue: PropTypes.string,
     textValue: PropTypes.string,
+    // A function that takes a query as an argument, and returns a path that can
+    // be used for executing that query on the server.
     searchPath: PropTypes.func.isRequired,
     onCodingChange: PropTypes.func,
     onTextChange: PropTypes.func,
@@ -240,7 +242,7 @@ export class MedicationSearchField extends Component {
           onKeyDown={this.handleKeyDown}
           onClick={this.handleClick}
         />
-        {quickSearchOpen ? (
+        {quickSearchOpen && textValue ? (
           <QuickSearchResults
             query={query}
             results={results}

@@ -9,6 +9,8 @@ import './css/QuickSearchResults.css'
 
 class QuickSearchResults extends Component {
   static propTypes = {
+    // TODO: Work out whether this prop is actually used or not. What is this in
+    // relation to `results.query`?
     query: PropTypes.string,
     results: PropTypes.arrayOf(
       PropTypes.shape({
