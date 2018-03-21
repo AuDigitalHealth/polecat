@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import TextField from './TextField.js'
 import ConceptTypeToggle from './ConceptTypeToggle.js'
 import MedicationSearchField from './MedicationSearchField.js'
+import DateRangeField from './DateRangeField.js'
 import Icon from './Icon.js'
 import { paramsFromQuery, queryFromSearchObject } from './fhir/search.js'
 import { isValidSctid } from './snomed/sctid.js'
@@ -56,10 +57,9 @@ class SearchForm extends Component {
     this.setState(() => ({ search: {} }), this.handleSearchUpdate)
   }
 
-  handleChange(param, value) {
+  handleChange(change) {
     const { search } = this.state
-    const updatedSearch = { ...search, ...{ [param]: value } }
-    this.setState(() => ({ search: updatedSearch }))
+    this.setState(() => ({ search: { ...search, ...change } }))
   }
 
   handleCodingChange(param, value) {
@@ -134,7 +134,7 @@ class SearchForm extends Component {
         <TextField
           value={search.text}
           label="Contains text"
-          onChange={value => this.handleChange('text', value)}
+          onChange={value => this.handleChange({ text: value })}
           focusUponMount
         />
         <MedicationSearchField
@@ -143,7 +143,9 @@ class SearchForm extends Component {
           label="Ingredient"
           searchPath={this.ingredientSearch}
           onCodingChange={value => this.handleCodingChange('ingredient', value)}
-          onTextChange={value => this.handleChange('ingredient-text', value)}
+          onTextChange={value =>
+            this.handleChange({ 'ingredient-text': value })
+          }
           onClear={() => this.handleClear('ingredient', 'ingredient-text')}
           onError={this.handleError}
         />
@@ -153,34 +155,34 @@ class SearchForm extends Component {
           label="Package item"
           searchPath={this.packageItemSearch}
           onCodingChange={value => this.handleCodingChange('package', value)}
-          onTextChange={value => this.handleChange('package-text', value)}
+          onTextChange={value => this.handleChange({ 'package-text': value })}
           onClear={() => this.handleClear('package', 'package-text')}
           onError={this.handleError}
         />
         <TextField
           value={search['form-text']}
           label="Form"
-          onChange={value => this.handleChange('form-text', value)}
+          onChange={value => this.handleChange({ 'form-text': value })}
         />
         <TextField
           value={search['container-text']}
           label="Container"
-          onChange={value => this.handleChange('container-text', value)}
+          onChange={value => this.handleChange({ 'container-text': value })}
         />
         <TextField
           value={search['brand-text']}
           label="Brand"
-          onChange={value => this.handleChange('brand-text', value)}
+          onChange={value => this.handleChange({ 'brand-text': value })}
         />
         <TextField
           value={search.pbs}
           label="PBS code"
-          onChange={value => this.handleChange('pbs', value)}
+          onChange={value => this.handleChange({ pbs: value })}
         />
         <TextField
           value={search.artg}
           label="ARTG ID"
-          onChange={value => this.handleChange('artg', value)}
+          onChange={value => this.handleChange({ artg: value })}
         />
         <MedicationSearchField
           codingValue={search['parent']}
@@ -188,7 +190,7 @@ class SearchForm extends Component {
           label="Parent"
           searchPath={this.parentOrAncestorSearch}
           onCodingChange={value => this.handleCodingChange('parent', value)}
-          onTextChange={value => this.handleChange('parent-text', value)}
+          onTextChange={value => this.handleChange({ 'parent-text': value })}
           onClear={() => this.handleClear('parent', 'parent-text')}
           onError={this.handleError}
         />
@@ -198,21 +200,32 @@ class SearchForm extends Component {
           label="Ancestor"
           searchPath={this.parentOrAncestorSearch}
           onCodingChange={value => this.handleCodingChange('ancestor', value)}
-          onTextChange={value => this.handleChange('ancestor-text', value)}
+          onTextChange={value => this.handleChange({ 'ancestor-text': value })}
           onClear={() => this.handleClear('ancestor', 'ancestor-text')}
           onError={this.handleError}
+        />
+        <DateRangeField
+          label="Last modified"
+          startDate={search['modified-from']}
+          endDate={search['modified-to']}
+          onChange={value =>
+            this.handleChange({
+              'modified-from': value.startDate,
+              'modified-to': value.endDate,
+            })
+          }
         />
         <ConceptTypeToggle
           types={amtConceptTypes.filter(t => t !== 'substance' && t !== 'TP')}
           value={search.type ? search.type.split(',') : null}
           label="Type"
-          onChange={value => this.handleChange('type', value.join(','))}
+          onChange={value => this.handleChange({ type: value.join(',') })}
         />
         <ConceptTypeToggle
           types={['active', 'inactive', 'entered-in-error']}
           value={search.status ? search.status.split(',') : null}
           label="Status"
-          onChange={value => this.handleChange('status', value.join(','))}
+          onChange={value => this.handleChange({ status: value.join(',') })}
         />
         <a className="clear-form" onClick={this.clearSearch}>
           Clear all

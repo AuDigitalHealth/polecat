@@ -5243,6 +5243,20 @@ exports[`Storyshots SearchForm With a query 1`] = `
     onTextChange={[Function]}
     searchPath={[Function]}
   />
+  <OnClickOutside(DateRangeField)
+    eventTypes={
+      Array [
+        "mousedown",
+        "touchstart",
+      ]
+    }
+    excludeScrollbar={false}
+    label="Last modified"
+    onChange={[Function]}
+    outsideClickIgnoreClass="ignore-react-onclickoutside"
+    preventDefault={false}
+    stopPropagation={false}
+  />
   <ConceptTypeToggle
     label="Type"
     onChange={[Function]}

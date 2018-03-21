@@ -17,6 +17,28 @@
   display: block;
 }
 
+.search-form .date-range-field {
+  margin-bottom: 11px;
+  position: relative;
+}
+
+.search-form .date-range-field label > span {
+  font-size: 14px;
+  min-width: 103px;
+  padding: 4px;
+  align-self: stretch;
+}
+
+.search-form .date-range-field .date-range-flyout {
+  position: absolute;
+  top: 0;
+  left: 274px;
+  width: 560px;
+  border-radius: 0 6px 6px 6px;
+  box-shadow: 5px 5px 50px 1px rgb(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
 .search-form .concept-type-toggle {
   margin-bottom: 5px;
 }

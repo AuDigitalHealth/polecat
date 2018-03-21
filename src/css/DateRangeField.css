@@ -1,0 +1,40 @@
+.date-range-field {
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.date-range-field > label {
+  display: flex;
+}
+
+.date-range-field > label span {
+  position: relative;
+  top: 1px;
+}
+
+.date-range-input {
+  display: inline-block;
+  border: 1px solid #666;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 146px;
+  padding: 0 3px;
+  cursor: pointer;
+}
+
+.date-range-input input {
+  border: 0;
+  padding: 3px;
+  background: transparent;
+  width: 64px;
+  height: 17px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.date-range-input input:disabled {
+  color: black;
+}
+
+.date-range-input input:focus {
+  outline: none;
+}

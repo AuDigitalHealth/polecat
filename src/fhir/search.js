@@ -29,6 +29,8 @@ const availableMedParams = [
   'ingredient',
   'not-ingredient',
   'ingredient-text',
+  'modified-from',
+  'modified-to',
 ]
 
 const availableSubstanceParams = ['substance', 'substance-text']
@@ -224,6 +226,10 @@ const getMedicationParamFor = (param, value) => {
       return `ingredient:not=Substance/${codeFromCodeDisplay(value)}`
     case 'ingredient-text':
       return `ingredient:text=${value}`
+    case 'modified-from':
+      return `last-modified=ge${value}`
+    case 'modified-to':
+      return `last-modified=le${value}`
     case 'text':
       return `_text=${value}`
     default:

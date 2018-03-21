@@ -2409,7 +2409,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5:
+classnames@^2.2.1, classnames@^2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
@@ -6474,7 +6474,7 @@ module-deps@^4.0.8:
     through2 "^2.0.0"
     xtend "^4.0.0"
 
-moment@^2.20.1:
+moment@^2.10.6, moment@^2.20.1:
   version "2.21.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.21.0.tgz#2a114b51d2a6ec9e6d83cf803f838a878d8a023a"
 
@@ -7750,6 +7750,14 @@ react-color@^2.11.4:
     prop-types "^15.5.10"
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
+
+react-date-range@^0.9.4:
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/react-date-range/-/react-date-range-0.9.4.tgz#d97515545a28edc717b674e169a50a215d69ec15"
+  dependencies:
+    classnames "^2.2.1"
+    moment "^2.10.6"
+    prop-types "^15.5.10"
 
 react-datetime@^2.11.1:
   version "2.14.0"

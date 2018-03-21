@@ -42,8 +42,12 @@ an instance of [Medserve](https://medserve.online).
     item code.
   * ARTG ID - returns concepts which are mapped to a product listed on the
     [Australian Register of Therapeutic Goods](https://www.tga.gov.au/australian-register-therapeutic-goods).
-  * Parent - Returns concepts which are descendants of concepts that match the
+  * Parent - Returns concepts which are direct descendants of concepts that
+    match the supplied text or concept ID.
+  * Ancestor - Returns concepts which are descendants of concepts that match the
     supplied text or concept ID.
+  * Last modified - Returns concepts which have a last modified date within the
+    specified range.
   * Type - Narrow the search to only include a subset of concept types, i.e.
     CTPP, TPP, TPUU, MPP, MPUU or MP.
   * Status - Narrow the search to include only concepts with one of the selected

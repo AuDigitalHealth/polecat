@@ -93,6 +93,13 @@ describe('pathForQuery', () => {
       '/Medication?ingredient=Substance/73620011000036103&status=active,inactive,entered-in-error&_summary=true&_count=20',
     'ingredient:"73620011000036103|death adder antivenom" adder':
       '/Medication?ingredient=Substance/73620011000036103&status=active,inactive,entered-in-error&_text=adder&_summary=true&_count=20',
+    // Last modified
+    'modified-from:2017-12-01':
+      '/Medication?last-modified=ge2017-12-01&status=active,inactive,entered-in-error&_summary=true&_count=20',
+    'modified-to:2018-01-31':
+      '/Medication?last-modified=le2018-01-31&status=active,inactive,entered-in-error&_summary=true&_count=20',
+    'modified-from:2017-12-01 modified-to:2018-01-31':
+      '/Medication?last-modified=ge2017-12-01&last-modified=le2018-01-31&status=active,inactive,entered-in-error&_summary=true&_count=20',
   }
 
   for (const query in expectedResults) {
