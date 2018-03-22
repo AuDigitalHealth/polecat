@@ -16,9 +16,34 @@
   border: 1px solid #666;
   border-radius: 6px;
   font-size: 14px;
-  width: 146px;
+  width: 154px;
   padding: 0 3px;
   cursor: pointer;
+  height: 25px;
+  box-sizing: border-box;
+  transition: border-color border-width 0.3s;
+}
+
+.date-range-input:hover,
+.date-range-input.focused {
+  border-color: #3b6d8c;
+}
+
+.date-range-input.focused {
+  border-width: 2px;
+}
+
+.date-range-input.focused input {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.date-range-input.focused input:first-of-type {
+  padding-left: 2px;
+}
+
+.date-range-input.focused input:last-of-type {
+  padding-right: 2px;
 }
 
 .date-range-input input {

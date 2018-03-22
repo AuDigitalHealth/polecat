@@ -68,7 +68,12 @@ export class DateRangeField extends Component {
     const { datePickerOpen } = this.state
     return (
       <div className="date-range-picker">
-        <div className="date-range-input" onClick={this.toggleDatePickerOpen}>
+        <div
+          className={
+            datePickerOpen ? 'date-range-input focused' : 'date-range-input'
+          }
+          onClick={this.toggleDatePickerOpen}
+        >
           <input
             className="start-date"
             type="text"

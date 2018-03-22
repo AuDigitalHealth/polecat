@@ -1,6 +1,7 @@
 .search-advanced {
   padding: 0;
   display: flex;
+  overflow: hidden;
 }
 
 .search-advanced-form {
