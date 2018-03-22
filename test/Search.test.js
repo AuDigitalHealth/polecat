@@ -2,6 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
+import sinon from 'sinon'
 
 import { Search } from '../src/Search.js'
 import AdvancedSearch from '../src/AdvancedSearch.js'
@@ -53,6 +54,86 @@ describe('Search', () => {
         expect(advancedSearch.prop('allResults')).toMatchSnapshot()
         resolve()
       }, 50)
+    })
+  })
+
+  describe('request triggering', () => {
+    let httpSpy
+    beforeEach(() => (httpSpy = sinon.spy(axios, 'get')))
+    afterEach(() => httpSpy.restore())
+
+    it('should not make another request if sent the same query through props', () => {
+      const props = {
+        fhirServer: config.fhirServer,
+        history: {},
+        query: 'g',
+      }
+      mock
+        .onGet(`${props.fhirServer}/Medication?_text=g&_summary=true&_count=20`)
+        .reply(200, searchBundle1, {
+          'content-type': 'application/fhir+json',
+        })
+      const wrapper = shallow(<Search {...props} />)
+      return new Promise(resolve => {
+        setTimeout(() => {
+          wrapper.setProps({ loading: true, query: 'g' })
+          expect(httpSpy.callCount).toBe(1)
+          resolve()
+        }, 50)
+      })
+    })
+
+    it('should not make another request if sent the same query through onQueryUpdate', () => {
+      const props = {
+        fhirServer: config.fhirServer,
+        history: { push: jest.fn() },
+        query: 'g',
+      }
+      mock
+        .onGet(
+          `${
+            props.fhirServer
+          }/Medication?status=active,inactive,entered-in-error&_text=g&_summary=true&_count=20`,
+        )
+        .reply(200, searchBundle1, {
+          'content-type': 'application/fhir+json',
+        })
+      const wrapper = shallow(<Search {...props} />)
+      const onQueryUpdate = wrapper.find(AdvancedSearch).prop('onQueryUpdate')
+      return new Promise(resolve => {
+        setTimeout(() => {
+          onQueryUpdate('g')
+          expect(httpSpy.callCount).toBe(1)
+          resolve()
+        }, 50)
+      })
+    })
+
+    it('should not make another request if the same query comes through onQueryUpdate, then props', () => {
+      const props = {
+        fhirServer: config.fhirServer,
+        history: { push: jest.fn() },
+      }
+      mock
+        .onGet(
+          `${
+            props.fhirServer
+          }/Medication?status=active,inactive,entered-in-error&_text=g&_summary=true&_count=20`,
+        )
+        .reply(200, searchBundle1, {
+          'content-type': 'application/fhir+json',
+        })
+      const wrapper = shallow(<Search {...props} />)
+      wrapper.setState({ advanced: true })
+      const onQueryUpdate = wrapper.find(AdvancedSearch).prop('onQueryUpdate')
+      onQueryUpdate('g')
+      return new Promise(resolve => {
+        setTimeout(() => {
+          wrapper.setProps({ query: 'g' })
+          expect(httpSpy.callCount).toBe(1)
+          resolve()
+        }, 50)
+      })
     })
   })
 })

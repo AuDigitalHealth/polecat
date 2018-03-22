@@ -182,14 +182,15 @@ export class Search extends Component {
 
   handleQueryUpdate(query) {
     const { fhirServer } = this.props,
-      { cancelRequest } = this.state
+      { cancelRequest } = this.state,
+      queryDiffers = query !== this.state.query
     // Cancel any outstanding search requests, we will update to match the
     // results to this search now or when the throttle period renews.
     if (cancelRequest) cancelRequest()
     this.setState(
       () => ({ query }),
       () => {
-        if (query) {
+        if (query && queryDiffers) {
           const { advanced } = this.state
           this.throttledUpdateResults({ fhirServer, query })
           if (advanced) {
@@ -269,13 +270,18 @@ export class Search extends Component {
 
   componentWillReceiveProps(nextProps) {
     const { fhirServer, query, quickSearchShouldClose } = nextProps
-    const { advanced } = this.state
+    const { advanced, cancelRequest } = this.state
     if (this.props.fhirServer === fhirServer && this.props.query === query) {
       return
     }
     if (query) {
       this.setState(() => ({ advanced: true }))
-      this.updateResults({ fhirServer, query })
+      // Cancel any outstanding search requests, we will update to match the
+      // results to this search now or when the throttle period renews.
+      if (cancelRequest) cancelRequest()
+      // Skip the search request if the query is the same as the previous one
+      // stored in state.
+      if (query !== this.state.query) this.updateResults({ fhirServer, query })
     } else if (advanced === true) {
       this.setState(() => ({ advanced: false }))
     }
