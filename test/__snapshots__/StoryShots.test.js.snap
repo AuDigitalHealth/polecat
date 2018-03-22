@@ -5270,7 +5270,16 @@ exports[`Storyshots SearchForm With a query 1`] = `
         "MP",
       ]
     }
-    value={null}
+    value={
+      Array [
+        "CTPP",
+        "TPP",
+        "TPUU",
+        "MPP",
+        "MPUU",
+        "MP",
+      ]
+    }
   />
   <ConceptTypeToggle
     label="Status"
@@ -5282,7 +5291,13 @@ exports[`Storyshots SearchForm With a query 1`] = `
         "entered-in-error",
       ]
     }
-    value={null}
+    value={
+      Array [
+        "active",
+        "inactive",
+        "entered-in-error",
+      ]
+    }
   />
   <a
     className="clear-form"

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import difference from 'lodash.difference'
 
 import TextField from './TextField.js'
 import ConceptTypeToggle from './ConceptTypeToggle.js'
@@ -25,6 +26,8 @@ class SearchForm extends Component {
     this.state = { search: {} }
     this.clearSearch = this.clearSearch.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.handleTypeChange = this.handleTypeChange.bind(this)
+    this.handleStatusChange = this.handleStatusChange.bind(this)
     this.handleClear = this.handleClear.bind(this)
     this.handleSearchUpdate = this.handleSearchUpdate.bind(this)
     this.handleError = this.handleError.bind(this)
@@ -53,6 +56,14 @@ class SearchForm extends Component {
       : `/Medication?medication-resource-type=BPG,brand,UPG,UPDSF,UPD&_text=${query}`
   }
 
+  searchableConceptTypes() {
+    return amtConceptTypes.filter(t => t !== 'substance' && t !== 'TP')
+  }
+
+  searchableConceptStatuses() {
+    return ['active', 'inactive', 'entered-in-error']
+  }
+
   clearSearch() {
     this.setState(() => ({ search: {} }), this.handleSearchUpdate)
   }
@@ -70,6 +81,18 @@ class SearchForm extends Component {
       ...{ [param]: value, [`${param}-text`]: undefined },
     }
     this.setState(() => ({ search: updatedSearch }), this.handleSearchUpdate)
+  }
+
+  handleTypeChange(value) {
+    if (difference(this.searchableConceptTypes(), value).length > 0)
+      this.handleChange({ type: value.join(',') })
+    else this.handleChange({ type: null })
+  }
+
+  handleStatusChange(value) {
+    if (difference(this.searchableConceptStatuses(), value).length > 0)
+      this.handleChange({ status: value.join(',') })
+    else this.handleChange({ status: null })
   }
 
   handleClear(...params) {
@@ -216,16 +239,22 @@ class SearchForm extends Component {
           }
         />
         <ConceptTypeToggle
-          types={amtConceptTypes.filter(t => t !== 'substance' && t !== 'TP')}
-          value={search.type ? search.type.split(',') : null}
+          types={this.searchableConceptTypes()}
+          value={
+            search.type ? search.type.split(',') : this.searchableConceptTypes()
+          }
           label="Type"
-          onChange={value => this.handleChange({ type: value.join(',') })}
+          onChange={this.handleTypeChange}
         />
         <ConceptTypeToggle
-          types={['active', 'inactive', 'entered-in-error']}
-          value={search.status ? search.status.split(',') : null}
+          types={this.searchableConceptStatuses()}
+          value={
+            search.status
+              ? search.status.split(',')
+              : this.searchableConceptStatuses()
+          }
           label="Status"
-          onChange={value => this.handleChange({ status: value.join(',') })}
+          onChange={this.handleStatusChange}
         />
         <a className="clear-form" onClick={this.clearSearch}>
           Clear all

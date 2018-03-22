@@ -59,4 +59,33 @@ describe('SearchForm', () => {
     clearSearch.simulate('click')
     expect(onSearchUpdate).toHaveBeenCalledWith('')
   })
+
+  it('should show all types selected when none are specified', () => {
+    const props = {
+        query: 'brand-text:Gasbusters',
+      },
+      wrapper = shallow(<SearchForm {...props} />),
+      typeField = wrapper.find({ label: 'Type' })
+    expect(typeField.prop('value')).toEqual([
+      'CTPP',
+      'TPP',
+      'TPUU',
+      'MPP',
+      'MPUU',
+      'MP',
+    ])
+  })
+
+  it('should show all statuses selected when none are specified', () => {
+    const props = {
+        query: 'brand-text:Gasbusters',
+      },
+      wrapper = shallow(<SearchForm {...props} />),
+      statusField = wrapper.find({ label: 'Status' })
+    expect(statusField.prop('value')).toEqual([
+      'active',
+      'inactive',
+      'entered-in-error',
+    ])
+  })
 })
