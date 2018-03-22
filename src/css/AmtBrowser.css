@@ -16,6 +16,8 @@
   position: fixed;
   width: 100%;
   z-index: 90;
+  height: 0;
+  overflow: visible;
 }
 
 .amt-browser .search-basic {

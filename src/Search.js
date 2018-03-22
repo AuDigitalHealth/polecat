@@ -217,7 +217,7 @@ export class Search extends Component {
 
   handleDownloadClick() {
     const { fhirServer } = this.props,
-      { query } = this.state
+      query = this.state.query || this.props.query
     this.updateAllResults({ fhirServer, query })
   }
 
