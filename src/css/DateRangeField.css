@@ -66,3 +66,35 @@
 .date-range-input input:focus {
   outline: none;
 }
+
+.date-range-field .rdr-MonthAndYear-innerWrapper {
+  padding-top: 4px !important;
+  height: 32px !important;
+}
+
+.date-range-field .rdr-MonthAndYear-button {
+  background-color: #ddd !important;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.date-range-field .rdr-MonthAndYear-button:hover {
+  background-color: #ccc !important;
+}
+
+/* Overrides to fix styling within Firefox 45 */
+
+.date-range-field .rdr-WeekDay,
+.date-range-field .rdr-Days > span {
+  width: 37px !important;
+}
+
+.date-range-field .rdr-MonthAndYear-button.prev {
+  position: relative !important;
+}
+
+.date-range-field .rdr-MonthAndYear-button.prev i {
+  position: absolute !important;
+  top: 5px !important;
+  left: 1px !important;
+}
