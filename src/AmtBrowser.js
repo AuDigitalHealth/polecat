@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import Raven from 'raven-js'
 
 import RemoteFhirMedication from './RemoteFhirMedication.js'
 import AmtProductModel from './AmtProductModel.js'
@@ -66,7 +67,7 @@ export class AmtBrowser extends Component {
 
   componentDidCatch(error) {
     this.setState({ error, loading: false })
-    throw error
+    Raven.captureException(error)
   }
 
   render() {
