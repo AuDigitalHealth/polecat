@@ -58,6 +58,9 @@
 
 .date-range-input input:disabled {
   color: black;
+  /* This is required for Firefox 45, in which mouse events are discarded for
+  disabled input fields. */
+  pointer-events: none;
 }
 
 .date-range-input input:focus {
