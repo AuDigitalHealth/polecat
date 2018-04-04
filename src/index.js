@@ -14,11 +14,15 @@ import './css/index.css'
 // that were installed within previous versions of the code are now removed from
 // all clients. This was causing some problems with caching of the JS bundle.
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.getRegistrations().then(function(registrations) {
-    for (let registration of registrations) {
-      registration.unregister()
-    }
-  })
+  navigator.serviceWorker
+    .getRegistrations()
+    .then(registrations => {
+      for (let registration of registrations) {
+        registration.unregister()
+      }
+      return registrations
+    })
+    .catch(error => console.error(error)) // eslint-disable-line no-console
 }
 
 if (
@@ -36,19 +40,18 @@ if (
       }
       return config
     })
-    .then(config => {
-      createConfigStore(config).then(store =>
-        // eslint-disable-next-line react/no-render-return-value
-        ReactDOM.render(
-          <Provider store={store}>
-            <BrowserRouter>
-              <Router />
-            </BrowserRouter>
-          </Provider>,
-          document.getElementById('root'),
-        ),
-      )
-    })
+    .then(config => createConfigStore(config))
+    .then(store =>
+      // eslint-disable-next-line react/no-render-return-value
+      ReactDOM.render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <Router />
+          </BrowserRouter>
+        </Provider>,
+        document.getElementById('root'),
+      ),
+    )
     .catch(error => {
       document.write(
         '<p>Unexpected error occurred when loading configuration.</p>',

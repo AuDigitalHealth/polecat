@@ -99,16 +99,17 @@ export class Search extends Component {
         .then(bundle => this.parseSearchResults(bundle))
         .then(parsed => {
           const nextLink = parsed.bundle.link.find(l => l.relation === 'next')
-          if (nextLink) {
-            this.getAllResults({
-              fhirServer,
-              url: nextLink.url,
-              acc: acc.concat(parsed.results),
-            })
-              .then(nextBundle => resolve(nextBundle))
-              .catch(error => reject(error))
-          } else resolve(acc.concat(parsed.results))
+          // If there is a next link within the bundle, recurse into this
+          // function and concatenate all the results together.
+          return nextLink
+            ? this.getAllResults({
+                fhirServer,
+                url: nextLink.url,
+                acc: acc.concat(parsed.results),
+              })
+            : resolve(acc.concat(parsed.results))
         })
+        .then(nextBundle => resolve(nextBundle))
         .catch(error => reject(error))
     })
   }

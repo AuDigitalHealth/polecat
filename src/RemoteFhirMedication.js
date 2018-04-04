@@ -97,15 +97,15 @@ export class RemoteFhirMedication extends Component {
     for (const id of ids) {
       if (typeof this.state.relatedResources[id] !== 'object') {
         this.getFhirResource(fhirServer, `/Medication/${id}`)
-          .then(resource => {
+          .then(resource =>
             this.setState(() => ({
               relatedResources: {
                 ...this.state.relatedResources,
                 [id]: resource,
               },
               cancelRequest: null,
-            }))
-          })
+            })),
+          )
           .catch(error => this.handleError(error))
       }
     }
