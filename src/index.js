@@ -49,4 +49,10 @@ if (
         ),
       )
     })
+    .catch(error => {
+      document.write(
+        '<p>Unexpected error occurred when loading configuration.</p>',
+      )
+      console.error(error) // eslint-disable-line no-console
+    })
 }

@@ -71,8 +71,10 @@ export class Search extends Component {
         })),
       )
       .then(() => this.setLoadingStatus(false))
-      .catch(error => this.handleError(error))
-      .then(() => this.setLoadingStatus(false))
+      .catch(error => {
+        this.handleError(error)
+        this.setLoadingStatus(false)
+      })
   }
 
   updateAllResults({ fhirServer, query, url }) {
@@ -91,7 +93,7 @@ export class Search extends Component {
   }
 
   getAllResults({ fhirServer, query, url, acc = [] }) {
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
       const updateFn = this.getUpdateFn({ fhirServer, query, url })
       updateFn()
         .then(bundle => this.parseSearchResults(bundle))
@@ -102,9 +104,12 @@ export class Search extends Component {
               fhirServer,
               url: nextLink.url,
               acc: acc.concat(parsed.results),
-            }).then(nextBundle => resolve(nextBundle))
+            })
+              .then(nextBundle => resolve(nextBundle))
+              .catch(error => reject(error))
           } else resolve(acc.concat(parsed.results))
         })
+        .catch(error => reject(error))
     })
   }
 

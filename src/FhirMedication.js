@@ -35,6 +35,7 @@ class FhirMedication extends Component {
     onRequirePackageBundle: PropTypes.func,
     onRequireContainsIngredientBundle: PropTypes.func,
     onLoadSubjectConcept: PropTypes.func,
+    onError: PropTypes.func,
   }
   static defaultProps = {
     relatedResources: {},
@@ -210,8 +211,13 @@ class FhirMedication extends Component {
     }
   }
 
+  handleError(error) {
+    const { onError } = this.props
+    if (onError) onError(error)
+  }
+
   componentWillMount() {
-    this.parseResources()
+    this.parseResources().catch(error => this.handleError(error))
   }
 
   componentWillReceiveProps(nextProps) {
@@ -235,7 +241,7 @@ class FhirMedication extends Component {
         packageBundles,
         containsIngredientBundles,
         groupingThreshold,
-      })
+      }).catch(error => this.handleError(error))
       // If only related resources are changing, preserve the set of concepts
       // and relationships. Additional resources will not be requested.
     } else if (
@@ -272,7 +278,7 @@ class FhirMedication extends Component {
         childConceptsRequested,
         packageConceptsRequested,
         containsIngredientConceptsRequested,
-      })
+      }).catch(error => this.handleError(error))
     }
   }
 

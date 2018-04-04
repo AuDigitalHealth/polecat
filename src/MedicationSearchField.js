@@ -70,8 +70,10 @@ export class MedicationSearchField extends Component {
         })),
       )
       .then(() => this.setLoadingStatus(false))
-      .catch(error => this.handleError(error))
-      .then(() => this.setLoadingStatus(false))
+      .catch(error => {
+        this.handleError(error)
+        this.setLoadingStatus(false)
+      })
   }
 
   setLoadingStatus(loading) {
