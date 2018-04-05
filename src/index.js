@@ -27,6 +27,11 @@ if (navigator.serviceWorker) {
     .catch(error => console.error(error)) // eslint-disable-line no-console
 }
 
+const trackPageView = location => {
+  ga.set({ location: location.toString() })
+  ga.pageview(location.pathname + location.search)
+}
+
 // Block browsers that are known to be incompatible with the application.
 if (
   (bowser.msie && bowser.version <= 11) ||
@@ -42,7 +47,7 @@ if (
     .then(config => {
       if (config.googleAnalyticsTrackingId) {
         ga.initialize(config.googleAnalyticsTrackingId)
-        ga.pageview(window.location.pathname + window.location.search)
+        trackPageView(window.location)
       }
       return config
     })
@@ -71,10 +76,7 @@ if (
       // If a Google Analytics tracking ID is configured, set up a listener to
       // track a virtual page view each time the URL changes.
       if (config.googleAnalyticsTrackingId) {
-        // TODO: Figure out why this is triggering twice when clicking a search result.
-        history.listen(location =>
-          ga.pageview(location.pathname + location.search),
-        )
+        history.listen(() => trackPageView(window.location))
       }
       return true
     })
