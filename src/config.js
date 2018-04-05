@@ -83,9 +83,12 @@ export const visibilityConfig = {
 }
 
 // List of all valid configuration keys.
-const availableConfig = ['fhirServer', 'version', 'sentryDsn'].concat(
-  Object.keys(visibilityConfig),
-)
+const availableConfig = [
+  'fhirServer',
+  'version',
+  'sentryDsn',
+  'googleAnalyticsTrackingId',
+].concat(Object.keys(visibilityConfig))
 
 // Default configuration settings that act as a fallback if no other value is specified.
 const defaultConfig = {

@@ -132,8 +132,11 @@ passed using the `environment` key within a Docker Compose file:
 
 * `POLECAT_FHIR_SERVER`: the FHIR endpoint of the Medserve instance.
 * `POLECAT_VERSION`: the version of the application, which is used when
-  reporting to Sentry.
+  reporting to Sentry. This is automatically set during the build (to the Git
+  SHA), so does not
 * `POLECAT_SENTRY_DSN`: the string used to identify the application to Sentry.
+* `POLECAT_GOOGLE_ANALYTICS_TRACKING_ID`: tracking ID for sending analytics data
+  to a Google Analytics account.
 
 ##### Example Docker Compose file
 
@@ -147,8 +150,8 @@ services:
       - "80:80"
     environment:
       POLECAT_FHIR_SERVER: https://medserve.online/fhir
-      POLECAT_VERSION: d025c2b579571b9bccddcac86f7105e554ebff34
-      POLECAT_SENTRY_DSN: https://437424b3205e41818fae4bff9663738c@sentry.io/257411
+      POLECAT_SENTRY_DSN: https://XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX@sentry.io/XXXXXX
+      POLECAT_GOOGLE_ANALYTICS_TRACKING_ID: UA-XXXXXXXXX-X
 ```
 
 ## Deployment requirements

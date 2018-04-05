@@ -5,7 +5,8 @@ set -e
 declare -A vars=( \
   [fhirServer]=POLECAT_FHIR_SERVER \
   [version]=POLECAT_VERSION \
-  [sentryDsn]=POLECAT_SENTRY_DSN
+  [sentryDsn]=POLECAT_SENTRY_DSN \
+  [googleAnalyticsTrackingId]=POLECAT_GOOGLE_ANALYTICS_TRACKING_ID
 )
 
 # Work out which of the available variables have been set.
