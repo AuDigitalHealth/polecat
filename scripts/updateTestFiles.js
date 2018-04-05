@@ -37,6 +37,7 @@ fs.readFile('public/config.json', (err, data) => {
               if (err) handleError(err)
               console.log(`Updated: ${path}`)
             })
+            return response
           })
           .catch(error => handleError(error))
       }
