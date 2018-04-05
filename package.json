@@ -1,6 +1,16 @@
 {
   "name": "polecat",
-  "version": "0.1.0",
+  "version": "0.0.0",
+  "description":
+    "A tool for browsing the Australian Medicines Terminology (AMT), using data from an instance of Medserve.",
+  "homepage": "https://github.com/AuDigitalHealth/polecat",
+  "bugs": "https://github.com/AuDigitalHealth/polecat/issues",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "John Grimes",
+    "email": "John.Grimes@digitalhealth.gov.au"
+  },
+  "repository": "github:AuDigitalHealth/polecat",
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
