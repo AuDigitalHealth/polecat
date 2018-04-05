@@ -67,9 +67,8 @@ class AdvancedSearch extends Component {
   }
 
   handleSelectResult(result) {
-    const { onSelectResult, history } = this.props
+    const { onSelectResult } = this.props
     if (onSelectResult) onSelectResult(result)
-    if (result && result.link) history.push(result.link)
   }
 
   handleError(error) {
