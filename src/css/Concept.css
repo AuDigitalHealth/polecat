@@ -13,6 +13,8 @@
 
 .concept-focused {
   border-width: 2px;
+  font-weight: 500;
+  padding-top: 6px;
 }
 
 .concept .display {
@@ -29,6 +31,10 @@
 
 .concept .sctid {
   margin-bottom: 3px;
+}
+
+.concept-focused .sctid {
+  margin-bottom: 2px;
 }
 
 .concept .artgid {
