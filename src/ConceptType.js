@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import {
+  expandedConceptType,
+  humanisedStatus,
+  humanisedType,
+} from './amt/concept.js'
+
 import './css/ConceptType.css'
 
 class ConceptType extends Component {
@@ -31,49 +37,6 @@ class ConceptType extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  expandedConceptType() {
-    const { type } = this.props
-    return {
-      CTPP: 'Containered Trade Product Pack',
-      TPP: 'Trade Product Pack',
-      TPUU: 'Trade Product Unit of Use',
-      TP: 'Trade Product',
-      MPP: 'Medicinal Product Pack',
-      MPUU: 'Medicinal Product Unit of Use',
-      MP: 'Medicinal Product',
-      substance: 'Substance',
-      active: 'Active',
-      inactive: 'Inactive',
-      'entered-in-error': 'Entered in error',
-    }[type]
-  }
-
-  humanisedStatus() {
-    const { status } = this.props
-    return {
-      active: 'Active',
-      inactive: 'Inactive',
-      'entered-in-error': 'Entered in error',
-    }[status]
-  }
-
-  humanisedType() {
-    const { type } = this.props
-    return {
-      CTPP: 'CTPP',
-      TPP: 'TPP',
-      TPUU: 'TPUU',
-      TP: 'TP',
-      MPP: 'MPP',
-      MPUU: 'MPUU',
-      MP: 'MP',
-      substance: 'substance',
-      active: 'active',
-      inactive: 'inactive',
-      'entered-in-error': 'entered in error',
-    }[type]
-  }
-
   handleClick(event) {
     const { onClick } = this.props
     if (onClick) onClick(event)
@@ -92,21 +55,22 @@ class ConceptType extends Component {
   }
 
   getTitle() {
-    const { status } = this.props
+    const { status, type } = this.props
     if (this.props.title !== undefined) return this.props.title
     return status === 'active'
-      ? this.expandedConceptType()
-      : `${this.expandedConceptType()} - ${this.humanisedStatus()}`
+      ? expandedConceptType(type)
+      : `${expandedConceptType(type)} - ${humanisedStatus(status)}`
   }
 
   render() {
+    const { type } = this.props
     return (
       <span
         className={this.getClassName()}
         title={this.getTitle()}
         onClick={this.handleClick}
       >
-        {this.humanisedType()}
+        {humanisedType(type)}
       </span>
     )
   }

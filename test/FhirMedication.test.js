@@ -248,6 +248,7 @@ describe('FhirMedication', () => {
           sourceCodeSystemUri: 'http://snomed.info/sct',
           sourceCodeSystemVersion:
             'http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228',
+          lastModified: '2014-06-30',
           status: 'active',
           type: 'UPDSF',
         })

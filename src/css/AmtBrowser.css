@@ -38,10 +38,8 @@
   z-index: 50;
 }
 
-.amt-browser .source-code-system {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
-    1px 1px 0 #fff;
+.amt-browser .subject-concept-details {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
 }

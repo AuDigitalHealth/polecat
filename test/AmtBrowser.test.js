@@ -5,9 +5,9 @@ import { AmtBrowser } from '../src/AmtBrowser.js'
 import RemoteFhirMedication from '../src/RemoteFhirMedication.js'
 import Search from '../src/Search.js'
 import ErrorMessage from '../src/ErrorMessage.js'
-import SourceCodeSystem from '../src/SourceCodeSystem.js'
 import VisibilityFilter from '../src/VisibilityFilter'
 import { amtConceptTypeFor } from '../src/fhir/medication'
+import SubjectConceptDetails from '../src/SubjectConceptDetails.js'
 
 describe('AmtBrowser', () => {
   const minimalProps = {
@@ -29,6 +29,7 @@ describe('AmtBrowser', () => {
     sourceCodeSystemUri: 'http://snomed.info/sct',
     sourceCodeSystemVersion:
       'http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131',
+    lastModified: '2017-02-28',
     focused: true,
   }
 
@@ -133,7 +134,7 @@ describe('AmtBrowser', () => {
     })
   })
 
-  it('should display SourceCodeSystem on load of subject concept', () => {
+  it('should display SubjectConceptDetails on load of subject concept', () => {
     const wrapper = shallow(<AmtBrowser {...minimalProps} />)
     // Get the `onLoadSubjectConcept` handler passed to the RemoteFhirMedication component.
     const onLoadSubjectConcept = wrapper
@@ -144,13 +145,18 @@ describe('AmtBrowser', () => {
     wrapper.update()
     // Check that a SourceCodeSystem component has been rendered, and that the
     // correct props have been passed to it.
-    const sourceCodeSystem = wrapper.find(SourceCodeSystem)
+    const sourceCodeSystem = wrapper.find(SubjectConceptDetails)
     expect(sourceCodeSystem.exists()).toBe(true)
-    expect(sourceCodeSystem.prop('uri')).toEqual(
+    expect(sourceCodeSystem.prop('coding')).toEqual(subjectConcept.coding)
+    expect(sourceCodeSystem.prop('sourceCodeSystemUri')).toEqual(
       subjectConcept.sourceCodeSystemUri,
     )
-    expect(sourceCodeSystem.prop('version')).toEqual(
+    expect(sourceCodeSystem.prop('sourceCodeSystemVersion')).toEqual(
       subjectConcept.sourceCodeSystemVersion,
+    )
+    expect(sourceCodeSystem.prop('status')).toEqual(subjectConcept.status)
+    expect(sourceCodeSystem.prop('lastModified')).toEqual(
+      subjectConcept.lastModified,
     )
   })
 

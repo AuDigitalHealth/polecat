@@ -11,7 +11,8 @@ export const getSubjectConcept = resource => {
   const status = getStatus(resource)
   const sourceCodeSystem =
     resource.resourceType === 'Medication' ? getSourceCodeSystem(resource) : {}
-  return { type, coding, status, ...sourceCodeSystem }
+  const lastModified = getLastModified(resource)
+  return { type, coding, status, ...sourceCodeSystem, lastModified }
 }
 
 // Get the type of subject concept, which will either be:
@@ -152,6 +153,15 @@ const getSourceCodeSystem = resource => {
     return { sourceCodeSystemUri, sourceCodeSystemVersion }
   } catch (error) {
     return {}
+  }
+}
+
+// Get the last modified date from a Medication resource.
+const getLastModified = resource => {
+  try {
+    return getExtension(resource, 'lastModified')
+  } catch (error) {
+    return null
   }
 }
 
@@ -341,6 +351,8 @@ const urlForExtension = name =>
       'http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri',
     sourceCodeSystemVersion:
       'http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion',
+    lastModified:
+      'http://medserve.online/fhir/StructureDefinition/lastModified',
     parentMedication:
       'http://medserve.online/fhir/StructureDefinition/parentMedication',
     parentMedicationResources:
@@ -367,6 +379,7 @@ const typeForExtension = name =>
     sourceCodeSystem: 'extension',
     sourceCodeSystemUri: 'valueUri',
     sourceCodeSystemVersion: 'valueString',
+    lastModified: 'valueDate',
     parentMedication: 'valueReference',
     parentMedicationResources: 'extension',
     brand: 'valueCodeableConcept',
@@ -562,9 +575,9 @@ const fhirToAmtTypes = {
 
 const amtToFhirTypes = invert(fhirToAmtTypes)
 
-export const amtConceptTypes = Object.keys(fhirToAmtTypes).map(
-  k => fhirToAmtTypes[k],
-)
+export const fhirConceptTypes = Object.keys(fhirToAmtTypes)
+
+export const amtConceptTypes = fhirConceptTypes.map(k => fhirToAmtTypes[k])
 
 // Mapping from FHIR Medication type to AMT concept type.
 export const amtConceptTypeFor = fhirType => fhirToAmtTypes[fhirType]

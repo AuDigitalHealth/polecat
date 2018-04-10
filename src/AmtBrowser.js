@@ -7,7 +7,7 @@ import RemoteFhirMedication from './RemoteFhirMedication.js'
 import AmtProductModel from './AmtProductModel.js'
 import Search from './Search.js'
 import VisibilityFilter from './VisibilityFilter.js'
-import SourceCodeSystem from './SourceCodeSystem.js'
+import SubjectConceptDetails from './SubjectConceptDetails.js'
 import ErrorMessage from './ErrorMessage.js'
 import { amtConceptTypeFor } from './fhir/medication.js'
 
@@ -74,11 +74,11 @@ export class AmtBrowser extends Component {
     const { resourceType, id, query, viewport } = this.props
     const {
       loading,
+      subjectConcept,
       subjectConcept: {
+        coding,
         type: subjectConceptType,
         status: subjectConceptStatus,
-        sourceCodeSystemUri,
-        sourceCodeSystemVersion,
       } = {},
       error,
     } = this.state
@@ -116,12 +116,7 @@ export class AmtBrowser extends Component {
             subjectConceptStatus={subjectConceptStatus}
           />
         ) : null}
-        {sourceCodeSystemUri && sourceCodeSystemVersion ? (
-          <SourceCodeSystem
-            uri={sourceCodeSystemUri}
-            version={sourceCodeSystemVersion}
-          />
-        ) : null}
+        {coding ? <SubjectConceptDetails {...subjectConcept} /> : null}
       </div>
     )
   }

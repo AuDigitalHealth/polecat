@@ -5519,39 +5519,6 @@ exports[`Storyshots SearchSummary With total results 1`] = `
 </div>
 `;
 
-exports[`Storyshots SourceCodeSystem With SNOMED CT-AU 1`] = `
-<div
-  className="source-code-system"
->
-  Source: 
-  SNOMED CT
-  , 
-  Australian Edition (20171231)
-</div>
-`;
-
-exports[`Storyshots SourceCodeSystem With SNOMED international edition 1`] = `
-<div
-  className="source-code-system"
->
-  Source: 
-  SNOMED CT
-  , 
-  International Edition (20170731)
-</div>
-`;
-
-exports[`Storyshots SourceCodeSystem With non-SNOMED system 1`] = `
-<div
-  className="source-code-system"
->
-  Source: 
-  http://pbs.gov.au/item/code
-  , 
-  20171201
-</div>
-`;
-
 exports[`Storyshots TextField With focus on mount 1`] = `
 <div
   className="text-field"
