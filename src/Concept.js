@@ -4,12 +4,7 @@ import { Link } from 'react-router-dom'
 
 import CopyToClipboard from './CopyToClipboard.js'
 import ConceptType from './ConceptType.js'
-import {
-  codingToSnomedCode,
-  codingToSnomedDisplay,
-  codingToArtgId,
-  urlForArtgId,
-} from './fhir/medication.js'
+import { codingToSnomedCode, codingToSnomedDisplay } from './fhir/medication.js'
 
 import './css/Concept.css'
 
@@ -50,7 +45,6 @@ class Concept extends Component {
   render() {
     const { coding, type, status, focused } = this.props
     const display = codingToSnomedDisplay(coding)
-    const artgId = codingToArtgId(coding)
     return (
       <div
         className={focused ? 'concept concept-focused' : 'concept'}
@@ -64,18 +58,6 @@ class Concept extends Component {
             title="Copy preferred term to clipboard"
           />
         </div>
-        {artgId ? (
-          <div className="artgid">
-            ARTG ID{' '}
-            <a
-              href={urlForArtgId(artgId)}
-              title={`ARTG ID ${artgId} on the TGA website`}
-              target="_blank"
-            >
-              {artgId}
-            </a>
-          </div>
-        ) : null}
         <ConceptType type={type} status={status} />
       </div>
     )

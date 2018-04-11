@@ -3032,19 +3032,6 @@ exports[`Storyshots Concept CTPP 1`] = `
       title="Copy preferred term to clipboard"
     />
   </div>
-  <div
-    className="artgid"
-  >
-    ARTG ID
-     
-    <a
-      href="http://search.tga.gov.au/s/search.html?collection=tga-artg&profile=record&meta_i=74899"
-      target="_blank"
-      title="ARTG ID 74899 on the TGA website"
-    >
-      74899
-    </a>
-  </div>
   <ConceptType
     enabled={true}
     status="active"
@@ -3130,19 +3117,6 @@ exports[`Storyshots Concept Focused 1`] = `
       copyText="Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial"
       title="Copy preferred term to clipboard"
     />
-  </div>
-  <div
-    className="artgid"
-  >
-    ARTG ID
-     
-    <a
-      href="http://search.tga.gov.au/s/search.html?collection=tga-artg&profile=record&meta_i=74899"
-      target="_blank"
-      title="ARTG ID 74899 on the TGA website"
-    >
-      74899
-    </a>
   </div>
   <ConceptType
     enabled={true}
@@ -3499,19 +3473,6 @@ exports[`Storyshots Concept With ARTG ID 1`] = `
       copyText="Xifaxan 550 mg film-coated tablet, 56, blister pack"
       title="Copy preferred term to clipboard"
     />
-  </div>
-  <div
-    className="artgid"
-  >
-    ARTG ID
-     
-    <a
-      href="http://search.tga.gov.au/s/search.html?collection=tga-artg&profile=record&meta_i=183411"
-      target="_blank"
-      title="ARTG ID 183411 on the TGA website"
-    >
-      183411
-    </a>
   </div>
   <ConceptType
     enabled={true}

@@ -7,6 +7,7 @@ import {
   codingToSnomedCode,
   codingToSnomedDisplay,
   codingToArtgId,
+  urlForArtgId,
 } from './fhir/medication.js'
 import { humanisedStatus } from './amt/concept.js'
 import { humaniseUri, humaniseVersion } from './snomed/core.js'
@@ -87,7 +88,13 @@ class SubjectConceptDetails extends Component {
           <div className="row">
             <div className="field-name">ARTG ID</div>
             <div className="field-value">
-              {artgId}
+              <a
+                href={urlForArtgId(artgId)}
+                title={`ARTG ID ${artgId} on the TGA website`}
+                target="_blank"
+              >
+                {artgId}
+              </a>
               <CopyToClipboard
                 copyText={artgId}
                 title="Copy ARTG ID to clipboard"
