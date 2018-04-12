@@ -8,19 +8,30 @@ import {
   codingToSnomedDisplay,
   codingToArtgId,
   urlForArtgId,
+  fhirConceptTypes,
 } from './fhir/medication.js'
 import { humanisedStatus } from './amt/concept.js'
 import { humaniseUri, humaniseVersion } from './snomed/core.js'
+import { capitalise } from './util.js'
 
 import './css/SubjectConceptDetails.css'
 
 class SubjectConceptDetails extends Component {
   static propTypes = {
     coding: Concept.propTypes.coding,
+    type: PropTypes.oneOf(fhirConceptTypes),
     sourceCodeSystemUri: PropTypes.string,
     sourceCodeSystemVersion: PropTypes.string,
     status: Concept.propTypes.status,
     lastModified: PropTypes.string,
+  }
+
+  shrimpLink(code, system, version) {
+    return `https://ontoserver.csiro.au/shrimp?concept=${code}&system=${system}&version=${version}`
+  }
+
+  wikipediaLink(display) {
+    return `https://en.wikipedia.org/wiki/${capitalise(display)}`
   }
 
   render() {
@@ -28,6 +39,7 @@ class SubjectConceptDetails extends Component {
         coding,
         sourceCodeSystemUri,
         sourceCodeSystemVersion,
+        type,
         status,
         lastModified,
       } = this.props,
@@ -37,7 +49,12 @@ class SubjectConceptDetails extends Component {
         sourceCodeSystemUri,
       )}, ${humaniseVersion(sourceCodeSystemUri, sourceCodeSystemVersion)}`,
       artgId = codingToArtgId(coding),
-      shrimpLink = `https://ontoserver.csiro.au/shrimp?concept=${snomedCode}&system=${sourceCodeSystemUri}&version=${sourceCodeSystemVersion}`
+      shrimpLink = this.shrimpLink(
+        snomedCode,
+        sourceCodeSystemUri,
+        sourceCodeSystemVersion,
+      ),
+      wikipediaLink = this.wikipediaLink(snomedDisplay)
     return (
       <div className="subject-concept-details">
         {snomedCode ? (
@@ -120,6 +137,11 @@ class SubjectConceptDetails extends Component {
             <a href={shrimpLink} target="_blank">
               View it on Shrimp
             </a>
+            {type === 'substance' ? (
+              <a href={wikipediaLink} target="_blank">
+                {`\u201C${capitalise(snomedDisplay)}\u201D on Wikipedia`}
+              </a>
+            ) : null}
           </div>
         </div>
       </div>

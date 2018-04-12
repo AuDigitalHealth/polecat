@@ -34,6 +34,15 @@
   position: relative;
 }
 
+.subject-concept-details .field-value a {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.subject-concept-details .field-value a:last-of-type {
+  margin-bottom: 0;
+}
+
 .subject-concept-details .copy-to-clipboard {
   display: none;
   cursor: pointer;
