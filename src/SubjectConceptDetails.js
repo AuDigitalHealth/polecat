@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import Concept from './Concept.js'
 import CopyToClipboard from './CopyToClipboard.js'
+import Icon from './Icon.js'
 import {
   codingToSnomedCode,
   codingToSnomedDisplay,
@@ -135,11 +136,16 @@ class SubjectConceptDetails extends Component {
           <div className="field-name">Links</div>
           <div className="field-value">
             <a href={shrimpLink} target="_blank">
-              View it on Shrimp
+              View it on Shrimp<Icon
+                type="external-link"
+                width={11}
+                height={11}
+              />
             </a>
             {type === 'substance' ? (
               <a href={wikipediaLink} target="_blank">
                 {`\u201C${capitalise(snomedDisplay)}\u201D on Wikipedia`}
+                <Icon type="external-link" width={11} height={11} />
               </a>
             ) : null}
           </div>

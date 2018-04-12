@@ -43,6 +43,12 @@
   margin-bottom: 0;
 }
 
+.subject-concept-details .field-value .icon {
+  margin-left: 5px;
+  position: relative;
+  top: 2px;
+}
+
 .subject-concept-details .copy-to-clipboard {
   display: none;
   cursor: pointer;
