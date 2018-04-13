@@ -7,7 +7,7 @@ import Icon from './Icon.js'
 import {
   codingToSnomedCode,
   codingToSnomedDisplay,
-  codingToArtgId,
+  codingToArtgIds,
   urlForArtgId,
   fhirConceptTypes,
 } from './fhir/medication.js'
@@ -49,7 +49,7 @@ class SubjectConceptDetails extends Component {
       sourceCodeSystem = `${humaniseUri(
         sourceCodeSystemUri,
       )}, ${humaniseVersion(sourceCodeSystemUri, sourceCodeSystemVersion)}`,
-      artgId = codingToArtgId(coding),
+      artgIds = codingToArtgIds(coding),
       shrimpLink = this.shrimpLink(
         snomedCode,
         sourceCodeSystemUri,
@@ -102,21 +102,26 @@ class SubjectConceptDetails extends Component {
             <div className="field-value">{humanisedStatus(status)}</div>
           </div>
         ) : null}
-        {artgId ? (
+        {artgIds.length > 0 ? (
           <div className="row">
             <div className="field-name">ARTG ID</div>
             <div className="field-value">
-              <a
-                href={urlForArtgId(artgId)}
-                title={`ARTG ID ${artgId} on the TGA website`}
-                target="_blank"
-              >
-                {artgId}
-              </a>
-              <CopyToClipboard
-                copyText={artgId}
-                title="Copy ARTG ID to clipboard"
-              />
+              {artgIds.map(artgId => (
+                <div key={artgId}>
+                  <a
+                    href={urlForArtgId(artgId)}
+                    title={`ARTG ID ${artgId} on the TGA website`}
+                    target="_blank"
+                  >
+                    {artgId}
+                    <Icon type="external-link" width={11} height={11} />
+                  </a>
+                  <CopyToClipboard
+                    copyText={artgId}
+                    title="Copy ARTG ID to clipboard"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         ) : null}
@@ -135,19 +140,23 @@ class SubjectConceptDetails extends Component {
         <div className="row">
           <div className="field-name">Links</div>
           <div className="field-value">
-            <a href={shrimpLink} target="_blank">
-              View it on Shrimp<Icon
-                type="external-link"
-                width={11}
-                height={11}
-              />
-            </a>
-            {type === 'substance' ? (
-              <a href={wikipediaLink} target="_blank">
-                {`\u201C${capitalise(snomedDisplay)}\u201D on Wikipedia`}
-                <Icon type="external-link" width={11} height={11} />
+            <div>
+              <a href={shrimpLink} target="_blank">
+                View it on Shrimp<Icon
+                  type="external-link"
+                  width={11}
+                  height={11}
+                />
               </a>
-            ) : null}
+            </div>
+            <div>
+              {type === 'substance' ? (
+                <a href={wikipediaLink} target="_blank">
+                  {`\u201C${capitalise(snomedDisplay)}\u201D on Wikipedia`}
+                  <Icon type="external-link" width={11} height={11} />
+                </a>
+              ) : null}
+            </div>
           </div>
         </div>
       </div>

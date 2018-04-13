@@ -31,11 +31,10 @@
   text-overflow: ellipsis;
   padding-left: 10px;
   padding-right: 10px;
-  position: relative;
 }
 
-.subject-concept-details .field-value a {
-  display: block;
+.subject-concept-details .field-value > div {
+  position: relative;
   margin-bottom: 4px;
 }
 
@@ -54,7 +53,7 @@
   cursor: pointer;
 }
 
-.subject-concept-details .field-value:hover .copy-to-clipboard {
+.subject-concept-details .field-value > div:hover .copy-to-clipboard {
   display: block;
   position: absolute;
   top: 1px;
