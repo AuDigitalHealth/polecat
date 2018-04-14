@@ -4,6 +4,11 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
 }
 
+body a,
+body a:visited {
+  color: rgb(0, 0, 238);
+}
+
 .incompatible-browser {
   border: 1px solid #666;
   width: 400px;
