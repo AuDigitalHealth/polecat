@@ -7,10 +7,10 @@
       <rect class="highlight" style="fill: #ccc" width="100" height="100" rx="26.08" ry="26.08"/>
     </symbol>
     <symbol id="expand-down">
-      <polygon points="86.01 20.47 13.99 20.47 49.95 79.53 86.01 20.47"/>
+      <path fill-rule="evenodd" d="M5 11.5l-5-5L1.5 5 5 8.75 8.5 5 10 6.5l-5 5z" transform="scale(8, 8) translate(0, -2)"/>
     </symbol>
     <symbol id="expand-up">
-      <use xlink:href="#expand-down" transform="translate(100, 100) rotate(180)"/>
+      <use xlink:href="#expand-down" transform="translate(80, 100) rotate(180)"/>
     </symbol>
     <symbol id="cross">
       <polygon points="85.97 29.89 70.11 14.03 50 34.14 29.89 14.03 14.03 29.89 34.14 50 14.03 70.11 29.89 85.97 50 65.86 70.11 85.97 85.97 70.11 65.86 50 85.97 29.89"/>

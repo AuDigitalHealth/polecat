@@ -4,10 +4,16 @@
     0 2px 6px rgba(16, 22, 26, 0.2);
   padding: 7px 0;
   border-radius: 6px;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .subject-concept-details .row {
   display: flex;
+}
+
+.subject-concept-details div {
+  position: relative;
 }
 
 .subject-concept-details .field-name,
@@ -53,7 +59,7 @@
   cursor: pointer;
 }
 
-.subject-concept-details .field-value > div:hover .copy-to-clipboard {
+.subject-concept-details div:hover > .copy-to-clipboard {
   display: block;
   position: absolute;
   top: 1px;

@@ -1,0 +1,29 @@
+.pbs-details-header {
+  background-color: #ddd;
+  font-size: 13px;
+  padding: 6px 10px;
+  font-weight: 500;
+  position: relative;
+  margin: 4px 0;
+  cursor: pointer;
+}
+
+.pbs-details.closed .pbs-details-header {
+  margin-bottom: -7px;
+}
+
+.pbs-details-header .expand {
+  position: absolute;
+  top: 7px;
+  right: 6px;
+}
+
+.pbs-details-content {
+  border-bottom: 2px solid #ddd;
+  padding: 4px 0;
+}
+
+.pbs-details-content:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}

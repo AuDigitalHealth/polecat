@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Concept from './Concept.js'
 import CopyToClipboard from './CopyToClipboard.js'
 import Icon from './Icon.js'
+import PBSDetails from './PBSDetails.js'
 import {
   codingToSnomedCode,
   codingToSnomedDisplay,
@@ -25,6 +26,7 @@ class SubjectConceptDetails extends Component {
     sourceCodeSystemVersion: PropTypes.string,
     status: Concept.propTypes.status,
     lastModified: PropTypes.string,
+    subsidy: PropTypes.array,
   }
 
   shrimpLink(code, system, version) {
@@ -43,6 +45,7 @@ class SubjectConceptDetails extends Component {
         type,
         status,
         lastModified,
+        subsidy,
       } = this.props,
       snomedCode = codingToSnomedCode(coding),
       snomedDisplay = codingToSnomedDisplay(coding),
@@ -159,6 +162,7 @@ class SubjectConceptDetails extends Component {
             </div>
           </div>
         </div>
+        {subsidy.length > 0 ? <PBSDetails subsidy={subsidy} /> : null}
       </div>
     )
   }

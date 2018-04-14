@@ -251,6 +251,7 @@ describe('FhirMedication', () => {
           lastModified: '2014-06-30',
           status: 'active',
           type: 'UPDSF',
+          subsidy: [],
         })
         resolve()
       }, 50)

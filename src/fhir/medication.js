@@ -12,7 +12,8 @@ export const getSubjectConcept = resource => {
   const sourceCodeSystem =
     resource.resourceType === 'Medication' ? getSourceCodeSystem(resource) : {}
   const lastModified = getLastModified(resource)
-  return { type, coding, status, ...sourceCodeSystem, lastModified }
+  const subsidy = getSubsidy(resource)
+  return { type, coding, status, ...sourceCodeSystem, lastModified, subsidy }
 }
 
 // Get the type of subject concept, which will either be:
@@ -165,6 +166,38 @@ const getLastModified = resource => {
   }
 }
 
+// Get subsidy information from a Medication resource.
+const getSubsidy = resource => {
+  try {
+    return getAllExtensions(resource, 'subsidy', { valueOnly: false }).map(
+      subsidy => ({
+        subsidyCode: getExtension(subsidy, 'subsidyCode', {
+          throwError: false,
+        }),
+        programCode: getExtension(subsidy, 'programCode', {
+          throwError: false,
+        }),
+        restriction: getExtension(subsidy, 'restriction', {
+          throwError: false,
+        }),
+        commonwealthExManufacturerPrice: getExtension(
+          subsidy,
+          'commonwealthExManufacturerPrice',
+          { throwError: false },
+        ),
+        manufacturerExManufacturerPrice: getExtension(
+          subsidy,
+          'manufacturerExManufacturerPrice',
+          { throwError: false },
+        ),
+        atcCode: getExtension(subsidy, 'atcCode', { throwError: false }),
+      }),
+    )
+  } catch (error) {
+    return []
+  }
+}
+
 // Yield the concepts and relationships between all parent medications
 // represented within the extension of the given element, using the given
 // concept as the source of the child-parent relationship.
@@ -305,19 +338,28 @@ function* getReplacesConcepts(resource, subjectConcept) {
   }
 }
 
-const getExtension = (element, extensionName, { valueOnly = true } = {}) => {
-  if (!(element && element.extension)) throw new Error('Extension not found.')
-  const extension = element.extension.find(
-    ext => ext.url === urlForExtension(extensionName),
-  )
-  if (!extension) throw new Error(`Extension not found: ${extensionName}`)
-  const type = typeForExtension(extensionName)
-  // If the extension is of type `extension`, just give it back rather than its
-  // child extension. This allows us to properly walk the extension hierarchy
-  // using this same function. Otherwise, give the value back.
-  return type === 'extension' || valueOnly === false
-    ? extension
-    : extension[typeForExtension(extensionName)]
+const getExtension = (
+  element,
+  extensionName,
+  { valueOnly = true, throwError = true } = {},
+) => {
+  try {
+    if (!(element && element.extension)) throw new Error('Extension not found.')
+    const extension = element.extension.find(
+      ext => ext.url === urlForExtension(extensionName),
+    )
+    if (!extension) throw new Error(`Extension not found: ${extensionName}`)
+    const type = typeForExtension(extensionName)
+    // If the extension is of type `extension`, just give it back rather than its
+    // child extension. This allows us to properly walk the extension hierarchy
+    // using this same function. Otherwise, give the value back.
+    return type === 'extension' || valueOnly === false
+      ? extension
+      : extension[type]
+  } catch (error) {
+    if (throwError === false) return null
+    throw error
+  }
 }
 
 const getAllExtensions = (
@@ -370,6 +412,15 @@ const urlForExtension = name =>
       'http://medserve.online/fhir/StructureDefinition/replacementType',
     replacementDate:
       'http://medserve.online/fhir/StructureDefinition/replacementDate',
+    subsidy: 'http://medserve.online/fhir/StructureDefinition/subsidy',
+    subsidyCode: 'http://medserve.online/fhir/StructureDefinition/subsidyCode',
+    programCode: 'http://medserve.online/fhir/StructureDefinition/programCode',
+    restriction: 'http://medserve.online/fhir/StructureDefinition/restriction',
+    commonwealthExManufacturerPrice:
+      'http://medserve.online/fhir/StructureDefinition/commonwealthExManufacturerPrice',
+    manufacturerExManufacturerPrice:
+      'http://medserve.online/fhir/StructureDefinition/manufacturerExManufacturerPrice',
+    atcCode: 'http://medserve.online/fhir/StructureDefinition/atcCode',
   }[name])
 
 const typeForExtension = name =>
@@ -389,6 +440,11 @@ const typeForExtension = name =>
     replacesResource: 'valueReference',
     replacementType: 'valueCoding',
     replacementDate: 'valueDate',
+    subsidyCode: 'valueCoding',
+    programCode: 'valueCoding',
+    restriction: 'valueCoding',
+    commonwealthExManufacturerPrice: 'valueDecimal',
+    manufacturerExManufacturerPrice: 'valueDecimal',
   }[name])
 
 export const urlForArtgId = id =>
@@ -617,11 +673,9 @@ export const codingToSnomedDisplay = coding => {
   return found ? found.display : null
 }
 
-// Extracts an ARTG ID from a `coding` element.
-export const codingToArtgId = coding => {
-  const found = coding.find(c => c.system === artgUri)
-  return found ? found.code : null
-}
+// Extracts all ARTG IDs from a `coding` element.
+export const codingToArtgIds = coding =>
+  coding.filter(c => c.system === artgUri).map(coding => coding.code)
 
 // Extracts a group code from a `coding` element.
 export const codingToGroupCode = coding => {
