@@ -46,11 +46,11 @@ class PBSDetails extends Component {
   }
 
   pbsCodeLink(code) {
-    return `http://www.pbs.gov.au/medicine/item/${code}`
+    return `https://www.pbs.gov.au/medicine/item/${code}`
   }
 
   pbsProgramLink(programCode) {
-    return `http://www.pbs.gov.au/pbs/search?base=drugtype:${programCode.toLowerCase()},&search-type=medicines`
+    return `https://www.pbs.gov.au/pbs/search?base=drugtype:${programCode.toLowerCase()},&search-type=medicines`
   }
 
   atcCodeLink(code) {

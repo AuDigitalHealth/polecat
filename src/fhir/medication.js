@@ -452,7 +452,7 @@ const typeForExtension = name =>
   }[name])
 
 export const urlForArtgId = id =>
-  `http://search.tga.gov.au/s/search.html?collection=tga-artg&profile=record&meta_i=${id}`
+  `https://search.tga.gov.au/s/search.html?collection=tga-artg&profile=record&meta_i=${id}`
 
 // Inferred relationship types for different combinations of concept types.
 export const relationshipTypeFor = (sourceType, targetType) => {
