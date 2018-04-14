@@ -30,6 +30,11 @@ class PBSDetails extends Component {
         }),
         commonwealthExManufacturerPrice: PropTypes.number,
         manufacturerExManufacturerPrice: PropTypes.number,
+        atcCode: PropTypes.shape({
+          code: PropTypes.string,
+          display: PropTypes.string,
+          system: PropTypes.string,
+        }),
       }),
     ),
   }
@@ -46,6 +51,10 @@ class PBSDetails extends Component {
 
   pbsProgramLink(programCode) {
     return `http://www.pbs.gov.au/pbs/search?base=drugtype:${programCode.toLowerCase()},&search-type=medicines`
+  }
+
+  atcCodeLink(code) {
+    return `https://www.whocc.no/atc_ddd_index/?code=${code}`
   }
 
   // This is necessary only to work around https://bitbucket.org/dion_mcmurtrie/medserve/issues/15.
@@ -78,6 +87,7 @@ class PBSDetails extends Component {
       restriction,
       commonwealthExManufacturerPrice,
       manufacturerExManufacturerPrice,
+      atcCode,
     } = subsidy
     return (
       <div className="pbs-details-content" key={key}>
@@ -157,6 +167,21 @@ class PBSDetails extends Component {
               <CopyToClipboard
                 copyText={manufacturerExManufacturerPrice.toFixed(2)}
                 title="Copy Manufacturer Ex Manufacturer Price to clipboard"
+              />
+            </div>
+          </div>
+        ) : null}
+        {atcCode ? (
+          <div className="row">
+            <div className="field-name">ATC code</div>
+            <div className="field-value">
+              <a href={this.atcCodeLink(atcCode.code)} target="_blank">
+                {atcCode.code}
+                <Icon type="external-link" width={11} height={11} />
+              </a>
+              <CopyToClipboard
+                copyText={atcCode.code}
+                title="Copy ATC code to clipboard"
               />
             </div>
           </div>

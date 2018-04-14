@@ -190,7 +190,9 @@ const getSubsidy = resource => {
           'manufacturerExManufacturerPrice',
           { throwError: false },
         ),
-        atcCode: getExtension(subsidy, 'atcCode', { throwError: false }),
+        atcCode: codeableConceptToAtcCoding(
+          getExtension(subsidy, 'atcCode', { throwError: false }),
+        ),
       }),
     )
   } catch (error) {
@@ -379,6 +381,7 @@ const getAllExtensions = (
 
 export const artgUri =
   'https://www.tga.gov.au/australian-register-therapeutic-goods'
+export const atcUri = 'http://www.whocc.no/atc'
 export const groupUri = 'group'
 
 const urlForExtension = name =>
@@ -445,6 +448,7 @@ const typeForExtension = name =>
     restriction: 'valueCoding',
     commonwealthExManufacturerPrice: 'valueDecimal',
     manufacturerExManufacturerPrice: 'valueDecimal',
+    atcCode: 'valueCodeableConcept',
   }[name])
 
 export const urlForArtgId = id =>
@@ -676,6 +680,12 @@ export const codingToSnomedDisplay = coding => {
 // Extracts all ARTG IDs from a `coding` element.
 export const codingToArtgIds = coding =>
   coding.filter(c => c.system === artgUri).map(coding => coding.code)
+
+// Extracts an ATC code from a `coding` element.
+export const codeableConceptToAtcCoding = codeableConcept => {
+  if (!codeableConcept.coding) return null
+  return codeableConcept.coding.find(c => c.system === atcUri)
+}
 
 // Extracts a group code from a `coding` element.
 export const codingToGroupCode = coding => {
