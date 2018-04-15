@@ -114,14 +114,19 @@
 }
 
 .search-form .clear-form {
+  border: 1px solid #3b6d8c;
+  padding: 6px 9px;
+  color: #3b6d8c;
+  border-radius: 6px;
   font-size: 14px;
   position: relative;
-  top: 12px;
+  top: 10px;
   left: 3px;
-  text-decoration: underline;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .search-form .clear-form:hover {
-  text-decoration: underline;
-  cursor: pointer;
+  border-color: #115d8c;
+  color: #115d8c;
 }
