@@ -1,6 +1,8 @@
 .full-search-results {
   font-family: 'Helvetica Neue', sans-serif;
   z-index: 80;
+  display: flex;
+  flex-direction: column;
 }
 
 .full-search-results ol {
@@ -8,6 +10,7 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
+  flex: 1;
 }
 
 .full-search-results .search-result {
@@ -15,6 +18,7 @@
   border-bottom: 1px solid #ccc;
   display: flex;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .full-search-results .search-result:hover {
@@ -50,4 +54,35 @@
 .full-search-results .no-results {
   padding: 14px 20px;
   font-size: 14px;
+}
+
+.full-search-results .unloaded-search-result {
+  position: relative;
+}
+
+.full-search-results .unloaded-search-result .sctid,
+.full-search-results .unloaded-search-result .display,
+.full-search-results .unloaded-search-result .concept-type {
+  background-color: #eee;
+  position: absolute;
+  top: 10px;
+  height: 18px;
+}
+
+.full-search-results .unloaded-search-result .sctid {
+  width: 138px;
+  left: 20px;
+}
+
+.full-search-results .unloaded-search-result .display {
+  left: 177px;
+}
+
+.full-search-results .unloaded-search-result .concept-type {
+  right: 20px;
+  width: 25px;
+  height: 10px;
+  background-color: white;
+  border: 2px solid #ddd;
+  top: 8px;
 }

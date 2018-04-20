@@ -97,10 +97,3 @@ export const nextLinkFromBundle = bundle => {
   if (!next || !next.url) return null
   return next.url
 }
-
-export const previousLinkFromBundle = bundle => {
-  if (!bundle || !bundle.link) return null
-  const previous = bundle.link.find(l => l.relation === 'previous')
-  if (!previous || !previous.url) return null
-  return previous.url
-}

@@ -13,7 +13,7 @@ import { searchPathFromQuery } from './Router.js'
 import { opOutcomeFromJsonResponse } from './fhir/core.js'
 import { sniffFormat } from './fhir/restApi'
 import { getSubjectConcept, amtConceptTypeFor } from './fhir/medication.js'
-import { nextLinkFromBundle, previousLinkFromBundle } from './fhir/bundle.js'
+import { nextLinkFromBundle } from './fhir/bundle.js'
 import { pathForQuery } from './fhir/search.js'
 import { codingToSnomedCode } from './fhir/medication.js'
 
@@ -49,24 +49,30 @@ export class Search extends Component {
     this.handleSelectResult = this.handleSelectResult.bind(this)
     this.setLoadingStatus = this.setLoadingStatus.bind(this)
     this.handleToggleAdvanced = this.handleToggleAdvanced.bind(this)
-    this.handleNextClick = this.handleNextClick.bind(this)
-    this.handlePreviousClick = this.handlePreviousClick.bind(this)
     this.handleDownloadClick = this.handleDownloadClick.bind(this)
     this.handleQuickSearchClosed = this.handleQuickSearchClosed.bind(this)
+    this.handleRequireMoreResults = this.handleRequireMoreResults.bind(this)
     this.handleError = this.handleError.bind(this)
   }
 
   // Gets the search results using either a search query string or a search URL,
   // then updates the state with the results.
-  updateResults({ fhirServer, query, url }) {
-    const updateFn = this.getUpdateFn({ fhirServer, query, url })
+  updateResults({ fhirServer, query, url, resultCount, append = false }) {
+    const { results } = this.state
+    const updateFn = this.getUpdateFn({ fhirServer, query, url, resultCount })
     this.setLoadingStatus(true)
     updateFn()
       .then(bundle => this.parseSearchResults(bundle))
       .then(parsed =>
         this.setState(() => ({
           bundle: parsed.bundle,
-          results: this.addLinksToResults(parsed.results),
+          // If the `append` option is set to true, append to the existing
+          // results in state. Otherwise, replace them. Appending is used when
+          // providing more results for infinite scroll.
+          results:
+            results && append
+              ? results.concat(this.addLinksToResults(parsed.results))
+              : this.addLinksToResults(parsed.results),
           query,
         })),
       )
@@ -114,12 +120,16 @@ export class Search extends Component {
     })
   }
 
-  getUpdateFn({ fhirServer, query, url }) {
+  getUpdateFn({ fhirServer, query, url, resultCount }) {
     const search = this,
       updateFn =
         fhirServer && query
           ? async function() {
-              return search.getSearchResultsFromQuery(fhirServer, query)
+              return search.getSearchResultsFromQuery(
+                fhirServer,
+                query,
+                resultCount ? { resultCount } : undefined,
+              )
             }
           : async function() {
               return search.getSearchResultsFromUrl(url)
@@ -129,8 +139,8 @@ export class Search extends Component {
     return updateFn
   }
 
-  async getSearchResultsFromQuery(fhirServer, query) {
-    const path = pathForQuery(query)
+  async getSearchResultsFromQuery(fhirServer, query, options) {
+    const path = pathForQuery(query, options)
     if (!path) return null
     return this.getSearchResultsFromUrl(fhirServer + path)
   }
@@ -186,7 +196,7 @@ export class Search extends Component {
     if (onLoadingChange) onLoadingChange(loading)
   }
 
-  handleQueryUpdate(query) {
+  handleQueryUpdate(query, { resultCount } = {}) {
     const { fhirServer } = this.props,
       { cancelRequest } = this.state,
       queryDiffers = query !== this.state.query
@@ -198,27 +208,15 @@ export class Search extends Component {
       () => {
         if (query && queryDiffers) {
           const { advanced } = this.state
-          this.throttledUpdateResults({ fhirServer, query })
+          this.throttledUpdateResults({ fhirServer, query, resultCount })
           if (advanced) {
             const { history } = this.props
-            history.push(searchPathFromQuery(query))
+            history.push(searchPathFromQuery(query, { resultCount }))
           }
         }
       },
     )
     if (!query) this.setState({ results: null })
-  }
-
-  handleNextClick() {
-    const { bundle } = this.state
-    const nextLink = nextLinkFromBundle(bundle)
-    if (nextLink) this.handleLinkNavigation(nextLink)
-  }
-
-  handlePreviousClick() {
-    const { bundle } = this.state
-    const previousLink = previousLinkFromBundle(bundle)
-    if (previousLink) this.handleLinkNavigation(previousLink)
   }
 
   handleDownloadClick() {
@@ -227,8 +225,10 @@ export class Search extends Component {
     this.updateAllResults({ fhirServer, query })
   }
 
-  handleLinkNavigation(url) {
-    this.updateResults({ url })
+  handleRequireMoreResults() {
+    const { bundle } = this.state,
+      nextLink = nextLinkFromBundle(bundle)
+    if (nextLink) this.updateResults({ url: nextLink, append: true })
   }
 
   handleUnsuccessfulResponse(response) {
@@ -343,13 +343,14 @@ export class Search extends Component {
         onPreviousClick={this.handlePreviousClick}
         onDownloadClick={this.handleDownloadClick}
         onSelectResult={this.handleSelectResult}
+        onRequireMoreResults={this.handleRequireMoreResults}
         onError={this.handleError}
       />
     ) : (
       <BasicSearch
         routedQuery={queryFromProps}
         currentQuery={queryFromState}
-        results={results}
+        results={results ? results.slice(0, 19) : null}
         bundle={bundle}
         focusUponMount={focusUponMount}
         loading={loading}

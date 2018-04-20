@@ -38,9 +38,9 @@ const availableSubstanceParams = ['substance', 'substance-text']
 // Translates a tagged search string into a valid GET URL (path only) which will
 // execute a search on the FHIR server. Returns false if there is no searchable
 // information in the query, e.g. `brand:`.
-export const pathForQuery = query => {
+export const pathForQuery = (query, options) => {
   const params = paramsFromQuery(query)
-  return pathFromParams(params.medParams, params.substanceParams)
+  return pathFromParams(params.medParams, params.substanceParams, options)
 }
 
 // Extracts all parameters from a search query and returns an object: `{
@@ -117,19 +117,23 @@ const filterSearchObject = (search, params) => {
   })
 }
 
-const pathFromParams = (medParams, substanceParams) => {
+const pathFromParams = (
+  medParams,
+  substanceParams,
+  { resultCount = 100 } = {},
+) => {
   if (medParams.length > 0 && substanceParams.length > 0) {
     throw new Error('Cannot have both Medication and Substance search params.')
   } else if (medParams.length > 0) {
     const getParams = medParams
       .map(p => getMedicationParamFor(p[0], p[1]))
       .join('&')
-    return `/Medication?${getParams}&_summary=true&_count=20`
+    return `/Medication?${getParams}&_summary=true&_count=${resultCount}`
   } else if (substanceParams.length > 0) {
     const getParams = substanceParams
       .map(p => getSubstanceParamFor(p[0], p[1]))
       .join('&')
-    return `/Substance?${getParams}&_summary=true&_count=20`
+    return `/Substance?${getParams}&_summary=true&_count=${resultCount}`
   } else {
     return false
   }

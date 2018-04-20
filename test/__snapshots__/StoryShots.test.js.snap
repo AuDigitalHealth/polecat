@@ -34,14 +34,11 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
     className="search-advanced-results"
   >
     <SearchSummary
-      nextLink={null}
       onDownloadClick={[Function]}
-      onNextClick={[Function]}
-      onPreviousClick={[Function]}
-      previousLink={null}
       totalResults={8}
     />
     <FullSearchResults
+      onRequireMoreResults={[Function]}
       onSelectResult={[Function]}
       query="parac"
       results={
@@ -140,6 +137,7 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
           },
         ]
       }
+      totalResults={8}
     />
   </div>
 </div>
@@ -179,14 +177,11 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
     className="search-advanced-results"
   >
     <SearchSummary
-      nextLink={null}
       onDownloadClick={[Function]}
-      onNextClick={[Function]}
-      onPreviousClick={[Function]}
-      previousLink={null}
       totalResults={8}
     />
     <FullSearchResults
+      onRequireMoreResults={[Function]}
       onSelectResult={[Function]}
       query="para"
       results={
@@ -285,6 +280,7 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
           },
         ]
       }
+      totalResults={8}
     />
   </div>
 </div>
@@ -4025,174 +4021,12 @@ exports[`Storyshots FullSearchResults With full range of types 1`] = `
   className="full-search-results"
 >
   <ol>
-    <li
-      className="search-result"
-      key="0"
-      onClick={[Function]}
-    >
-      <span
-        className="sctid"
-      >
-        933216161000036101
-      </span>
-      <span
-        className="display"
-      >
-        Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
-      </span>
-      <ConceptType
-        enabled={true}
-        status="active"
-        type="CTPP"
-      />
-    </li>
-    <li
-      className="search-result"
-      key="1"
-      onClick={[Function]}
-    >
-      <span
-        className="sctid"
-      >
-        933205801000036102
-      </span>
-      <span
-        className="display"
-      >
-        Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
-      </span>
-      <ConceptType
-        enabled={true}
-        status="active"
-        type="TPP"
-      />
-    </li>
-    <li
-      className="search-result"
-      key="2"
-      onClick={[Function]}
-    >
-      <span
-        className="sctid"
-      >
-        933196831000036102
-      </span>
-      <span
-        className="display"
-      >
-        Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
-      </span>
-      <ConceptType
-        enabled={true}
-        status="active"
-        type="TPUU"
-      />
-    </li>
-    <li
-      className="search-result"
-      key="3"
-      onClick={[Function]}
-    >
-      <span
-        className="sctid"
-      >
-        22131000168107
-      </span>
-      <span
-        className="display"
-      >
-        Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
-      </span>
-      <ConceptType
-        enabled={true}
-        status="active"
-        type="TP"
-      />
-    </li>
-    <li
-      className="search-result"
-      key="4"
-      onClick={[Function]}
-    >
-      <span
-        className="sctid"
-      >
-        75498011000036101
-      </span>
-      <span
-        className="display"
-      >
-        death adder antivenom 6000 units injection, 1 vial
-      </span>
-      <ConceptType
-        enabled={true}
-        status="active"
-        type="MPP"
-      />
-    </li>
-    <li
-      className="search-result"
-      key="5"
-      onClick={[Function]}
-    >
-      <span
-        className="sctid"
-      >
-        75096011000036105
-      </span>
-      <span
-        className="display"
-      >
-        king brown snake antivenom 18 000 units injection, vial
-      </span>
-      <ConceptType
-        enabled={true}
-        status="active"
-        type="MPUU"
-      />
-    </li>
-    <li
-      className="search-result"
-      key="6"
-      onClick={[Function]}
-    >
-      <span
-        className="sctid"
-      >
-        74983011000036101
-      </span>
-      <span
-        className="display"
-      >
-        taipan snake antivenom
-      </span>
-      <ConceptType
-        enabled={true}
-        status="active"
-        type="MP"
-      />
-    </li>
-    <li
-      className="search-result"
-      key="7"
-      onClick={[Function]}
-    >
-      <span
-        className="sctid"
-      >
-        2610011000036105
-      </span>
-      <span
-        className="display"
-      >
-        sumatriptan
-      </span>
-      <ConceptType
-        enabled={true}
-        status="active"
-        type="substance"
-      />
-    </li>
+    <AutoSizer
+      disableHeight={false}
+      disableWidth={false}
+      onResize={[Function]}
+      style={Object {}}
+    />
   </ol>
 </div>
 `;
@@ -5063,6 +4897,7 @@ exports[`Storyshots Search As configured 1`] = `
     outsideClickIgnoreClass="ignore-react-onclickoutside"
     preventDefault={false}
     quickSearchShouldClose={false}
+    results={null}
     stopPropagation={false}
   />
 </div>
@@ -5076,9 +4911,8 @@ exports[`Storyshots Search With a query 1`] = `
     loading={false}
     onDownloadClick={[Function]}
     onError={[Function]}
-    onNextClick={[Function]}
-    onPreviousClick={[Function]}
     onQueryUpdate={[Function]}
+    onRequireMoreResults={[Function]}
     onSelectResult={[Function]}
     onToggleAdvanced={[Function]}
     routedQuery="package:\\"22095011000036109|fenofibrate 145 mg tablet\\""
@@ -5107,6 +4941,7 @@ exports[`Storyshots Search With focus on mount 1`] = `
     outsideClickIgnoreClass="ignore-react-onclickoutside"
     preventDefault={false}
     quickSearchShouldClose={false}
+    results={null}
     stopPropagation={false}
   />
 </div>
@@ -5132,6 +4967,7 @@ exports[`Storyshots Search With minimum request frequency of 2 seconds 1`] = `
     outsideClickIgnoreClass="ignore-react-onclickoutside"
     preventDefault={false}
     quickSearchShouldClose={false}
+    results={null}
     stopPropagation={false}
   />
 </div>
@@ -5295,28 +5131,6 @@ exports[`Storyshots SearchSummary With next and previous links 1`] = `
       onClick={[Function]}
     />
   </div>
-  <div>
-    <Icon
-      alt="Previous page of results"
-      className="pagination-previous"
-      height={21}
-      hoverType="previous-active"
-      onClick={[Function]}
-      title="Previous page"
-      type="previous"
-      width={21}
-    />
-    <Icon
-      alt="Next page of results"
-      className="pagination-next"
-      height={21}
-      hoverType="next-active"
-      onClick={[Function]}
-      title="Next page"
-      type="next"
-      width={21}
-    />
-  </div>
 </div>
 `;
 
@@ -5333,28 +5147,6 @@ exports[`Storyshots SearchSummary With next link 1`] = `
     </div>
     <DownloadResults
       onClick={[Function]}
-    />
-  </div>
-  <div>
-    <Icon
-      alt="Previous page of results"
-      className="pagination-previous disabled"
-      height={21}
-      hoverType={null}
-      onClick={null}
-      title="Previous page"
-      type="previous"
-      width={21}
-    />
-    <Icon
-      alt="Next page of results"
-      className="pagination-next"
-      height={21}
-      hoverType="next-active"
-      onClick={[Function]}
-      title="Next page"
-      type="next"
-      width={21}
     />
   </div>
 </div>
@@ -5375,28 +5167,6 @@ exports[`Storyshots SearchSummary With no total results 1`] = `
       onClick={[Function]}
     />
   </div>
-  <div>
-    <Icon
-      alt="Previous page of results"
-      className="pagination-previous disabled"
-      height={21}
-      hoverType={null}
-      onClick={null}
-      title="Previous page"
-      type="previous"
-      width={21}
-    />
-    <Icon
-      alt="Next page of results"
-      className="pagination-next disabled"
-      height={21}
-      hoverType={null}
-      onClick={null}
-      title="Next page"
-      type="next"
-      width={21}
-    />
-  </div>
 </div>
 `;
 
@@ -5415,28 +5185,6 @@ exports[`Storyshots SearchSummary With previous link 1`] = `
       onClick={[Function]}
     />
   </div>
-  <div>
-    <Icon
-      alt="Previous page of results"
-      className="pagination-previous"
-      height={21}
-      hoverType="previous-active"
-      onClick={[Function]}
-      title="Previous page"
-      type="previous"
-      width={21}
-    />
-    <Icon
-      alt="Next page of results"
-      className="pagination-next disabled"
-      height={21}
-      hoverType={null}
-      onClick={null}
-      title="Next page"
-      type="next"
-      width={21}
-    />
-  </div>
 </div>
 `;
 
@@ -5453,28 +5201,6 @@ exports[`Storyshots SearchSummary With total results 1`] = `
     </div>
     <DownloadResults
       onClick={[Function]}
-    />
-  </div>
-  <div>
-    <Icon
-      alt="Previous page of results"
-      className="pagination-previous disabled"
-      height={21}
-      hoverType={null}
-      onClick={null}
-      title="Previous page"
-      type="previous"
-      width={21}
-    />
-    <Icon
-      alt="Next page of results"
-      className="pagination-next disabled"
-      height={21}
-      hoverType={null}
-      onClick={null}
-      title="Next page"
-      type="next"
-      width={21}
     />
   </div>
 </div>

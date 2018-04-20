@@ -19,7 +19,7 @@ describe('MedicationSearchField', () => {
     }
     const wrapper = shallow(<MedicationSearchField {...props} />)
     mock
-      .onGet(`${config.fhirServer}/some/search/path/l&_summary=true&_count=20`)
+      .onGet(`${config.fhirServer}/some/search/path/l&_summary=true&_count=100`)
       .reply(200, searchBundle1, { 'content-type': 'application/fhir+json' })
     // Set the text value to `l`.
     wrapper.setProps({ textValue: 'l' })

@@ -8,7 +8,6 @@ import Loading from './Loading.js'
 import Expand from './Expand.js'
 import SearchSummary from './SearchSummary.js'
 import FullSearchResults from './FullSearchResults.js'
-import { nextLinkFromBundle, previousLinkFromBundle } from './fhir/bundle.js'
 
 import './css/AdvancedSearch.css'
 
@@ -27,6 +26,7 @@ class AdvancedSearch extends Component {
     onPreviousClick: PropTypes.func,
     onDownloadClick: PropTypes.func,
     onSelectResult: PropTypes.func,
+    onRequireMoreResults: PropTypes.func,
     onError: PropTypes.func,
   }
 
@@ -34,10 +34,9 @@ class AdvancedSearch extends Component {
     super(props)
     this.handleQueryUpdate = this.handleQueryUpdate.bind(this)
     this.handleToggleAdvanced = this.handleToggleAdvanced.bind(this)
-    this.handleNextClick = this.handleNextClick.bind(this)
-    this.handlePreviousClick = this.handlePreviousClick.bind(this)
     this.handleDownloadClick = this.handleDownloadClick.bind(this)
     this.handleSelectResult = this.handleSelectResult.bind(this)
+    this.handleRequireMoreResults = this.handleRequireMoreResults.bind(this)
     this.handleError = this.handleError.bind(this)
   }
 
@@ -51,16 +50,6 @@ class AdvancedSearch extends Component {
     if (onToggleAdvanced) onToggleAdvanced(false)
   }
 
-  handleNextClick() {
-    const { onNextClick } = this.props
-    if (onNextClick) onNextClick()
-  }
-
-  handlePreviousClick() {
-    const { onPreviousClick } = this.props
-    if (onPreviousClick) onPreviousClick()
-  }
-
   handleDownloadClick() {
     const { onDownloadClick } = this.props
     if (onDownloadClick) onDownloadClick()
@@ -69,6 +58,11 @@ class AdvancedSearch extends Component {
   handleSelectResult(result) {
     const { onSelectResult } = this.props
     if (onSelectResult) onSelectResult(result)
+  }
+
+  handleRequireMoreResults() {
+    const { onRequireMoreResults } = this.props
+    if (onRequireMoreResults) onRequireMoreResults()
   }
 
   handleError(error) {
@@ -118,17 +112,15 @@ class AdvancedSearch extends Component {
             <SearchSummary
               totalResults={bundle.total}
               allResults={allResults}
-              nextLink={nextLinkFromBundle(bundle)}
-              previousLink={previousLinkFromBundle(bundle)}
               loading={loading}
-              onNextClick={this.handleNextClick}
-              onPreviousClick={this.handlePreviousClick}
               onDownloadClick={this.handleDownloadClick}
             />
             <FullSearchResults
               query={query}
+              totalResults={bundle.total}
               results={results}
               onSelectResult={this.handleSelectResult}
+              onRequireMoreResults={this.handleRequireMoreResults}
             />
           </div>
         ) : null}

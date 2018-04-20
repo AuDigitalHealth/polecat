@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { InfiniteLoader } from 'react-virtualized/dist/commonjs/InfiniteLoader'
+import { List } from 'react-virtualized/dist/commonjs/List'
+import { AutoSizer } from 'react-virtualized/dist/commonjs/AutoSizer'
 
 import ConceptType from './ConceptType.js'
 import { codingToSnomedCode, codingToSnomedDisplay } from './fhir/medication.js'
@@ -31,7 +34,23 @@ class FullSearchResults extends Component {
         ]),
       }),
     ),
+    totalResults: PropTypes.number,
     onSelectResult: PropTypes.func,
+    onRequireMoreResults: PropTypes.func.isRequired,
+  }
+
+  constructor(props) {
+    super(props)
+    this.renderResult = this.renderResult.bind(this)
+    this.loadMoreRows = this.loadMoreRows.bind(this)
+  }
+
+  loadMoreRows({ startIndex, stopIndex }) {
+    const { onRequireMoreResults } = this.props
+    return new Promise(resolve => {
+      if (onRequireMoreResults) onRequireMoreResults({ startIndex, stopIndex })
+      resolve()
+    })
   }
 
   handleSelectResult(result) {
@@ -56,25 +75,66 @@ class FullSearchResults extends Component {
     } else if (results && results.length === 0) {
       return <div className="no-results">No results.</div>
     } else if (results && results.length > 0) {
-      return <ol>{this.renderResults(results)}</ol>
+      return <ol>{this.renderResults()}</ol>
     } else {
       return null
     }
   }
 
-  renderResults(results) {
-    if (!results) return
-    return results.map((result, i) => (
+  renderResults() {
+    const { results, totalResults } = this.props,
+      renderResult = this.renderResult
+    if (!results || results.length === 0) return
+    return (
+      <AutoSizer>
+        {({ width, height }) => (
+          <InfiniteLoader
+            isRowLoaded={({ index }) => !!results[index]}
+            loadMoreRows={this.loadMoreRows}
+            rowCount={totalResults}
+          >
+            {({ onRowsRendered, registerChild }) => (
+              <List
+                ref={registerChild}
+                rowCount={totalResults}
+                rowHeight={35}
+                rowRenderer={renderResult}
+                width={width}
+                height={height}
+                onRowsRendered={onRowsRendered}
+              />
+            )}
+          </InfiniteLoader>
+        )}
+      </AutoSizer>
+    )
+  }
+
+  renderResult({ key, index, style }) {
+    const { results } = this.props,
+      result = results[index]
+    if (!result) {
+      const displayLength = 189 + Math.round(Math.random() * 200)
+      return (
+        <li key={key} className="unloaded-search-result" style={style}>
+          <span className="sctid" />
+          <span className="display" style={{ width: displayLength }} />
+          <span className="concept-type" />
+        </li>
+      )
+    }
+    return (
       <li
-        key={i}
+        key={key}
         className="search-result"
+        style={style}
         onClick={() => this.handleSelectResult(result)}
       >
         <span className="sctid">{codingToSnomedCode(result.coding)}</span>
         <span className="display">{codingToSnomedDisplay(result.coding)}</span>
         <ConceptType type={result.type} status={result.status} />
       </li>
-    ))
+    )
   }
 }
 

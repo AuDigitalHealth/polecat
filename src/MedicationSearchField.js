@@ -102,7 +102,7 @@ export class MedicationSearchField extends Component {
 
   buildSearchPath(fhirServer, query) {
     const { searchPath } = this.props
-    return `${fhirServer}${searchPath(query)}&_summary=true&_count=20`
+    return `${fhirServer}${searchPath(query)}&_summary=true&_count=100`
   }
 
   async parseSearchResults(bundle) {
