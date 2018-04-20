@@ -18,7 +18,7 @@
   top: 22px;
   right: -246px;
   width: 400px;
-  z-index: 65;
+  z-index: 82 !important;
 }
 
 .medication-search-field .quick-search-results ol {
