@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import pick from 'lodash.pick'
 import isEqual from 'lodash.isequal'
+import omit from 'lodash.omit'
 
 import BasicSearch from './BasicSearch.js'
 import AdvancedSearch from './AdvancedSearch.js'
@@ -161,6 +162,7 @@ export class Search extends Component {
         cancelToken,
         timeout: 10000,
       })
+      this.deregisterOutstandingSearchRequest(url)
     } catch (error) {
       if (error.response) this.handleUnsuccessfulResponse(error.response)
       else throw error
@@ -208,13 +210,22 @@ export class Search extends Component {
     }))
   }
 
+  // Clear the specified outstanding request.
+  deregisterOutstandingSearchRequest(url) {
+    const { outstandingRequests } = this.state
+    this.setState(() => ({
+      outstandingRequests: omit(outstandingRequests, url),
+    }))
+  }
+
   // Cancel all outstanding search requests.
   cancelAllRequests() {
     const { outstandingRequests } = this.state,
       cancels = Object.values(outstandingRequests)
     for (const cancel of cancels) {
-      cancel()
+      if (cancel) cancel()
     }
+    this.setState(() => ({ outstandingRequests: [] }))
   }
 
   handleQueryUpdate(query, { resultCount } = {}) {

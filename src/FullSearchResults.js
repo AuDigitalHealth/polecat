@@ -125,6 +125,7 @@ class FullSearchResults extends Component {
     )
   }
 
+  // TODO: Fix problem with rows not being re-rendered until scroll.
   renderResult({ key, index, style }) {
     const { results } = this.props,
       result = results[index]
@@ -134,7 +135,6 @@ class FullSearchResults extends Component {
         <li key={key} className="unloaded-search-result" style={style}>
           <span className="sctid" />
           <span className="display" style={{ width: displayLength }} />
-          <span className="concept-type" />
         </li>
       )
     }
