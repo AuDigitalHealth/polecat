@@ -67,11 +67,10 @@
       <path d="M50.07,44.86a5.44,5.44,0,1,0,5.44,5.44A5.44,5.44,0,0,0,50.07,44.86Z"/>
     </symbol>
     <symbol id="is-a">
-      <path fill="#fff" stroke="#000" stroke-width="5" d="M 40,25 L 0,50 L 40,75      Z M 33,50 L 100,50"/>
+      <path fill="#fff" stroke="#000" stroke-width="5" d="M 40,25 L 0,50 L 40,75 Z M 33,50 L 100,50"/>
     </symbol>
     <symbol id="download">
-      <polygon points="28.67 46.63 50 71.3 71.33 46.63 58.01 46.63 58.01 12.07 41.99 12.07 41.99 46.63 28.67 46.63"/>
-      <path d="M86,87.93H14a5,5,0,0,1-5-5V58.67H19V77.93H81V58.67H91V82.93A5,5,0,0,1,86,87.93Z"/>
+      <path fill-rule="evenodd" d="M4 6h3V0h2v6h3l-4 4-4-4zm11-4h-4v1h4v8H1V3h4V2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1z" transform="scale(5.5, 5.5) translate(1.5, 1.5)"/>
     </symbol>
     <symbol id="download-active">
       <use xlink:href="#highlight"/>
