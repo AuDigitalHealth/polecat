@@ -43,6 +43,8 @@ class FullSearchResults extends Component {
     super(props)
     this.renderResult = this.renderResult.bind(this)
     this.loadMoreRows = this.loadMoreRows.bind(this)
+    this.handleScroll = this.handleScroll.bind(this)
+    this.state = {}
   }
 
   loadMoreRows({ startIndex, stopIndex }) {
@@ -56,6 +58,15 @@ class FullSearchResults extends Component {
   handleSelectResult(result) {
     const { onSelectResult } = this.props
     if (onSelectResult) onSelectResult(result)
+  }
+
+  handleScroll({ scrollTop }) {
+    if (scrollTop === 0) this.setState(() => ({ scrollTop: undefined }))
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { query } = nextProps
+    if (query !== this.props.query) this.setState(() => ({ scrollTop: 0 }))
   }
 
   render() {
@@ -83,7 +94,8 @@ class FullSearchResults extends Component {
 
   renderResults() {
     const { results, totalResults } = this.props,
-      renderResult = this.renderResult
+      renderResult = this.renderResult,
+      { scrollTop } = this.state
     if (!results || results.length === 0) return
     return (
       <AutoSizer>
@@ -102,6 +114,8 @@ class FullSearchResults extends Component {
                 width={width}
                 height={height}
                 onRowsRendered={onRowsRendered}
+                scrollTop={scrollTop}
+                onScroll={this.handleScroll}
               />
             )}
           </InfiniteLoader>
