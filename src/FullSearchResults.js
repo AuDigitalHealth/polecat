@@ -113,8 +113,9 @@ class FullSearchResults extends Component {
                 rowRenderer={renderResult}
                 width={width}
                 height={height}
-                onRowsRendered={onRowsRendered}
                 scrollTop={scrollTop}
+                overscanRowCount={50}
+                onRowsRendered={onRowsRendered}
                 onScroll={this.handleScroll}
               />
             )}

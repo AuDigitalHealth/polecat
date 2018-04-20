@@ -38,7 +38,11 @@ export class Search extends Component {
 
   constructor(props) {
     super(props)
-    this.state = { advanced: false, quickSearchShouldClose: false }
+    this.state = {
+      advanced: false,
+      quickSearchShouldClose: false,
+      outstandingRequests: [],
+    }
     this.handleQueryUpdate = this.handleQueryUpdate.bind(this)
     this.updateResults = this.updateResults.bind(this)
     this.throttledUpdateResults = throttle(
@@ -61,7 +65,7 @@ export class Search extends Component {
     const { results } = this.state
     const updateFn = this.getUpdateFn({ fhirServer, query, url, resultCount })
     this.setLoadingStatus(true)
-    updateFn()
+    return updateFn()
       .then(bundle => this.parseSearchResults(bundle))
       .then(parsed =>
         this.setState(() => ({
@@ -151,7 +155,7 @@ export class Search extends Component {
       const cancelToken = new CancelToken(function executor(c) {
         newCancelRequest = c
       })
-      this.setState(() => ({ cancelRequest: newCancelRequest }))
+      this.registerOutstandingSearchRequest(url, newCancelRequest)
       response = await http.get(url, {
         headers: { Accept: 'application/fhir+json' },
         cancelToken,
@@ -196,13 +200,29 @@ export class Search extends Component {
     if (onLoadingChange) onLoadingChange(loading)
   }
 
+  // Register a new search request, along with the function which can cancel it.
+  registerOutstandingSearchRequest(url, cancel) {
+    const { outstandingRequests } = this.state
+    this.setState(() => ({
+      outstandingRequests: { ...outstandingRequests, [url]: cancel },
+    }))
+  }
+
+  // Cancel all outstanding search requests.
+  cancelAllRequests() {
+    const { outstandingRequests } = this.state,
+      cancels = Object.values(outstandingRequests)
+    for (const cancel of cancels) {
+      cancel()
+    }
+  }
+
   handleQueryUpdate(query, { resultCount } = {}) {
     const { fhirServer } = this.props,
-      { cancelRequest } = this.state,
       queryDiffers = query !== this.state.query
     // Cancel any outstanding search requests, we will update to match the
     // results to this search now or when the throttle period renews.
-    if (cancelRequest) cancelRequest()
+    this.cancelAllRequests()
     this.setState(
       () => ({ query }),
       () => {
@@ -225,10 +245,23 @@ export class Search extends Component {
     this.updateAllResults({ fhirServer, query })
   }
 
-  handleRequireMoreResults() {
-    const { bundle } = this.state,
-      nextLink = nextLinkFromBundle(bundle)
-    if (nextLink) this.updateResults({ url: nextLink, append: true })
+  // Handler used by infinite scroll to request additional search results as the
+  // user scrolls down the page.
+  async handleRequireMoreResults({ stopIndex }) {
+    const { results } = this.state
+    // Calculate number of additional pages of search results needed, based upon
+    // the number of results we already have and the end of the request window.
+    const requestsNeeded = Math.floor((stopIndex - results.length) / 100) + 1
+    for (let i = 0; i < requestsNeeded; i++) {
+      const { bundle, outstandingRequests } = this.state,
+        nextLink = nextLinkFromBundle(bundle),
+        requestOutstanding = Object.keys(outstandingRequests).includes(nextLink)
+      // If we are not at the end of the search results and there is not already
+      // an outstanding request for this page, fire the search request.
+      if (nextLink && !requestOutstanding) {
+        await this.updateResults({ url: nextLink, append: true })
+      }
+    }
   }
 
   handleUnsuccessfulResponse(response) {
@@ -270,13 +303,12 @@ export class Search extends Component {
   }
 
   componentWillUnmount() {
-    const { cancelRequest } = this.state
-    if (cancelRequest) cancelRequest()
+    this.cancelAllRequests()
   }
 
   componentWillReceiveProps(nextProps) {
     const { fhirServer, query, quickSearchShouldClose } = nextProps
-    const { advanced, cancelRequest } = this.state
+    const { advanced } = this.state
     if (this.props.fhirServer === fhirServer && this.props.query === query) {
       return
     }
@@ -284,7 +316,7 @@ export class Search extends Component {
       this.setState(() => ({ advanced: true }))
       // Cancel any outstanding search requests, we will update to match the
       // results to this search now or when the throttle period renews.
-      if (cancelRequest) cancelRequest()
+      this.cancelAllRequests()
       // Skip the search request if the query is the same as the previous one
       // stored in state.
       if (query !== this.state.query) this.updateResults({ fhirServer, query })
