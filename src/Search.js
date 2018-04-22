@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import pick from 'lodash.pick'
 import isEqual from 'lodash.isequal'
-import omit from 'lodash.omit'
 
 import BasicSearch from './BasicSearch.js'
 import AdvancedSearch from './AdvancedSearch.js'
@@ -62,30 +61,30 @@ export class Search extends Component {
 
   // Gets the search results using either a search query string or a search URL,
   // then updates the state with the results.
-  updateResults({ fhirServer, query, url, resultCount, append = false }) {
-    const { results } = this.state
+  updateResults({ fhirServer, query, url, resultCount, update = true }) {
     const updateFn = this.getUpdateFn({ fhirServer, query, url, resultCount })
     this.setLoadingStatus(true)
-    return updateFn()
-      .then(bundle => this.parseSearchResults(bundle))
-      .then(parsed =>
-        this.setState(() => ({
-          bundle: parsed.bundle,
-          // If the `append` option is set to true, append to the existing
-          // results in state. Otherwise, replace them. Appending is used when
-          // providing more results for infinite scroll.
-          results:
-            results && append
-              ? results.concat(this.addLinksToResults(parsed.results))
-              : this.addLinksToResults(parsed.results),
-          query,
-        })),
-      )
-      .then(() => this.setLoadingStatus(false))
-      .catch(error => {
-        this.handleError(error)
-        this.setLoadingStatus(false)
-      })
+    return new Promise((resolve, reject) => {
+      updateFn()
+        .then(bundle => this.parseSearchResults(bundle))
+        .then(parsed => {
+          if (update) {
+            this.setState(() => ({
+              bundle: parsed.bundle,
+              results: this.addLinksToResults(parsed.results),
+              query,
+            }))
+          }
+          resolve(parsed)
+          return parsed
+        })
+        .then(() => this.setLoadingStatus(false))
+        .catch(error => {
+          this.handleError(error)
+          this.setLoadingStatus(false)
+          reject(error)
+        })
+    })
   }
 
   updateAllResults({ fhirServer, query, url }) {
@@ -156,13 +155,12 @@ export class Search extends Component {
       const cancelToken = new CancelToken(function executor(c) {
         newCancelRequest = c
       })
-      this.registerOutstandingSearchRequest(url, newCancelRequest)
+      this.registerPendingRequest(newCancelRequest)
       response = await http.get(url, {
         headers: { Accept: 'application/fhir+json' },
         cancelToken,
         timeout: 10000,
       })
-      this.deregisterOutstandingSearchRequest(url)
     } catch (error) {
       if (error.response) this.handleUnsuccessfulResponse(error.response)
       else throw error
@@ -203,37 +201,60 @@ export class Search extends Component {
   }
 
   // Register a new search request, along with the function which can cancel it.
-  registerOutstandingSearchRequest(url, cancel) {
-    const { outstandingRequests } = this.state
+  registerPendingRequest(cancel) {
     this.setState(() => ({
-      outstandingRequests: { ...outstandingRequests, [url]: cancel },
+      cancelPendingRequest: cancel,
     }))
   }
 
-  // Clear the specified outstanding request.
-  deregisterOutstandingSearchRequest(url) {
-    const { outstandingRequests } = this.state
-    this.setState(() => ({
-      outstandingRequests: omit(outstandingRequests, url),
-    }))
+  // Cancel the previously registered pending request.
+  cancelPendingRequest() {
+    const { cancelPendingRequest } = this.state
+    if (cancelPendingRequest) cancelPendingRequest()
   }
 
-  // Cancel all outstanding search requests.
-  cancelAllRequests() {
-    const { outstandingRequests } = this.state,
-      cancels = Object.values(outstandingRequests)
-    for (const cancel of cancels) {
-      if (cancel) cancel()
-    }
-    this.setState(() => ({ outstandingRequests: [] }))
+  // Recursive function which gets a specified number of pages of requests,
+  // and concatenates them to the supplied set of results.
+  getMoreResults(results, nextLink, requestsNeeded) {
+    return new Promise((resolve, reject) => {
+      const { outstandingRequests } = this.state,
+        requestOutstanding = Object.keys(outstandingRequests).includes(nextLink)
+      // If we detect a collision with an existing request, we call the whole
+      // thing off.
+      if (requestOutstanding) {
+        resolve({})
+        return
+      }
+      // If we have iterated down to our prescribed number of pages or we hit
+      // the end of the results, we resolve the promise.
+      if (requestsNeeded < 1 || !nextLink) {
+        resolve({ results, moreResultsLink: nextLink })
+        return
+      }
+      // Otherwise, we recurse deeper by kicking off another iteration with
+      // the accumulated results and the new next link.
+      this.updateResults({ url: nextLink, update: false })
+        .then(parsed => {
+          const nextLink = nextLinkFromBundle(parsed.bundle)
+          // eslint-disable-next-line promise/no-nesting
+          return this.getMoreResults(
+            results.concat(parsed.results),
+            nextLink,
+            requestsNeeded - 1,
+          ).then(({ results, moreResultsLink }) =>
+            resolve({ results, moreResultsLink }),
+          )
+        })
+        .catch(error => reject(error))
+    })
   }
 
   handleQueryUpdate(query, { resultCount } = {}) {
     const { fhirServer } = this.props,
       queryDiffers = query !== this.state.query
-    // Cancel any outstanding search requests, we will update to match the
+    // Cancel any outstanding search request, we will update to match the
     // results to this search now or when the throttle period renews.
-    this.cancelAllRequests()
+    this.cancelPendingRequest()
     this.setState(
       () => ({ query }),
       () => {
@@ -258,21 +279,40 @@ export class Search extends Component {
 
   // Handler used by infinite scroll to request additional search results as the
   // user scrolls down the page.
-  async handleRequireMoreResults({ stopIndex }) {
-    const { results } = this.state
-    // Calculate number of additional pages of search results needed, based upon
-    // the number of results we already have and the end of the request window.
-    const requestsNeeded = Math.floor((stopIndex - results.length) / 100) + 1
-    for (let i = 0; i < requestsNeeded; i++) {
-      const { bundle, outstandingRequests } = this.state,
-        nextLink = nextLinkFromBundle(bundle),
-        requestOutstanding = Object.keys(outstandingRequests).includes(nextLink)
-      // If we are not at the end of the search results and there is not already
-      // an outstanding request for this page, fire the search request.
-      if (nextLink && !requestOutstanding) {
-        await this.updateResults({ url: nextLink, append: true })
-      }
-    }
+  handleRequireMoreResults({ stopIndex }) {
+    const {
+        bundle,
+        results: initialResults,
+        moreResultsLink,
+        getMoreResultsInProgress,
+      } = this.state,
+      // The search link to use is either the one from the first bundle, or the
+      // one from the last request used to get more results.
+      nextLink = moreResultsLink || nextLinkFromBundle(bundle),
+      // Calculate number of additional pages of search results needed, based upon
+      // the number of results we already have and the end of the request window.
+      requestsNeeded = Math.floor((stopIndex - initialResults.length) / 100) + 1
+    // Only allow one operation to get more results to execute at one time.
+    if (getMoreResultsInProgress) return Promise.resolve(null)
+    this.setState(() => ({ getMoreResultsInProgress: true }))
+    // Get more results, then add them to the end of the current results and
+    // update within state.
+    return this.getMoreResults(initialResults, nextLink, requestsNeeded)
+      .then(({ results, moreResultsLink }) => {
+        this.setState(() => ({ getMoreResultsInProgress: false }))
+        // If results were returned, update state with the new set of results,
+        // and record the link that we are up to for next time we go to get more results.
+        return results
+          ? this.setState(() => ({
+              results: this.addLinksToResults(results),
+              moreResultsLink,
+            }))
+          : null
+      })
+      .catch(error => {
+        this.setState(() => ({ getMoreResultsInProgress: false }))
+        this.handleError(error)
+      })
   }
 
   handleUnsuccessfulResponse(response) {
@@ -314,7 +354,7 @@ export class Search extends Component {
   }
 
   componentWillUnmount() {
-    this.cancelAllRequests()
+    this.cancelPendingRequest()
   }
 
   componentWillReceiveProps(nextProps) {
@@ -327,7 +367,7 @@ export class Search extends Component {
       this.setState(() => ({ advanced: true }))
       // Cancel any outstanding search requests, we will update to match the
       // results to this search now or when the throttle period renews.
-      this.cancelAllRequests()
+      this.cancelPendingRequest()
       // Skip the search request if the query is the same as the previous one
       // stored in state.
       if (query !== this.state.query) this.updateResults({ fhirServer, query })

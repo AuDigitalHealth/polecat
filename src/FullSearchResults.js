@@ -49,9 +49,14 @@ class FullSearchResults extends Component {
 
   loadMoreRows({ startIndex, stopIndex }) {
     const { onRequireMoreResults } = this.props
-    return new Promise(resolve => {
-      if (onRequireMoreResults) onRequireMoreResults({ startIndex, stopIndex })
-      resolve()
+    this.loadMoreRowsStartIndex = startIndex
+    this.loadMoreRowsStopIndex = stopIndex
+    return new Promise((resolve, reject) => {
+      if (onRequireMoreResults) {
+        onRequireMoreResults({ stopIndex })
+          .then(() => resolve())
+          .catch(error => reject(error))
+      } else resolve()
     })
   }
 
@@ -67,6 +72,23 @@ class FullSearchResults extends Component {
   componentWillReceiveProps(nextProps) {
     const { query } = nextProps
     if (query !== this.props.query) this.setState(() => ({ scrollTop: 0 }))
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    if (
+      nextProps !== this.props ||
+      nextState !== this.state ||
+      nextProps.results.length !== this.props.results.length
+    ) {
+      // Make another request to load more rows if we find ourselves way down
+      // the page by the time the data comes back. See https://github.com/bvaughn/react-virtualized/blob/master/docs/InfiniteLoader.md#memoization-and-rowcount-changes.
+      if (this.loadMoreRowsStopIndex > this.props.results.length + 100)
+        this.loadMoreRows({
+          startIndex: this.loadMoreRowsStartIndex,
+          stopIndex: this.loadMoreRowsStopIndex,
+        })
+      return true
+    } else return false
   }
 
   render() {
@@ -115,6 +137,7 @@ class FullSearchResults extends Component {
                 height={height}
                 scrollTop={scrollTop}
                 overscanRowCount={50}
+                results={results}
                 onRowsRendered={onRowsRendered}
                 onScroll={this.handleScroll}
               />
@@ -125,7 +148,6 @@ class FullSearchResults extends Component {
     )
   }
 
-  // TODO: Fix problem with rows not being re-rendered until scroll.
   renderResult({ key, index, style }) {
     const { results } = this.props,
       result = results[index]

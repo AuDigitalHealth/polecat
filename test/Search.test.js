@@ -109,7 +109,9 @@ describe('Search', () => {
       }
       mock
         .onGet(
-          `${props.fhirServer}/Medication?_text=g&_summary=true&_count=100`,
+          `${
+            props.fhirServer
+          }/Medication?status=active,inactive,entered-in-error&_text=g&_summary=true&_count=100`,
         )
         .reply(200, searchBundle1, {
           'content-type': 'application/fhir+json',

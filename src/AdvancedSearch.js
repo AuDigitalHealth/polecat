@@ -60,9 +60,9 @@ class AdvancedSearch extends Component {
     if (onSelectResult) onSelectResult(result)
   }
 
-  handleRequireMoreResults({ startIndex, stopIndex }) {
+  handleRequireMoreResults({ stopIndex }) {
     const { onRequireMoreResults } = this.props
-    if (onRequireMoreResults) onRequireMoreResults({ startIndex, stopIndex })
+    if (onRequireMoreResults) return onRequireMoreResults({ stopIndex })
   }
 
   handleError(error) {
