@@ -5,6 +5,8 @@ export class OpOutcomeError extends Error {
         ? issue.details.display
         : issue.diagnostics
     super(message)
+    this.name = 'OpOutcomeError'
     this.issue = issue
+    Error.captureStackTrace(this, this.constructor.name)
   }
 }
