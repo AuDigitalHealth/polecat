@@ -27,3 +27,9 @@
   border-bottom: none;
   padding-bottom: 0;
 }
+
+.pbs-details .pbs-search {
+  position: relative;
+  top: 2px;
+  left: 5px;
+}

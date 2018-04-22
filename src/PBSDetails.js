@@ -49,6 +49,10 @@ class PBSDetails extends Component {
     return `https://www.pbs.gov.au/medicine/item/${code}`
   }
 
+  pbsSearchLink(code) {
+    return `/?q=pbs:${code}`
+  }
+
   pbsProgramLink(programCode) {
     return `https://www.pbs.gov.au/pbs/search?base=drugtype:${programCode.toLowerCase()},&search-type=medicines`
   }
@@ -98,6 +102,19 @@ class PBSDetails extends Component {
               <a href={this.pbsCodeLink(subsidyCode.code)} target="_blank">
                 {subsidyCode.code}
                 <Icon type="external-link" width={11} height={11} />
+              </a>
+              <a
+                className="pbs-search"
+                href={this.pbsSearchLink(subsidyCode.code)}
+              >
+                <Icon
+                  type="list"
+                  hoverType="list-active"
+                  width={15}
+                  height={15}
+                  title="Search for all medications available under this code"
+                  alt="Search for all medications available under this code"
+                />
               </a>
               <CopyToClipboard
                 copyText={subsidyCode.code}
