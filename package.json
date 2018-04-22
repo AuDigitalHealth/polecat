@@ -39,6 +39,7 @@
     "react-onclickoutside": "^6.7.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.1.2",
+    "react-test-renderer": "^16.3.2",
     "react-virtualized": "^9.18.5",
     "redux": "^3.7.2",
     "verhoeff": "^0.0.5"
@@ -87,7 +88,6 @@
     "prettier": "^1.10.2",
     "react-dev-utils": "^5.0.0",
     "react-router": "^4.2.0",
-    "react-test-renderer": "^16.2.0",
     "request": "^2.34",
     "serve": "^6.4.3",
     "sinon": "^4.1.2",
