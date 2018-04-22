@@ -66,3 +66,9 @@
   right: 10px;
   margin: 0;
 }
+
+.subject-concept-details .artg-search {
+  position: relative;
+  top: 2px;
+  left: 5px;
+}

@@ -37,6 +37,10 @@ class SubjectConceptDetails extends Component {
     return `https://en.wikipedia.org/wiki/${capitalise(display)}`
   }
 
+  artgSearchLink(artgId) {
+    return `/?q=artg:${artgId}`
+  }
+
   render() {
     const {
         coding,
@@ -118,6 +122,16 @@ class SubjectConceptDetails extends Component {
                   >
                     {artgId}
                     <Icon type="external-link" width={11} height={11} />
+                  </a>
+                  <a className="artg-search" href={this.artgSearchLink(artgId)}>
+                    <Icon
+                      type="list"
+                      hoverType="list-active"
+                      width={15}
+                      height={15}
+                      title="Search for all medications associated with this ARTG ID"
+                      alt="Search for all medications associated with this ARTG ID"
+                    />
                   </a>
                   <CopyToClipboard
                     copyText={artgId}
