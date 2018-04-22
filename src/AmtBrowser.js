@@ -44,8 +44,11 @@ export class AmtBrowser extends Component {
     if (onLoadSubjectConcept) onLoadSubjectConcept(concept)
   }
 
+  // This is where errors that are explicitly caught land, through calls to this
+  // handler by downstream components.
   handleError(error) {
     this.setState(() => ({ error, loading: false }))
+    Raven.captureException(error)
   }
 
   reset() {
@@ -65,6 +68,7 @@ export class AmtBrowser extends Component {
     }
   }
 
+  // This is where uncaught exceptions land.
   componentDidCatch(error) {
     this.setState({ error, loading: false })
     Raven.captureException(error)
