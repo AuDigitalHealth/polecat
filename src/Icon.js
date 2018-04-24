@@ -27,9 +27,8 @@ class Icon extends Component {
     this.setState(() => ({ mouse: 'hover' }))
   }
 
-  handleMouseLeave(event) {
+  handleMouseLeave() {
     this.setState(() => ({ mouse: 'none' }))
-    event.preventDefault()
   }
 
   handleClick(event) {

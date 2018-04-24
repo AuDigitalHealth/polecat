@@ -1,6 +1,7 @@
 .visibility-filter {
   position: relative;
   padding-top: 36px;
+  user-select: none;
 }
 
 .visibility-filter-icon {
