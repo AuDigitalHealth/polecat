@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import currencyFormatter from 'currency-formatter'
 import uniqBy from 'lodash.uniqby'
 
@@ -103,9 +104,9 @@ class PBSDetails extends Component {
                 {subsidyCode.code}
                 <Icon type="external-link" width={11} height={11} />
               </a>
-              <a
+              <Link
                 className="pbs-search"
-                href={this.pbsSearchLink(subsidyCode.code)}
+                to={this.pbsSearchLink(subsidyCode.code)}
               >
                 <Icon
                   type="list"
@@ -115,7 +116,7 @@ class PBSDetails extends Component {
                   title="Search for all medications available under this code"
                   alt="Search for all medications available under this code"
                 />
-              </a>
+              </Link>
               <CopyToClipboard
                 copyText={subsidyCode.code}
                 title="Copy PBS code to clipboard"

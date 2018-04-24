@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import Concept from './Concept.js'
 import CopyToClipboard from './CopyToClipboard.js'
@@ -123,7 +124,10 @@ class SubjectConceptDetails extends Component {
                     {artgId}
                     <Icon type="external-link" width={11} height={11} />
                   </a>
-                  <a className="artg-search" href={this.artgSearchLink(artgId)}>
+                  <Link
+                    className="artg-search"
+                    to={this.artgSearchLink(artgId)}
+                  >
                     <Icon
                       type="list"
                       hoverType="list-active"
@@ -132,7 +136,7 @@ class SubjectConceptDetails extends Component {
                       title="Search for all medications associated with this ARTG ID"
                       alt="Search for all medications associated with this ARTG ID"
                     />
-                  </a>
+                  </Link>
                   <CopyToClipboard
                     copyText={artgId}
                     title="Copy ARTG ID to clipboard"
