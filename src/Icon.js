@@ -46,20 +46,17 @@ class Icon extends Component {
         width={width}
         height={height}
         viewBox="0 0 100 100"
+        onMouseOver={this.handleMouseOver}
+        onMouseLeave={this.handleMouseLeave}
+        onClick={this.handleClick}
       >
         <title>{title}</title>
         <desc>{alt}</desc>
-        <g
-          onMouseOver={this.handleMouseOver}
-          onMouseLeave={this.handleMouseLeave}
-          onClick={this.handleClick}
-        >
-          <use
-            xlinkHref={`${icons}#${
-              hoverType && mouse === 'hover' ? hoverType : type
-            }`}
-          />
-        </g>
+        <use
+          xlinkHref={`${icons}#${
+            hoverType && mouse === 'hover' ? hoverType : type
+          }`}
+        />
       </svg>
     )
   }
