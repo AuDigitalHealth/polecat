@@ -18,9 +18,14 @@
 }
 
 .concept .display {
-  min-height: 16px;
-  max-height: 58px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  line-height: 1.2;
+  max-height: 3.6rem;
 }
 
 .concept .concept-type {
