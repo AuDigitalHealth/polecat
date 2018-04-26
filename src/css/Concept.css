@@ -26,6 +26,7 @@
   word-wrap: break-word;
   line-height: 1.2;
   max-height: 3.6rem;
+  min-height: 1.1rem;
 }
 
 .concept .concept-type {

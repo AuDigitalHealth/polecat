@@ -1,0 +1,10 @@
+.icon {
+  display: inline;
+}
+
+/* This is necessary to make the graphical elements within the icon clickable in
+Edge. See: https://stackoverflow.com/questions/35367445/can-only-click-edges-of-svg-image */
+.icon svg,
+.icon use {
+  pointer-events: none;
+}
