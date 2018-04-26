@@ -164,3 +164,15 @@ services:
 * Polecat currently only supports deployment at the server root. For example,
   https://browse.medserve.online would be ok, while
   https://medserve.online/browse would not be supported.
+
+## Browser support
+
+Polecat targets compatibility with the latest release version of the following
+browsers:
+
+* Google Chrome
+* Mozilla Firefox
+* Safari
+* Microsoft Edge
+
+In addition to this, we also target compatibility with Mozilla Firefox 45.0esr.
