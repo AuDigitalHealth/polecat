@@ -46,7 +46,7 @@ class ConceptGroup extends Component {
         <div className="concept concept-stacked-1">
           <ConceptType type={type} status={status} />
           <Link to={linkPath}>
-            <Icon type="list" hoverType="list-active" width={20} />
+            <Icon type="list" hoverType="list-active" width={20} height={20} />
           </Link>
         </div>
         <div className="concept concept-stacked-2" />

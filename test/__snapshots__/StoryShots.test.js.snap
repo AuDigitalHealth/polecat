@@ -3546,6 +3546,7 @@ exports[`Storyshots ConceptGroup With parent medication search result 1`] = `
       to="/?q=some-search"
     >
       <Icon
+        height={20}
         hoverType="list-active"
         type="list"
         width={20}

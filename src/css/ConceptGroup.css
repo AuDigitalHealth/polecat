@@ -18,7 +18,7 @@
 }
 
 .concept-group .concept .icon {
-  display: inline;
+  display: inline-block;
 }
 
 .concept-stacked-1 {
