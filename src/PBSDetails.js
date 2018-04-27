@@ -157,7 +157,7 @@ class PBSDetails extends Component {
               className="field-name"
               title="Commonwealth Ex Manufacturer Price"
             >
-              Commonwealth Ex Manufacturer Price
+              CEMP
             </div>
             <div className="field-value">
               {currencyFormatter.format(commonwealthExManufacturerPrice, {
@@ -176,7 +176,7 @@ class PBSDetails extends Component {
               className="field-name"
               title="Manufacturer Ex Manufacturer Price"
             >
-              Manufacturer Ex Manufacturer Price
+              MEMP
             </div>
             <div className="field-value">
               {currencyFormatter.format(manufacturerExManufacturerPrice, {
