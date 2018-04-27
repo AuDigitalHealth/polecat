@@ -64,7 +64,7 @@ export class Search extends Component {
   updateResults({ fhirServer, query, url, resultCount, update = true }) {
     const updateFn = this.getUpdateFn({ fhirServer, query, url, resultCount })
     this.setLoadingStatus(true)
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       updateFn()
         .then(bundle => this.parseSearchResults(bundle))
         .then(parsed => {
@@ -82,7 +82,6 @@ export class Search extends Component {
         .catch(error => {
           this.handleError(error)
           this.setLoadingStatus(false)
-          reject(error)
         })
     })
   }
