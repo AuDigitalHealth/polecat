@@ -89,12 +89,14 @@ export class Search extends Component {
 
   updateAllResults({ fhirServer, query, url }) {
     this.setLoadingStatus(true)
+    this.setState(() => ({ updateAllResultsInProgress: true }))
     this.getAllResults({ fhirServer, query, url })
       .then(results =>
         this.setState(() => ({
           allResults: results,
         })),
       )
+      .then(() => this.setState(() => ({ updateAllResultsInProgress: false })))
       .then(() => this.setLoadingStatus(false))
       .catch(error => {
         this.handleError(error)
@@ -196,8 +198,15 @@ export class Search extends Component {
   }
 
   setLoadingStatus(loading) {
-    const { onLoadingChange } = this.props
-    if (onLoadingChange) onLoadingChange(loading)
+    const { onLoadingChange } = this.props,
+      { updateAllResultsInProgress } = this.state
+    if (
+      onLoadingChange &&
+      // Don't update the loading status if an "update all results" operation is
+      // in progress.
+      !updateAllResultsInProgress
+    )
+      onLoadingChange(loading)
   }
 
   // Register a new search request, along with the function which can cancel it.
