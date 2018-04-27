@@ -29,12 +29,8 @@ class Icon extends Component {
     this.setState(() => ({ mouse: 'hover' }))
   }
 
-  // This is necessary to prevent flickering of the active state as you move
-  // over the icon in Edge.
-  // See: https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7787318/
-  handleMouseLeave(event) {
-    if (event.target.className === 'icon')
-      this.setState(() => ({ mouse: 'none' }))
+  handleMouseLeave() {
+    this.setState(() => ({ mouse: 'none' }))
   }
 
   handleClick(event) {
