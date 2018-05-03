@@ -1,6 +1,5 @@
 {
   "name": "polecat",
-  "version": "0.0.0",
   "description":
     "A tool for browsing the Australian Medicines Terminology (AMT), using data from an instance of Medserve.",
   "license": "Apache-2.0",
@@ -84,6 +83,7 @@
     "fs-extra": "^3.0.1",
     "html-webpack-plugin": "^2.29.0",
     "jest": "^22.4.1",
+    "license-checker": "^19.0.0",
     "pre-commit": "^1.2.2",
     "prettier": "^1.10.2",
     "react-dev-utils": "^5.0.0",
