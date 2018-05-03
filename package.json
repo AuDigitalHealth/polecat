@@ -8,7 +8,6 @@
     "email": "John.Grimes@digitalhealth.gov.au"
   },
   "repository": "github:AuDigitalHealth/polecat",
-  "private": true,
   "dependencies": {
     "axios": "^0.16.2",
     "babel-runtime": "^6.23.0",
