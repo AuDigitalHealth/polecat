@@ -1,3 +1,5 @@
+[![CircleCI Build Status](https://circleci.com/gh/AuDigitalHealth/polecat/tree/master.svg?style=shield)](https://circleci.com/gh/AuDigitalHealth/polecat)
+
 # Polecat
 
 A tool for browsing the Australian Medicines Terminology (AMT), using data from
