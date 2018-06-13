@@ -72,6 +72,7 @@ export class Search extends Component {
             this.setState(() => ({
               bundle: parsed.bundle,
               results: this.addLinksToResults(parsed.results),
+              moreResultsLink: nextLinkFromBundle(parsed.bundle),
               query,
             }))
           }
@@ -243,11 +244,11 @@ export class Search extends Component {
       // the accumulated results and the new next link.
       this.updateResults({ url: nextLink, update: false })
         .then(parsed => {
-          const nextLink = nextLinkFromBundle(parsed.bundle)
+          const newNextLink = nextLinkFromBundle(parsed.bundle)
           // eslint-disable-next-line promise/no-nesting
           return this.getMoreResults(
             results.concat(parsed.results),
-            nextLink,
+            newNextLink,
             requestsNeeded - 1,
           ).then(({ results, moreResultsLink }) =>
             resolve({ results, moreResultsLink }),
@@ -289,14 +290,10 @@ export class Search extends Component {
   // user scrolls down the page.
   handleRequireMoreResults({ stopIndex }) {
     const {
-        bundle,
         results: initialResults,
         moreResultsLink,
         getMoreResultsInProgress,
       } = this.state,
-      // The search link to use is either the one from the first bundle, or the
-      // one from the last request used to get more results.
-      nextLink = moreResultsLink || nextLinkFromBundle(bundle),
       // Calculate number of additional pages of search results needed, based upon
       // the number of results we already have and the end of the request window.
       requestsNeeded = Math.floor((stopIndex - initialResults.length) / 100) + 1
@@ -305,7 +302,7 @@ export class Search extends Component {
     this.setState(() => ({ getMoreResultsInProgress: true }))
     // Get more results, then add them to the end of the current results and
     // update within state.
-    return this.getMoreResults(initialResults, nextLink, requestsNeeded)
+    return this.getMoreResults(initialResults, moreResultsLink, requestsNeeded)
       .then(({ results, moreResultsLink }) => {
         this.setState(() => ({ getMoreResultsInProgress: false }))
         // If results were returned, update state with the new set of results,

@@ -10,6 +10,10 @@ import config from './config.js'
 
 import searchBundle1 from './fixtures/searchBundle-1.json'
 import searchBundle2 from './fixtures/searchBundle-2.json'
+import searchBundle3 from './fixtures/searchBundle-3.json'
+import searchBundle4 from './fixtures/searchBundle-4.json'
+import searchBundle5 from './fixtures/searchBundle-5.json'
+import searchBundle6 from './fixtures/searchBundle-6.json'
 
 var mock = new MockAdapter(axios)
 
@@ -175,6 +179,167 @@ describe('Search', () => {
           wrapper.setProps({ query: 'g' })
           expect(httpSpy.callCount).toBe(1)
           resolve()
+        }, 50)
+      })
+    })
+  })
+
+  describe('pagination', () => {
+    it('should retrieve an extra page of results when onRequireMoreResults is called', () => {
+      const props = {
+        fhirServer: config.fhirServer,
+        history: { push: jest.fn() },
+      }
+      const wrapper = shallow(<Search {...props} />)
+      // Put search into advanced mode.
+      wrapper.setState({
+        advanced: true,
+      })
+      // Mock out HTTP calls such that the search request receives the first page,
+      // and the subsequent request receives the second page of results.
+      mock
+        .onGet(
+          `${
+            props.fhirServer
+          }/Medication?medication-resource-type=UPG&status=active&last-modified=ge2018-05-01&last-modified=le2018-05-31&_summary=true&_count=100`,
+        )
+        .replyOnce(200, searchBundle3, {
+          'content-type': 'application/fhir+json',
+        })
+        .onGet(
+          `${
+            props.fhirServer
+          }?_getpages=ceb6c9b6-2519-4bce-be8d-e19a8fa1f856&_getpagesoffset=100&_count=100&_bundletype=searchset`,
+        )
+        .replyOnce(200, searchBundle4, {
+          'content-type': 'application/fhir+json',
+        })
+      // Update the query using the `onQueryUpdate` callback function.
+      const onQueryUpdate = wrapper.find(AdvancedSearch).prop('onQueryUpdate')
+      onQueryUpdate(
+        'type:MPP status:active modified-from:2018-05-01 modified-to:2018-05-31',
+      )
+      // Give the async code a chance to execute, then run the first set of
+      // assertions on downstream props.
+      return new Promise(resolve => {
+        setTimeout(() => {
+          wrapper.update()
+          const advancedSearch = wrapper.find(AdvancedSearch)
+          // The first set of results should be passed to the AdvancedSearch
+          // component, and the `moreLink` prop should be the next link from the
+          // bundle.
+          expect(advancedSearch).toBeDefined()
+          expect(advancedSearch.prop('results')).toBeDefined()
+          expect(advancedSearch.prop('results')).toMatchSnapshot()
+          // Get the `onRequireMoreResults` handler passed to the AdvancedSearchComponent,
+          // and call it.
+          const onRequireMoreResults = wrapper
+            .find(AdvancedSearch)
+            .prop('onRequireMoreResults')
+          onRequireMoreResults({ stopIndex: 150 })
+          // Give the async code a chance to execute, then check that the
+          // downstream props have been updated to match the second page of results.
+          setTimeout(() => {
+            wrapper.update()
+            // The second set of results should be passed to the AdvancedSearch
+            // component, and the `moreLink` prop should be unset, as there is
+            // no next link in the second bundle.
+            const advancedSearch = wrapper.find(AdvancedSearch)
+            expect(advancedSearch).toBeDefined()
+            expect(advancedSearch.prop('results')).toBeDefined()
+            expect(advancedSearch.prop('results')).toMatchSnapshot()
+            expect(advancedSearch.prop('moreLink')).toBeFalsy()
+            resolve()
+          }, 50)
+        }, 50)
+      })
+    })
+
+    it('should not retain paginated results between searches', () => {
+      const props = {
+        fhirServer: config.fhirServer,
+        history: { push: jest.fn() },
+        minRequestFrequency: 0,
+      }
+      const wrapper = shallow(<Search {...props} />)
+      // Put search into advanced mode.
+      wrapper.setState({
+        advanced: true,
+      })
+      // Mock out HTTP calls such that the search request receives the first page,
+      // and the subsequent request receives the second page of results.
+      mock
+        .onGet(
+          `${
+            props.fhirServer
+          }/Medication?medication-resource-type=BPG&status=active&last-modified=ge2018-05-01&last-modified=le2018-05-31&_summary=true&_count=100`,
+        )
+        .replyOnce(200, searchBundle3, {
+          'content-type': 'application/fhir+json',
+        })
+        .onGet(
+          `${
+            props.fhirServer
+          }?_getpages=b92d05a5-8272-42fc-95d9-be572621f46c&_getpagesoffset=100&_count=100&_bundletype=searchset`,
+        )
+        .replyOnce(200, searchBundle4, {
+          'content-type': 'application/fhir+json',
+        })
+        .onGet(
+          `${
+            props.fhirServer
+          }/Medication?medication-resource-type=BPSF&status=active&last-modified=ge2018-05-01&last-modified=le2018-05-31&_summary=true&_count=100`,
+        )
+        .replyOnce(200, searchBundle5, {
+          'content-type': 'application/fhir+json',
+        })
+        .onGet(
+          `${
+            props.fhirServer
+          }?_getpages=f42a28a9-f81a-4943-bd17-7e425f7955f1&_getpagesoffset=100&_count=100&_bundletype=searchset`,
+        )
+        .replyOnce(200, searchBundle6, {
+          'content-type': 'application/fhir+json',
+        })
+      // Update the query using the `onQueryUpdate` callback function.
+      const onQueryUpdate = wrapper.find(AdvancedSearch).prop('onQueryUpdate')
+      onQueryUpdate(
+        'type:TPP status:active modified-from:2018-05-01 modified-to:2018-05-31',
+      )
+      return new Promise(resolve => {
+        setTimeout(() => {
+          wrapper.update()
+          const onRequireMoreResults = wrapper
+            .find(AdvancedSearch)
+            .prop('onRequireMoreResults')
+          onRequireMoreResults({ stopIndex: 150 })
+          setTimeout(() => {
+            wrapper.update()
+            const onQueryUpdate = wrapper
+              .find(AdvancedSearch)
+              .prop('onQueryUpdate')
+            onQueryUpdate(
+              'type:TPUU status:active modified-from:2018-05-01 modified-to:2018-05-31',
+            )
+            setTimeout(() => {
+              wrapper.update()
+              const advancedSearch = wrapper.find(AdvancedSearch)
+              expect(advancedSearch.prop('results')).toHaveLength(100)
+              const onRequireMoreResults = wrapper
+                .find(AdvancedSearch)
+                .prop('onRequireMoreResults')
+              onRequireMoreResults({ stopIndex: 150 })
+              setTimeout(() => {
+                wrapper.update()
+                const advancedSearch = wrapper.find(AdvancedSearch)
+                expect(advancedSearch.prop('results')).toHaveLength(200)
+                expect(
+                  advancedSearch.prop('results').some(r => r.type === 'TPP'),
+                ).toBe(false)
+                resolve()
+              }, 50)
+            }, 50)
+          }, 50)
         }, 50)
       })
     })
