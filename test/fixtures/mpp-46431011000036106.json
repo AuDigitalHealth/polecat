@@ -31,7 +31,7 @@
           "url":
             "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
           "valueString":
-            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
+            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531"
         }
       ]
     },
@@ -86,6 +86,29 @@
                   "url":
                     "http://medserve.online/fhir/StructureDefinition/lastModified",
                   "valueDate": "2014-06-30"
+                }
+              ]
+            },
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
+              "extension": [
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medication",
+                  "valueReference": {
+                    "reference": "Medication/21836011000036107",
+                    "display": "clarithromycin"
+                  }
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "UPD",
+                    "display": "Unbranded product with no strengths or form"
+                  }
                 }
               ]
             },

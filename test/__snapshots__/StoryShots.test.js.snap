@@ -34,10 +34,16 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
     className="search-advanced-results"
   >
     <SearchSummary
+      allResultsAreOfType={null}
+      hiddenGMs={Array []}
       onDownloadClick={[Function]}
+      onHideGM={[Function]}
+      onShowGM={[Function]}
+      shownGMs={Array []}
       totalResults={8}
     />
     <FullSearchResults
+      allResultsAreOfType={null}
       onRequireMoreResults={[Function]}
       onSelectResult={[Function]}
       query="parac"
@@ -137,6 +143,7 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
           },
         ]
       }
+      shownGMs={Array []}
       totalResults={8}
     />
   </div>
@@ -177,7 +184,11 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
     className="search-advanced-results"
   >
     <SearchSummary
+      hiddenGMs={Array []}
       onDownloadClick={[Function]}
+      onHideGM={[Function]}
+      onShowGM={[Function]}
+      shownGMs={Array []}
       totalResults={8}
     />
     <FullSearchResults
@@ -280,6 +291,7 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
           },
         ]
       }
+      shownGMs={Array []}
       totalResults={8}
     />
   </div>
@@ -5119,14 +5131,20 @@ exports[`Storyshots SearchForm With a query 1`] = `
 
 exports[`Storyshots SearchSummary With next and previous links 1`] = `
 <div
-  className="search-summary"
+  className="search-summary with-generalized-medicines"
 >
-  <div>
+  <div
+    className="summary"
+  >
     <div
-      className="pagination-total"
+      className="pagination-download"
     >
-      350
-       matches
+      <div
+        className="pagination-total"
+      >
+        350
+         matches
+      </div>
     </div>
     <DownloadResults
       onClick={[Function]}
@@ -5137,14 +5155,20 @@ exports[`Storyshots SearchSummary With next and previous links 1`] = `
 
 exports[`Storyshots SearchSummary With next link 1`] = `
 <div
-  className="search-summary"
+  className="search-summary with-generalized-medicines"
 >
-  <div>
+  <div
+    className="summary"
+  >
     <div
-      className="pagination-total"
+      className="pagination-download"
     >
-      350
-       matches
+      <div
+        className="pagination-total"
+      >
+        350
+         matches
+      </div>
     </div>
     <DownloadResults
       onClick={[Function]}
@@ -5155,14 +5179,20 @@ exports[`Storyshots SearchSummary With next link 1`] = `
 
 exports[`Storyshots SearchSummary With no total results 1`] = `
 <div
-  className="search-summary"
+  className="search-summary with-generalized-medicines"
 >
-  <div>
+  <div
+    className="summary"
+  >
     <div
-      className="pagination-total"
+      className="pagination-download"
     >
-      0
-       matches
+      <div
+        className="pagination-total"
+      >
+        0
+         matches
+      </div>
     </div>
     <DownloadResults
       onClick={[Function]}
@@ -5173,14 +5203,20 @@ exports[`Storyshots SearchSummary With no total results 1`] = `
 
 exports[`Storyshots SearchSummary With previous link 1`] = `
 <div
-  className="search-summary"
+  className="search-summary with-generalized-medicines"
 >
-  <div>
+  <div
+    className="summary"
+  >
     <div
-      className="pagination-total"
+      className="pagination-download"
     >
-      350
-       matches
+      <div
+        className="pagination-total"
+      >
+        350
+         matches
+      </div>
     </div>
     <DownloadResults
       onClick={[Function]}
@@ -5191,14 +5227,20 @@ exports[`Storyshots SearchSummary With previous link 1`] = `
 
 exports[`Storyshots SearchSummary With total results 1`] = `
 <div
-  className="search-summary"
+  className="search-summary with-generalized-medicines"
 >
-  <div>
+  <div
+    className="summary"
+  >
     <div
-      className="pagination-total"
+      className="pagination-download"
     >
-      5,345
-       matches
+      <div
+        className="pagination-total"
+      >
+        5,345
+         matches
+      </div>
     </div>
     <DownloadResults
       onClick={[Function]}

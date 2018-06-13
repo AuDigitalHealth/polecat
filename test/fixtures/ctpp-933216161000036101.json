@@ -249,6 +249,51 @@
     },
     {
       "url":
+        "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
+      "extension": [
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/medication",
+          "valueReference": {
+            "reference": "Medication/933205801000036102",
+            "display":
+              "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial"
+          }
+        },
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+          "valueCoding": {
+            "system": "http://hl7.org/fhir/medication_type",
+            "code": "BPG",
+            "display": "Branded package with no container"
+          }
+        }
+      ]
+    },
+    {
+      "url":
+        "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
+      "extension": [
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/medication",
+          "valueReference": {
+            "reference": "Medication/933205811000036100",
+            "display": "polyvalent Australian snake antivenom injection, 1 vial"
+          }
+        },
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+          "valueCoding": {
+            "system": "http://hl7.org/fhir/medication_type",
+            "code": "UPG",
+            "display": "Unbranded package with no container"
+          }
+        }
+      ]
+    },
+    {
+      "url":
         "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
       "valueCoding": {
         "system": "http://hl7.org/fhir/medication_type",
@@ -281,7 +326,7 @@
           "url":
             "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
           "valueString":
-            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
+            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531"
         }
       ]
     },
@@ -730,6 +775,53 @@
             },
             {
               "url":
+                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
+              "extension": [
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medication",
+                  "valueReference": {
+                    "reference": "Medication/933196841000036107",
+                    "display":
+                      "polyvalent Australian snake antivenom injection, vial"
+                  }
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "UPDSF",
+                    "display": "Unbranded product with strengths and form"
+                  }
+                }
+              ]
+            },
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
+              "extension": [
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medication",
+                  "valueReference": {
+                    "reference": "Medication/74951011000036107",
+                    "display": "polyvalent Australian snake antivenom"
+                  }
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "UPD",
+                    "display": "Unbranded product with no strengths or form"
+                  }
+                }
+              ]
+            },
+            {
+              "url":
                 "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
@@ -746,6 +838,19 @@
               "url":
                 "http://medserve.online/fhir/StructureDefinition/lastModified",
               "valueDate": "2016-08-31"
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/brand",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "22131000168107",
+                    "display":
+                      "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)"
+                  }
+                ]
+              }
             }
           ],
           "reference": "Medication/933196831000036102",
