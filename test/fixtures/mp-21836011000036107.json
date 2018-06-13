@@ -2,17 +2,17 @@
   "resourceType": "Medication",
   "id": "21836011000036107",
   "meta": {
-    "profile": [
-      "http://medserve.online/fhir/Profile/ExtendedMedication"
-    ]
+    "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
   },
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>clarithromycin</p></div>"
+    "div":
+      "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>clarithromycin</p></div>"
   },
   "extension": [
     {
-      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+      "url":
+        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
       "valueCoding": {
         "system": "http://hl7.org/fhir/medication_type",
         "code": "UPD",
@@ -23,12 +23,15 @@
       "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
       "extension": [
         {
-          "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
           "valueUri": "http://snomed.info/sct"
         },
         {
-          "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
-          "valueString": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+          "valueString":
+            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531"
         }
       ]
     },

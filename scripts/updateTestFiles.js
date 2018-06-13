@@ -5,18 +5,21 @@ const http = require('axios')
 const https = require('https')
 
 const handleError = err => {
+  console.log('handleError')
   console.error(err)
   process.exit(1)
 }
 
 fs.readFile('public/config.json', (err, data) => {
-  if (err) handleError(err)
   const config = JSON.parse(data)
 
   fs.readdir('test/fixtures', (err, files) => {
     if (err) handleError(err)
     files.forEach(file => {
-      const match = file.match(/(ctpp|tpp|tpuu|tp|mpp|mpuu|mp|substance)-(\d+)/)
+      console.log(file)
+      const match = file.match(
+        /^(ctpp|tpp|tpuu|tp|mpp|mpuu|mp|substance)-(\d+)/,
+      )
       if (match) {
         const type = match[1],
           sctid = match[2]
@@ -24,6 +27,10 @@ fs.readFile('public/config.json', (err, data) => {
         const agent = new https.Agent({
           rejectUnauthorized: false,
         })
+        console.log(
+          type,
+          `/${type === 'substance' ? 'Substance' : 'Medication'}/${sctid}`,
+        )
         http
           .get(
             config.fhirServer +

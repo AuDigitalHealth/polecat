@@ -1,5 +1,5615 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Search pagination should retrieve an extra page of results when onRequireMoreResults is called 1`] = `
+Array [
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127821000168106",
+        "display": "Fexofenadine Hayfever Allergy Relief (Apo) 180 mg film-coated tablet, 90",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1077401000168106",
+            "display": "fexofenadine hydrochloride 180 mg tablet, 90",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127821000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1130721000168103",
+        "display": "Clarithromycin (Ascent) 250 mg film-coated tablet, 10",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "58841000036100",
+            "display": "clarithromycin 250 mg tablet, 10",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1130721000168103",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127591000168105",
+        "display": "Fexofenadine Hayfever Allergy Relief (Apo) 120 mg film-coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "820911000168100",
+            "display": "fexofenadine hydrochloride 120 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127591000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127661000168102",
+        "display": "Fexofenadine Hayfever Allergy Relief (Apo) 180 mg film-coated tablet, 30",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63648011000036103",
+            "display": "fexofenadine hydrochloride 180 mg tablet, 30",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127661000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127751000168108",
+        "display": "Fexofenadine Hayfever Allergy Relief (Apo) 180 mg film-coated tablet, 70",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1076321000168109",
+            "display": "fexofenadine hydrochloride 180 mg tablet, 70",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127751000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1130241000168102",
+        "display": "Nicotine Step 1 (Amcal) 21 mg/24 hours patch, 21",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63762011000036103",
+            "display": "nicotine 21 mg/24 hours patch, 21",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1130241000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1128231000168107",
+        "display": "Fexofenadine (Medreich) 180 mg film-coated tablet, 5",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1128221000168109",
+            "display": "fexofenadine hydrochloride 180 mg tablet, 5",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1128231000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127021000168102",
+        "display": "Nicaway (Herron) Mint 2 mg chewing gum, 192",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "71513011000036102",
+            "display": "nicotine 2 mg gum, 192",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127021000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1129601000168108",
+        "display": "Fexofenadine (Medreich) 60 mg film-coated tablet, 50",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1129591000168101",
+            "display": "fexofenadine hydrochloride 60 mg tablet, 50",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1129601000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1126531000168109",
+        "display": "Quetiapine XR (AN) 150 mg modified release tablet, 60",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "81661011000036105",
+            "display": "quetiapine 150 mg modified release tablet, 60",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1126531000168109",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1130881000168108",
+        "display": "Clarithromycin (AS) 250 mg film-coated tablet, 14",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "28323011000036105",
+            "display": "clarithromycin 250 mg tablet, 14",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1130881000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1126701000168107",
+        "display": "Quetiapine (Ranbaxy) 100 mg film-coated tablet, 90",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27399011000036107",
+            "display": "quetiapine 100 mg tablet, 90",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1126701000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1131041000168101",
+        "display": "Vallergan 10 mg sugar coated tablet, 50",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1131031000168105",
+            "display": "alimemazine (trimeprazine) tartrate 10 mg tablet, 50",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1131041000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1128871000168106",
+        "display": "Coplavix 75 mg/75 mg film-coated tablet, 280",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "993121000168103",
+            "display": "clopidogrel 75 mg + aspirin 75 mg tablet, 280",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1128871000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1129031000168107",
+        "display": "Quetiapine (Ranbaxy) 25 mg film-coated tablet, 60",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27398011000036104",
+            "display": "quetiapine 25 mg tablet, 60",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1129031000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1126861000168104",
+        "display": "Nicaway (Herron) Mint 2 mg chewing gum, 24",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63746011000036105",
+            "display": "nicotine 2 mg gum, 24",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1126861000168104",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1129441000168108",
+        "display": "Fexofenadine (Medreich) 120 mg film-coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "820911000168100",
+            "display": "fexofenadine hydrochloride 120 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1129441000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1129121000168105",
+        "display": "Atelvia Combi (12 x Atelvia EC Once-a-Week tablets, 72 x Calcium Carbonate (Aventis Pharma) tablets), 84",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "881311000168101",
+            "display": "risedronate sodium 35 mg tablet [12] (&) calcium carbonate 1.25 g (calcium 500 mg) tablet [72], 84",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1129121000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "11986011000036108",
+        "display": "Coloxyl Tablet 50 mg sugar coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "26830011000036106",
+            "display": "docusate sodium 50 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/11986011000036108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127271000168106",
+        "display": "Nicaway (Herron) Mint 4 mg chewing gum, 204",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "897421000168108",
+            "display": "nicotine 4 mg gum, 204",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127271000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127111000168108",
+        "display": "Nicaway (Herron) Mint 4 mg chewing gum, 12",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63638011000036102",
+            "display": "nicotine 4 mg gum, 12",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127111000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1128641000168100",
+        "display": "Coplavix 75 mg/75 mg film-coated tablet, 7",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "992911000168103",
+            "display": "clopidogrel 75 mg + aspirin 75 mg tablet, 7",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1128641000168100",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127841000168100",
+        "display": "Fexofenadine Hayfever Allergy Relief (Apo) 180 mg film-coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1077431000168104",
+            "display": "fexofenadine hydrochloride 180 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127841000168100",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1128001000168105",
+        "display": "Clinoleic 20% injection emulsion, 12 x 250 mL bottles",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1127991000168101",
+            "display": "olive oil 40 g/250 mL + soya oil 10 g/250 mL injection, 12 x 250 mL bottles",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1128001000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1125511000168108",
+        "display": "Diltiazem (AS) 60 mg film-coated tablet, 90",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27726011000036109",
+            "display": "diltiazem hydrochloride 60 mg tablet, 90",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1125511000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127361000168109",
+        "display": "Fexofenadine Hayfever Allergy Relief (Apo) 120 mg film-coated tablet, 10",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "52882011000036105",
+            "display": "fexofenadine hydrochloride 120 mg tablet, 10",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127361000168109",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127041000168108",
+        "display": "Nicaway (Herron) Mint 2 mg chewing gum, 204",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "897531000168105",
+            "display": "nicotine 2 mg gum, 204",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127041000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1126241000168102",
+        "display": "Paracetamol (GPPL) 500 mg film-coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "28314011000036104",
+            "display": "paracetamol 500 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1126241000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "127491000036104",
+        "display": "Femrelief One (Pharmacy Action) 150 mg hard capsule, 1",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "38534011000036105",
+            "display": "fluconazole 150 mg capsule, 1",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/127491000036104",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1149521000168101",
+        "display": "Kaloba (Schwabe Pharma) 20 mg film-coated tablet, 90",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1149171000168109",
+            "display": "Pelargonium sidoides 20 mg tablet, 90",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1149521000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1149441000168106",
+        "display": "Kaloba (Schwabe Pharma) 20 mg film-coated tablet, 63",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1149051000168104",
+            "display": "Pelargonium sidoides 20 mg tablet, 63",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1149441000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1137961000168105",
+        "display": "Crestatin 20 mg film-coated tablet, 7",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "812041000168108",
+            "display": "rosuvastatin 20 mg tablet, 7",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1137961000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1126321000168102",
+        "display": "Clopidogrel/Aspirin 75/100 (Medis) uncoated tablet, 7",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "82553011000036107",
+            "display": "clopidogrel 75 mg + aspirin 100 mg tablet, 7",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1126321000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1138491000168107",
+        "display": "Cyproterone (AS) 50 mg uncoated tablet, 50",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27797011000036104",
+            "display": "cyproterone acetate 50 mg tablet, 50",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1138491000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "56859011000036107",
+        "display": "Dimetapp DM Cough and Cold Elixir Colour Free oral liquid solution, 100 mL",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63880011000036103",
+            "display": "brompheniramine maleate 2 mg/5 mL + phenylephrine hydrochloride 5 mg/5 mL + dextromethorphan hydrobromide monohydrate 10 mg/5 mL oral liquid, 100 mL",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/56859011000036107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1129691000168102",
+        "display": "Fexofenadine (Medreich) 60 mg film-coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1129681000168100",
+            "display": "fexofenadine hydrochloride 60 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1129691000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1146871000168108",
+        "display": "Everolimus (Sandoz) 2.5 mg uncoated tablet, 30",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "147361000036100",
+            "display": "everolimus 2.5 mg tablet, 30",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1146871000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1138281000168105",
+        "display": "Egopsoryl TA gel, 75 g",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1138271000168107",
+            "display": "coal tar solution 5% + phenol 0.5% + precipitated sulfur 0.5% gel, 75 g",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1138281000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1131701000168100",
+        "display": "Nicotine (Amcal) Fruit 2 mg chewing gum, 180",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "71512011000036109",
+            "display": "nicotine 2 mg gum, 180",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1131701000168100",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1135631000168101",
+        "display": "Nicotine (Amcal) Mint 2 mg chewing gum, 204",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "897531000168105",
+            "display": "nicotine 2 mg gum, 204",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1135631000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1130011000168107",
+        "display": "Nicotine Step 2 (Amcal) 14 mg/24 hours patch, 7",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27925011000036106",
+            "display": "nicotine 14 mg/24 hours patch, 7",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1130011000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1147191000168102",
+        "display": "Ezalo Composite Pack (30 x 10 mg tablets, 30 x 40 mg tablets), 1 pack",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "175151000036106",
+            "display": "ezetimibe 10 mg tablet [30] (&) rosuvastatin 40 mg tablet [30], 1 pack",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1147191000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1133301000168102",
+        "display": "Clopidogrel (Sanofi) 300 mg film-coated tablet, 280",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "81650011000036105",
+            "display": "clopidogrel 300 mg tablet, 280",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1133301000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1145421000168103",
+        "display": "Spinraza 12 mg/5 mL injection solution, 5 mL vial",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1145411000168105",
+            "display": "nusinersen 12 mg/5 mL injection, 5 mL vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1145421000168103",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1136511000168101",
+        "display": "Xeljanz 5 mg film-coated tablet, 180",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1136501000168104",
+            "display": "tofacitinib 5 mg tablet, 180",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1136511000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1139241000168109",
+        "display": "Irbesartan (Dr Reddy's) 150 mg film-coated tablet, 56",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "777671000168101",
+            "display": "irbesartan 150 mg tablet, 56",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1139241000168109",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1132251000168101",
+        "display": "Clopidogrel (Winthrop) 300 mg film-coated tablet, 28",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "81649011000036102",
+            "display": "clopidogrel 300 mg tablet, 28",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1132251000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1147921000168101",
+        "display": "Crosuva 20 mg film-coated tablet, 28",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "911461000168103",
+            "display": "rosuvastatin 20 mg tablet, 28",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1147921000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1145181000168105",
+        "display": "Zient 10 mg tablet, 5",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1145171000168107",
+            "display": "ezetimibe 10 mg tablet, 5",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1145181000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1144951000168102",
+        "display": "Hydrocortisone (Mylan) 4 mg uncoated tablet, 50",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27035011000036102",
+            "display": "hydrocortisone 4 mg tablet, 50",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1144951000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1136271000168106",
+        "display": "Wart Clear application, 15 mL",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1136261000168100",
+            "display": "salicylic acid 17% + lactic acid 17% application, 15 mL",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1136271000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1131931000168109",
+        "display": "Clopidogrel plus Aspirin 75mg/75mg (Winthrop) film-coated tablet, 28",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "992971000168106",
+            "display": "clopidogrel 75 mg + aspirin 75 mg tablet, 28",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1131931000168109",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1131851000168106",
+        "display": "Clobemide 150 mg film-coated tablet, 60",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "28338011000036102",
+            "display": "moclobemide 150 mg tablet, 60",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1131851000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1148481000168105",
+        "display": "Crosuva 40 mg film-coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "910611000168105",
+            "display": "rosuvastatin 40 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1148481000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1148561000168100",
+        "display": "Crosuva 10 mg film-coated tablet, 500",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "928471000168107",
+            "display": "rosuvastatin 10 mg tablet, 500",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1148561000168100",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1131291000168102",
+        "display": "Telfast 120 mg film-coated tablet, 2",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "52883011000036103",
+            "display": "fexofenadine hydrochloride 120 mg tablet, 2",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1131291000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1136911000168105",
+        "display": "Cancigin 50 mg powder for injection, 1 vial",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "46740011000036105",
+            "display": "caspofungin 50 mg injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1136911000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1137231000168105",
+        "display": "Diltiazem (Ascent) 60 mg film-coated tablet, 90",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27726011000036109",
+            "display": "diltiazem hydrochloride 60 mg tablet, 90",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1137231000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1125851000168106",
+        "display": "Docetaxel (Sanofi) 160 mg/8 mL concentrated injection, 8 mL vial",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "748241000168107",
+            "display": "docetaxel 160 mg/8 mL injection, 8 mL vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1125851000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1148241000168101",
+        "display": "Crosuva 40 mg film-coated tablet, 7",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "853431000168109",
+            "display": "rosuvastatin 40 mg tablet, 7",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1148241000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1147841000168103",
+        "display": "Crosuva 20 mg film-coated tablet, 7",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "812041000168108",
+            "display": "rosuvastatin 20 mg tablet, 7",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1147841000168103",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1148161000168108",
+        "display": "Crosuva 5 mg film-coated tablet, 500",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "928591000168107",
+            "display": "rosuvastatin 5 mg tablet, 500",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1148161000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1145911000168102",
+        "display": "Zeklen 10/20 uncoated tablet, 10",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "46992011000036109",
+            "display": "ezetimibe 10 mg + simvastatin 20 mg tablet, 10",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1145911000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1137471000168107",
+        "display": "Methyldopa (Mylan) 250 mg film-coated tablet, 90",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1137461000168101",
+            "display": "methyldopa 250 mg tablet, 90",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1137471000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1147601000168101",
+        "display": "Crosuva 10 mg film-coated tablet, 14",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "910791000168107",
+            "display": "rosuvastatin 10 mg tablet, 14",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1147601000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1137551000168102",
+        "display": "Methyldopa (Mylan) 250 mg film-coated tablet, 500",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1137541000168104",
+            "display": "methyldopa 250 mg tablet, 500",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1137551000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1146151000168105",
+        "display": "Dimetapp Cold and Flu soft capsule, 20",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1146001000168107",
+            "display": "phenylephrine hydrochloride 5 mg + paracetamol 300 mg capsule, 20",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1146151000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1131211000168106",
+        "display": "Ural powder for oral liquid, 16 x 4 g sachets",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1131201000168108",
+            "display": "sodium bicarbonate 1.76 g + citric acid 720 mg + sodium citrate 630 mg + tartaric acid 890 mg powder for oral liquid, 16 x 4 g sachets",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1131211000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1139801000168106",
+        "display": "Alcoholic Povidone-Iodine (Pfizer) 10% application, 500 mL",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "78133011000036105",
+            "display": "povidone-iodine 10% application, 500 mL",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1139801000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1145591000168102",
+        "display": "Enoxaparin (Winthrop) 60 mg/0.6 mL injection solution, 10 x 0.6 mL syringes",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27373011000036100",
+            "display": "enoxaparin sodium 60 mg/0.6 mL injection, 10 x 0.6 mL syringes",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1145591000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1137781000168103",
+        "display": "Crestatin 5 mg film-coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "928561000168100",
+            "display": "rosuvastatin 5 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1137781000168103",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1134811000168108",
+        "display": "Alustal American Dust Mite Extract Maintenance 50 IR/5 mL injection suspension, 5 mL vial",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1134801000168105",
+            "display": "American house dust mite extract 50 IR/5 mL injection, 5 mL vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1134811000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1137871000168109",
+        "display": "Crestatin 10 mg film-coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "911121000168100",
+            "display": "rosuvastatin 10 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1137871000168109",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1134731000168105",
+        "display": "Vemlidy 25 mg film-coated tablet, 30",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1134721000168107",
+            "display": "tenofovir alafenamide 25 mg tablet, 30",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1134731000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1142131000168103",
+        "display": "Clopidogrel plus Aspirin 75mg/100mg (Winthrop) film-coated tablet, 56",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "82552011000036100",
+            "display": "clopidogrel 75 mg + aspirin 100 mg tablet, 56",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1142131000168103",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1133531000168104",
+        "display": "Coartem dispersible tablet, 6",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1133521000168102",
+            "display": "artemether 20 mg + lumefantrine 120 mg dispersible tablet, 6",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1133531000168104",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1124891000168102",
+        "display": "Quetiapine XR (KP) 400 mg modified release tablet, 60",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "51540011000036104",
+            "display": "quetiapine 400 mg modified release tablet, 60",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1124891000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1140841000168104",
+        "display": "Chesty Mucus Relief (Apohealth) 4 mg/5 mL oral liquid, 250 mL",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63253011000036109",
+            "display": "bromhexine hydrochloride 4 mg/5 mL oral liquid, 250 mL",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1140841000168104",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1138511000168102",
+        "display": "Irbesartan (Dr Reddy's) 300 mg film-coated tablet, 98",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "777501000168105",
+            "display": "irbesartan 300 mg tablet, 98",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1138511000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1134091000168107",
+        "display": "Bisolvon Dry 10.5 mg pastille, 40",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1134081000168109",
+            "display": "dextromethorphan hydrobromide monohydrate 10.5 mg pastille, 40",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1134091000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1138341000168106",
+        "display": "Irbesartan (Dr Reddy's) 300 mg film-coated tablet, 3",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "777331000168108",
+            "display": "irbesartan 300 mg tablet, 3",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1138341000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1146781000168102",
+        "display": "Enoxaparin (Winthrop) with Automatic Safety Lock 20 mg/0.2 mL injection solution, 10 x 0.2 mL syringes",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "33800011000036109",
+            "display": "enoxaparin sodium 20 mg/0.2 mL injection, 10 x 0.2 mL syringes",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1146781000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1133851000168107",
+        "display": "Valaciclovir (Chemmart) 1 g film-coated tablet, 3",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1017871000168109",
+            "display": "valaciclovir 1 g tablet, 3",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1133851000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "56863011000036100",
+        "display": "Dimetapp DM Cough and Cold Drops Colour Free oral liquid solution, 25 mL",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63616011000036107",
+            "display": "brompheniramine maleate 400 microgram/mL + phenylephrine hydrochloride 1 mg/mL + dextromethorphan hydrobromide monohydrate 2 mg/mL oral liquid, 25 mL",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/56863011000036100",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1138831000168105",
+        "display": "Doceptil 5 mg film-coated tablet, 112",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1117891000168100",
+            "display": "donepezil hydrochloride 5 mg tablet, 112",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1138831000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1124091000168105",
+        "display": "Quetiapine XR (CW) 400 mg modified release tablet, 60",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "51540011000036104",
+            "display": "quetiapine 400 mg modified release tablet, 60",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1124091000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1144451000168107",
+        "display": "Enoxaparin Forte (Winthrop) 120 mg/0.8 mL injection solution, 10 x 0.8 mL syringes",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "46702011000036100",
+            "display": "enoxaparin sodium 120 mg/0.8 mL injection, 10 x 0.8 mL syringes",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1144451000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1145821000168101",
+        "display": "Enoxaparin (Winthrop) 100 mg/mL injection solution, 10 x 1 mL syringes",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27375011000036104",
+            "display": "enoxaparin sodium 100 mg/mL injection, 10 x 1 mL syringes",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1145821000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1132891000168107",
+        "display": "Clopidogrel (Sanofi) 75 mg film-coated tablet, 7",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "87805011000036102",
+            "display": "clopidogrel 75 mg tablet, 7",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1132891000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1137061000168109",
+        "display": "Cortival-1/2 0.05% ointment, 30 g",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "876901000168102",
+            "display": "betamethasone (as valerate) 0.05% ointment, 30 g",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1137061000168109",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1124251000168108",
+        "display": "Ipclone 7.5 mg film-coated tablet, 30",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "28332011000036100",
+            "display": "zopiclone 7.5 mg tablet, 30",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1124251000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1146061000168108",
+        "display": "Zeklen 10/40 uncoated tablet, 5",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "727631000168103",
+            "display": "ezetimibe 10 mg + simvastatin 40 mg tablet, 5",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1146061000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1135371000168108",
+        "display": "Nicotine (Amcal) Mint 4 mg chewing gum, 96",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63640011000036100",
+            "display": "nicotine 4 mg gum, 96",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1135371000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1133131000168107",
+        "display": "Clopidogrel (Sanofi) 300 mg film-coated tablet, 28",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "81649011000036102",
+            "display": "clopidogrel 300 mg tablet, 28",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1133131000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1133211000168107",
+        "display": "Clopidogrel (Sanofi) 300 mg film-coated tablet, 98",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "81656011000036108",
+            "display": "clopidogrel 300 mg tablet, 98",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1133211000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1139071000168107",
+        "display": "Cyproterone (GA) 50 mg uncoated tablet, 20",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27796011000036102",
+            "display": "cyproterone acetate 50 mg tablet, 20",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1139071000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1145501000168108",
+        "display": "Enoxaparin (Winthrop) 80 mg/0.8 mL injection solution, 10 x 0.8 mL syringes",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27374011000036103",
+            "display": "enoxaparin sodium 80 mg/0.8 mL injection, 10 x 0.8 mL syringes",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1145501000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1141891000168102",
+        "display": "Claratyne Children's Grape 5 mg chewable tablet, 2",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1080731000168102",
+            "display": "loratadine 5 mg chewable tablet, 2",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1141891000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1141171000168105",
+        "display": "Double Action Chesty Cough (Trust) oral liquid solution, 200 mL",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63967011000036105",
+            "display": "bromhexine hydrochloride 3 mg/5 mL + guaifenesin 100 mg/5 mL oral liquid, 200 mL",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1141171000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1144051000168103",
+        "display": "Tobramycin (WKT) 300 mg/5 mL inhalation solution, 56 x 5 mL ampoules",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933226121000036101",
+            "display": "tobramycin 300 mg/5 mL inhalation solution, 56 x 5 mL ampoules",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1144051000168103",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+]
+`;
+
+exports[`Search pagination should retrieve an extra page of results when onRequireMoreResults is called 2`] = `
+Array [
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127821000168106",
+        "display": "Fexofenadine Hayfever Allergy Relief (Apo) 180 mg film-coated tablet, 90",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1077401000168106",
+            "display": "fexofenadine hydrochloride 180 mg tablet, 90",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127821000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1130721000168103",
+        "display": "Clarithromycin (Ascent) 250 mg film-coated tablet, 10",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "58841000036100",
+            "display": "clarithromycin 250 mg tablet, 10",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1130721000168103",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127591000168105",
+        "display": "Fexofenadine Hayfever Allergy Relief (Apo) 120 mg film-coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "820911000168100",
+            "display": "fexofenadine hydrochloride 120 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127591000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127661000168102",
+        "display": "Fexofenadine Hayfever Allergy Relief (Apo) 180 mg film-coated tablet, 30",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63648011000036103",
+            "display": "fexofenadine hydrochloride 180 mg tablet, 30",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127661000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127751000168108",
+        "display": "Fexofenadine Hayfever Allergy Relief (Apo) 180 mg film-coated tablet, 70",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1076321000168109",
+            "display": "fexofenadine hydrochloride 180 mg tablet, 70",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127751000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1130241000168102",
+        "display": "Nicotine Step 1 (Amcal) 21 mg/24 hours patch, 21",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63762011000036103",
+            "display": "nicotine 21 mg/24 hours patch, 21",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1130241000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1128231000168107",
+        "display": "Fexofenadine (Medreich) 180 mg film-coated tablet, 5",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1128221000168109",
+            "display": "fexofenadine hydrochloride 180 mg tablet, 5",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1128231000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127021000168102",
+        "display": "Nicaway (Herron) Mint 2 mg chewing gum, 192",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "71513011000036102",
+            "display": "nicotine 2 mg gum, 192",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127021000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1129601000168108",
+        "display": "Fexofenadine (Medreich) 60 mg film-coated tablet, 50",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1129591000168101",
+            "display": "fexofenadine hydrochloride 60 mg tablet, 50",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1129601000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1126531000168109",
+        "display": "Quetiapine XR (AN) 150 mg modified release tablet, 60",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "81661011000036105",
+            "display": "quetiapine 150 mg modified release tablet, 60",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1126531000168109",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1130881000168108",
+        "display": "Clarithromycin (AS) 250 mg film-coated tablet, 14",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "28323011000036105",
+            "display": "clarithromycin 250 mg tablet, 14",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1130881000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1126701000168107",
+        "display": "Quetiapine (Ranbaxy) 100 mg film-coated tablet, 90",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27399011000036107",
+            "display": "quetiapine 100 mg tablet, 90",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1126701000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1131041000168101",
+        "display": "Vallergan 10 mg sugar coated tablet, 50",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1131031000168105",
+            "display": "alimemazine (trimeprazine) tartrate 10 mg tablet, 50",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1131041000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1128871000168106",
+        "display": "Coplavix 75 mg/75 mg film-coated tablet, 280",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "993121000168103",
+            "display": "clopidogrel 75 mg + aspirin 75 mg tablet, 280",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1128871000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1129031000168107",
+        "display": "Quetiapine (Ranbaxy) 25 mg film-coated tablet, 60",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27398011000036104",
+            "display": "quetiapine 25 mg tablet, 60",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1129031000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1126861000168104",
+        "display": "Nicaway (Herron) Mint 2 mg chewing gum, 24",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63746011000036105",
+            "display": "nicotine 2 mg gum, 24",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1126861000168104",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1129441000168108",
+        "display": "Fexofenadine (Medreich) 120 mg film-coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "820911000168100",
+            "display": "fexofenadine hydrochloride 120 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1129441000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1129121000168105",
+        "display": "Atelvia Combi (12 x Atelvia EC Once-a-Week tablets, 72 x Calcium Carbonate (Aventis Pharma) tablets), 84",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "881311000168101",
+            "display": "risedronate sodium 35 mg tablet [12] (&) calcium carbonate 1.25 g (calcium 500 mg) tablet [72], 84",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1129121000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "11986011000036108",
+        "display": "Coloxyl Tablet 50 mg sugar coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "26830011000036106",
+            "display": "docusate sodium 50 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/11986011000036108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127271000168106",
+        "display": "Nicaway (Herron) Mint 4 mg chewing gum, 204",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "897421000168108",
+            "display": "nicotine 4 mg gum, 204",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127271000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127111000168108",
+        "display": "Nicaway (Herron) Mint 4 mg chewing gum, 12",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63638011000036102",
+            "display": "nicotine 4 mg gum, 12",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127111000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1128641000168100",
+        "display": "Coplavix 75 mg/75 mg film-coated tablet, 7",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "992911000168103",
+            "display": "clopidogrel 75 mg + aspirin 75 mg tablet, 7",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1128641000168100",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127841000168100",
+        "display": "Fexofenadine Hayfever Allergy Relief (Apo) 180 mg film-coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1077431000168104",
+            "display": "fexofenadine hydrochloride 180 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127841000168100",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1128001000168105",
+        "display": "Clinoleic 20% injection emulsion, 12 x 250 mL bottles",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1127991000168101",
+            "display": "olive oil 40 g/250 mL + soya oil 10 g/250 mL injection, 12 x 250 mL bottles",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1128001000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1125511000168108",
+        "display": "Diltiazem (AS) 60 mg film-coated tablet, 90",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27726011000036109",
+            "display": "diltiazem hydrochloride 60 mg tablet, 90",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1125511000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127361000168109",
+        "display": "Fexofenadine Hayfever Allergy Relief (Apo) 120 mg film-coated tablet, 10",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "52882011000036105",
+            "display": "fexofenadine hydrochloride 120 mg tablet, 10",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127361000168109",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1127041000168108",
+        "display": "Nicaway (Herron) Mint 2 mg chewing gum, 204",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "897531000168105",
+            "display": "nicotine 2 mg gum, 204",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1127041000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1126241000168102",
+        "display": "Paracetamol (GPPL) 500 mg film-coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "28314011000036104",
+            "display": "paracetamol 500 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1126241000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "127491000036104",
+        "display": "Femrelief One (Pharmacy Action) 150 mg hard capsule, 1",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "38534011000036105",
+            "display": "fluconazole 150 mg capsule, 1",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/127491000036104",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1149521000168101",
+        "display": "Kaloba (Schwabe Pharma) 20 mg film-coated tablet, 90",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1149171000168109",
+            "display": "Pelargonium sidoides 20 mg tablet, 90",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1149521000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1149441000168106",
+        "display": "Kaloba (Schwabe Pharma) 20 mg film-coated tablet, 63",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1149051000168104",
+            "display": "Pelargonium sidoides 20 mg tablet, 63",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1149441000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1137961000168105",
+        "display": "Crestatin 20 mg film-coated tablet, 7",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "812041000168108",
+            "display": "rosuvastatin 20 mg tablet, 7",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1137961000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1126321000168102",
+        "display": "Clopidogrel/Aspirin 75/100 (Medis) uncoated tablet, 7",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "82553011000036107",
+            "display": "clopidogrel 75 mg + aspirin 100 mg tablet, 7",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1126321000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1138491000168107",
+        "display": "Cyproterone (AS) 50 mg uncoated tablet, 50",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27797011000036104",
+            "display": "cyproterone acetate 50 mg tablet, 50",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1138491000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "56859011000036107",
+        "display": "Dimetapp DM Cough and Cold Elixir Colour Free oral liquid solution, 100 mL",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63880011000036103",
+            "display": "brompheniramine maleate 2 mg/5 mL + phenylephrine hydrochloride 5 mg/5 mL + dextromethorphan hydrobromide monohydrate 10 mg/5 mL oral liquid, 100 mL",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/56859011000036107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1129691000168102",
+        "display": "Fexofenadine (Medreich) 60 mg film-coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1129681000168100",
+            "display": "fexofenadine hydrochloride 60 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1129691000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1146871000168108",
+        "display": "Everolimus (Sandoz) 2.5 mg uncoated tablet, 30",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "147361000036100",
+            "display": "everolimus 2.5 mg tablet, 30",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1146871000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1138281000168105",
+        "display": "Egopsoryl TA gel, 75 g",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1138271000168107",
+            "display": "coal tar solution 5% + phenol 0.5% + precipitated sulfur 0.5% gel, 75 g",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1138281000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1131701000168100",
+        "display": "Nicotine (Amcal) Fruit 2 mg chewing gum, 180",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "71512011000036109",
+            "display": "nicotine 2 mg gum, 180",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1131701000168100",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1135631000168101",
+        "display": "Nicotine (Amcal) Mint 2 mg chewing gum, 204",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "897531000168105",
+            "display": "nicotine 2 mg gum, 204",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1135631000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1130011000168107",
+        "display": "Nicotine Step 2 (Amcal) 14 mg/24 hours patch, 7",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27925011000036106",
+            "display": "nicotine 14 mg/24 hours patch, 7",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1130011000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1147191000168102",
+        "display": "Ezalo Composite Pack (30 x 10 mg tablets, 30 x 40 mg tablets), 1 pack",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "175151000036106",
+            "display": "ezetimibe 10 mg tablet [30] (&) rosuvastatin 40 mg tablet [30], 1 pack",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1147191000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1133301000168102",
+        "display": "Clopidogrel (Sanofi) 300 mg film-coated tablet, 280",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "81650011000036105",
+            "display": "clopidogrel 300 mg tablet, 280",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1133301000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1145421000168103",
+        "display": "Spinraza 12 mg/5 mL injection solution, 5 mL vial",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1145411000168105",
+            "display": "nusinersen 12 mg/5 mL injection, 5 mL vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1145421000168103",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1136511000168101",
+        "display": "Xeljanz 5 mg film-coated tablet, 180",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1136501000168104",
+            "display": "tofacitinib 5 mg tablet, 180",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1136511000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1139241000168109",
+        "display": "Irbesartan (Dr Reddy's) 150 mg film-coated tablet, 56",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "777671000168101",
+            "display": "irbesartan 150 mg tablet, 56",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1139241000168109",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1132251000168101",
+        "display": "Clopidogrel (Winthrop) 300 mg film-coated tablet, 28",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "81649011000036102",
+            "display": "clopidogrel 300 mg tablet, 28",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1132251000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1147921000168101",
+        "display": "Crosuva 20 mg film-coated tablet, 28",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "911461000168103",
+            "display": "rosuvastatin 20 mg tablet, 28",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1147921000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1145181000168105",
+        "display": "Zient 10 mg tablet, 5",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1145171000168107",
+            "display": "ezetimibe 10 mg tablet, 5",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1145181000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1144951000168102",
+        "display": "Hydrocortisone (Mylan) 4 mg uncoated tablet, 50",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27035011000036102",
+            "display": "hydrocortisone 4 mg tablet, 50",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1144951000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1136271000168106",
+        "display": "Wart Clear application, 15 mL",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1136261000168100",
+            "display": "salicylic acid 17% + lactic acid 17% application, 15 mL",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1136271000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1131931000168109",
+        "display": "Clopidogrel plus Aspirin 75mg/75mg (Winthrop) film-coated tablet, 28",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "992971000168106",
+            "display": "clopidogrel 75 mg + aspirin 75 mg tablet, 28",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1131931000168109",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1131851000168106",
+        "display": "Clobemide 150 mg film-coated tablet, 60",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "28338011000036102",
+            "display": "moclobemide 150 mg tablet, 60",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1131851000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1148481000168105",
+        "display": "Crosuva 40 mg film-coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "910611000168105",
+            "display": "rosuvastatin 40 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1148481000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1148561000168100",
+        "display": "Crosuva 10 mg film-coated tablet, 500",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "928471000168107",
+            "display": "rosuvastatin 10 mg tablet, 500",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1148561000168100",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1131291000168102",
+        "display": "Telfast 120 mg film-coated tablet, 2",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "52883011000036103",
+            "display": "fexofenadine hydrochloride 120 mg tablet, 2",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1131291000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1136911000168105",
+        "display": "Cancigin 50 mg powder for injection, 1 vial",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "46740011000036105",
+            "display": "caspofungin 50 mg injection, 1 vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1136911000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1137231000168105",
+        "display": "Diltiazem (Ascent) 60 mg film-coated tablet, 90",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27726011000036109",
+            "display": "diltiazem hydrochloride 60 mg tablet, 90",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1137231000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1125851000168106",
+        "display": "Docetaxel (Sanofi) 160 mg/8 mL concentrated injection, 8 mL vial",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "748241000168107",
+            "display": "docetaxel 160 mg/8 mL injection, 8 mL vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1125851000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1148241000168101",
+        "display": "Crosuva 40 mg film-coated tablet, 7",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "853431000168109",
+            "display": "rosuvastatin 40 mg tablet, 7",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1148241000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1147841000168103",
+        "display": "Crosuva 20 mg film-coated tablet, 7",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "812041000168108",
+            "display": "rosuvastatin 20 mg tablet, 7",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1147841000168103",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1148161000168108",
+        "display": "Crosuva 5 mg film-coated tablet, 500",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "928591000168107",
+            "display": "rosuvastatin 5 mg tablet, 500",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1148161000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1145911000168102",
+        "display": "Zeklen 10/20 uncoated tablet, 10",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "46992011000036109",
+            "display": "ezetimibe 10 mg + simvastatin 20 mg tablet, 10",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1145911000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1137471000168107",
+        "display": "Methyldopa (Mylan) 250 mg film-coated tablet, 90",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1137461000168101",
+            "display": "methyldopa 250 mg tablet, 90",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1137471000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1147601000168101",
+        "display": "Crosuva 10 mg film-coated tablet, 14",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "910791000168107",
+            "display": "rosuvastatin 10 mg tablet, 14",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1147601000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1137551000168102",
+        "display": "Methyldopa (Mylan) 250 mg film-coated tablet, 500",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1137541000168104",
+            "display": "methyldopa 250 mg tablet, 500",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1137551000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1146151000168105",
+        "display": "Dimetapp Cold and Flu soft capsule, 20",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1146001000168107",
+            "display": "phenylephrine hydrochloride 5 mg + paracetamol 300 mg capsule, 20",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1146151000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1131211000168106",
+        "display": "Ural powder for oral liquid, 16 x 4 g sachets",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1131201000168108",
+            "display": "sodium bicarbonate 1.76 g + citric acid 720 mg + sodium citrate 630 mg + tartaric acid 890 mg powder for oral liquid, 16 x 4 g sachets",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1131211000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1139801000168106",
+        "display": "Alcoholic Povidone-Iodine (Pfizer) 10% application, 500 mL",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "78133011000036105",
+            "display": "povidone-iodine 10% application, 500 mL",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1139801000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1145591000168102",
+        "display": "Enoxaparin (Winthrop) 60 mg/0.6 mL injection solution, 10 x 0.6 mL syringes",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27373011000036100",
+            "display": "enoxaparin sodium 60 mg/0.6 mL injection, 10 x 0.6 mL syringes",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1145591000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1137781000168103",
+        "display": "Crestatin 5 mg film-coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "928561000168100",
+            "display": "rosuvastatin 5 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1137781000168103",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1134811000168108",
+        "display": "Alustal American Dust Mite Extract Maintenance 50 IR/5 mL injection suspension, 5 mL vial",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1134801000168105",
+            "display": "American house dust mite extract 50 IR/5 mL injection, 5 mL vial",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1134811000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1137871000168109",
+        "display": "Crestatin 10 mg film-coated tablet, 100",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "911121000168100",
+            "display": "rosuvastatin 10 mg tablet, 100",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1137871000168109",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1134731000168105",
+        "display": "Vemlidy 25 mg film-coated tablet, 30",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1134721000168107",
+            "display": "tenofovir alafenamide 25 mg tablet, 30",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1134731000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1142131000168103",
+        "display": "Clopidogrel plus Aspirin 75mg/100mg (Winthrop) film-coated tablet, 56",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "82552011000036100",
+            "display": "clopidogrel 75 mg + aspirin 100 mg tablet, 56",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1142131000168103",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1133531000168104",
+        "display": "Coartem dispersible tablet, 6",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1133521000168102",
+            "display": "artemether 20 mg + lumefantrine 120 mg dispersible tablet, 6",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1133531000168104",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1124891000168102",
+        "display": "Quetiapine XR (KP) 400 mg modified release tablet, 60",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "51540011000036104",
+            "display": "quetiapine 400 mg modified release tablet, 60",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1124891000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1140841000168104",
+        "display": "Chesty Mucus Relief (Apohealth) 4 mg/5 mL oral liquid, 250 mL",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63253011000036109",
+            "display": "bromhexine hydrochloride 4 mg/5 mL oral liquid, 250 mL",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1140841000168104",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1138511000168102",
+        "display": "Irbesartan (Dr Reddy's) 300 mg film-coated tablet, 98",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "777501000168105",
+            "display": "irbesartan 300 mg tablet, 98",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1138511000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1134091000168107",
+        "display": "Bisolvon Dry 10.5 mg pastille, 40",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1134081000168109",
+            "display": "dextromethorphan hydrobromide monohydrate 10.5 mg pastille, 40",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1134091000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1138341000168106",
+        "display": "Irbesartan (Dr Reddy's) 300 mg film-coated tablet, 3",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "777331000168108",
+            "display": "irbesartan 300 mg tablet, 3",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1138341000168106",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1146781000168102",
+        "display": "Enoxaparin (Winthrop) with Automatic Safety Lock 20 mg/0.2 mL injection solution, 10 x 0.2 mL syringes",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "33800011000036109",
+            "display": "enoxaparin sodium 20 mg/0.2 mL injection, 10 x 0.2 mL syringes",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1146781000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1133851000168107",
+        "display": "Valaciclovir (Chemmart) 1 g film-coated tablet, 3",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1017871000168109",
+            "display": "valaciclovir 1 g tablet, 3",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1133851000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "56863011000036100",
+        "display": "Dimetapp DM Cough and Cold Drops Colour Free oral liquid solution, 25 mL",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63616011000036107",
+            "display": "brompheniramine maleate 400 microgram/mL + phenylephrine hydrochloride 1 mg/mL + dextromethorphan hydrobromide monohydrate 2 mg/mL oral liquid, 25 mL",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/56863011000036100",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1138831000168105",
+        "display": "Doceptil 5 mg film-coated tablet, 112",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1117891000168100",
+            "display": "donepezil hydrochloride 5 mg tablet, 112",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1138831000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1124091000168105",
+        "display": "Quetiapine XR (CW) 400 mg modified release tablet, 60",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "51540011000036104",
+            "display": "quetiapine 400 mg modified release tablet, 60",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1124091000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1144451000168107",
+        "display": "Enoxaparin Forte (Winthrop) 120 mg/0.8 mL injection solution, 10 x 0.8 mL syringes",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "46702011000036100",
+            "display": "enoxaparin sodium 120 mg/0.8 mL injection, 10 x 0.8 mL syringes",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1144451000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1145821000168101",
+        "display": "Enoxaparin (Winthrop) 100 mg/mL injection solution, 10 x 1 mL syringes",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27375011000036104",
+            "display": "enoxaparin sodium 100 mg/mL injection, 10 x 1 mL syringes",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1145821000168101",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1132891000168107",
+        "display": "Clopidogrel (Sanofi) 75 mg film-coated tablet, 7",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "87805011000036102",
+            "display": "clopidogrel 75 mg tablet, 7",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1132891000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1137061000168109",
+        "display": "Cortival-1/2 0.05% ointment, 30 g",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "876901000168102",
+            "display": "betamethasone (as valerate) 0.05% ointment, 30 g",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1137061000168109",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1124251000168108",
+        "display": "Ipclone 7.5 mg film-coated tablet, 30",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "28332011000036100",
+            "display": "zopiclone 7.5 mg tablet, 30",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1124251000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1146061000168108",
+        "display": "Zeklen 10/40 uncoated tablet, 5",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "727631000168103",
+            "display": "ezetimibe 10 mg + simvastatin 40 mg tablet, 5",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1146061000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1135371000168108",
+        "display": "Nicotine (Amcal) Mint 4 mg chewing gum, 96",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63640011000036100",
+            "display": "nicotine 4 mg gum, 96",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1135371000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1133131000168107",
+        "display": "Clopidogrel (Sanofi) 300 mg film-coated tablet, 28",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "81649011000036102",
+            "display": "clopidogrel 300 mg tablet, 28",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1133131000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1133211000168107",
+        "display": "Clopidogrel (Sanofi) 300 mg film-coated tablet, 98",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "81656011000036108",
+            "display": "clopidogrel 300 mg tablet, 98",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1133211000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1139071000168107",
+        "display": "Cyproterone (GA) 50 mg uncoated tablet, 20",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27796011000036102",
+            "display": "cyproterone acetate 50 mg tablet, 20",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1139071000168107",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1145501000168108",
+        "display": "Enoxaparin (Winthrop) 80 mg/0.8 mL injection solution, 10 x 0.8 mL syringes",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "27374011000036103",
+            "display": "enoxaparin sodium 80 mg/0.8 mL injection, 10 x 0.8 mL syringes",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1145501000168108",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1141891000168102",
+        "display": "Claratyne Children's Grape 5 mg chewable tablet, 2",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "1080731000168102",
+            "display": "loratadine 5 mg chewable tablet, 2",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1141891000168102",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1141171000168105",
+        "display": "Double Action Chesty Cough (Trust) oral liquid solution, 200 mL",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "63967011000036105",
+            "display": "bromhexine hydrochloride 3 mg/5 mL + guaifenesin 100 mg/5 mL oral liquid, 200 mL",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1141171000168105",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+  Object {
+    "coding": Array [
+      Object {
+        "code": "1144051000168103",
+        "display": "Tobramycin (WKT) 300 mg/5 mL inhalation solution, 56 x 5 mL ampoules",
+        "system": "http://snomed.info/sct",
+      },
+    ],
+    "generalizedMedicines": Array [
+      Object {
+        "coding": Array [
+          Object {
+            "code": "933226121000036101",
+            "display": "tobramycin 300 mg/5 mL inhalation solution, 56 x 5 mL ampoules",
+            "system": "http://snomed.info/sct",
+          },
+        ],
+        "type": "MPP",
+      },
+    ],
+    "lastModified": "2018-05-31",
+    "link": "/Medication/1144051000168103",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "status": "active",
+    "subsidy": Array [],
+    "type": "TPP",
+  },
+]
+`;
+
 exports[`Search should retrieve all results on download click 1`] = `
 Array [
   Object {
@@ -10,6 +5620,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2016-10-31",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -25,6 +5636,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2014-06-30",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -40,6 +5652,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2016-01-31",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -55,6 +5668,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2017-04-30",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -70,6 +5684,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2015-01-31",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -85,6 +5700,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2014-06-30",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -100,6 +5716,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2016-06-30",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -115,6 +5732,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2016-10-31",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -130,6 +5748,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2016-01-31",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -145,6 +5764,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2016-10-31",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -160,6 +5780,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2017-05-31",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -175,6 +5796,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2014-06-30",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -190,6 +5812,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2016-12-31",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -205,6 +5828,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2014-06-30",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -220,6 +5844,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2017-02-28",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -235,6 +5860,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2016-10-31",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -250,6 +5876,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2017-06-30",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -265,6 +5892,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2018-01-31",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -280,6 +5908,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2016-04-30",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -295,6 +5924,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2017-03-31",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -310,6 +5940,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2017-04-30",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -325,6 +5956,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2016-10-31",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -340,6 +5972,7 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
+    "generalizedMedicines": Array [],
     "lastModified": "2016-10-31",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",

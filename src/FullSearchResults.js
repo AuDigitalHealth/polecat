@@ -35,9 +35,12 @@ class FullSearchResults extends Component {
       }),
     ),
     totalResults: PropTypes.number,
+    allResultsAreOfType: PropTypes.oneOf(['CTPP', 'TPP', 'TPUU']),
+    shownGMs: PropTypes.array,
     onSelectResult: PropTypes.func,
     onRequireMoreResults: PropTypes.func.isRequired,
   }
+  static defaultProps = { shownGMs: [] }
 
   constructor(props) {
     super(props)
@@ -115,7 +118,7 @@ class FullSearchResults extends Component {
   }
 
   renderResults() {
-    const { results, totalResults } = this.props,
+    const { results, totalResults, shownGMs } = this.props,
       renderResult = this.renderResult,
       { scrollTop } = this.state
     if (!results || results.length === 0) return
@@ -138,8 +141,10 @@ class FullSearchResults extends Component {
                 scrollTop={scrollTop}
                 overscanRowCount={50}
                 results={results}
+                shownGMs={shownGMs}
                 onRowsRendered={onRowsRendered}
                 onScroll={this.handleScroll}
+                onScrollbarPresenceChange={this.handleScrollbarPresenceChange}
               />
             )}
           </InfiniteLoader>
@@ -149,7 +154,7 @@ class FullSearchResults extends Component {
   }
 
   renderResult({ key, index, style }) {
-    const { results } = this.props,
+    const { results, allResultsAreOfType } = this.props,
       result = results[index]
     if (!result) {
       const displayLength = 189 + Math.round(Math.random() * 200)
@@ -161,17 +166,42 @@ class FullSearchResults extends Component {
       )
     }
     return (
-      <li
-        key={key}
-        className="search-result"
-        style={style}
-        onClick={() => this.handleSelectResult(result)}
-      >
-        <span className="sctid">{codingToSnomedCode(result.coding)}</span>
-        <span className="display">{codingToSnomedDisplay(result.coding)}</span>
-        <ConceptType type={result.type} status={result.status} />
+      <li key={key} className="search-result" style={style}>
+        <div
+          className="subject-concept"
+          onClick={() => this.handleSelectResult(result)}
+        >
+          <span className="sctid">{codingToSnomedCode(result.coding)}</span>
+          <span
+            className="display"
+            title={codingToSnomedDisplay(result.coding)}
+          >
+            {codingToSnomedDisplay(result.coding)}
+          </span>
+          {allResultsAreOfType ? null : (
+            <ConceptType type={result.type} status={result.status} />
+          )}
+        </div>
+        {this.renderGMsForResult(result)}
       </li>
     )
+  }
+
+  renderGMsForResult(result) {
+    const { shownGMs } = this.props
+    return shownGMs.map(gm => {
+      const foundGM = result.generalizedMedicines.find(m => m.type === gm)
+      return foundGM ? (
+        <span
+          key={gm}
+          className="generalized-medicine"
+          title={codingToSnomedDisplay(foundGM.coding)}
+          onClick={() => this.handleSelectResult(result)}
+        >
+          {codingToSnomedDisplay(foundGM.coding)}
+        </span>
+      ) : null
+    })
   }
 }
 
