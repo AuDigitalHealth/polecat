@@ -78,50 +78,6 @@
     },
     {
       "url":
-        "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-      "extension": [
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/medication",
-          "valueReference": {
-            "reference": "Medication/12758011000036106",
-            "display": "Augmentin Duo Forte 875/125 film-coated tablet, 10"
-          }
-        },
-        {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-          "valueCoding": {
-            "system": "http://hl7.org/fhir/medication_type",
-            "code": "BPG",
-            "display": "Branded package with no container"
-          }
-        }
-      ]
-    },
-    {
-      "url":
-        "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-      "extension": [
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/medication",
-          "valueReference": {
-            "reference": "Medication/28152011000036108",
-            "display": "amoxicillin 875 mg + clavulanic acid 125 mg tablet, 10"
-          }
-        },
-        {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-          "valueCoding": {
-            "system": "http://hl7.org/fhir/medication_type",
-            "code": "UPG",
-            "display": "Unbranded package with no container"
-          }
-        }
-      ]
-    },
-    {
-      "url":
         "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
       "valueCoding": {
         "system": "http://hl7.org/fhir/medication_type",
@@ -153,7 +109,7 @@
           "url":
             "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
           "valueString":
-            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531"
+            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
         }
       ]
     },
@@ -214,7 +170,7 @@
               {
                 "system": "http://www.whocc.no/atc",
                 "code": "J01CR02",
-                "display": "amoxicillin and beta-lactamase inhibitor"
+                "display": "amoxicillin and enzyme inhibitor"
               }
             ]
           }
@@ -278,7 +234,135 @@
               {
                 "system": "http://www.whocc.no/atc",
                 "code": "J01CR02",
-                "display": "amoxicillin and beta-lactamase inhibitor"
+                "display": "amoxicillin and enzyme inhibitor"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "url": "http://medserve.online/fhir/StructureDefinition/subsidy",
+      "extension": [
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/subsidyCode",
+          "valueCoding": {
+            "system": "http://pbs.gov.au/code/item",
+            "code": "5006L"
+          }
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/programCode",
+          "valueCoding": {
+            "system": "http://pbs.gov.au/code/program",
+            "code": "GE",
+            "display": "Generally Available Pharmaceutical Benefits"
+          }
+        },
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/cautionaryNotes",
+          "valueAnnotation": {
+            "text": "Hepatotoxicity has been reported with this drug."
+          }
+        },
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/cautionaryNotes",
+          "valueAnnotation": {
+            "text": "Hepatotoxicity has been reported with this drug."
+          }
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/restriction",
+          "valueCoding": {
+            "system": "http://pbs.gov.au/code/restriction",
+            "code": "R",
+            "display": "Restricted benefit"
+          }
+        },
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/commonwealthExManufacturerPrice",
+          "valueDecimal": 2.58
+        },
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/manufacturerExManufacturerPrice",
+          "valueDecimal": 8.38
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/atcCode",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://www.whocc.no/atc",
+                "code": "J01CR02",
+                "display": "amoxicillin and enzyme inhibitor"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "url": "http://medserve.online/fhir/StructureDefinition/subsidy",
+      "extension": [
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/subsidyCode",
+          "valueCoding": {
+            "system": "http://pbs.gov.au/code/item",
+            "code": "8254K"
+          }
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/programCode",
+          "valueCoding": {
+            "system": "http://pbs.gov.au/code/program",
+            "code": "GE",
+            "display": "Generally Available Pharmaceutical Benefits"
+          }
+        },
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/cautionaryNotes",
+          "valueAnnotation": {
+            "text": "Hepatotoxicity has been reported with this drug."
+          }
+        },
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/cautionaryNotes",
+          "valueAnnotation": {
+            "text": "Hepatotoxicity has been reported with this drug."
+          }
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/restriction",
+          "valueCoding": {
+            "system": "http://pbs.gov.au/code/restriction",
+            "code": "R",
+            "display": "Restricted benefit"
+          }
+        },
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/commonwealthExManufacturerPrice",
+          "valueDecimal": 2.58
+        },
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/manufacturerExManufacturerPrice",
+          "valueDecimal": 8.38
+        },
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/atcCode",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://www.whocc.no/atc",
+                "code": "J01CR02",
+                "display": "amoxicillin and enzyme inhibitor"
               }
             ]
           }
@@ -428,53 +512,6 @@
             },
             {
               "url":
-                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-              "extension": [
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medication",
-                  "valueReference": {
-                    "reference": "Medication/23461011000036109",
-                    "display":
-                      "amoxicillin 875 mg + clavulanic acid 125 mg tablet"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "UPDSF",
-                    "display": "Unbranded product with strengths and form"
-                  }
-                }
-              ]
-            },
-            {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-              "extension": [
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medication",
-                  "valueReference": {
-                    "reference": "Medication/21360011000036101",
-                    "display": "amoxicillin + clavulanic acid"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "UPD",
-                    "display": "Unbranded product with no strengths or form"
-                  }
-                }
-              ]
-            },
-            {
-              "url":
                 "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
@@ -491,18 +528,6 @@
               "url":
                 "http://medserve.online/fhir/StructureDefinition/lastModified",
               "valueDate": "2017-02-28"
-            },
-            {
-              "url": "http://medserve.online/fhir/StructureDefinition/brand",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://snomed.info/sct",
-                    "code": "49111000168106",
-                    "display": "Augmentin Duo Forte 875/125"
-                  }
-                ]
-              }
             }
           ],
           "reference": "Medication/6052011000036107",

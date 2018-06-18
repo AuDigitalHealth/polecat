@@ -245,25 +245,13 @@ describe('FhirMedication', () => {
               system: 'http://snomed.info/sct',
             },
           ],
-          generalizedMedicines: [
-            {
-              coding: [
-                {
-                  code: '21433011000036107',
-                  display: 'paracetamol',
-                  system: 'http://snomed.info/sct',
-                },
-              ],
-              type: 'MP',
-            },
-          ],
-          lastModified: '2014-06-30',
           sourceCodeSystemUri: 'http://snomed.info/sct',
           sourceCodeSystemVersion:
-            'http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531',
+            'http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228',
+          lastModified: '2014-06-30',
           status: 'active',
-          subsidy: [],
           type: 'UPDSF',
+          subsidy: [],
         })
         resolve()
       }, 50)

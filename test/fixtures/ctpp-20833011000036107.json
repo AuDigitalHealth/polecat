@@ -323,52 +323,6 @@
     },
     {
       "url":
-        "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-      "extension": [
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/medication",
-          "valueReference": {
-            "reference": "Medication/13996011000036100",
-            "display":
-              "Klacid Hp 7 (14 x 20 mg capsules, 14 x 500 mg tablets, 28 x 500 mg capsules), 1 pack"
-          }
-        },
-        {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-          "valueCoding": {
-            "system": "http://hl7.org/fhir/medication_type",
-            "code": "BPG",
-            "display": "Branded package with no container"
-          }
-        }
-      ]
-    },
-    {
-      "url":
-        "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-      "extension": [
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/medication",
-          "valueReference": {
-            "reference": "Medication/28061011000036102",
-            "display":
-              "omeprazole 20 mg capsule [14 capsules] (&) clarithromycin 500 mg tablet [14] (&) amoxycillin 500 mg capsule [28 capsules], 1 pack"
-          }
-        },
-        {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-          "valueCoding": {
-            "system": "http://hl7.org/fhir/medication_type",
-            "code": "UPG",
-            "display": "Unbranded package with no container"
-          }
-        }
-      ]
-    },
-    {
-      "url":
         "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
       "valueCoding": {
         "system": "http://hl7.org/fhir/medication_type",
@@ -400,7 +354,7 @@
           "url":
             "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
           "valueString":
-            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531"
+            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
         }
       ]
     },
@@ -465,163 +419,6 @@
       ]
     },
     "content": [
-      {
-        "itemReference": {
-          "extension": [
-            {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
-              "extension": [
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/parentMedication",
-                  "valueReference": {
-                    "reference": "Medication/23527011000036104",
-                    "display": "clarithromycin 500 mg tablet"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "UPDSF",
-                    "display": "Unbranded product with strengths and form"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
-                  "extension": [
-                    {
-                      "url":
-                        "http://medserve.online/fhir/StructureDefinition/parentMedication",
-                      "valueReference": {
-                        "reference": "Medication/21836011000036107",
-                        "display": "clarithromycin"
-                      }
-                    },
-                    {
-                      "url":
-                        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                      "valueCoding": {
-                        "system": "http://hl7.org/fhir/medication_type",
-                        "code": "UPD",
-                        "display": "Unbranded product with no strengths or form"
-                      }
-                    },
-                    {
-                      "url":
-                        "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
-                      "valueCode": "active"
-                    },
-                    {
-                      "url":
-                        "http://medserve.online/fhir/StructureDefinition/lastModified",
-                      "valueDate": "2014-06-30"
-                    }
-                  ]
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
-                  "valueCode": "active"
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/lastModified",
-                  "valueDate": "2014-06-30"
-                }
-              ]
-            },
-            {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-              "extension": [
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medication",
-                  "valueReference": {
-                    "reference": "Medication/23527011000036104",
-                    "display": "clarithromycin 500 mg tablet"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "UPDSF",
-                    "display": "Unbranded product with strengths and form"
-                  }
-                }
-              ]
-            },
-            {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-              "extension": [
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medication",
-                  "valueReference": {
-                    "reference": "Medication/21836011000036107",
-                    "display": "clarithromycin"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "UPD",
-                    "display": "Unbranded product with no strengths or form"
-                  }
-                }
-              ]
-            },
-            {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-              "valueCoding": {
-                "system": "http://hl7.org/fhir/medication_type",
-                "code": "BPSF",
-                "display": "Branded product with strengths and form"
-              }
-            },
-            {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
-              "valueCode": "active"
-            },
-            {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/lastModified",
-              "valueDate": "2017-02-28"
-            },
-            {
-              "url": "http://medserve.online/fhir/StructureDefinition/brand",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://snomed.info/sct",
-                    "code": "3147011000036106",
-                    "display": "Klacid"
-                  }
-                ]
-              }
-            }
-          ],
-          "reference": "Medication/7489011000036101",
-          "display": "Klacid 500 mg film-coated tablet"
-        },
-        "amount": {
-          "value": 14,
-          "unit": "tablet",
-          "system": "http://snomed.info/sct",
-          "code": "63011000036109"
-        }
-      },
       {
         "itemReference": {
           "extension": [
@@ -749,52 +546,6 @@
             },
             {
               "url":
-                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-              "extension": [
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medication",
-                  "valueReference": {
-                    "reference": "Medication/23375011000036106",
-                    "display": "omeprazole 20 mg capsule"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "UPDSF",
-                    "display": "Unbranded product with strengths and form"
-                  }
-                }
-              ]
-            },
-            {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-              "extension": [
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medication",
-                  "valueReference": {
-                    "reference": "Medication/21676011000036101",
-                    "display": "omeprazole"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "UPD",
-                    "display": "Unbranded product with no strengths or form"
-                  }
-                }
-              ]
-            },
-            {
-              "url":
                 "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
@@ -839,28 +590,115 @@
                   "valueDate": "2015-09-30"
                 }
               ]
-            },
-            {
-              "url": "http://medserve.online/fhir/StructureDefinition/brand",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://snomed.info/sct",
-                    "code": "2966011000036108",
-                    "display": "Probitor"
-                  }
-                ]
-              }
             }
           ],
           "reference": "Medication/7276011000036104",
           "display": "Probitor 20 mg capsule"
         },
         "amount": {
-          "value": 14,
+          "value": 14.0,
           "unit": "capsule",
           "system": "http://snomed.info/sct",
           "code": "67011000036100"
+        }
+      },
+      {
+        "itemReference": {
+          "extension": [
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "extension": [
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "valueReference": {
+                    "reference": "Medication/23527011000036104",
+                    "display": "clarithromycin 500 mg tablet"
+                  }
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "UPDSF",
+                    "display": "Unbranded product with strengths and form"
+                  }
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                  "extension": [
+                    {
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                      "valueReference": {
+                        "reference": "Medication/21836011000036107",
+                        "display": "clarithromycin"
+                      }
+                    },
+                    {
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                      "valueCoding": {
+                        "system": "http://hl7.org/fhir/medication_type",
+                        "code": "UPD",
+                        "display": "Unbranded product with no strengths or form"
+                      }
+                    },
+                    {
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                      "valueCode": "active"
+                    },
+                    {
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/lastModified",
+                      "valueDate": "2014-06-30"
+                    }
+                  ]
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "valueCode": "active"
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "valueDate": "2014-06-30"
+                }
+              ]
+            },
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/medication_type",
+                "code": "BPSF",
+                "display": "Branded product with strengths and form"
+              }
+            },
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "valueCode": "active"
+            },
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "valueDate": "2017-02-28"
+            }
+          ],
+          "reference": "Medication/7489011000036101",
+          "display": "Klacid 500 mg film-coated tablet"
+        },
+        "amount": {
+          "value": 14.0,
+          "unit": "tablet",
+          "system": "http://snomed.info/sct",
+          "code": "63011000036109"
         }
       },
       {
@@ -934,52 +772,6 @@
             },
             {
               "url":
-                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-              "extension": [
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medication",
-                  "valueReference": {
-                    "reference": "Medication/23551011000036108",
-                    "display": "amoxicillin 500 mg capsule"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "UPDSF",
-                    "display": "Unbranded product with strengths and form"
-                  }
-                }
-              ]
-            },
-            {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-              "extension": [
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medication",
-                  "valueReference": {
-                    "reference": "Medication/21415011000036100",
-                    "display": "amoxicillin"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "UPD",
-                    "display": "Unbranded product with no strengths or form"
-                  }
-                }
-              ]
-            },
-            {
-              "url":
                 "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
@@ -996,25 +788,13 @@
               "url":
                 "http://medserve.online/fhir/StructureDefinition/lastModified",
               "valueDate": "2016-11-30"
-            },
-            {
-              "url": "http://medserve.online/fhir/StructureDefinition/brand",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://snomed.info/sct",
-                    "code": "3323011000036108",
-                    "display": "Amoxycillin (Sandoz)"
-                  }
-                ]
-              }
             }
           ],
           "reference": "Medication/7277011000036101",
           "display": "Amoxycillin (Sandoz) 500 mg hard capsule"
         },
         "amount": {
-          "value": 28,
+          "value": 28.0,
           "unit": "capsule",
           "system": "http://snomed.info/sct",
           "code": "67011000036100"
@@ -1091,52 +871,6 @@
             },
             {
               "url":
-                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-              "extension": [
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medication",
-                  "valueReference": {
-                    "reference": "Medication/41610011000036105",
-                    "display": "Klacid 500 mg film-coated tablet, 14"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "BPG",
-                    "display": "Branded package with no container"
-                  }
-                }
-              ]
-            },
-            {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-              "extension": [
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medication",
-                  "valueReference": {
-                    "reference": "Medication/46431011000036106",
-                    "display": "clarithromycin 500 mg tablet, 14"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "UPG",
-                    "display": "Unbranded package with no container"
-                  }
-                }
-              ]
-            },
-            {
-              "url":
                 "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
@@ -1153,26 +887,12 @@
               "url":
                 "http://medserve.online/fhir/StructureDefinition/lastModified",
               "valueDate": "2017-02-28"
-            },
-            {
-              "url": "http://medserve.online/fhir/StructureDefinition/brand",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://snomed.info/sct",
-                    "code": "3147011000036106",
-                    "display": "Klacid"
-                  }
-                ]
-              }
             }
           ],
           "reference": "Medication/700029381000036101",
           "display": "Klacid 500 mg film-coated tablet, 14 tablets, bottle"
         },
-        "amount": {
-          "value": 1
-        }
+        "amount": { "value": 1 }
       },
       {
         "itemReference": {
@@ -1302,52 +1022,6 @@
             },
             {
               "url":
-                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-              "extension": [
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medication",
-                  "valueReference": {
-                    "reference": "Medication/221000168102",
-                    "display": "Probitor 20 mg capsule, 14 capsules"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "BPG",
-                    "display": "Branded package with no container"
-                  }
-                }
-              ]
-            },
-            {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-              "extension": [
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medication",
-                  "valueReference": {
-                    "reference": "Medication/924203011000036107",
-                    "display": "omeprazole 20 mg capsule, 14"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "UPG",
-                    "display": "Unbranded package with no container"
-                  }
-                }
-              ]
-            },
-            {
-              "url":
                 "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
@@ -1393,26 +1067,12 @@
                   "valueDate": "2015-09-30"
                 }
               ]
-            },
-            {
-              "url": "http://medserve.online/fhir/StructureDefinition/brand",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://snomed.info/sct",
-                    "code": "2966011000036108",
-                    "display": "Probitor"
-                  }
-                ]
-              }
             }
           ],
           "reference": "Medication/700027401000036109",
           "display": "Probitor 20 mg capsule, 14 capsules, blister pack"
         },
-        "amount": {
-          "value": 1
-        }
+        "amount": { "value": 1 }
       },
       {
         "itemReference": {
@@ -1485,52 +1145,6 @@
             },
             {
               "url":
-                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-              "extension": [
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medication",
-                  "valueReference": {
-                    "reference": "Medication/231000168104",
-                    "display": "Amoxycillin (Sandoz) 500 mg hard capsule, 28"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "BPG",
-                    "display": "Branded package with no container"
-                  }
-                }
-              ]
-            },
-            {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-              "extension": [
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medication",
-                  "valueReference": {
-                    "reference": "Medication/700031841000036104",
-                    "display": "amoxicillin 500 mg capsule, 28"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "UPG",
-                    "display": "Unbranded package with no container"
-                  }
-                }
-              ]
-            },
-            {
-              "url":
                 "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
@@ -1547,27 +1161,13 @@
               "url":
                 "http://medserve.online/fhir/StructureDefinition/lastModified",
               "valueDate": "2016-11-30"
-            },
-            {
-              "url": "http://medserve.online/fhir/StructureDefinition/brand",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://snomed.info/sct",
-                    "code": "3323011000036108",
-                    "display": "Amoxycillin (Sandoz)"
-                  }
-                ]
-              }
             }
           ],
           "reference": "Medication/700027411000036106",
           "display":
             "Amoxycillin (Sandoz) 500 mg hard capsule, 28, blister pack"
         },
-        "amount": {
-          "value": 1
-        }
+        "amount": { "value": 1 }
       }
     ]
   }

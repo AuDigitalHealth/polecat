@@ -110,50 +110,6 @@
     },
     {
       "url":
-        "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-      "extension": [
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/medication",
-          "valueReference": {
-            "reference": "Medication/23461011000036109",
-            "display": "amoxicillin 875 mg + clavulanic acid 125 mg tablet"
-          }
-        },
-        {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-          "valueCoding": {
-            "system": "http://hl7.org/fhir/medication_type",
-            "code": "UPDSF",
-            "display": "Unbranded product with strengths and form"
-          }
-        }
-      ]
-    },
-    {
-      "url":
-        "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-      "extension": [
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/medication",
-          "valueReference": {
-            "reference": "Medication/21360011000036101",
-            "display": "amoxicillin + clavulanic acid"
-          }
-        },
-        {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-          "valueCoding": {
-            "system": "http://hl7.org/fhir/medication_type",
-            "code": "UPD",
-            "display": "Unbranded product with no strengths or form"
-          }
-        }
-      ]
-    },
-    {
-      "url":
         "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
       "valueCoding": {
         "system": "http://hl7.org/fhir/medication_type",
@@ -185,7 +141,7 @@
           "url":
             "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
           "valueString":
-            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531"
+            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
         }
       ]
     },
@@ -217,12 +173,12 @@
   "ingredient": [
     {
       "itemReference": {
-        "reference": "Substance/1962011000036108",
-        "display": "clavulanic acid"
+        "reference": "Substance/1799011000036105",
+        "display": "amoxicillin"
       },
       "amount": {
         "numerator": {
-          "value": 125,
+          "value": 875,
           "unit": "mg",
           "system": "http://snomed.info/sct",
           "code": "99011000036109"
@@ -237,12 +193,12 @@
     },
     {
       "itemReference": {
-        "reference": "Substance/1799011000036105",
-        "display": "amoxicillin"
+        "reference": "Substance/1962011000036108",
+        "display": "clavulanic acid"
       },
       "amount": {
         "numerator": {
-          "value": 875,
+          "value": 125,
           "unit": "mg",
           "system": "http://snomed.info/sct",
           "code": "99011000036109"

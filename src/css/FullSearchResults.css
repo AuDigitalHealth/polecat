@@ -18,34 +18,25 @@
 }
 
 .full-search-results .search-result {
+  padding: 7px 20px;
   border-bottom: 1px solid #ccc;
   display: flex;
   cursor: pointer;
   box-sizing: border-box;
-  display: flex;
 }
 
-.full-search-results .subject-concept:hover,
-.full-search-results .generalized-medicine:hover {
+.full-search-results .search-result:hover {
   background-color: rgb(238, 246, 255);
 }
 
 .full-search-results .search-result .sctid,
-.full-search-results .search-result .display,
-.full-search-results .search-result .generalized-medicine {
+.full-search-results .search-result .display {
   line-height: 22px;
-  padding: 7px 20px;
-}
-
-.full-search-results .subject-concept {
-  display: flex;
-  flex-grow: 1;
-  min-width: 0;
 }
 
 .full-search-results .search-result .sctid {
-  flex: 0 0 150px;
   margin-right: 16px;
+  min-width: 140px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -62,16 +53,6 @@
 .full-search-results .search-result .concept-type {
   font-size: 10px;
   border-radius: 5px;
-  margin: 7px 20px;
-}
-
-.full-search-results .search-result .generalized-medicine {
-  flex: 0 0 20%;
-  border-left: 1px solid #ddd;
-  box-sizing: border-box;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .full-search-results .no-results {

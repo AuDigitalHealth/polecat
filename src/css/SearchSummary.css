@@ -5,21 +5,18 @@
   user-select: none;
 }
 
-.search-summary .summary {
-  flex-grow: 1;
-  display: flex;
-  padding: 7px 20px;
-}
-
 .search-summary .pagination-total {
   font-size: 14px;
+  position: relative;
+  top: -3px;
   font-weight: bold;
   display: inline;
-  margin-right: 12px;
 }
 
 .search-summary .download-results {
-  margin-right: 24px;
+  margin-left: 12px;
+  position: relative;
+  top: 2px;
 }
 
 .search-summary .pagination-next,
@@ -32,47 +29,4 @@
 .search-summary .pagination-previous.disabled {
   opacity: 0.3;
   cursor: default;
-}
-
-.search-summary.with-generalized-medicines {
-  justify-content: flex-start;
-}
-
-.search-summary .hidden-generalized-medicine {
-  text-align: right;
-  margin-right: 12px;
-  position: relative;
-  top: -1px;
-}
-
-.search-summary .hidden-generalized-medicine div {
-  font-weight: bold;
-  opacity: 0.8;
-  cursor: pointer;
-  display: inline;
-}
-
-.search-summary .hidden-generalized-medicine div:hover {
-  opacity: 1;
-}
-
-.search-summary .shown-generalized-medicine {
-  flex: 0 0 20%;
-  border-left: 1px solid #ddd;
-  padding: 7px 20px;
-  position: relative;
-  box-sizing: border-box;
-}
-
-.search-summary .shown-generalized-medicine .close {
-  font-size: 18px;
-  color: #666;
-  position: absolute;
-  top: 6px;
-  right: 20px;
-  cursor: pointer;
-}
-
-.search-summary .shown-generalized-medicine .close:hover {
-  color: black;
 }

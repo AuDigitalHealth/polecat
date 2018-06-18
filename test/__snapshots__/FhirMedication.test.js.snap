@@ -32,21 +32,9 @@ Array [
       },
     ],
     "focused": true,
-    "generalizedMedicines": Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21433011000036107",
-            "display": "paracetamol",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "MP",
-      },
-    ],
     "lastModified": "2014-06-30",
     "sourceCodeSystemUri": "http://snomed.info/sct",
-    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
     "status": "active",
     "subsidy": Array [],
     "type": "UPDSF",
@@ -54,7 +42,7 @@ Array [
   Object {
     "coding": Array [
       Object {
-        "code": "d4db7451371a75cfc89d567ece4ddc6c87de47cf597b63db4e5e8c14b2be8af6",
+        "code": "af136f0607369d4c0fba98771e8b05d13237fe381319b59e6a375520615a09a8",
         "system": "group",
       },
     ],
@@ -67,7 +55,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2014-06-30",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -83,7 +70,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2016-02-29",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -99,7 +85,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2014-06-30",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -115,7 +100,7 @@ Array [
   Object {
     "coding": Array [
       Object {
-        "code": "275e874707d624b20a0784c8e70f555f46f7f2ada24f1e6e1e05881268797edd",
+        "code": "bd1d58572d7bfde3ec89b383060ae08f73a116d33ab055ebb4eeef82b6e5c2c9",
         "system": "group",
       },
     ],
@@ -128,7 +113,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2016-08-31",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -144,7 +128,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2016-08-31",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -160,7 +143,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2018-01-31",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -176,7 +158,7 @@ Array [
   Object {
     "coding": Array [
       Object {
-        "code": "4c4e8911ddc8c66fbc277bfd202bababf0146e1c962c452dba6115dfed23855c",
+        "code": "24a723931526a57542783b62c236f912708822e33391a8f48c7de44db669e015",
         "system": "group",
       },
     ],
@@ -189,7 +171,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2014-06-30",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -205,7 +186,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2014-06-30",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -221,7 +201,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2014-06-30",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -250,19 +229,19 @@ Array [
     "type": "has-boss",
   },
   Object {
-    "source": "group-d4db7451371a75cfc89d567ece4ddc6c87de47cf597b63db4e5e8c14b2be8af6",
+    "source": "group-af136f0607369d4c0fba98771e8b05d13237fe381319b59e6a375520615a09a8",
     "sourceIsGroup": true,
     "target": "23628011000036109",
     "type": "is-a",
   },
   Object {
-    "source": "group-275e874707d624b20a0784c8e70f555f46f7f2ada24f1e6e1e05881268797edd",
+    "source": "group-bd1d58572d7bfde3ec89b383060ae08f73a116d33ab055ebb4eeef82b6e5c2c9",
     "sourceIsGroup": true,
     "target": "23628011000036109",
     "type": "is-a",
   },
   Object {
-    "source": "group-4c4e8911ddc8c66fbc277bfd202bababf0146e1c962c452dba6115dfed23855c",
+    "source": "group-24a723931526a57542783b62c236f912708822e33391a8f48c7de44db669e015",
     "sourceIsGroup": true,
     "target": "23628011000036109",
     "type": "has-updsf",
@@ -281,10 +260,7 @@ Array [
       },
     ],
     "focused": true,
-    "generalizedMedicines": Array [],
     "lastModified": "2014-06-30",
-    "sourceCodeSystemUri": "http://snomed.info/sct",
-    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
     "status": "active",
     "subsidy": Array [],
     "type": "substance",
@@ -297,7 +273,6 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
-    "generalizedMedicines": Array [],
     "lastModified": "2014-06-30",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -313,7 +288,6 @@ Array [
         "system": "http://snomed.info/sct",
       },
     ],
-    "generalizedMedicines": Array [],
     "lastModified": "2014-06-30",
     "sourceCodeSystemUri": "http://snomed.info/sct",
     "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -324,7 +298,7 @@ Array [
   Object {
     "coding": Array [
       Object {
-        "code": "111f78c9c25e63fb41bda165fb186bfa97e8a2106ccfded51373195f7cd008dc",
+        "code": "b3602d2118e67817b7d7dafa97087afa7fb762392942df56eb95d6fe0a991235",
         "system": "group",
       },
     ],
@@ -337,7 +311,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2016-05-31",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -353,7 +326,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2014-06-30",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -369,7 +341,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2016-06-30",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -385,7 +356,7 @@ Array [
   Object {
     "coding": Array [
       Object {
-        "code": "8e6214cb754a50b0e8ab7b52b4f5ea58552b4fed3a67813d2e75a74821699908",
+        "code": "c5ef4be6b5905c8c5c2c96bf73f687d66865905d93d328abec40a993b31e37d3",
         "system": "group",
       },
     ],
@@ -398,7 +369,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2016-05-31",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -414,7 +384,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2016-06-30",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -430,7 +399,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2016-08-31",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -459,13 +427,13 @@ Array [
     "type": "has-ingredient",
   },
   Object {
-    "source": "group-111f78c9c25e63fb41bda165fb186bfa97e8a2106ccfded51373195f7cd008dc",
+    "source": "group-b3602d2118e67817b7d7dafa97087afa7fb762392942df56eb95d6fe0a991235",
     "sourceIsGroup": true,
     "target": "2292011000036106",
     "type": "has-boss",
   },
   Object {
-    "source": "group-8e6214cb754a50b0e8ab7b52b4f5ea58552b4fed3a67813d2e75a74821699908",
+    "source": "group-c5ef4be6b5905c8c5c2c96bf73f687d66865905d93d328abec40a993b31e37d3",
     "sourceIsGroup": true,
     "target": "2292011000036106",
     "type": "has-boss",
@@ -505,21 +473,9 @@ Array [
       },
     ],
     "focused": true,
-    "generalizedMedicines": Array [
-      Object {
-        "coding": Array [
-          Object {
-            "code": "21433011000036107",
-            "display": "paracetamol",
-            "system": "http://snomed.info/sct",
-          },
-        ],
-        "type": "MP",
-      },
-    ],
     "lastModified": "2014-06-30",
     "sourceCodeSystemUri": "http://snomed.info/sct",
-    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
+    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
     "status": "active",
     "subsidy": Array [],
     "type": "UPDSF",
@@ -527,7 +483,7 @@ Array [
   Object {
     "coding": Array [
       Object {
-        "code": "d4db7451371a75cfc89d567ece4ddc6c87de47cf597b63db4e5e8c14b2be8af6",
+        "code": "af136f0607369d4c0fba98771e8b05d13237fe381319b59e6a375520615a09a8",
         "system": "group",
       },
     ],
@@ -540,7 +496,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2014-06-30",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -556,7 +511,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2016-02-29",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -572,7 +526,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2014-06-30",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -588,7 +541,7 @@ Array [
   Object {
     "coding": Array [
       Object {
-        "code": "275e874707d624b20a0784c8e70f555f46f7f2ada24f1e6e1e05881268797edd",
+        "code": "bd1d58572d7bfde3ec89b383060ae08f73a116d33ab055ebb4eeef82b6e5c2c9",
         "system": "group",
       },
     ],
@@ -601,7 +554,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2016-08-31",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -617,7 +569,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2016-08-31",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -633,7 +584,6 @@ Array [
             "system": "http://snomed.info/sct",
           },
         ],
-        "generalizedMedicines": Array [],
         "lastModified": "2018-01-31",
         "sourceCodeSystemUri": "http://snomed.info/sct",
         "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228",
@@ -660,10 +610,7 @@ Array [
       },
     ],
     "focused": true,
-    "generalizedMedicines": Array [],
     "lastModified": "2014-06-30",
-    "sourceCodeSystemUri": "http://snomed.info/sct",
-    "sourceCodeSystemVersion": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531",
     "status": "active",
     "subsidy": Array [],
     "type": "substance",

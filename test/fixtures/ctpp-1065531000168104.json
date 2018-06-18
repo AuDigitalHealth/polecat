@@ -112,52 +112,6 @@
     },
     {
       "url":
-        "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-      "extension": [
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/medication",
-          "valueReference": {
-            "reference": "Medication/1065521000168102",
-            "display":
-              "Strong Pain Relief (Terry White Chemists) uncoated tablet, 40"
-          }
-        },
-        {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-          "valueCoding": {
-            "system": "http://hl7.org/fhir/medication_type",
-            "code": "BPG",
-            "display": "Branded package with no container"
-          }
-        }
-      ]
-    },
-    {
-      "url":
-        "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-      "extension": [
-        {
-          "url": "http://medserve.online/fhir/StructureDefinition/medication",
-          "valueReference": {
-            "reference": "Medication/932460011000036106",
-            "display":
-              "paracetamol 500 mg + codeine phosphate hemihydrate 10 mg tablet, 40"
-          }
-        },
-        {
-          "url":
-            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-          "valueCoding": {
-            "system": "http://hl7.org/fhir/medication_type",
-            "code": "UPG",
-            "display": "Unbranded package with no container"
-          }
-        }
-      ]
-    },
-    {
-      "url":
         "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
       "valueCoding": {
         "system": "http://hl7.org/fhir/medication_type",
@@ -189,7 +143,7 @@
           "url":
             "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
           "valueString":
-            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531"
+            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
         }
       ]
     },
@@ -399,53 +353,6 @@
             },
             {
               "url":
-                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-              "extension": [
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medication",
-                  "valueReference": {
-                    "reference": "Medication/52258011000036105",
-                    "display":
-                      "paracetamol 500 mg + codeine phosphate hemihydrate 10 mg tablet"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "UPDSF",
-                    "display": "Unbranded product with strengths and form"
-                  }
-                }
-              ]
-            },
-            {
-              "url":
-                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
-              "extension": [
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medication",
-                  "valueReference": {
-                    "reference": "Medication/21286011000036106",
-                    "display": "paracetamol + codeine"
-                  }
-                },
-                {
-                  "url":
-                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/medication_type",
-                    "code": "UPD",
-                    "display": "Unbranded product with no strengths or form"
-                  }
-                }
-              ]
-            },
-            {
-              "url":
                 "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
@@ -462,25 +369,13 @@
               "url":
                 "http://medserve.online/fhir/StructureDefinition/lastModified",
               "valueDate": "2018-01-31"
-            },
-            {
-              "url": "http://medserve.online/fhir/StructureDefinition/brand",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://snomed.info/sct",
-                    "code": "1065481000168102",
-                    "display": "Strong Pain Relief (Terry White Chemists)"
-                  }
-                ]
-              }
             }
           ],
           "reference": "Medication/1065491000168104",
           "display": "Strong Pain Relief (Terry White Chemists) uncoated tablet"
         },
         "amount": {
-          "value": 40,
+          "value": 40.0,
           "unit": "tablet",
           "system": "http://snomed.info/sct",
           "code": "63011000036109"

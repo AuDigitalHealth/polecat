@@ -9,19 +9,11 @@ export const getSubjectConcept = resource => {
   const coding = resource.code.coding
   const type = getSubjectConceptType(resource)
   const status = getStatus(resource)
-  const sourceCodeSystem = getSourceCodeSystem(resource)
+  const sourceCodeSystem =
+    resource.resourceType === 'Medication' ? getSourceCodeSystem(resource) : {}
   const lastModified = getLastModified(resource)
   const subsidy = getSubsidy(resource)
-  const generalizedMedicines = getGeneralizedMedicines(resource)
-  return {
-    type,
-    coding,
-    status,
-    ...sourceCodeSystem,
-    lastModified,
-    subsidy,
-    generalizedMedicines,
-  }
+  return { type, coding, status, ...sourceCodeSystem, lastModified, subsidy }
 }
 
 // Get the type of subject concept, which will either be:
@@ -60,17 +52,6 @@ function* getExtensionConcepts(resource, sourceConcept) {
   yield* getReplacedByConcepts(resource, sourceConcept)
   // Get concepts that the source concept replaces.
   yield* getReplacesConcepts(resource, sourceConcept)
-}
-
-const getGeneralizedMedicines = resource => {
-  return getAllExtensions(resource, 'generalizedMedicine').map(gm => {
-    const medication = getExtension(gm, 'medication'),
-      medicationResourceType = getExtension(gm, 'medicationResourceType')
-    return {
-      coding: referenceToSnomedCoding(medication),
-      type: amtConceptTypeFor(medicationResourceType.code),
-    }
-  })
 }
 
 function* getPackageConcepts(resource, sourceConcept) {
@@ -443,9 +424,6 @@ const urlForExtension = name =>
     manufacturerExManufacturerPrice:
       'http://medserve.online/fhir/StructureDefinition/manufacturerExManufacturerPrice',
     atcCode: 'http://medserve.online/fhir/StructureDefinition/atcCode',
-    generalizedMedicine:
-      'http://medserve.online/fhir/StructureDefinition/generalizedMedicine',
-    medication: 'http://medserve.online/fhir/StructureDefinition/medication',
   }[name])
 
 const typeForExtension = name =>
@@ -471,8 +449,6 @@ const typeForExtension = name =>
     commonwealthExManufacturerPrice: 'valueDecimal',
     manufacturerExManufacturerPrice: 'valueDecimal',
     atcCode: 'valueCodeableConcept',
-    generalizedMedicine: 'extension',
-    medication: 'valueReference',
   }[name])
 
 export const urlForArtgId = id =>
