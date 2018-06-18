@@ -123,12 +123,7 @@
     "record-release": "bash scripts/recordRelease.sh",
     "loc": "sloc --exclude \".*\\.(css|svg|test.js|stories.js|js.snap)\" src"
   },
-  "pre-commit": [
-    "lint-staged",
-    "format-staged",
-    "test-ci",
-    "validate-circleci-config"
-  ],
+  "pre-commit": ["lint-staged", "format-staged", "test-ci"],
   "jest": {
     "collectCoverageFrom": ["src/**/*.js"],
     "setupTestFrameworkScriptFile": "<rootDir>/test/setup.js",
