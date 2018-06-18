@@ -116,6 +116,7 @@
     "test-ci": "CI=true node scripts/test.js --verbose --env=jsdom",
     "test-coverage":
       "CI=true node scripts/test.js --verbose --env=jsdom --coverage",
+    "validate-circleci-config": "bash scripts/validateCircleCIConfig.sh",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "update-test-files": "node scripts/updateTestFiles.js",
@@ -123,6 +124,11 @@
     "loc": "sloc --exclude \".*\\.(css|svg|test.js|stories.js|js.snap)\" src"
   },
   "pre-commit": ["lint-staged", "format-staged", "test-ci"],
+    "lint-staged",
+    "format-staged",
+    "test-ci",
+    "validate-circleci-config"
+  ],
   "jest": {
     "collectCoverageFrom": ["src/**/*.js"],
     "setupTestFrameworkScriptFile": "<rootDir>/test/setup.js",
