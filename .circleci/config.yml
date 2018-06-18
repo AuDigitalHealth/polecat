@@ -11,8 +11,8 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          - v1-dependencies-
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
       - run: yarn install
       - save_cache:
           paths:
@@ -31,7 +31,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-        at: *default_workdir
+          at: *default_workdir
       - add_ssh_keys
       - setup_remote_docker
       - run: yarn dockerize
@@ -46,8 +46,8 @@ workflows:
     jobs:
       - build
       - deploy:
-        requires:
-          - build
-        filters:
-          branches:
-            only: master
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

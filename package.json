@@ -1,6 +1,7 @@
 {
   "name": "polecat",
-  "description": "A tool for browsing the Australian Medicines Terminology (AMT), using data from an instance of Medserve.",
+  "description":
+    "A tool for browsing the Australian Medicines Terminology (AMT), using data from an instance of Medserve.",
   "license": "Apache-2.0",
   "author": {
     "name": "John Grimes",
@@ -113,7 +114,9 @@
     "deploy": "bash scripts/deploy.sh",
     "test": "node --inspect scripts/test.js --verbose --env=jsdom",
     "test-ci": "CI=true node scripts/test.js --verbose --env=jsdom",
-    "test-coverage": "CI=true node scripts/test.js --verbose --env=jsdom --coverage",
+    "test-coverage":
+      "CI=true node scripts/test.js --verbose --env=jsdom --coverage",
+    "validate-circleci-config": "bash scripts/validateCircleCIConfig.sh",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "update-test-files": "node scripts/updateTestFiles.js",
@@ -123,34 +126,26 @@
   "pre-commit": [
     "lint-staged",
     "format-staged",
-    "test-ci"
+    "test-ci",
+    "validate-circleci-config"
   ],
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.js"
-    ],
+    "collectCoverageFrom": ["src/**/*.js"],
     "setupTestFrameworkScriptFile": "<rootDir>/test/setup.js",
-    "testMatch": [
-      "<rootDir>/test/**/*.test.js"
-    ],
+    "testMatch": ["<rootDir>/test/**/*.test.js"],
     "testEnvironment": "node",
     "testURL": "http://localhost",
     "transform": {
       "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)":
+        "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   },
   "babel": {
-    "presets": [
-      "react-app"
-    ]
+    "presets": ["react-app"]
   },
   "eslintConfig": {
     "extends": "react-app"
