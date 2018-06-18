@@ -1,8 +1,11 @@
 version: 2
 jobs:
-  build:
+  build_and_deploy:
+    branches:
+      only:
+        - master
     docker:
-      - image: circleci/node:8.9.4
+      - image: circleci/node:8.11.3
     working_directory: ~/repo
     steps:
       - checkout
@@ -16,6 +19,7 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+      - run: yarn lint
       - run: yarn test-coverage
       - run: yarn codecov
       - run: yarn build
@@ -25,3 +29,26 @@ jobs:
       - run: ssh-keyscan $SERVER_HOSTNAME >> ~/.ssh/known_hosts
       - run: yarn deploy
       - run: yarn record-release
+  build_only:
+    branches:
+      ignore:
+        - master
+    docker:
+      - image: circleci/node:8.11.3
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - add_ssh_keys
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: yarn lint
+      - run: yarn test-coverage
+      - run: yarn codecov
+      - run: yarn build
