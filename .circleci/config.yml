@@ -30,6 +30,10 @@ jobs:
     <<: *defaults
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
       - attach_workspace:
           at: *default_workdir
       - add_ssh_keys
