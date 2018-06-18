@@ -51,6 +51,7 @@ class SearchSummary extends Component {
           </div>
           <DownloadResults
             results={allResults}
+            shownGMs={shownGMs}
             loading={loading}
             onClick={this.handleDownloadClick}
           />

@@ -5148,6 +5148,7 @@ exports[`Storyshots SearchSummary With next and previous links 1`] = `
     </div>
     <DownloadResults
       onClick={[Function]}
+      shownGMs={Array []}
     />
   </div>
 </div>
@@ -5172,6 +5173,7 @@ exports[`Storyshots SearchSummary With next link 1`] = `
     </div>
     <DownloadResults
       onClick={[Function]}
+      shownGMs={Array []}
     />
   </div>
 </div>
@@ -5196,6 +5198,7 @@ exports[`Storyshots SearchSummary With no total results 1`] = `
     </div>
     <DownloadResults
       onClick={[Function]}
+      shownGMs={Array []}
     />
   </div>
 </div>
@@ -5220,6 +5223,7 @@ exports[`Storyshots SearchSummary With previous link 1`] = `
     </div>
     <DownloadResults
       onClick={[Function]}
+      shownGMs={Array []}
     />
   </div>
 </div>
@@ -5244,6 +5248,7 @@ exports[`Storyshots SearchSummary With total results 1`] = `
     </div>
     <DownloadResults
       onClick={[Function]}
+      shownGMs={Array []}
     />
   </div>
 </div>

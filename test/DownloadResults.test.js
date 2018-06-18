@@ -32,7 +32,33 @@ describe('DownloadResults', () => {
           status: 'active',
           sourceCodeSystemUri: 'http://snomed.info/sct',
           sourceCodeSystemVersion:
-            'http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228',
+            'http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531',
+          lastModified: '2017-01-31',
+          subsidy: [],
+          generalizedMedicines: [
+            {
+              coding: [
+                {
+                  system: 'http://snomed.info/sct',
+                  code: '710251000168103',
+                  display:
+                    'amino acid formula with vitamins and minerals without phenylalanine oral liquid, 174 mL pouch',
+                },
+              ],
+              type: 'MPUU',
+            },
+            {
+              coding: [
+                {
+                  system: 'http://snomed.info/sct',
+                  code: '50738011000036108',
+                  display:
+                    'amino acid formula with vitamins and minerals without phenylalanine',
+                },
+              ],
+              type: 'MP',
+            },
+          ],
         },
         {
           type: 'TPUU',
@@ -47,9 +73,36 @@ describe('DownloadResults', () => {
           status: 'active',
           sourceCodeSystemUri: 'http://snomed.info/sct',
           sourceCodeSystemVersion:
-            'http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180228',
+            'http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531',
+          lastModified: '2017-01-31',
+          subsidy: [],
+          generalizedMedicines: [
+            {
+              coding: [
+                {
+                  system: 'http://snomed.info/sct',
+                  code: '710251000168103',
+                  display:
+                    'amino acid formula with vitamins and minerals without phenylalanine oral liquid, 174 mL pouch',
+                },
+              ],
+              type: 'MPUU',
+            },
+            {
+              coding: [
+                {
+                  system: 'http://snomed.info/sct',
+                  code: '50738011000036108',
+                  display:
+                    'amino acid formula with vitamins and minerals without phenylalanine',
+                },
+              ],
+              type: 'MP',
+            },
+          ],
         },
       ],
+      shownGMs: ['MPUU', 'MP'],
     }
     const wrapper = shallow(<DownloadResults />)
     wrapper.setProps(props)

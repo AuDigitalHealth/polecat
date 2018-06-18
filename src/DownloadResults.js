@@ -21,8 +21,12 @@ class DownloadResults extends Component {
         type: PropTypes.string.isRequired,
       }),
     ),
+    shownGMs: PropTypes.array,
     loading: PropTypes.bool,
     onClick: PropTypes.func,
+  }
+  static defaultProps = {
+    shownGMs: [],
   }
 
   constructor(props) {
@@ -30,14 +34,33 @@ class DownloadResults extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  downloadResults(results) {
-    let tsv = 'SCTID\tPreferred term\tAMT concept type\tView in browser\n'
+  downloadResults(results, shownGMs) {
+    const header = ['SCTID', 'Preferred term', 'AMT concept type']
+    // Add columns for the SCTID and preferred term of each generalized medicine.
+    for (const shownGM of shownGMs) {
+      header.push(`${shownGM} SCTID`)
+      header.push(`${shownGM} preferred term`)
+    }
+    header.push('View in browser')
+    let tsv = `${header.join('\t')}\n`
     for (const result of results) {
       const code = codingToSnomedCode(result.coding),
         display = codingToSnomedDisplay(result.coding),
         type = result.type,
-        browserLink = `${this.getBrowserUrl()}/Medication/${code}`
-      tsv += `${code}\t${display}\t${type}\t${browserLink}\n`
+        browserLink = `${this.getBrowserUrl()}/Medication/${code}`,
+        row = [code, display, type]
+      // Add SCTID and preferred term for each generalized medicine.
+      for (const shownGM of shownGMs) {
+        const foundGM = result.generalizedMedicines.find(
+          m => m.type === shownGM,
+        )
+        if (foundGM) {
+          row.push(codingToSnomedCode(foundGM.coding))
+          row.push(codingToSnomedDisplay(foundGM.coding))
+        }
+      }
+      row.push(browserLink)
+      tsv += `${row.join('\t')}\n`
     }
     const blob = new Blob([tsv], { type: 'text/tab-separated-values' })
     FileSaver.saveAs(blob, 'results.tsv')
@@ -54,8 +77,9 @@ class DownloadResults extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { results } = nextProps
-    if (results && results !== this.props.results) this.downloadResults(results)
+    const { results, shownGMs } = nextProps
+    if (results && results !== this.props.results)
+      this.downloadResults(results, shownGMs)
   }
 
   render() {
