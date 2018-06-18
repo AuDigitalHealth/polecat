@@ -1,15 +1,14 @@
+defaults: &defaults
+  working_directory: &default_workdir ~/repo
+  docker:
+    - image: circleci/node:8.11.3
+
 version: 2
 jobs:
-  build_and_deploy:
-    branches:
-      only:
-        - master
-    docker:
-      - image: circleci/node:8.11.3
-    working_directory: ~/repo
+  build:
+    <<: *defaults
     steps:
       - checkout
-      - add_ssh_keys
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
@@ -23,32 +22,33 @@ jobs:
       - run: yarn test-coverage
       - run: yarn codecov
       - run: yarn build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build
+  deploy:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+        at: *default_workdir
+      - add_ssh_keys
       - setup_remote_docker
       - run: yarn dockerize
       - run: yarn push-docker
       - run: ssh-keyscan $SERVER_HOSTNAME >> ~/.ssh/known_hosts
       - run: yarn deploy
       - run: yarn record-release
-  build_only:
-    branches:
-      ignore:
-        - master
-    docker:
-      - image: circleci/node:8.11.3
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - add_ssh_keys
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          - v1-dependencies-
-      - run: yarn install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn lint
-      - run: yarn test-coverage
-      - run: yarn codecov
-      - run: yarn build
+
+workflows:
+  version: 2
+
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+        requires:
+          - build
+        filters:
+          branches:
+            only: master
