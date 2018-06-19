@@ -39,7 +39,7 @@ class FullSearchResults extends Component {
     allResultsAreOfType: PropTypes.oneOf(['CTPP', 'TPP', 'TPUU']),
     shownGMs: PropTypes.array,
     onSelectResult: PropTypes.func,
-    onRequireMoreResults: PropTypes.func.isRequired,
+    onRequireMoreResults: PropTypes.func,
   }
   static defaultProps = { shownGMs: [] }
 
@@ -81,7 +81,7 @@ class FullSearchResults extends Component {
   }
 
   componentDidMount() {
-    this.list.Grid._scrollingContainer = this.scroll.view
+    if (this.list) this.list.Grid._scrollingContainer = this.scroll.view
   }
 
   componentWillReceiveProps(nextProps) {
@@ -113,7 +113,7 @@ class FullSearchResults extends Component {
   }
 
   renderResultsOrNothing() {
-    const { query, results } = this.props
+    const { query, results, totalResults } = this.props
     if (query && results && results.length === 0) {
       return (
         <div className="no-results">
@@ -122,7 +122,7 @@ class FullSearchResults extends Component {
       )
     } else if (results && results.length === 0) {
       return <div className="no-results">No results.</div>
-    } else if (results && results.length > 0) {
+    } else if (results && results.length > 0 && totalResults) {
       return <ol>{this.renderResults()}</ol>
     } else {
       return null

@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 import SearchSummary from '../src/SearchSummary.js'
 import DownloadResults from '../src/DownloadResults.js'
 
-const results1 = [
+export const results1 = [
   {
     type: 'CTPP',
     coding: [
