@@ -5,6 +5,13 @@
   flex-direction: column;
 }
 
+.full-search-results a,
+.full-search-results a:active,
+.full-search-results a:visited {
+  color: black;
+  text-decoration: none;
+}
+
 .full-search-results ol {
   font-size: 14px;
   margin: 0;

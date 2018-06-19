@@ -328,10 +328,8 @@ export class Search extends Component {
       : new Error(response.statusText || response.status)
   }
 
-  handleSelectResult(result) {
-    const { history } = this.props
+  handleSelectResult() {
     this.setState(() => ({ advanced: false, quickSearchShouldClose: true }))
-    if (result && result.link) history.push(result.link)
   }
 
   handleToggleAdvanced() {
@@ -365,7 +363,11 @@ export class Search extends Component {
   componentWillReceiveProps(nextProps) {
     const { fhirServer, query, quickSearchShouldClose } = nextProps
     const { advanced } = this.state
-    if (this.props.fhirServer === fhirServer && this.props.query === query) {
+    if (
+      this.props.fhirServer === fhirServer &&
+      this.props.query &&
+      this.props.query === query
+    ) {
       return
     }
     if (query) {
@@ -379,7 +381,8 @@ export class Search extends Component {
     } else if (advanced === true) {
       this.setState(() => ({ advanced: false }))
     }
-    if (quickSearchShouldClose) this.setState({ quickSearchShouldClose: true })
+    if (!query || quickSearchShouldClose)
+      this.setState({ quickSearchShouldClose: true })
   }
 
   shouldComponentUpdate(nextProps, nextState) {

@@ -4,6 +4,7 @@ import { InfiniteLoader } from 'react-virtualized/dist/commonjs/InfiniteLoader'
 import { List } from 'react-virtualized/dist/commonjs/List'
 import { AutoSizer } from 'react-virtualized/dist/commonjs/AutoSizer'
 import { Scrollbars } from 'react-custom-scrollbars'
+import { Link } from 'react-router-dom'
 
 import ConceptType from './ConceptType.js'
 import { codingToSnomedCode, codingToSnomedDisplay } from './fhir/medication.js'
@@ -189,10 +190,7 @@ class FullSearchResults extends Component {
     }
     return (
       <li key={key} className="search-result" style={style}>
-        <div
-          className="subject-concept"
-          onClick={() => this.handleSelectResult(result)}
-        >
+        <Link to={result.link} className="subject-concept">
           <span className="sctid">{codingToSnomedCode(result.coding)}</span>
           <span
             className="display"
@@ -203,7 +201,7 @@ class FullSearchResults extends Component {
           {allResultsAreOfType ? null : (
             <ConceptType type={result.type} status={result.status} />
           )}
-        </div>
+        </Link>
         {this.renderGMsForResult(result)}
       </li>
     )
@@ -214,14 +212,14 @@ class FullSearchResults extends Component {
     return shownGMs.map(gm => {
       const foundGM = result.generalizedMedicines.find(m => m.type === gm)
       return foundGM ? (
-        <span
+        <Link
+          to={result.link}
           key={gm}
           className="generalized-medicine"
           title={codingToSnomedDisplay(foundGM.coding)}
-          onClick={() => this.handleSelectResult(result)}
         >
           {codingToSnomedDisplay(foundGM.coding)}
-        </span>
+        </Link>
       ) : null
     })
   }

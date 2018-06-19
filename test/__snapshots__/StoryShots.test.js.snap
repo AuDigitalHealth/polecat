@@ -4174,10 +4174,11 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
   className="quick-search-results"
 >
   <ol>
-    <li
+    <Link
       className="search-result"
       key="0"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/933216161000036101"
     >
       <div
         className="target"
@@ -4193,11 +4194,12 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="1"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/933205801000036102"
     >
       <div
         className="target"
@@ -4213,11 +4215,12 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="2"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/933196831000036102"
     >
       <div
         className="target"
@@ -4233,11 +4236,12 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="3"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/22131000168107"
     >
       <div
         className="target"
@@ -4253,11 +4257,12 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="4"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/75498011000036101"
     >
       <div
         className="target"
@@ -4273,11 +4278,12 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
           death adder antivenom 6000 units injection, 1 vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="5"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/75096011000036105"
     >
       <div
         className="target"
@@ -4293,11 +4299,12 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
           king brown snake antivenom 18 000 units injection, vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="6"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/74983011000036101"
     >
       <div
         className="target"
@@ -4313,11 +4320,12 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
           taipan snake antivenom
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="7"
-      onClick={[Function]}
+      replace={false}
+      to="/Substance/2610011000036105"
     >
       <div
         className="target"
@@ -4333,7 +4341,7 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
           sumatriptan
         </span>
       </div>
-    </li>
+    </Link>
   </ol>
 </div>
 `;
@@ -4343,10 +4351,10 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
   className="quick-search-results"
 >
   <ol>
-    <li
+    <Link
       className="search-result"
       key="0"
-      onClick={[Function]}
+      replace={false}
     >
       <div
         className="target"
@@ -4362,11 +4370,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="1"
-      onClick={[Function]}
+      replace={false}
     >
       <div
         className="target"
@@ -4382,11 +4390,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="2"
-      onClick={[Function]}
+      replace={false}
     >
       <div
         className="target"
@@ -4402,11 +4410,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="3"
-      onClick={[Function]}
+      replace={false}
     >
       <div
         className="target"
@@ -4422,11 +4430,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="4"
-      onClick={[Function]}
+      replace={false}
     >
       <div
         className="target"
@@ -4442,11 +4450,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
           death adder antivenom 6000 units injection, 1 vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="5"
-      onClick={[Function]}
+      replace={false}
     >
       <div
         className="target"
@@ -4462,11 +4470,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
           king brown snake antivenom 18 000 units injection, vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="6"
-      onClick={[Function]}
+      replace={false}
     >
       <div
         className="target"
@@ -4482,11 +4490,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
           taipan snake antivenom
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="7"
-      onClick={[Function]}
+      replace={false}
     >
       <div
         className="target"
@@ -4502,7 +4510,7 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
           sumatriptan
         </span>
       </div>
-    </li>
+    </Link>
   </ol>
 </div>
 `;
@@ -4526,10 +4534,11 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
   className="quick-search-results"
 >
   <ol>
-    <li
+    <Link
       className="search-result"
       key="0"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/933216161000036101"
     >
       <div
         className="target"
@@ -4545,11 +4554,12 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="1"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/933205801000036102"
     >
       <div
         className="target"
@@ -4565,11 +4575,12 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result selected"
       key="2"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/933196831000036102"
     >
       <div
         className="target"
@@ -4585,11 +4596,12 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="3"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/22131000168107"
     >
       <div
         className="target"
@@ -4605,11 +4617,12 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="4"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/75498011000036101"
     >
       <div
         className="target"
@@ -4625,11 +4638,12 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
           death adder antivenom 6000 units injection, 1 vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="5"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/75096011000036105"
     >
       <div
         className="target"
@@ -4645,11 +4659,12 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
           king brown snake antivenom 18 000 units injection, vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="6"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/74983011000036101"
     >
       <div
         className="target"
@@ -4665,11 +4680,12 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
           taipan snake antivenom
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="7"
-      onClick={[Function]}
+      replace={false}
+      to="/Substance/2610011000036105"
     >
       <div
         className="target"
@@ -4685,7 +4701,7 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
           sumatriptan
         </span>
       </div>
-    </li>
+    </Link>
   </ol>
 </div>
 `;
@@ -4695,10 +4711,11 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
   className="quick-search-results"
 >
   <ol>
-    <li
+    <Link
       className="search-result"
       key="0"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/933216161000036101"
     >
       <div
         className="target"
@@ -4714,11 +4731,12 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="1"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/933205801000036102"
     >
       <div
         className="target"
@@ -4734,11 +4752,12 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="2"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/933196831000036102"
     >
       <div
         className="target"
@@ -4754,11 +4773,12 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="3"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/22131000168107"
     >
       <div
         className="target"
@@ -4774,11 +4794,12 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="4"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/75498011000036101"
     >
       <div
         className="target"
@@ -4794,11 +4815,12 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
           death adder antivenom 6000 units injection, 1 vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="5"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/75096011000036105"
     >
       <div
         className="target"
@@ -4814,11 +4836,12 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
           king brown snake antivenom 18 000 units injection, vial
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="6"
-      onClick={[Function]}
+      replace={false}
+      to="/Medication/74983011000036101"
     >
       <div
         className="target"
@@ -4834,11 +4857,12 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
           taipan snake antivenom
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="search-result"
       key="7"
-      onClick={[Function]}
+      replace={false}
+      to="/Substance/2610011000036105"
     >
       <div
         className="target"
@@ -4854,11 +4878,12 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
           sumatriptan
         </span>
       </div>
-    </li>
-    <li
+    </Link>
+    <Link
       className="more-results"
       key="8"
-      onClick={[Function]}
+      replace={false}
+      to="/?q=something"
     >
       <div
         className="target"
@@ -4867,7 +4892,7 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
         45,983
          matches →
       </div>
-    </li>
+    </Link>
   </ol>
 </div>
 `;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import ConceptType from './ConceptType.js'
 import { codingToSnomedDisplay } from './fhir/medication.js'
@@ -88,10 +89,10 @@ class QuickSearchResults extends Component {
 
   renderResult(result, i) {
     return (
-      <li
+      <Link
+        to={result.link}
         key={i}
         className={result.selected ? 'search-result selected' : 'search-result'}
-        onClick={() => this.handleSelectResult(result)}
       >
         <div className="target">
           <ConceptType type={result.type} status={result.status} />
@@ -99,35 +100,35 @@ class QuickSearchResults extends Component {
             {codingToSnomedDisplay(result.coding)}
           </span>
         </div>
-      </li>
+      </Link>
     )
   }
 
   renderTextLink(result, i) {
     return (
-      <li
+      <Link
+        to={result.link}
         key={i}
         className={result.selected ? 'text selected' : 'text'}
-        onClick={() => this.handleSelectResult(result)}
       >
         <div className="target">
           All concepts containing the text &quot;{result.query}&quot;
         </div>
-      </li>
+      </Link>
     )
   }
 
   renderMoreLink(result, i) {
     return (
-      <li
+      <Link
+        to={result.link}
         key={i}
         className={result.selected ? 'more-results selected' : 'more-results'}
-        onClick={() => this.handleSelectResult(result)}
       >
         <div className="target">
           view all {formatNumber(result.total)} matches &rarr;
         </div>
-      </li>
+      </Link>
     )
   }
 }

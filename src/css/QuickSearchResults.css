@@ -2,6 +2,14 @@
   font-family: 'Helvetica Neue', sans-serif;
 }
 
+.quick-search-results a,
+.quick-search-results a:active,
+.quick-search-results a:visited {
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
 .quick-search-results ol {
   font-size: 14px;
   background-color: rgba(255, 255, 255, 0.9);
