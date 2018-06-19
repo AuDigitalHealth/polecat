@@ -26,6 +26,7 @@ class DownloadResults extends Component {
     onClick: PropTypes.func,
   }
   static defaultProps = {
+    results: [],
     shownGMs: [],
   }
 

@@ -36,6 +36,7 @@ class SearchSummary extends Component {
 
   render() {
     const {
+      totalResults,
       allResults,
       loading,
       hiddenGMs,
@@ -49,12 +50,14 @@ class SearchSummary extends Component {
           <div className="pagination-download">
             {this.renderPaginationTotal()}
           </div>
-          <DownloadResults
-            results={allResults}
-            shownGMs={shownGMs}
-            loading={loading}
-            onClick={this.handleDownloadClick}
-          />
+          {totalResults ? (
+            <DownloadResults
+              results={allResults}
+              shownGMs={shownGMs}
+              loading={loading}
+              onClick={this.handleDownloadClick}
+            />
+          ) : null}
           {hiddenGMs.map(gm => (
             <div key={gm} className="hidden-generalized-medicine">
               <div
