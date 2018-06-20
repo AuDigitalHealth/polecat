@@ -174,11 +174,7 @@ export class BasicSearch extends Component {
           </Loading>
         </div>
         {quickSearchOpen ? (
-          <QuickSearchResults
-            query={query}
-            results={results}
-            onSelectResult={this.handleSelectResult}
-          />
+          <QuickSearchResults query={query} results={results} />
         ) : null}
       </div>
     )

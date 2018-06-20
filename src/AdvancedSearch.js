@@ -37,7 +37,6 @@ class AdvancedSearch extends Component {
     this.handleQueryUpdate = this.handleQueryUpdate.bind(this)
     this.handleToggleAdvanced = this.handleToggleAdvanced.bind(this)
     this.handleDownloadClick = this.handleDownloadClick.bind(this)
-    this.handleSelectResult = this.handleSelectResult.bind(this)
     this.handleRequireMoreResults = this.handleRequireMoreResults.bind(this)
     this.handleShowGM = this.handleShowGM.bind(this)
     this.handleHideGM = this.handleHideGM.bind(this)
@@ -130,11 +129,6 @@ class AdvancedSearch extends Component {
   handleDownloadClick() {
     const { onDownloadClick } = this.props
     if (onDownloadClick) onDownloadClick()
-  }
-
-  handleSelectResult(result) {
-    const { onSelectResult } = this.props
-    if (onSelectResult) onSelectResult(result)
   }
 
   handleRequireMoreResults({ stopIndex }) {
@@ -242,7 +236,6 @@ class AdvancedSearch extends Component {
               results={results}
               allResultsAreOfType={allResultsAreOfType}
               shownGMs={shownGMs.toArray()}
-              onSelectResult={this.handleSelectResult}
               onRequireMoreResults={this.handleRequireMoreResults}
             />
           </div>

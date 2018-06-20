@@ -45,7 +45,6 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
     <FullSearchResults
       allResultsAreOfType={null}
       onRequireMoreResults={[Function]}
-      onSelectResult={[Function]}
       query="parac"
       results={
         Array [
@@ -193,7 +192,6 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
     />
     <FullSearchResults
       onRequireMoreResults={[Function]}
-      onSelectResult={[Function]}
       query="para"
       results={
         Array [

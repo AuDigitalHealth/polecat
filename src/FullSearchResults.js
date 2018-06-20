@@ -39,7 +39,6 @@ class FullSearchResults extends Component {
     totalResults: PropTypes.number,
     allResultsAreOfType: PropTypes.oneOf(['CTPP', 'TPP', 'TPUU']),
     shownGMs: PropTypes.array,
-    onSelectResult: PropTypes.func,
     onRequireMoreResults: PropTypes.func,
   }
   static defaultProps = { shownGMs: [] }
@@ -64,11 +63,6 @@ class FullSearchResults extends Component {
           .catch(error => reject(error))
       } else resolve()
     })
-  }
-
-  handleSelectResult(result) {
-    const { onSelectResult } = this.props
-    if (onSelectResult) onSelectResult(result)
   }
 
   handleListScroll({ scrollTop }) {

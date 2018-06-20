@@ -328,8 +328,10 @@ export class Search extends Component {
       : new Error(response.statusText || response.status)
   }
 
-  handleSelectResult() {
+  handleSelectResult(result) {
+    const { history } = this.props
     this.setState(() => ({ advanced: false, quickSearchShouldClose: true }))
+    if (result && result.link) history.push(result.link)
   }
 
   handleToggleAdvanced() {

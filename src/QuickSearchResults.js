@@ -41,12 +41,6 @@ class QuickSearchResults extends Component {
         total: PropTypes.number,
       }),
     ),
-    onSelectResult: PropTypes.func,
-  }
-
-  handleSelectResult(result) {
-    const { onSelectResult } = this.props
-    if (onSelectResult) onSelectResult(result)
   }
 
   render() {
