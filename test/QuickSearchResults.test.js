@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import QuickSearchResults from '../src/QuickSearchResults'
 
-import results1 from './fixtures/QuickSearchResults-1.json'
+import results1 from './fixtures/quickSearchResults-1.json'
 
 describe('QuickSearchResults', () => {
   it('should render empty results', () => {
