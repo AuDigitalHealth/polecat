@@ -15,8 +15,7 @@ import './css/BasicSearch.css'
 
 export class BasicSearch extends Component {
   static propTypes = {
-    routedQuery: PropTypes.string,
-    currentQuery: PropTypes.string,
+    query: PropTypes.string,
     results: PropTypes.array,
     bundle: PropTypes.shape({ total: PropTypes.number }),
     focusUponMount: PropTypes.bool,
@@ -45,8 +44,7 @@ export class BasicSearch extends Component {
     return this.selectFirstResult(results)
   }
 
-  addMoreLinkToResults(results, { bundle, currentQuery, routedQuery }) {
-    const query = currentQuery || routedQuery
+  addMoreLinkToResults(results, { bundle, query }) {
     if (!results || !bundle || !bundle.total) return results
     if (bundle.total > results.length) {
       return results.concat([
@@ -98,14 +96,10 @@ export class BasicSearch extends Component {
       const { results } = this.state,
         selectedIndex = results.findIndex(r => r.selected)
       if (event.key === 'ArrowDown') this.setState({ quickSearchOpen: true })
-      let newSelection
-      if (selectedIndex === -1) newSelection = 0
-      else {
-        newSelection =
-          event.key === 'ArrowDown'
-            ? Math.min(selectedIndex + 1, results.length - 1)
-            : Math.max(selectedIndex - 1, 0)
-      }
+      const newSelection =
+        event.key === 'ArrowDown'
+          ? Math.min(selectedIndex + 1, results.length - 1)
+          : Math.max(selectedIndex - 1, 0)
       this.setState(() => ({
         results: results.map(
           (r, i) =>
@@ -115,23 +109,24 @@ export class BasicSearch extends Component {
     } else if (event.key === 'Enter') {
       const { results } = this.state,
         selectedResult = results ? results.find(r => r.selected) : null
-      if (selectedResult) this.handleSelectResult(selectedResult)
+      if (selectedResult)
+        this.handleSelectResult(selectedResult, { navigate: true })
     }
   }
 
   handleToggleAdvanced() {
     const { onToggleAdvanced } = this.props
-    if (onToggleAdvanced) onToggleAdvanced(false)
+    if (onToggleAdvanced) onToggleAdvanced()
   }
 
-  handleSelectResult(result) {
+  handleSelectResult(result, options) {
     const { onSelectResult } = this.props
     this.closeQuickSearch()
-    if (onSelectResult) onSelectResult(result)
+    if (onSelectResult) onSelectResult(result, options)
   }
 
   componentWillReceiveProps(nextProps) {
-    const updateProps = ['routedQuery', 'currentQuery', 'results']
+    const updateProps = ['query', 'results']
     const { quickSearchShouldClose, onQuickSearchClosed } = nextProps
     if (nextProps.quickSearchShouldClose) {
       this.closeQuickSearch()
@@ -145,13 +140,8 @@ export class BasicSearch extends Component {
   }
 
   render() {
-    const { routedQuery, currentQuery, focusUponMount, loading } = this.props
+    const { query, focusUponMount, loading, onSelectResult } = this.props
     const { results, quickSearchOpen } = this.state
-    // If the query has been updated within state, use that over props.
-    const query =
-      currentQuery === null || currentQuery === undefined
-        ? routedQuery
-        : currentQuery
     return (
       <div className="search-basic">
         <div className="search-basic-form">
@@ -174,7 +164,11 @@ export class BasicSearch extends Component {
           </Loading>
         </div>
         {quickSearchOpen ? (
-          <QuickSearchResults query={query} results={results} />
+          <QuickSearchResults
+            query={query}
+            results={results}
+            onSelectResult={onSelectResult}
+          />
         ) : null}
       </div>
     )

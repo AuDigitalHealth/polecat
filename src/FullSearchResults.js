@@ -4,42 +4,20 @@ import { InfiniteLoader } from 'react-virtualized/dist/commonjs/InfiniteLoader'
 import { List } from 'react-virtualized/dist/commonjs/List'
 import { AutoSizer } from 'react-virtualized/dist/commonjs/AutoSizer'
 import { Scrollbars } from 'react-custom-scrollbars'
-import { Link } from 'react-router-dom'
 
-import ConceptType from './ConceptType.js'
-import { codingToSnomedCode, codingToSnomedDisplay } from './fhir/medication.js'
+import FullSearchResult from './FullSearchResult.js'
 
 import './css/FullSearchResults.css'
 
 class FullSearchResults extends Component {
   static propTypes = {
     query: PropTypes.string,
-    results: PropTypes.arrayOf(
-      PropTypes.shape({
-        coding: PropTypes.arrayOf(
-          PropTypes.shape({
-            system: PropTypes.string,
-            code: PropTypes.string,
-            display: PropTypes.string,
-          }),
-        ),
-        display: PropTypes.string,
-        type: PropTypes.oneOf([
-          'CTPP',
-          'TPP',
-          'TPUU',
-          'TP',
-          'MPP',
-          'MPUU',
-          'MP',
-          'substance',
-        ]),
-      }),
-    ),
+    results: PropTypes.arrayOf(PropTypes.object),
     totalResults: PropTypes.number,
     allResultsAreOfType: PropTypes.oneOf(['CTPP', 'TPP', 'TPUU']),
     shownGMs: PropTypes.array,
     onRequireMoreResults: PropTypes.func,
+    onSelectResult: PropTypes.func,
   }
   static defaultProps = { shownGMs: [] }
 
@@ -88,11 +66,16 @@ class FullSearchResults extends Component {
     if (
       nextProps !== this.props ||
       nextState !== this.state ||
-      nextProps.results.length !== this.props.results.length
+      (this.props.results &&
+        nextProps.results &&
+        nextProps.results.length !== this.props.results.length)
     ) {
       // Make another request to load more rows if we find ourselves way down
       // the page by the time the data comes back. See https://github.com/bvaughn/react-virtualized/blob/master/docs/InfiniteLoader.md#memoization-and-rowcount-changes.
-      if (this.loadMoreRowsStopIndex > this.props.results.length + 100)
+      if (
+        this.props.results &&
+        this.loadMoreRowsStopIndex > this.props.results.length + 100
+      )
         this.loadMoreRows({
           startIndex: this.loadMoreRowsStartIndex,
           stopIndex: this.loadMoreRowsStopIndex,
@@ -124,6 +107,7 @@ class FullSearchResults extends Component {
     }
   }
 
+  // FIXME: Infinite scroll is borked.
   renderResults() {
     const { results, totalResults, shownGMs } = this.props,
       renderResult = this.renderResult,
@@ -171,51 +155,23 @@ class FullSearchResults extends Component {
   }
 
   renderResult({ key, index, style }) {
-    const { results, allResultsAreOfType } = this.props,
+    const {
+        results,
+        allResultsAreOfType,
+        shownGMs,
+        onSelectResult,
+      } = this.props,
       result = results[index]
-    if (!result) {
-      const displayLength = 189 + Math.round(Math.random() * 200)
-      return (
-        <li key={key} className="unloaded-search-result" style={style}>
-          <span className="sctid" />
-          <span className="display" style={{ width: displayLength }} />
-        </li>
-      )
-    }
     return (
-      <li key={key} className="search-result" style={style}>
-        <Link to={result.link} className="subject-concept">
-          <span className="sctid">{codingToSnomedCode(result.coding)}</span>
-          <span
-            className="display"
-            title={codingToSnomedDisplay(result.coding)}
-          >
-            {codingToSnomedDisplay(result.coding)}
-          </span>
-          {allResultsAreOfType ? null : (
-            <ConceptType type={result.type} status={result.status} />
-          )}
-        </Link>
-        {this.renderGMsForResult(result)}
-      </li>
+      <FullSearchResult
+        key={key}
+        result={result}
+        style={style}
+        allResultsAreOfType={allResultsAreOfType}
+        shownGMs={shownGMs}
+        onSelectResult={onSelectResult}
+      />
     )
-  }
-
-  renderGMsForResult(result) {
-    const { shownGMs } = this.props
-    return shownGMs.map(gm => {
-      const foundGM = result.generalizedMedicines.find(m => m.type === gm)
-      return foundGM ? (
-        <Link
-          to={result.link}
-          key={gm}
-          className="generalized-medicine"
-          title={codingToSnomedDisplay(foundGM.coding)}
-        >
-          {codingToSnomedDisplay(foundGM.coding)}
-        </Link>
-      ) : null
-    })
   }
 }
 

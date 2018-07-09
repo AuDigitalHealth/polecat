@@ -114,7 +114,8 @@
     "dockerize": "bash scripts/dockerize.sh",
     "push-docker": "bash scripts/pushDockerImage.sh",
     "deploy": "bash scripts/deploy.sh",
-    "test": "node --inspect scripts/test.js --verbose --env=jsdom",
+    "test":
+      "node --inspect scripts/test.js --verbose --env=jsdom --updateSnapshot",
     "test-ci": "CI=true node scripts/test.js --verbose --env=jsdom",
     "test-coverage":
       "CI=true node scripts/test.js --verbose --env=jsdom --coverage",

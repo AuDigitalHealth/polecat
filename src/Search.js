@@ -9,7 +9,6 @@ import isEqual from 'lodash.isequal'
 
 import BasicSearch from './BasicSearch.js'
 import AdvancedSearch from './AdvancedSearch.js'
-import { searchPathFromQuery } from './Router.js'
 import { opOutcomeFromJsonResponse } from './fhir/core.js'
 import { sniffFormat } from './fhir/restApi'
 import { getSubjectConcept, amtConceptTypeFor } from './fhir/medication.js'
@@ -90,7 +89,7 @@ export class Search extends Component {
   updateAllResults({ fhirServer, query, url }) {
     this.setLoadingStatus(true)
     this.setState(() => ({ updateAllResultsInProgress: true }))
-    this.getAllResults({ fhirServer, query, url })
+    return this.getAllResults({ fhirServer, query, url })
       .then(results =>
         this.setState(() => ({
           allResults: results,
@@ -100,7 +99,10 @@ export class Search extends Component {
       .then(() => this.setLoadingStatus(false))
       .catch(error => {
         this.handleError(error)
-        this.setLoadingStatus(false)
+        this.setState(
+          () => ({ updateAllResultsInProgress: false }),
+          () => this.setLoadingStatus(false),
+        )
       })
   }
 
@@ -167,7 +169,7 @@ export class Search extends Component {
       if (error.response) this.handleUnsuccessfulResponse(error.response)
       else throw error
     }
-    sniffFormat(response.headers['content-type'])
+    sniffFormat(response)
     return response.data
   }
 
@@ -192,8 +194,28 @@ export class Search extends Component {
           result.type === 'substance'
             ? `/Substance/${snomedCode}`
             : `/Medication/${snomedCode}`
-        return { ...result, link }
+        return {
+          ...result,
+          generalizedMedicines: this.addLinksToGeneralizedMedicines(
+            result.generalizedMedicines,
+          ),
+          link,
+        }
       } else return result
+    })
+  }
+
+  addLinksToGeneralizedMedicines(gms) {
+    if (!gms) return gms
+    return gms.map(gm => {
+      const snomedCode = codingToSnomedCode(gm.coding)
+      if (snomedCode) {
+        const link =
+          gm.type === 'substance'
+            ? `/Substance/${snomedCode}`
+            : `/Medication/${snomedCode}`
+        return { ...gm, link }
+      } else return gm
     })
   }
 
@@ -268,22 +290,17 @@ export class Search extends Component {
       () => ({ query }),
       () => {
         if (query && queryDiffers) {
-          const { advanced } = this.state
           this.throttledUpdateResults({ fhirServer, query, resultCount })
-          if (advanced) {
-            const { history } = this.props
-            history.push(searchPathFromQuery(query, { resultCount }))
-          }
         }
       },
     )
-    if (!query) this.setState({ results: null })
+    if (!query) this.setState({ results: null, bundle: null })
   }
 
   handleDownloadClick() {
     const { fhirServer } = this.props,
       query = this.state.query || this.props.query
-    this.updateAllResults({ fhirServer, query })
+    return this.updateAllResults({ fhirServer, query })
   }
 
   // Handler used by infinite scroll to request additional search results as the
@@ -321,17 +338,32 @@ export class Search extends Component {
   }
 
   handleUnsuccessfulResponse(response) {
-    sniffFormat(response.headers['content-type'])
-    const opOutcome = opOutcomeFromJsonResponse(response)
+    let opOutcome
+    try {
+      sniffFormat(response)
+      opOutcome = opOutcomeFromJsonResponse(response)
+    } catch (error) {
+      throw new Error(response.statusText || response.status)
+    }
     throw opOutcome
-      ? opOutcome
-      : new Error(response.statusText || response.status)
   }
 
-  handleSelectResult(result) {
+  // Handles the selection of a result from within one of the downstream
+  // components, such as QuickSearchResults or FullSearchResult. Has a
+  // `navigate` option, which is false by default but can be enabled to trigger
+  // navigation to the link in cases where a link has not already been
+  // triggered, e.g. keyboard selection in the quick search.
+  handleSelectResult(result, { navigate = false } = {}) {
     const { history } = this.props
-    this.setState(() => ({ advanced: false, quickSearchShouldClose: true }))
-    if (result && result.link) history.push(result.link)
+    this.setState(() => ({
+      query: null,
+      results: null,
+      bundle: null,
+      allResults: null,
+      advanced: false,
+      quickSearchShouldClose: true,
+    }))
+    if (navigate && result && result.link) history.push(result.link)
   }
 
   handleToggleAdvanced() {
@@ -364,7 +396,6 @@ export class Search extends Component {
 
   componentWillReceiveProps(nextProps) {
     const { fhirServer, query, quickSearchShouldClose } = nextProps
-    const { advanced } = this.state
     if (
       this.props.fhirServer === fhirServer &&
       this.props.query &&
@@ -380,11 +411,8 @@ export class Search extends Component {
       // Skip the search request if the query is the same as the previous one
       // stored in state.
       if (query !== this.state.query) this.updateResults({ fhirServer, query })
-    } else if (advanced === true) {
-      this.setState(() => ({ advanced: false }))
     }
-    if (!query || quickSearchShouldClose)
-      this.setState({ quickSearchShouldClose: true })
+    if (quickSearchShouldClose) this.setState({ quickSearchShouldClose: true })
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -413,19 +441,23 @@ export class Search extends Component {
   }
 
   renderBasicOrAdvancedSearch() {
-    const { query: queryFromProps, focusUponMount, loading } = this.props
-    const {
-      query: queryFromState,
-      advanced,
-      results,
-      allResults,
-      bundle,
-      quickSearchShouldClose,
-    } = this.state
+    const { query: queryFromProps, focusUponMount, loading } = this.props,
+      {
+        query: queryFromState,
+        advanced,
+        results,
+        allResults,
+        bundle,
+        quickSearchShouldClose,
+      } = this.state,
+      // If the query has been updated within state, use that over props.
+      query =
+        queryFromState === null || queryFromState === undefined
+          ? queryFromProps
+          : queryFromState
     return advanced ? (
       <AdvancedSearch
-        routedQuery={queryFromProps}
-        currentQuery={queryFromState}
+        query={query}
         results={results}
         allResults={allResults}
         bundle={bundle}
@@ -441,8 +473,7 @@ export class Search extends Component {
       />
     ) : (
       <BasicSearch
-        routedQuery={queryFromProps}
-        currentQuery={queryFromState}
+        query={query}
         results={results ? results.slice(0, 19) : null}
         bundle={bundle}
         focusUponMount={focusUponMount}

@@ -96,7 +96,7 @@ export class MedicationSearchField extends Component {
       if (error.response) this.handleUnsuccessfulResponse(error.response)
       else throw error
     }
-    sniffFormat(response.headers['content-type'])
+    sniffFormat(response)
     return response.data
   }
 
@@ -180,8 +180,8 @@ export class MedicationSearchField extends Component {
 
   handleSelectResult(result) {
     const { onCodingChange, onTextChange } = this.props
-    if (typeof result === 'string' && onTextChange) {
-      onTextChange(result)
+    if (result.type === 'text' && onTextChange) {
+      onTextChange(result.query)
     } else if (onCodingChange && result.coding) {
       onCodingChange(codeDisplayFromCoding(result.coding))
     }
@@ -197,11 +197,14 @@ export class MedicationSearchField extends Component {
   }
 
   handleUnsuccessfulResponse(response) {
-    sniffFormat(response.headers['content-type'])
-    const opOutcome = opOutcomeFromJsonResponse(response)
+    let opOutcome
+    try {
+      sniffFormat(response)
+      opOutcome = opOutcomeFromJsonResponse(response)
+    } catch (error) {
+      throw new Error(response.statusText || response.status)
+    }
     throw opOutcome
-      ? opOutcome
-      : new Error(response.statusText || response.status)
   }
 
   handleError(error) {

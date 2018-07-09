@@ -1,0 +1,80 @@
+[
+  {
+    "type": "TPUU",
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "7488011000036109",
+        "display": "Nexium 20 mg enteric tablet"
+      }
+    ],
+    "status": "active",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion":
+      "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180630",
+    "lastModified": "2016-06-30",
+    "subsidy": [],
+    "generalizedMedicines": [
+      {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "23526011000036102",
+            "display": "esomeprazole 20 mg enteric tablet"
+          }
+        ],
+        "type": "MPUU"
+      },
+      {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "21697011000036107",
+            "display": "esomeprazole"
+          }
+        ],
+        "type": "MP"
+      }
+    ],
+    "link": "/Medication/7488011000036109"
+  },
+  {
+    "type": "TPUU",
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "6712011000036101",
+        "display": "Nexium 40 mg enteric tablet"
+      }
+    ],
+    "status": "active",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion":
+      "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180630",
+    "lastModified": "2016-06-30",
+    "subsidy": [],
+    "generalizedMedicines": [
+      {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "23070011000036101",
+            "display": "esomeprazole 40 mg enteric tablet"
+          }
+        ],
+        "type": "MPUU"
+      },
+      {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "21697011000036107",
+            "display": "esomeprazole"
+          }
+        ],
+        "type": "MP"
+      }
+    ],
+    "link": "/Medication/6712011000036101"
+  }
+]

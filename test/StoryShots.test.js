@@ -4,6 +4,7 @@ import Adapter from 'enzyme-adapter-react-16'
 import { Route } from 'react-router'
 import React from 'react'
 
+// FIXME: Check that Storybook is all working and looking good.
 const fakeStore = {
   getState: () => {},
   dispatch: () => null,

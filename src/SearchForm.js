@@ -132,18 +132,21 @@ class SearchForm extends Component {
       for (const param of params.allParams.filter(p => p[0] !== 'id')) {
         nextSearch = { ...nextSearch, ...{ [param[0]]: param[1] } }
       }
-      this.setState(() => ({ search: nextSearch }))
+      this.setState(() => ({ search: nextSearch }), this.handleSearchUpdate)
     } else {
-      this.setState(() => ({ search: {} }))
+      this.setState(() => ({ search: {} }), this.handleSearchUpdate)
     }
   }
 
   componentWillReceiveProps(nextProps) {
     const { query } = nextProps
-    if (query) {
+    if (query && this.props.query !== query) {
       const params = paramsFromQuery(query)
       let nextSearch = {}
-      for (const param of params.allParams) {
+      // Filter ID from the list of parameters taken into the search object, as
+      // it is not in the form and it is not valid to combine it with any other
+      // parameter.
+      for (const param of params.allParams.filter(p => p[0] !== 'id')) {
         nextSearch = { ...nextSearch, ...{ [param[0]]: param[1] } }
       }
       this.setState(() => ({ search: nextSearch }))

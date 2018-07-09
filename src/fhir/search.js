@@ -71,6 +71,9 @@ export const paramsFromQuery = query => {
 // Translates a search object, with available search parameters as keys, into a
 // tagged search string.
 export const queryFromSearchObject = search => {
+  // If search is an empty object, return a default search of all active concepts.
+  if (Object.keys(search).length === 0 && search.constructor === Object)
+    return 'type:CTPP,TPP,TPUU,MPP,MPUU,MP status:active'
   const params = stripDefaultStatusFromSearch(
     filterSearchObject(
       search,

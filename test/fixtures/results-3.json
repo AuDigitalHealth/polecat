@@ -1,0 +1,17 @@
+[
+  { "type": "text", "query": "f" },
+  {
+    "type": "substance",
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "836261000168106",
+        "display": "Bordetella pertussis fimbriae type 2 and 3 antigen"
+      }
+    ],
+    "status": "active",
+    "lastModified": null,
+    "subsidy": [],
+    "generalizedMedicines": []
+  }
+]

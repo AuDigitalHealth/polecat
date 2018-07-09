@@ -19,7 +19,7 @@ import operationOutcome from './fixtures/operationOutcome.json'
 const mock = new MockAdapter(axios)
 
 describe('RemoteFhirMedication', () => {
-  beforeEach(() => mock.reset())
+  afterEach(() => mock.reset())
 
   it('should pass children on to FhirMedication', () => {
     const props = {

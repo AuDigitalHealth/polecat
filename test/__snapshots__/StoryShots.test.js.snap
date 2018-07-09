@@ -12,12 +12,10 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
       disabled={true}
       onChange={[Function]}
       placeholder="Search"
-      value="parac"
     />
     <SearchForm
       onError={[Function]}
       onSearchUpdate={[Function]}
-      query="parac"
     />
     <Loading
       delay={350}
@@ -26,7 +24,6 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
       <Expand
         active={true}
         className="search-toggle-advanced"
-        onToggle={[Function]}
       />
     </Loading>
   </div>
@@ -34,7 +31,6 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
     className="search-advanced-results"
   >
     <SearchSummary
-      allResultsAreOfType={null}
       hiddenGMs={Array []}
       onDownloadClick={[Function]}
       onHideGM={[Function]}
@@ -43,9 +39,7 @@ exports[`Storyshots AdvancedSearch With current query 1`] = `
       totalResults={8}
     />
     <FullSearchResults
-      allResultsAreOfType={null}
       onRequireMoreResults={[Function]}
-      query="parac"
       results={
         Array [
           Object {
@@ -161,12 +155,10 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
       disabled={true}
       onChange={[Function]}
       placeholder="Search"
-      value="para"
     />
     <SearchForm
       onError={[Function]}
       onSearchUpdate={[Function]}
-      query="para"
     />
     <Loading
       delay={350}
@@ -175,7 +167,6 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
       <Expand
         active={true}
         className="search-toggle-advanced"
-        onToggle={[Function]}
       />
     </Loading>
   </div>
@@ -192,7 +183,6 @@ exports[`Storyshots AdvancedSearch With routed query and results 1`] = `
     />
     <FullSearchResults
       onRequireMoreResults={[Function]}
-      query="para"
       results={
         Array [
           Object {
@@ -308,12 +298,10 @@ exports[`Storyshots AdvancedSearch With routed query but no results 1`] = `
       disabled={true}
       onChange={[Function]}
       placeholder="Search"
-      value="para"
     />
     <SearchForm
       onError={[Function]}
       onSearchUpdate={[Function]}
-      query="para"
     />
     <Loading
       delay={350}
@@ -322,9 +310,25 @@ exports[`Storyshots AdvancedSearch With routed query but no results 1`] = `
       <Expand
         active={true}
         className="search-toggle-advanced"
-        onToggle={[Function]}
       />
     </Loading>
+  </div>
+  <div
+    className="search-advanced-results"
+  >
+    <SearchSummary
+      hiddenGMs={Array []}
+      onDownloadClick={[Function]}
+      onHideGM={[Function]}
+      onShowGM={[Function]}
+      shownGMs={Array []}
+      totalResults={null}
+    />
+    <FullSearchResults
+      onRequireMoreResults={[Function]}
+      shownGMs={Array []}
+      totalResults={null}
+    />
   </div>
 </div>
 `;
@@ -341,12 +345,10 @@ exports[`Storyshots AdvancedSearch With routed query but no results, loading 1`]
       disabled={true}
       onChange={[Function]}
       placeholder="Search"
-      value="para"
     />
     <SearchForm
       onError={[Function]}
       onSearchUpdate={[Function]}
-      query="para"
     />
     <Loading
       delay={350}
@@ -355,9 +357,26 @@ exports[`Storyshots AdvancedSearch With routed query but no results, loading 1`]
       <Expand
         active={true}
         className="search-toggle-advanced"
-        onToggle={[Function]}
       />
     </Loading>
+  </div>
+  <div
+    className="search-advanced-results"
+  >
+    <SearchSummary
+      hiddenGMs={Array []}
+      loading={true}
+      onDownloadClick={[Function]}
+      onHideGM={[Function]}
+      onShowGM={[Function]}
+      shownGMs={Array []}
+      totalResults={null}
+    />
+    <FullSearchResults
+      onRequireMoreResults={[Function]}
+      shownGMs={Array []}
+      totalResults={null}
+    />
   </div>
 </div>
 `;
@@ -2892,7 +2911,6 @@ exports[`Storyshots BasicSearch With current query 1`] = `
       onKeyDown={[Function]}
       placeholder="Search"
       selectAllUponFocus={true}
-      value="parac"
     />
     <Loading
       delay={350}
@@ -2923,7 +2941,6 @@ exports[`Storyshots BasicSearch With routed query and results 1`] = `
       onKeyDown={[Function]}
       placeholder="Search"
       selectAllUponFocus={true}
-      value="para"
     />
     <Loading
       delay={350}
@@ -2954,7 +2971,6 @@ exports[`Storyshots BasicSearch With routed query but no results 1`] = `
       onKeyDown={[Function]}
       placeholder="Search"
       selectAllUponFocus={true}
-      value="para"
     />
     <Loading
       delay={350}
@@ -2985,7 +3001,6 @@ exports[`Storyshots BasicSearch With routed query but no results, loading 1`] = 
       onKeyDown={[Function]}
       placeholder="Search"
       selectAllUponFocus={true}
-      value="para"
     />
     <Loading
       delay={350}
@@ -4172,174 +4187,206 @@ exports[`Storyshots QuickSearchResults All types, with links 1`] = `
   className="quick-search-results"
 >
   <ol>
-    <Link
+    <li
       className="search-result"
       key="0"
-      replace={false}
-      to="/Medication/933216161000036101"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/933216161000036101"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="CTPP"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="CTPP"
+          />
+          <span
+            className="display"
+          >
+            Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="1"
-      replace={false}
-      to="/Medication/933205801000036102"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/933205801000036102"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="TPP"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="TPP"
+          />
+          <span
+            className="display"
+          >
+            Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="2"
-      replace={false}
-      to="/Medication/933196831000036102"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/933196831000036102"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="TPUU"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="TPUU"
+          />
+          <span
+            className="display"
+          >
+            Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="3"
-      replace={false}
-      to="/Medication/22131000168107"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/22131000168107"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="TP"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="TP"
+          />
+          <span
+            className="display"
+          >
+            Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="4"
-      replace={false}
-      to="/Medication/75498011000036101"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/75498011000036101"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="MPP"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          death adder antivenom 6000 units injection, 1 vial
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="MPP"
+          />
+          <span
+            className="display"
+          >
+            death adder antivenom 6000 units injection, 1 vial
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="5"
-      replace={false}
-      to="/Medication/75096011000036105"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/75096011000036105"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="MPUU"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          king brown snake antivenom 18 000 units injection, vial
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="MPUU"
+          />
+          <span
+            className="display"
+          >
+            king brown snake antivenom 18 000 units injection, vial
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="6"
-      replace={false}
-      to="/Medication/74983011000036101"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/74983011000036101"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="MP"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          taipan snake antivenom
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="MP"
+          />
+          <span
+            className="display"
+          >
+            taipan snake antivenom
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="7"
-      replace={false}
-      to="/Substance/2610011000036105"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Substance/2610011000036105"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="substance"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          sumatriptan
-        </span>
-      </div>
-    </Link>
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="substance"
+          />
+          <span
+            className="display"
+          >
+            sumatriptan
+          </span>
+        </div>
+      </Link>
+    </li>
   </ol>
 </div>
 `;
@@ -4349,10 +4396,10 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
   className="quick-search-results"
 >
   <ol>
-    <Link
+    <li
       className="search-result"
       key="0"
-      replace={false}
+      onClick={[Function]}
     >
       <div
         className="target"
@@ -4368,11 +4415,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
         </span>
       </div>
-    </Link>
-    <Link
+    </li>
+    <li
       className="search-result"
       key="1"
-      replace={false}
+      onClick={[Function]}
     >
       <div
         className="target"
@@ -4388,11 +4435,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
         </span>
       </div>
-    </Link>
-    <Link
+    </li>
+    <li
       className="search-result"
       key="2"
-      replace={false}
+      onClick={[Function]}
     >
       <div
         className="target"
@@ -4408,11 +4455,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
         </span>
       </div>
-    </Link>
-    <Link
+    </li>
+    <li
       className="search-result"
       key="3"
-      replace={false}
+      onClick={[Function]}
     >
       <div
         className="target"
@@ -4428,11 +4475,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
           Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
         </span>
       </div>
-    </Link>
-    <Link
+    </li>
+    <li
       className="search-result"
       key="4"
-      replace={false}
+      onClick={[Function]}
     >
       <div
         className="target"
@@ -4448,11 +4495,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
           death adder antivenom 6000 units injection, 1 vial
         </span>
       </div>
-    </Link>
-    <Link
+    </li>
+    <li
       className="search-result"
       key="5"
-      replace={false}
+      onClick={[Function]}
     >
       <div
         className="target"
@@ -4468,11 +4515,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
           king brown snake antivenom 18 000 units injection, vial
         </span>
       </div>
-    </Link>
-    <Link
+    </li>
+    <li
       className="search-result"
       key="6"
-      replace={false}
+      onClick={[Function]}
     >
       <div
         className="target"
@@ -4488,11 +4535,11 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
           taipan snake antivenom
         </span>
       </div>
-    </Link>
-    <Link
+    </li>
+    <li
       className="search-result"
       key="7"
-      replace={false}
+      onClick={[Function]}
     >
       <div
         className="target"
@@ -4508,7 +4555,7 @@ exports[`Storyshots QuickSearchResults All types, without links 1`] = `
           sumatriptan
         </span>
       </div>
-    </Link>
+    </li>
   </ol>
 </div>
 `;
@@ -4532,174 +4579,206 @@ exports[`Storyshots QuickSearchResults With a selected row 1`] = `
   className="quick-search-results"
 >
   <ol>
-    <Link
+    <li
       className="search-result"
       key="0"
-      replace={false}
-      to="/Medication/933216161000036101"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/933216161000036101"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="CTPP"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="CTPP"
+          />
+          <span
+            className="display"
+          >
+            Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="1"
-      replace={false}
-      to="/Medication/933205801000036102"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/933205801000036102"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="TPP"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="TPP"
+          />
+          <span
+            className="display"
+          >
+            Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result selected"
       key="2"
-      replace={false}
-      to="/Medication/933196831000036102"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/933196831000036102"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="TPUU"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="TPUU"
+          />
+          <span
+            className="display"
+          >
+            Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="3"
-      replace={false}
-      to="/Medication/22131000168107"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/22131000168107"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="TP"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="TP"
+          />
+          <span
+            className="display"
+          >
+            Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="4"
-      replace={false}
-      to="/Medication/75498011000036101"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/75498011000036101"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="MPP"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          death adder antivenom 6000 units injection, 1 vial
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="MPP"
+          />
+          <span
+            className="display"
+          >
+            death adder antivenom 6000 units injection, 1 vial
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="5"
-      replace={false}
-      to="/Medication/75096011000036105"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/75096011000036105"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="MPUU"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          king brown snake antivenom 18 000 units injection, vial
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="MPUU"
+          />
+          <span
+            className="display"
+          >
+            king brown snake antivenom 18 000 units injection, vial
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="6"
-      replace={false}
-      to="/Medication/74983011000036101"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/74983011000036101"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="MP"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          taipan snake antivenom
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="MP"
+          />
+          <span
+            className="display"
+          >
+            taipan snake antivenom
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="7"
-      replace={false}
-      to="/Substance/2610011000036105"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Substance/2610011000036105"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="substance"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          sumatriptan
-        </span>
-      </div>
-    </Link>
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="substance"
+          />
+          <span
+            className="display"
+          >
+            sumatriptan
+          </span>
+        </div>
+      </Link>
+    </li>
   </ol>
 </div>
 `;
@@ -4709,188 +4788,224 @@ exports[`Storyshots QuickSearchResults With more link 1`] = `
   className="quick-search-results"
 >
   <ol>
-    <Link
+    <li
       className="search-result"
       key="0"
-      replace={false}
-      to="/Medication/933216161000036101"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/933216161000036101"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="CTPP"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="CTPP"
+          />
+          <span
+            className="display"
+          >
+            Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="1"
-      replace={false}
-      to="/Medication/933205801000036102"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/933205801000036102"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="TPP"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="TPP"
+          />
+          <span
+            className="display"
+          >
+            Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="2"
-      replace={false}
-      to="/Medication/933196831000036102"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/933196831000036102"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="TPUU"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="TPUU"
+          />
+          <span
+            className="display"
+          >
+            Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="3"
-      replace={false}
-      to="/Medication/22131000168107"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/22131000168107"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="TP"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="TP"
+          />
+          <span
+            className="display"
+          >
+            Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="4"
-      replace={false}
-      to="/Medication/75498011000036101"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/75498011000036101"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="MPP"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          death adder antivenom 6000 units injection, 1 vial
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="MPP"
+          />
+          <span
+            className="display"
+          >
+            death adder antivenom 6000 units injection, 1 vial
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="5"
-      replace={false}
-      to="/Medication/75096011000036105"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/75096011000036105"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="MPUU"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          king brown snake antivenom 18 000 units injection, vial
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="MPUU"
+          />
+          <span
+            className="display"
+          >
+            king brown snake antivenom 18 000 units injection, vial
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="6"
-      replace={false}
-      to="/Medication/74983011000036101"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Medication/74983011000036101"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="MP"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          taipan snake antivenom
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="MP"
+          />
+          <span
+            className="display"
+          >
+            taipan snake antivenom
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="search-result"
       key="7"
-      replace={false}
-      to="/Substance/2610011000036105"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/Substance/2610011000036105"
       >
-        <ConceptType
-          enabled={true}
-          status="active"
-          type="substance"
-        />
-        <span
-          className="display"
+        <div
+          className="target"
         >
-          sumatriptan
-        </span>
-      </div>
-    </Link>
-    <Link
+          <ConceptType
+            enabled={true}
+            status="active"
+            type="substance"
+          />
+          <span
+            className="display"
+          >
+            sumatriptan
+          </span>
+        </div>
+      </Link>
+    </li>
+    <li
       className="more-results"
       key="8"
-      replace={false}
-      to="/?q=something"
+      onClick={[Function]}
     >
-      <div
-        className="target"
+      <Link
+        replace={false}
+        to="/?q=something"
       >
-        view all 
-        45,983
-         matches →
-      </div>
-    </Link>
+        <div
+          className="target"
+        >
+          view all 
+          45,983
+           matches →
+        </div>
+      </Link>
+    </li>
   </ol>
 </div>
 `;
@@ -4951,7 +5066,7 @@ exports[`Storyshots Search With a query 1`] = `
     onRequireMoreResults={[Function]}
     onSelectResult={[Function]}
     onToggleAdvanced={[Function]}
-    routedQuery="package:\\"22095011000036109|fenofibrate 145 mg tablet\\""
+    query="package:\\"22095011000036109|fenofibrate 145 mg tablet\\""
   />
 </div>
 `;

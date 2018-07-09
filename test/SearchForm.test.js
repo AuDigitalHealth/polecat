@@ -18,6 +18,16 @@ describe('SearchForm', () => {
     expect(parentField.exists()).toBe(true)
   })
 
+  it('should parse search from a query on prop update', () => {
+    const wrapper = shallow(<SearchForm />)
+    wrapper.setProps({ query: 'id:12345 type:CTPP' })
+    const expected = {
+      status: 'active,inactive,entered-in-error',
+      type: 'CTPP',
+    }
+    expect(wrapper.state('search')).toEqual(expected)
+  })
+
   it('should notify of a search update when a field is updated', () => {
     const onSearchUpdate = jest.fn(),
       props = { onSearchUpdate },
@@ -57,7 +67,9 @@ describe('SearchForm', () => {
       wrapper = shallow(<SearchForm {...props} />),
       clearSearch = wrapper.find('.clear-form')
     clearSearch.simulate('click')
-    expect(onSearchUpdate).toHaveBeenCalledWith('')
+    expect(onSearchUpdate).toHaveBeenLastCalledWith(
+      'type:CTPP,TPP,TPUU,MPP,MPUU,MP status:active',
+    )
   })
 
   it('should show all types selected when none are specified', () => {

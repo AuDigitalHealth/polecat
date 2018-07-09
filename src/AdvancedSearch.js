@@ -13,10 +13,9 @@ import { paramsFromQuery } from './fhir/search.js'
 
 import './css/AdvancedSearch.css'
 
-class AdvancedSearch extends Component {
+export class AdvancedSearch extends Component {
   static propTypes = {
-    routedQuery: PropTypes.string,
-    currentQuery: PropTypes.string,
+    query: PropTypes.string,
     results: PropTypes.array,
     allResults: PropTypes.array,
     bundle: PropTypes.shape({ total: PropTypes.number }),
@@ -35,7 +34,6 @@ class AdvancedSearch extends Component {
   constructor(props) {
     super(props)
     this.handleQueryUpdate = this.handleQueryUpdate.bind(this)
-    this.handleToggleAdvanced = this.handleToggleAdvanced.bind(this)
     this.handleDownloadClick = this.handleDownloadClick.bind(this)
     this.handleRequireMoreResults = this.handleRequireMoreResults.bind(this)
     this.handleShowGM = this.handleShowGM.bind(this)
@@ -121,11 +119,6 @@ class AdvancedSearch extends Component {
     if (onQueryUpdate) onQueryUpdate(query)
   }
 
-  handleToggleAdvanced() {
-    const { onToggleAdvanced } = this.props
-    if (onToggleAdvanced) onToggleAdvanced(false)
-  }
-
   handleDownloadClick() {
     const { onDownloadClick } = this.props
     if (onDownloadClick) onDownloadClick()
@@ -168,30 +161,26 @@ class AdvancedSearch extends Component {
   }
 
   componentDidMount() {
-    this.updateShownHiddenGMs(this.props.currentQuery)
+    this.updateShownHiddenGMs(this.props.query)
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.currentQuery !== nextProps.currentQuery)
-      this.updateShownHiddenGMs(nextProps.currentQuery)
+    if (this.props.query !== nextProps.query)
+      this.updateShownHiddenGMs(nextProps.query)
   }
 
   render() {
     const {
-        routedQuery,
-        currentQuery,
+        query,
         bundle,
         results,
         allResults,
         loading,
+        onSelectResult,
+        onToggleAdvanced,
       } = this.props,
       { shownGMs, hiddenGMs } = this.state,
-      // If the query has been updated within state, use that over props.
-      query =
-        currentQuery === null || currentQuery === undefined
-          ? routedQuery
-          : currentQuery,
-      allResultsAreOfType = this.queryReturnsSingleConceptType(currentQuery)
+      allResultsAreOfType = this.queryReturnsSingleConceptType(query)
     return (
       <div className="search-advanced">
         <div className="search-advanced-form">
@@ -211,35 +200,32 @@ class AdvancedSearch extends Component {
             <Expand
               active
               className="search-toggle-advanced"
-              onToggle={this.handleToggleAdvanced}
+              onToggle={onToggleAdvanced}
             />
           </Loading>
         </div>
-        {results ? (
-          <div className="search-advanced-results">
-            {results.length > 0 ? (
-              <SearchSummary
-                totalResults={bundle.total}
-                allResults={allResults}
-                allResultsAreOfType={allResultsAreOfType}
-                shownGMs={shownGMs.toArray()}
-                hiddenGMs={hiddenGMs.toArray()}
-                loading={loading}
-                onDownloadClick={this.handleDownloadClick}
-                onShowGM={this.handleShowGM}
-                onHideGM={this.handleHideGM}
-              />
-            ) : null}
-            <FullSearchResults
-              query={query}
-              totalResults={bundle.total}
-              results={results}
-              allResultsAreOfType={allResultsAreOfType}
-              shownGMs={shownGMs.toArray()}
-              onRequireMoreResults={this.handleRequireMoreResults}
-            />
-          </div>
-        ) : null}
+        <div className="search-advanced-results">
+          <SearchSummary
+            totalResults={bundle ? bundle.total : null}
+            allResults={allResults}
+            allResultsAreOfType={allResultsAreOfType}
+            shownGMs={shownGMs.toArray()}
+            hiddenGMs={hiddenGMs.toArray()}
+            loading={loading}
+            onDownloadClick={this.handleDownloadClick}
+            onShowGM={this.handleShowGM}
+            onHideGM={this.handleHideGM}
+          />
+          <FullSearchResults
+            query={query}
+            totalResults={bundle ? bundle.total : null}
+            results={results}
+            allResultsAreOfType={allResultsAreOfType}
+            shownGMs={shownGMs.toArray()}
+            onRequireMoreResults={this.handleRequireMoreResults}
+            onSelectResult={onSelectResult}
+          />
+        </div>
       </div>
     )
   }
