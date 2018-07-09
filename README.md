@@ -56,6 +56,10 @@ an instance of [Medserve](https://medserve.online).
     statuses, i.e. Active, Inactive or Entered in Error.
 * Download the results of an advanced search in TSV (tab-separated values)
   format.
+* Add generic medicine concepts alongside search results:
+  * CTPP - show corresponding TPP and MPP.
+  * TPP - show corresponding MPP.
+  * TPUU - show corresponding MPUU and MP.
 * Can be configured to point to any Medserve instance, see
   [Configuration](#configuration).
 * Can be configured to report errors to [Sentry](https://sentry.io).
