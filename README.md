@@ -81,15 +81,6 @@ yarn start
 yarn test
 ```
 
-##### Start a Storybook server on port 9009
-
-[Storybook](https://storybook.js.org/) is an environment for developing and
-testing the components within Polecat in isolation from one another.
-
-```
-yarn storybook
-```
-
 ##### Update test files
 
 There are a set of files in the `test` directory that serve as fixtures for the
