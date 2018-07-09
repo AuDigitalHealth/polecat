@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { InfiniteLoader } from 'react-virtualized/dist/commonjs/InfiniteLoader'
 import { List } from 'react-virtualized/dist/commonjs/List'
 import { AutoSizer } from 'react-virtualized/dist/commonjs/AutoSizer'
-import { Scrollbars } from 'react-custom-scrollbars'
 
 import FullSearchResult from './FullSearchResult.js'
 
@@ -25,8 +24,7 @@ class FullSearchResults extends Component {
     super(props)
     this.renderResult = this.renderResult.bind(this)
     this.loadMoreRows = this.loadMoreRows.bind(this)
-    this.handleListScroll = this.handleListScroll.bind(this)
-    this.handleScrollbarScroll = this.handleScrollbarScroll.bind(this)
+    this.handleScroll = this.handleScroll.bind(this)
     this.state = {}
   }
 
@@ -43,18 +41,8 @@ class FullSearchResults extends Component {
     })
   }
 
-  handleListScroll({ scrollTop }) {
+  handleScroll({ scrollTop }) {
     if (scrollTop === 0) this.setState(() => ({ scrollTop: undefined }))
-  }
-
-  // Integration between react-custom-scrollbars and react-virtualized, as per
-  // https://github.com/bvaughn/react-virtualized/issues/692#issuecomment-391227898.
-  handleScrollbarScroll(event) {
-    this.list.Grid._onScroll(event)
-  }
-
-  componentDidMount() {
-    if (this.list) this.list.Grid._scrollingContainer = this.scroll.view
   }
 
   componentWillReceiveProps(nextProps) {
@@ -107,7 +95,6 @@ class FullSearchResults extends Component {
     }
   }
 
-  // FIXME: Infinite scroll is borked.
   renderResults() {
     const { results, totalResults, shownGMs } = this.props,
       renderResult = this.renderResult,
@@ -122,31 +109,20 @@ class FullSearchResults extends Component {
             rowCount={totalResults}
           >
             {({ onRowsRendered, registerChild }) => (
-              <Scrollbars
-                ref={node => (this.scroll = node)}
-                onScroll={this.handleScrollbarScroll}
-                style={{ height, width }}
-              >
-                <List
-                  ref={node => {
-                    this.list = node
-                    registerChild(node)
-                  }}
-                  rowCount={totalResults}
-                  rowHeight={35}
-                  rowRenderer={renderResult}
-                  width={width}
-                  height={height}
-                  scrollTop={scrollTop}
-                  overscanRowCount={50}
-                  style={{ overflowX: 'visible', overflowY: 'visible' }}
-                  results={results}
-                  shownGMs={shownGMs}
-                  onRowsRendered={onRowsRendered}
-                  onScroll={this.handleListScroll}
-                  onScrollbarPresenceChange={this.handleScrollbarPresenceChange}
-                />
-              </Scrollbars>
+              <List
+                ref={registerChild}
+                rowCount={totalResults}
+                rowHeight={35}
+                rowRenderer={renderResult}
+                width={width}
+                height={height}
+                scrollTop={scrollTop}
+                overscanRowCount={50}
+                results={results}
+                shownGMs={shownGMs}
+                onRowsRendered={onRowsRendered}
+                onScroll={this.handleScroll}
+              />
             )}
           </InfiniteLoader>
         )}
