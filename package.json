@@ -89,7 +89,6 @@
     "react-dev-utils": "^5.0.0",
     "react-router": "^4.2.0",
     "request": "^2.34",
-    "serve": "^6.4.3",
     "sinon": "^4.1.2",
     "sloc": "^0.2.0",
     "storybook-host": "^4.1.4",
