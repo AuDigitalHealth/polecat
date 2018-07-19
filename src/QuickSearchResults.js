@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import ConceptType from './ConceptType.js'
 import { codingToSnomedDisplay } from './fhir/medication.js'
@@ -9,8 +10,6 @@ import './css/QuickSearchResults.css'
 
 class QuickSearchResults extends Component {
   static propTypes = {
-    // TODO: Work out whether this prop is actually used or not. What is this in
-    // relation to `results.query`?
     query: PropTypes.string,
     results: PropTypes.arrayOf(
       PropTypes.shape({
@@ -75,7 +74,6 @@ class QuickSearchResults extends Component {
 
   renderResults() {
     const { results } = this.props
-    if (!results) return
     return results.map(
       (result, i) =>
         result.type === 'more'
@@ -93,12 +91,15 @@ class QuickSearchResults extends Component {
         className={result.selected ? 'search-result selected' : 'search-result'}
         onClick={() => this.handleSelectResult(result)}
       >
-        <div className="target">
-          <ConceptType type={result.type} status={result.status} />
-          <span className="display">
-            {codingToSnomedDisplay(result.coding)}
-          </span>
-        </div>
+        {this.renderResultContent(
+          result,
+          <div className="target">
+            <ConceptType type={result.type} status={result.status} />
+            <span className="display">
+              {codingToSnomedDisplay(result.coding)}
+            </span>
+          </div>,
+        )}
       </li>
     )
   }
@@ -110,9 +111,12 @@ class QuickSearchResults extends Component {
         className={result.selected ? 'text selected' : 'text'}
         onClick={() => this.handleSelectResult(result)}
       >
-        <div className="target">
-          All concepts containing the text &quot;{result.query}&quot;
-        </div>
+        {this.renderResultContent(
+          result,
+          <div className="target">
+            All concepts containing the text &quot;{result.query}&quot;
+          </div>,
+        )}
       </li>
     )
   }
@@ -124,11 +128,18 @@ class QuickSearchResults extends Component {
         className={result.selected ? 'more-results selected' : 'more-results'}
         onClick={() => this.handleSelectResult(result)}
       >
-        <div className="target">
-          view all {formatNumber(result.total)} matches &rarr;
-        </div>
+        {this.renderResultContent(
+          result,
+          <div className="target">
+            view all {formatNumber(result.total)} matches &rarr;
+          </div>,
+        )}
       </li>
     )
+  }
+
+  renderResultContent(result, content) {
+    return result.link ? <Link to={result.link}>{content}</Link> : content
   }
 }
 

@@ -2,9 +2,7 @@
   "resourceType": "Substance",
   "id": "2292011000036106",
   "meta": {
-    "profile": [
-      "http://medserve.online/fhir/Profile/ExtendedMedication"
-    ]
+    "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
   },
   "text": {
     "status": "generated",
@@ -14,6 +12,22 @@
     {
       "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
       "valueDate": "2014-06-30"
+    },
+    {
+      "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
+      "extension": [
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+          "valueUri": "http://snomed.info/sct"
+        },
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+          "valueString":
+            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531"
+        }
+      ]
     }
   ],
   "status": "active",

@@ -63,7 +63,7 @@ export class RemoteFhirMedication extends Component {
       if (error.response) this.handleUnsuccessfulResponse(error.response)
       else throw error
     }
-    sniffFormat(response.headers['content-type'])
+    sniffFormat(response)
     return response.data
   }
 
@@ -75,18 +75,19 @@ export class RemoteFhirMedication extends Component {
   handleUnsuccessfulResponse(response) {
     let opOutcome
     try {
-      sniffFormat(response.headers['content-type'])
+      sniffFormat(response)
       opOutcome = opOutcomeFromJsonResponse(response.data)
-    } catch (error) {} // eslint-disable-line no-empty
-    if (opOutcome) throw opOutcome
-    else if (response.status === 404) {
-      const { resourceType, id } = this.props
-      throw new Error(
-        `The resource you requested was not found: ${resourceType}/${id}`,
-      )
-    } else {
-      throw new Error(response.statusText || response.status)
+    } catch (error) {
+      if (response.status === 404) {
+        const { resourceType, id } = this.props
+        throw new Error(
+          `The resource you requested was not found: ${resourceType}/${id}`,
+        )
+      } else {
+        throw new Error(response.statusText || response.status)
+      }
     }
+    throw opOutcome
   }
 
   // Requests any additional Medication resources that may be required to fully represent

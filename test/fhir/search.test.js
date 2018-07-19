@@ -135,6 +135,7 @@ describe('queryFromSearchObject', () => {
       },
       'type:TPUU status:active ancestor:21885011000036105|ibuprofen',
     ],
+    [{}, 'type:CTPP,TPP,TPUU,MPP,MPUU,MP status:active'],
   ]
 
   for (const result of expectedResults) {

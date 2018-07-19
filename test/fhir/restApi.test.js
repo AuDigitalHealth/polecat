@@ -6,10 +6,11 @@ describe('sniffFormat', () => {
     'application/json+fhir',
     'application/json;charset=utf-8',
     'application/json+fhir;charset=macintosh',
-  ]
-  for (const contentType of positives) {
-    it(`should return JSON if Content-Type is ${contentType}`, () =>
-      expect(sniffFormat(contentType)).toEqual('json'))
+  ].map(p => ({ headers: { 'content-type': p } }))
+  for (const response of positives) {
+    it(`should return JSON if Content-Type is "${
+      response.headers['content-type']
+    }"`, () => expect(sniffFormat(response)).toEqual('json'))
   }
 
   const negatives = [
@@ -18,11 +19,13 @@ describe('sniffFormat', () => {
     null,
     'application/xml',
     'image/svg+xml;charset=utf-8',
-  ]
-  for (const contentType of negatives) {
-    it('should throw an Error if Content-Type is not JSON', () => {
+  ].map(n => ({ headers: { 'content-type': n } }))
+  for (const response of negatives) {
+    it(`should throw an Error if Content-Type is "${
+      response.headers['content-type']
+    }"`, () => {
       const sniffFormatOfContentType = () => {
-        sniffFormat(contentType)
+        sniffFormat(response)
       }
       expect(sniffFormatOfContentType).toThrow()
     })

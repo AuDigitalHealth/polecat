@@ -3,8 +3,8 @@ import pick from 'lodash.pick'
 import { OpOutcomeError } from '../OpOutcomeError.js'
 
 export const opOutcomeFromJsonResponse = parsed => {
-  if (parsed.resourceType !== 'OperationOutcome') return null
-  if (parsed.issue.length === 0) return null
+  if (parsed.resourceType !== 'OperationOutcome' || parsed.issue.length === 0)
+    throw new Error('Unable to parse response as OperationOutcome.')
   return new OpOutcomeError(
     pick(
       // We only ever look at the first issue described within an

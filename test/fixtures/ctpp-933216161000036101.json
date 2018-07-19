@@ -2,27 +2,30 @@
   "resourceType": "Medication",
   "id": "933216161000036101",
   "meta": {
-    "profile": [
-      "http://medserve.online/fhir/Profile/ExtendedMedication"
-    ]
+    "profile": ["http://medserve.online/fhir/Profile/ExtendedMedication"]
   },
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial</p></div>"
+    "div":
+      "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial</p></div>"
   },
   "extension": [
     {
-      "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+      "url":
+        "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
       "extension": [
         {
-          "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/parentMedication",
           "valueReference": {
             "reference": "Medication/933205801000036102",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial"
+            "display":
+              "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial"
           }
         },
         {
-          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
           "valueCoding": {
             "system": "http://hl7.org/fhir/medication_type",
             "code": "BPG",
@@ -30,17 +33,21 @@
           }
         },
         {
-          "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
           "extension": [
             {
-              "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/parentMedication",
               "valueReference": {
                 "reference": "Medication/933205811000036100",
-                "display": "polyvalent Australian snake antivenom injection, 1 vial"
+                "display":
+                  "polyvalent Australian snake antivenom injection, 1 vial"
               }
             },
             {
-              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
                 "code": "UPG",
@@ -48,17 +55,21 @@
               }
             },
             {
-              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
               "extension": [
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedication",
                   "valueReference": {
                     "reference": "Medication/75498011000036101",
-                    "display": "death adder antivenom 6000 units injection, 1 vial"
+                    "display":
+                      "death adder antivenom 6000 units injection, 1 vial"
                   }
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                   "valueCoding": {
                     "system": "http://hl7.org/fhir/medication_type",
                     "code": "UPG",
@@ -66,27 +77,33 @@
                   }
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
                   "valueCode": "active"
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/lastModified",
                   "valueDate": "2015-08-31"
                 }
               ]
             },
             {
-              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
               "extension": [
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedication",
                   "valueReference": {
                     "reference": "Medication/75497011000036102",
-                    "display": "tiger snake antivenom 3000 units injection, 1 vial"
+                    "display":
+                      "tiger snake antivenom 3000 units injection, 1 vial"
                   }
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                   "valueCoding": {
                     "system": "http://hl7.org/fhir/medication_type",
                     "code": "UPG",
@@ -94,27 +111,33 @@
                   }
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
                   "valueCode": "active"
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/lastModified",
                   "valueDate": "2015-08-31"
                 }
               ]
             },
             {
-              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
               "extension": [
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedication",
                   "valueReference": {
                     "reference": "Medication/75500011000036108",
-                    "display": "taipan snake antivenom 12 000 units injection, 1 vial"
+                    "display":
+                      "taipan snake antivenom 12 000 units injection, 1 vial"
                   }
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                   "valueCoding": {
                     "system": "http://hl7.org/fhir/medication_type",
                     "code": "UPG",
@@ -122,27 +145,33 @@
                   }
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
                   "valueCode": "active"
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/lastModified",
                   "valueDate": "2015-08-31"
                 }
               ]
             },
             {
-              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
               "extension": [
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedication",
                   "valueReference": {
                     "reference": "Medication/75496011000036100",
-                    "display": "king brown snake antivenom 18 000 units injection, 1 vial"
+                    "display":
+                      "king brown snake antivenom 18 000 units injection, 1 vial"
                   }
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                   "valueCoding": {
                     "system": "http://hl7.org/fhir/medication_type",
                     "code": "UPG",
@@ -150,27 +179,33 @@
                   }
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
                   "valueCode": "active"
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/lastModified",
                   "valueDate": "2015-08-31"
                 }
               ]
             },
             {
-              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
               "extension": [
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedication",
                   "valueReference": {
                     "reference": "Medication/75499011000036109",
-                    "display": "brown snake antivenom 1000 units injection, 1 vial"
+                    "display":
+                      "brown snake antivenom 1000 units injection, 1 vial"
                   }
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                   "valueCoding": {
                     "system": "http://hl7.org/fhir/medication_type",
                     "code": "UPG",
@@ -178,27 +213,32 @@
                   }
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
                   "valueCode": "active"
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/lastModified",
                   "valueDate": "2015-08-31"
                 }
               ]
             },
             {
-              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
               "valueCode": "active"
             },
             {
-              "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/lastModified",
               "valueDate": "2014-06-30"
             }
           ]
         },
         {
-          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
           "valueCode": "active"
         },
         {
@@ -208,7 +248,53 @@
       ]
     },
     {
-      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+      "url":
+        "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
+      "extension": [
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/medication",
+          "valueReference": {
+            "reference": "Medication/933205801000036102",
+            "display":
+              "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial"
+          }
+        },
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+          "valueCoding": {
+            "system": "http://hl7.org/fhir/medication_type",
+            "code": "BPG",
+            "display": "Branded package with no container"
+          }
+        }
+      ]
+    },
+    {
+      "url":
+        "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
+      "extension": [
+        {
+          "url": "http://medserve.online/fhir/StructureDefinition/medication",
+          "valueReference": {
+            "reference": "Medication/933205811000036100",
+            "display": "polyvalent Australian snake antivenom injection, 1 vial"
+          }
+        },
+        {
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+          "valueCoding": {
+            "system": "http://hl7.org/fhir/medication_type",
+            "code": "UPG",
+            "display": "Unbranded package with no container"
+          }
+        }
+      ]
+    },
+    {
+      "url":
+        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
       "valueCoding": {
         "system": "http://hl7.org/fhir/medication_type",
         "code": "BPGC",
@@ -222,7 +308,8 @@
           {
             "system": "http://snomed.info/sct",
             "code": "22131000168107",
-            "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)"
+            "display":
+              "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)"
           }
         ]
       }
@@ -231,12 +318,15 @@
       "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystem",
       "extension": [
         {
-          "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemUri",
           "valueUri": "http://snomed.info/sct"
         },
         {
-          "url": "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
-          "valueString": "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180131"
+          "url":
+            "http://medserve.online/fhir/StructureDefinition/sourceCodeSystemVersion",
+          "valueString":
+            "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180531"
         }
       ]
     },
@@ -250,10 +340,12 @@
       {
         "system": "http://snomed.info/sct",
         "code": "933216161000036101",
-        "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial"
+        "display":
+          "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, 1 vial"
       },
       {
-        "system": "https://www.tga.gov.au/australian-register-therapeutic-goods",
+        "system":
+          "https://www.tga.gov.au/australian-register-therapeutic-goods",
         "code": "74899"
       }
     ]
@@ -275,17 +367,21 @@
         "itemReference": {
           "extension": [
             {
-              "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
               "extension": [
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedication",
                   "valueReference": {
                     "reference": "Medication/933196841000036107",
-                    "display": "polyvalent Australian snake antivenom injection, vial"
+                    "display":
+                      "polyvalent Australian snake antivenom injection, vial"
                   }
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                   "valueCoding": {
                     "system": "http://hl7.org/fhir/medication_type",
                     "code": "UPDSF",
@@ -293,17 +389,21 @@
                   }
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
                   "extension": [
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/parentMedication",
                       "valueReference": {
                         "reference": "Medication/75098011000036109",
-                        "display": "death adder antivenom 6000 units injection, vial"
+                        "display":
+                          "death adder antivenom 6000 units injection, vial"
                       }
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                       "valueCoding": {
                         "system": "http://hl7.org/fhir/medication_type",
                         "code": "UPDSF",
@@ -311,55 +411,67 @@
                       }
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
                       "extension": [
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/parentMedication",
                           "valueReference": {
                             "reference": "Medication/74985011000036100",
                             "display": "death adder antivenom"
                           }
                         },
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                           "valueCoding": {
                             "system": "http://hl7.org/fhir/medication_type",
                             "code": "UPD",
-                            "display": "Unbranded product with no strengths or form"
+                            "display":
+                              "Unbranded product with no strengths or form"
                           }
                         },
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
                           "valueCode": "active"
                         },
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/lastModified",
                           "valueDate": "2015-08-31"
                         }
                       ]
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
                       "valueCode": "active"
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/lastModified",
                       "valueDate": "2015-08-31"
                     }
                   ]
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
                   "extension": [
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/parentMedication",
                       "valueReference": {
                         "reference": "Medication/75100011000036101",
-                        "display": "taipan snake antivenom 12 000 units injection, vial"
+                        "display":
+                          "taipan snake antivenom 12 000 units injection, vial"
                       }
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                       "valueCoding": {
                         "system": "http://hl7.org/fhir/medication_type",
                         "code": "UPDSF",
@@ -367,55 +479,67 @@
                       }
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
                       "extension": [
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/parentMedication",
                           "valueReference": {
                             "reference": "Medication/74983011000036101",
                             "display": "taipan snake antivenom"
                           }
                         },
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                           "valueCoding": {
                             "system": "http://hl7.org/fhir/medication_type",
                             "code": "UPD",
-                            "display": "Unbranded product with no strengths or form"
+                            "display":
+                              "Unbranded product with no strengths or form"
                           }
                         },
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
                           "valueCode": "active"
                         },
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/lastModified",
                           "valueDate": "2015-08-31"
                         }
                       ]
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
                       "valueCode": "active"
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/lastModified",
                       "valueDate": "2015-08-31"
                     }
                   ]
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
                   "extension": [
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/parentMedication",
                       "valueReference": {
                         "reference": "Medication/75097011000036108",
-                        "display": "tiger snake antivenom 3000 units injection, vial"
+                        "display":
+                          "tiger snake antivenom 3000 units injection, vial"
                       }
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                       "valueCoding": {
                         "system": "http://hl7.org/fhir/medication_type",
                         "code": "UPDSF",
@@ -423,55 +547,67 @@
                       }
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
                       "extension": [
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/parentMedication",
                           "valueReference": {
                             "reference": "Medication/74990011000036105",
                             "display": "tiger snake antivenom"
                           }
                         },
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                           "valueCoding": {
                             "system": "http://hl7.org/fhir/medication_type",
                             "code": "UPD",
-                            "display": "Unbranded product with no strengths or form"
+                            "display":
+                              "Unbranded product with no strengths or form"
                           }
                         },
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
                           "valueCode": "active"
                         },
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/lastModified",
                           "valueDate": "2015-08-31"
                         }
                       ]
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
                       "valueCode": "active"
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/lastModified",
                       "valueDate": "2015-08-31"
                     }
                   ]
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
                   "extension": [
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/parentMedication",
                       "valueReference": {
                         "reference": "Medication/75096011000036105",
-                        "display": "king brown snake antivenom 18 000 units injection, vial"
+                        "display":
+                          "king brown snake antivenom 18 000 units injection, vial"
                       }
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                       "valueCoding": {
                         "system": "http://hl7.org/fhir/medication_type",
                         "code": "UPDSF",
@@ -479,55 +615,66 @@
                       }
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
                       "extension": [
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/parentMedication",
                           "valueReference": {
                             "reference": "Medication/74950011000036100",
                             "display": "king brown snake antivenom"
                           }
                         },
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                           "valueCoding": {
                             "system": "http://hl7.org/fhir/medication_type",
                             "code": "UPD",
-                            "display": "Unbranded product with no strengths or form"
+                            "display":
+                              "Unbranded product with no strengths or form"
                           }
                         },
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
                           "valueCode": "active"
                         },
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/lastModified",
                           "valueDate": "2015-08-31"
                         }
                       ]
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
                       "valueCode": "active"
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/lastModified",
                       "valueDate": "2015-08-31"
                     }
                   ]
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
                   "extension": [
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/parentMedication",
                       "valueReference": {
                         "reference": "Medication/74951011000036107",
                         "display": "polyvalent Australian snake antivenom"
                       }
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                       "valueCoding": {
                         "system": "http://hl7.org/fhir/medication_type",
                         "code": "UPD",
@@ -535,55 +682,67 @@
                       }
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
                       "extension": [
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/parentMedication",
                           "valueReference": {
                             "reference": "Medication/74978011000036101",
                             "display": "brown snake antivenom"
                           }
                         },
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                           "valueCoding": {
                             "system": "http://hl7.org/fhir/medication_type",
                             "code": "UPD",
-                            "display": "Unbranded product with no strengths or form"
+                            "display":
+                              "Unbranded product with no strengths or form"
                           }
                         },
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
                           "valueCode": "active"
                         },
                         {
-                          "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                          "url":
+                            "http://medserve.online/fhir/StructureDefinition/lastModified",
                           "valueDate": "2015-08-31"
                         }
                       ]
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
                       "valueCode": "active"
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/lastModified",
                       "valueDate": "2014-06-30"
                     }
                   ]
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/parentMedicationResources",
                   "extension": [
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/parentMedication",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/parentMedication",
                       "valueReference": {
                         "reference": "Medication/75099011000036101",
-                        "display": "brown snake antivenom 1000 units injection, vial"
+                        "display":
+                          "brown snake antivenom 1000 units injection, vial"
                       }
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
                       "valueCoding": {
                         "system": "http://hl7.org/fhir/medication_type",
                         "code": "UPDSF",
@@ -591,27 +750,79 @@
                       }
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
                       "valueCode": "active"
                     },
                     {
-                      "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                      "url":
+                        "http://medserve.online/fhir/StructureDefinition/lastModified",
                       "valueDate": "2015-08-31"
                     }
                   ]
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
                   "valueCode": "active"
                 },
                 {
-                  "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/lastModified",
                   "valueDate": "2014-06-30"
                 }
               ]
             },
             {
-              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
+              "extension": [
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medication",
+                  "valueReference": {
+                    "reference": "Medication/933196841000036107",
+                    "display":
+                      "polyvalent Australian snake antivenom injection, vial"
+                  }
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "UPDSF",
+                    "display": "Unbranded product with strengths and form"
+                  }
+                }
+              ]
+            },
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/generalizedMedicine",
+              "extension": [
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medication",
+                  "valueReference": {
+                    "reference": "Medication/74951011000036107",
+                    "display": "polyvalent Australian snake antivenom"
+                  }
+                },
+                {
+                  "url":
+                    "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/medication_type",
+                    "code": "UPD",
+                    "display": "Unbranded product with no strengths or form"
+                  }
+                }
+              ]
+            },
+            {
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/medicationResourceType",
               "valueCoding": {
                 "system": "http://hl7.org/fhir/medication_type",
                 "code": "BPSF",
@@ -619,16 +830,32 @@
               }
             },
             {
-              "url": "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/medicationResourceReferenceStatus",
               "valueCode": "active"
             },
             {
-              "url": "http://medserve.online/fhir/StructureDefinition/lastModified",
+              "url":
+                "http://medserve.online/fhir/StructureDefinition/lastModified",
               "valueDate": "2016-08-31"
+            },
+            {
+              "url": "http://medserve.online/fhir/StructureDefinition/brand",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "22131000168107",
+                    "display":
+                      "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL)"
+                  }
+                ]
+              }
             }
           ],
           "reference": "Medication/933196831000036102",
-          "display": "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial"
+          "display":
+            "Polyvalent Snake Antivenom (Australia and Papua New Guinea) (CSL) intravenous infusion injection, vial"
         },
         "amount": {
           "value": 1,

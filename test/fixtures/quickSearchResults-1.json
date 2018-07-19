@@ -1,0 +1,109 @@
+[
+  {
+    "type": "MP",
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "21336011000036105",
+        "display": "fotemustine"
+      }
+    ],
+    "status": "active",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion":
+      "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180630",
+    "lastModified": "2014-06-30",
+    "subsidy": [],
+    "generalizedMedicines": [],
+    "link": "/Medication/21336011000036105",
+    "selected": true
+  },
+  {
+    "type": "MPUU",
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "22486011000036106",
+        "display": "fotemustine 208 mg injection, vial"
+      }
+    ],
+    "status": "active",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion":
+      "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180630",
+    "lastModified": "2014-06-30",
+    "subsidy": [],
+    "generalizedMedicines": [
+      {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "21336011000036105",
+            "display": "fotemustine"
+          }
+        ],
+        "type": "MP"
+      }
+    ],
+    "link": "/Medication/22486011000036106"
+  },
+  {
+    "type": "MPP",
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "27120011000036104",
+        "display":
+          "fotemustine 208 mg injection [1 vial] (&) inert substance diluent [4 mL ampoule], 1 pack"
+      }
+    ],
+    "status": "active",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion":
+      "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180630",
+    "lastModified": "2014-06-30",
+    "subsidy": [],
+    "generalizedMedicines": [],
+    "link": "/Medication/27120011000036104"
+  },
+  {
+    "type": "TPUU",
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "5065011000036107",
+        "display":
+          "Muphoran (fotemustine 208 mg) powder for injection, 208 mg vial"
+      }
+    ],
+    "status": "active",
+    "sourceCodeSystemUri": "http://snomed.info/sct",
+    "sourceCodeSystemVersion":
+      "http://snomed.info/sct?version=http%3A%2F%2Fsnomed.info%2Fsct%2F32506021000036107%2Fversion%2F20180630",
+    "lastModified": "2016-07-31",
+    "subsidy": [],
+    "generalizedMedicines": [
+      {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "22486011000036106",
+            "display": "fotemustine 208 mg injection, vial"
+          }
+        ],
+        "type": "MPUU"
+      },
+      {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "21336011000036105",
+            "display": "fotemustine"
+          }
+        ],
+        "type": "MP"
+      }
+    ],
+    "link": "/Medication/5065011000036107"
+  }
+]
