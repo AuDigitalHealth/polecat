@@ -40,7 +40,8 @@
     "react-test-renderer": "^16.3.2",
     "react-virtualized": "^9.18.5",
     "redux": "^3.7.2",
-    "verhoeff": "^0.0.5"
+    "verhoeff": "^0.0.5",
+    "upath": "^1.1.2"
   },
   "devDependencies": {
     "@sentry/cli": "^1.26.1",
