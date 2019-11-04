@@ -34,7 +34,7 @@ describe('Search', () => {
       .onGet(
         `${
           props.fhirServer
-        }/Medication?medication-resource-type=UPD&ancestor=Medication/37732011000036107&status=active,inactive,entered-in-error&_summary=true&_count=100`,
+        }/Medication?medication-resource-type=UPD&ancestor=Medication/37732011000036107&status=active&_summary=true&_count=100`,
       )
       .reply(200, searchBundle1, { 'content-type': 'application/fhir+json' })
       .onGet(
@@ -115,7 +115,7 @@ describe('Search', () => {
         .onGet(
           `${
             props.fhirServer
-          }/Medication?status=active,inactive,entered-in-error&_text=g&_summary=true&_count=100`,
+          }/Medication?status=active&_text=g&_summary=true&_count=100`,
         )
         .reply(200, searchBundle1, {
           'content-type': 'application/fhir+json',
@@ -140,7 +140,7 @@ describe('Search', () => {
         .onGet(
           `${
             props.fhirServer
-          }/Medication?status=active,inactive,entered-in-error&_text=g&_summary=true&_count=100`,
+          }/Medication?status=active&_text=g&_summary=true&_count=100`,
         )
         .reply(200, searchBundle1, {
           'content-type': 'application/fhir+json',
@@ -165,7 +165,7 @@ describe('Search', () => {
         .onGet(
           `${
             props.fhirServer
-          }/Medication?status=active,inactive,entered-in-error&_text=g&_summary=true&_count=100`,
+          }/Medication?status=active&_text=g&_summary=true&_count=100`,
         )
         .reply(200, searchBundle1, {
           'content-type': 'application/fhir+json',

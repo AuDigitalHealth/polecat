@@ -5,13 +5,13 @@ Object {
   "allParams": Array [
     Array [
       "status",
-      "active,inactive,entered-in-error",
+      "active",
     ],
   ],
   "medParams": Array [
     Array [
       "status",
-      "active,inactive,entered-in-error",
+      "active",
     ],
   ],
   "substanceParams": Array [],
@@ -23,7 +23,7 @@ Object {
   "allParams": Array [
     Array [
       "status",
-      "active,inactive,entered-in-error",
+      "active",
     ],
     Array [
       "text",
@@ -33,7 +33,7 @@ Object {
   "medParams": Array [
     Array [
       "status",
-      "active,inactive,entered-in-error",
+      "active",
     ],
     Array [
       "text",
@@ -57,7 +57,7 @@ Object {
     ],
     Array [
       "status",
-      "active,inactive,entered-in-error",
+      "active",
     ],
   ],
   "medParams": Array [
@@ -71,7 +71,7 @@ Object {
     ],
     Array [
       "status",
-      "active,inactive,entered-in-error",
+      "active",
     ],
   ],
   "substanceParams": Array [],

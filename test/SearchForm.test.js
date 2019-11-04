@@ -76,16 +76,12 @@ describe('SearchForm', () => {
     ])
   })
 
-  it('should show all statuses selected when none are specified', () => {
+  it('should show active status selected when none are specified', () => {
     const props = {
         query: 'brand-text:Gasbusters',
       },
       wrapper = shallow(<SearchForm {...props} />),
       statusField = wrapper.find({ label: 'Status' })
-    expect(statusField.prop('value')).toEqual([
-      'active',
-      'inactive',
-      'entered-in-error',
-    ])
+    expect(statusField.prop('value')).toEqual(['active'])
   })
 })
