@@ -156,7 +156,7 @@
     "extends": "react-app"
   },
   "resolutions": {
-    "**/fsevents": "1.2.9",
+    "**/fsevents": "2.1.2",
     "**/js-yaml": "3.13.1",
     "**/minimist": "1.2.5",
     "**/deep-extend": "0.6.0"
