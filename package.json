@@ -16,7 +16,7 @@
     "cryptiles": "^4.1.2",
     "currency-formatter": "^1.4.2",
     "d3-force": "^1.0.6",
-    "deep-extend": "^0.5.1",
+    "deep-extend": "^0.6.0",
     "file-saver": "^1.3.3",
     "js-yaml": "^3.13.1",
     "just-extend": "^4.0.0",
@@ -156,7 +156,9 @@
     "extends": "react-app"
   },
   "resolutions": {
-    "fsevents": "1.2.9",
-    "**/fsevents": "1.2.9"
+    "**/fsevents": "1.2.9",
+    "**/js-yaml": "3.13.1",
+    "**/minimist": "1.2.5",
+    "**/deep-extend": "0.6.0"
   }
 }
